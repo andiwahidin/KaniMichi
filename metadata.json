@@ -1,0 +1,8 @@
+{
+  "name": "KaniMichi — Belajar Kanji & Kosakata Jepang SRS",
+  "description": "Platform pembelajaran radikal, kanji, dan kosakata bahasa Jepang berbasis sistem Spaced Repetition (SRS) terstruktur dengan hierarki level, mnemonik, dan review harian.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

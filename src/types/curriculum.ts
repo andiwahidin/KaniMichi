@@ -1,0 +1,111 @@
+export type ItemType = 'radical' | 'kanji' | 'vocabulary';
+
+export type SrsStage = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+
+export type SrsCategory =
+  | 'locked'
+  | 'lesson'
+  | 'apprentice'
+  | 'guru'
+  | 'master'
+  | 'enlightened'
+  | 'burned';
+
+export type ReadingType = 'onyomi' | 'kunyomi';
+
+export interface ContextSentence {
+  jp: string;
+  reading: string;
+  id: string;
+}
+
+export interface CurriculumItem {
+  id: string;
+  type: ItemType;
+  level: number;
+  characters: string;
+  /** Primary Indonesian meaning */
+  primaryMeaning: string;
+  /** All accepted meanings (Indonesian + English equivalents) */
+  acceptedMeanings: string[];
+  /** Kanji readings */
+  onyomi?: string[];
+  kunyomi?: string[];
+  /** Which reading type is primarily taught/quizzed for Kanji */
+  primaryReadingType?: ReadingType;
+  /** Vocabulary readings (hiragana) */
+  readings?: string[];
+  /** Part of speech for Vocabulary */
+  partOfSpeech?: string;
+  /** Component radical IDs (for Kanji) or component kanji IDs (for Vocabulary) */
+  componentIds?: string[];
+  /** Mnemonic story for meaning (Indonesian) */
+  meaningMnemonic: string;
+  /** Mnemonic story for reading (Indonesian, for Kanji & Vocab) */
+  readingMnemonic?: string;
+  /** Stroke count (for Kanji) */
+  strokes?: number;
+  /** JLPT level (N5=5 .. N1=1) */
+  jlpt?: number;
+  /** Example context sentences (for Vocabulary) */
+  contextSentences?: ContextSentence[];
+}
+
+export interface UserItemProgress {
+  itemId: string;
+  /** null if locked; 0 if unlocked and in lesson queue; 1..9 for SRS stages */
+  srsStage: SrsStage | null;
+  unlockedAt: number | null;
+  startedAt: number | null;
+  /** Epoch ms for next review */
+  nextReviewAt: number | null;
+  burnedAt: number | null;
+  meaningCorrect: number;
+  meaningIncorrect: number;
+  readingCorrect: number;
+  readingIncorrect: number;
+  lastReviewedAt: number | null;
+  lastIncorrectAt: number | null;
+  userSynonyms: string[];
+  meaningNote: string;
+  readingNote: string;
+}
+
+export interface ReviewHistoryEntry {
+  date: string; // YYYY-MM-DD
+  reviewsCompleted: number;
+  correctCount: number;
+  lessonsCompleted: number;
+}
+
+export interface UserSettings {
+  lessonBatchSize: 3 | 5 | 7;
+  autoplayAudio: boolean;
+  darkMode: boolean;
+  vacationMode: boolean;
+  vacationStartedAt: number | null;
+  dailyReviewGoal: number;
+}
+
+export interface UserState {
+  currentLevel: number;
+  progress: Record<string, UserItemProgress>;
+  history: ReviewHistoryEntry[];
+  settings: UserSettings;
+  streakDays: number;
+  lastActiveDate: string | null;
+  totalReviewsDone: number;
+  levelUpNotification: number | null;
+}
+
+export type ActiveView =
+  | 'dashboard'
+  | 'levels'
+  | 'radicals'
+  | 'kanji'
+  | 'vocabulary'
+  | 'lesson'
+  | 'review'
+  | 'extra-study';
+
+export type ExtraStudyMode = 'recent-mistakes' | 'recently-learned' | 'burned-items';
