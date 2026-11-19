@@ -7,6 +7,9 @@ import { LessonSession } from './components/LessonSession';
 import { ReviewSession } from './components/ReviewSession';
 import { ItemDetailModal } from './components/ItemDetailModal';
 import { SettingsModal } from './components/SettingsModal';
+import { AuthModal } from './components/AuthModal';
+import { UserProfileView } from './components/UserProfileView';
+import { AdminPanel } from './components/AdminPanel';
 
 const AppShell: React.FC = () => {
   const { activeView, extraStudyMode, setActiveView } = useApp();
@@ -28,6 +31,8 @@ const AppShell: React.FC = () => {
         {activeView === 'extra-study' && (
           <ReviewSession mode="extra" extraMode={extraStudyMode} />
         )}
+        {activeView === 'profile' && <UserProfileView />}
+        {activeView === 'admin' && <AdminPanel />}
       </div>
 
       {!isFullStudySession && (
@@ -72,6 +77,7 @@ const AppShell: React.FC = () => {
 
       <ItemDetailModal />
       <SettingsModal />
+      <AuthModal />
     </div>
   );
 };
@@ -99,7 +105,7 @@ class AppErrorBoundary extends React.Component<
 
   handleReset = () => {
     try {
-      localStorage.removeItem('kanimichi_srs_state_v1');
+      localStorage.removeItem('kanimichi_srs_state_v2');
     } catch {
       // Ignore storage restrictions
     }

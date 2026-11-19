@@ -1,15 +1,19 @@
 import React, { useMemo, useState } from 'react';
 import {
   Award,
+  Bell,
   BookOpen,
   ChevronDown,
   ChevronRight,
   FastForward,
   Flame,
+  LogIn,
   Play,
   RotateCcw,
   Search,
+  ShieldCheck,
   SlidersHorizontal,
+  User as UserIcon,
   X,
 } from 'lucide-react';
 import { getLevelMeta, MAX_LEVEL } from '../data/curriculum';
@@ -39,10 +43,17 @@ export const Dashboard: React.FC = () => {
     toggleVacationMode,
     fastForwardTime,
     dismissLevelUpBanner,
+    cloudUser,
+    userProfile,
+    isAdmin,
+    openAuthModal,
+    announcements,
   } = useApp();
 
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedDay, setExpandedDay] = useState<string>(() => getTodayDateStr(now));
+  const [dismissedAnnId, setDismissedAnnId] = useState<string | null>(null);
+  const latestAnnouncement = announcements.find((a) => a.id !== dismissedAnnId) ?? null;
 
   const levelMeta = getLevelMeta(state.currentLevel);
 
@@ -285,18 +296,75 @@ export const Dashboard: React.FC = () => {
             )}
           </div>
 
+          {cloudUser ? (
+            <button
+              type="button"
+              onClick={() => setActiveView(isAdmin ? 'admin' : 'profile')}
+              className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border text-sm font-medium whitespace-nowrap shrink-0 cursor-pointer ${
+                isAdmin
+                  ? 'border-[#7C3AED]/30 bg-[#7C3AED]/10 text-[#7C3AED] dark:text-violet-300 hover:bg-[#7C3AED]/15'
+                  : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'
+              }`}
+            >
+              {isAdmin ? (
+                <>
+                  <ShieldCheck className="w-4 h-4" />
+                  Panel Admin
+                </>
+              ) : (
+                <>
+                  <UserIcon className="w-4 h-4" />
+                  {userProfile?.displayName || 'Profil'}
+                </>
+              )}
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => openAuthModal('login')}
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
+            >
+              <LogIn className="w-4 h-4" />
+              Masuk
+            </button>
+          )}
+
           <button
             type="button"
             onClick={() => setSettingsOpen(true)}
             className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
           >
             <SlidersHorizontal className="w-4 h-4" />
-            Pengaturan
+            <span className="hidden sm:inline">Pengaturan</span>
           </button>
         </div>
       </div>
 
       {/* Conditional Banners */}
+      {latestAnnouncement && (
+        <div className="p-4 sm:p-5 rounded-xl bg-white dark:bg-[#161A22] border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-4">
+          <div className="flex items-start gap-3 min-w-0">
+            <Bell className="w-4 h-4 text-[#0284C7] shrink-0 mt-0.5" />
+            <div className="min-w-0">
+              <div className="font-display font-bold text-sm text-slate-900 dark:text-white">
+                {latestAnnouncement.title}
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
+                {latestAnnouncement.body}
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setDismissedAnnId(latestAnnouncement.id)}
+            aria-label="Tutup pengumuman"
+            className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer shrink-0"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {state.levelUpNotification && (
         <div className="p-4 sm:p-5 rounded-xl bg-[#0284C7] text-white flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">

@@ -1,10 +1,15 @@
-import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 import {
+  fetchAnnouncements,
   fetchCloudSrsState,
+  fetchCurriculumOverrides,
+  fetchOrCreateUserProfile,
   isSupabaseConfigured,
   saveCloudSrsState,
   supabase,
+  updateOwnDisplayName,
+  updateOwnPassword,
 } from '../lib/supabase';
 import {
   CurriculumDataset,
@@ -13,9 +18,12 @@ import {
 } from '../data/curriculum';
 import {
   ActiveView,
+  Announcement,
   CurriculumItem,
+  CurriculumOverride,
   ExtraStudyMode,
   SrsStage,
+  UserProfile,
   UserSettings,
   UserState,
 } from '../types/curriculum';
@@ -32,6 +40,8 @@ import {
 } from '../utils/srs';
 
 const STORAGE_KEY = 'kanimichi_srs_state_v2';
+
+export type AuthModalTab = 'login' | 'register';
 
 export interface ReviewOutcome {
   itemId: string;
@@ -54,6 +64,10 @@ interface AppContextValue {
   closeItemDetail: () => void;
   settingsOpen: boolean;
   setSettingsOpen: (open: boolean) => void;
+  authModalOpen: boolean;
+  authModalTab: AuthModalTab;
+  openAuthModal: (tab?: AuthModalTab) => void;
+  closeAuthModal: () => void;
   extraStudyMode: ExtraStudyMode;
   startExtraStudy: (mode: ExtraStudyMode) => void;
   lessonQueue: CurriculumItem[];
@@ -79,19 +93,30 @@ interface AppContextValue {
   dismissLevelUpBanner: () => void;
   isSupabaseEnabled: boolean;
   cloudUser: User | null;
+  userProfile: UserProfile | null;
+  isAdmin: boolean;
+  schemaNeedsUpdate: boolean;
   cloudSyncing: boolean;
   lastCloudSyncAt: number | null;
   cloudError: string | null;
+  announcements: Announcement[];
+  curriculumOverrides: Record<string, CurriculumOverride>;
+  refreshAnnouncements: () => Promise<void>;
+  refreshCurriculumOverrides: () => Promise<void>;
   signInWithEmail: (
     email: string,
     password: string
   ) => Promise<{ ok: boolean; message?: string }>;
+  signInWithGoogle: () => Promise<{ ok: boolean; message?: string }>;
   signUpWithEmail: (
     email: string,
-    password: string
+    password: string,
+    displayName?: string
   ) => Promise<{ ok: boolean; message?: string }>;
   signOutCloud: () => Promise<void>;
   syncNow: () => Promise<{ ok: boolean; message?: string }>;
+  updateProfileName: (newName: string) => Promise<{ ok: boolean; message?: string }>;
+  changePassword: (newPassword: string) => Promise<{ ok: boolean; message?: string }>;
 }
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -111,19 +136,79 @@ function loadSavedState(dataset: CurriculumDataset): UserState {
   return createStarterState(dataset);
 }
 
+function applyCurriculumOverrides(
+  base: CurriculumDataset,
+  overrides: Record<string, CurriculumOverride>
+): CurriculumDataset {
+  const keys = Object.keys(overrides);
+  if (keys.length === 0) return base;
+
+  const byId: Record<string, CurriculumItem> = { ...base.byId };
+  let changed = false;
+
+  for (const itemId of keys) {
+    const ov = overrides[itemId];
+    const orig = byId[itemId];
+    if (!orig) continue;
+    changed = true;
+    const nextPrimary = ov.primaryMeaning?.trim() || orig.primaryMeaning;
+    const accepted = nextPrimary
+      ? Array.from(new Set([nextPrimary.toLowerCase(), ...orig.acceptedMeanings]))
+      : orig.acceptedMeanings;
+
+    byId[itemId] = {
+      ...orig,
+      primaryMeaning: nextPrimary,
+      acceptedMeanings: accepted,
+      meaningMnemonic: ov.meaningMnemonic?.trim() || orig.meaningMnemonic,
+      readingMnemonic: ov.readingMnemonic?.trim() || orig.readingMnemonic,
+    };
+  }
+
+  if (!changed) return base;
+
+  const items = base.items.map((item) => byId[item.id] ?? item);
+  const byLevel: Record<number, CurriculumItem[]> = {};
+  for (const [lvl, list] of Object.entries(base.byLevel)) {
+    byLevel[Number(lvl)] = list.map((item) => byId[item.id] ?? item);
+  }
+  const byType: CurriculumDataset['byType'] = {
+    radical: base.byType.radical.map((item) => byId[item.id] ?? item),
+    kanji: base.byType.kanji.map((item) => byId[item.id] ?? item),
+    vocabulary: base.byType.vocabulary.map((item) => byId[item.id] ?? item),
+  };
+
+  return {
+    ...base,
+    items,
+    byId,
+    byLevel,
+    byType,
+  };
+}
+
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [dataset, setDataset] = useState<CurriculumDataset | null>(null);
+  const [baseDataset, setBaseDataset] = useState<CurriculumDataset | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [state, setState] = useState<UserState | null>(null);
   const [now, setNow] = useState<number>(() => Date.now());
   const [activeView, setActiveView] = useState<ActiveView>('dashboard');
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authModalTab, setAuthModalTab] = useState<AuthModalTab>('login');
   const [extraStudyMode, setExtraStudyMode] = useState<ExtraStudyMode>('recent-mistakes');
+
   const [cloudUser, setCloudUser] = useState<User | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [schemaNeedsUpdate, setSchemaNeedsUpdate] = useState(false);
   const [cloudSyncing, setCloudSyncing] = useState(false);
   const [lastCloudSyncAt, setLastCloudSyncAt] = useState<number | null>(null);
   const [cloudError, setCloudError] = useState<string | null>(null);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
+  const [curriculumOverrides, setCurriculumOverrides] = useState<
+    Record<string, CurriculumOverride>
+  >({});
 
   const stateRef = useRef<UserState | null>(null);
   const skipNextCloudSaveRef = useRef(false);
@@ -133,13 +218,40 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     stateRef.current = state;
   }, [state]);
 
+  const dataset = useMemo(
+    () => (baseDataset ? applyCurriculumOverrides(baseDataset, curriculumOverrides) : null),
+    [baseDataset, curriculumOverrides]
+  );
+
+  const isAdmin = Boolean(userProfile?.role === 'admin' && !userProfile.isSuspended);
+
+  const refreshAnnouncements = useCallback(async () => {
+    if (!supabase) return;
+    try {
+      const list = await fetchAnnouncements(false);
+      setAnnouncements(list);
+    } catch {
+      // Ignore quietly if table not provisioned yet
+    }
+  }, []);
+
+  const refreshCurriculumOverrides = useCallback(async () => {
+    if (!supabase) return;
+    try {
+      const overrides = await fetchCurriculumOverrides();
+      setCurriculumOverrides(overrides);
+    } catch {
+      // Ignore quietly if table not provisioned yet
+    }
+  }, []);
+
   // Load 60-level curriculum dataset once on startup
   useEffect(() => {
     let active = true;
     loadCurriculumDataset()
       .then((ds) => {
         if (!active) return;
-        setDataset(ds);
+        setBaseDataset(ds);
         setState(loadSavedState(ds));
       })
       .catch((err) => {
@@ -150,6 +262,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       active = false;
     };
   }, []);
+
+  // Load global announcements & admin curriculum overrides on startup when Supabase is enabled
+  useEffect(() => {
+    if (!supabase) return;
+    void refreshAnnouncements();
+    void refreshCurriculumOverrides();
+  }, [refreshAnnouncements, refreshCurriculumOverrides]);
 
   // Persist sparse user state to localStorage
   useEffect(() => {
@@ -200,6 +319,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       setCloudUser(nextUser);
       if (!nextUser) {
         cloudHydratedUserRef.current = null;
+        setUserProfile(null);
+        setSchemaNeedsUpdate(false);
         setLastCloudSyncAt(null);
         setCloudError(null);
       }
@@ -211,9 +332,69 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   }, []);
 
+  // Fetch user profile (role & display name) whenever cloudUser changes
+  useEffect(() => {
+    if (!supabase || !cloudUser) return;
+    let active = true;
+    const meta = cloudUser.user_metadata ?? {};
+    const metaName =
+      (typeof meta.display_name === 'string' && meta.display_name) ||
+      (typeof meta.full_name === 'string' && meta.full_name) ||
+      (typeof meta.name === 'string' && meta.name) ||
+      undefined;
+
+    fetchOrCreateUserProfile(cloudUser.id, cloudUser.email ?? '', metaName)
+      .then(({ profile, schemaMissing }) => {
+        if (!active) return;
+        setSchemaNeedsUpdate(schemaMissing);
+        if (profile) {
+          if (profile.isSuspended) {
+            void supabase?.auth.signOut();
+            setCloudError('Akun ini sedang ditangguhkan oleh Admin.');
+            return;
+          }
+          setUserProfile(profile);
+        } else {
+          setUserProfile({
+            id: cloudUser.id,
+            email: cloudUser.email ?? '',
+            displayName: metaName || (cloudUser.email ?? 'Pelajar').split('@')[0],
+            role: 'user',
+            isSuspended: false,
+            createdAt: cloudUser.created_at ?? new Date().toISOString(),
+          });
+        }
+      })
+      .catch(() => {
+        if (!active) return;
+        setUserProfile({
+          id: cloudUser.id,
+          email: cloudUser.email ?? '',
+          displayName: metaName || (cloudUser.email ?? 'Pelajar').split('@')[0],
+          role: 'user',
+          isSuspended: false,
+          createdAt: cloudUser.created_at ?? new Date().toISOString(),
+        });
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [cloudUser]);
+
+  // Redirect away from admin view if user logs out or loses admin role
+  useEffect(() => {
+    if (activeView === 'admin' && !isAdmin && !cloudSyncing && (!cloudUser || userProfile)) {
+      setActiveView('dashboard');
+    }
+    if (activeView === 'profile' && !cloudUser) {
+      setActiveView('dashboard');
+    }
+  }, [activeView, isAdmin, cloudUser, userProfile, cloudSyncing]);
+
   // Initial cloud hydration or seed when user signs in
   useEffect(() => {
-    if (!supabase || !cloudUser || !dataset || !stateRef.current) return;
+    if (!supabase || !cloudUser || !baseDataset || !stateRef.current) return;
     if (cloudHydratedUserRef.current === cloudUser.id) return;
 
     let active = true;
@@ -225,7 +406,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       .then(async (remoteState) => {
         if (!active) return;
         if (remoteState) {
-          const reconciled = reconcileUnlocksAndLevelUp(remoteState, dataset).nextState;
+          const reconciled = reconcileUnlocksAndLevelUp(remoteState, baseDataset).nextState;
           skipNextCloudSaveRef.current = true;
           setState(reconciled);
         } else if (stateRef.current) {
@@ -248,7 +429,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return () => {
       active = false;
     };
-  }, [cloudUser, dataset, Boolean(state)]);
+  }, [cloudUser, baseDataset, Boolean(state)]);
 
   // Debounced auto-save to Supabase whenever local state updates
   useEffect(() => {
@@ -606,7 +787,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
   };
 
-  /** Jump to any level 1..60 (promotes previous levels' radicals & kanji to Guru so hierarchy stays valid) */
   const jumpToLevel = (targetLevel: number) => {
     const clamped = Math.min(MAX_LEVEL, Math.max(1, Math.floor(targetLevel)));
     const ts = Date.now();
@@ -678,6 +858,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const openItemDetail = (itemId: string) => setSelectedItemId(itemId);
   const closeItemDetail = () => setSelectedItemId(null);
 
+  const openAuthModal = (tab: AuthModalTab = 'login') => {
+    setAuthModalTab(tab);
+    setAuthModalOpen(true);
+  };
+  const closeAuthModal = () => setAuthModalOpen(false);
+
   const startExtraStudy = (mode: ExtraStudyMode) => {
     setExtraStudyMode(mode);
     setActiveView('extra-study');
@@ -689,13 +875,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return 'Email atau kata sandi tidak cocok.';
     }
     if (lower.includes('email not confirmed')) {
-      return 'Email belum dikonfirmasi. Periksa kotak masuk emailmu.';
+      return 'Email belum dikonfirmasi. Periksa kotak masuk emailmu atau matikan Confirm Email di Supabase.';
     }
     if (lower.includes('user already registered')) {
       return 'Email ini sudah terdaftar. Silakan masuk.';
     }
     if (lower.includes('password should be at least')) {
       return 'Kata sandi minimal 6 karakter.';
+    }
+    if (lower.includes('provider is not enabled')) {
+      return 'Login Google belum diaktifkan di Supabase. Aktifkan provider Google di Supabase -> Authentication -> Providers.';
     }
     return msg;
   };
@@ -707,26 +896,78 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (!supabase) {
       return { ok: false, message: 'Supabase belum dikonfigurasi pada environment.' };
     }
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: email.trim(),
       password,
+    });
+    if (error || !data.user) {
+      return { ok: false, message: mapAuthError(error?.message ?? 'Gagal masuk.') };
+    }
+
+    const { profile, schemaMissing } = await fetchOrCreateUserProfile(
+      data.user.id,
+      data.user.email ?? email.trim()
+    );
+    setSchemaNeedsUpdate(schemaMissing);
+
+    if (profile?.isSuspended) {
+      await supabase.auth.signOut();
+      return {
+        ok: false,
+        message: 'Akun ini sedang ditangguhkan oleh Admin. Hubungi pengelola untuk informasi lebih lanjut.',
+      };
+    }
+
+    if (profile) {
+      setUserProfile(profile);
+    }
+    setAuthModalOpen(false);
+    return {
+      ok: true,
+      message:
+        profile?.role === 'admin'
+          ? 'Berhasil masuk sebagai Administrator.'
+          : 'Berhasil masuk. Menarik progres cloud...',
+    };
+  };
+
+  const signInWithGoogle = async (): Promise<{ ok: boolean; message?: string }> => {
+    if (!supabase) {
+      return { ok: false, message: 'Supabase belum dikonfigurasi pada environment.' };
+    }
+    const redirectTo = `${window.location.origin}${window.location.pathname}`;
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo,
+        queryParams: {
+          prompt: 'select_account',
+        },
+      },
     });
     if (error) {
       return { ok: false, message: mapAuthError(error.message) };
     }
-    return { ok: true, message: 'Berhasil masuk. Menarik progres cloud...' };
+    return { ok: true, message: 'Mengalihkan ke halaman login Google...' };
   };
 
   const signUpWithEmail = async (
     email: string,
-    password: string
+    password: string,
+    displayName?: string
   ): Promise<{ ok: boolean; message?: string }> => {
     if (!supabase) {
       return { ok: false, message: 'Supabase belum dikonfigurasi pada environment.' };
     }
+    const cleanName = (displayName ?? '').trim() || email.trim().split('@')[0];
     const { data, error } = await supabase.auth.signUp({
       email: email.trim(),
       password,
+      options: {
+        data: {
+          display_name: cleanName,
+        },
+      },
     });
     if (error) {
       return { ok: false, message: mapAuthError(error.message) };
@@ -737,6 +978,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         message: 'Akun dibuat! Periksa emailmu untuk verifikasi sebelum masuk.',
       };
     }
+    setAuthModalOpen(false);
     return { ok: true, message: 'Akun berhasil dibuat dan langsung tersinkronisasi.' };
   };
 
@@ -745,8 +987,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     await supabase.auth.signOut();
     cloudHydratedUserRef.current = null;
     setCloudUser(null);
+    setUserProfile(null);
     setLastCloudSyncAt(null);
     setCloudError(null);
+    if (activeView === 'admin' || activeView === 'profile') {
+      setActiveView('dashboard');
+    }
   };
 
   const syncNow = async (): Promise<{ ok: boolean; message?: string }> => {
@@ -769,6 +1015,43 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   };
 
+  const updateProfileName = async (
+    newName: string
+  ): Promise<{ ok: boolean; message?: string }> => {
+    if (!cloudUser) return { ok: false, message: 'Belum masuk akun.' };
+    const trimmed = newName.trim();
+    if (trimmed.length < 2) {
+      return { ok: false, message: 'Nama tampilan minimal 2 karakter.' };
+    }
+    try {
+      await updateOwnDisplayName(cloudUser.id, trimmed);
+      setUserProfile((prev) => (prev ? { ...prev, displayName: trimmed } : prev));
+      return { ok: true, message: 'Nama profil berhasil diperbarui.' };
+    } catch (err) {
+      return {
+        ok: false,
+        message: err instanceof Error ? err.message : 'Gagal memperbarui nama profil.',
+      };
+    }
+  };
+
+  const changePassword = async (
+    newPassword: string
+  ): Promise<{ ok: boolean; message?: string }> => {
+    if (newPassword.length < 6) {
+      return { ok: false, message: 'Kata sandi baru minimal 6 karakter.' };
+    }
+    try {
+      await updateOwnPassword(newPassword);
+      return { ok: true, message: 'Kata sandi berhasil diperbarui.' };
+    } catch (err) {
+      return {
+        ok: false,
+        message: err instanceof Error ? err.message : 'Gagal mengubah kata sandi.',
+      };
+    }
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -782,6 +1065,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         closeItemDetail,
         settingsOpen,
         setSettingsOpen,
+        authModalOpen,
+        authModalTab,
+        openAuthModal,
+        closeAuthModal,
         extraStudyMode,
         startExtraStudy,
         lessonQueue,
@@ -800,13 +1087,23 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         dismissLevelUpBanner,
         isSupabaseEnabled: isSupabaseConfigured,
         cloudUser,
+        userProfile,
+        isAdmin,
+        schemaNeedsUpdate,
         cloudSyncing,
         lastCloudSyncAt,
         cloudError,
+        announcements,
+        curriculumOverrides,
+        refreshAnnouncements,
+        refreshCurriculumOverrides,
         signInWithEmail,
+        signInWithGoogle,
         signUpWithEmail,
         signOutCloud,
         syncNow,
+        updateProfileName,
+        changePassword,
       }}
     >
       {children}

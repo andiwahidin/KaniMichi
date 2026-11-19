@@ -40,11 +40,21 @@ VITE_SUPABASE_ANON_KEY="eyJhbGciOi..."
 
 ---
 
-## Deploy dari GitHub ke Vercel / Netlify
+## Deploy Gratis: GitHub Pages + Supabase Saja (Tanpa Vercel)
 
-1. Ekspor/push repositori ini ke GitHub.
-2. Hubungkan repositori GitHub ke **Vercel**, **Netlify**, atau **Cloudflare Pages**.
-3. Gunakan pengaturan build standar Vite:
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-4. Tambahkan `VITE_SUPABASE_URL` dan `VITE_SUPABASE_ANON_KEY` di menu **Environment Variables** hosting, lalu deploy ulang.
+Aplikasi ini sudah dilengkapi workflow otomatis `.github/workflows/deploy.yml` sehingga kamu cukup memakai **GitHub gratis (repo Public)** + **Supabase gratis**:
+
+1. **Pastikan repositori GitHub bersifat Public** (GitHub Pages gratis untuk repo Public).
+2. **Aktifkan GitHub Pages**:
+   - Buka repositori GitHub → **Settings** → **Pages**.
+   - Di bagian **Build and deployment → Source**, pilih **GitHub Actions**.
+3. **Masukkan kredensial Supabase di GitHub Secrets**:
+   - Buka **Settings** → **Secrets and variables** → **Actions** → klik **New repository secret**.
+   - Tambahkan 2 secret:
+     - `VITE_SUPABASE_URL` → isi dengan **Project URL** dari Supabase
+     - `VITE_SUPABASE_ANON_KEY` → isi dengan **anon public key** dari Supabase
+4. **Jalankan Deploy**:
+   - Buka tab **Actions** → pilih workflow **Deploy KaniMichi ke GitHub Pages** → klik **Run workflow** (atau cukup push perubahan baru ke branch `main`).
+   - Setelah selesai (~1 menit), alamat website kamu akan tampil langsung di tab Actions & menu Settings → Pages (`https://<username>.github.io/<nama-repo>/`).
+5. **Tambahkan URL Website ke Supabase Auth (Opsional untuk verifikasi email)**:
+   - Di Supabase → **Authentication → URL Configuration**, isi **Site URL** dengan alamat GitHub Pages kamu.

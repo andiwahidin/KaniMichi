@@ -11,6 +11,8 @@ import {
   Cloud,
   RefreshCw,
   LogOut,
+  ShieldCheck,
+  User as UserIcon,
 } from 'lucide-react';
 import { MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
@@ -20,6 +22,8 @@ export const SettingsModal: React.FC = () => {
     state,
     settingsOpen,
     setSettingsOpen,
+    setActiveView,
+    openAuthModal,
     updateSettings,
     toggleVacationMode,
     fastForwardTime,
@@ -29,11 +33,11 @@ export const SettingsModal: React.FC = () => {
     importStateJson,
     isSupabaseEnabled,
     cloudUser,
+    userProfile,
+    isAdmin,
     cloudSyncing,
     lastCloudSyncAt,
     cloudError,
-    signInWithEmail,
-    signUpWithEmail,
     signOutCloud,
     syncNow,
   } = useApp();
@@ -42,10 +46,6 @@ export const SettingsModal: React.FC = () => {
   const [targetLevel, setTargetLevel] = useState<number>(state.currentLevel);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState<'fresh' | 'starter' | null>(null);
-  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
-  const [authEmail, setAuthEmail] = useState('');
-  const [authPassword, setAuthPassword] = useState('');
-  const [authBusy, setAuthBusy] = useState(false);
 
   if (!settingsOpen) return null;
 
@@ -75,23 +75,6 @@ export const SettingsModal: React.FC = () => {
       notify('Progres berhasil dipulihkan dari JSON.');
     } else {
       notify(res.error ?? 'Gagal mengimpor data.');
-    }
-  };
-
-  const handleAuthSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!authEmail.trim() || !authPassword) return;
-    setAuthBusy(true);
-    const res =
-      authMode === 'signin'
-        ? await signInWithEmail(authEmail, authPassword)
-        : await signUpWithEmail(authEmail, authPassword);
-    setAuthBusy(false);
-    if (res.ok) {
-      setAuthPassword('');
-    }
-    if (res.message) {
-      notify(res.message);
     }
   };
 
@@ -142,42 +125,39 @@ export const SettingsModal: React.FC = () => {
                   Mode Penyimpanan Lokal Aktif
                 </p>
                 <p>
-                  Progres belajarmu aman tersimpan otomatis di browser ini. Untuk sinkronisasi lintas perangkat lewat Supabase, jalankan{' '}
-                  <code className="font-mono-num text-[11px] px-1 py-0.5 rounded bg-slate-200/70 dark:bg-slate-800">
-                    supabase/schema.sql
-                  </code>{' '}
-                  lalu atur environment{' '}
+                  Progres belajarmu tersimpan otomatis di browser ini. Atur{' '}
                   <code className="font-mono-num text-[11px] px-1 py-0.5 rounded bg-slate-200/70 dark:bg-slate-800">
                     VITE_SUPABASE_URL
                   </code>{' '}
                   dan{' '}
                   <code className="font-mono-num text-[11px] px-1 py-0.5 rounded bg-slate-200/70 dark:bg-slate-800">
-                    VITE_SUPABASE_ANON_KEY
-                  </code>
-                  .
+                    VITE_SUPABASE_PUBLISHABLE_KEY
+                  </code>{' '}
+                  untuk mengaktifkan akun User &amp; Admin.
                 </p>
               </div>
             ) : cloudUser ? (
               <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="text-xs text-slate-500 dark:text-slate-400">
-                      Masuk sebagai
-                    </div>
-                    <div className="font-medium text-slate-900 dark:text-white truncate">
-                      {cloudUser.email}
-                    </div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      {cloudSyncing
-                        ? 'Menyinkronkan progres ke Supabase...'
-                        : lastCloudSyncAt
-                        ? `Terakhir sinkron: ${new Date(lastCloudSyncAt).toLocaleTimeString('id-ID', {
-                            hour: '2-digit',
-                            minute: '2-digit',
-                            second: '2-digit',
-                          })}`
-                        : 'Sinkronisasi otomatis aktif'}
-                    </div>
+                <div className="min-w-0">
+                  <div className="text-xs text-slate-500 dark:text-slate-400">
+                    {isAdmin ? 'Administrator' : 'Pelajar (User)'}
+                  </div>
+                  <div className="font-medium text-slate-900 dark:text-white truncate">
+                    {userProfile?.displayName || cloudUser.email}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                    {cloudUser.email}
+                  </div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    {cloudSyncing
+                      ? 'Menyinkronkan progres ke Supabase...'
+                      : lastCloudSyncAt
+                      ? `Terakhir sinkron: ${new Date(lastCloudSyncAt).toLocaleTimeString('id-ID', {
+                          hour: '2-digit',
+                          minute: '2-digit',
+                          second: '2-digit',
+                        })}`
+                      : 'Sinkronisasi otomatis aktif'}
                   </div>
                 </div>
                 {cloudError && (
@@ -188,6 +168,30 @@ export const SettingsModal: React.FC = () => {
                 <div className="flex flex-wrap gap-2">
                   <button
                     type="button"
+                    onClick={() => {
+                      setSettingsOpen(false);
+                      setActiveView('profile');
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                  >
+                    <UserIcon className="w-3.5 h-3.5" />
+                    Profil Saya
+                  </button>
+                  {isAdmin && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSettingsOpen(false);
+                        setActiveView('admin');
+                      }}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#7C3AED] text-white hover:bg-[#6D28D9] cursor-pointer"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      Panel Admin
+                    </button>
+                  )}
+                  <button
+                    type="button"
                     disabled={cloudSyncing}
                     onClick={async () => {
                       const res = await syncNow();
@@ -196,13 +200,13 @@ export const SettingsModal: React.FC = () => {
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#0284C7] text-white hover:bg-[#0369A1] disabled:opacity-60 cursor-pointer"
                   >
                     <RefreshCw className={`w-3.5 h-3.5 ${cloudSyncing ? 'animate-spin' : ''}`} />
-                    Sinkronkan Sekarang
+                    Sinkronkan
                   </button>
                   <button
                     type="button"
                     onClick={async () => {
                       await signOutCloud();
-                      notify('Berhasil keluar dari akun cloud.');
+                      notify('Berhasil keluar dari akun.');
                     }}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                   >
@@ -212,74 +216,24 @@ export const SettingsModal: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <form
-                onSubmit={handleAuthSubmit}
-                className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3"
-              >
-                <div className="flex items-center gap-1 p-1 bg-slate-200/70 dark:bg-slate-800 rounded-lg w-fit">
+              <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                <p className="text-xs text-slate-600 dark:text-slate-400">
+                  Masuk dengan Google atau Email untuk menyinkronkan progres SRS ke Supabase. Menu Profil &amp; Panel Admin otomatis menyesuaikan peran akunmu.
+                </p>
+                <div className="flex flex-wrap gap-2">
                   <button
                     type="button"
-                    onClick={() => setAuthMode('signin')}
-                    className={`px-3 py-1 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
-                      authMode === 'signin'
-                        ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
-                    }`}
+                    onClick={() => {
+                      setSettingsOpen(false);
+                      openAuthModal('login');
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#0284C7] text-white hover:bg-[#0369A1] cursor-pointer"
                   >
-                    Masuk
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setAuthMode('signup')}
-                    className={`px-3 py-1 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
-                      authMode === 'signup'
-                        ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
-                        : 'text-slate-600 dark:text-slate-400'
-                    }`}
-                  >
-                    Daftar Akun
+                    <UserIcon className="w-3.5 h-3.5" />
+                    Masuk / Daftar Akun
                   </button>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <input
-                    type="email"
-                    required
-                    autoComplete="email"
-                    value={authEmail}
-                    onChange={(e) => setAuthEmail(e.target.value)}
-                    placeholder="nama@email.com"
-                    className="px-3 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
-                  />
-                  <input
-                    type="password"
-                    required
-                    minLength={6}
-                    autoComplete={authMode === 'signin' ? 'current-password' : 'new-password'}
-                    value={authPassword}
-                    onChange={(e) => setAuthPassword(e.target.value)}
-                    placeholder="Kata sandi (min. 6 karakter)"
-                    className="px-3 py-2 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
-                  />
-                </div>
-
-                <div className="flex items-center justify-between gap-3">
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
-                    Progres SRS tersimpan otomatis ke database Supabase milikmu.
-                  </span>
-                  <button
-                    type="submit"
-                    disabled={authBusy}
-                    className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-[#0284C7] text-white hover:bg-[#0369A1] disabled:opacity-60 cursor-pointer whitespace-nowrap"
-                  >
-                    {authBusy
-                      ? 'Memproses...'
-                      : authMode === 'signin'
-                      ? 'Masuk'
-                      : 'Buat Akun'}
-                  </button>
-                </div>
-              </form>
+              </div>
             )}
           </section>
 

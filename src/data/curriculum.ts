@@ -325,7 +325,10 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
 export async function loadCurriculumDataset(): Promise<CurriculumDataset> {
   if (cachedDataset) return cachedDataset;
   if (!loadingPromise) {
-    loadingPromise = fetch('/data/curriculum-60.json')
+    const base = import.meta.env.BASE_URL.endsWith('/')
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+    loadingPromise = fetch(`${base}data/curriculum-60.json`)
       .then((res) => {
         if (!res.ok) throw new Error(`Gagal memuat kurikulum (${res.status})`);
         return res.json() as Promise<RawPayload>;

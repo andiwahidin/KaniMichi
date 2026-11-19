@@ -106,6 +106,46 @@ export type ActiveView =
   | 'vocabulary'
   | 'lesson'
   | 'review'
-  | 'extra-study';
+  | 'extra-study'
+  | 'profile'
+  | 'admin';
 
 export type ExtraStudyMode = 'recent-mistakes' | 'recently-learned' | 'burned-items';
+
+export type UserRole = 'user' | 'admin';
+
+export interface UserProfile {
+  id: string;
+  email: string;
+  displayName: string;
+  role: UserRole;
+  isSuspended: boolean;
+  createdAt: string;
+}
+
+export type AnnouncementCategory = 'info' | 'update' | 'event';
+
+export interface Announcement {
+  id: string;
+  title: string;
+  body: string;
+  category: AnnouncementCategory;
+  isActive: boolean;
+  createdAt: string;
+}
+
+export interface CurriculumOverride {
+  itemId: string;
+  primaryMeaning: string | null;
+  meaningMnemonic: string | null;
+  readingMnemonic: string | null;
+  updatedAt: string;
+}
+
+export interface AdminUserRecord extends UserProfile {
+  currentLevel: number;
+  streakDays: number;
+  totalReviewsDone: number;
+  lastActiveDate: string | null;
+  srsUpdatedAt: string | null;
+}
