@@ -1,0 +1,1626 @@
+{
+  "tracks": [
+    {
+      "id": "l-n5-1",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "駅[えき]での待[ま]ち合[あ]わせ",
+      "titleEn": "Meeting at the Station",
+      "situationEn": "A man and a woman are talking on the phone about where and when to meet before going to a movie.",
+      "introJp": "男[おとこ]の人[ひと]と女[おんな]の人[ひと]が電話[でんわ]で話[はな]しています。二人[ふたり]は何時[なんじ]にどこで会[あ]いますか。",
+      "introEn": "A man and a woman are talking on the phone. What time and where will the two of them meet?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "もしもし、田中[たなか]さん？今日[きょう]の映画[えいが]、何時[なんじ]からでしたっけ。",
+          "en": "Hello, Tanaka-san? What time does today's movie start again?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "二時[にじ]からですよ。一時半[いちじはん]に駅[えき]の北口[きたぐち]で会[あ]いましょうか。",
+          "en": "It starts at 2:00. Shall we meet at the North Exit of the station at 1:30?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あっ、すみません。チケットを買[か]いたいので、もう少[すこ]し早[はや]いほうがいいと思[おも]います。一時十五分[いちじじゅうごふん]はどうですか。",
+          "en": "Oh, sorry. I want to buy tickets, so I think a little earlier would be better. How about 1:15?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わかりました。じゃあ、一時十五分[いちじじゅうごふん]に北口[きたぐち]の本屋[ほんや]の前[まえ]にしましょう。",
+          "en": "Got it. Then let's make it 1:15 in front of the bookstore at the North Exit."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あ、北口[きたぐち]の本屋[ほんや]は先月[せんげつ]閉[し]まりましたよ。南口[みなみぐち]のカフェの前[まえ]はどうですか。",
+          "en": "Oh, the bookstore at the North Exit closed last month. How about in front of the café at the South Exit?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "そうなんですか！じゃあ、そこにしましょう。",
+          "en": "Really! Okay, let's meet there then."
+        }
+      ],
+      "questionJp": "二人[ふたり]は何時[なんじ]にどこで会[あ]いますか。",
+      "questionEn": "What time and where will the two meet?",
+      "choices": [
+        "一時半[いちじはん]・北口[きたぐち]の本屋[ほんや]の前[まえ]",
+        "一時十五分[いちじじゅうごふん]・北口[きたぐち]の本屋[ほんや]の前[まえ]",
+        "一時十五分[いちじじゅうごふん]・南口[みなみぐち]のカフェの前[まえ]",
+        "二時[にじ]・南口[みなみぐち]のカフェの前[まえ]"
+      ],
+      "choicesEn": [
+        "1:30, in front of the North Exit bookstore",
+        "1:15, in front of the North Exit bookstore",
+        "1:15, in front of the South Exit café",
+        "2:00, in front of the South Exit café"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "They first change the time from 1:30 to 1:15 (一時十五分) so they can buy tickets. Then the woman points out that the North Exit bookstore closed last month and suggests the South Exit café (南口のカフェの前), which the man agrees to (\"じゃあ、そこにしましょう\").",
+      "keyPhrases": [
+        {
+          "jp": "〜でしたっけ",
+          "reading": "でしたっけ",
+          "en": "was it ... again? (asking to confirm something forgotten)"
+        },
+        {
+          "jp": "〜にしましょう",
+          "reading": "にしましょう",
+          "en": "let's decide on ..."
+        },
+        {
+          "jp": "閉[し]まりました",
+          "reading": "しまりました",
+          "en": "closed down"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-2",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "日曜日[にちようび]のピクニック",
+      "titleEn": "Sunday Picnic Preparations",
+      "situationEn": "Two university students are dividing up items to bring to a picnic on Sunday.",
+      "introJp": "女[おんな]の学生[がくせい]と男[おとこ]の学生[がくせい]が話[はな]しています。男[おとこ]の学生[がくせい]は何[なに]を持[も]って行[い]きますか。",
+      "introEn": "A female student and a male student are talking. What will the male student bring?",
+      "lines": [
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "日曜日[にちようび]のピクニック、楽[たの]しみですね。食[た]べ物[もの]はどうしましょうか。",
+          "en": "I'm looking forward to Sunday's picnic. What should we do about food?"
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "僕[ぼく]がサンドイッチを作[つく]って行[い]きましょうか。",
+          "en": "Shall I make and bring sandwiches?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "あ、サンドイッチはもう山下[やました]さんが作[つく]ると言[い]っていましたよ。私[わたし]は果物[くだもの]とお茶[ちゃ]を持[も]って行[い]きます。",
+          "en": "Oh, Yamashita-san already said they're making sandwiches. I'll bring fruit and tea."
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "そうですか。じゃあ、お菓子[かし]と紙[かみ]コップを買[か]って行[い]きますね。",
+          "en": "I see. Then I'll buy and bring snacks and paper cups."
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "紙[かみ]コップは家[いえ]にたくさんあるので、大丈夫[だいじょうぶ]ですよ。お菓子[かし]だけお願[ねが]いします。",
+          "en": "I have plenty of paper cups at home, so no need. Just the snacks, please."
+        }
+      ],
+      "questionJp": "男[おとこ]の学生[がくせい]は何[なに]を持[も]って行[い]きますか。",
+      "questionEn": "What will the male student bring?",
+      "choices": [
+        "サンドイッチ",
+        "果物[くだもの]とお茶[ちゃ]",
+        "お菓子[かし]と紙[かみ]コップ",
+        "お菓子[かし]だけ"
+      ],
+      "choicesEn": [
+        "Sandwiches",
+        "Fruit and tea",
+        "Snacks and paper cups",
+        "Only snacks"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Yamashita is bringing sandwiches, and the female student is bringing fruit, tea, and paper cups (she says she has plenty at home). She asks him to bring only snacks (\"お菓子だけお願いします\").",
+      "keyPhrases": [
+        {
+          "jp": "持[も]って行[い]く",
+          "reading": "もっていく",
+          "en": "to bring / take along"
+        },
+        {
+          "jp": "大丈夫[だいじょうぶ]ですよ",
+          "reading": "だいじょうぶですよ",
+          "en": "no need / I've got it covered (polite refusal)"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-3",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "病院[びょういん]での薬[くすり]の説明[せつめい]",
+      "titleEn": "Medicine Instructions at the Clinic",
+      "situationEn": "A doctor is explaining how to take two kinds of medicine to a patient.",
+      "introJp": "病院[びょういん]で医者[いしゃ]が女[おんな]の人[ひと]に話[はな]しています。女[おんな]の人[ひと]は白[しろ]い薬[くすり]をいつ飲[の]みますか。",
+      "introEn": "At a clinic, a doctor is speaking to a woman. When should the woman take the white medicine?",
+      "lines": [
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "風邪[かぜ]ですね。薬[くすり]を二種類[にしゅるい]出[だ]しますよ。白[しろ]い薬[くすり]と黄色[きいろ]い薬[くすり]です。",
+          "en": "It's a cold. I'll prescribe two kinds of medicine: white medicine and yellow medicine."
+        },
+        {
+          "speaker": "Patient",
+          "role": "female",
+          "jp": "はい、ありがとうございます。いつ飲[の]めばいいですか。",
+          "en": "Yes, thank you. When should I take them?"
+        },
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "白[しろ]い薬[くすり]は朝[あさ]と夜[よる]、ご飯[はん]を食[た]べた後[あと]に飲[の]んでください。昼[ひる]は飲[の]まなくていいです。",
+          "en": "Please take the white medicine in the morning and evening, after eating. You don't need to take it at noon."
+        },
+        {
+          "speaker": "Patient",
+          "role": "female",
+          "jp": "わかりました。黄色[きいろ]い薬[くすり]は？",
+          "en": "Understood. What about the yellow medicine?"
+        },
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "黄色[きいろ]い薬[くすり]は熱[ねつ]が高[たか]い時[とき]だけ飲[の]んでください。",
+          "en": "Please take the yellow medicine only when you have a high fever."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は白[しろ]い薬[くすり]をいつ飲[の]みますか。",
+      "questionEn": "When should the woman take the white medicine?",
+      "choices": [
+        "朝[あさ]と昼[ひる]と夜[よる]、ご飯[はん]の後[あと]",
+        "朝[あさ]と夜[よる]、ご飯[はん]の後[あと]",
+        "朝[あさ]と夜[よる]、ご飯[はん]の前[まえ]",
+        "熱[ねつ]が高[たか]い時[とき]だけ"
+      ],
+      "choicesEn": [
+        "Morning, noon, and evening, after meals",
+        "Morning and evening, after meals",
+        "Morning and evening, before meals",
+        "Only when she has a high fever"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The doctor specifies that the white medicine is taken morning and night after meals (\"朝と夜、ご飯を食べた後に飲んでください\") and explicitly says noon is unnecessary. Taking it only for a high fever applies to the yellow medicine.",
+      "keyPhrases": [
+        {
+          "jp": "ご飯[はん]を食[た]べた後[あと]に",
+          "reading": "ごはんをたべたあとに",
+          "en": "after eating a meal"
+        },
+        {
+          "jp": "飲[の]まなくていいです",
+          "reading": "のまなくていいです",
+          "en": "you don't need to take/drink it"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-4",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（教室[きょうしつ]で）",
+      "titleEn": "Quick Response: Borrowing a Pen",
+      "situationEn": "Listen to a classmate speaking to you in class and choose the most natural reply.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Classmate",
+          "role": "female",
+          "jp": "すみません、ペンを忘[わす]れてしまったんです。ちょっと借[か]りてもいいですか。",
+          "en": "Excuse me, I accidentally forgot my pen. May I borrow one for a moment?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "ええ、いいですよ。どうぞ。",
+        "はい、ペンを忘[わす]れました。",
+        "いいえ、借[か]りましたよ。"
+      ],
+      "choicesEn": [
+        "Yes, sure. Here you go.",
+        "Yes, I forgot my pen.",
+        "No, I borrowed it."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "When someone asks \"〜てもいいですか\" (May I...?), the natural polite way to grant permission while handing an object over is \"ええ、いいですよ。どうぞ。\" (Yes, go ahead. Here you go.)",
+      "keyPhrases": [
+        {
+          "jp": "〜てもいいですか",
+          "reading": "てもいいですか",
+          "en": "May I ...?"
+        },
+        {
+          "jp": "どうぞ",
+          "reading": "どうぞ",
+          "en": "please / here you go"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-5",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "カフェのランチセット",
+      "titleEn": "Café Lunch Set Hours",
+      "situationEn": "A customer asks a café clerk about the lunch menu and prices.",
+      "introJp": "カフェで客[きゃく]と店員[てんいん]が話[はな]しています。ランチセットはいくらですか。",
+      "introEn": "A customer and a clerk are speaking at a café. How much is the lunch set?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "すみません、ランチセットはまだありますか。",
+          "en": "Excuse me, do you still have the lunch set?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "はい、二時[にじ]までですから、まだ大丈夫[だいじょうぶ]ですよ。カレーとサラダとコーヒーのセットです。",
+          "en": "Yes, it's until 2:00, so you're still in time. It's a set with curry, salad, and coffee."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "いくらですか。",
+          "en": "How much is it?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "普段[ふだん]は千円[せんえん]ですが、今日[きょう]は水曜日[すいようび]なので、八百円[はっぴゃくえん]になります。",
+          "en": "Normally it's 1,000 yen, but since today is Wednesday, it's 800 yen."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "わあ、安[やす]いですね！じゃあ、それをお願[ねが]いします。",
+          "en": "Wow, that's cheap! Then I'll have that, please."
+        }
+      ],
+      "questionJp": "今日[きょう]、ランチセットはいくらですか。",
+      "questionEn": "How much is the lunch set today?",
+      "choices": [
+        "七百円[ななひゃくえん]",
+        "八百円[はっぴゃくえん]",
+        "九百円[きゅうひゃくえん]",
+        "千円[せんえん]"
+      ],
+      "choicesEn": [
+        "700 yen",
+        "800 yen",
+        "900 yen",
+        "1,000 yen"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Although the regular price is 1,000 yen (\"普段は千円ですが\"), the clerk explains that today is Wednesday so it is discounted to 800 yen (\"八百円になります\").",
+      "keyPhrases": [
+        {
+          "jp": "普段[ふだん]は〜ですが",
+          "reading": "ふだんは〜ですが",
+          "en": "normally it is ..., but"
+        },
+        {
+          "jp": "〜になります",
+          "reading": "になります",
+          "en": "comes to / will be (polite pricing phrase)"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-1",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "歓迎会[かんげいかい]の準備[じゅんび]",
+      "titleEn": "Preparing for the Welcome Party",
+      "situationEn": "Two office colleagues are confirming tasks for Friday's welcome party.",
+      "introJp": "会社[かいしゃ]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]はこの後[あと]、まず何[なに]をしますか。",
+      "introEn": "A man and a woman are talking at work. What will the woman do first after this?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "林[はやし]さん、今週[こんしゅう]の金曜日[きんようび]の歓迎会[かんげいかい]、レストランの予約[よやく]はもう済[す]みましたか。",
+          "en": "Hayashi-san, is the restaurant reservation for this Friday's welcome party already done?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "はい、十五人[じゅうごにん]で予約[よやく]しました。でも、さっき部長[ぶちょう]から連絡[れんらく]があって、あと二人[ふたり]増[ふ]えるかもしれないそうです。",
+          "en": "Yes, I booked it for 15 people. However, the department manager just contacted me saying two more people might join."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "そうですか。じゃあ、お店[みせ]に電話[でんわ]して、人数[にんずう]を変[か]えられるか聞[き]いておいてください。",
+          "en": "I see. Then please call the restaurant and ask in advance if we can change the headcount."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "わかりました。あ、その前[まえ]に、みんなに集[あつ]めるお金[かね]のメールを送[おく]ったほうがいいですか。",
+          "en": "Understood. Oh, before that, should I send everyone an email about collecting the fee?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "メールは人数[にんずう]がはっきりしてからでいいですよ。お店[みせ]への確認[かくにん]を急[いそ]ぎましょう。",
+          "en": "The email can wait until the headcount is confirmed. Let's hurry and check with the restaurant."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はこの後[あと]、まず何[なに]をしますか。",
+      "questionEn": "What will the woman do first after this?",
+      "choices": [
+        "レストランに電話[でんわ]する",
+        "部長[ぶちょう]に連絡[れんらく]する",
+        "みんなにメールを送[おく]る",
+        "お金[かね]を集[あつ]める"
+      ],
+      "choicesEn": [
+        "Call the restaurant",
+        "Contact the department manager",
+        "Send an email to everyone",
+        "Collect the money"
+      ],
+      "answerIndex": 0,
+      "explanationEn": "The woman asks if she should email everyone first, but the man replies that the email can wait until the headcount is settled and tells her to prioritize confirming with the restaurant (\"お店への確認を急ぎましょう\").",
+      "keyPhrases": [
+        {
+          "jp": "〜ておいてください",
+          "reading": "ておいてください",
+          "en": "please do ... in advance"
+        },
+        {
+          "jp": "はっきりしてからでいい",
+          "reading": "はっきりしてからでいい",
+          "en": "can wait until it is clear/confirmed"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-2",
+      "jlpt": 4,
+      "taskType": "point",
+      "titleJp": "新[あたら]しいアパート選[えら]び",
+      "titleEn": "Choosing a New Apartment",
+      "situationEn": "A man tells his friend why he decided not to rent an apartment he recently visited.",
+      "introJp": "男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]はどうしてそのアパートを借[か]りませんでしたか。",
+      "introEn": "A man and a woman are talking. Why didn't the man rent that apartment?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "昨日[きのう]見[み]に行[い]ったアパート、どうだった？駅[えき]から五分[ごふん]で便利[べんり]だって言[い]っていたよね。",
+          "en": "How was the apartment you went to see yesterday? You said it was convenient, five minutes from the station."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "うん、部屋[へや]も広[ひろ]くてきれいだったし、家賃[やちん]も思[おも]ったより安[やす]かったんだ。",
+          "en": "Yeah, the room was spacious and clean, and the rent was cheaper than I expected."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "へえ、じゃあ、そこに決[き]めたの？",
+          "en": "Oh, so did you decide on it?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "いや、やめたんだ。窓[まど]のすぐ前[まえ]に大[おお]きな道路[どうろ]があって、昼間[ひるま]でも車[くるま]の音[おと]がすごくうるさかったんだよ。",
+          "en": "No, I passed on it. There's a big road right outside the window, and even during the daytime the traffic noise was super loud."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "それは困[こま]るね。夜[よる]眠[ねむ]れなくなっちゃうもんね。",
+          "en": "That's a problem. You wouldn't be able to sleep at night."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]はどうしてそのアパートを借[か]りませんでしたか。",
+      "questionEn": "Why didn't the man rent that apartment?",
+      "choices": [
+        "駅[えき]から遠[とお]いから",
+        "家賃[やちん]が高[たか]すぎるから",
+        "部屋[へや]が狭[せま]いから",
+        "車[くるま]の音[おと]がうるさいから"
+      ],
+      "choicesEn": [
+        "Because it is far from the station",
+        "Because the rent is too expensive",
+        "Because the room is small",
+        "Because the traffic noise is loud"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Location, room size, and rent were all great. He turned it down solely because a large road right outside made traffic noise very loud (\"車の音がすごくうるさかった\").",
+      "keyPhrases": [
+        {
+          "jp": "思ったより安かった",
+          "reading": "おもったよりやすかった",
+          "en": "cheaper than I thought"
+        },
+        {
+          "jp": "やめたんだ",
+          "reading": "やめたんだ",
+          "en": "I decided against it / gave it up"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-3",
+      "jlpt": 4,
+      "taskType": "gaiyou",
+      "titleJp": "料理教室[りょうりきょうしつ]のお知らせ",
+      "titleEn": "Community Cooking Class Announcement",
+      "situationEn": "A community center staff member makes an announcement about a weekend cooking class.",
+      "introJp": "市民[しみん]センターで係[かかり]の人[ひと]が話[はな]しています。この料理教室[りょうりきょうしつ]について、正[ただ]しいのはどれですか。",
+      "introEn": "A staff member is speaking at a community center. Which statement about this cooking class is correct?",
+      "lines": [
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "みなさん、こんにちは。来月[らいげつ]の十日[とおか]に、簡単[かんたん]な日本料理[にほんりょうり]を作[つく]る教室[きょうしつ]を開[ひら]きます。",
+          "en": "Hello everyone. On the 10th of next month, we will hold a class on making simple Japanese dishes."
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "料理[りょうり]をしたことがない人[ひと]でも大丈夫[だいじょうぶ]です。材料[ざいりょう]はこちらで用意[ようい]しますので、エプロンだけ持[も]って来[き]てください。",
+          "en": "Even people who have never cooked before are welcome. We will prepare the ingredients here, so please just bring an apron."
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "参加費[さんかひ]は無料[むりょう]ですが、二十人[にじゅうにん]までですので、参加[さんか]したい方[かた]は今週[こんしゅう]の土曜日[どようび]までに受付[うけつけ]で申[もう]し込[こ]んでください。",
+          "en": "Participation is free, but it's limited to 20 people, so those who want to join should sign up at the reception desk by this Saturday."
+        }
+      ],
+      "questionJp": "この料理教室[りょうりきょうしつ]について、正[ただ]しいのはどれですか。",
+      "questionEn": "Which statement is true about this cooking class?",
+      "choices": [
+        "自分[じぶん]で材料[ざいりょう]を買[か]って持[も]って行[い]く",
+        "料理[りょうり]の経験[けいけん]がないと参加[さんか]できない",
+        "お金[かね]はかからないが、申[もう]し込[こ]みが必要[ひつよう]だ",
+        "当日[とうじつ]、直接[ちょくせつ]会場[かいじょう]へ行[い]けば参加[さんか]できる"
+      ],
+      "choicesEn": [
+        "You buy and bring your own ingredients",
+        "You cannot participate without cooking experience",
+        "It costs no money, but advance registration is required",
+        "You can join just by showing up on the day"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The staff member states participation is free (\"参加費は無料ですが\") and limited to 20 people, requiring sign-up at reception by Saturday. Ingredients are provided and beginners are welcome.",
+      "keyPhrases": [
+        {
+          "jp": "参加費[さんかひ]は無料[むりょう]",
+          "reading": "さんかひはむりょう",
+          "en": "participation fee is free"
+        },
+        {
+          "jp": "申[もう]し込[こ]む",
+          "reading": "もうしこむ",
+          "en": "to apply / sign up"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-4",
+      "jlpt": 4,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（遅刻[ちこく]の連絡[れんらく]）",
+      "titleEn": "Quick Response: Offering Help with Heavy Bags",
+      "situationEn": "Your coworker is carrying a heavy stack of boxes in the hallway and speaks to you.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Coworker",
+          "role": "male",
+          "jp": "うわ、重[おも]そう！半分[はんぶん]持[も]ちましょうか。",
+          "en": "Whoa, that looks heavy! Shall I carry half of it?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "すみません、助[たす]かります。",
+        "はい、持[も]ってくださいました。",
+        "いいえ、重[おも]くありませんでした。"
+      ],
+      "choicesEn": [
+        "Sorry to trouble you—that's a huge help!",
+        "Yes, you carried it for me.",
+        "No, it wasn't heavy (past tense)."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"すみません、助かります\" (Excuse me / Thank you, that really helps) is the textbook natural Japanese response when gratefully accepting someone's offer of help (\"〜ましょうか\"). Options 2 and 3 use unnatural past tense.",
+      "keyPhrases": [
+        {
+          "jp": "〜ましょうか",
+          "reading": "ましょうか",
+          "en": "Shall I ... for you?"
+        },
+        {
+          "jp": "助[たす]かります",
+          "reading": "たすかります",
+          "en": "That's a big help / You're saving me"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-5",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "会議[かいぎ]の資料[しりょう]コピー",
+      "titleEn": "Copying Meeting Handouts",
+      "situationEn": "A manager asks a junior employee to prepare handouts for tomorrow morning's meeting.",
+      "introJp": "会社[かいしゃ]で課長[かちょう]と女[おんな]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]は資料[しりょう]を何部[なんぶ]コピーしますか。",
+      "introEn": "A section manager and a female employee are talking. How many copies of the handout will the woman make?",
+      "lines": [
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "佐藤[さとう]さん、明日[あした]の会議[かいぎ]の資料[しりょう]、コピーをお願いできますか。",
+          "en": "Sato-san, could I ask you to copy the handouts for tomorrow's meeting?"
+        },
+        {
+          "speaker": "Employee",
+          "role": "female",
+          "jp": "はい、何部[なんぶ]必要[ひつよう]ですか。出席者[しゅっせきしゃ]は十二人[じゅうににん]ですよね。",
+          "en": "Sure, how many copies do we need? There are 12 attendees, right?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "ええと、東京[とうきょう]支社[ししゃ]の二人[ふたり]はオンラインで参加[さんか]するので、紙[かみ]の資料[しりょう]はいりませんよ。",
+          "en": "Um, two people from the Tokyo branch are joining online, so they don't need paper handouts."
+        },
+        {
+          "speaker": "Employee",
+          "role": "female",
+          "jp": "じゃあ、十部[じゅうぶ]ですね。",
+          "en": "Then 10 copies, right?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "念[ねん]のため、予備[よび]を二部[にぶ]多[おお]めに作[つく]っておいてください。",
+          "en": "Just in case, please make two extra spare copies."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は資料[しりょう]を何部[なんぶ]コピーしますか。",
+      "questionEn": "How many copies of the handout will the woman make?",
+      "choices": [
+        "十部[じゅうぶ]",
+        "十二部[じゅうにぶ]",
+        "十四部[じゅうよんぶ]",
+        "十五部[じゅうごぶ]"
+      ],
+      "choicesEn": [
+        "10 copies",
+        "12 copies",
+        "14 copies",
+        "15 copies"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Watch the classic JLPT arithmetic trap: 12 attendees minus 2 online attendees = 10 copies, PLUS 2 spare copies (\"予備を二部多めに\") = 12 copies total (十二部).",
+      "keyPhrases": [
+        {
+          "jp": "念[ねん]のため",
+          "reading": "ねんのため",
+          "en": "just in case"
+        },
+        {
+          "jp": "予備[よび]",
+          "reading": "よび",
+          "en": "spare / extra"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-1",
+      "jlpt": 3,
+      "taskType": "kadai",
+      "titleJp": "ネット注文[ちゅうもん]の交換[こうかん]手続[てつづ]き",
+      "titleEn": "Exchanging a Damaged Online Order",
+      "situationEn": "A customer calls customer support because a coffee maker arrived with a cracked glass pot.",
+      "introJp": "客[きゃく]が店[みせ]の人[ひと]に電話[でんわ]しています。客[きゃく]はこれから何[なに]をしなければなりませんか。",
+      "introEn": "A customer is calling a store representative. What must the customer do next?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "すみません、先日[せんじつ]ネットで注文[ちゅうもん]したコーヒーメーカーが届[とど]いたんですが、ガラスの部分[ぶぶん]にひびが入[はい]っていたんです。",
+          "en": "Excuse me, the coffee maker I ordered online the other day arrived, and there was a crack in the glass part."
+        },
+        {
+          "speaker": "Support",
+          "role": "male",
+          "jp": "大変[たいへん]申[もう]し訳[わけ]ございません。すぐに新[あたら]しい商品[しょうひん]をお送[おく]りいたします。",
+          "en": "We are terribly sorry. We will send a new item right away."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "壊[こわ]れたものは郵便局[ゆうびんきょく]から送[おく]り返[かえ]したほうがいいですか。",
+          "en": "Should I send the broken one back from the post office?"
+        },
+        {
+          "speaker": "Support",
+          "role": "male",
+          "jp": "いいえ、明日[あした]配達員[はいたついん]が新[あたら]しい商品[しょうひん]をお届[とど]けしますので、その時[とき]に壊[こわ]れた商品[しょうひん]を渡[わた]してください。",
+          "en": "No, tomorrow the delivery driver will bring the new product, so please hand the damaged item to them at that time."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "箱[はこ]に入[い]れておけばいいですか。",
+          "en": "Should I just put it in the box?"
+        },
+        {
+          "speaker": "Support",
+          "role": "male",
+          "jp": "はい。それから、中[なか]に入[はい]っていた保証書[ほしょうしょ]も一緒[いっしょ]に入[い]れるのを忘[わす]れないでください。",
+          "en": "Yes. Also, please don't forget to put the warranty card that was inside along with it."
+        }
+      ],
+      "questionJp": "客[きゃく]はこれから何[なに]をしなければなりませんか。",
+      "questionEn": "What must the customer do next?",
+      "choices": [
+        "郵便局[ゆうびんきょく]から壊[こわ]れた商品[しょうひん]を送[おく]る",
+        "新[あたら]しい商品[しょうひん]を店[みせ]へ取[と]りに行[い]く",
+        "壊[こわ]れた商品[しょうひん]と保証書[ほしょうしょ]を箱[はこ]に入[い]れて渡[わた]す",
+        "壊[こわ]れた部分[ぶぶん]の写真[しゃしん]をメールで送[おく]る"
+      ],
+      "choicesEn": [
+        "Mail the broken item back from the post office",
+        "Go to the store to pick up a new item",
+        "Pack the broken item and warranty card in the box and hand it to the driver",
+        "Email a photo of the damaged part"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The support agent tells the customer NOT to use the post office; instead, put the broken item together with the warranty card (\"保証書も一緒に入れる\") in the box and hand it to the delivery driver tomorrow.",
+      "keyPhrases": [
+        {
+          "jp": "ひびが入[はい]る",
+          "reading": "ひびがはいる",
+          "en": "to get a crack"
+        },
+        {
+          "jp": "保証書[ほしょうしょ]",
+          "reading": "ほしょうしょ",
+          "en": "warranty certificate"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-2",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "奨学金[しょうがくきん]の応募[おうぼ]条件[じょうけん]",
+      "titleEn": "Scholarship Eligibility Requirements",
+      "situationEn": "A university student asks an advisor about applying for a study-abroad scholarship.",
+      "introJp": "大学[だいがく]で留学生[りゅうがくせい]と職員[しょくいん]が話[はな]しています。学生[がくせい]が今[いま]のままだと応募[おうぼ]できない理由[りゆう]は何[なん]ですか。",
+      "introEn": "An international student and a university staff member are talking. Why is the student unable to apply as things stand right now?",
+      "lines": [
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "すみません、この奨学金[しょうがくきん]に応募[おうぼ]したいんですが、条件[じょうけん]を教[おし]えていただけますか。",
+          "en": "Excuse me, I'd like to apply for this scholarship. Could you tell me the requirements?"
+        },
+        {
+          "speaker": "Advisor",
+          "role": "female",
+          "jp": "はい。まず、成績[せいせき]が一定[いってい]以上[いじょう]であることと、出席率[しゅっせきりつ]が九十[きゅうじゅう]パーセント以上[いじょう]であることです。",
+          "en": "Sure. First, your grades must be above a certain level, and your attendance rate must be at least 90%."
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "成績[せいせき]も出席率[しゅっせきりつ]も大丈夫[だいじょうぶ]です。ほかに何[なに]かありますか。",
+          "en": "Both my grades and attendance are fine. Is there anything else?"
+        },
+        {
+          "speaker": "Advisor",
+          "role": "female",
+          "jp": "ほかの奨学金[しょうがくきん]をもらっていないことが条件[じょうけん]です。今[いま]、別[べつ]の奨学金[しょうがくきん]は受[う]けていませんか。",
+          "en": "You must not be receiving any other scholarship. You aren't receiving another one right now, are you?"
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "あ……実[じつ]は、先月[せんげつ]から別[べつ]の団体[だんたい]のをもらっているんです。",
+          "en": "Oh... actually, since last month I've been receiving one from another organization."
+        },
+        {
+          "speaker": "Advisor",
+          "role": "female",
+          "jp": "それだと、残念[ざんねん]ながら今回は応募[おうぼ]できませんね。",
+          "en": "In that case, unfortunately you cannot apply this time."
+        }
+      ],
+      "questionJp": "学生[がくせい]が応募[おうぼ]できない理由[りゆう]は何[なん]ですか。",
+      "questionEn": "Why can't the student apply for the scholarship?",
+      "choices": [
+        "成績[せいせき]が足[た]りないから",
+        "出席率[しゅっせきりつ]が九十[きゅうじゅう]パーセント未満[みまん]だから",
+        "すでに別[べつ]の奨学金[しょうがくきん]を受[う]けているから",
+        "応募[おうぼ]の締[し]め切[き]りが過[す]ぎたから"
+      ],
+      "choicesEn": [
+        "Because his grades are insufficient",
+        "Because his attendance rate is below 90%",
+        "Because he is already receiving another scholarship",
+        "Because the application deadline has passed"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "His grades and attendance both meet the criteria, but the scholarship prohibits holding another scholarship simultaneously, and he has been receiving one from another organization since last month.",
+      "keyPhrases": [
+        {
+          "jp": "一定[いってい]以上[いじょう]",
+          "reading": "いっていじょう",
+          "en": "at or above a set standard"
+        },
+        {
+          "jp": "出席率[しゅっせきりつ]",
+          "reading": "しゅっせきりつ",
+          "en": "attendance rate"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-3",
+      "jlpt": 3,
+      "taskType": "gaiyou",
+      "titleJp": "都会[とかい]の屋上[おくじょう]菜園[さいえん]",
+      "titleEn": "Urban Rooftop Gardening on the Radio",
+      "situationEn": "A radio commentator talks about the growing popularity of rooftop vegetable gardens on city buildings.",
+      "introJp": "ラジオで女[おんな]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]が一番[いちばん]言[い]いたいことは何[なん]ですか。",
+      "introEn": "A woman is speaking on the radio. What is the main point she wants to make?",
+      "lines": [
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "最近[さいきん]、都会[とかい]のビルの屋上[おくじょう]で野菜[やさい]を育[そだ]てる「屋上[おくじょう]菜園[さいえん]」が増[ふ]えています。",
+          "en": "Recently, \"rooftop gardens\" where people grow vegetables on the roofs of city buildings have been increasing."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "新鮮[しんせん]な野菜[やさい]が食[た]べられるのも魅力[みりょく]ですが、多[おお]くの会社[かいしゃ]が注目[ちゅうもく]しているのは別[べつ]の点[てん]です。",
+          "en": "Being able to eat fresh vegetables is appealing, too, but what many companies are paying attention to is a different point."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "違[ちが]う部署[ぶしょ]の社員[しゃいん]同士[どうし]が一緒[いっしょ]に水[みず]をやったり収穫[しゅうかく]したりすることで、普段[ふだん]あまり話[はな]さない人[ひと]とも自然[しぜん]に会話[かいわ]が生[う]まれるのです。",
+          "en": "By having employees from different departments water plants and harvest together, conversation naturally arises even with people they rarely speak to."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "つまり、仕事[しごと]の場[ば]に新[あたら]しいつながりを作[つく]るきっかけになっていると言[い]えるでしょう。",
+          "en": "In other words, it can be said to serve as a catalyst for creating new connections in the workplace."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]が一番[いちばん]言[い]いたいことは何[なん]ですか。",
+      "questionEn": "What is the main point the woman wants to convey?",
+      "choices": [
+        "屋上[おくじょう]で野菜[やさい]を育[そだ]てると食費[しょくひ]が安[やす]くなる",
+        "屋上[おくじょう]菜園[さいえん]は社員[しゃいん]同士[どうし]の交流[こうりゅう]を広[ひろ]げる役目[やくめ]がある",
+        "都会[とかい]のビルには野菜[やさい]を育[そだ]てる場所[ばしょ]が足[た]りない",
+        "会社[かいしゃ]で農業[のうぎょう]を仕事[しごと]にする人[ひと]が増[ふ]えている"
+      ],
+      "choicesEn": [
+        "Growing vegetables on rooftops reduces food costs",
+        "Rooftop gardens serve to broaden interaction among employees",
+        "City buildings lack space to grow vegetables",
+        "More people are making farming their corporate job"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Watch the classic JLPT signal words \"別の点です\" (it's a different point) and \"つまり\" (in other words). She concludes that rooftop gardens create new connections/communication among employees across departments.",
+      "keyPhrases": [
+        {
+          "jp": "注目[ちゅうもく]しているのは別[べつ]の点[てん]です",
+          "reading": "ちゅうもくしているのはべつのてんです",
+          "en": "what they are focusing on is a different point"
+        },
+        {
+          "jp": "つまり",
+          "reading": "つまり",
+          "en": "in other words / that is to say (key summary cue)"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-4",
+      "jlpt": 3,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（上司[じょうし]からの褒[ほ]め言葉[ことば]）",
+      "titleEn": "Quick Response: Receiving Praise at Work",
+      "situationEn": "Your senior colleague compliments the presentation you just gave.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Senior Colleague",
+          "role": "male",
+          "jp": "さっきの発表[はっぴょう]、すごくわかりやすかったよ。準備[じゅんび]、大変[たいへん]だったでしょう。",
+          "en": "Your presentation just now was really easy to follow. Preparing for it must have been tough, right?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "ありがとうございます。おかげさまでうまくいきました。",
+        "いいえ、全然[ぜんぜん]わかりやすくなかったです。",
+        "はい、とても上手[じょうず]にできましたよ。"
+      ],
+      "choicesEn": [
+        "Thank you very much. Thanks to your support, it went well.",
+        "No, it wasn't easy to understand at all.",
+        "Yes, I did it very skillfully."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "In Japanese workplace etiquette, accepting praise gracefully while giving credit (\"ありがとうございます。おかげさまで〜\") is ideal. Option 2 sounds overly self-deprecating/awkward, and Option 3 sounds boastful toward a senior.",
+      "keyPhrases": [
+        {
+          "jp": "おかげさまで",
+          "reading": "おかげさまで",
+          "en": "thanks to you / thanks to everyone's support"
+        },
+        {
+          "jp": "うまくいきました",
+          "reading": "うまくいきました",
+          "en": "it went well"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-5",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "台風[たいふう]による出張[しゅっちょう]の変更[へんこう]",
+      "titleEn": "Business Trip Change Due to a Typhoon",
+      "situationEn": "Two colleagues are adjusting their Osaka business trip schedule because a typhoon is approaching.",
+      "introJp": "会社[かいしゃ]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。二人[ふたり]はいつ大阪[おおさか]へ出発[しゅっぱつ]することにしましたか。",
+      "introEn": "A man and a woman are talking at work. When did they decide to leave for Osaka?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "木曜日[もくようび]の大阪[おおさか]出張[しゅっちょう]なんですが、ちょうど台風[たいふう]が近[ちか]づいているみたいですね。",
+          "en": "Regarding Thursday's Osaka business trip, it looks like a typhoon is approaching right then."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "ええ、天気予報[てんきよほう]によると、木曜日[もくようび]の朝[あさ]は新幹線[しんかんせん]が止[と]まるおそれがあるそうです。",
+          "en": "Yeah, according to the weather forecast, there's a risk that the Shinkansen will stop Thursday morning."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "取引先[とりひきさき]との打[う]ち合[あ]わせは木曜日[もくようび]の午後[ごご]二時[にじ]からですよね。延期[えんき]してもらいますか。",
+          "en": "Our meeting with the client is from 2:00 PM on Thursday, right? Should we ask them to postpone it?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "先方[せんぽう]の予定[よてい]が詰[つ]まっていて、来週[らいしゅう]には変[か]えられないんです。なので、水曜日[すいようび]の夕方[ゆうがた]に前乗[まえの]りして、ホテルに泊[と]まることにしましょう。",
+          "en": "The client's schedule is packed, so we can't move it to next week. Therefore, let's travel ahead on Wednesday evening and stay at a hotel."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "なるほど、そのほうが安心[あんしん]ですね。すぐホテルを探[さが]します。",
+          "en": "I see, that's much safer. I'll look for a hotel right away."
+        }
+      ],
+      "questionJp": "二人[ふたり]はいつ大阪[おおさか]へ出発[しゅっぱつ]することにしましたか。",
+      "questionEn": "When did the two decide to leave for Osaka?",
+      "choices": [
+        "水曜日[すいようび]の朝[あさ]",
+        "水曜日[すいようび]の夕方[ゆうがた]",
+        "木曜日[もくようび]の朝[あさ]",
+        "来週[らいしゅう]の木曜日[もくようび]"
+      ],
+      "choicesEn": [
+        "Wednesday morning",
+        "Wednesday evening",
+        "Thursday morning",
+        "Next Thursday"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Because Thursday morning trains may halt and the client cannot reschedule to next week, the man decides they will go a day early on Wednesday evening (\"水曜日の夕方に前乗りして\") and stay overnight.",
+      "keyPhrases": [
+        {
+          "jp": "〜おそれがある",
+          "reading": "おそれがある",
+          "en": "there is a risk/fear that ..."
+        },
+        {
+          "jp": "前乗[まえの]りする",
+          "reading": "まえのりする",
+          "en": "to arrive a day early (for a trip/event)"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-1",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "新商品[しんしょうひん]デモの前[まえ]の修正[しゅうせい]",
+      "titleEn": "Revisions Before a Client Prototype Demo",
+      "situationEn": "A product lead and a designer review what must be fixed before presenting a prototype next Monday.",
+      "introJp": "会社[かいしゃ]で女[おんな]の人[ひと]と男[おとこ]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]は月曜日[げつようび]までに何[なに]をしなければなりませんか。",
+      "introEn": "A woman and a man are talking at work. What must the man do by Monday?",
+      "lines": [
+        {
+          "speaker": "Product Lead",
+          "role": "female",
+          "jp": "来週[らいしゅう]月曜[げつよう]のデモに向[む]けて、試作品[しさくひん]のチェック結果[けっか]を共有[きょうゆう]しますね。デザインは好評[こうひょう]だったんですが、画面[がめん]の切[き]り替[か]えが少[すこ]し遅[おそ]いという指摘[してき]がありました。",
+          "en": "Ahead of next Monday's demo, let me share the prototype review results. The design was well-received, but it was pointed out that screen transitions are a bit slow."
+        },
+        {
+          "speaker": "Designer",
+          "role": "male",
+          "jp": "承知[しょうち]しました。アニメーションを軽[かる]くすれば改善[かいぜん]できます。それと、色[いろ]のバリエーションも三[みっ]つ追加[ついか]しておきましょうか。",
+          "en": "Understood. We can fix that by making the animations lighter. Also, shall I add three more color variations?"
+        },
+        {
+          "speaker": "Product Lead",
+          "role": "female",
+          "jp": "色[いろ]の追加[ついか]は今月[こんげつ]末[まつ]の正式[せいしき]版[ばん]で構[かま]いません。ただ、デモの最初[さいしょ]に見[み]せる操作[そうさ]手順[てじゅん]のスライドだけ、最新[さいしん]の画面[がめん]に差[さ]し替[か]えておいてもらえますか。",
+          "en": "Adding colors can wait for the official release at the end of the month. However, could you replace just the operation-steps slides shown at the start of the demo with the latest screens?"
+        },
+        {
+          "speaker": "Designer",
+          "role": "male",
+          "jp": "わかりました。では、処理[しょり]速度[そくど]の改善[かいぜん]とスライドの更新[こうしん]を優先[ゆうせん]します。",
+          "en": "Got it. Then I'll prioritize improving the speed and updating the slides."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は月曜日[げつようび]までに何[なに]をしなければなりませんか。",
+      "questionEn": "What must the man complete by Monday?",
+      "choices": [
+        "デザイン全体[ぜんたい]の作[つく]り直[なお]しと色[いろ]の追加[ついか]",
+        "画面[がめん]切[き]り替[か]えの改善[かいぜん]とスライドの差[さ]し替[か]え",
+        "色[いろ]の追加[ついか]とスライドの差[さ]し替[か]え",
+        "操作[そうさ]手順[てじゅん]のスライドの差[さ]し替[か]えだけ"
+      ],
+      "choicesEn": [
+        "Redesigning the whole layout and adding colors",
+        "Improving screen transitions and replacing the slides",
+        "Adding colors and replacing the slides",
+        "Only replacing the operation-steps slides"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Color variations are deferred to the end of the month (\"今月末の正式版で構いません\"). By Monday, he must do two things: speed up screen transitions (lightening animations) AND update the slides with the latest screenshots.",
+      "keyPhrases": [
+        {
+          "jp": "〜で構[かま]いません",
+          "reading": "でかまいません",
+          "en": "... is fine / doesn't need to be done sooner"
+        },
+        {
+          "jp": "差[さ]し替[か]える",
+          "reading": "さしかえる",
+          "en": "to swap out / replace"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-2",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "テレワーク新人[しんじん]研修[けんしゅう]の課題[かだい]",
+      "titleEn": "Challenges in Remote Onboarding",
+      "situationEn": "An HR consultant speaks at a seminar about why new hires struggle during remote onboarding.",
+      "introJp": "セミナーで講師[こうし]が話[はな]しています。講師[こうし]は、テレワークで新入[しんにゅう]社員[しゃいん]が困[こま]る一番[いちばん]の原因[げんいん]は何[なん]だと言[い]っていますか。",
+      "introEn": "A speaker is talking at a seminar. What does the speaker say is the primary reason new employees struggle in remote work?",
+      "lines": [
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "テレワークの導入[どうにゅう]が進[すす]み、新入[しんにゅう]社員[しゃいん]の研修[けんしゅう]もオンラインで行[おこな]う企業[きぎょう]が増[ふ]えました。",
+          "en": "As telework adoption advances, more companies are conducting new-hire training online as well."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "よく「パソコンの操作[そうさ]や通信[つうしん]環境[かんきょう]が問題[もんだい]だ」と考[かんが]えられがちですが、実際[じっさい]の調査[ちょうさ]では違[ちが]う結果[けっか]が出[で]ています。",
+          "en": "People often tend to think PC operation or internet environments are the issue, but actual surveys show a different result."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "オフィスにいれば「ちょっと聞[き]いてもいいですか」と気軽[きがる]に声[こえ]をかけられますが、オンラインだと相手[あいて]の忙[いそが]しさがわからず、小[ちい]さな疑問[ぎもん]を聞[き]くのをためらってしまうのです。",
+          "en": "In an office, you can casually ask \"Do you have a moment?\", whereas online you can't see how busy the other person is, so new hires hesitate to ask small questions."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "その結果[けっか]、不安[ふあん]が積[つ]もり、仕事[しごと]の進[すす]み具合[ぐあい]にも影響[えいきょう]が出[で]てしまいます。",
+          "en": "As a result, anxiety builds up and even affects work progress."
+        }
+      ],
+      "questionJp": "講師[こうし]は、テレワークで新入[しんにゅう]社員[しゃいん]が困[こま]る一番[いちばん]の原因[げんいん]は何[なん]だと言[い]っていますか。",
+      "questionEn": "What does the speaker say is the biggest cause of difficulty for remote new hires?",
+      "choices": [
+        "自宅[じたく]の通信[つうしん]環境[かんきょう]が安定[あんてい]していないこと",
+        "オンライン研修[けんしゅう]の教材[きょうざい]がわかりにくいこと",
+        "相手[あいて]の様子[ようす]が見[み]えず、気軽[きがる]に質問[しつもん]しにくいこと",
+        "出社[しゅっしゃ]する日[ひ]と在宅[ざいたく]の日[ひ]の切[き]り替[か]えが難[むずか]しいこと"
+      ],
+      "choicesEn": [
+        "Unstable home internet connections",
+        "Unclear online training materials",
+        "Not being able to see others' availability, making casual questions hard to ask",
+        "Difficulty switching between office days and home days"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The speaker dismisses PC/network issues (\"考えられがちですが、実際の調査では違う結果\") and pinpoints the core cause: being unable to gauge whether coworkers are busy, causing new hires to hesitate before asking small questions.",
+      "keyPhrases": [
+        {
+          "jp": "〜がちだ",
+          "reading": "がちだ",
+          "en": "tend to / prone to"
+        },
+        {
+          "jp": "ためらう",
+          "reading": "ためらう",
+          "en": "to hesitate"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-3",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "伝統[でんとう]工芸[こうげい]の新[あたら]しい挑戦[ちょうせん]",
+      "titleEn": "Radio Interview: Modernizing Traditional Lacquerware",
+      "situationEn": "A radio host interviews a lacquerware artisan about how he is attracting younger customers.",
+      "introJp": "ラジオで司会者[しかいしゃ]と漆器[しっき]の職人[しょくにん]が話[はな]しています。職人[しょくにん]は伝統[でんとう]を守[まも]るために何[なに]が大切[たいせつ]だと言[い]っていますか。",
+      "introEn": "A radio host and a lacquerware artisan are speaking. What does the artisan say is important for preserving tradition?",
+      "lines": [
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "森田[もりた]さんの工房[こうぼう]では、最近[さいきん]食洗機[しょくせんき]で洗[あら]える漆器[しっき]を作[つく]って話題[わだい]ですね。昔[むかし]ながらのやり方[かた]を変[か]えることに迷[まよ]いはありませんでしたか。",
+          "en": "Morita-san, your workshop has been in the news recently for making dishwasher-safe lacquerware. Did you hesitate about changing traditional methods?"
+        },
+        {
+          "speaker": "Artisan",
+          "role": "male",
+          "jp": "もちろん、最初[さいしょ]は「伝統[でんとう]を壊[こわ]すのではないか」という意見[いけん]もありました。でも、どんなに立派[りっぱ]な器[うつわ]でも、棚[たな]の奥[おく]にしまわれたままでは意味[いみ]がないと思[おも]うんです。",
+          "en": "Of course, at first there were opinions asking if we were destroying tradition. Yet no matter how splendid a vessel is, I think it's meaningless if it stays locked away at the back of a cupboard."
+        },
+        {
+          "speaker": "Artisan",
+          "role": "male",
+          "jp": "現代[げんだい]の暮[く]らしに合[あ]わせて毎日[まいにち]使[つか]ってもらうことこそが、結果的[けっかてき]に技[わざ]を次[つぎ]の世代[せだい]へつなぐ道[みち]だと信[しん]じています。",
+          "en": "I believe that adapting to modern life so people actually use it every day is ultimately the way to pass the craft on to the next generation."
+        }
+      ],
+      "questionJp": "職人[しょくにん]は伝統[でんとう]を守[まも]るために何[なに]が大切[たいせつ]だと言[い]っていますか。",
+      "questionEn": "What does the artisan say is essential to preserve tradition?",
+      "choices": [
+        "昔[むかし]の製法[せいほう]を一[ひと]つも変[か]えずに続[つづ]けること",
+        "高級品[こうきゅうひん]として美術館[びじゅつかん]に展示[てんじ]すること",
+        "現代[げんだい]の生活[せいかつ]に合[あ]わせ、日常的[にちじょうてき]に使[つか]ってもらうこと",
+        "若[わか]い職人[しょくにん]の給料[きゅうりょう]を今[いま]より高[たか]くすること"
+      ],
+      "choicesEn": [
+        "Continuing ancient methods without changing a single thing",
+        "Exhibiting pieces in museums as luxury art",
+        "Adapting to modern lifestyles so people use them daily",
+        "Raising young artisans' salaries"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Using the strong N2 emphasis marker \"〜ことこそが\" (precisely doing X is...), the artisan argues that adapting lacquerware for everyday modern use is what truly passes the craft to future generations.",
+      "keyPhrases": [
+        {
+          "jp": "〜ことこそが",
+          "reading": "ことこそが",
+          "en": "it is precisely doing ... that"
+        },
+        {
+          "jp": "次[つぎ]の世代[せだい]へつなぐ",
+          "reading": "つぎのせだいへつなぐ",
+          "en": "to pass on to the next generation"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-4",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（丁寧[ていねい]な依頼[いらい]への返答[へんとう]）",
+      "titleEn": "Quick Response: Politely Declining an Invitation",
+      "situationEn": "A business partner invites you to a reception, and you need to respond naturally in polite Japanese.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Business Partner",
+          "role": "female",
+          "jp": "もしよろしければ、今度[こんど]の金曜[きんよう]の懇親会[こんしんかい]にぜひご参加[さんか]いただきたいんですが。",
+          "en": "If you wouldn't mind, we would very much love for you to attend this coming Friday's reception."
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "せっかくのお誘[さそ]いですが、あいにく先約[せんやく]がありまして。",
+        "参加[さんか]したいのに、行[い]かないことにします。",
+        "お誘[さそ]いいただいて、ご迷惑[めいわく]をおかけします。"
+      ],
+      "choicesEn": [
+        "Thank you for the kind invitation, but unfortunately I have a prior engagement.",
+        "Even though I want to attend, I've decided not to go.",
+        "Thank you for inviting me; I'm causing you trouble."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"せっかくのお誘いですが、あいにく先約がありまして\" is the standard polite business formula for declining an invitation gracefully. Option 2 is blunt/unnatural, and Option 3 misuses \"ご迷惑をおかけします\".",
+      "keyPhrases": [
+        {
+          "jp": "せっかくのお誘[さそ]いですが",
+          "reading": "せっかくのおさそいですが",
+          "en": "thank you for your kind invitation, but..."
+        },
+        {
+          "jp": "あいにく先約[せんやく]がありまして",
+          "reading": "あいにくせんやくがありまして",
+          "en": "unfortunately I have a prior commitment"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-5",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "国際[こくさい]シンポジウムの会場[かいじょう]選[えら]び",
+      "titleEn": "Integrated Comprehension: Choosing a Symposium Venue",
+      "situationEn": "Two organizing committee members compare four possible halls for an international symposium of 180 attendees.",
+      "introJp": "まず話[はなし]を聞[き]いてください。それから、質問[しつもん]を聞[き]いて、一[いち]から四[よん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "First listen to the conversation. Then listen to the question and choose the single best answer from 1 to 4.",
+      "lines": [
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "来月[らいげつ]の国際[こくさい]シンポジウム、参加者[さんかしゃ]が百八十人[ひゃくはちじゅうにん]ほどになる見込[みこ]みです。候補[こうほ]の会場[かいじょう]が四[よっ]つあります。",
+          "en": "For next month's international symposium, we expect around 180 participants. We have four candidate venues."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "まず一番[いちばん]の中央[ちゅうおう]ホールは二百人[にひゃくにん]入[はい]って駅[えき]直結[ちょっけつ]ですが、同時通訳[どうじつうやく]の設備[せつび]がありません。海外[かいがい]からの講演者[こうえんしゃ]もいるので、通訳[つうやく]設備[せつび]は必須[ひっす]ですよね。",
+          "en": "First, #1 Central Hall holds 200 and connects directly to the station, but it lacks simultaneous interpretation equipment. Since we have overseas speakers, interpretation equipment is essential, right?"
+        },
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "そうですね。二番[にばん]の港[みなと]会議場[かいぎじょう]は通訳[つうやく]設備[せつび]も最新[さいしん]で二百五十人[にひゃくごじゅうにん]入[はい]りますが、予算[よさん]を大幅[おおはば]に超[こ]えてしまいます。",
+          "en": "Right. #2 Harbor Convention Hall has the latest interpretation gear and seats 250, but it drastically exceeds our budget."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "うーん、予算[よさん]オーバーは無理[むり]ですね。三番[さんばん]の大学[だいがく]講堂[こうどう]はどうでしょう。通訳[つうやく]設備[せつび]もあって予算内[よさんない]ですし、二百人[にひゃくにん]収容[しゅうよう]できます。ただ、駅[えき]からバスで十五分[じゅうごふん]かかります。",
+          "en": "Hmm, going over budget is impossible. How about #3 University Auditorium? It has interpretation equipment, fits the budget, and holds 200. It just takes 15 minutes by bus from the station."
+        },
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "四番[よんばん]の市民[しみん]プラザも通訳[つうやく]設備[せつび]があって予算内[よさんない]、しかも駅[えき]から歩[ある]いて五分[ごふん]なんですが、定員[ていいん]が百五十人[ひゃくごじゅうにん]なんです。",
+          "en": "#4 Civic Plaza also has interpretation gear, fits the budget, and is a 5-minute walk from the station, but its capacity is 150 people."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "百八十人[ひゃくはちじゅうにん]入[はい]らないのは困[こま]りますね。少[すこ]し遠[とお]くても、全員[ぜんいん]座[すわ]れて設備[せつび]も予算[よさん]もクリアしている所[ところ]に決[き]めましょう。",
+          "en": "Not fitting 180 people won't work. Even if it's a bit farther, let's pick the one where everyone can sit and both equipment and budget are satisfied."
+        }
+      ],
+      "questionJp": "二人[ふたり]はどの会場[かいじょう]に決[き]めましたか。",
+      "questionEn": "Which venue did the two decide on?",
+      "choices": [
+        "中央[ちゅうおう]ホール",
+        "港[みなと]会議場[かいぎじょう]",
+        "大学[だいがく]講堂[こうどう]",
+        "市民[しみん]プラザ"
+      ],
+      "choicesEn": [
+        "Central Hall",
+        "Harbor Convention Hall",
+        "University Auditorium",
+        "Civic Plaza"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Eliminate each option against the three hard requirements (180+ seats, simultaneous interpretation, within budget): #1 lacks interpretation; #2 exceeds budget; #4 only seats 150. Only #3 University Auditorium (大学講堂) meets all three criteria despite the 15-minute bus ride.",
+      "keyPhrases": [
+        {
+          "jp": "必須[ひっす]",
+          "reading": "ひっす",
+          "en": "indispensable / mandatory"
+        },
+        {
+          "jp": "予算[よさん]を大幅[おおはば]に超[こ]える",
+          "reading": "よさんをおおはばにこえる",
+          "en": "greatly exceed the budget"
+        },
+        {
+          "jp": "収容[しゅうよう]できる",
+          "reading": "しゅうようできる",
+          "en": "can accommodate / seat"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-1",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "季刊誌[きかんし]特集[とくしゅう]記事[きじ]の修正[しゅうせい]方針[ほうしん]",
+      "titleEn": "Editorial Revisions for a Quarterly Magazine Feature",
+      "situationEn": "A chief editor and a senior reporter decide how to revise a feature article before print deadline.",
+      "introJp": "出版社[しゅっぱんしゃ]で編集長[へんしゅうちょう]と記者[きしゃ]が話[はな]しています。記者[きしゃ]は原稿[げんこう]をどのように直[なお]すことにしましたか。",
+      "introEn": "An editor-in-chief and a reporter are speaking at a publishing house. How has the reporter agreed to revise the manuscript?",
+      "lines": [
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "次号[じごう]の特集[とくしゅう]「地方[ちほう]移住[いじゅう]のリアル」、読[よ]ませてもらったわ。取材[しゅざい]の丁寧[ていねい]さは伝[つた]わるんだけど、全体[ぜんたい]として移住[いじゅう]の良[よ]い面[めん]ばかりが強調[きょうちょう]されすぎている気[き]がするのよね。",
+          "en": "I read your feature for the next issue, \"The Reality of Regional Relocation.\" The care in your reporting comes through, yet overall I feel only the positive aspects of relocating are overemphasized."
+        },
+        {
+          "speaker": "Reporter",
+          "role": "male",
+          "jp": "なるほど。確[たし]かに、冬[ふゆ]の生活費[せいかつひ]や交通[こうつう]の不便[ふべん]さについては、紙面[しめん]の都合[つごう]でだいぶ削[けず]ってしまいました。",
+          "en": "I see. Admittedly, due to page space constraints, I cut quite a bit about winter living costs and transportation inconvenience."
+        },
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "読者[どくしゃ]が本当[ほんとう]に知[し]りたいのは、成功[せいこう]談[だん]だけじゃなくて壁[かべ]にぶつかった時[とき]の対処[たいしょ]法[ほう]なのよ。ただ、今[いま]から新[あら]たな取材[しゅざい]に回[まわ]る時間[じかん]はないでしょう？",
+          "en": "What readers truly want to know isn't just success stories, but how people cope when they hit obstacles. Still, there's no time to go out for new interviews now, is there?"
+        },
+        {
+          "speaker": "Reporter",
+          "role": "male",
+          "jp": "はい、締[し]め切[き]りが明後日[あさって]ですので。幸[さいわ]い、今回[こんかい]取材[しゅざい]した方々[かたがた]から失敗[しっぱい]談[だん]も十分[じゅうぶん]に聞[き]き取[と]ってあります。写真[しゃしん]を二[に]点[てん]ほど絞[しぼ]ってスペースを作[つく]り、そこを盛[も]り込[こ]み直[なお]します。",
+          "en": "Right, since the deadline is the day after tomorrow. Fortunately, I already gathered plenty of accounts of setbacks from the people I interviewed. I'll trim about two photos to free up space and weave those back in."
+        },
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "それがベストね。バランスがぐっと良[よ]くなるわ。よろしく頼[たの]むわね。",
+          "en": "That's the best approach. The balance will improve dramatically. I'm counting on you."
+        }
+      ],
+      "questionJp": "記者[きしゃ]は原稿[げんこう]をどのように直[なお]すことにしましたか。",
+      "questionEn": "How did the reporter decide to revise the manuscript?",
+      "choices": [
+        "新[あら]たに別[べつ]の移住者[いじゅうしゃ]へ追加[ついか]取材[しゅざい]を行[おこな]う",
+        "特集[とくしゅう]のページ数[すう]を増[ふ]やして成功[せいこう]談[だん]を足[た]す",
+        "写真[しゃしん]を減[へ]らし、取材[しゅざい]済[ず]みの苦労[くろう]話[ばなし]や対処[たいしょ]法[ほう]を加[くわ]える",
+        "記事[きじ]のテーマを交通[こうつう]問題[もんだい]に変更[へんこう]して書[か]き直[なお]す"
+      ],
+      "choicesEn": [
+        "Conduct additional interviews with new relocators",
+        "Increase the feature's page count to add more success stories",
+        "Reduce the photos and insert already-collected accounts of setbacks and coping strategies",
+        "Change the article's theme to transportation issues and rewrite it"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Because the deadline is two days away, new interviews are ruled out. Instead, the reporter will trim two photos to create space (\"写真を二点ほど絞ってスペースを作り\") and reinsert the setbacks/coping accounts already collected during interviews.",
+      "keyPhrases": [
+        {
+          "jp": "紙面[しめん]の都合[つごう]",
+          "reading": "しめんのつごう",
+          "en": "page space constraints"
+        },
+        {
+          "jp": "盛[も]り込[こ]む",
+          "reading": "もりこむ",
+          "en": "to incorporate / weave into a text"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-2",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "目撃[もくげき]記憶[きおく]の変容[へんよう]",
+      "titleEn": "University Lecture: Distortion of Eyewitness Memory",
+      "situationEn": "A psychology professor lectures on why eyewitness testimonies can inadvertently become inaccurate.",
+      "introJp": "大学[だいがく]で教授[きょうじゅ]が心理学[しんりがく]の講義[こうぎ]をしています。教授[きょうじゅ]によると、目撃[もくげき]記憶[きおく]が不正確[ふせいかく]になる最大[さいだい]の要因[よういん]は何[なん]ですか。",
+      "introEn": "A professor is giving a psychology lecture at a university. According to the professor, what is the biggest factor making eyewitness memory inaccurate?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "私[わたし]たちは、記憶[きおく]をビデオカメラの録画[ろくが]のように捉[とら]えがちですが、認知[にんち]心理学[しんりがく]では全[まった]く異[こと]なる見方[みかた]をします。",
+          "en": "We tend to view memory like a video camera recording, yet cognitive psychology takes an entirely different view."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "人間[にんげん]の記憶[きおく]は、出来事[できごと]を思[おも]い出[だ]すたびにその都度[つど]再構成[さいこうせい]される性質[せいしつ]を持[も]っています。",
+          "en": "Human memory possesses the property of being reconstructed anew each time an event is recalled."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "もちろん時間[じかん]の経過[けいか]による忘却[ぼうきゃく]もありますが、それ以上[いじょう]に問題[もんだい]なのは、出来事[できごと]の後[あと]に触[ふ]れた誘導的[ゆうどうてき]な質問[しつもん]や他者[たしゃ]の証言[しょうげん]が、あたかも自分[じぶん]が見[み]た事実[じじつ]であるかのように記憶[きおく]に上書[うわが]きされてしまう現象[げんしょう]なのです。",
+          "en": "Of course, forgetting over time occurs too, but even more problematic is the phenomenon where leading questions or others' testimony encountered after the event overwrite one's memory as if it were a fact one personally witnessed."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "しかも本人[ほんにん]には嘘[うそ]をついている自覚[じかく]が一切[いっさい]ないため、確信[かくしん]度[ど]が高[たか]くても正確[せいかく]とは限[かぎ]らないのです。",
+          "en": "Moreover, because the person has zero awareness of lying, high confidence does not necessarily guarantee accuracy."
+        }
+      ],
+      "questionJp": "教授[きょうじゅ]によると、目撃[もくげき]記憶[きおく]が不正確[ふせいかく]になる最大[さいだい]の要因[よういん]は何[なん]ですか。",
+      "questionEn": "According to the professor, what is the biggest factor making eyewitness memory inaccurate?",
+      "choices": [
+        "時間[じかん]が経[た]つにつれて細部[さいぶ]を完全[かんぜん]に忘[わす]れてしまうこと",
+        "事後[じご]の情報[じょうほう]や質問[しつもん]が元[もと]の記憶[きおく]に上書[うわが]きされること",
+        "目撃者[もくげきしゃ]が意図的[いとてき]に話[はなし]を誇張[こちょう]して語[かた]ること",
+        "緊張[きんちょう]のあまり出来事[できごと]を十分[じゅうぶん]に観察[かんさつ]できないこと"
+      ],
+      "choicesEn": [
+        "Completely forgetting details as time passes",
+        "Post-event information and questions overwriting the original memory",
+        "Eyewitnesses intentionally exaggerating their stories",
+        "Being too nervous to observe the event properly"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Note the N1 comparative cue \"それ以上に問題なのは\" (even more problematic than forgetting over time is...). The professor identifies post-event leading questions and others' accounts overwriting the original memory without conscious intent.",
+      "keyPhrases": [
+        {
+          "jp": "それ以上[いじょう]に問題[もんだい]なのは",
+          "reading": "それいじょうにもんだいなのは",
+          "en": "even more problematic than that is..."
+        },
+        {
+          "jp": "あたかも〜かのように",
+          "reading": "あたかも〜かのように",
+          "en": "as if / just as though"
+        },
+        {
+          "jp": "上書[うわが]きされる",
+          "reading": "うわがきされる",
+          "en": "to be overwritten"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-3",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "地域[ちいき]活性化[かっせいか]と「関係[かんけい]人口[じんこう]」",
+      "titleEn": "Commentary: Regional Revitalization & Connected Populations",
+      "situationEn": "A policy commentator discusses a shift in how depopulating towns think about attracting outsiders.",
+      "introJp": "テレビで解説者[かいせつしゃ]が話[はな]しています。解説者[かいせつしゃ]は、自治体[じちたい]の取[と]り組[く]みについてどのような見解[けんかい]を示[しめ]していますか。",
+      "introEn": "A commentator is speaking on TV. What view does the commentator express regarding municipal initiatives?",
+      "lines": [
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "過疎化[かそか]に悩[なや]む自治体[じちたい]の間[あいだ]で、長[なが]らく「移住者[いじゅうしゃ]をいかに増[ふ]やすか」が至上[しじょう]命題[めいだい]とされてきました。",
+          "en": "Among municipalities troubled by depopulation, \"how to increase permanent relocators\" has long been treated as the supreme imperative."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "しかし、人口[じんこう]そのものが減少[げんしょう]する日本[にほん]において、定住[ていじゅう]者[しゃ]の奪[うば]い合[あ]いには自[おの]ずと限界[げんかい]があります。",
+          "en": "However, in a Japan where the population itself is shrinking, competing to take permanent residents from one another naturally has its limits."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "そこで近年[きんねん]注目[ちゅうもく]されるのが、観光客[かんこうきゃく]以上[いじょう]、移住者[いじゅうしゃ]未満[みまん]とも言[い]うべき「関係[かんけい]人口[じんこう]」、すなわち継続的[けいぞくてき]に地域[ちいき]と関[かか]わる人々[ひとびと]の存在[そんざい]です。",
+          "en": "What has therefore drawn attention in recent years is the \"connected population\"—people who are more than tourists yet less than permanent residents, namely those who stay continuously engaged with a region."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "住民票[じゅうみんひょう]の移動[いどう]にこだわらず、副業[ふくぎょう]や二拠点[にきょてん]生活[せいかつ]を通[つう]じて緩[ゆる]やかに地域[ちいき]を担[にな]ってもらう発想[はっそう]への転換[てんかん]が求[もと]められています。",
+          "en": "What is called for is a shift in mindset: without fixating on moving resident registrations, inviting people to loosely support communities through side work or dual-base living."
+        }
+      ],
+      "questionJp": "解説者[かいせつしゃ]は、自治体[じちたい]の取[と]り組[く]みについてどのような見解[けんかい]を示[しめ]していますか。",
+      "questionEn": "What view does the commentator express about municipal efforts?",
+      "choices": [
+        "補助金[ほじょきん]を増[ふ]やして定住[ていじゅう]移住者[いじゅうしゃ]の誘致[ゆうち]に全[すべ]ての予算[よさん]を投[とう]じるべきだ",
+        "定住[ていじゅう]に限定[げんてい]せず、継続的[けいぞくてき]に地域[ちいき]と関[かか]わる人々[ひとびと]を受[う]け入[い]れる視点[してん]が必要[ひつよう]だ",
+        "短期[たんき]の観光客[かんこうきゃく]を増[ふ]やすことだけが過疎化[かそか]対策[たいさく]の唯一[ゆいいつ]の解決[かいけつ]策[さく]だ",
+        "二拠点[にきょてん]生活[せいかつ]は地域[ちいき]住民[じゅうみん]との摩擦[まさつ]を生[う]むため慎重[しんちょう]になるべきだ"
+      ],
+      "choicesEn": [
+        "They should increase subsidies and pour all budgets into recruiting permanent residents",
+        "They need a perspective that embraces people engaged continuously with the region without limiting to permanent residence",
+        "Increasing short-term tourists is the sole solution to depopulation",
+        "They should be cautious about dual-base living because it causes friction with locals"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The commentator argues that zero-sum competition for permanent residents has limits and calls for a mindset shift (\"発想への転換が求められています\") toward welcoming \"connected populations\" (関係人口) without insisting on permanent residency.",
+      "keyPhrases": [
+        {
+          "jp": "自[おの]ずと限界[げんかい]がある",
+          "reading": "おのずとげんかいがある",
+          "en": "naturally has a limit"
+        },
+        {
+          "jp": "〜にこだわらず",
+          "reading": "にこだわらず",
+          "en": "without fixating on / regardless of"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-4",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（ビジネスでの遠慮[えんりょ]・確認[かくにん]）",
+      "titleEn": "Quick Response: Navigating N1 Diplomatic Workplace Idioms",
+      "situationEn": "A senior colleague raises a subtle warning about your proposed schedule using an N1 idiom.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Senior Colleague",
+          "role": "male",
+          "jp": "この日程[にってい]だと、現場[げんば]にかなりの無理[むり]を強[し]いることになりかねないんじゃないかな。",
+          "en": "With this schedule, couldn't it very well end up forcing quite an unreasonable burden on the operations team?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "おっしゃる通[とお]りです。現場[げんば]の負担[ふたん]を見直[みなお]して調整[ちょうせい]します。",
+        "そうですね、現場[げんば]には無理[むり]がかからないということですね。",
+        "ご指摘[してき]ありがとうございます。では、このまま進[すす]めさせていただきます。"
+      ],
+      "choicesEn": [
+        "You are quite right. I will review the burden on the team and adjust it.",
+        "Indeed, so that means there won't be any burden on the team.",
+        "Thank you for pointing that out. Then I will proceed as is."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "The N1 grammar \"〜かねない\" means \"could easily lead to (an undesirable outcome)\". Here the colleague is warning that the schedule risks overburdening the team. Option 1 acknowledges the risk and commits to adjusting the schedule; Options 2 and 3 misread the negative warning.",
+      "keyPhrases": [
+        {
+          "jp": "〜を強[し]いる",
+          "reading": "をしいる",
+          "en": "to force / impose upon"
+        },
+        {
+          "jp": "〜になりかねない",
+          "reading": "になりかねない",
+          "en": "could easily end up / runs the risk of"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-5",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "川沿[かわぞ]い旧[きゅう]倉庫[そうこ]の再開発[さいかいはつ]案[あん]",
+      "titleEn": "Integrated Comprehension: Evaluating 4 Redevelopment Proposals",
+      "situationEn": "A municipal committee chair, an urban planner, and a citizen representative evaluate four proposals for repurposing a historic riverside warehouse.",
+      "introJp": "まず話[はなし]を聞[き]いてください。それから、質問[しつもん]を聞[き]いて、一[いち]から四[よん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "First listen to the discussion. Then listen to the question and choose the single best answer from 1 to 4.",
+      "lines": [
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "川沿[かわぞ]いの旧[きゅう]れんが倉庫[そうこ]の再開発[さいかいはつ]について、四[よっ]つの案[あん]から最終[さいしゅう]候補[こうほ]を絞[しぼ]ります。まずA案[あん]は、建物[たてもの]を取[と]り壊[こわ]して高層[こうそう]マンションを建[た]てる案[あん]です。",
+          "en": "For the redevelopment of the old riverside brick warehouse, we will narrow down four proposals to a final pick. First, Plan A demolishes the building to construct a high-rise condominium."
+        },
+        {
+          "speaker": "Citizen Rep",
+          "role": "female",
+          "jp": "A案[あん]は税収[ぜいしゅう]面[めん]では魅力[みりょく]ですが、市民[しみん]アンケートでは歴史的[れきしてき]な外観[がいかん]を残[のこ]してほしいという声[こえ]が八割[はちわり]を超[こ]えています。解体[かいたい]は合意[ごうい]を得[え]にくいと思[おも]います。",
+          "en": "Plan A is attractive in terms of tax revenue, but over 80% of respondents in the citizen survey asked to preserve the historic exterior. Demolition would be hard to gain consensus for."
+        },
+        {
+          "speaker": "Planner",
+          "role": "male2",
+          "jp": "では外観[がいかん]を保存[ほぞん]するB案[あん]の美術館[びじゅつかん]はどうでしょう。文化[ぶんか]価値[かち]は高[たか]いのですが、維持[いじ]費[ひ]のほとんどを市[し]の税金[ぜいきん]で賄[まかな]う必要[ひつよう]があり、財政[ざいせい]への負担[ふたん]が懸念[けねん]されます。",
+          "en": "Then how about Plan B, an art museum preserving the exterior? Its cultural value is high, but almost all maintenance costs would have to be covered by city taxes, raising concerns about fiscal strain."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "財政[ざいせい]の自立[じりつ]性[せい]も外[はず]せない条件[じょうけん]ですね。C案[あん]は外観[がいかん]を活[い]かした商業[しょうぎょう]施設[しせつ]と地域[ちいき]交流[こうりゅう]スペースの複合[ふくごう]型[がた]で、テナント収入[しゅうにゅう]で維持[いじ]費[ひ]を賄[まかな]えます。",
+          "en": "Fiscal self-sufficiency is an indispensable criterion too. Plan C is a hybrid of commercial shops and a community exchange space utilizing the exterior, covering maintenance costs through tenant revenue."
+        },
+        {
+          "speaker": "Planner",
+          "role": "male2",
+          "jp": "D案[あん]も外観[がいかん]保存[ほぞん]で、企業[きぎょう]専用[せんよう]の会員制[かいいんせい]オフィスにする案[あん]です。収益[しゅうえき]は最[もっと]も安定[あんてい]しますが、一般[いっぱん]市民[しみん]は立[た]ち入[い]れなくなってしまいます。",
+          "en": "Plan D also preserves the exterior, turning it into a corporate members-only office. Revenue is the most stable, but general citizens would no longer be able to enter."
+        },
+        {
+          "speaker": "Citizen Rep",
+          "role": "female",
+          "jp": "せっかくの川沿[かわぞ]いのランドマークですから、市民[しみん]が日常的[にちじょうてき]に立[た]ち寄[よ]れる開[ひら]かれた場[ば]であってほしいですね。",
+          "en": "Since it's a prized riverside landmark, we want it to be an open space that citizens can drop by in daily life."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "外観[がいかん]保存[ほぞん]、財政[ざいせい]の持続[じぞく]性[せい]、そして市民[しみん]への開放[かいほう]性[せい]。この三点[さんてん]を満[み]たす案[あん]を軸[じく]に進[すす]めることで一致[いっち]しましたね。",
+          "en": "Preserving the exterior, fiscal sustainability, and openness to citizens—we are agreed on moving forward centered on the plan that fulfills all three."
+        }
+      ],
+      "questionJp": "委員会[いいんかい]はどの案[あん]を軸[じく]に進[すす]めることにしましたか。",
+      "questionEn": "Which proposal did the committee agree to proceed with?",
+      "choices": [
+        "A案[あん]：高層[こうそう]マンションへの建[た]て替[か]え",
+        "B案[あん]：外観[がいかん]を保存[ほぞん]した市立[しりつ]美術館[びじゅつかん]",
+        "C案[あん]：商業[しょうぎょう]施設[しせつ]と地域[ちいき]交流[こうりゅう]スペースの複合[ふくごう]施設[しせつ]",
+        "D案[あん]：企業[きぎょう]専用[せんよう]の会員制[かいいんせい]オフィス"
+      ],
+      "choicesEn": [
+        "Plan A: Rebuilding as a high-rise condominium",
+        "Plan B: Municipal art museum preserving the exterior",
+        "Plan C: Hybrid commercial and community exchange facility",
+        "Plan D: Corporate members-only office"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The committee aligns on three criteria: (1) preserve historic exterior (eliminates Plan A), (2) fiscal sustainability without tax drain (eliminates Plan B), and (3) open public access for citizens (eliminates Plan D). Only Plan C satisfies all three.",
+      "keyPhrases": [
+        {
+          "jp": "合意[ごうい]を得[え]にくい",
+          "reading": "ごういをえにくい",
+          "en": "hard to obtain consensus"
+        },
+        {
+          "jp": "賄[まかな]う",
+          "reading": "まかなう",
+          "en": "to cover (costs) / finance"
+        },
+        {
+          "jp": "〜を軸[じく]に進[すす]める",
+          "reading": "をじくにすすめる",
+          "en": "to proceed centered around ..."
+        }
+      ]
+    }
+  ]
+}

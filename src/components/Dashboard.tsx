@@ -148,6 +148,100 @@ export const Dashboard: React.FC = () => {
   );
   const burnedCount = srsDist.burned.total;
 
+  // JLPT Grammar SRS quick summary (Stage 1)
+  const grammarSummary = useMemo(() => {
+    const entries = Object.values(state.grammarProgress ?? {});
+    let started = 0;
+    let guruPlus = 0;
+    let due = 0;
+    for (const p of entries) {
+      if (p.srsStage >= 1) {
+        started += 1;
+        if (p.srsStage >= 5) guruPlus += 1;
+        if (
+          !state.settings.vacationMode &&
+          p.srsStage <= 8 &&
+          p.nextReviewAt !== null &&
+          p.nextReviewAt <= now
+        ) {
+          due += 1;
+        }
+      }
+    }
+    return { started, guruPlus, due };
+  }, [state.grammarProgress, state.settings.vacationMode, now]);
+
+  // JLPT Non-Kanji Kana Vocab SRS quick summary (Stage 2)
+  const kanaVocabSummary = useMemo(() => {
+    const entries = Object.values(state.kanaVocabProgress ?? {});
+    let started = 0;
+    let guruPlus = 0;
+    let due = 0;
+    for (const p of entries) {
+      if (p.srsStage >= 1) {
+        started += 1;
+        if (p.srsStage >= 5) guruPlus += 1;
+        if (
+          !state.settings.vacationMode &&
+          p.srsStage <= 8 &&
+          p.nextReviewAt !== null &&
+          p.nextReviewAt <= now
+        ) {
+          due += 1;
+        }
+      }
+    }
+    return { started, guruPlus, due };
+  }, [state.kanaVocabProgress, state.settings.vacationMode, now]);
+
+  // JLPT Reading Comprehension (Dokkai) quick summary (Stage 3)
+  const readingSummary = useMemo(() => {
+    const entries = Object.values(state.readingProgress ?? {});
+    let attempted = 0;
+    let passed = 0;
+    let bestCorrect = 0;
+    for (const p of entries) {
+      if (p.attempts > 0) {
+        attempted += 1;
+        bestCorrect += p.bestScore;
+        if (p.bestScore >= Math.ceil(p.totalQuestions * 0.6)) {
+          passed += 1;
+        }
+      }
+    }
+    return { attempted, passed, bestCorrect };
+  }, [state.readingProgress]);
+
+  // JLPT Listening Comprehension (Chōkai) quick summary (Stage 4)
+  const listeningSummary = useMemo(() => {
+    const entries = Object.values(state.listeningProgress ?? {});
+    let attempted = 0;
+    let passed = 0;
+    let firstListen = 0;
+    for (const p of entries) {
+      if (p.attempts > 0) {
+        attempted += 1;
+        if (p.passed) passed += 1;
+        if (p.passedFirstListen) firstListen += 1;
+      }
+    }
+    return { attempted, passed, firstListen };
+  }, [state.listeningProgress]);
+
+  // JLPT Mock Exam (Mogi Shiken) quick summary (Stage 5)
+  const mockExamSummary = useMemo(() => {
+    const history = state.mockExamHistory ?? [];
+    const passedLevels = new Set(
+      history.filter((h) => h.passed).map((h) => h.jlpt)
+    );
+    const latest = history[0] ?? null;
+    return {
+      totalAttempts: history.length,
+      passedLevelsCount: passedLevels.size,
+      latest,
+    };
+  }, [state.mockExamHistory]);
+
   // Instant search across all 9,088 items
   const searchResults = useMemo<CurriculumItem[]>(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -530,6 +624,209 @@ export const Dashboard: React.FC = () => {
               Mulai Review
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* PERSIAPAN JLPT — TAHAP 1 (GRAMMAR), TAHAP 2 (NON-KANJI KANA), TAHAP 3 (DOKKAI), TAHAP 4 (CHŌKAI) */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+        {/* Stage 1: Grammar SRS */}
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#7C3AED] dark:text-violet-400">
+              JLPT Tahap 1 · Tata Bahasa
+            </div>
+            <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+              100 Pola Grammar N5–N1
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Latihan kalimat rumpang SRS dengan Pilihan Ganda &amp; IME Hiragana.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
+              <span>
+                Mulai <strong className="text-slate-900 dark:text-white">{grammarSummary.started}/100</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Guru+ <strong className="text-[#7C3AED] dark:text-violet-400">{grammarSummary.guruPlus}</strong>
+              </span>
+              {grammarSummary.due > 0 && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span className="font-bold text-[#0284C7]">Due {grammarSummary.due}</span>
+                </>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('grammar')}
+              className="min-h-[40px] inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs font-semibold transition-colors whitespace-nowrap w-full cursor-pointer"
+            >
+              {grammarSummary.due > 0
+                ? `Review Grammar (${grammarSummary.due})`
+                : 'Buka Grammar'}
+            </button>
+          </div>
+        </div>
+
+        {/* Stage 2: Non-Kanji Kana/Katakana/Onomatopoeia Vocab SRS */}
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#0D9488] dark:text-teal-400">
+              JLPT Tahap 2 · Non-Kanji SRS
+            </div>
+            <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+              150 Kata Kana &amp; Katakana
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Adverbia, penghubung, onomatope, dan serapan katakana N5–N1.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
+              <span>
+                Mulai <strong className="text-slate-900 dark:text-white">{kanaVocabSummary.started}/150</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Guru+ <strong className="text-[#0D9488] dark:text-teal-400">{kanaVocabSummary.guruPlus}</strong>
+              </span>
+              {kanaVocabSummary.due > 0 && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span className="font-bold text-[#0284C7]">Due {kanaVocabSummary.due}</span>
+                </>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('kana-vocab')}
+              className="min-h-[40px] inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold transition-colors whitespace-nowrap w-full cursor-pointer"
+            >
+              {kanaVocabSummary.due > 0
+                ? `Review Kana (${kanaVocabSummary.due})`
+                : 'Buka Kana JLPT'}
+            </button>
+          </div>
+        </div>
+
+        {/* Stage 3: Reading Comprehension (Dokkai N5–N1) */}
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#D97706] dark:text-amber-400">
+              JLPT Tahap 3 · Membaca Dokkai
+            </div>
+            <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+              25 Wacana &amp; 53 Soal
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Pengumuman, email bisnis, esai, dan perbandingan A/B dengan timer.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
+              <span>
+                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/25</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/53</strong>
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('reading')}
+              className="min-h-[40px] inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-[#D97706] hover:bg-[#B45309] text-white text-xs font-semibold transition-colors whitespace-nowrap w-full cursor-pointer"
+            >
+              {readingSummary.attempted > 0 ? 'Lanjut Dokkai' : 'Buka Dokkai'}
+            </button>
+          </div>
+        </div>
+
+        {/* Stage 4: Listening Comprehension (Chōkai N5–N1) */}
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#E11D48] dark:text-rose-400">
+              JLPT Tahap 4 · Mendengarkan Chōkai
+            </div>
+            <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+              25 Audio Dialog N5–N1
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Kadai, Pointo, Gaiyō, Sokuji Ōtō &amp; Tōgō Rikai dengan transkrip.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
+              <span>
+                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/25</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                1x Dengar <strong className="text-[#E11D48] dark:text-rose-400">{listeningSummary.firstListen}</strong>
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('listening')}
+              className="min-h-[40px] inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white text-xs font-semibold transition-colors whitespace-nowrap w-full cursor-pointer"
+            >
+              {listeningSummary.attempted > 0 ? 'Lanjut Chōkai' : 'Buka Chōkai'}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* PERSIAPAN JLPT — TAHAP 5 CAPSTONE: MOGI SHIKEN & KESIAPAN KELULUSAN */}
+      <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="space-y-1 min-w-0">
+          <div className="text-xs font-semibold text-[#0284C7]">
+            JLPT Tahap 5 · Simulasi Ujian Penuh &amp; Indeks Kesiapan (Skala Resmi 0–180)
+          </div>
+          <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
+            Mogi Shiken JLPT N5–N1 (4 Bagian Berwaktu + Ambang Batas Ashikiri)
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            Gabungkan latihan Kanji, Kana JLPT, Grammar, Dokkai, dan Chōkai dalam simulasi ujian berwaktu lengkap dengan penilaian skala resmi 0–180 dan cek kesiapan 5 pilar.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center gap-3 shrink-0">
+          <div className="text-xs font-mono-num text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2.5 sm:pr-2">
+            <span>
+              Lulus <strong className="text-emerald-600 dark:text-emerald-400">{mockExamSummary.passedLevelsCount}/5 Level</strong>
+            </span>
+            <span aria-hidden="true">·</span>
+            <span>
+              Ujian <strong className="text-slate-900 dark:text-white">{mockExamSummary.totalAttempts}x</strong>
+            </span>
+            {mockExamSummary.latest && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>
+                  Terakhir <strong className="text-slate-900 dark:text-white">N{mockExamSummary.latest.jlpt} ({mockExamSummary.latest.totalScore}/180)</strong>
+                </span>
+              </>
+            )}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setActiveView('mock-exam')}
+            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
+          >
+            <Award className="w-4 h-4" />
+            Buka Mogi Shiken
+          </button>
         </div>
       </section>
 

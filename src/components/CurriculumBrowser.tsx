@@ -23,7 +23,7 @@ const SRS_FILTERS: { id: 'all' | SrsCategory; label: string }[] = [
 const PAGE_SIZE = 60;
 
 export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) => {
-  const { dataset, state, openItemDetail } = useApp();
+  const { dataset, state, openItemDetail, setActiveView } = useApp();
 
   // Levels Hierarchy state (60 levels grouped into 6 WaniKani tiers)
   const [selectedLevel, setSelectedLevel] = useState<number>(state.currentLevel);
@@ -376,7 +376,30 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
       : 'bg-[#7C3AED]';
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
+      {mode === 'vocabulary' && (
+        <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+          <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] p-0.5 max-w-full overflow-x-auto no-scrollbar">
+            <button
+              type="button"
+              className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
+            >
+              Kosakata Kanji ({dataset.counts.vocabulary.toLocaleString('id-ID')})
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveView('kana-vocab')}
+              className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
+            >
+              Kosakata Non-Kanji JLPT (150)
+            </button>
+          </div>
+          <span className="text-xs text-slate-500 dark:text-slate-400">
+            Kana-only, Katakana &amp; Onomatope N5–N1 tersedia di tab Non-Kanji
+          </span>
+        </div>
+      )}
+
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">

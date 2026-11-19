@@ -9,6 +9,7 @@ const BASE_NAV_ITEMS: { id: ActiveView; label: string }[] = [
   { id: 'radicals', label: 'Radikal' },
   { id: 'kanji', label: 'Kanji' },
   { id: 'vocabulary', label: 'Kosakata' },
+  { id: 'grammar', label: 'Grammar' },
 ];
 
 export const TopBar: React.FC = () => {
@@ -56,13 +57,15 @@ export const TopBar: React.FC = () => {
           KaniMichi
         </button>
 
-        {/* Zone 2: Concise Single-Line Text Nav Links (Max 6 items) */}
+        {/* Zone 2: Concise Single-Line Text Nav Links */}
         <nav
           aria-label="Navigasi utama"
-          className="hidden md:flex items-center gap-7 text-sm font-medium"
+          className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium"
         >
           {BASE_NAV_ITEMS.map((item) => {
-            const isActive = activeView === item.id;
+            const isActive =
+              activeView === item.id ||
+              (item.id === 'vocabulary' && activeView === 'kana-vocab');
             return (
               <button
                 key={item.id}
@@ -177,6 +180,66 @@ export const TopBar: React.FC = () => {
                 </button>
               );
             })}
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveView('kana-vocab');
+                setMobileMenuOpen(false);
+              }}
+              className={`text-left px-3 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                activeView === 'kana-vocab'
+                  ? 'bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-white font-semibold'
+                  : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+              }`}
+            >
+              Kosakata Non-Kanji (Kana JLPT)
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveView('reading');
+                setMobileMenuOpen(false);
+              }}
+              className={`text-left px-3 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                activeView === 'reading'
+                  ? 'bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-white font-semibold'
+                  : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+              }`}
+            >
+              Membaca (Dokkai JLPT)
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveView('listening');
+                setMobileMenuOpen(false);
+              }}
+              className={`text-left px-3 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
+                activeView === 'listening'
+                  ? 'bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-white font-semibold'
+                  : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
+              }`}
+            >
+              Mendengarkan (Chōkai JLPT)
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setActiveView('mock-exam');
+                setMobileMenuOpen(false);
+              }}
+              className={`text-left px-3 py-2.5 rounded-lg text-sm font-semibold whitespace-nowrap transition-colors ${
+                activeView === 'mock-exam'
+                  ? 'bg-slate-100 dark:bg-slate-800 text-slate-950 dark:text-white'
+                  : 'text-[#0284C7] hover:bg-slate-50 dark:hover:bg-slate-800/50'
+              }`}
+            >
+              Simulasi Ujian (Mogi Shiken N5–N1)
+            </button>
 
             <div className="my-1.5 border-t border-slate-100 dark:border-slate-800" />
 

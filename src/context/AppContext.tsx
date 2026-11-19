@@ -27,6 +27,11 @@ import {
   UserSettings,
   UserState,
 } from '../types/curriculum';
+import type { GrammarProgress } from '../types/grammar';
+import type { KanaVocabProgress } from '../types/kanaVocab';
+import type { ReadingProgress } from '../types/reading';
+import type { ListeningProgress } from '../types/listening';
+import type { MockExamResult } from '../types/mockExam';
 import {
   calculateNextReviewAt,
   calculateNextSrsStage,
@@ -83,6 +88,30 @@ interface AppContextValue {
     updates: { userSynonyms?: string[]; meaningNote?: string; readingNote?: string }
   ) => void;
   resurrectBurnedItem: (itemId: string) => void;
+  completeGrammarLessons: (grammarIds: string[]) => void;
+  submitGrammarReview: (
+    grammarId: string,
+    hadMistake: boolean
+  ) => { previousStage: SrsStage; newStage: SrsStage };
+  resurrectGrammarItem: (grammarId: string) => void;
+  completeKanaVocabLessons: (itemIds: string[]) => void;
+  submitKanaVocabReview: (
+    itemId: string,
+    hadMistake: boolean
+  ) => { previousStage: SrsStage; newStage: SrsStage };
+  resurrectKanaVocabItem: (itemId: string) => void;
+  recordReadingAttempt: (
+    passageId: string,
+    correctCount: number,
+    totalQuestions: number,
+    elapsedSec: number
+  ) => void;
+  recordListeningAttempt: (
+    trackId: string,
+    isCorrect: boolean,
+    listenCount: number
+  ) => void;
+  recordMockExamResult: (result: MockExamResult) => void;
   updateSettings: (partial: Partial<UserSettings>) => void;
   toggleVacationMode: () => void;
   fastForwardTime: (hours: number) => void;
@@ -697,6 +726,334 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
   };
 
+  const completeGrammarLessons = (grammarIds: string[]) => {
+    if (grammarIds.length === 0) return;
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const gp: Record<string, GrammarProgress> = { ...(prev.grammarProgress ?? {}) };
+      let addedCount = 0;
+      for (const id of grammarIds) {
+        const existing = gp[id];
+        if (existing && existing.srsStage >= 1) continue;
+        gp[id] = {
+          grammarId: id,
+          srsStage: 1,
+          startedAt: ts,
+          nextReviewAt: calculateNextReviewAt(1, ts),
+          burnedAt: null,
+          correctCount: existing?.correctCount ?? 0,
+          incorrectCount: existing?.incorrectCount ?? 0,
+          lastReviewedAt: existing?.lastReviewedAt ?? null,
+        };
+        addedCount += 1;
+      }
+      const activity = updateHistoryAndStreak(prev, 0, 0, addedCount, ts);
+      return {
+        ...prev,
+        ...activity,
+        grammarProgress: gp,
+      };
+    });
+  };
+
+  const submitGrammarReview = (
+    grammarId: string,
+    hadMistake: boolean
+  ): { previousStage: SrsStage; newStage: SrsStage } => {
+    const ts = Date.now();
+    setNow(ts);
+    let result: { previousStage: SrsStage; newStage: SrsStage } = {
+      previousStage: 1,
+      newStage: hadMistake ? 1 : 2,
+    };
+
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.grammarProgress?.[grammarId];
+      const prevStage: SrsStage =
+        existing && existing.srsStage >= 1 ? existing.srsStage : 1;
+      const newStage = calculateNextSrsStage(prevStage, hadMistake ? 1 : 0);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts);
+
+      result = { previousStage: prevStage, newStage };
+
+      const updated: GrammarProgress = {
+        grammarId,
+        srsStage: newStage,
+        startedAt: existing?.startedAt ?? ts,
+        nextReviewAt,
+        burnedAt: newStage === 9 ? ts : null,
+        correctCount: (existing?.correctCount ?? 0) + (hadMistake ? 0 : 1),
+        incorrectCount: (existing?.incorrectCount ?? 0) + (hadMistake ? 1 : 0),
+        lastReviewedAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        hadMistake ? 0 : 1,
+        0,
+        ts
+      );
+
+      return {
+        ...prev,
+        ...activity,
+        grammarProgress: {
+          ...(prev.grammarProgress ?? {}),
+          [grammarId]: updated,
+        },
+      };
+    });
+
+    return result;
+  };
+
+  const resurrectGrammarItem = (grammarId: string) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.grammarProgress?.[grammarId];
+      if (!existing || existing.srsStage !== 9) return prev;
+      return {
+        ...prev,
+        grammarProgress: {
+          ...(prev.grammarProgress ?? {}),
+          [grammarId]: {
+            ...existing,
+            srsStage: 1,
+            burnedAt: null,
+            nextReviewAt: calculateNextReviewAt(1, ts),
+          },
+        },
+      };
+    });
+  };
+
+  const completeKanaVocabLessons = (itemIds: string[]) => {
+    if (itemIds.length === 0) return;
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const kp: Record<string, KanaVocabProgress> = { ...(prev.kanaVocabProgress ?? {}) };
+      let addedCount = 0;
+      for (const id of itemIds) {
+        const existing = kp[id];
+        if (existing && existing.srsStage >= 1) continue;
+        kp[id] = {
+          itemId: id,
+          srsStage: 1,
+          startedAt: ts,
+          nextReviewAt: calculateNextReviewAt(1, ts),
+          burnedAt: null,
+          correctCount: existing?.correctCount ?? 0,
+          incorrectCount: existing?.incorrectCount ?? 0,
+          lastReviewedAt: existing?.lastReviewedAt ?? null,
+        };
+        addedCount += 1;
+      }
+      const activity = updateHistoryAndStreak(prev, 0, 0, addedCount, ts);
+      return {
+        ...prev,
+        ...activity,
+        kanaVocabProgress: kp,
+      };
+    });
+  };
+
+  const submitKanaVocabReview = (
+    itemId: string,
+    hadMistake: boolean
+  ): { previousStage: SrsStage; newStage: SrsStage } => {
+    const ts = Date.now();
+    setNow(ts);
+    let result: { previousStage: SrsStage; newStage: SrsStage } = {
+      previousStage: 1,
+      newStage: hadMistake ? 1 : 2,
+    };
+
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.kanaVocabProgress?.[itemId];
+      const prevStage: SrsStage =
+        existing && existing.srsStage >= 1 ? existing.srsStage : 1;
+      const newStage = calculateNextSrsStage(prevStage, hadMistake ? 1 : 0);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts);
+
+      result = { previousStage: prevStage, newStage };
+
+      const updated: KanaVocabProgress = {
+        itemId,
+        srsStage: newStage,
+        startedAt: existing?.startedAt ?? ts,
+        nextReviewAt,
+        burnedAt: newStage === 9 ? ts : null,
+        correctCount: (existing?.correctCount ?? 0) + (hadMistake ? 0 : 1),
+        incorrectCount: (existing?.incorrectCount ?? 0) + (hadMistake ? 1 : 0),
+        lastReviewedAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        hadMistake ? 0 : 1,
+        0,
+        ts
+      );
+
+      return {
+        ...prev,
+        ...activity,
+        kanaVocabProgress: {
+          ...(prev.kanaVocabProgress ?? {}),
+          [itemId]: updated,
+        },
+      };
+    });
+
+    return result;
+  };
+
+  const resurrectKanaVocabItem = (itemId: string) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.kanaVocabProgress?.[itemId];
+      if (!existing || existing.srsStage !== 9) return prev;
+      return {
+        ...prev,
+        kanaVocabProgress: {
+          ...(prev.kanaVocabProgress ?? {}),
+          [itemId]: {
+            ...existing,
+            srsStage: 1,
+            burnedAt: null,
+            nextReviewAt: calculateNextReviewAt(1, ts),
+          },
+        },
+      };
+    });
+  };
+
+  const recordReadingAttempt = (
+    passageId: string,
+    correctCount: number,
+    totalQuestions: number,
+    elapsedSec: number
+  ) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.readingProgress?.[passageId];
+      const nextBestScore = existing
+        ? Math.max(existing.bestScore, correctCount)
+        : correctCount;
+      const nextBestTime =
+        existing && existing.bestTimeSec !== null
+          ? correctCount >= existing.bestScore
+            ? Math.min(existing.bestTimeSec, elapsedSec)
+            : existing.bestTimeSec
+          : elapsedSec;
+
+      const updated: ReadingProgress = {
+        passageId,
+        attempts: (existing?.attempts ?? 0) + 1,
+        bestScore: nextBestScore,
+        totalQuestions,
+        lastScore: correctCount,
+        bestTimeSec: nextBestTime,
+        completedAt:
+          existing?.completedAt ??
+          (correctCount >= Math.ceil(totalQuestions * 0.6) ? ts : null),
+        lastAttemptAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(
+        prev,
+        totalQuestions,
+        correctCount,
+        0,
+        ts
+      );
+
+      return {
+        ...prev,
+        ...activity,
+        readingProgress: {
+          ...(prev.readingProgress ?? {}),
+          [passageId]: updated,
+        },
+      };
+    });
+  };
+
+  const recordListeningAttempt = (
+    trackId: string,
+    isCorrect: boolean,
+    listenCount: number
+  ) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.listeningProgress?.[trackId];
+      const updated: ListeningProgress = {
+        trackId,
+        attempts: (existing?.attempts ?? 0) + 1,
+        correctAttempts: (existing?.correctAttempts ?? 0) + (isCorrect ? 1 : 0),
+        passed: (existing?.passed ?? false) || isCorrect,
+        passedFirstListen:
+          (existing?.passedFirstListen ?? false) || (isCorrect && listenCount <= 1),
+        lastAttemptAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        isCorrect ? 1 : 0,
+        0,
+        ts
+      );
+
+      return {
+        ...prev,
+        ...activity,
+        listeningProgress: {
+          ...(prev.listeningProgress ?? {}),
+          [trackId]: updated,
+        },
+      };
+    });
+  };
+
+  const recordMockExamResult = (result: MockExamResult) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existingHistory = prev.mockExamHistory ?? [];
+      const nextHistory = [result, ...existingHistory].slice(0, 50);
+      const activity = updateHistoryAndStreak(
+        prev,
+        result.totalQuestions,
+        result.totalCorrect,
+        0,
+        ts
+      );
+      return {
+        ...prev,
+        ...activity,
+        mockExamHistory: nextHistory,
+      };
+    });
+  };
+
   const updateSettings = (partial: Partial<UserSettings>) => {
     setState((prev) =>
       prev
@@ -738,9 +1095,37 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           };
         }
       }
+      const grammarProgress = prev.grammarProgress
+        ? { ...prev.grammarProgress }
+        : undefined;
+      if (grammarProgress) {
+        for (const [id, p] of Object.entries(grammarProgress)) {
+          if (p.nextReviewAt !== null) {
+            grammarProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt + pausedDuration,
+            };
+          }
+        }
+      }
+      const kanaVocabProgress = prev.kanaVocabProgress
+        ? { ...prev.kanaVocabProgress }
+        : undefined;
+      if (kanaVocabProgress) {
+        for (const [id, p] of Object.entries(kanaVocabProgress)) {
+          if (p.nextReviewAt !== null) {
+            kanaVocabProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt + pausedDuration,
+            };
+          }
+        }
+      }
       return {
         ...prev,
         progress,
+        grammarProgress,
+        kanaVocabProgress,
         settings: {
           ...prev.settings,
           vacationMode: false,
@@ -765,7 +1150,33 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           };
         }
       }
-      return { ...prev, progress };
+      const grammarProgress = prev.grammarProgress
+        ? { ...prev.grammarProgress }
+        : undefined;
+      if (grammarProgress) {
+        for (const [id, p] of Object.entries(grammarProgress)) {
+          if (p.nextReviewAt !== null) {
+            grammarProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt - shiftMs,
+            };
+          }
+        }
+      }
+      const kanaVocabProgress = prev.kanaVocabProgress
+        ? { ...prev.kanaVocabProgress }
+        : undefined;
+      if (kanaVocabProgress) {
+        for (const [id, p] of Object.entries(kanaVocabProgress)) {
+          if (p.nextReviewAt !== null) {
+            kanaVocabProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt - shiftMs,
+            };
+          }
+        }
+      }
+      return { ...prev, progress, grammarProgress, kanaVocabProgress };
     });
   };
 
@@ -783,7 +1194,33 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           };
         }
       }
-      return { ...prev, progress };
+      const grammarProgress = prev.grammarProgress
+        ? { ...prev.grammarProgress }
+        : undefined;
+      if (grammarProgress) {
+        for (const [id, p] of Object.entries(grammarProgress)) {
+          if (p.srsStage >= 1 && p.srsStage <= 8) {
+            grammarProgress[id] = {
+              ...p,
+              nextReviewAt: ts - 60000,
+            };
+          }
+        }
+      }
+      const kanaVocabProgress = prev.kanaVocabProgress
+        ? { ...prev.kanaVocabProgress }
+        : undefined;
+      if (kanaVocabProgress) {
+        for (const [id, p] of Object.entries(kanaVocabProgress)) {
+          if (p.srsStage >= 1 && p.srsStage <= 8) {
+            kanaVocabProgress[id] = {
+              ...p,
+              nextReviewAt: ts - 60000,
+            };
+          }
+        }
+      }
+      return { ...prev, progress, grammarProgress, kanaVocabProgress };
     });
   };
 
@@ -1077,6 +1514,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         submitItemReview,
         updateUserNotes,
         resurrectBurnedItem,
+        completeGrammarLessons,
+        submitGrammarReview,
+        resurrectGrammarItem,
+        completeKanaVocabLessons,
+        submitKanaVocabReview,
+        resurrectKanaVocabItem,
+        recordReadingAttempt,
+        recordListeningAttempt,
+        recordMockExamResult,
         updateSettings,
         toggleVacationMode,
         fastForwardTime,

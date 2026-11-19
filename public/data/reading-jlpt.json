@@ -1,0 +1,1677 @@
+{
+  "version": 1,
+  "passages": [
+    {
+      "id": "rd-n5-01",
+      "jlpt": 5,
+      "order": 1,
+      "passageType": "short",
+      "titleJp": "わたしの日曜日[にちようび]",
+      "titleEn": "My Sunday Routine",
+      "recommendedMinutes": 2,
+      "contextEn": "Short diary passage describing a typical weekend day.",
+      "paragraphs": [
+        "わたしはまいしゅう日曜日[にちようび]の朝[あさ]、八時[はちじ]におきます。ふだんは六時[ろくじ]におきますが、日曜日[にちようび]はゆっくりねます。",
+        "朝[あさ]ごはんを食べてから、近[ちか]くの公園[こうえん]へいきます。公園[こうえん]で三十分[さんじゅっぷん]ぐらい走[はし]ります。ときどき犬[いぬ]と散歩[さんぽ]している人[ひと]に会[あ]います。",
+        "午後[ごご]は図書館[としょかん]で日本語[にほんご]の本[ほん]を読[よ]みます。夕方[ゆうがた]、スーパーで野菜[やさい]と魚[さかな]を買[か]って、うちへ帰[かえ]ります。"
+      ],
+      "translationEn": [
+        "Every Sunday morning, I wake up at eight o'clock. Normally I wake up at six, but on Sundays I sleep in leisurely.",
+        "After eating breakfast, I go to a nearby park. I run for about thirty minutes in the park. Sometimes I meet people walking their dogs.",
+        "In the afternoon, I read Japanese books at the library. In the evening, I buy vegetables and fish at the supermarket and return home."
+      ],
+      "keyVocab": [
+        {
+          "word": "ふだん",
+          "reading": "ふだん",
+          "en": "usually; on normal days"
+        },
+        {
+          "word": "散歩",
+          "reading": "さんぽ",
+          "en": "walk; stroll"
+        },
+        {
+          "word": "夕方",
+          "reading": "ゆうがた",
+          "en": "evening"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-01-q1",
+          "promptJp": "この人[ひと]は日曜日[にちようび]の朝[あさ]、何時[なんじ]におきますか。",
+          "promptEn": "What time does this person wake up on Sunday mornings?",
+          "choices": [
+            "六時[ろくじ]",
+            "七時[しちじ]",
+            "八時[はちじ]",
+            "九時[くじ]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 1 states they normally wake at 6:00, but on Sundays they wake up at 8:00 (八時におきます)."
+        },
+        {
+          "id": "rd-n5-01-q2",
+          "promptJp": "午後[ごご]、この人[ひと]はどこで何[なに]をしますか。",
+          "promptEn": "Where does this person go and what do they do in the afternoon?",
+          "choices": [
+            "公園[こうえん]で犬[いぬ]と散歩[さんぽ]します。",
+            "図書館[としょかん]で本[ほん]を読[よ]みます。",
+            "スーパーで朝[あさ]ごはんを食べます。",
+            "うちでテレビを見[み]ます。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 clearly says: \"In the afternoon, I read Japanese books at the library\" (午後は図書館で日本語の本を読みます)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-02",
+      "jlpt": 5,
+      "order": 2,
+      "passageType": "notice",
+      "titleJp": "図書館[としょかん]のお知[し]らせ",
+      "titleEn": "Library Opening Hours Notice",
+      "recommendedMinutes": 2,
+      "contextEn": "Notice posted at the entrance of Sakura City Library.",
+      "paragraphs": [
+        "さくら図書館[としょかん]をご利用[りよう]いただきありがとうございます。",
+        "来週[らいしゅう]の月曜日[げつようび]（十月[じゅうがつ]十日[とおか]）は祝日[しゅくじつ]ですが、午前[ごぜん]九時[くじ]から午後[ごご]五時[ごじ]まで開[あ]いています。ただし、次[つぎ]の日[ひ]の火曜日[かようび]はお休[やす]みになります。",
+        "本[ほん]は一人[ひとり]十冊[じゅっさつ]まで、二週間[にしゅうかん]かりることができます。返[かえ]すときは、一階[いっかい]のカウンターへお持[も]ちください。"
+      ],
+      "translationEn": [
+        "Thank you for using Sakura Library.",
+        "Next Monday (October 10) is a national holiday, but we will be open from 9:00 AM to 5:00 PM. However, the following day, Tuesday, will be closed.",
+        "Each person can borrow up to 10 books for two weeks. When returning books, please bring them to the first-floor counter."
+      ],
+      "keyVocab": [
+        {
+          "word": "祝日",
+          "reading": "しゅくじつ",
+          "en": "national holiday"
+        },
+        {
+          "word": "ただし",
+          "reading": "ただし",
+          "en": "however; note that"
+        },
+        {
+          "word": "かりる",
+          "reading": "かりる",
+          "en": "to borrow"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-02-q1",
+          "promptJp": "来週[らいしゅう]の火曜日[かようび]、図書館[としょかん]はどうなりますか。",
+          "promptEn": "What is the library status next Tuesday?",
+          "choices": [
+            "午前[ごぜん]九時[くじ]から開[あ]いています。",
+            "午後[ごご]五時[ごじ]まで開[あ]いています。",
+            "お休[やす]みです。",
+            "本[ほん]を返[かえ]すことだけできます。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The notice states that Monday is open despite the holiday, \"however, the next day, Tuesday, will be closed\" (次の日の火曜日はお休みになります)."
+        },
+        {
+          "id": "rd-n5-02-q2",
+          "promptJp": "本[ほん]は何冊[なんさつ]、どのぐらいかりられますか。",
+          "promptEn": "How many books can you borrow, and for how long?",
+          "choices": [
+            "五冊[ごさつ]、一週間[いっしゅうかん]",
+            "十冊[じゅっさつ]、一週間[いっしゅうかん]",
+            "五冊[ごさつ]、二週間[にしゅうかん]",
+            "十冊[じゅっさつ]、二週間[にしゅうかん]"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Paragraph 3 states: up to 10 books per person for two weeks (一人十冊まで、二週間)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-03",
+      "jlpt": 5,
+      "order": 3,
+      "passageType": "email",
+      "titleJp": "パーティーのしょうたいメール",
+      "titleEn": "Birthday Party Invitation Email",
+      "recommendedMinutes": 2,
+      "contextEn": "Email from Yamada to his friend Alex.",
+      "paragraphs": [
+        "アレックスさん、こんにちは。山田[やまだ]です。",
+        "今週[こんしゅう]の土曜日[どようび]に、わたしのうちで誕生[たんじょう]日[び]パーティーをします。時間[じかん]は午後[ごご]六時[ろくじ]からです。友達[ともだち]が五人[ごにん]ぐらい来[き]ます。",
+        "料理[りょうり]はわたしが作[つく]りますから、何[なに]も持[も]ってこなくてもいいです。でも、好[す]きな飲[の]み物[もの]があったら、持[も]ってきてください。来[こ]られるかどうか、木曜日[もくようび]までにメールで教[おし]えてくださいね。"
+      ],
+      "translationEn": [
+        "Hello Alex. This is Yamada.",
+        "This Saturday I am having a birthday party at my house. It starts at 6:00 PM. About five friends are coming.",
+        "I will make the food, so you do not need to bring anything. However, if you have a favorite drink, please bring it. Please let me know by email by Thursday whether you can come."
+      ],
+      "keyVocab": [
+        {
+          "word": "しょうたい",
+          "reading": "しょうたい",
+          "en": "invitation"
+        },
+        {
+          "word": "持ってこなくてもいい",
+          "reading": "もってこなくてもいい",
+          "en": "do not have to bring"
+        },
+        {
+          "word": "教える",
+          "reading": "おしえる",
+          "en": "to tell; let someone know"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-03-q1",
+          "promptJp": "アレックスさんはパーティーに何[なに]を持[も]っていかなければなりませんか。",
+          "promptEn": "What MUST Alex bring to the party?",
+          "choices": [
+            "自分[じぶん]で作[つく]った料理[りょうり]",
+            "誕生[たんじょう]日[び]のケーキ",
+            "何[なに]も持[も]っていかなくてもいいです。",
+            "五人[ごにん]ぶんの飲[の]み物[もの]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Yamada writes \"you don't have to bring anything\" (何も持ってこなくてもいいです); bringing a favorite drink is strictly optional."
+        },
+        {
+          "id": "rd-n5-03-q2",
+          "promptJp": "アレックスさんはいつまでに山田[やまだ]さんに返事[へんじ]をしますか。",
+          "promptEn": "By when should Alex reply to Yamada?",
+          "choices": [
+            "水曜日[すいようび]",
+            "木曜日[もくようび]",
+            "金曜日[きんようび]",
+            "土曜日[どようび]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence asks Alex to email by Thursday (木曜日までにメールで教えてください)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-04",
+      "jlpt": 5,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "新[あたら]しいアパート",
+      "titleEn": "My New Apartment",
+      "recommendedMinutes": 2,
+      "contextEn": "Short passage about moving to a new apartment.",
+      "paragraphs": [
+        "先月[せんげつ]、わたしは新[あたら]しいアパートにひっこしました。前[まえ]の部屋[へや]は駅[えき]から遠[とお]くて、毎日[まいにち]バスに乗[の]っていました。",
+        "今度[こんど]のアパートは駅[えき]から歩[ある]いて五分[ごふん]です。少[すこ]しせまくて、家賃[やちん]も前[まえ]より高[たか]いですが、コンビニもスーパーも近[ちか]くてとても便利[べんり]です。",
+        "それに、部屋[へや]の窓[まど]からきれいな川[かわ]が見[み]えます。わたしはこのアパートが好[す]きです。"
+      ],
+      "translationEn": [
+        "Last month, I moved to a new apartment. My previous room was far from the station, so I rode the bus every day.",
+        "This new apartment is a five-minute walk from the station. It is a bit cramped and the rent is higher than before, but both a convenience store and a supermarket are nearby so it is very convenient.",
+        "Moreover, you can see a pretty river from the room's window. I like this apartment."
+      ],
+      "keyVocab": [
+        {
+          "word": "ひっこす",
+          "reading": "ひっこす",
+          "en": "to move house"
+        },
+        {
+          "word": "せまい",
+          "reading": "せまい",
+          "en": "cramped; narrow"
+        },
+        {
+          "word": "家賃",
+          "reading": "やちん",
+          "en": "monthly rent"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-04-q1",
+          "promptJp": "新[あたら]しいアパートについて、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about the new apartment?",
+          "choices": [
+            "前[まえ]の部屋[へや]より広[ひろ]くて安[やす]いです。",
+            "駅[えき]から遠[とお]いので、バスに乗[の]ります。",
+            "前[まえ]より家賃[やちん]が高[たか]いですが、便利[べんり]です。",
+            "近[ちか]くにスーパーがありません。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 notes that it is slightly smaller and pricier than before, yet very convenient with the station, convenience store, and supermarket nearby."
+        },
+        {
+          "id": "rd-n5-04-q2",
+          "promptJp": "部屋[へや]の窓[まど]から何[なに]が見[み]えますか。",
+          "promptEn": "What can be seen from the apartment window?",
+          "choices": [
+            "大[おお]きい公園[こうえん]",
+            "きれいな川[かわ]",
+            "駅[えき]とバス停[てい]",
+            "高[たか]い山[やま]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states: \"a pretty river can be seen from the window\" (窓からきれいな川が見えます)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-05",
+      "jlpt": 5,
+      "order": 5,
+      "passageType": "notice",
+      "titleJp": "日本語[にほんご]クラスのテスト",
+      "titleEn": "Japanese Class Test Schedule",
+      "recommendedMinutes": 2,
+      "contextEn": "Memo written on a classroom whiteboard.",
+      "paragraphs": [
+        "みなさんへ",
+        "来週[らいしゅう]の金曜日[きんようび]に日本語[にほんご]のテストがあります。テストは午前[ごぜん]十時[じゅうじ]に始[はじ]まりますから、九時[くじ]五十分[ごじゅっぷん]までに三階[さんがい]の302教室[きょうしつ]へ来[き]てください。",
+        "えんぴつとけしゴムを持[も]ってきてください。辞書[じしょ]とスマートフォンは使[つか]うことができません。テストは一時間[いちじかん]です。"
+      ],
+      "translationEn": [
+        "To everyone,",
+        "There is a Japanese test next Friday. The test starts at 10:00 AM, so please come to Room 302 on the 3rd floor by 9:50 AM.",
+        "Please bring a pencil and an eraser. Dictionaries and smartphones cannot be used. The test lasts one hour."
+      ],
+      "keyVocab": [
+        {
+          "word": "教室",
+          "reading": "きょうしつ",
+          "en": "classroom"
+        },
+        {
+          "word": "けしゴム",
+          "reading": "けしごむ",
+          "en": "eraser"
+        },
+        {
+          "word": "辞書",
+          "reading": "じしょ",
+          "en": "dictionary"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-05-q1",
+          "promptJp": "学生[がくせい]は何時[なんじ]までに教室[きょうしつ]へ行[い]かなければなりませんか。",
+          "promptEn": "By what time must students arrive at the classroom?",
+          "choices": [
+            "九時[くじ]三十分[さんじゅっぷん]",
+            "九時[くじ]五十分[ごじゅっぷん]",
+            "十時[じゅうじ]",
+            "十一時[じゅういちじ]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Even though the test begins at 10:00, students are instructed to arrive by 9:50 AM (九時五十分までに)."
+        },
+        {
+          "id": "rd-n5-05-q2",
+          "promptJp": "テストのとき、使[つか]っていいものはどれですか。",
+          "promptEn": "What are students allowed to use during the test?",
+          "choices": [
+            "辞書[じしょ]",
+            "スマートフォン",
+            "えんぴつとけしゴム",
+            "日本語[にほんご]の本[ほん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Only a pencil and eraser are requested; dictionaries and smartphones are explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-01",
+      "jlpt": 4,
+      "order": 1,
+      "passageType": "short",
+      "titleJp": "日本[にほん]のごみの出[だ]し方[かた]",
+      "titleEn": "How to Take Out Garbage in Japan",
+      "recommendedMinutes": 3,
+      "contextEn": "Short cultural essay about local waste sorting rules.",
+      "paragraphs": [
+        "日本[にほん]に来[き]て一番[いちばん]びっくりしたのは、ごみの分[わ]け方[かた]がとても細[こま]かいことだ。わたしの住[す]んでいる町[まち]では、燃[も]えるごみ、燃[も]えないごみ、プラスチック、びん・かんの四[よっ]つに分[わ]けなければならない。",
+        "しかも、ごみを出[だ]せる曜日[ようび]と時間[じかん]も決[き]まっている。朝[あさ]八時[はちじ]までに出[だ]さなければならず、前[まえ]の晩[ばん]に出[だ]してはいけない。",
+        "最初[さいしょ]はよく間違[まちが]えて大変[たいへん]だったが、冷蔵庫[れいぞうこ]にルール表[ひょう]をはっておくようにしたら、だんだん慣[な]れてきた。"
+      ],
+      "translationEn": [
+        "What surprised me most after coming to Japan was how detailed garbage sorting is. In the town where I live, you have to sort trash into four categories: burnable, non-burnable, plastic, and bottles/cans.",
+        "Moreover, the days and times you can put out garbage are also fixed. You must put it out by 8:00 AM, and you must not put it out the night before.",
+        "At first I often made mistakes and it was tough, but once I made sure to stick the rule chart on the fridge, I gradually got used to it."
+      ],
+      "keyVocab": [
+        {
+          "word": "細かい",
+          "reading": "こまかい",
+          "en": "detailed; strict"
+        },
+        {
+          "word": "燃えるごみ",
+          "reading": "もえるごみ",
+          "en": "burnable garbage"
+        },
+        {
+          "word": "慣れる",
+          "reading": "なれる",
+          "en": "to get used to"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-01-q1",
+          "promptJp": "この町[まち]のごみのルールに合[あ]っているのはどれですか。",
+          "promptEn": "Which action follows the town's garbage rules?",
+          "choices": [
+            "ごみは前[まえ]の晩[ばん]に出[だ]しておく。",
+            "プラスチックとびんを同[おな]じ袋[ふくろ]に入[い]れる。",
+            "決[き]まった曜日[ようび]の朝[あさ]八時[はちじ]までに出[だ]す。",
+            "いつでも好[す]きな時間[じかん]に出[だ]していい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 states garbage must be put out by 8:00 AM on designated days and never the night before."
+        },
+        {
+          "id": "rd-n4-01-q2",
+          "promptJp": "筆者[ひっしゃ]はどうやってごみの分[わ]け方[かた]に慣[な]れましたか。",
+          "promptEn": "How did the author get used to sorting garbage?",
+          "choices": [
+            "近所[きんじょ]の人[ひと]に毎日[まいにち]聞[き]いた。",
+            "冷蔵庫[れいぞうこ]にルール表[ひょう]をはっておいた。",
+            "ごみを出[だ]さないようにした。",
+            "町[まち]の役所[やくしょ]へ毎週[まいしゅう]行[い]った。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 explains that posting the rule chart on the refrigerator helped the author get used to it."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-02",
+      "jlpt": 4,
+      "order": 2,
+      "passageType": "email",
+      "titleJp": "旅行[りょこう]の予定[よてい]の変更[へんこう]",
+      "titleEn": "Change of Travel Plans",
+      "recommendedMinutes": 3,
+      "contextEn": "Email from Sato to friend Kenji about a weekend trip.",
+      "paragraphs": [
+        "けんじくん、おつかれさま。佐藤[さとう]です。",
+        "今度[こんど]の日曜日[にちようび]のハイキングですが、天気[てんき]予報[よほう]によると、午前中[ごぜんちゅう]から強[つよ]い雨[あめ]が降[ふ]るそうです。山[やま]の道[みち]はぬれるとすべりやすくて危[あぶ]ないので、ハイキングは来月[らいげつ]に延期[えんき]したほうがいいと思[おも]います。",
+        "そのかわり、日曜日[にちようび]は駅前[えきまえ]の美術館[びじゅつかん]へ行[い]きませんか。新[あたら]しい写真[しゃしん]展[てん]をやっているそうですよ。よかったら、午前[ごぜん]十時[じゅうじ]に駅[えき]の改札[かいさつ]で会[あ]いましょう。"
+      ],
+      "translationEn": [
+        "Hey Kenji, hope you're well. This is Sato.",
+        "About this Sunday's hiking trip: according to the weather forecast, it will rain heavily from the morning. Mountain trails become slippery and dangerous when wet, so I think we had better postpone hiking until next month.",
+        "Instead, why don't we go to the art museum in front of the station on Sunday? I heard there is a new photo exhibition. If that sounds good, let's meet at the station ticket gate at 10:00 AM."
+      ],
+      "keyVocab": [
+        {
+          "word": "延期する",
+          "reading": "えんきする",
+          "en": "to postpone"
+        },
+        {
+          "word": "すべりやすい",
+          "reading": "すべりやすい",
+          "en": "easy to slip on; slippery"
+        },
+        {
+          "word": "改札",
+          "reading": "かいさつ",
+          "en": "station ticket gate"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-02-q1",
+          "promptJp": "どうしてハイキングを延期[えんき]したいと言[い]っていますか。",
+          "promptEn": "Why does Sato want to postpone the hike?",
+          "choices": [
+            "佐藤[さとう]さんが風邪[かぜ]を引[ひ]いたから。",
+            "雨[あめ]で山[やま]の道[みち]が危[あぶ]なくなるから。",
+            "けんじくんが仕事[しごと]で忙[いそが]しいから。",
+            "写真[しゃしん]展[てん]のチケットが安[やす]いから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Sato cites the forecast of heavy rain making the mountain trails slippery and dangerous."
+        },
+        {
+          "id": "rd-n4-02-q2",
+          "promptJp": "佐藤[さとう]さんは日曜日[にちようび]に何[なに]をしようと誘[さそ]っていますか。",
+          "promptEn": "What does Sato propose doing on Sunday instead?",
+          "choices": [
+            "うちで映画[えいが]を見[み]ること",
+            "来月[らいげつ]のホテルを予約[よやく]すること",
+            "駅前[えきまえ]の美術館[びじゅつかん]へ行くこと",
+            "午前[ごぜん]中[ちゅう]だけ山[やま]に登[のぼ]ること"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 proposes visiting the art museum in front of the station (駅前の美術館へ行きませんか)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-03",
+      "jlpt": 4,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "料理[りょうり]教室[きょうしつ]のご案内[あんない]",
+      "titleEn": "Japanese Cooking Class Announcement",
+      "recommendedMinutes": 3,
+      "contextEn": "Flyer at a local community center.",
+      "paragraphs": [
+        "外国[がいこく]人[じん]のための日本[にほん]料理[りょうり]教室[きょうしつ]を開[ひら]きます。今回[こんかい]は、だれでも簡単[かんたん]に作[つく]れる「肉[にく]じゃが」と「みそ汁[しる]」を練習[れんしゅう]します。",
+        "日時[にちじ]：十一月[じゅういちがつ]二十日[はつか]（土[ど]）13:00〜15:30\n場所[ばしょ]：市民[しみん]センター二階[にかい] 料理[りょうり]室[しつ]\n参加[さんか]費[ひ]：800円[えん]（材料[ざいりょう]代[だい]をふくみます）",
+        "申[もう]し込[こ]みは十一月[じゅういちがつ]十二日[じゅうににち]までに、電話[でんわ]か受付[うけつけ]でお願いします。定員[ていいん]は十五人[じゅうごにん]です。エプロンとタオルをご持参[じさん]ください。"
+      ],
+      "translationEn": [
+        "We are holding a Japanese cooking class for foreign residents. This time we will practice making \"nikujaga\" and \"miso soup,\" which anyone can make easily.",
+        "Date & Time: Saturday, November 20, 13:00–15:30 / Place: Civic Center 2F Cooking Room / Fee: 800 yen (includes ingredient costs).",
+        "Please apply by November 12 by phone or at the reception desk. Capacity is 15 people. Please bring your own apron and towel."
+      ],
+      "keyVocab": [
+        {
+          "word": "材料代",
+          "reading": "ざいりょうだい",
+          "en": "cost of ingredients"
+        },
+        {
+          "word": "定員",
+          "reading": "ていいん",
+          "en": "capacity; maximum participants"
+        },
+        {
+          "word": "ご持参ください",
+          "reading": "ごじさんください",
+          "en": "please bring with you (polite)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-03-q1",
+          "promptJp": "参加[さんか]したい人[ひと]は、まず何[なに]をしなければなりませんか。",
+          "promptEn": "What must someone who wants to participate do first?",
+          "choices": [
+            "十一月[じゅういちがつ]二十日[はつか]に材料[ざいりょう]を買[か]って持[も]っていく。",
+            "十一月[じゅういちがつ]十二日[じゅうににち]までに電話[でんわ]か受付[うけつけ]で申[もう]し込[こ]む。",
+            "メールで料理[りょうり]の名前[なまえ]を送[おく]る。",
+            "市民[しみん]センターでエプロンを借[か]りる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 instructs applicants to register by November 12 via phone or the reception desk."
+        },
+        {
+          "id": "rd-n4-03-q2",
+          "promptJp": "当日[とうじつ]、自分[じぶん]で持[も]っていくものは何[なに]ですか。",
+          "promptEn": "What should participants bring on the day of the class?",
+          "choices": [
+            "野菜[やさい]と肉[にく]",
+            "みそと鍋[なべ]",
+            "エプロンとタオル",
+            "料理[りょうり]の本[ほん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Ingredients are included in the 800-yen fee; participants only need to bring an apron and a towel (エプロンとタオルをご持参ください)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-04",
+      "jlpt": 4,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "アルバイトで学[まな]んだこと",
+      "titleEn": "What I Learned at My Part-Time Job",
+      "recommendedMinutes": 3,
+      "contextEn": "Student essay about working at a bakery.",
+      "paragraphs": [
+        "わたしは去年[きょねん]の秋[あき]から、駅[えき]の近[ちか]くのパン屋[や]でアルバイトをしています。働[はたら]き始[はじ]めたころは、パンの名前[なまえ]や値段[ねだん]を覚[おぼ]えるのが大変[たいへん]で、よくレジで失敗[しっぱい]してしまいました。",
+        "でも、店長[てんちょう]や先輩[せんぱい]がいつも親切[しんせつ]に教[おし]えてくれました。わたしもメモを取[と]って、家[いえ]で毎日[まいにち]声[こえ]に出[だ]して練習[れんしゅう]するようにしました。",
+        "今[いま]ではお客[きゃく]さまに笑顔[えがお]で「ありがとうございました」と言[い]えるようになり、仕事[しごと]がとても楽[たの]しいです。"
+      ],
+      "translationEn": [
+        "Since last autumn, I have been working part-time at a bakery near the station. When I first started, memorizing the names and prices of the breads was tough, and I often made mistakes at the register.",
+        "However, the store manager and senior coworkers always taught me kindly. I also made a habit of taking notes and practicing aloud at home every day.",
+        "Now I have become able to say \"Thank you very much\" to customers with a smile, and the job is very enjoyable."
+      ],
+      "keyVocab": [
+        {
+          "word": "失敗する",
+          "reading": "しっぱいする",
+          "en": "to fail; make a mistake"
+        },
+        {
+          "word": "先輩",
+          "reading": "せんぱい",
+          "en": "senior coworker"
+        },
+        {
+          "word": "声に出す",
+          "reading": "こえにだす",
+          "en": "to say out loud"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-04-q1",
+          "promptJp": "働[はたら]き始[はじ]めたころ、筆者[ひっしゃ]は何[なに]が大変[たいへん]でしたか。",
+          "promptEn": "What was difficult for the writer when first starting the job?",
+          "choices": [
+            "朝[あさ]早[はや]く起[お]きること",
+            "パンを作[つく]ること",
+            "パンの名前[なまえ]や値段[ねだん]を覚[おぼ]えること",
+            "店長[てんちょう]と話[はな]すこと"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 1 states memorizing bread names and prices was tough, leading to register mistakes."
+        },
+        {
+          "id": "rd-n4-04-q2",
+          "promptJp": "今[いま]の筆者[ひっしゃ]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which is true about the writer now?",
+          "choices": [
+            "レジがまだ苦手[にがて]でやめたがっている。",
+            "お客[きゃく]さまに笑顔[えがお]で挨拶[あいさつ]でき、仕事[しごと]が楽[たの]しい。",
+            "パン屋[や]をやめて別[べつ]の店[みせ]へ移[うつ]った。",
+            "毎日[まいにち]一人[ひとり]でパンを焼[や]いている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states they can now greet customers with a smile and find the job very enjoyable."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-05",
+      "jlpt": 4,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "睡眠[すいみん]とスマートフォン",
+      "titleEn": "Sleep and Smartphones",
+      "recommendedMinutes": 3,
+      "contextEn": "Short health column on bedtime smartphone habits.",
+      "paragraphs": [
+        "最近[さいきん]、「夜[よる]なかなか眠[ねむ]れない」と悩[なや]んでいる若[わか]い人[ひと]が増[ふ]えているそうです。その大[おお]きな原因[げんいん]の一[ひと]つは、寝[ね]る前[まえ]のスマートフォンの使[つか]いすぎだと言[い]われています。",
+        "暗[くら]い部屋[へや]で明[あか]るい画面[がめん]を見[み]続[つづ]けると、脳[のう]が「まだ昼[ひる]だ」とかんちがいしてしまい、眠[ねむ]りにくくなるのです。",
+        "ぐっすり眠[ねむ]るためには、寝[ね]る一時間[いちじかん]前[まえ]には画面[がめん]を見[み]るのをやめて、温[あたた]かいお茶[ちゃ]を飲[の]んだり、静[しず]かな音楽[おんがく]を聞[き]いたりするほうがいいでしょう。"
+      ],
+      "translationEn": [
+        "Recently, the number of young people troubled by not being able to fall asleep easily at night is reportedly increasing. One major cause is said to be excessive smartphone use before bed.",
+        "When you keep staring at a bright screen in a dark room, your brain mistakenly thinks it is still daytime, making it harder to fall asleep.",
+        "In order to sleep soundly, it is better to stop looking at screens an hour before bed and instead drink warm tea or listen to quiet music."
+      ],
+      "keyVocab": [
+        {
+          "word": "悩む",
+          "reading": "なやむ",
+          "en": "to worry; be troubled by"
+        },
+        {
+          "word": "原因",
+          "reading": "げんいん",
+          "en": "cause; reason"
+        },
+        {
+          "word": "かんちがいする",
+          "reading": "かんちがいする",
+          "en": "to misunderstand; mistake"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-05-q1",
+          "promptJp": "寝[ね]る前[まえ]に画面[がめん]を見[み]続[つづ]けると、どうして眠[ねむ]りにくくなりますか。",
+          "promptEn": "Why does staring at a screen before bed make it harder to sleep?",
+          "choices": [
+            "部屋[へや]が寒[さむ]くなるから。",
+            "脳[のう]がまだ昼[ひる]だとかんちがいするから。",
+            "音楽[おんがく]がうるさいから。",
+            "お茶[ちゃ]を飲[の]みすぎるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explicitly explains that bright screens trick the brain into thinking it is still daytime (脳が「まだ昼だ」とかんちがいしてしまい)."
+        },
+        {
+          "id": "rd-n4-05-q2",
+          "promptJp": "ぐっすり眠[ねむ]るために、この文章[ぶんしょう]がすすめていることは何[なに]ですか。",
+          "promptEn": "What does the passage recommend for sleeping soundly?",
+          "choices": [
+            "部屋[へや]を明[あか]るくして寝[ね]ること",
+            "寝[ね]る直前[ちょくぜん]までニュースを読[よ]むこと",
+            "寝[ね]る一時間[いちじかん]前[まえ]に画面[がめん]を見[み]るのをやめること",
+            "冷[つめ]たいコーヒーを飲[の]むこと"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 advises stopping screen viewing one hour before bedtime."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-01",
+      "jlpt": 3,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "「失敗[しっぱい]ノート」のすすめ",
+      "titleEn": "The Value of Keeping a Mistake Notebook",
+      "recommendedMinutes": 4,
+      "contextEn": "Short opinion essay about effective learning habits.",
+      "paragraphs": [
+        "テストで間違[まちが]えた問題[もんだい]を見[み]直[なお]すのは、だれにとってもあまり気持[きも]ちのいいものではない。できなかった部分[ぶぶん]は早[はや]く忘[わす]れて、次[つぎ]の新[あたら]しいページへ進[すす]みたくなるものだ。",
+        "ところが、成績[せいせき]を着実[ちゃくじつ]に伸[の]ばしている人[ひと]ほど、自分[じぶん]の失敗[しっぱい]を大切[たいせつ]に記録[きろく]している。間違[まちが]えた問題[もんだい]と「なぜ間違[まちが]えたか」を専用[せんよう]のノートに書[か]き留[と]めておくのである。",
+        "同[おな]じミスを二度[にど]と繰[く]り返[かえ]さないためには、新[あたら]しい参考[さんこう]書[しょ]を何冊[なんさつ]も買[か]うよりも、自分[じぶん]だけの「失敗[しっぱい]ノート」を繰[く]り返[かえ]し見[み]返[かえ]すほうがずっと効果[こうか]的[てき]だと言[い]える。"
+      ],
+      "translationEn": [
+        "Reviewing problems you got wrong on a test is not very pleasant for anyone. One naturally wants to forget the parts they couldn't do and move on to the next new page.",
+        "However, the more steadily people improve their grades, the more carefully they record their own mistakes. They jot down missed questions along with \"why I got it wrong\" in a dedicated notebook.",
+        "To avoid repeating the same mistakes twice, repeatedly reviewing one's own \"mistake notebook\" is far more effective than buying numerous new reference books."
+      ],
+      "keyVocab": [
+        {
+          "word": "見直す",
+          "reading": "みなおす",
+          "en": "to review; re-examine"
+        },
+        {
+          "word": "着実に",
+          "reading": "ちゃくじつに",
+          "en": "steadily; reliably"
+        },
+        {
+          "word": "効果的",
+          "reading": "こうかてき",
+          "en": "effective"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-01-q1",
+          "promptJp": "成績[せいせき]を着実[ちゃくじつ]に伸[の]ばしている人[ひと]は、どんなことをしていますか。",
+          "promptEn": "What do people who steadily improve their scores do?",
+          "choices": [
+            "新[あたら]しい参考[さんこう]書[しょ]をたくさん買[か]う。",
+            "間違[まちが]えた問題[もんだい]は早[はや]く忘[わす]れるようにする。",
+            "間違[まちが]えた問題[もんだい]とその原因[げんいん]をノートに記録[きろく]する。",
+            "友達[ともだち]のノートをコピーして暗記[あんき]する。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 explicitly notes they record both the missed question and the reason they got it wrong in a dedicated notebook."
+        },
+        {
+          "id": "rd-n3-01-q2",
+          "promptJp": "この文章[ぶんしょう]で筆者[ひっしゃ]が一番[いちばん]言[い]いたいことは何[なに]ですか。",
+          "promptEn": "What is the author's main point in this passage?",
+          "choices": [
+            "テストの点数[てんすう]を気[き]にしすぎるのはよくない。",
+            "自分[じぶん]のミスをまとめ直[なお]して復習[ふくしゅう]することが最も[もっとも]効果[こうか]的[てき]だ。",
+            "参考[さんこう]書[しょ]を使[つか]わずに勉強[べんきょう]するべきだ。",
+            "ノートをきれいに書[か]けば自然[しぜん]に合格[ごうかく]できる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 concludes that reviewing your own mistake notebook is much more effective than buying many new textbooks."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-02",
+      "jlpt": 3,
+      "order": 2,
+      "passageType": "email",
+      "titleJp": "打[う]ち合[あ]わせ日程[にってい]のご連絡[れんらく]",
+      "titleEn": "Business Email: Rescheduling a Client Meeting",
+      "recommendedMinutes": 4,
+      "contextEn": "Polite business email between two companies.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]ミライ\n営業部[えいぎょうぶ] 高橋[たかはし]様[さま]",
+        "いつも大変[たいへん]お世話[せわ]になっております。ABC企画[きかく]の鈴木[すずき]でございます。",
+        "来週[らいしゅう]の水曜日[すいようび]（十五日[じゅうごにち]）午後[ごご]二時[にじ]に予定[よてい]しておりました新[しん]商品[しょうひん]の打[う]ち合[あ]わせですが、急[きゅう]な出張[しゅっちょう]が入[はい]ってしまったため、日程[にってい]を変更[へんこう]していただけないでしょうか。急[きゅう]なお願い[ねがい]で大変[たいへん]申[もう]し訳[わけ]ございません。",
+        "代[か]わりの候補[こうほ]として、十六日[じゅうろくにち]（木[もく]）の午前[ごぜん]十時[じゅうじ]、または十七日[じゅうしちにち]（金[きん]）の午後[ごご]三時[さんじ]はいかがでしょうか。ご都合[つごう]のよろしい日[ひ]をお知[し]らせいただけますと幸[さいわ]いです。"
+      ],
+      "translationEn": [
+        "Mr. Takahashi, Sales Department, Mirai Corporation",
+        "Thank you always for your kind support. This is Suzuki from ABC Planning.",
+        "Regarding the new product meeting scheduled for next Wednesday (the 15th) at 2:00 PM, an urgent business trip has come up, so I was wondering if we could reschedule. I am very sorry for the sudden request.",
+        "As alternative options, how would Thursday the 16th at 10:00 AM or Friday the 17th at 3:00 PM work for you? I would appreciate it if you could let me know which date is convenient."
+      ],
+      "keyVocab": [
+        {
+          "word": "打ち合わせ",
+          "reading": "うちあわせ",
+          "en": "meeting; consultation"
+        },
+        {
+          "word": "候補",
+          "reading": "こうほ",
+          "en": "candidate; proposed option"
+        },
+        {
+          "word": "ご都合",
+          "reading": "ごつごう",
+          "en": "convenience; availability (polite)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-02-q1",
+          "promptJp": "鈴木[すずき]さんがこのメールを送[おく]った目的[もくてき]は何[なに]ですか。",
+          "promptEn": "What is Suzuki's purpose in sending this email?",
+          "choices": [
+            "新[しん]商品[しょうひん]の注文[ちゅうもん]をキャンセルするため。",
+            "水曜日[すいようび]の打[う]ち合[あ]わせの日[ひ]を変[か]えてもらうため。",
+            "高橋[たかはし]さんに出張[しゅっちょう]へ一緒[いっしょ]に行[い]ってもらうため。",
+            "打[う]ち合[あ]わせの場所[ばしょ]を確認[かくにん]するため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Suzuki asks to reschedule Wednesday's meeting because of an unexpected business trip."
+        },
+        {
+          "id": "rd-n3-02-q2",
+          "promptJp": "高橋[たかはし]さんはこのあと何[なに]をする必要[ひつよう]がありますか。",
+          "promptEn": "What does Takahashi need to do next?",
+          "choices": [
+            "十五日[じゅうごにち]の午後[ごご]二時[にじ]にABC企画[きかく]へ行[い]く。",
+            "十六日[じゅうろくにち]か十七日[じゅうしちにち]の都合[つごう]のいい日時[にちじ]を返事[へんじ]する。",
+            "自分[じぶん]で新[あたら]しい商品[しょうひん]の資料[しりょう]を作[つく]る。",
+            "出張[しゅっちょう]先[さき]のホテルを予約[よやく]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 4 asks Takahashi to reply with which of the two proposed alternative dates (the 16th or 17th) works best."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-03",
+      "jlpt": 3,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "スポーツジム会員[かいいん]プラン一覧[いちらん]",
+      "titleEn": "Gym Membership Plans & Conditions",
+      "recommendedMinutes": 4,
+      "contextEn": "Information retrieval notice — classic JLPT N3 format.",
+      "paragraphs": [
+        "【みどりスポーツクラブ 料金[りょうきん]プラン】\n① フルタイム会員[かいいん]（月[つき]8,500円[えん]）：全[すべ]ての曜日[ようび] 7:00〜22:00 利用[りよう]可[か]。プール・ジム・スタジオ全[すべ]て使[つか]えます。\n② デイ会員[かいいん]（月[つき]5,800円[えん]）：平日[へいじつ]（月[げつ]〜金[きん]）10:00〜17:00のみ利用[りよう]可[か]。プールは使[つか]えません。\n③ ナイト＆ホリデー会員[かいいん]（月[つき]6,500円[えん]）：平日[へいじつ]18:00〜22:00、土日[どにち]祝[しゅく]は終日[しゅうじつ]利用[りよう]可[か]。プールも利用[りよう]できます。",
+        "※いずれのプランも、入会[にゅうかい]金[きん]3,000円[えん]が必要[ひつよう]です。ただし、今月[こんげつ]中[ちゅう]にホームページから申[もう]し込[こ]んだ場合[ばあい]、入会[にゅうかい]金[きん]は無料[むりょう]になります。"
+      ],
+      "translationEn": [
+        "[Midori Sports Club Fee Plans] (1) Full-time Member (8,500 yen/mo): All days 7:00–22:00; pool, gym, and studio all included. (2) Day Member (5,800 yen/mo): Weekdays (Mon–Fri) 10:00–17:00 only; pool cannot be used. (3) Night & Holiday Member (6,500 yen/mo): Weekdays 18:00–22:00, weekends & holidays all day; pool also included.",
+        "*Every plan requires a 3,000-yen enrollment fee. However, if you apply via the website within this month, the enrollment fee is waived."
+      ],
+      "keyVocab": [
+        {
+          "word": "平日",
+          "reading": "へいじつ",
+          "en": "weekdays"
+        },
+        {
+          "word": "終日",
+          "reading": "しゅうじつ",
+          "en": "all day"
+        },
+        {
+          "word": "入会金",
+          "reading": "にゅうかいきん",
+          "en": "enrollment / registration fee"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-03-q1",
+          "promptJp": "会社員[かいしゃいん]の木村[きむら]さんは、仕事[しごと]のあと（19時[じ]ごろ）と日曜日[にちようび]にプールで泳[およ]ぎたいです。一番[いちばん]安[やす]くて条件[じょうけん]に合[あ]うプランはどれですか。",
+          "promptEn": "Kimura wants to swim in the pool after work (~7 PM) and on Sundays. Which is the cheapest plan that fits?",
+          "choices": [
+            "フルタイム会員[かいいん]",
+            "デイ会員[かいいん]",
+            "ナイト＆ホリデー会員[かいいん]",
+            "条件[じょうけん]に合[あ]うプランはない。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Night & Holiday (6,500 yen) covers weekdays 18:00–22:00, weekends all day, AND includes the pool — cheaper than Full-time (8,500 yen)."
+        },
+        {
+          "id": "rd-n3-03-q2",
+          "promptJp": "入会[にゅうかい]金[きん]を無料[むりょう]にするためには、どうすればいいですか。",
+          "promptEn": "How can one get the enrollment fee waived?",
+          "choices": [
+            "フルタイム会員[かいいん]を選[えら]ぶ。",
+            "今月[こんげつ]中[ちゅう]にホームページから申[もう]し込[こ]む。",
+            "友達[ともだち]と二人[ふたり]で受付[うけつけ]へ行[い]く。",
+            "一年[いちねん]ぶんの料金[りょうきん]をまとめて払[はら]う。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The footnote explicitly specifies applying via the website within this month (今月中にホームページから申し込んだ場合)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-04",
+      "jlpt": 3,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "「便利[べんり]さ」の裏側[うらがわ]",
+      "titleEn": "The Flip Side of Convenience",
+      "recommendedMinutes": 4,
+      "contextEn": "Short reflective column about digital maps and memory.",
+      "paragraphs": [
+        "昔[むかし]は初[はじ]めて行[い]く場所[ばしょ]へ出[で]かける前[まえ]に、紙[かみ]の地図[ちず]を広[ひろ]げて道順[みちじゅん]を頭[あたま]に入[い]れておいたものだ。道[みち]に迷[まよ]えば、近所[きんじょ]の店[みせ]の人[ひと]に声[こえ]をかけて場所[ばしょ]を聞[き]いた。",
+        "今[いま]はスマートフォンの地図[ちず]アプリのおかげで、迷[まよ]う心配[しんぱい]はほとんどなくなった。確[たし]かにとても助[たす]かる。",
+        "しかし、画面[がめん]の案内[あんない]どおりに歩[ある]くばかりで、二度[にど]目[め]に同[おな]じ場所[ばしょ]へ行[い]こうとしても道[みち]を覚[おぼ]えていないことが増[ふ]えた。便利[べんり]になったかわりに、自分[じぶん]で周[まわ]りの景色[けしき]を見[み]て覚[おぼ]える力[ちから]が弱[よわ]くなっているのかもしれない。"
+      ],
+      "translationEn": [
+        "In the past, before heading to a place for the first time, we used to spread out a paper map and memorize the route. If we got lost, we would speak to a local shopkeeper to ask directions.",
+        "Today, thanks to smartphone map apps, there is almost no worry of getting lost. That is certainly very helpful.",
+        "However, because we do nothing but follow the screen's directions, it happens more often that we don't remember the way when visiting the same place a second time. In exchange for convenience, our ability to observe and remember our surroundings may be weakening."
+      ],
+      "keyVocab": [
+        {
+          "word": "道順",
+          "reading": "みちじゅん",
+          "en": "route; directions"
+        },
+        {
+          "word": "案内どおり",
+          "reading": "あんないどおり",
+          "en": "just as guided"
+        },
+        {
+          "word": "かわりに",
+          "reading": "かわりに",
+          "en": "in exchange for; on the other hand"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-04-q1",
+          "promptJp": "筆者[ひっしゃ]は地図[ちず]アプリについて、どのような問題[もんだい]を感[かん]じていますか。",
+          "promptEn": "What concern does the author feel about map apps?",
+          "choices": [
+            "案内[あんない]が間違[まちが]っていることが多[おお]い。",
+            "バッテリーがすぐになくなって困[こま]る。",
+            "自分[じぶん]で道[みち]や景色[けしき]を覚[おぼ]える力[ちから]が弱[よわ]くなっているかもしれない。",
+            "紙[かみ]の地図[ちず]より使[つか]い方[かた]が難[むずか]しい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 notes that relying blindly on turn-by-turn guidance may be weakening our ability to remember routes and surroundings."
+        },
+        {
+          "id": "rd-n3-04-q2",
+          "promptJp": "本文[ほんぶん]の内容[ないよう]に合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the content of the passage?",
+          "choices": [
+            "筆者[ひっしゃ]は地図[ちず]アプリを全[まった]く使[つか]わないようにしている。",
+            "筆者[ひっしゃ]は地図[ちず]アプリの便利[べんり]さ自体[じたい]は認[みと]めている。",
+            "昔[むかし]は誰[だれ]も道[みち]に迷[まよ]わなかった。",
+            "最近[さいきん]は店[みせ]の人[ひと]に道[みち]を聞[き]く人[ひと]が増[ふ]えている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 acknowledges the app's usefulness (\"確かにとても助かる\") before raising the trade-off in Paragraph 3."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-05",
+      "jlpt": 3,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "「早起[はやお]き」が続[つづ]くコツ",
+      "titleEn": "The Secret to Sticking With Waking Up Early",
+      "recommendedMinutes": 4,
+      "contextEn": "Lifestyle essay about building sustainable morning habits.",
+      "paragraphs": [
+        "「明日[あした]から毎日[まいにち]五時[ごじ]に起[お]きて勉強[べんきょう]しよう」と決心[けっしん]しても、三日[みっか]も続[つづ]かなかった経験[けいけん]はないだろうか。急[きゅう]に生活[せいかつ]リズムを変[か]えようとすると、体[からだ]に無理[むり]がかかって挫折[ざせつ]しやすい。",
+        "習慣[しゅうかん]を定着[ていちゃく]させるコツは、最初[さいしょ]の目標[もくひょう]をできるだけ小[ちい]さくすることだ。たとえば、いきなり二時間[にじかん]早[はや]く起[お]きるのではなく、まず十五分[じゅうごふん]だけ早[はや]く起[お]きてみる。",
+        "さらに、「起[お]きたら好[す]きなコーヒーを飲[の]む」といった小[ちい]さな楽[たの]しみを用意[ようい]しておくと、つらい努力[どりょく]ではなく自然[しぜん]な日課[にっか]として続[つづ]けやすくなる。"
+      ],
+      "translationEn": [
+        "Haven't you ever resolved, \"Starting tomorrow I'll wake up at 5 AM every day to study,\" only for it not to last even three days? Trying to change your daily rhythm abruptly strains the body and easily leads to giving up.",
+        "The trick to cementing a habit is to make the initial goal as small as possible. For instance, instead of suddenly waking up two hours earlier, try waking up just 15 minutes earlier first.",
+        "Furthermore, preparing a small pleasure such as \"drinking your favorite coffee upon waking\" makes it easier to continue as a natural daily routine rather than painful effort."
+      ],
+      "keyVocab": [
+        {
+          "word": "挫折する",
+          "reading": "ざせつする",
+          "en": "to give up; suffer a setback"
+        },
+        {
+          "word": "定着させる",
+          "reading": "ていちゃくさせる",
+          "en": "to establish firmly; make stick"
+        },
+        {
+          "word": "日課",
+          "reading": "にっか",
+          "en": "daily routine"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-05-q1",
+          "promptJp": "早起[はやお]きが三日[みっか]も続[つづ]かない理由[りゆう]として挙[あ]げられているのは何[なに]ですか。",
+          "promptEn": "What reason is given for early-rising resolutions failing within three days?",
+          "choices": [
+            "コーヒーを飲[の]みすぎるから。",
+            "急[きゅう]に生活[せいかつ]リズムを変[か]えて体[からだ]に無理[むり]がかかるから。",
+            "勉強[べんきょう]する教材[きょうざい]が難[むずか]しすぎるから。",
+            "目覚[めざ]まし時計[どけい]の音が小[ちい]さいから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 states that changing your rhythm abruptly puts strain on the body and makes you likely to give up."
+        },
+        {
+          "id": "rd-n3-05-q2",
+          "promptJp": "筆者[ひっしゃ]がすすめる習慣[しゅうかん]づくりの方法[ほうほう]はどれですか。",
+          "promptEn": "Which habit-building method does the author recommend?",
+          "choices": [
+            "最初[さいしょ]から厳[きび]しい目標[もくひょう]を立てて我慢[がまん]する。",
+            "十五分[じゅうごふん]など小[ちい]さな目標[もくひょう]と、起[お]きたあとの小[ちい]さな楽[たの]しみを組[く]み合[あ]わせる。",
+            "週末[しゅうまつ]だけ五時[ごじ]に起[お]きるようにする。",
+            "夜[よる]遅[おそ]くまで勉強[べんきょう]してから寝[ね]る。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 2 and 3 advise starting with a tiny goal (like 15 minutes) paired with a small reward (like favorite coffee)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-01",
+      "jlpt": 2,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "「わかりやすさ」の落[お]とし穴[あな]",
+      "titleEn": "The Pitfall of Over-Simplification",
+      "recommendedMinutes": 5,
+      "contextEn": "N2-style essay examining media summaries and critical thinking.",
+      "paragraphs": [
+        "情報[じょうほう]があふれる現代[げんだい]において、複雑[ふくざつ]なニュースを数行[すうぎょう]に要約[ようやく]してくれるサービスや動画[どうが]が人気[にんき]を集[あつ]めている。限[かぎ]られた時間[じかん]で世[よ]の中[なか]の動[うご]きをつかむ上[うえ]で、こうした「わかりやすさ」が役立[やくだ]つ場面[ばめん]は確[たし]かに多[おお]い。",
+        "一方で、本来[ほんらい]さまざまな背景[はいけい]や対立[たいりつ]する意見[いけん]を含[ふく]む問題[もんだい]を、無理[むり]やり「善[ぜん]か悪[あく]か」の単純[たんじゅん]な図式[ずしき]に押[お]し込[こ]めてしまう危険[きけん]性[せい]も見逃[みのが]せない。要約[ようやく]する側[がわ]の視点[してん]によって、重要[じゅうよう]な前提[ぜんてい]や例外[れいがい]が削[けず]り落[お]とされてしまうからである。",
+        "だからこそ、受[う]け手[て]である私[わたし]たちは、手軽[てがる]なまとめだけで「理解[りかい]した気[き]」にならず、ときに手間[てま]のかかる一次[いちじ]資料[しりょう]や異[こと]なる立場[たちば]の意見[いけん]にも目[め]を通[とお]す姿勢[しせい]が求[もと]められている。"
+      ],
+      "translationEn": [
+        "In today's information-saturated era, services and videos that summarize complex news into a few lines are gaining popularity. There are certainly many situations where such \"ease of understanding\" helps grasp current events in limited time.",
+        "On the other hand, we cannot overlook the danger of forcing issues that inherently contain diverse backgrounds and opposing views into a simplistic \"good vs. evil\" framework. Depending on the summarizer's viewpoint, crucial premises and exceptions get stripped away.",
+        "Precisely for this reason, we as recipients are called upon not to feel \"as if we've understood\" from convenient summaries alone, but to maintain the stance of occasionally reviewing primary sources and differing perspectives even when it takes effort."
+      ],
+      "keyVocab": [
+        {
+          "word": "落とし穴",
+          "reading": "おとしあな",
+          "en": "pitfall; trap"
+        },
+        {
+          "word": "単純な図式",
+          "reading": "たんじゅんなずしき",
+          "en": "oversimplified framework"
+        },
+        {
+          "word": "一次資料",
+          "reading": "いちじしりょう",
+          "en": "primary sources"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-01-q1",
+          "promptJp": "筆者[ひっしゃ]は「わかりやすさ」のどんな点[てん]を危険[きけん]視[し]しているか。",
+          "promptEn": "What aspect of \"ease of understanding\" does the author view as dangerous?",
+          "choices": [
+            "動画[どうが]の視聴[しちょう]時間[じかん]が長[なが]くなりすぎること。",
+            "複雑[ふくざつ]な問題[もんだい]の重要[じゅうよう]な前提[ぜんてい]や例外[れいがい]が省[はぶ]かれ、単純[たんじゅん]化[か]されてしまうこと。",
+            "専門家[せんもんか]しか要約[ようやく]を作[つく]れなくなっていること。",
+            "紙[かみ]の新聞[しんぶん]の価格[かかく]が上[あ]がっていること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that summarizing strips away key premises and exceptions, forcing complex issues into simplistic good-vs-evil frames."
+        },
+        {
+          "id": "rd-n2-01-q2",
+          "promptJp": "情報[じょうほう]の受[う]け手[て]に求[もと]められている姿勢[しせい]として、筆者[ひっしゃ]が述[の]べていることは何[なに]か。",
+          "promptEn": "What attitude does the author say is required of information consumers?",
+          "choices": [
+            "要約[ようやく]サービスを一切[いっさい]利用[りよう]しないこと。",
+            "自分[じぶん]と同[おな]じ意見[いけん]の記事[きじ]だけを丁[てい]寧[ねい]に読[よ]むこと。",
+            "まとめだけで満足[まんぞく]せず、一次[いちじ]資料[しりょう]や異[こと]なる視点[してん]にも当[あ]たること。",
+            "毎日[まいにち]すべてのニュースを暗記[あんき]すること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 directly calls on readers not to settle for summaries alone, but to check primary sources and differing viewpoints."
+        },
+        {
+          "id": "rd-n2-01-q3",
+          "promptJp": "筆者[ひっしゃ]の要約[ようやく]サービスに対[たい]する評価[ひょうか]として最[もっと]も適切[てきせつ]なのはどれか。",
+          "promptEn": "Which best describes the author's overall assessment of summary services?",
+          "choices": [
+            "全面的[ぜんめんてき]に否定[ひてい]しており、廃止[はいし]すべきだと考[かんが]えている。",
+            "一定[いってい]の役立[やくだ]ちは認[みと]めつつも、それだけに頼[たよ]る危[あや]うさを指摘[してき]している。",
+            "これからは要約[ようやく]だけで十分[じゅうぶん]だと主張[しゅちょう]している。",
+            "高齢者[こうれいしゃ]にだけ向[む]いていると考[かんが]えている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 acknowledges their practical utility (\"役立つ場面は確かに多い\") while Paragraphs 2–3 caution against relying solely on them."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-02",
+      "jlpt": 2,
+      "order": 2,
+      "passageType": "comparison",
+      "titleJp": "キャッシュレス決済[けっさい]をめぐる二[ふた]つの意見[いけん]",
+      "titleEn": "Comparing Two Views on Cashless Payments",
+      "recommendedMinutes": 5,
+      "contextEn": "JLPT N2 Integrated Reading (Tōgō Rikai) — comparing Text A and Text B.",
+      "labelA": "文章[ぶんしょう] A",
+      "labelB": "文章[ぶんしょう] B",
+      "paragraphs": [
+        "キャッシュレス決済[けっさい]の普及[ふきゅう]は、買[か]い物[もの]の効率[こうりつ]を飛躍[ひやく]的[てき]に高[たか]めた。小銭[こぜに]を数[かぞ]える手間[てま]が省[はぶ]けるばかりか、利用[りよう]履歴[りれき]が自動でアプリに残[のこ]るため、家計[かけい]管理[かんり]もしやすい。店舗[てんぽ]側[がわ]にとっても現金[げんきん]管理[かんり]の負担[ふたん]が減[へ]る利点[りてん]は大[おお]きい。"
+      ],
+      "paragraphsB": [
+        "確[たし]かにスマホ決済[けっさい]は便利[べんり]だが、現金[げんきん]を手放[てばな]す不安[ふあん]も残[のこ]る。通信[つうしん]障害[しょうがい]や災害[さいがい]による停電[ていでん]が起[お]きれば、一時[いちじ]的[てき]に支払[しはら]いができなくなる恐れ[おそれ]があるからだ。また、目[め]に見[み]えるお金[かね]が減[へ]らないため、つい使[つか]いすぎてしまうという声[こえ]も少[すく]なくない。"
+      ],
+      "translationEn": [
+        "[Text A] The spread of cashless payments has dramatically increased shopping efficiency. Not only does it save the trouble of counting coins, but transaction logs are automatically recorded in apps, making household budgeting easier too. For stores as well, the benefit of reducing cash-handling burdens is substantial."
+      ],
+      "translationBEn": [
+        "[Text B] Smartphone payments are certainly convenient, yet unease remains about giving up cash. If communication outages or disaster-induced blackouts occur, there is a risk payments may temporarily become impossible. Moreover, not a few people say they end up overspending because they do not see physical money decreasing."
+      ],
+      "keyVocab": [
+        {
+          "word": "飛躍的に",
+          "reading": "ひやくてきに",
+          "en": "dramatically; by leaps and bounds"
+        },
+        {
+          "word": "利用履歴",
+          "reading": "りようりれき",
+          "en": "usage / transaction history"
+        },
+        {
+          "word": "通信障害",
+          "reading": "つうしんしょうがい",
+          "en": "network / communication outage"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-02-q1",
+          "promptJp": "文章[ぶんしょう]Aと文章[ぶんしょう]Bの両方[りょうほう]で触[ふ]れられている話題[わだい]はどれか。",
+          "promptEn": "Which topic is touched upon in BOTH Text A and Text B?",
+          "choices": [
+            "災害[さいがい]時[じ]の停電[ていでん]対策[たいさく]",
+            "店舗[てんぽ]側[がわ]の現金[げんきん]管理[かんり]コスト",
+            "キャッシュレス決済[けっさい]の利便[りべん]性[せい]と支出[ししゅつ]管理[かんり]への影響[えいきょう]",
+            "高齢者[こうれいしゃ]への操作[そうさ]指導[しどう]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Both acknowledge convenience (効率 / 便利) and address spending control from opposite angles (A: easier budgeting via logs; B: risk of overspending)."
+        },
+        {
+          "id": "rd-n2-02-q2",
+          "promptJp": "お金[かね]の管理[かんり]について、AとBの立場[たちば]の違[ちが]いとして正[ただ]しいのはどれか。",
+          "promptEn": "How do Text A and Text B differ regarding money management?",
+          "choices": [
+            "AもBも、キャッシュレスのほうが節約[せつやく]できると述[の]べている。",
+            "Aは履歴[りれき]が残[のこ]り管理[かんり]しやすいと評価[ひょうか]し、Bは使[つか]いすぎる恐れ[おそれ]を指摘[してき]している。",
+            "Aは現金[げんきん]派[は]を批判[ひはん]し、Bは店舗[てんぽ]の手数料[てすうりょう]を問題[もんだい]視[し]している。",
+            "Aは災害[さいがい]に強[つよ]いと言い、Bはアプリが使いにくいと言っている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text A praises automatic logs for household budgeting, whereas Text B warns that invisible spending leads people to overspend."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-03",
+      "jlpt": 2,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "社内[しゃない]研修[けんしゅう]補助金[ほじょきん]制度[せいど]のご案内[あんない]",
+      "titleEn": "Corporate Training Subsidy Policy",
+      "recommendedMinutes": 5,
+      "contextEn": "Internal HR circular on employee skill-development subsidies.",
+      "paragraphs": [
+        "社員[しゃいん]のスキルアップを支援[しえん]するため、外部[がいぶ]講座[こうざ]および資格[しかく]試験[しけん]の受験[じゅけん]料[りょう]を補助[ほじょ]する制度[せいど]を改定[かいてい]しました。",
+        "【対象[たいしょう]】入社[にゅうしゃ]一年[いちねん]以上[いじょう]の正社員[せいしゃいん]・契約[けいやく]社員[しゃいん]\n【補助[ほじょ]額[がく]】①業務[ぎょうむ]関連[かんれん]の外部[がいぶ]講座[こうざ]：受講[じゅこう]料[りょう]の50%（年間[ねんかん]上限[じょうげん]5万円[まんえん]） ②会社[かいしゃ]指定[してい]の資格[しかく]試験[しけん]：合格[ごうかく]時[じ]に限り[かぎり]受験[じゅけん]料[りょう]の全額[ぜんがく]を支給[しきゅう]。",
+        "【手続き[てつづき]】外部[がいぶ]講座[こうざ]は受講[じゅこう]開始[かいし]の二週間[にしゅうかん]前[まえ]までに上司[じょうし]の承認[しょうにん]を得[え]て人事部[じんじぶ]へ申請[しんせい]してください。事後[じご]申請[しんせい]は原則[げんそく]認められません。資格[しかく]試験[しけん]は合格[ごうかく]通知[つうち]書[しょ]と領収書[りょうしゅうしょ]を添[そ]えて、結果[けっか]発表[はっぴょう]から一か月[いっかげつ]以内[いない]に提出[ていしゅつ]してください。"
+      ],
+      "translationEn": [
+        "To support employee skill development, we have revised our subsidy policy for external courses and qualification exam fees.",
+        "[Eligibility] Full-time and contract employees with 1+ year of service. [Subsidy] (1) Work-related external courses: 50% of tuition (annual cap 50,000 yen). (2) Company-designated certification exams: 100% of exam fee reimbursed ONLY upon passing.",
+        "[Procedures] For external courses, obtain your manager's approval and apply to HR at least 2 weeks before the course starts; retroactive applications are generally not accepted. For certification exams, submit the passing certificate and receipt within 1 month of result announcement."
+      ],
+      "keyVocab": [
+        {
+          "word": "上限",
+          "reading": "じょうげん",
+          "en": "upper limit; cap"
+        },
+        {
+          "word": "承認を得る",
+          "reading": "しょうにんをえる",
+          "en": "to obtain approval"
+        },
+        {
+          "word": "事後申請",
+          "reading": "じごしんせい",
+          "en": "retroactive / after-the-fact application"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-03-q1",
+          "promptJp": "入社[にゅうしゃ]三年目[さんねんめ]の社員[しゃいん]が、受講[じゅこう]料[りょう]12万円[まんえん]の業務[ぎょうむ]関連[かんれん]講座[こうざ]を受[う]ける場合[ばあい]、補助金[ほじょきん]はいくら受[う]け取[と]れるか（今年度[こんねんど]初[はつ]利用[りよう]）。",
+          "promptEn": "If a 3rd-year employee takes a 120,000-yen work-related course (first use this fiscal year), how much subsidy can they receive?",
+          "choices": [
+            "3万円[まんえん]",
+            "5万円[まんえん]",
+            "6万円[まんえん]",
+            "12万円[まんえん]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "50% of 120,000 yen is 60,000 yen, but the annual cap is 50,000 yen (年間上限5万円) — classic JLPT trap!"
+        },
+        {
+          "id": "rd-n2-03-q2",
+          "promptJp": "この制度[せいど]について、正[ただ]しい記述[きじゅつ]はどれか。",
+          "promptEn": "Which statement accurately reflects this policy?",
+          "choices": [
+            "会社[かいしゃ]指定[してい]の資格[しかく]試験[しけん]は、不合格[ふごうかく]でも半額[はんがく]支給[しきゅう]される。",
+            "外部[がいぶ]講座[こうざ]は修了[しゅうりょう]後[ご]に領収書[りょうしゅうしょ]を出[だ]せば申請[しんせい]できる。",
+            "契約[けいやく]社員[しゃいん]でも、入社[にゅうしゃ]一年[いちねん]以上[いじょう]であれば対象[たいしょう]になる。",
+            "資格[しかく]試験[しけん]の申請[しんせい]は、試験[しけん]の二週間[にしゅうかん]前[まえ]までに行[おこな]う。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Contract employees with 1+ year of service are explicitly eligible. (1) is false (only upon passing), (2) is false (no retroactive applications), (4) mixes up course vs exam deadlines."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-04",
+      "jlpt": 2,
+      "order": 4,
+      "passageType": "essay",
+      "titleJp": "「聴[き]く力[ちから]」と沈黙[ちんもく]の意味[いみ]",
+      "titleEn": "Listening Skills and the Meaning of Silence",
+      "recommendedMinutes": 4,
+      "contextEn": "Essay on interpersonal communication and silence.",
+      "paragraphs": [
+        "会話[かいわ]が途切[とぎ]れて沈黙[ちんもく]が訪[おとず]れると、気[き]まずさを感[かん]じて慌[あわ]てて何[なに]か話題[わだい]を振[ふ]ろうとする人[ひと]は多[おお]い。しかし、本当に「聞き上手[じょうず]」な人[ひと]は、この沈黙[ちんもく]を恐[おそ]れないという。",
+        "悩[なや]みを打[う]ち明[あ]けている相手[あいて]が言葉[ことば]に詰[つ]まったとき、その数秒[すうびょう]の間[ま]は、相手[あいて]が自分[じぶん]の気持[きも]ちを整理[せいり]している大切[たいせつ]な時間[じかん]である場合[ばあい]が多[おお]い。そこへ聞き手[ききて]が先回[さきまわ]りしてアドバイスを挟[はさ]むと、せっかく浮[う]かびかけていた本音[ほんね]を遮[さえぎ]ってしまうことになりかねない。",
+        "相手[あいて]の沈黙[ちんもく]を「気[き]まずい空白[くうはく]」ではなく「思考[しこう]の余白[よはく]」として受[う]け止[と]め、黙[だま]って待[ま]つ勇気[ゆうき]こそが、信頼[しんらい]関係[かんけい]を深[ふか]める鍵[かぎ]となる。"
+      ],
+      "translationEn": [
+        "When a conversation pauses and silence falls, many people feel awkward and rush to bring up some topic. Yet truly good listeners are said not to fear this silence.",
+        "When someone confiding a worry hesitates for words, those few seconds are often crucial time for them to organize their own feelings. If the listener jumps ahead and inserts advice, they risk cutting off genuine feelings that were just about to surface.",
+        "Accepting the other person's silence not as an \"awkward void\" but as \"space for thinking,\" and having the courage to wait quietly, is the very key to deepening trust."
+      ],
+      "keyVocab": [
+        {
+          "word": "途切れる",
+          "reading": "とぎれる",
+          "en": "to pause; break off"
+        },
+        {
+          "word": "先回りする",
+          "reading": "さきまわりする",
+          "en": "to jump ahead; anticipate prematurely"
+        },
+        {
+          "word": "遮る",
+          "reading": "さえぎる",
+          "en": "to interrupt; block"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-04-q1",
+          "promptJp": "相手[あいて]が言葉[ことば]に詰[つ]まったとき、すぐアドバイスをするとどうなりかねないか。",
+          "promptEn": "What risk arises if you immediately offer advice when someone pauses?",
+          "choices": [
+            "相手[あいて]が問題[もんだい]をすぐ解決[かいけつ]できる。",
+            "相手[あいて]が言いかけた本音[ほんね]を遮[さえぎ]ってしまう恐れ[おそれ]がある。",
+            "会話[かいわ]が長引[ながび]いて時間[じかん]が足[た]りなくなる。",
+            "相手[あいて]が自分[じぶん]で考[かんが]えすぎるようになる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that jumping in with advice risks cutting off the speaker's emerging true feelings (本音を遮ってしまうことになりかねない)."
+        },
+        {
+          "id": "rd-n2-04-q2",
+          "promptJp": "筆者[ひっしゃ]が「思考[しこう]の余白[よはく]」と呼[よ]んでいるものは何[なに]か。",
+          "promptEn": "What does the author call \"space for thinking\" (思考の余白)?",
+          "choices": [
+            "会話[かいわ]の途中[とちゅう]で相手[あいて]が気持[きも]ちを整理[せいり]するための沈黙[ちんもく]の時間[じかん]",
+            "相談[そうだん]の前[まえ]にメモを書[か]く時間[じかん]",
+            "アドバイスを考[かんが]えるための休憩[きゅうけい]",
+            "一人[ひとり]で読書[どくしょ]をする休日[きゅうじつ]"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Paragraph 3 contrasts \"awkward void\" with \"space for thinking\" to redefine the speaker's silent pauses."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-05",
+      "jlpt": 2,
+      "order": 5,
+      "passageType": "short",
+      "titleJp": "地方[ちほう]の古民家[こみんか]再生[さいせい]",
+      "titleEn": "Revitalizing Rural Traditional Houses",
+      "recommendedMinutes": 4,
+      "contextEn": "News feature on rural revitalization through renovated old houses.",
+      "paragraphs": [
+        "全国[ぜんこく]の地方[ちほう]都市[とし]で空[あ]き家[や]の増加[ぞうか]が深刻[しんこく]化[か]する中[なか]、築[ちく]百年[ひゃくねん]を超[こ]える古民家[こみんか]を宿泊[しゅくはく]施設[しせつ]やカフェとして再生[さいせい]させる取[と]り組[く]みが注目[ちゅうもく]されている。",
+        "単[たん]に建物[たてもの]を修復[しゅうふく]するだけでなく、地域[ちいき]の食材[しょくざい]を使[つか]った料理[りょうり]や伝統[でんとう]工芸[こうげい]の体験[たいけん]と組[く]み合[あ]わせることで、都会[とかい]の観光客[かんこうきゃく]にとって唯一[ゆいいつ]無二[むに]の魅力[みりょく]が生[う]まれているのだ。",
+        "こうした動[うご]きは、老朽[ろうきゅう]化[か]した家屋[かおく]という「負[ふ]の遺産[いさん]」を、地域[ちいき]経済[けいざい]を支[ささ]える新[あら]たな資源[しげん]へと転換[てんかん]させる好例[こうれい]と言[い]えるだろう。"
+      ],
+      "translationEn": [
+        "Amid worsening increases in vacant houses across regional cities nationwide, initiatives to revitalize traditional houses over a century old into lodging facilities and cafes are drawing attention.",
+        "By not merely restoring the buildings, but combining them with cuisine using local ingredients and traditional craft workshops, a one-of-a-kind appeal for urban tourists is being created.",
+        "Such efforts can be called a prime example of transforming aging structures—once seen as a \"negative legacy\"—into new resources supporting local economies."
+      ],
+      "keyVocab": [
+        {
+          "word": "古民家",
+          "reading": "こみんか",
+          "en": "traditional old Japanese house"
+        },
+        {
+          "word": "唯一無二",
+          "reading": "ゆいいつむに",
+          "en": "one-of-a-kind; unique"
+        },
+        {
+          "word": "負の遺産",
+          "reading": "ふのいさん",
+          "en": "negative legacy; liability"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-05-q1",
+          "promptJp": "古民家[こみんか]再生[さいせい]が観光客[かんこうきゃく]をひきつけている理由[りゆう]は何か。",
+          "promptEn": "Why is the revitalization of old houses attracting tourists?",
+          "choices": [
+            "都会[とかい]のホテルより宿泊[しゅくはく]費[ひ]が極端[きょくたん]に安[やす]いから。",
+            "建物[たてもの]の修復[しゅうふく]に加[くわ]え、地元[じもと]の食[しょく]や伝統[でんとう]体験[たいけん]を組[く]み合[あ]わせているから。",
+            "古[ふる]い家[いえ]をすべて取[と]り壊[こわ]して最新[さいしん]のビルを建[た]てたから。",
+            "交通[こうつう]費[ひ]が無料[むりょう]になるキャンペーンを行[おこな]っているから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains the unique appeal comes from combining architectural restoration with local food and traditional craft experiences."
+        },
+        {
+          "id": "rd-n2-05-q2",
+          "promptJp": "文中[ぶんちゅう]の「負[ふ]の遺産[いさん]」が指[さ]しているものは何[なに]か。",
+          "promptEn": "What does \"negative legacy\" (負の遺産) refer to in the text?",
+          "choices": [
+            "地方[ちほう]の伝統[でんとう]工芸[こうげい]",
+            "老朽[ろうきゅう]化[か]した空[あ]き家[や]・家屋[かおく]",
+            "都会[とかい]からの観光客[かんこうきゃく]",
+            "地域[ちいき]の新鮮[しんせん]な食材[しょくざい]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 explicitly equates it with \"老朽化した家屋\" (aging houses/vacant buildings)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-01",
+      "jlpt": 1,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "翻訳[ほんやく]の不完全[ふかんぜん]さと豊[ゆた]かさ",
+      "titleEn": "The Imperfection and Richness of Translation",
+      "recommendedMinutes": 6,
+      "contextEn": "JLPT N1 philosophical essay on literary translation and nuance.",
+      "paragraphs": [
+        "機械[きかい]翻訳[ほんやく]の精度[せいど]が飛躍[ひやく]的[てき]に向上[こうじょう]した今日[こんにち]、異[こと]なる言語[げんご]間[かん]の壁[かべ]はもはや過去[かこ]のものになりつつあるという見方[みかた]がある。確[たし]かに、事実[じじつ]関係[かんけい]や業務[ぎょうむ]上の要件[ようけん]を迅速[じんそく]に伝達[でんたつ]する場面[ばめん]では、その恩恵[おんけい]は計[はか]り知[し]れない。",
+        "しかしながら、言葉[ことば]とは単[たん]なる情報[じょうほう]の記号[きごう]にとどまるものではない。ある単語[たんご]が背負[せお]う歴史[れきし]的[てき]文脈[ぶんみゃく]や、語感[ごかん]が喚起[かんき]する微細[びさい]な情緒[じょうちょ]は、別[べつ]の言語[げんご]へ一対一[いったいいち]で置換[ちかん]できる性質[せいしつ]のものではないのである。",
+        "だからこそ、翻訳[ほんやく]とは常[つね]に何[なに]かを失[うしな]う営[いとな]みであり、同時[どうじ]に、原文[げんぶん]の奥底[おくそこ]にある響[ひび]きを別[べつ]の器[うつわ]に注[そそ]ぎ直[なお]す創造[そうぞう]的[てき]な解釈[かいしゃく]でもある。完全[かんぜん]な一致[いっち]があり得[え]ないからこそ、一[ひと]つの名作[めいさく]に幾[いく]つもの異[こと]なる訳文[やくぶん]が生[う]まれ、読者[どくしゃ]の世界[せかい]を広[ひろ]げてきたのだ。"
+      ],
+      "translationEn": [
+        "Today, as machine translation accuracy improves dramatically, there is a view that barriers between different languages are becoming a thing of the past. Indeed, in situations requiring rapid transmission of facts or business requirements, its benefits are immeasurable.",
+        "However, language does not remain a mere code for information. The historical context a word carries and the subtle emotions evoked by its ring are not of a nature that can be swapped one-to-one into another language.",
+        "Precisely for this reason, translation is an endeavor that always loses something, and at the same time a creative interpretation that pours the resonance deep inside the original into a different vessel. Because perfect equivalence is impossible, multiple distinct translations have been born for a single masterpiece, expanding readers' worlds."
+      ],
+      "keyVocab": [
+        {
+          "word": "恩恵",
+          "reading": "おんけい",
+          "en": "benefit; blessing"
+        },
+        {
+          "word": "喚起する",
+          "reading": "かんきする",
+          "en": "to evoke; arouse"
+        },
+        {
+          "word": "置換する",
+          "reading": "ちかんする",
+          "en": "to replace; substitute"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-01-q1",
+          "promptJp": "筆者[ひっしゃ]が、言葉[ことば]を別[べつ]の言語[げんご]へ一対一[いったいいち]で置換[ちかん]できないと述[の]べる根拠[こんきょ]は何か。",
+          "promptEn": "On what basis does the author argue that words cannot be substituted one-to-one across languages?",
+          "choices": [
+            "機械[きかい]翻訳[ほんやく]の学習[がくしゅう]データがいまだ不足[ふそく]しているから。",
+            "言葉[ことば]は単[たん]なる情報[じょうほう]記号[きごう]ではなく、歴史[れきし]的[てき]文脈[ぶんみゃく]や微細[びさい]な情緒[じょうちょ]を伴[ともな]うから。",
+            "読者[どくしゃ]の語学[ごがく]力[りょく]が時代[じだい]とともに低下[ていか]しているから。",
+            "文学[ぶんがく]作品[さくひん]の著作権[ちょさくけん]が厳[きび]しく制限[せいげん]されているから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that words carry historical context and subtle emotional resonance beyond mere informational symbols."
+        },
+        {
+          "id": "rd-n1-01-q2",
+          "promptJp": "筆者[ひっしゃ]は「完全[かんぜん]な一致[いっち]があり得[え]ない」ことをどのように捉[とら]えているか。",
+          "promptEn": "How does the author view the impossibility of \"perfect equivalence\" in translation?",
+          "choices": [
+            "翻訳[ほんやく]という行為[こうい]自体[じたい]の限界[げんかい]であり、原書[げんしょ]で読[よ]む以外[いがい]に価値[かち]はない。",
+            "多様な解釈[かいしゃく]や訳文[やくぶん]を生み出し、読者[どくしゃ]の世界[せかい]を豊[ゆた]かにする源泉[げんせん]である。",
+            "将来[しょうらい]の技術[ぎじゅつ]革新[かくしん]によって完全[かんぜん]に解消[かいしょう]されるべき欠陥[けっかん]である。",
+            "ビジネス文書[ぶんしょ]において最も[もっとも]深刻[しんこく]な障害[しょうがい]である。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 frames the impossibility of exact equivalence positively: it births multiple creative translations that broaden readers' worlds."
+        },
+        {
+          "id": "rd-n1-01-q3",
+          "promptJp": "本文[ほんぶん]の論旨[ろんし]と合致[がっち]するものはどれか。",
+          "promptEn": "Which statement aligns with the passage's argument?",
+          "choices": [
+            "機械[きかい]翻訳[ほんやく]は実務[じつむ]の場面[ばめん]でも全[まった]く信用[しんよう]できない。",
+            "名作[めいさく]の翻訳[ほんやく]は最[もっと]も正確[せいかく]な一種類[いっしゅるい]に統一[とういつ]すべきだ。",
+            "機械[きかい]翻訳[ほんやく]の実用[じつよう]的[てき]価値[かち]は認[みと]めつつも、翻訳[ほんやく]の本質[ほんしつ]には創造[そうぞう]的[てき]解釈[かいしゃく]がある。",
+            "言葉[ことば]の情緒[じょうちょ]は情報[じょうほう]伝達[でんたつ]の妨[さまた]げになる。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The author balances praise for machine translation's practical utility (Para 1) with an argument for translation as creative interpretation (Para 3)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-02",
+      "jlpt": 1,
+      "order": 2,
+      "passageType": "comparison",
+      "titleJp": "「失敗[しっぱい]の許容[きょよう]」と組織[そしき]の革新[かくしん]",
+      "titleEn": "Tolerating Failure vs. Maintaining Standards in Organizations",
+      "recommendedMinutes": 6,
+      "contextEn": "JLPT N1 Integrated Reading (Tōgō Rikai) — comparing two management perspectives.",
+      "labelA": "文章[ぶんしょう] A",
+      "labelB": "文章[ぶんしょう] B",
+      "paragraphs": [
+        "前例[ぜんれい]のない新[しん]規[き]事業[じぎょう]を生み出すには、減点[げんてん]主義[しゅぎ]を排[はい]し、挑戦[ちょうせん]に伴[ともな]う失敗[しっぱい]を許容[きょよう]する風土[ふうど]が不可欠[ふかけつ]だ。一度[いちど]の蹉跌[さてつ]で評価[ひょうか]を落[お]とす組織[そしき]では、社員[しゃいん]は無難[ぶなん]な選択[せんたく]に終始[しゅうし]し、結果[けっか]として組織[そしき]全体[ぜんたい]の停滞[ていたい]を招[まね]く。"
+      ],
+      "paragraphsB": [
+        "「失敗[しっぱい]を恐[おそ]れるな」という標語[ひょうご]が独[ひと]り歩[ある]きすることには危惧[きぐ]を覚[おぼ]える。準備[じゅんび]不足[ぶそく]や確認[かくにん]怠慢[たいまん]による防[ふせ]げたはずの過失[かしつ]まで「挑戦[ちょうせん]の証[あかし]」として甘[あま]やかしてはならない。許容[きょよう]すべきは、綿密[めんみつ]な仮説[かせつ]検証[けんしょう]を尽[つ]くした末[すえ]の未知[みち]領域[りょういき]での失敗[しっぱい]に限[かぎ]られるべきだ。"
+      ],
+      "translationEn": [
+        "[Text A] To create unprecedented new ventures, eliminating a demerit-based culture and fostering a climate that tolerates failure accompanying bold attempts is indispensable. In an organization where a single setback ruins one's evaluation, employees stick solely to safe choices, ultimately inviting stagnation across the entire organization."
+      ],
+      "translationBEn": [
+        "[Text B] I feel apprehension when the slogan \"don't fear failure\" takes on a life of its own. Preventable blunders caused by poor preparation or negligent verification must not be coddled as \"badges of challenge.\" What should be tolerated ought to be strictly limited to failures in uncharted territory after exhausting thorough hypothesis testing."
+      ],
+      "keyVocab": [
+        {
+          "word": "減点主義",
+          "reading": "げんてんしゅぎ",
+          "en": "demerit-based evaluation system"
+        },
+        {
+          "word": "蹉跌",
+          "reading": "さてつ",
+          "en": "setback; stumbling"
+        },
+        {
+          "word": "危惧を覚える",
+          "reading": "きぐをおぼえる",
+          "en": "to feel apprehension / concern"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-02-q1",
+          "promptJp": "失敗[しっぱい]の扱[あつか]いに関[かん]するAとBの主張[しゅちょう]の関係[かんけい]として最[もっと]も適切[てきせつ]なのはどれか。",
+          "promptEn": "Which best describes the relationship between Text A and Text B regarding handling failure?",
+          "choices": [
+            "Aは失敗[しっぱい]の許容[きょよう]を求[もと]め、Bはあらゆる失敗[しっぱい]を厳罰[げんばつ]化[か]すべきだと全面[ぜんめん]対立[たいりつ]している。",
+            "Aは挑戦[ちょうせん]を促[うなが]すために失敗[しっぱい]を許容[きょよう]する風土[ふうど]を重視[じゅうし]し、Bは許容[きょよう]する失敗[しっぱい]の条件[じょうけん]を厳密[げんみつ]に線引[せんび]きしている。",
+            "AもBも、無難[ぶなん]な選択[せんたく]を続[つづ]けることが最も[もっとも]安全[あんぜん]だと述[の]べている。",
+            "Aは若手[わかて]社員[しゃいん]のミスのみを許[ゆる]し、Bは管理[かんり]職[しょく]の責任[せきにん]を追及[ついきゅう]している。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text B does not reject tolerating failure completely; rather, it draws a strict boundary between negligent mistakes vs. well-prepared exploration."
+        },
+        {
+          "id": "rd-n1-02-q2",
+          "promptJp": "文章[ぶんしょう]Bの筆者[ひっしゃ]が許容[きょよう]すべきだと考[かんが]えている失敗[しっぱい]はどれか。",
+          "promptEn": "Which kind of failure does the author of Text B believe should be tolerated?",
+          "choices": [
+            "確認[かくにん]不足[ぶそく]で起[お]きた初歩[しょほ]的[てき]な入力[にゅうりょく]ミス",
+            "綿密[めんみつ]な仮説[かせつ]検証[けんしょう]を尽[つ]くした上[うえ]で未知[みち]の領域[りょういき]に挑[いど]んだ結果[けっか]の失敗[しっぱい]",
+            "準備[じゅんび]を省[はぶ]いてスピード優先[ゆうせん]で実行[じっこう]した際の失敗[しっぱい]",
+            "過去[かこ]にも何度[なんど]も繰[く]り返[かえ]されている業務[ぎょうむ]上の過失[かしつ]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text B's final sentence specifies failures in uncharted territory after thorough hypothesis testing (綿密な仮説検証を尽くした末の未知領域での失敗)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-03",
+      "jlpt": 1,
+      "order": 3,
+      "passageType": "essay",
+      "titleJp": "専門[せんもん]化[か]の死角[しかく]と「越境[えっきょう]」の価値[かち]",
+      "titleEn": "Blind Spots of Specialization and Crossing Boundaries",
+      "recommendedMinutes": 6,
+      "contextEn": "N1 academic commentary on interdisciplinary thinking.",
+      "paragraphs": [
+        "近代[きんだい]以降[いこう]、学問[がくもん]も産業[さんぎょう]も細分化[さいぶんか]と専門[せんもん]化[か]を推[お]し進[すす]めることで、目覚[めざ]ましい成果[せいか]を収[おさ]めてきた。一[ひと]つの領域[りょういき]を深掘[ふかぼ]りする姿勢[しせい]が、人類[じんるい]の知見[ちけん]を飛躍[ひやく]的[てき]に拡張[かくちょう]したことは疑[うたが]いようがない。",
+        "しかし、気候[きこう]変動[へんどう]やAI倫理[りんり]のように現代[げんだい]社会[しゃかい]が直面[ちょくめん]する複合[ふくごう]的[てき]な課題[かだい]は、単一[たんいつ]の専門[せんもん]分野[ぶんや]の枠内[わくない]だけでは到底[とうてい]解決[かいけつ]し得[え]ない。専門[せんもん]性[せい]が深化[しんか]するほど、かえって他[た]分野[ぶんや]との共通[きょうつう]言語[げんご]が失[うしな]われ、部分[ぶぶん]最適[さいてき]に陥[おちい]る危[あや]うさすら生[しょう]じている。",
+        "今[いま]求[もと]められているのは、専門[せんもん]を捨[す]てて浅[あさ]く広[ひろ]く知[し]ることではない。確[たし]かな専門[せんもん]という足場[あしば]を持[も]ちつつ、あえて異[こと]なる領域[りょういき]へ越境[えっきょう]し、違和感[いわかん]を対話[たいわ]の糸口[いとぐち]へと変[か]えていく知性[ちせい]である。"
+      ],
+      "translationEn": [
+        "Since the modern era, both academia and industry have achieved remarkable results by advancing subdivision and specialization. There is no doubt that digging deeply into a single domain dramatically expanded human knowledge.",
+        "However, complex challenges facing contemporary society—such as climate change and AI ethics—cannot possibly be solved within the confines of a single specialized field. The deeper specialization becomes, the more common language with other fields is lost, even giving rise to the risk of falling into local optimization.",
+        "What is needed today is not abandoning one's specialty to know things broadly yet shallowly. It is an intellect that retains the solid footing of a true specialty while deliberately crossing into unfamiliar domains and turning discomfort into a starting point for dialogue."
+      ],
+      "keyVocab": [
+        {
+          "word": "細分化",
+          "reading": "さいぶんか",
+          "en": "subdivision; fragmentation"
+        },
+        {
+          "word": "部分最適",
+          "reading": "ぶぶんさいてき",
+          "en": "local optimization (at the expense of the whole)"
+        },
+        {
+          "word": "越境",
+          "reading": "えっきょう",
+          "en": "crossing boundaries / borders"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-03-q1",
+          "promptJp": "専門[せんもん]性[せい]が深化[しんか]することで生[しょう]じている問題[もんだい]として筆者[ひっしゃ]が挙[あ]げているのは何か。",
+          "promptEn": "What problem does the author cite as arising from deepening specialization?",
+          "choices": [
+            "研究者[けんきゅうしゃ]の数[かず]が急激[きゅうげき]に減少[げんしょう]していること。",
+            "他[た]分野[ぶんや]との共通[きょうつう]言語[げんご]が失[うしな]われ、複合[ふくごう]的[てき]課題[かだい]への全体[ぜんたい]最適[さいてき]が見[み]えにくくなること。",
+            "近代[きんだい]以前[いぜん]の知識[ちしき]が全[すべ]て誤[あやま]りだったと判明[はんめい]したこと。",
+            "専門[せんもん]書[しょ]の価格[かかく]が高騰[こうとう]していること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that deeper specialization erodes shared language across fields and leads to local optimization (部分最適)."
+        },
+        {
+          "id": "rd-n1-03-q2",
+          "promptJp": "筆者[ひっしゃ]が理想[りそう]とする知性[ちせい]のあり方[かた]はどれか。",
+          "promptEn": "What ideal form of intellect does the author advocate?",
+          "choices": [
+            "専門[せんもん]分野[ぶんや]を持[も]たず、あらゆる領域[りょういき]を浅[あさ]く広[ひろ]く学[まな]ぶこと。",
+            "異[こと]分野[ぶんや]との対立[たいりつ]を避[さ]け、自分[じぶん]の専門[せんもん]だけに専念[せんねん]すること。",
+            "確[たし]かな専門[せんもん]を基盤[きばん]にしながら異[こと]分野[ぶんや]へ越境[えっきょう]し、違和感[いわかん]を対話[たいわ]につなげること。",
+            "AIに専門[せんもん]判断[はんだん]を委[ゆだ]ね、人間[にんげん]は芸術[げいじゅつ]に集中[しゅうちゅう]すること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 explicitly rejects shallow generalism and defines the ideal as combining a solid specialty with boundary-crossing dialogue."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-04",
+      "jlpt": 1,
+      "order": 4,
+      "passageType": "notice",
+      "titleJp": "学術[がくじゅつ]シンポジウム発表[はっぴょう]要旨[ようし]募集[ぼしゅう]要項[ようこう]",
+      "titleEn": "Academic Symposium Abstract Submission Guidelines",
+      "recommendedMinutes": 5,
+      "contextEn": "N1 Information Retrieval notice with multiple interlocking conditions.",
+      "paragraphs": [
+        "【第[だい]18回[かい] 環境[かんきょう]政策[せいさく]シンポジウム 発表[はっぴょう]募集[ぼしゅう]】\n募集[ぼしゅう]区分[くぶん]：A. 口頭[こうとう]発表[はっぴょう]（20分[ぷん]＋質疑[しつぎ]10分[ぷん]） / B. ポスター発表[はっぴょう]（展示[てんじ]＋自由[じゆう]討論[とうろん]）",
+        "応募[おうぼ]要件[ようけん]：①筆頭[ひっとう]発表[はっぴょう]者[しゃ]は本[ほん]学会[がっかい]の正会員[せいかいいん]または学生[がくせい]会員[かいいん]であること（未[み]入会[にゅうかい]者[しゃ]は要旨[ようし]提出[ていしゅつ]前[まえ]に入会[にゅうかい]手続き[てつづき]を完了[かんりょう]すること）。②発表[はっぴょう]内容[ないよう]は未[み]発表[はっぴょう]のオリジナル研究[けんきゅう]に限[かぎ]る。ただし、口頭[こうとう]発表[はっぴょう]に不採用[ふさいよう]となった場合[ばあい]、希望[きぼう]すればポスター発表[はっぴょう]へ振[ふ]り替[か]え審査[しんさ]を行[おこな]う。",
+        "締切[しめきり]：要旨[ようし]（800字[じ]以内[いない]）は8月[はちがつ]20日[はつか]17時[じ]必着[ひっちゃく]。採否[さいひ]通知[つうち]は9月[くがつ]15日[じゅうごにち]予定[よてい]。なお、学生[がくせい]会員[かいいん]は参加[さんか]費[ひ]（一般[いっぱん]6,000円[えん]）が半額[はんがく]となる。"
+      ],
+      "translationEn": [
+        "[18th Environmental Policy Symposium Call for Papers] Categories: A. Oral Presentation (20 min + 10 min Q&A) / B. Poster Presentation (display + open discussion).",
+        "Eligibility: (1) The lead presenter must be a regular or student member of the society (non-members must complete membership enrollment BEFORE submitting an abstract). (2) Content must be unpublished original research. Note that if an oral presentation is not accepted, it may be redirected for poster review upon request.",
+        "Deadline: Abstracts (within 800 characters) must arrive by August 20 at 17:00. Acceptance notifications are scheduled for September 15. Furthermore, student members pay half of the standard 6,000-yen registration fee."
+      ],
+      "keyVocab": [
+        {
+          "word": "要旨",
+          "reading": "ようし",
+          "en": "abstract; summary"
+        },
+        {
+          "word": "必着",
+          "reading": "ひっちゃく",
+          "en": "must arrive by (strict deadline)"
+        },
+        {
+          "word": "採否",
+          "reading": "さいひ",
+          "en": "acceptance or rejection"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-04-q1",
+          "promptJp": "現在[げんざい]未[み]入会[にゅうかい]の大学院生[だいがくいんせい]が口頭[こうとう]発表[はっぴょう]に応募[おうぼ]したい場合[ばあい]、正[ただ]しい手順[てじゅん]と参加[さんか]費[ひ]の組[く]み合[あ]わせはどれか。",
+          "promptEn": "For a graduate student who is not yet a member wishing to apply for an oral presentation, what is the correct sequence and fee?",
+          "choices": [
+            "採否[さいひ]通知[つうち]の後[のち]に入会[にゅうかい]し、参加[さんか]費[ひ]6,000円[えん]を払[はら]う。",
+            "要旨[ようし]提出[ていしゅつ]前[まえ]に学生[がくせい]会員[かいいん]として入会[にゅうかい]を完了[かんりょう]し、参加[さんか]費[ひ]は3,000円[えん]になる。",
+            "800字[じ]以上[いじょう]の要旨[ようし]を先[さき]に出[だ]し、当日[とうじつ]入会[にゅうかい]すれば無料[むりょう]になる。",
+            "学生[がくせい]会員[かいいん]はポスター発表[はっぴょう]にしか応募[おうぼ]できない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Non-members must finish enrollment BEFORE submitting the abstract; as a student member, the fee is half of 6,000 yen = 3,000 yen."
+        },
+        {
+          "id": "rd-n1-04-q2",
+          "promptJp": "この募集[ぼしゅう]要項[ようこう]の内容[ないよう]に合[あ]っているものはどれか。",
+          "promptEn": "Which statement agrees with the submission guidelines?",
+          "choices": [
+            "すでに出版[しゅっぱん]された論文[ろんぶん]でも要約[ようやく]すれば応募[おうぼ]できる。",
+            "口頭[こうとう]発表[はっぴょう]が不採用[ふさいよう]になった場合[ばあい]、希望[きぼう]すればポスター発表[はっぴょう]として再[さい]審査[しんさ]を受[う]けられる。",
+            "要旨[ようし]は8月[はちがつ]20日[はつか]の消印[けしいん]があれば有効[ゆうこう]である。",
+            "口頭[こうとう]発表[はっぴょう]は質疑[しつぎ]応答[おうとう]を含[ふく]めて20分[ぷん]である。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explicitly allows rejected oral submissions to be redirected for poster review upon request. (1) fails unpublished rule; (3) fails 必着 (must arrive by 17:00); (4) fails 20+10=30 min."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-05",
+      "jlpt": 1,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "「余白[よはく]」を設計[せっけい]する都市[とし]づくり",
+      "titleEn": "Designing \"Unassigned Margin\" Into Urban Planning",
+      "recommendedMinutes": 6,
+      "contextEn": "N1 urban design essay on functional efficiency vs. civic vitality.",
+      "paragraphs": [
+        "再開発[さいかいはつ]によって生[う]まれ変[か]わる現代[げんだい]の街並[まちな]みは、動線[どうせん]が緻密[ちみつ]に計算[けいさん]され、商業[しょうぎょう]施設[しせつ]から広場[ひろば]に至るまで一切[いっさい]の無駄[むだ]がない。しかし、細部[さいぶ]まで用途[ようと]が規定[きてい]され尽[つ]くした空間[くうかん]ほど、不思議[ふしぎ]と人[ひと]の居場所[いばしょ]としての温[ぬく]もりに欠[か]けることがある。",
+        "建築[けんちく]家[か]たちの間[あいだ]では近年[きんねん]、あえて用途[ようと]を限定[げんてい]しない「余白[よはく]」を街[まち]に残[のこ]す重要[じゅうよう]性[せい]が論[ろん]じられている。ベンチ一[ひと]つ置[お]かれただけの小[ちい]さな空[あ]き地[ち]や、住民[じゅうみん]が自由[じゆう]に市[いち]を開[ひら]ける軒先[のきさき]のような場所[ばしょ]があってこそ、想定[そうてい]外[がい]の出会[であ]いや独自[どくじ]の地域[ちいき]文化[ぶんか]が芽生[めば]えるからだ。",
+        "完璧[かんぺき]な管理[かんり]と効率[こうりつ]の追求[ついきゅう]は、時[とき]に街[まち]から自発[じはつ]的[てき]な生命力[せいめいりょく]を奪[うば]いかねない。使い手[つかいて]の想像力[そうぞうりょく]に委[ゆだ]ねられた余白[よはく]を残[のこ]すことこそ、長く愛[あい]される都市[とし]を育[そだ]てる要諦[ようてい]なのではないだろうか。"
+      ],
+      "translationEn": [
+        "Modern townscapes reborn through redevelopment have meticulously calculated pedestrian flows and zero waste from commercial complexes to plazas. Yet strangely, the more completely every detail's purpose is prescribed, the more a space can lack warmth as a place where people truly belong.",
+        "In recent years, architects have been debating the importance of deliberately leaving \"margins\" with unassigned purposes in cities. Precisely because spaces exist like a small open lot with just a bench or eaves where residents can freely host markets, unexpected encounters and unique local cultures take root.",
+        "The pursuit of flawless control and efficiency can at times rob a city of its spontaneous vitality. Leaving open margins entrusted to the imagination of its users may well be the essential principle for nurturing a city loved for generations."
+      ],
+      "keyVocab": [
+        {
+          "word": "緻密",
+          "reading": "ちみつ",
+          "en": "meticulous; intricate"
+        },
+        {
+          "word": "委ねる",
+          "reading": "ゆだねる",
+          "en": "to entrust to"
+        },
+        {
+          "word": "要諦",
+          "reading": "ようてい",
+          "en": "essential point; core principle"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-05-q1",
+          "promptJp": "筆者[ひっしゃ]は、用途[ようと]が細部[さいぶ]まで規定[きてい]された再開発[さいかいはつ]空間[くうかん]にどんな問題[もんだい]を見出[みいだ]しているか。",
+          "promptEn": "What flaw does the author see in redeveloped spaces where every detail's use is strictly prescribed?",
+          "choices": [
+            "建設[けんせつ]費[ひ]が回収[かいしゅう]できず商業[しょうぎょう]施設[しせつ]が赤字[あかじ]になること。",
+            "居場所[いばしょ]としての温[ぬく]もりや、街[まち]の自発[じはつ]的[てき]な生命力[せいめいりょく]が失[うしな]われかねないこと。",
+            "動線[どうせん]が複雑[ふくざつ]すぎて高齢者[こうれいしゃ]が迷[まよ]いやすいこと。",
+            "防災[ぼうさい]上[じょう]の安全[あんぜん]基準[きじゅん]を満[み]たしていないこと。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 1 and 3 warn that over-prescribed, hyper-efficient spaces can lack human warmth and sap spontaneous civic vitality."
+        },
+        {
+          "id": "rd-n1-05-q2",
+          "promptJp": "街[まち]に「余白[よはく]」を残[のこ]すことで期待[きたい]される効果[こうか]は何か。",
+          "promptEn": "What positive effect is expected from leaving \"margins\" in urban spaces?",
+          "choices": [
+            "商業[しょうぎょう]施設[しせつ]の売上[うりあげ]が確実[かくじつ]に倍増[ばいぞう]する。",
+            "管理[かんり]コストが完全にゼロになる。",
+            "使い手[つかいて]の想像力[そうぞうりょく]によって、想定[そうてい]外[がい]の出会[であ]いや独自[どくじ]の地域[ちいき]文化[ぶんか]が育[そだ]つ。",
+            "自動車[じどうしゃ]の渋滞[じゅうたい]が解消[かいしょう]される。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraphs 2 and 3 highlight unexpected encounters, unique local culture, and spaces shaped by users' imagination."
+        },
+        {
+          "id": "rd-n1-05-q3",
+          "promptJp": "この文章[ぶんしょう]の結論[けつろん]として最[もっと]もふさわしいものはどれか。",
+          "promptEn": "Which best captures the passage's conclusion?",
+          "choices": [
+            "都市[とし]の再開発[さいかいはつ]は全面[ぜんめん]中止[ちゅうし]し、昔[むかし]の街並[まちな]みを保存[ほぞん]すべきだ。",
+            "効率[こうりつ]や管理[かんり]を徹底[てってい]するほど、住民[じゅうみん]の満足[まんぞく]度[ど]は高[たか]まる。",
+            "使い手[つかいて]に委[ゆだ]ねる自由[じゆう]な余白[よはく]を設計[せっけい]に組[く]み込[こ]むことが、愛[あい]される都市[とし]づくりの鍵[かぎ]である。",
+            "建築[けんちく]家[か]は商業[しょうぎょう]施設[しせつ]よりも住宅[じゅうたく]設計[せっけい]に専念[せんねん]すべきだ。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence directly states that leaving margins entrusted to users' imagination is the core principle for nurturing beloved cities."
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+import type { GrammarProgress } from './grammar';
+import type { KanaVocabProgress } from './kanaVocab';
+import type { ReadingProgress } from './reading';
+import type { ListeningProgress } from './listening';
+import type { MockExamResult } from './mockExam';
+
 export type ItemType = 'radical' | 'kanji' | 'vocabulary';
 
 export type SrsStage = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
@@ -90,6 +96,11 @@ export interface UserSettings {
 export interface UserState {
   currentLevel: number;
   progress: Record<string, UserItemProgress>;
+  grammarProgress?: Record<string, GrammarProgress>;
+  kanaVocabProgress?: Record<string, KanaVocabProgress>;
+  readingProgress?: Record<string, ReadingProgress>;
+  listeningProgress?: Record<string, ListeningProgress>;
+  mockExamHistory?: MockExamResult[];
   history: ReviewHistoryEntry[];
   settings: UserSettings;
   streakDays: number;
@@ -104,6 +115,11 @@ export type ActiveView =
   | 'radicals'
   | 'kanji'
   | 'vocabulary'
+  | 'kana-vocab'
+  | 'grammar'
+  | 'reading'
+  | 'listening'
+  | 'mock-exam'
   | 'lesson'
   | 'review'
   | 'extra-study'

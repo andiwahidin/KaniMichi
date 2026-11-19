@@ -10,6 +10,11 @@ import { SettingsModal } from './components/SettingsModal';
 import { AuthModal } from './components/AuthModal';
 import { UserProfileView } from './components/UserProfileView';
 import { AdminPanel } from './components/AdminPanel';
+import { GrammarHub } from './components/GrammarHub';
+import { KanaVocabHub } from './components/KanaVocabHub';
+import { ReadingHub } from './components/ReadingHub';
+import { ListeningHub } from './components/ListeningHub';
+import { MockExamHub } from './components/MockExamHub';
 
 const AppShell: React.FC = () => {
   const { activeView, extraStudyMode, setActiveView } = useApp();
@@ -26,6 +31,11 @@ const AppShell: React.FC = () => {
         {activeView === 'radicals' && <CurriculumBrowser mode="radicals" />}
         {activeView === 'kanji' && <CurriculumBrowser mode="kanji" />}
         {activeView === 'vocabulary' && <CurriculumBrowser mode="vocabulary" />}
+        {activeView === 'kana-vocab' && <KanaVocabHub />}
+        {activeView === 'grammar' && <GrammarHub />}
+        {activeView === 'reading' && <ReadingHub />}
+        {activeView === 'listening' && <ListeningHub />}
+        {activeView === 'mock-exam' && <MockExamHub />}
         {activeView === 'lesson' && <LessonSession />}
         {activeView === 'review' && <ReviewSession mode="srs" />}
         {activeView === 'extra-study' && (
@@ -69,6 +79,41 @@ const AppShell: React.FC = () => {
                 className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
                 Kosakata
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('kana-vocab')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Kana JLPT
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('grammar')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Grammar
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('reading')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Dokkai
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('listening')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Chōkai
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('mock-exam')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Mogi Shiken
               </button>
             </div>
           </div>
