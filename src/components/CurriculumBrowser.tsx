@@ -148,7 +148,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                     key={item.id}
                     type="button"
                     onClick={() => openItemDetail(item.id)}
-                    className={`p-2.5 rounded-xl border text-center transition-colors cursor-pointer ${
+                    className={`min-w-0 p-2.5 rounded-xl border text-center transition-colors cursor-pointer ${
                       locked
                         ? 'border-dashed border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-[#161A22]/60 opacity-70'
                         : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:border-slate-400 dark:hover:border-slate-600'
@@ -387,7 +387,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
           </h1>
         </div>
 
-        <div className="flex items-center gap-2.5 w-full md:w-auto">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full md:w-auto">
           <select
             aria-label="Filter level spesifik"
             value={exactLevelFilter}
@@ -395,7 +395,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
               const v = e.target.value;
               setExactLevelFilter(v === 'all' ? 'all' : Number(v));
             }}
-            className="px-3 py-2 text-sm font-mono-num rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] text-slate-900 dark:text-white"
+            className="px-3 py-2 text-sm font-mono-num rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] text-slate-900 dark:text-white shrink-0"
           >
             <option value="all">Semua Level</option>
             {Array.from({ length: MAX_LEVEL }, (_, i) => i + 1).map((lvl) => (
@@ -405,7 +405,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
             ))}
           </select>
 
-          <div className="relative flex-1 md:w-64">
+          <div className="relative flex-1 min-w-[160px] md:w-64">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
@@ -527,7 +527,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                 key={item.id}
                 type="button"
                 onClick={() => openItemDetail(item.id)}
-                className={`p-3 rounded-xl border text-center transition-colors cursor-pointer ${
+                className={`min-w-0 p-3 rounded-xl border text-center transition-colors cursor-pointer ${
                   locked
                     ? 'border-dashed border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-[#161A22]/70 opacity-75'
                     : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:border-slate-400 dark:hover:border-slate-600'
@@ -554,13 +554,13 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
 
       {/* Pagination Bar */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
           <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
             Halaman {safePage} dari {totalPages} · Menampilkan {(safePage - 1) * PAGE_SIZE + 1}–
             {Math.min(safePage * PAGE_SIZE, filteredItems.length)} dari{' '}
             {filteredItems.length.toLocaleString('id-ID')} item
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
               disabled={safePage <= 1}

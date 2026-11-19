@@ -614,9 +614,9 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
       </div>
 
       {/* Character Banner */}
-      <div className={`${bannerColor} text-white px-4 py-10 sm:py-14 relative`}>
-        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-white/85 mb-6">
-          <div className="flex items-center gap-4">
+      <div className={`${bannerColor} text-white px-4 py-7 sm:py-14 relative`}>
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4 text-xs text-white/85 mb-5 sm:mb-6">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
             <button
               type="button"
               onClick={() => setSessionFinished(true)}
@@ -633,17 +633,17 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               }`}
             >
               <Clock className="w-3.5 h-3.5" />
-              {wrapUpMode ? 'Mode Akhiri Aktif' : 'Akhiri Cepat (5 Item)'}
+              {wrapUpMode ? 'Mode Akhiri Aktif' : 'Akhiri Cepat (5)'}
             </button>
           </div>
 
-          <div className="flex items-center gap-4 font-mono-num">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 font-mono-num">
             <span>{mode === 'extra' ? 'Latihan Tambahan' : 'Review SRS'}</span>
             <span aria-hidden="true">·</span>
             <span>Akurasi {liveAccuracy}%</span>
             <span aria-hidden="true">·</span>
             <span>
-              Selesai {completedItemsCount}/{totalItemsInSession}
+              {completedItemsCount}/{totalItemsInSession}
             </span>
           </div>
         </div>
@@ -652,7 +652,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           <div className="text-xs font-medium text-white/85 mb-2">
             Level {item.level} · {getItemTypeLabel(item.type)}
           </div>
-          <div className="font-jp text-6xl sm:text-8xl font-bold tracking-tight leading-none select-all">
+          <div className="font-jp text-5xl sm:text-8xl font-bold tracking-tight leading-none select-all break-words">
             {item.characters}
           </div>
 
@@ -710,7 +710,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                   ? 'Ketik arti dalam Bahasa Inggris...'
                   : 'Ketik romaji (otomatis ke ひらがな)...'
               }
-              className={`w-full text-center text-xl sm:text-2xl py-4 px-12 rounded-xl border-2 transition-colors focus:outline-none ${
+              className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
                 currentQuestion.kind === 'reading' ? 'font-jp' : 'font-body'
               } ${
                 answerState === 'correct'

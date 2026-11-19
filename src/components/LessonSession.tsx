@@ -362,7 +362,7 @@ export const LessonSession: React.FC = () => {
             <div className="text-xs font-medium text-white/85 mb-2">
               Level {qItem.level} · {getItemTypeLabel(qItem.type)}
             </div>
-            <div className="font-jp text-6xl sm:text-7xl font-bold tracking-tight select-all">
+            <div className="font-jp text-5xl sm:text-7xl font-bold tracking-tight select-all break-words">
               {qItem.characters}
             </div>
           </div>
@@ -408,7 +408,7 @@ export const LessonSession: React.FC = () => {
                     ? 'Ketik arti dalam Bahasa Inggris...'
                     : 'Ketik romaji (otomatis ke ひらがな)...'
                 }
-                className={`w-full text-center text-xl sm:text-2xl py-4 px-12 rounded-xl border-2 transition-colors focus:outline-none ${
+                className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
                   currentQuestion.kind === 'reading' ? 'font-jp' : 'font-body'
                 } ${
                   answerState === 'correct'
@@ -543,22 +543,25 @@ export const LessonSession: React.FC = () => {
       : null;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col">
+    <div className="min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] w-full max-w-full overflow-x-clip flex flex-col">
       {/* Banner Header */}
-      <div className={`${bannerColor} text-white px-4 py-10 sm:py-12`}>
-        <div className="max-w-4xl mx-auto flex items-center justify-between text-xs text-white/85 mb-6">
+      <div className={`${bannerColor} text-white px-3 sm:px-4 py-6 sm:py-12`}>
+        <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs text-white/85 mb-4 sm:mb-6">
           <button
             type="button"
             onClick={() => setActiveView('dashboard')}
-            className="inline-flex items-center gap-1.5 hover:text-white cursor-pointer"
+            className="inline-flex items-center gap-1.5 hover:text-white cursor-pointer shrink-0"
           >
             <Home className="w-4 h-4" />
             Beranda
           </button>
-          <span className="font-mono-num">
+          <span className="font-mono-num text-right">
             Pelajaran {slideIdx + 1} / {batch.length}
-            {remainingLessonsAfterBatch.length > 0 &&
-              ` · ${remainingLessonsAfterBatch.length} tersisa di antrean`}
+            {remainingLessonsAfterBatch.length > 0 && (
+              <span className="hidden sm:inline">
+                {` · ${remainingLessonsAfterBatch.length} tersisa di antrean`}
+              </span>
+            )}
           </span>
         </div>
 
@@ -567,10 +570,10 @@ export const LessonSession: React.FC = () => {
             Level {currentSlideItem.level} · {getItemTypeLabel(currentSlideItem.type)}
             {currentSlideItem.partOfSpeech ? ` · ${currentSlideItem.partOfSpeech}` : ''}
           </div>
-          <div className="font-jp text-6xl sm:text-7xl font-bold leading-none select-all">
+          <div className="font-jp text-5xl sm:text-7xl font-bold leading-none select-all break-words">
             {currentSlideItem.characters}
           </div>
-          <div className="font-display text-2xl sm:text-3xl font-bold pt-1">
+          <div className="font-display text-xl sm:text-3xl font-bold pt-1 break-words">
             {currentSlideItem.primaryMeaning}
           </div>
           {primaryAudio && (
@@ -578,66 +581,87 @@ export const LessonSession: React.FC = () => {
               <button
                 type="button"
                 onClick={() => speakJapanese(primaryAudio)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-medium transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-medium transition-colors cursor-pointer max-w-full"
               >
-                <Volume2 className="w-3.5 h-3.5" />
-                Putar Audio ({primaryAudio})
+                <Volume2 className="w-3.5 h-3.5 shrink-0" />
+                <span className="truncate">Putar Audio ({primaryAudio})</span>
               </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Sub-navigation Tabs */}
-      <div className="bg-white dark:bg-[#161A22] border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-4xl mx-auto px-4 flex items-center justify-center gap-6">
-          <button
-            type="button"
-            onClick={() => setSubTab('overview')}
-            className={`py-3.5 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap cursor-pointer ${
-              subTab === 'overview'
-                ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white'
-                : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
-            }`}
-          >
-            {currentSlideItem.type === 'radical' ? 'Nama & Mnemonik' : 'Komponen & Arti'}
-          </button>
-
-          {currentSlideItem.type !== 'radical' && (
+      {/* Sub-navigation Tabs — fully contained & responsive on 360px+ */}
+      <div className="bg-white dark:bg-[#161A22] border-b border-slate-200 dark:border-slate-800 w-full">
+        <div className="max-w-4xl mx-auto px-2 sm:px-4 overflow-x-auto no-scrollbar">
+          <div className="flex items-center justify-around sm:justify-center gap-2 sm:gap-6 min-w-0">
             <button
               type="button"
-              onClick={() => setSubTab('reading')}
-              className={`py-3.5 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap cursor-pointer ${
-                subTab === 'reading'
+              onClick={() => setSubTab('overview')}
+              className={`py-3 sm:py-3.5 px-1.5 sm:px-1 text-xs sm:text-sm font-semibold border-b-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                subTab === 'overview'
                   ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white'
                   : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
-              Cara Baca &amp; Mnemonik
+              {currentSlideItem.type === 'radical' ? (
+                'Nama & Mnemonik'
+              ) : (
+                <>
+                  <span className="sm:hidden">Arti</span>
+                  <span className="hidden sm:inline">Komponen &amp; Arti</span>
+                </>
+              )}
             </button>
-          )}
 
-          <button
-            type="button"
-            onClick={() => setSubTab('context')}
-            className={`py-3.5 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap cursor-pointer ${
-              subTab === 'context'
-                ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white'
-                : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
-            }`}
-          >
-            {currentSlideItem.type === 'vocabulary'
-              ? 'Kalimat Contoh'
-              : currentSlideItem.type === 'kanji'
-              ? 'Contoh Kosakata'
-              : 'Ditemukan di Kanji'}
-          </button>
+            {currentSlideItem.type !== 'radical' && (
+              <button
+                type="button"
+                onClick={() => setSubTab('reading')}
+                className={`py-3 sm:py-3.5 px-1.5 sm:px-1 text-xs sm:text-sm font-semibold border-b-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                  subTab === 'reading'
+                    ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white'
+                    : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                }`}
+              >
+                <span className="sm:hidden">Cara Baca</span>
+                <span className="hidden sm:inline">Cara Baca &amp; Mnemonik</span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setSubTab('context')}
+              className={`py-3 sm:py-3.5 px-1.5 sm:px-1 text-xs sm:text-sm font-semibold border-b-2 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                subTab === 'context'
+                  ? 'border-slate-900 dark:border-white text-slate-900 dark:text-white'
+                  : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+              }`}
+            >
+              {currentSlideItem.type === 'vocabulary' ? (
+                <>
+                  <span className="sm:hidden">Contoh</span>
+                  <span className="hidden sm:inline">Kalimat Contoh</span>
+                </>
+              ) : currentSlideItem.type === 'kanji' ? (
+                <>
+                  <span className="sm:hidden">Kosakata</span>
+                  <span className="hidden sm:inline">Contoh Kosakata</span>
+                </>
+              ) : (
+                <>
+                  <span className="sm:hidden">Di Kanji</span>
+                  <span className="hidden sm:inline">Ditemukan di Kanji</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Main Study Panel */}
-      <div className="max-w-4xl w-full mx-auto px-4 py-8 flex-1">
-        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 space-y-6">
+      <div className="max-w-4xl w-full mx-auto px-3 sm:px-4 py-5 sm:py-8 pb-10 flex-1 min-w-0">
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-4 sm:p-8 space-y-5 sm:space-y-6">
           {subTab === 'overview' && (
             <>
               {components.length > 0 && (
@@ -727,10 +751,10 @@ export const LessonSession: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
-                  <div>
+                <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                  <div className="min-w-0">
                     <div className="text-xs text-slate-500 dark:text-slate-400">Bacaan Kosakata</div>
-                    <div className="font-jp text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                    <div className="font-jp text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1 break-words">
                       {currentSlideItem.readings?.join('、 ')}
                     </div>
                   </div>
@@ -738,7 +762,7 @@ export const LessonSession: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => speakJapanese(primaryAudio)}
-                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#7C3AED] text-white text-xs font-semibold hover:bg-[#6D28D9] cursor-pointer"
+                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#7C3AED] text-white text-xs font-semibold hover:bg-[#6D28D9] cursor-pointer shrink-0"
                     >
                       <Volume2 className="w-4 h-4" />
                       Dengarkan
@@ -854,14 +878,14 @@ export const LessonSession: React.FC = () => {
             })}
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="grid grid-cols-2 sm:flex items-center gap-2.5 w-full sm:w-auto">
             <button
               type="button"
               disabled={slideIdx === 0}
               onClick={() => setSlideIdx((i) => Math.max(0, i - 1))}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold text-slate-700 dark:text-slate-200 disabled:opacity-40 hover:bg-white dark:hover:bg-slate-800 cursor-pointer disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2.5 min-h-[44px] rounded-lg border border-slate-300 dark:border-slate-700 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 disabled:opacity-40 hover:bg-white dark:hover:bg-slate-800 cursor-pointer disabled:cursor-not-allowed whitespace-nowrap"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <ArrowLeft className="w-4 h-4 shrink-0" />
               Sebelumnya
             </button>
 
@@ -869,19 +893,19 @@ export const LessonSession: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSlideIdx((i) => i + 1)}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 min-h-[44px] rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs sm:text-sm font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 cursor-pointer whitespace-nowrap"
               >
                 Berikutnya
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             ) : (
               <button
                 type="button"
                 onClick={startQuiz}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2.5 min-h-[44px] rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold cursor-pointer whitespace-nowrap"
               >
-                Mulai Kuis Pelajaran
-                <ArrowRight className="w-4 h-4" />
+                <span>Mulai Kuis</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
             )}
           </div>

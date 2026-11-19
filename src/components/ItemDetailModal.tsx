@@ -112,9 +112,9 @@ export const ItemDetailModal: React.FC = () => {
     >
       <div className="w-full max-w-3xl bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-auto max-h-[90vh] flex flex-col">
         {/* Colored Item Banner */}
-        <div className={`${headerBg} text-white px-6 py-6 flex items-start justify-between gap-4`}>
-          <div className="flex items-center gap-5 min-w-0">
-            <div className="font-jp text-5xl sm:text-6xl font-bold leading-none select-all shrink-0">
+        <div className={`${headerBg} text-white px-4 sm:px-6 py-4 sm:py-6 flex items-start justify-between gap-3 sm:gap-4`}>
+          <div className="flex items-center gap-3 sm:gap-5 min-w-0">
+            <div className="font-jp text-4xl sm:text-6xl font-bold leading-none select-all shrink-0 max-w-[40%] break-words">
               {item.characters}
             </div>
             <div className="min-w-0">
@@ -185,7 +185,7 @@ export const ItemDetailModal: React.FC = () => {
         </div>
 
         {/* Scrollable Content Body */}
-        <div className="p-6 overflow-y-auto space-y-7 text-slate-800 dark:text-slate-200">
+        <div className="p-4 sm:p-6 overflow-y-auto space-y-6 sm:space-y-7 text-slate-800 dark:text-slate-200">
           {/* Component Hierarchy */}
           {components.length > 0 && (
             <section>

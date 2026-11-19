@@ -237,9 +237,9 @@ export const Dashboard: React.FC = () => {
           </h1>
         </div>
 
-        <div className="flex items-center gap-3 w-full md:w-auto">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full md:w-auto">
           {/* Global Instant Search across all 9,088 items */}
-          <div className="relative flex-1 md:w-72">
+          <div className="relative w-full sm:w-auto sm:flex-1 md:w-72 min-w-0">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
@@ -300,7 +300,7 @@ export const Dashboard: React.FC = () => {
             <button
               type="button"
               onClick={() => setActiveView(isAdmin ? 'admin' : 'profile')}
-              className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border text-sm font-medium whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border text-sm font-medium whitespace-nowrap flex-1 sm:flex-initial min-w-0 cursor-pointer ${
                 isAdmin
                   ? 'border-[#7C3AED]/30 bg-[#7C3AED]/10 text-[#7C3AED] dark:text-violet-300 hover:bg-[#7C3AED]/15'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'
@@ -308,13 +308,15 @@ export const Dashboard: React.FC = () => {
             >
               {isAdmin ? (
                 <>
-                  <ShieldCheck className="w-4 h-4" />
-                  Panel Admin
+                  <ShieldCheck className="w-4 h-4 shrink-0" />
+                  <span>Panel Admin</span>
                 </>
               ) : (
                 <>
-                  <UserIcon className="w-4 h-4" />
-                  {userProfile?.displayName || 'Profil'}
+                  <UserIcon className="w-4 h-4 shrink-0" />
+                  <span className="truncate max-w-[140px]">
+                    {userProfile?.displayName || 'Profil'}
+                  </span>
                 </>
               )}
             </button>
@@ -322,7 +324,7 @@ export const Dashboard: React.FC = () => {
             <button
               type="button"
               onClick={() => openAuthModal('login')}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap flex-1 sm:flex-initial shrink-0 cursor-pointer"
             >
               <LogIn className="w-4 h-4" />
               Masuk
@@ -332,7 +334,7 @@ export const Dashboard: React.FC = () => {
           <button
             type="button"
             onClick={() => setSettingsOpen(true)}
-            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
           >
             <SlidersHorizontal className="w-4 h-4" />
             <span className="hidden sm:inline">Pengaturan</span>
@@ -453,7 +455,7 @@ export const Dashboard: React.FC = () => {
             </div>
           )}
 
-          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span className="text-xs text-slate-500 dark:text-slate-400">
               Promosi otomatis ke Apprentice I (4 jam)
             </span>
@@ -461,7 +463,7 @@ export const Dashboard: React.FC = () => {
               type="button"
               disabled={lessonQueue.length === 0}
               onClick={() => setActiveView('lesson')}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] disabled:bg-slate-200 dark:disabled:bg-slate-800 disabled:text-slate-400 text-white text-sm font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] disabled:bg-slate-200 dark:disabled:bg-slate-800 disabled:text-slate-400 text-white text-sm font-semibold transition-colors whitespace-nowrap w-full sm:w-auto shrink-0 cursor-pointer disabled:cursor-not-allowed"
             >
               <BookOpen className="w-4 h-4" />
               Mulai Pelajaran
@@ -503,7 +505,7 @@ export const Dashboard: React.FC = () => {
             </span>
           </div>
 
-          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4">
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             {availableReviews.length === 0 && nextScheduledReview ? (
               <button
                 type="button"
@@ -522,7 +524,7 @@ export const Dashboard: React.FC = () => {
               type="button"
               disabled={availableReviews.length === 0}
               onClick={() => setActiveView('review')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] disabled:bg-slate-200 dark:disabled:bg-slate-800 disabled:text-slate-400 text-white text-sm font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] disabled:bg-slate-200 dark:disabled:bg-slate-800 disabled:text-slate-400 text-white text-sm font-semibold transition-colors whitespace-nowrap w-full sm:w-auto shrink-0 cursor-pointer disabled:cursor-not-allowed"
             >
               <Play className="w-4 h-4 fill-current" />
               Mulai Review
@@ -625,7 +627,7 @@ export const Dashboard: React.FC = () => {
                           title={`${rad.characters} — ${rad.primaryMeaning} (${
                             stage === null ? 'Terkunci' : SRS_STAGE_NAMES[stage]
                           })`}
-                          className={`p-2 rounded-lg border text-center transition-colors cursor-pointer ${
+                          className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
                             locked
                               ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-50'
                               : 'border-slate-200 dark:border-slate-800 hover:border-[#0284C7] bg-slate-50/70 dark:bg-slate-800/40'
@@ -663,7 +665,7 @@ export const Dashboard: React.FC = () => {
                             ? 'Terkunci — Guru radikalnya dulu'
                             : SRS_STAGE_NAMES[stage]
                         })`}
-                        className={`p-2 rounded-lg border text-center transition-colors cursor-pointer ${
+                        className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
                           locked
                             ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-55'
                             : 'border-slate-200 dark:border-slate-800 hover:border-[#DB2777] bg-slate-50/70 dark:bg-slate-800/40'
@@ -689,8 +691,8 @@ export const Dashboard: React.FC = () => {
           </section>
 
           {/* SRS STAGE DISTRIBUTION MATRIX */}
-          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6">
-            <div className="flex items-center justify-between mb-4">
+          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-4 sm:p-6">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
                 Sebaran Tahap SRS
               </h2>

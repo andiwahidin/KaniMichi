@@ -373,7 +373,7 @@ export const AdminPanel: React.FC = () => {
           </h1>
         </div>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex flex-wrap items-center gap-2.5">
           <button
             type="button"
             disabled={loadingData}
@@ -394,7 +394,7 @@ export const AdminPanel: React.FC = () => {
       </div>
 
       {/* Admin Sub-Navigation Tabs */}
-      <div className="border-b border-slate-200 dark:border-slate-800 flex items-center gap-1 overflow-x-auto">
+      <div className="border-b border-slate-200 dark:border-slate-800 flex items-center gap-1 overflow-x-auto no-scrollbar">
         {adminTabs.map((t) => {
           const isCurrent = activeTab === t.id;
           return (

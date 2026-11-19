@@ -9,6 +9,12 @@
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   }
 
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   body {
     font-family: var(--font-body);
   }
@@ -16,6 +22,15 @@
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
   }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .font-jp {
