@@ -13,12 +13,11 @@ const env: Record<string, string | undefined> =
   typeof import.meta !== 'undefined' && import.meta.env
     ? (import.meta.env as Record<string, string | undefined>)
     : {};
-const supabaseUrl = (env.VITE_SUPABASE_URL ?? '').trim();
+const supabaseUrl = (env.VITE_SUPABASE_URL || '').trim();
 const supabasePublicKey = (
-  env.VITE_SUPABASE_PUBLISHABLE_KEY ??
-  env.VITE_SUPABASE_ANON_KEY ??
-  ''
-).trim();
+  (env.VITE_SUPABASE_PUBLISHABLE_KEY || '').trim() ||
+  (env.VITE_SUPABASE_ANON_KEY || '').trim()
+);
 
 function isValidSupabaseConfig(url: string, key: string): boolean {
   if (!url || !key) return false;
