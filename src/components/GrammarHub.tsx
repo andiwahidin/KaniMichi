@@ -1150,14 +1150,14 @@ export const GrammarHub: React.FC = () => {
             onClick={() => setActiveView('reading')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (25)
+            3. Dokkai (50)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (25)
+            4. Chōkai (50)
           </button>
           <button
             type="button"

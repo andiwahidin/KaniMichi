@@ -23,6 +23,7 @@ import {
   generateMockExamPaper,
   gradeMockExamPaper,
   JLPT_OFFICIAL_RULES,
+  MOCK_EXAM_MODE_CONFIG,
 } from '../data/mockExam';
 import { loadReadingDataset, stripFuriganaMarkup } from '../data/reading';
 import { GrammarDataset, JlptLevel } from '../types/grammar';
@@ -30,6 +31,7 @@ import { KanaVocabDataset } from '../types/kanaVocab';
 import { ListeningDataset, ListeningTrack } from '../types/listening';
 import {
   MockExamChoiceQuestion,
+  MockExamLength,
   MockExamPaper,
   MockExamPartId,
   MockExamResult,
@@ -118,6 +120,22 @@ export const MockExamHub: React.FC = () => {
 
   // Overview state
   const [selectedLevel, setSelectedLevel] = useState<JlptLevel>(5);
+  const [examLength, setExamLength] = useState<MockExamLength>('standard');
+
+  // Track recently drawn IDs across consecutive runs in this session to avoid repeating questions
+  const recentIdsRef = useRef<{
+    vocab: Set<string>;
+    kana: Set<string>;
+    grammar: Set<string>;
+    passages: Set<string>;
+    tracks: Set<string>;
+  }>({
+    vocab: new Set(),
+    kana: new Set(),
+    grammar: new Set(),
+    passages: new Set(),
+    tracks: new Set(),
+  });
 
   // Active Exam Runner state
   const [paper, setPaper] = useState<MockExamPaper | null>(null);
@@ -281,7 +299,7 @@ export const MockExamHub: React.FC = () => {
 
       // Pillar 4: Dokkai Reading
       const readList = banks?.reading.byJlpt[lvl] ?? [];
-      const dokkaiTotal = readList.length || 5;
+      const dokkaiTotal = readList.length || 10;
       let dokkaiDone = 0;
       for (const p of readList) {
         const prog = state.readingProgress?.[p.id];
@@ -293,7 +311,7 @@ export const MockExamHub: React.FC = () => {
 
       // Pillar 5: Chōkai Listening
       const listTracks = banks?.listening.byJlpt[lvl] ?? [];
-      const choukaiTotal = listTracks.length || 5;
+      const choukaiTotal = listTracks.length || 10;
       let choukaiDone = 0;
       for (const t of listTracks) {
         if (state.listeningProgress?.[t.id]?.passed) choukaiDone += 1;
@@ -353,16 +371,53 @@ export const MockExamHub: React.FC = () => {
     banks,
   ]);
 
-  const startMockExam = (lvl: JlptLevel) => {
+  const startMockExam = (lvl: JlptLevel, modeOverride?: MockExamLength) => {
     if (!banks) return;
     stopExamAudio();
-    const generated = generateMockExamPaper(lvl, {
-      curriculum: dataset,
-      grammar: banks.grammar,
-      kanaVocab: banks.kanaVocab,
-      reading: banks.reading,
-      listening: banks.listening,
-    });
+    const chosenMode = modeOverride ?? examLength;
+    const recent = recentIdsRef.current;
+
+    const generated = generateMockExamPaper(
+      lvl,
+      {
+        curriculum: dataset,
+        grammar: banks.grammar,
+        kanaVocab: banks.kanaVocab,
+        reading: banks.reading,
+        listening: banks.listening,
+      },
+      {
+        lengthMode: chosenMode,
+        excludeIds: recent,
+      }
+    );
+
+    // Record drawn IDs so subsequent runs draw fresh passages, audio, and grammar first
+    for (const q of generated.mojiGoiQuestions) {
+      if (!q.sourceId) continue;
+      if (q.id.startsWith('mg-kana-')) recent.kana.add(q.sourceId);
+      else recent.vocab.add(q.sourceId);
+    }
+    for (const q of generated.bunpouQuestions) {
+      if (q.sourceId) recent.grammar.add(q.sourceId);
+    }
+    for (const p of generated.dokkaiPassages) recent.passages.add(p.id);
+    for (const t of generated.choukaiTracks) recent.tracks.add(t.id);
+
+    // Prevent sets from growing endlessly once a full cycle is exhausted
+    if (recent.passages.size >= (banks.reading.passages.length || 50)) {
+      recent.passages.clear();
+    }
+    if (recent.tracks.size >= (banks.listening.tracks.length || 50)) {
+      recent.tracks.clear();
+    }
+    if (recent.grammar.size >= (banks.grammar.points.length || 100)) {
+      recent.grammar.clear();
+    }
+    if (recent.kana.size >= (banks.kanaVocab.items.length || 150)) {
+      recent.kana.clear();
+    }
+
     setPaper(generated);
     setActivePart('moji-goi');
     setAnswers({});
@@ -524,11 +579,13 @@ export const MockExamHub: React.FC = () => {
 
           <button
             type="button"
-            onClick={() => startMockExam(completedResult.jlpt)}
+            onClick={() =>
+              startMockExam(completedResult.jlpt, completedResult.lengthMode ?? examLength)
+            }
             className="min-h-[40px] inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs sm:text-sm font-semibold cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
-            Ujian Baru {lvlMeta.code} (Soal Acak)
+            Ujian Baru {lvlMeta.code} (Soal Baru Acak)
           </button>
         </div>
 
@@ -544,7 +601,10 @@ export const MockExamHub: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <div className="text-xs font-semibold uppercase tracking-wider text-white/85">
-                  Hasil Simulasi Resmi · Mogi Shiken JLPT {lvlMeta.code}
+                  Hasil Simulasi Resmi · Mogi Shiken JLPT {lvlMeta.code} ·{' '}
+                  {completedResult.lengthMode === 'full'
+                    ? 'Simulasi Penuh'
+                    : 'Simulasi Ringkas'}
                 </div>
                 <h1 className="font-display text-2xl sm:text-3xl font-extrabold flex items-center gap-2.5">
                   <Award className="w-7 h-7 shrink-0" />
@@ -1557,22 +1617,67 @@ export const MockExamHub: React.FC = () => {
             style={{ backgroundColor: activeLvlMeta.accent }}
           >
             <div className="text-xs font-semibold uppercase tracking-wider text-white/85">
-              Simulasi Ujian Penuh · {activeLvlMeta.label}
+              {MOCK_EXAM_MODE_CONFIG[examLength].label} · {activeLvlMeta.label}
             </div>
             <h2 className="font-display text-2xl font-extrabold">
               Mogi Shiken JLPT {activeLvlMeta.code}
             </h2>
             <p className="text-xs sm:text-sm text-white/90">
-              Soal diacak otomatis dari bank Kanji, Kana JLPT, Grammar, Dokkai, dan Chōkai setiap kali ujian dimulai.
+              Bank soal 50 wacana Dokkai, 50 audio Chōkai, 100 Grammar, 150 Kana JLPT &amp; ribuan Kanji/Kosakata — diacak otomatis anti-ulang setiap kali mulai.
             </p>
           </div>
 
           <div className="p-5 sm:p-6 space-y-4">
+            {/* Mode Toggle: Standard vs Full-Length */}
+            <div className="space-y-1.5">
+              <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                Pilih Panjang Simulasi:
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {(['standard', 'full'] as MockExamLength[]).map((mode) => {
+                  const cfg = MOCK_EXAM_MODE_CONFIG[mode];
+                  const mins =
+                    mode === 'full'
+                      ? activeRule.fullTimeLimitMin
+                      : activeRule.timeLimitMin;
+                  const active = examLength === mode;
+                  return (
+                    <button
+                      key={mode}
+                      type="button"
+                      onClick={() => setExamLength(mode)}
+                      className={`min-h-[48px] px-3 py-2 rounded-lg border text-left transition-all cursor-pointer ${
+                        active
+                          ? 'border-slate-900 dark:border-white bg-slate-900 dark:bg-white text-white dark:text-slate-900'
+                          : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/40 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-500'
+                      }`}
+                    >
+                      <div className="text-xs font-bold">
+                        {mode === 'full' ? 'Penuh (Full)' : 'Ringkas'}
+                      </div>
+                      <div
+                        className={`text-[11px] font-mono-num mt-0.5 ${
+                          active
+                            ? 'text-white/80 dark:text-slate-600'
+                            : 'text-slate-500 dark:text-slate-400'
+                        }`}
+                      >
+                        {cfg.approxQuestionsLabel} · {mins} mnt
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
                 <div className="text-slate-500 dark:text-slate-400">Durasi Ujian</div>
                 <div className="font-mono-num text-base font-bold text-slate-900 dark:text-white mt-0.5">
-                  {activeRule.timeLimitMin} Menit
+                  {examLength === 'full'
+                    ? activeRule.fullTimeLimitMin
+                    : activeRule.timeLimitMin}{' '}
+                  Menit
                 </div>
               </div>
               <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
@@ -1587,12 +1692,24 @@ export const MockExamHub: React.FC = () => {
               <div className="font-semibold text-slate-900 dark:text-white">
                 Struktur Soal &amp; Ambang Minimum Resmi:
               </div>
-              <ul className="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400">
-                <li>Bagian 1: Kanji &amp; Kosakata (10 soal)</li>
-                <li>Bagian 2: Tata Bahasa / Bunpō (8 soal)</li>
-                <li>Bagian 3: Membaca / Dokkai (2 wacana · 4–5 soal)</li>
-                <li>Bagian 4: Mendengarkan / Chōkai (3 audio · 3 soal)</li>
-              </ul>
+              {(() => {
+                const cfg = MOCK_EXAM_MODE_CONFIG[examLength];
+                const mojiTotal = cfg.readingVocab + cfg.meaningVocab + cfg.kana;
+                return (
+                  <ul className="space-y-1 list-disc list-inside text-slate-600 dark:text-slate-400">
+                    <li>Bagian 1: Kanji &amp; Kosakata ({mojiTotal} soal)</li>
+                    <li>Bagian 2: Tata Bahasa / Bunpō ({cfg.grammar} soal)</li>
+                    <li>
+                      Bagian 3: Membaca / Dokkai ({cfg.dokkaiPassages} wacana ·{' '}
+                      {examLength === 'full' ? '8–10' : '4–5'} soal)
+                    </li>
+                    <li>
+                      Bagian 4: Mendengarkan / Chōkai ({cfg.choukaiTracks} audio ·{' '}
+                      {cfg.choukaiTracks} soal)
+                    </li>
+                  </ul>
+                );
+              })()}
               <div className="pt-1 text-[11px] text-slate-500 dark:text-slate-400">
                 {activeRule.combinedLangReading
                   ? `Batas minimum ${activeRule.code}: Pengetahuan Bahasa + Membaca ≥ 38/120 dan Mendengarkan ≥ 19/60.`
@@ -1602,12 +1719,13 @@ export const MockExamHub: React.FC = () => {
 
             <button
               type="button"
-              onClick={() => startMockExam(selectedLevel)}
+              onClick={() => startMockExam(selectedLevel, examLength)}
               className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-white text-sm sm:text-base font-semibold transition-opacity hover:opacity-90 cursor-pointer"
               style={{ backgroundColor: activeLvlMeta.accent }}
             >
               <Play className="w-4 h-4 fill-current" />
-              Mulai Mogi Shiken {activeLvlMeta.code}
+              Mulai Mogi Shiken {activeLvlMeta.code} (
+              {examLength === 'full' ? 'Penuh' : 'Ringkas'})
             </button>
           </div>
         </section>
@@ -1726,7 +1844,9 @@ export const MockExamHub: React.FC = () => {
                         </span>
                       </div>
                       <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
-                        {dateLabel} · {h.totalCorrect}/{h.totalQuestions} benar ·{' '}
+                        {dateLabel} ·{' '}
+                        {h.lengthMode === 'full' ? 'Penuh' : 'Ringkas'} ·{' '}
+                        {h.totalCorrect}/{h.totalQuestions} benar ·{' '}
                         {formatClock(h.elapsedSec)}
                       </div>
                     </div>

@@ -4,6 +4,7 @@ import { KanaVocabDataset } from '../types/kanaVocab';
 import { ListeningDataset } from '../types/listening';
 import {
   MockExamChoiceQuestion,
+  MockExamLength,
   MockExamPaper,
   MockExamPartBreakdown,
   MockExamResult,
@@ -22,6 +23,7 @@ export const JLPT_OFFICIAL_RULES: Record<JlptLevel, MockExamRule> = {
     code: 'N5',
     passTotal: 80,
     timeLimitMin: 25,
+    fullTimeLimitMin: 40,
     combinedLangReading: true,
     langReadingMin: 38,
     listeningMin: 19,
@@ -31,6 +33,7 @@ export const JLPT_OFFICIAL_RULES: Record<JlptLevel, MockExamRule> = {
     code: 'N4',
     passTotal: 90,
     timeLimitMin: 30,
+    fullTimeLimitMin: 45,
     combinedLangReading: true,
     langReadingMin: 38,
     listeningMin: 19,
@@ -40,6 +43,7 @@ export const JLPT_OFFICIAL_RULES: Record<JlptLevel, MockExamRule> = {
     code: 'N3',
     passTotal: 95,
     timeLimitMin: 35,
+    fullTimeLimitMin: 55,
     combinedLangReading: false,
     langMin: 19,
     readingMin: 19,
@@ -50,6 +54,7 @@ export const JLPT_OFFICIAL_RULES: Record<JlptLevel, MockExamRule> = {
     code: 'N2',
     passTotal: 90,
     timeLimitMin: 40,
+    fullTimeLimitMin: 60,
     combinedLangReading: false,
     langMin: 19,
     readingMin: 19,
@@ -60,12 +65,58 @@ export const JLPT_OFFICIAL_RULES: Record<JlptLevel, MockExamRule> = {
     code: 'N1',
     passTotal: 100,
     timeLimitMin: 45,
+    fullTimeLimitMin: 70,
     combinedLangReading: false,
     langMin: 19,
     readingMin: 19,
     listeningMin: 19,
   },
 };
+
+export interface MockExamModeConfig {
+  id: MockExamLength;
+  label: string;
+  readingVocab: number;
+  meaningVocab: number;
+  kana: number;
+  grammar: number;
+  dokkaiPassages: number;
+  choukaiTracks: number;
+  approxQuestionsLabel: string;
+}
+
+export const MOCK_EXAM_MODE_CONFIG: Record<MockExamLength, MockExamModeConfig> = {
+  standard: {
+    id: 'standard',
+    label: 'Simulasi Ringkas',
+    readingVocab: 4,
+    meaningVocab: 3,
+    kana: 3,
+    grammar: 8,
+    dokkaiPassages: 2,
+    choukaiTracks: 3,
+    approxQuestionsLabel: '~26 soal',
+  },
+  full: {
+    id: 'full',
+    label: 'Simulasi Penuh',
+    readingVocab: 6,
+    meaningVocab: 5,
+    kana: 5,
+    grammar: 12,
+    dokkaiPassages: 4,
+    choukaiTracks: 6,
+    approxQuestionsLabel: '~43 soal',
+  },
+};
+
+export interface MockExamExcludeIds {
+  vocab?: Set<string>;
+  kana?: Set<string>;
+  grammar?: Set<string>;
+  passages?: Set<string>;
+  tracks?: Set<string>;
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const copy = [...arr];
@@ -74,6 +125,27 @@ function shuffle<T>(arr: T[]): T[] {
     [copy[i], copy[j]] = [copy[j], copy[i]];
   }
   return copy;
+}
+
+/**
+ * Prioritize items not recently used in prior mock runs, topping up from
+ * previously seen items only if fewer than `count` fresh items remain.
+ */
+function pickPreferUnseen<T>(
+  items: T[],
+  count: number,
+  getId: (item: T) => string,
+  exclude?: Set<string>
+): T[] {
+  if (!exclude || exclude.size === 0) {
+    return shuffle(items).slice(0, count);
+  }
+  const unseen = items.filter((item) => !exclude.has(getId(item)));
+  if (unseen.length >= count) {
+    return shuffle(unseen).slice(0, count);
+  }
+  const seen = items.filter((item) => exclude.has(getId(item)));
+  return [...shuffle(unseen), ...shuffle(seen).slice(0, count - unseen.length)];
 }
 
 function buildChoiceSet(
@@ -104,12 +176,19 @@ export function generateMockExamPaper(
     kanaVocab: KanaVocabDataset;
     reading: ReadingDataset;
     listening: ListeningDataset;
+  },
+  options?: {
+    lengthMode?: MockExamLength;
+    excludeIds?: MockExamExcludeIds;
   }
 ): MockExamPaper {
   const rule = JLPT_OFFICIAL_RULES[jlpt];
+  const lengthMode: MockExamLength = options?.lengthMode ?? 'standard';
+  const cfg = MOCK_EXAM_MODE_CONFIG[lengthMode];
+  const excludeIds = options?.excludeIds;
 
   // -------------------------------------------------------------------------
-  // PART 1: MOJI · GOI (10 Questions: 4 Kanji Reading, 3 Vocab Meaning, 3 Kana Context)
+  // PART 1: MOJI · GOI (Standard: 10 Qs | Full: 16 Qs)
   // -------------------------------------------------------------------------
   const levelVocab = datasets.curriculum.items.filter(
     (it) =>
@@ -119,8 +198,9 @@ export function generateMockExamPaper(
       it.readings.length > 0 &&
       /[\u4e00-\u9faf]/.test(it.characters)
   );
+  const minVocabPool = cfg.readingVocab + cfg.meaningVocab + 8;
   const fallbackVocab =
-    levelVocab.length >= 16
+    levelVocab.length >= minVocabPool
       ? levelVocab
       : datasets.curriculum.items.filter(
           (it) =>
@@ -130,7 +210,12 @@ export function generateMockExamPaper(
             /[\u4e00-\u9faf]/.test(it.characters)
         );
 
-  const pickedForReading = shuffle(fallbackVocab).slice(0, 4);
+  const pickedForReading = pickPreferUnseen(
+    fallbackVocab,
+    cfg.readingVocab,
+    (v) => v.id,
+    excludeIds?.vocab
+  );
   const allReadingsPool = fallbackVocab
     .map((v) => v.readings?.[0] ?? '')
     .filter(Boolean);
@@ -157,13 +242,17 @@ export function generateMockExamPaper(
       choices,
       answerIndex,
       explanationEn: `${item.characters} is read "${correctReading}" and means "${item.primaryMeaning}".`,
+      sourceId: item.id,
     };
   });
 
   const usedIds = new Set(pickedForReading.map((v) => v.id));
-  const pickedForMeaning = shuffle(
-    fallbackVocab.filter((v) => !usedIds.has(v.id))
-  ).slice(0, 3);
+  const pickedForMeaning = pickPreferUnseen(
+    fallbackVocab.filter((v) => !usedIds.has(v.id)),
+    cfg.meaningVocab,
+    (v) => v.id,
+    excludeIds?.vocab
+  );
 
   const meaningQs: MockExamChoiceQuestion[] = pickedForMeaning.map((item, i) => {
     const { choices, answerIndex } = buildChoiceSet(
@@ -184,10 +273,16 @@ export function generateMockExamPaper(
           ? ` (also: ${item.acceptedMeanings.slice(0, 3).join(', ')})`
           : ''
       }.`,
+      sourceId: item.id,
     };
   });
 
-  const levelKana = shuffle(datasets.kanaVocab.byJlpt[jlpt] ?? []).slice(0, 3);
+  const levelKana = pickPreferUnseen(
+    datasets.kanaVocab.byJlpt[jlpt] ?? [],
+    cfg.kana,
+    (it) => it.id,
+    excludeIds?.kana
+  );
   const kanaQs: MockExamChoiceQuestion[] = levelKana.map((item, i) => {
     const shuffledChoices = shuffle(item.quiz.choices);
     return {
@@ -199,15 +294,21 @@ export function generateMockExamPaper(
       choices: shuffledChoices,
       answerIndex: shuffledChoices.indexOf(item.word),
       explanationEn: `"${item.word}" (${item.primaryMeaning}) fits the sentence: "${item.quiz.en}" Note: ${item.usageNote}`,
+      sourceId: item.id,
     };
   });
 
   const mojiGoiQuestions = [...readingQs, ...meaningQs, ...kanaQs];
 
   // -------------------------------------------------------------------------
-  // PART 2: BUNPŌ / GRAMMAR (8 Questions from grammar-jlpt.json)
+  // PART 2: BUNPŌ / GRAMMAR (Standard: 8 Qs | Full: 12 Qs)
   // -------------------------------------------------------------------------
-  const levelGrammar = shuffle(datasets.grammar.byJlpt[jlpt] ?? []).slice(0, 8);
+  const levelGrammar = pickPreferUnseen(
+    datasets.grammar.byJlpt[jlpt] ?? [],
+    cfg.grammar,
+    (pt) => pt.id,
+    excludeIds?.grammar
+  );
   const bunpouQuestions: MockExamChoiceQuestion[] = levelGrammar.map((pt, i) => {
     const shuffledChoices = shuffle(pt.quiz.choices);
     return {
@@ -219,13 +320,19 @@ export function generateMockExamPaper(
       choices: shuffledChoices,
       answerIndex: shuffledChoices.indexOf(pt.quiz.answer),
       explanationEn: `Answer: ${pt.quiz.answer} (${pt.pattern} = "${pt.meaning}"). Sentence: "${pt.quiz.en}" ${pt.explanation}`,
+      sourceId: pt.id,
     };
   });
 
   // -------------------------------------------------------------------------
-  // PART 3: DOKKAI / READING (2 Passages -> 4–5 Questions from reading-jlpt.json)
+  // PART 3: DOKKAI / READING (Standard: 2 Passages | Full: 4 Passages)
   // -------------------------------------------------------------------------
-  const dokkaiPassages = shuffle(datasets.reading.byJlpt[jlpt] ?? []).slice(0, 2);
+  const dokkaiPassages = pickPreferUnseen(
+    datasets.reading.byJlpt[jlpt] ?? [],
+    cfg.dokkaiPassages,
+    (p) => p.id,
+    excludeIds?.passages
+  );
   const dokkaiQuestions: MockExamChoiceQuestion[] = [];
   dokkaiPassages.forEach((passage, pIdx) => {
     passage.questions.forEach((q, qIdx) => {
@@ -244,9 +351,14 @@ export function generateMockExamPaper(
   });
 
   // -------------------------------------------------------------------------
-  // PART 4: CHŌKAI / LISTENING (3 Tracks -> 3 Questions from listening-jlpt.json)
+  // PART 4: CHŌKAI / LISTENING (Standard: 3 Tracks | Full: 6 Tracks)
   // -------------------------------------------------------------------------
-  const choukaiTracks = shuffle(datasets.listening.byJlpt[jlpt] ?? []).slice(0, 3);
+  const choukaiTracks = pickPreferUnseen(
+    datasets.listening.byJlpt[jlpt] ?? [],
+    cfg.choukaiTracks,
+    (t) => t.id,
+    excludeIds?.tracks
+  );
   const choukaiQuestions: MockExamChoiceQuestion[] = choukaiTracks.map(
     (track, tIdx) => ({
       id: `ck-${tIdx + 1}`,
@@ -268,10 +380,14 @@ export function generateMockExamPaper(
     ...choukaiQuestions,
   ];
 
+  const timeLimitMin =
+    lengthMode === 'full' ? rule.fullTimeLimitMin : rule.timeLimitMin;
+
   return {
     jlpt,
+    lengthMode,
     createdAt: Date.now(),
-    timeLimitSec: rule.timeLimitMin * 60,
+    timeLimitSec: timeLimitMin * 60,
     mojiGoiQuestions,
     bunpouQuestions,
     dokkaiPassages,
@@ -395,6 +511,7 @@ export function gradeMockExamPaper(
   return {
     id: `mogi-n${paper.jlpt}-${Date.now()}`,
     jlpt: paper.jlpt,
+    lengthMode: paper.lengthMode,
     completedAt: Date.now(),
     elapsedSec,
     totalScore,

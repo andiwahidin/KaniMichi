@@ -3,12 +3,14 @@ import type { ListeningTrack } from './listening';
 import type { ReadingPassage } from './reading';
 
 export type MockExamPartId = 'moji-goi' | 'bunpou' | 'dokkai' | 'choukai';
+export type MockExamLength = 'standard' | 'full';
 
 export interface MockExamRule {
   level: JlptLevel;
   code: string;
   passTotal: number;
   timeLimitMin: number;
+  fullTimeLimitMin: number;
   /** N5 & N4 combine Language Knowledge + Reading into 120 pts (cutoff 38); N3–N1 split into 60 + 60 (cutoff 19 each) */
   combinedLangReading: boolean;
   langReadingMin?: number;
@@ -30,6 +32,8 @@ export interface MockExamChoiceQuestion {
   answerIndex: number;
   /** Authentic English explanation shown in post-exam review */
   explanationEn: string;
+  /** Underlying bank item ID for anti-repeat sampling across consecutive tests */
+  sourceId?: string;
   /** Link to parent Dokkai passage or Chōkai track when part is dokkai / choukai */
   passageId?: string;
   trackId?: string;
@@ -37,6 +41,7 @@ export interface MockExamChoiceQuestion {
 
 export interface MockExamPaper {
   jlpt: JlptLevel;
+  lengthMode: MockExamLength;
   createdAt: number;
   timeLimitSec: number;
   mojiGoiQuestions: MockExamChoiceQuestion[];
@@ -68,6 +73,7 @@ export interface MockExamPartBreakdown {
 export interface MockExamResult {
   id: string;
   jlpt: JlptLevel;
+  lengthMode?: MockExamLength;
   completedAt: number;
   elapsedSec: number;
   totalScore: number; // 0..180

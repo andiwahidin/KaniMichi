@@ -178,7 +178,7 @@ export const ListeningHub: React.FC = () => {
       firstListen += levelStats[lvl].firstListen;
     }
     return {
-      totalTracks: data?.tracks.length ?? 25,
+      totalTracks: data?.tracks.length ?? 50,
       passed,
       firstListen,
     };
@@ -399,7 +399,7 @@ export const ListeningHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 25 Audio Latihan Chōkai JLPT N5–N1...
+            Memuat 50 Audio Latihan Chōkai JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan dialog multi-pembicara, transkrip furigana, dan pembahasan bahasa Inggris.
@@ -1074,13 +1074,13 @@ export const ListeningHub: React.FC = () => {
             onClick={() => setActiveView('reading')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (25)
+            3. Dokkai (50)
           </button>
           <button
             type="button"
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (25)
+            4. Chōkai (50)
           </button>
           <button
             type="button"
@@ -1106,7 +1106,7 @@ export const ListeningHub: React.FC = () => {
             Latihan Mendengarkan JLPT (Chōkai N5–N1)
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-            25 simulasi audio multi-pembicara bergaya ujian JLPT — mencakup <em>Kadai Rikai</em>, <em>Pointo Rikai</em>, <em>Gaiyō Rikai</em>, <em>Sokuji Ōtō</em> (3 pilihan audio), dan <em>Tōgō Rikai</em> lengkap dengan kontrol kecepatan, mode ujian, transkrip furigana, dan pembahasan bahasa Inggris.
+            50 simulasi audio multi-pembicara bergaya ujian JLPT — mencakup <em>Kadai Rikai</em>, <em>Pointo Rikai</em>, <em>Gaiyō Rikai</em>, <em>Sokuji Ōtō</em> (3 pilihan audio), dan <em>Tōgō Rikai</em> lengkap dengan kontrol kecepatan, mode ujian, transkrip furigana, dan pembahasan bahasa Inggris.
           </p>
         </div>
 

@@ -722,7 +722,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 3 · Membaca Dokkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              25 Wacana &amp; 53 Soal
+              50 Wacana &amp; 103 Soal
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Pengumuman, email bisnis, esai, dan perbandingan A/B dengan timer.
@@ -732,11 +732,11 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/25</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/50</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
-                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/53</strong>
+                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/103</strong>
               </span>
             </div>
 
@@ -757,7 +757,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 4 · Mendengarkan Chōkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              25 Audio Dialog N5–N1
+              50 Audio Dialog N5–N1
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Kadai, Pointo, Gaiyō, Sokuji Ōtō &amp; Tōgō Rikai dengan transkrip.
@@ -767,7 +767,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/25</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/50</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>

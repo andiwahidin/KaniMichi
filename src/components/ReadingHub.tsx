@@ -183,7 +183,7 @@ export const ReadingHub: React.FC = () => {
       bestCorrect += levelStats[lvl].bestCorrect;
     }
     return {
-      totalPassages: data?.passages.length ?? 25,
+      totalPassages: data?.passages.length ?? 50,
       completed,
       totalQuestions,
       bestCorrect,
@@ -271,7 +271,7 @@ export const ReadingHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 25 Wacana Dokkai JLPT N5–N1...
+            Memuat 50 Wacana Dokkai JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan wacana pendek, pengumuman, email bisnis, esai opini, dan perbandingan teks A/B.
@@ -740,14 +740,14 @@ export const ReadingHub: React.FC = () => {
             type="button"
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (25)
+            3. Dokkai (50)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (25)
+            4. Chōkai (50)
           </button>
           <button
             type="button"
@@ -772,7 +772,7 @@ export const ReadingHub: React.FC = () => {
           Latihan Membaca JLPT (Dokkai N5–N1)
         </h1>
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-          25 wacana autentik bergaya ujian JLPT — mulai dari pengumuman, email bisnis, wacana pendek, esai opini, hingga perbandingan dua teks (Tōgō Rikai) lengkap dengan pengatur waktu baca, toggle furigana, audio, dan pembahasan bahasa Inggris.
+          50 wacana autentik (103 soal) bergaya ujian JLPT — mulai dari pengumuman, email bisnis, wacana pendek, esai opini, hingga perbandingan dua teks (Tōgō Rikai) lengkap dengan pengatur waktu baca, toggle furigana, audio, dan pembahasan bahasa Inggris.
         </p>
       </div>
 
