@@ -1,13 +1,16 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
+  ArrowRight,
   ArrowUp,
   ArrowDown,
   Award,
   Check,
   ChevronRight,
   Clock,
+  Ear,
   Home,
   Info,
+  Mic,
   Volume2,
   XCircle,
 } from 'lucide-react';
@@ -20,10 +23,12 @@ import {
   validateReadingAnswer,
 } from '../utils/kana';
 import { getItemTypeLabel, SRS_STAGE_NAMES } from '../utils/srs';
+import { PronunciationCard } from './PronunciationCard';
+import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
 interface ReviewQuestion {
   item: CurriculumItem;
-  kind: 'meaning' | 'reading';
+  kind: 'meaning' | 'reading' | 'listening' | 'pronunciation';
 }
 
 interface ItemTracker {
@@ -31,6 +36,8 @@ interface ItemTracker {
   needsReading: boolean;
   meaningDone: boolean;
   readingDone: boolean;
+  listeningDone: boolean;
+  pronunciationDone: boolean;
   meaningErrors: number;
   readingErrors: number;
 }
@@ -57,7 +64,12 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     submitItemReview,
     setActiveView,
     openItemDetail,
+    openPronunciationPractice,
+    recordPronunciationAttempt,
   } = useApp();
+
+  const includeListening = state.settings.includeVocabListeningQuiz !== false;
+  const includePronunciation = state.settings.includeVocabPronunciationQuiz !== false;
 
   // Select initial item pool once when entering the session
   const initialItems = useMemo<CurriculumItem[]>(() => {
@@ -91,11 +103,14 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
   const [trackers, setTrackers] = useState<Record<string, ItemTracker>>(() => {
     const map: Record<string, ItemTracker> = {};
     for (const item of initialItems) {
+      const hasVocabAudio = item.type === 'vocabulary' && Boolean(item.readings?.[0]);
       map[item.id] = {
         item,
         needsReading: item.type !== 'radical',
         meaningDone: false,
         readingDone: item.type === 'radical',
+        listeningDone: !(hasVocabAudio && includeListening),
+        pronunciationDone: !(hasVocabAudio && includePronunciation),
         meaningErrors: 0,
         readingErrors: 0,
       };
@@ -109,6 +124,14 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
       qs.push({ item, kind: 'meaning' });
       if (item.type !== 'radical') {
         qs.push({ item, kind: 'reading' });
+      }
+      if (item.type === 'vocabulary' && item.readings?.[0]) {
+        if (includeListening) {
+          qs.push({ item, kind: 'listening' });
+        }
+        if (includePronunciation) {
+          qs.push({ item, kind: 'pronunciation' });
+        }
       }
     }
     return shuffle(qs);
@@ -131,16 +154,40 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
   const [answeredTotalCount, setAnsweredTotalCount] = useState(0);
   const [sessionFinished, setSessionFinished] = useState(false);
 
+  const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
   const inputRef = useRef<HTMLInputElement>(null);
+  const advanceToNextRef = useRef<() => void>(() => {});
   const currentQuestion = queue[0];
 
   useEffect(() => {
-    if (!sessionFinished && inputRef.current) {
+    if (
+      !sessionFinished &&
+      currentQuestion?.kind !== 'pronunciation' &&
+      inputRef.current
+    ) {
       inputRef.current.focus();
     }
-  }, [sessionFinished, queue.length, answerState]);
+  }, [sessionFinished, queue.length, answerState, currentQuestion?.kind]);
 
-  // Keyboard shortcuts: F to toggle Item Info, J to replay audio, W for Wrap-up
+  // Auto-play audio when a Listening (Dictation) question becomes active
+  useEffect(() => {
+    if (
+      sessionFinished ||
+      answerState !== 'idle' ||
+      currentQuestion?.kind !== 'listening'
+    ) {
+      return;
+    }
+    const audioTxt =
+      currentQuestion.item.characters || currentQuestion.item.readings?.[0];
+    if (!audioTxt) return;
+    const t = window.setTimeout(() => {
+      speakJapanese(audioTxt, 0.9);
+    }, 180);
+    return () => window.clearTimeout(t);
+  }, [sessionFinished, answerState, currentQuestion?.item.id, currentQuestion?.kind, answeredTotalCount]);
+
+  // Keyboard shortcuts: F to toggle Item Info, J to replay audio, Enter to advance pronunciation
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (sessionFinished || !currentQuestion) return;
@@ -153,14 +200,29 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           const item = currentQuestion.item;
           const txt =
             item.type === 'vocabulary'
-              ? item.readings?.[0]
+              ? item.characters || item.readings?.[0]
               : item.type === 'kanji'
               ? item.primaryReadingType === 'kunyomi'
                 ? item.kunyomi?.[0]
                 : item.onyomi?.[0]
               : null;
           if (txt) speakJapanese(txt);
+        } else if (
+          currentQuestion.kind === 'pronunciation' &&
+          e.key === 'Enter'
+        ) {
+          e.preventDefault();
+          advanceToNextRef.current();
         }
+      } else if (
+        currentQuestion.kind === 'listening' &&
+        (e.key === 'j' || e.key === 'J') &&
+        document.activeElement !== inputRef.current
+      ) {
+        e.preventDefault();
+        const txt =
+          currentQuestion.item.characters || currentQuestion.item.readings?.[0];
+        if (txt) speakJapanese(txt, 0.9);
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -177,7 +239,14 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     const activeIds = new Set<string>();
     for (const q of queue) {
       const tr = trackers[q.item.id];
-      if (tr && (tr.meaningDone || tr.readingDone)) {
+      if (
+        tr &&
+        (tr.meaningDone ||
+          tr.readingDone ||
+          (q.item.type === 'vocabulary' &&
+            ((includeListening && tr.listeningDone) ||
+              (includePronunciation && tr.pronunciationDone))))
+      ) {
         activeIds.add(q.item.id);
       }
     }
@@ -196,7 +265,10 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
 
   const handleInputChange = (val: string) => {
     if (answerState !== 'idle') return;
-    if (currentQuestion?.kind === 'reading') {
+    if (
+      currentQuestion?.kind === 'reading' ||
+      currentQuestion?.kind === 'listening'
+    ) {
       setInputValue(romajiToHiragana(val, false));
     } else {
       setInputValue(val);
@@ -223,51 +295,47 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     setSrsToast(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  advanceToNextRef.current = advanceToNext;
+
+  // Auto-advance smoothly after a brief hold when the answer is correct
+  useEffect(() => {
+    if (
+      sessionFinished ||
+      answerState !== 'correct' ||
+      showInfo ||
+      autoAdvanceDelayMs <= 0
+    ) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      advanceToNextRef.current();
+    }, autoAdvanceDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [
+    sessionFinished,
+    answerState,
+    showInfo,
+    autoAdvanceDelayMs,
+    currentQuestion?.item.id,
+    currentQuestion?.kind,
+  ]);
+
+  const recordOutcomeForCurrent = (isCorrect: boolean, customFeedback: string) => {
     if (!currentQuestion) return;
-
-    if (answerState !== 'idle') {
-      advanceToNext();
-      return;
-    }
-
     const item = currentQuestion.item;
-    const userSynonyms = state.progress[item.id]?.userSynonyms ?? [];
-    const result =
-      currentQuestion.kind === 'meaning'
-        ? validateMeaningAnswer(inputValue, item, userSynonyms)
-        : validateReadingAnswer(inputValue, item);
-
-    if (result.finalizedInput !== undefined) {
-      setInputValue(result.finalizedInput);
-    }
-
-    if (result.status === 'shake') {
-      triggerShake(result.message ?? 'Periksa kembali format jawabanmu.');
-      return;
-    }
-
     setAnsweredTotalCount((c) => c + 1);
     const prevTracker = trackers[item.id];
 
-    if (result.status === 'correct' || result.status === 'typo-accepted') {
+    if (currentQuestion.kind === 'listening') {
+      recordPronunciationAttempt('ear', isCorrect, item.id);
+    } else if (currentQuestion.kind === 'pronunciation') {
+      recordPronunciationAttempt('speak', isCorrect, item.id);
+    }
+
+    if (isCorrect) {
       setAnsweredCorrectCount((c) => c + 1);
       setAnswerState('correct');
-      setFeedbackMsg(
-        result.message ?? 'Benar! Tekan Enter untuk lanjut, atau F untuk info item.'
-      );
-
-      // Autoplay audio on correct reading
-      if (currentQuestion.kind === 'reading' && state.settings.autoplayAudio) {
-        const audioTxt =
-          item.type === 'vocabulary'
-            ? item.readings?.[0]
-            : item.primaryReadingType === 'kunyomi'
-            ? item.kunyomi?.[0]
-            : item.onyomi?.[0];
-        if (audioTxt) speakJapanese(audioTxt);
-      }
+      setFeedbackMsg(customFeedback);
 
       const updatedTracker: ItemTracker = {
         ...prevTracker,
@@ -275,11 +343,21 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           currentQuestion.kind === 'meaning' ? true : prevTracker.meaningDone,
         readingDone:
           currentQuestion.kind === 'reading' ? true : prevTracker.readingDone,
+        listeningDone:
+          currentQuestion.kind === 'listening' ? true : prevTracker.listeningDone,
+        pronunciationDone:
+          currentQuestion.kind === 'pronunciation'
+            ? true
+            : prevTracker.pronunciationDone,
       };
       setTrackers((prev) => ({ ...prev, [item.id]: updatedTracker }));
 
-      // If both meaning & reading (or radical meaning) are completed, finalize item!
-      if (updatedTracker.meaningDone && updatedTracker.readingDone) {
+      if (
+        updatedTracker.meaningDone &&
+        updatedTracker.readingDone &&
+        updatedTracker.listeningDone &&
+        updatedTracker.pronunciationDone
+      ) {
         if (mode === 'srs') {
           const outcome = submitItemReview(
             item.id,
@@ -306,15 +384,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     } else {
       setAnswerState('incorrect');
       setShowInfo(true);
-      const correctStr =
-        currentQuestion.kind === 'meaning'
-          ? item.primaryMeaning
-          : item.type === 'vocabulary'
-          ? item.readings?.join('、 ')
-          : (item.primaryReadingType === 'kunyomi' ? item.kunyomi : item.onyomi)?.join(
-              '、 '
-            );
-      setFeedbackMsg(`Belum tepat. Jawaban benar: ${correctStr}`);
+      setFeedbackMsg(customFeedback);
 
       const updatedTracker: ItemTracker = {
         ...prevTracker,
@@ -323,11 +393,99 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
             ? prevTracker.meaningErrors + 1
             : prevTracker.meaningErrors,
         readingErrors:
-          currentQuestion.kind === 'reading'
+          currentQuestion.kind !== 'meaning'
             ? prevTracker.readingErrors + 1
             : prevTracker.readingErrors,
       };
       setTrackers((prev) => ({ ...prev, [item.id]: updatedTracker }));
+    }
+  };
+
+  const handlePronunciationAnswer = (isCorrect: boolean, detailMsg: string) => {
+    if (!currentQuestion || answerState !== 'idle') return;
+    recordOutcomeForCurrent(
+      isCorrect,
+      isCorrect
+        ? autoAdvanceDelayMs > 0
+          ? `${detailMsg} Lanjut otomatis...`
+          : `${detailMsg} Tekan Enter untuk lanjut.`
+        : detailMsg
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!currentQuestion) return;
+
+    if (answerState !== 'idle') {
+      advanceToNext();
+      return;
+    }
+
+    if (currentQuestion.kind === 'pronunciation') return;
+
+    const item = currentQuestion.item;
+    const userSynonyms = state.progress[item.id]?.userSynonyms ?? [];
+    let result;
+    if (currentQuestion.kind === 'meaning') {
+      result = validateMeaningAnswer(inputValue, item, userSynonyms);
+    } else if (
+      currentQuestion.kind === 'listening' &&
+      inputValue.trim() === item.characters
+    ) {
+      result = { status: 'correct' as const, finalizedInput: inputValue.trim() };
+    } else {
+      result = validateReadingAnswer(inputValue, item);
+    }
+
+    if (result.finalizedInput !== undefined) {
+      setInputValue(result.finalizedInput);
+    }
+
+    if (result.status === 'shake') {
+      triggerShake(result.message ?? 'Periksa kembali format jawabanmu.');
+      return;
+    }
+
+    const isCorrect = result.status === 'correct' || result.status === 'typo-accepted';
+
+    if (isCorrect) {
+      if (
+        (currentQuestion.kind === 'reading' || currentQuestion.kind === 'listening') &&
+        state.settings.autoplayAudio
+      ) {
+        const audioTxt =
+          item.type === 'vocabulary'
+            ? item.characters
+            : item.primaryReadingType === 'kunyomi'
+            ? item.kunyomi?.[0]
+            : item.onyomi?.[0];
+        if (audioTxt) speakJapanese(audioTxt);
+      }
+      recordOutcomeForCurrent(
+        true,
+        result.message ??
+          (autoAdvanceDelayMs > 0
+            ? 'Benar! Lanjut otomatis... (tekan F untuk info item)'
+            : 'Benar! Tekan Enter untuk lanjut, atau F untuk info item.')
+      );
+    } else {
+      const correctStr =
+        currentQuestion.kind === 'meaning'
+          ? item.primaryMeaning
+          : currentQuestion.kind === 'listening'
+          ? `${item.characters}（${item.readings?.join('、 ')}） · ${item.primaryMeaning}`
+          : item.type === 'vocabulary'
+          ? item.readings?.join('、 ')
+          : (item.primaryReadingType === 'kunyomi' ? item.kunyomi : item.onyomi)?.join(
+              '、 '
+            );
+      recordOutcomeForCurrent(
+        false,
+        currentQuestion.kind === 'listening'
+          ? `Belum tepat. Yang diucapkan: ${correctStr}`
+          : `Belum tepat. Jawaban benar: ${correctStr}`
+      );
     }
   };
 
@@ -652,9 +810,50 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           <div className="text-xs font-medium text-white/85 mb-2">
             Level {item.level} · {getItemTypeLabel(item.type)}
           </div>
-          <div className="font-jp text-5xl sm:text-8xl font-bold tracking-tight leading-none select-all break-words">
-            {item.characters}
-          </div>
+          {currentQuestion.kind === 'listening' && answerState === 'idle' ? (
+            <div className="space-y-3 py-1">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 mx-auto">
+                <Ear className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-sm text-white/90 font-medium">
+                Dengarkan audio lalu ketik bacaan yang kamu dengar
+              </div>
+              <div className="flex items-center justify-center gap-2.5 pt-1">
+                <button
+                  type="button"
+                  onClick={() =>
+                    speakJapanese(item.characters || item.readings?.[0] || '', 0.9)
+                  }
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 text-xs sm:text-sm font-bold hover:bg-white/90 transition-colors cursor-pointer"
+                >
+                  <Volume2 className="w-4 h-4" />
+                  Putar Audio (J)
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    speakJapanese(item.characters || item.readings?.[0] || '', 0.64)
+                  }
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+                >
+                  Pelan (0.64x)
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              <div className="font-jp text-5xl sm:text-8xl font-bold tracking-tight leading-none select-all break-words">
+                {item.characters}
+              </div>
+              {(currentQuestion.kind === 'pronunciation' ||
+                (currentQuestion.kind === 'listening' && answerState !== 'idle')) && (
+                <div className="text-sm sm:text-base text-white/90 font-jp">
+                  {item.readings?.[0]} ·{' '}
+                  <span className="font-sans">{item.primaryMeaning}</span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* SRS Level Up/Down Floating Indicator */}
           {srsToast && (
@@ -676,6 +875,18 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           <span>
             {getItemTypeLabel(item.type)} — <strong className="font-bold">Arti (Bahasa Inggris)</strong>
           </span>
+        ) : currentQuestion.kind === 'listening' ? (
+          <span className="inline-flex items-center gap-1.5">
+            <Ear className="w-4 h-4 text-sky-400" />
+            {getItemTypeLabel(item.type)} —{' '}
+            <strong className="font-bold">Listening (Dengarkan &amp; Tulis ひらがな)</strong>
+          </span>
+        ) : currentQuestion.kind === 'pronunciation' ? (
+          <span className="inline-flex items-center gap-1.5">
+            <Mic className="w-4 h-4 text-teal-400" />
+            {getItemTypeLabel(item.type)} —{' '}
+            <strong className="font-bold">Pronunciation (Ucapkan atau Pilih Pola Pitch)</strong>
+          </span>
         ) : (
           <span>
             {getItemTypeLabel(item.type)} —{' '}
@@ -693,90 +904,131 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
 
       {/* Answer Input Area */}
       <div className="max-w-2xl w-full mx-auto px-4 py-8 flex-1 space-y-5">
-        <form onSubmit={handleSubmit} className="space-y-3">
-          <div className={`relative ${shake ? 'animate-shake' : ''}`}>
-            <input
-              ref={inputRef}
-              type="text"
-              value={inputValue}
-              onChange={(e) => handleInputChange(e.target.value)}
-              readOnly={answerState !== 'idle'}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="off"
-              spellCheck={false}
-              placeholder={
-                currentQuestion.kind === 'meaning'
-                  ? 'Ketik arti dalam Bahasa Inggris...'
-                  : 'Ketik romaji (otomatis ke ひらがな)...'
-              }
-              className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
-                currentQuestion.kind === 'reading' ? 'font-jp' : 'font-body'
-              } ${
-                answerState === 'correct'
-                  ? 'bg-emerald-600 border-emerald-600 text-white'
-                  : answerState === 'incorrect'
-                  ? 'bg-rose-600 border-rose-600 text-white'
-                  : 'bg-white dark:bg-[#161A22] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:border-[#0284C7]'
-              }`}
+        {currentQuestion.kind === 'pronunciation' && item.readings?.[0] ? (
+          <div className="space-y-4">
+            <VocabPronunciationQuizPanel
+              questionKey={`review-${item.id}-${answeredTotalCount}`}
+              kanji={item.characters}
+              kana={item.readings[0]}
+              acceptedReadings={item.readings}
+              partOfSpeech={item.partOfSpeech}
+              answered={answerState !== 'idle'}
+              onAnswer={handlePronunciationAnswer}
             />
-            <button
-              type="submit"
-              aria-label="Kirim atau lanjutkan"
-              className={`absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-colors cursor-pointer ${
-                answerState === 'idle'
-                  ? 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+            {answerState !== 'idle' && (
+              <div className="flex items-center justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={() => setShowInfo((v) => !v)}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
+                >
+                  <Info className="w-3.5 h-3.5" />
+                  Info Item (F)
+                </button>
+                <button
+                  type="button"
+                  onClick={advanceToNext}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold cursor-pointer"
+                >
+                  Lanjut (Enter)
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            )}
           </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div className={`relative ${shake ? 'animate-shake' : ''}`}>
+              <input
+                ref={inputRef}
+                type="text"
+                value={inputValue}
+                onChange={(e) => handleInputChange(e.target.value)}
+                readOnly={answerState !== 'idle'}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
+                placeholder={
+                  currentQuestion.kind === 'meaning'
+                    ? 'Ketik arti dalam Bahasa Inggris...'
+                    : currentQuestion.kind === 'listening'
+                    ? 'Ketik apa yang kamu dengar (romaji → ひらがな)...'
+                    : 'Ketik romaji (otomatis ke ひらがな)...'
+                }
+                className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
+                  currentQuestion.kind === 'reading' ||
+                  currentQuestion.kind === 'listening'
+                    ? 'font-jp'
+                    : 'font-body'
+                } ${
+                  answerState === 'correct'
+                    ? 'bg-emerald-600 border-emerald-600 text-white'
+                    : answerState === 'incorrect'
+                    ? 'bg-rose-600 border-rose-600 text-white'
+                    : 'bg-white dark:bg-[#161A22] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:border-[#0284C7]'
+                }`}
+              />
+              <button
+                type="submit"
+                aria-label="Kirim atau lanjutkan"
+                className={`absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-colors cursor-pointer ${
+                  answerState === 'idle'
+                    ? 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                    : 'text-white/90 hover:text-white'
+                }`}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <span>
-              {currentQuestion.kind === 'reading'
-                ? 'IME Hiragana aktif: ketik romaji (mis. yama → やま, nn → ん)'
-                : 'Ketik arti Bahasa Inggris, alternatif, atau sinonim pribadimu'}
-            </span>
-            <div className="flex items-center gap-3">
-              {answerState !== 'idle' && (
-                <>
-                  <button
-                    type="button"
-                    onClick={() => setShowInfo((v) => !v)}
-                    className="inline-flex items-center gap-1 font-semibold text-[#0284C7] hover:underline cursor-pointer"
-                  >
-                    <Info className="w-3.5 h-3.5" />
-                    Info Item (F)
-                  </button>
-                  {item.type !== 'radical' && (
+            <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+              <span>
+                {currentQuestion.kind === 'listening'
+                  ? 'Dengarkan audio lalu ketik bacaannya (romaji otomatis ke ひらがな)'
+                  : currentQuestion.kind === 'reading'
+                  ? 'IME Hiragana aktif: ketik romaji (mis. yama → やま, nn → ん)'
+                  : 'Ketik arti Bahasa Inggris, alternatif, atau sinonim pribadimu'}
+              </span>
+              <div className="flex items-center gap-3">
+                {answerState !== 'idle' && (
+                  <>
                     <button
                       type="button"
-                      onClick={() => {
-                        const txt =
-                          item.type === 'vocabulary'
-                            ? item.readings?.[0]
-                            : item.primaryReadingType === 'kunyomi'
-                            ? item.kunyomi?.[0]
-                            : item.onyomi?.[0];
-                        if (txt) speakJapanese(txt);
-                      }}
-                      className="inline-flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300 hover:text-[#0284C7] cursor-pointer"
+                      onClick={() => setShowInfo((v) => !v)}
+                      className="inline-flex items-center gap-1 font-semibold text-[#0284C7] hover:underline cursor-pointer"
                     >
-                      <Volume2 className="w-3.5 h-3.5" />
-                      Audio (J)
+                      <Info className="w-3.5 h-3.5" />
+                      Info Item (F)
                     </button>
-                  )}
-                </>
-              )}
+                    {item.type !== 'radical' && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const txt =
+                            item.type === 'vocabulary'
+                              ? item.characters || item.readings?.[0]
+                              : item.primaryReadingType === 'kunyomi'
+                              ? item.kunyomi?.[0]
+                              : item.onyomi?.[0];
+                          if (txt) speakJapanese(txt);
+                        }}
+                        className="inline-flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300 hover:text-[#0284C7] cursor-pointer"
+                      >
+                        <Volume2 className="w-3.5 h-3.5" />
+                        Audio (J)
+                      </button>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        )}
 
         {feedbackMsg && (
           <div
-            className={`px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2.5 ${
+            className={`relative overflow-hidden px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2.5 ${
               answerState === 'correct'
                 ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800'
                 : answerState === 'incorrect'
@@ -790,6 +1042,13 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               <XCircle className="w-4 h-4 shrink-0" />
             ) : null}
             <span>{feedbackMsg}</span>
+            {answerState === 'correct' && !showInfo && autoAdvanceDelayMs > 0 && (
+              <div
+                key={`${item.id}-${currentQuestion.kind}-${answeredTotalCount}`}
+                className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+              />
+            )}
           </div>
         )}
 
@@ -834,11 +1093,30 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
             )}
 
             {item.type === 'vocabulary' && (
-              <div className="text-xs">
-                <span className="text-slate-500 dark:text-slate-400">Bacaan: </span>
-                <span className="font-jp text-base font-semibold text-slate-900 dark:text-white">
-                  {item.readings?.join('、 ')}
-                </span>
+              <div className="space-y-3">
+                <div className="text-xs">
+                  <span className="text-slate-500 dark:text-slate-400">Bacaan: </span>
+                  <span className="font-jp text-base font-semibold text-slate-900 dark:text-white">
+                    {item.readings?.join('、 ')}
+                  </span>
+                </div>
+                {item.readings?.[0] && (
+                  <PronunciationCard
+                    compact
+                    target={{
+                      id: item.id,
+                      kanji: item.characters,
+                      kana: item.readings[0],
+                      meaning: item.primaryMeaning,
+                      partOfSpeech: item.partOfSpeech,
+                      sourceLabel: `Kurikulum Level ${item.level}`,
+                      exampleJp: item.contextSentences?.[0]?.jp,
+                      exampleReading: item.contextSentences?.[0]?.reading,
+                      exampleTranslation: item.contextSentences?.[0]?.en,
+                    }}
+                    onPracticeSpeak={(t) => openPronunciationPractice(t)}
+                  />
+                )}
               </div>
             )}
 

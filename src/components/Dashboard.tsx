@@ -8,6 +8,8 @@ import {
   FastForward,
   Flame,
   LogIn,
+  Mic,
+  PenTool,
   Play,
   RotateCcw,
   Search,
@@ -19,6 +21,7 @@ import {
 import { getLevelMeta, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { CurriculumItem } from '../types/curriculum';
+import { DailyProgressChart } from './DailyProgressChart';
 import {
   buildReviewForecast,
   formatRelativeTime,
@@ -242,6 +245,26 @@ export const Dashboard: React.FC = () => {
     };
   }, [state.mockExamHistory]);
 
+  // Japanese Writing Practice (Kakitori) quick summary
+  const writingSummary = useMemo(() => {
+    const entries = Object.values(state.writingProgress ?? {});
+    const practiced = entries.length;
+    const recallPassed = entries.filter((e) => e.recallPassed).length;
+    const totalAttempts = entries.reduce((sum, e) => sum + e.attempts, 0);
+    return { practiced, recallPassed, totalAttempts };
+  }, [state.writingProgress]);
+
+  const pronunciationSummary = useMemo(() => {
+    const p = state.pronunciationProgress;
+    const pairsCount = p?.practicedPairIds.length ?? 0;
+    const earAcc =
+      p && p.earQuizAttempts > 0
+        ? Math.round((p.earQuizCorrect / p.earQuizAttempts) * 100)
+        : null;
+    const speakingAttempts = p?.speakingAttempts ?? 0;
+    return { pairsCount, earAcc, speakingAttempts };
+  }, [state.pronunciationProgress]);
+
   // Instant search across all 9,088 items
   const searchResults = useMemo<CurriculumItem[]>(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -271,26 +294,6 @@ export const Dashboard: React.FC = () => {
     correctCount: 0,
     lessonsCompleted: 0,
   };
-
-  // Build 7-day activity chart
-  const last7Days = useMemo(() => {
-    const res: { label: string; count: number; isToday: boolean }[] = [];
-    const dayLabels = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
-    for (let offset = 6; offset >= 0; offset--) {
-      const ts = now - offset * 24 * 60 * 60 * 1000;
-      const d = new Date(ts);
-      const key = getTodayDateStr(ts);
-      const entry = state.history.find((h) => h.date === key);
-      res.push({
-        label: dayLabels[d.getDay()],
-        count: entry?.reviewsCompleted ?? 0,
-        isToday: offset === 0,
-      });
-    }
-    return res;
-  }, [state.history, now]);
-
-  const maxDailyReviews = Math.max(10, ...last7Days.map((d) => d.count));
 
   const renderProgressPips = (stage: number | null) => {
     const filled = stage === null ? 0 : Math.min(5, stage);
@@ -786,49 +789,125 @@ export const Dashboard: React.FC = () => {
         </div>
       </section>
 
-      {/* PERSIAPAN JLPT — TAHAP 5 CAPSTONE: MOGI SHIKEN & KESIAPAN KELULUSAN */}
-      <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="space-y-1 min-w-0">
-          <div className="text-xs font-semibold text-[#0284C7]">
-            JLPT Tahap 5 · Simulasi Ujian Penuh &amp; Indeks Kesiapan (Skala Resmi 0–180)
-          </div>
-          <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-            Mogi Shiken JLPT N5–N1 (4 Bagian Berwaktu + Ambang Batas Ashikiri)
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            Gabungkan latihan Kanji, Kana JLPT, Grammar, Dokkai, dan Chōkai dalam simulasi ujian berwaktu lengkap dengan penilaian skala resmi 0–180 dan cek kesiapan 5 pilar.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center gap-3 shrink-0">
-          <div className="text-xs font-mono-num text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2.5 sm:pr-2">
-            <span>
-              Lulus <strong className="text-emerald-600 dark:text-emerald-400">{mockExamSummary.passedLevelsCount}/5 Level</strong>
-            </span>
-            <span aria-hidden="true">·</span>
-            <span>
-              Ujian <strong className="text-slate-900 dark:text-white">{mockExamSummary.totalAttempts}x</strong>
-            </span>
-            {mockExamSummary.latest && (
-              <>
-                <span aria-hidden="true">·</span>
-                <span>
-                  Terakhir <strong className="text-slate-900 dark:text-white">N{mockExamSummary.latest.jlpt} ({mockExamSummary.latest.totalScore}/180)</strong>
-                </span>
-              </>
-            )}
+      {/* CAPSTONE ROW: MOGI SHIKEN, STUDIO MENULIS KAKITORI & STUDIO PELAFALAN */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
+        <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#0284C7]">
+              JLPT Tahap 5 · Simulasi Ujian (0–180)
+            </div>
+            <h2 className="font-display text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              Mogi Shiken JLPT N5–N1
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Gabungkan Kanji, Kana JLPT, Grammar, Dokkai, dan Chōkai dalam simulasi berwaktu (Mode Ringkas &amp; Penuh) dengan ambang batas Ashikiri.
+            </p>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setActiveView('mock-exam')}
-            className="min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
-          >
-            <Award className="w-4 h-4" />
-            Buka Mogi Shiken
-          </button>
-        </div>
-      </section>
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+            <div className="text-xs font-mono-num text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2">
+              <span>
+                Lulus <strong className="text-emerald-600 dark:text-emerald-400">{mockExamSummary.passedLevelsCount}/5</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Ujian <strong className="text-slate-900 dark:text-white">{mockExamSummary.totalAttempts}x</strong>
+              </span>
+              {mockExamSummary.latest && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    <strong className="text-slate-900 dark:text-white">N{mockExamSummary.latest.jlpt} ({mockExamSummary.latest.totalScore}/180)</strong>
+                  </span>
+                </>
+              )}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('mock-exam')}
+              className="min-h-[42px] w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
+            >
+              <Award className="w-4 h-4" />
+              Buka Mogi Shiken
+            </button>
+          </div>
+        </section>
+
+        <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#0F766E] dark:text-teal-400">
+              Studio Menulis · Kakitori (書き取り)
+            </div>
+            <h2 className="font-display text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              Latihan Menulis &amp; Urutan Goresan
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Kanvas kuas kaligrafi Hiragana, Katakana, dan 2.026 Kanji dengan validasi urutan goresan KanjiVG, animasi kakijun, dan ujian hafalan.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+            <div className="text-xs font-mono-num text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2">
+              <span>
+                Dilatih <strong className="text-slate-900 dark:text-white">{writingSummary.practiced}</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Hafalan <strong className="text-[#0F766E] dark:text-teal-400">{writingSummary.recallPassed}</strong>
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('writing')}
+              className="min-h-[42px] w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#0F766E] hover:bg-[#115E59] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
+            >
+              <PenTool className="w-4 h-4" />
+              Latihan Menulis
+            </button>
+          </div>
+        </section>
+
+        <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 flex flex-col justify-between gap-4">
+          <div className="space-y-1 min-w-0">
+            <div className="text-xs font-semibold text-[#7C3AED] dark:text-violet-400">
+              Studio Pelafalan · Hatsuon (発音)
+            </div>
+            <h2 className="font-display text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              Pitch Accent &amp; Latihan Ucap
+            </h2>
+            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Kurva pitch accent &amp; panduan pelafalan untuk seluruh <strong className="font-mono-num text-slate-800 dark:text-slate-200">{(dataset.counts.vocabulary + 150).toLocaleString('id-ID')}</strong> kosakata, pasangan minimal (<span className="font-jp">花</span> vs <span className="font-jp">鼻</span>, <span className="font-jp">好き</span> vs <span className="font-jp">月</span>), tes dengar, dan cek mikrofon langsung.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+            <div className="text-xs font-mono-num text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2">
+              <span>
+                Dilatih <strong className="text-slate-900 dark:text-white">{pronunciationSummary.pairsCount}</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Dengar <strong className="text-[#7C3AED] dark:text-violet-400">{pronunciationSummary.earAcc !== null ? `${pronunciationSummary.earAcc}%` : '—'}</strong>
+              </span>
+              <span aria-hidden="true">·</span>
+              <span>
+                Ucap <strong className="text-slate-900 dark:text-white">{pronunciationSummary.speakingAttempts}x</strong>
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setActiveView('pronunciation')}
+              className="min-h-[42px] w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
+            >
+              <Mic className="w-4 h-4" />
+              Studio Pelafalan
+            </button>
+          </div>
+        </section>
+      </div>
 
       {/* Main 2-Column Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
@@ -1029,6 +1108,20 @@ export const Dashboard: React.FC = () => {
               })}
             </div>
           </section>
+
+          {/* DAILY REVIEW CONSISTENCY & ACCURACY CHART (RECHARTS) */}
+          <DailyProgressChart
+            history={state.history}
+            now={now}
+            dailyReviewGoal={state.settings.dailyReviewGoal}
+            streakDays={state.streakDays}
+            totalReviewsDone={state.totalReviewsDone}
+            hasAvailableReviews={availableReviews.length > 0}
+            onStartReview={() =>
+              setActiveView(availableReviews.length > 0 ? 'review' : 'lesson')
+            }
+            onOpenSettings={() => setSettingsOpen(true)}
+          />
 
           {/* EXTRA STUDY + CRITICAL & RECENTLY UNLOCKED */}
           <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
@@ -1260,51 +1353,56 @@ export const Dashboard: React.FC = () => {
             </div>
           </section>
 
-          {/* DAILY ACTIVITY */}
+          {/* QUICK SRS SUMMARY & SETTINGS */}
           <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-                Aktivitas 7 Hari
+              <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+                Ringkasan Target Hari Ini
               </h2>
               <span className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
                 Total {state.totalReviewsDone} review
               </span>
             </div>
 
-            <div className="grid grid-cols-7 gap-2 items-end h-28 pt-3">
-              {last7Days.map((d, idx) => {
-                const heightPct = Math.max(8, Math.round((d.count / maxDailyReviews) * 100));
-                return (
-                  <div key={idx} className="flex flex-col items-center gap-1.5 h-full justify-end">
-                    <span className="font-mono-num text-[10px] text-slate-500 dark:text-slate-400">
-                      {d.count > 0 ? d.count : ''}
-                    </span>
-                    <div
-                      className={`w-full rounded-t transition-all ${
-                        d.isToday
-                          ? 'bg-[#0284C7]'
-                          : d.count > 0
-                          ? 'bg-slate-300 dark:bg-slate-700'
-                          : 'bg-slate-100 dark:bg-slate-800'
-                      }`}
-                      style={{ height: `${heightPct}%` }}
-                    />
-                    <span
-                      className={`text-[11px] ${
-                        d.isToday
-                          ? 'font-bold text-slate-900 dark:text-white'
-                          : 'text-slate-500 dark:text-slate-400'
-                      }`}
-                    >
-                      {d.label}
-                    </span>
-                  </div>
-                );
-              })}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-xs font-mono-num">
+                <span className="font-sans text-slate-600 dark:text-slate-300">
+                  Progres Target Harian
+                </span>
+                <span className="font-bold text-slate-900 dark:text-white">
+                  {todayStats.reviewsCompleted} / {state.settings.dailyReviewGoal}
+                </span>
+              </div>
+              <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div
+                  className={`h-full rounded-full transition-all duration-300 ${
+                    todayStats.reviewsCompleted >= state.settings.dailyReviewGoal
+                      ? 'bg-emerald-500'
+                      : 'bg-[#0284C7]'
+                  }`}
+                  style={{
+                    width: `${Math.min(
+                      100,
+                      Math.round(
+                        (todayStats.reviewsCompleted /
+                          Math.max(1, state.settings.dailyReviewGoal)) *
+                          100
+                      )
+                    )}%`,
+                  }}
+                />
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                {todayStats.reviewsCompleted >= state.settings.dailyReviewGoal
+                  ? 'Target harian tercapai! Konsistensi review hari ini sudah terjaga.'
+                  : `Kurang ${
+                      state.settings.dailyReviewGoal - todayStats.reviewsCompleted
+                    } review lagi untuk mencapai target harianmu.`}
+              </p>
             </div>
 
             <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-              <span>Ingin uji level 1–60 lebih cepat?</span>
+              <span>Atur target &amp; mode liburan</span>
               <button
                 type="button"
                 onClick={() => setSettingsOpen(true)}

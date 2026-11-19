@@ -3,6 +3,8 @@ import type { KanaVocabProgress } from './kanaVocab';
 import type { ReadingProgress } from './reading';
 import type { ListeningProgress } from './listening';
 import type { MockExamResult } from './mockExam';
+import type { WritingCharProgress } from './writing';
+import type { PronunciationProgress } from './pronunciation';
 
 export type ItemType = 'radical' | 'kanji' | 'vocabulary';
 
@@ -82,6 +84,8 @@ export interface ReviewHistoryEntry {
   reviewsCompleted: number;
   correctCount: number;
   lessonsCompleted: number;
+  reviewMinutes?: number;
+  studyMinutes?: number;
 }
 
 export interface UserSettings {
@@ -91,6 +95,9 @@ export interface UserSettings {
   vacationMode: boolean;
   vacationStartedAt: number | null;
   dailyReviewGoal: number;
+  autoAdvanceDelayMs?: 0 | 1000 | 1500 | 2500;
+  includeVocabListeningQuiz?: boolean;
+  includeVocabPronunciationQuiz?: boolean;
 }
 
 export interface UserState {
@@ -101,6 +108,8 @@ export interface UserState {
   readingProgress?: Record<string, ReadingProgress>;
   listeningProgress?: Record<string, ListeningProgress>;
   mockExamHistory?: MockExamResult[];
+  writingProgress?: Record<string, WritingCharProgress>;
+  pronunciationProgress?: PronunciationProgress;
   history: ReviewHistoryEntry[];
   settings: UserSettings;
   streakDays: number;
@@ -119,6 +128,8 @@ export type ActiveView =
   | 'grammar'
   | 'reading'
   | 'listening'
+  | 'writing'
+  | 'pronunciation'
   | 'mock-exam'
   | 'lesson'
   | 'review'

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Volume2, X, Plus, RotateCcw, ArrowRight } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Volume2, X, Plus, RotateCcw, ArrowRight, PenTool, Mic } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { speakJapanese } from '../utils/audio';
+import { resolvePitchAccent } from '../utils/pitchResolver';
+import { PronunciationCard, type HomophoneRef } from './PronunciationCard';
 import {
   formatRelativeTime,
   getAccuracyPercent,
@@ -18,6 +20,8 @@ export const ItemDetailModal: React.FC = () => {
     selectedItemId,
     openItemDetail,
     closeItemDetail,
+    openWritingPractice,
+    openPronunciationPractice,
     updateUserNotes,
     resurrectBurnedItem,
   } = useApp();
@@ -48,7 +52,46 @@ export const ItemDetailModal: React.FC = () => {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [selectedItemId, closeItemDetail]);
 
+  const primaryReading =
+    item?.type === 'vocabulary' ? item.readings?.[0] ?? '' : '';
+
+  const vocabHomophones = useMemo<HomophoneRef[]>(() => {
+    if (!item || item.type !== 'vocabulary' || !primaryReading) return [];
+    const results: HomophoneRef[] = [];
+    for (const v of dataset.byType.vocabulary) {
+      if (v.id === item.id || v.characters === item.characters) continue;
+      if (v.readings?.includes(primaryReading)) {
+        const res = resolvePitchAccent(v.characters, primaryReading, v.partOfSpeech);
+        results.push({
+          id: v.id,
+          kanji: v.characters,
+          kana: primaryReading,
+          meaning: v.primaryMeaning,
+          accentNucleus: res.accentNucleus,
+          onSelect: () => openItemDetail(v.id),
+        });
+        if (results.length >= 6) break;
+      }
+    }
+    return results;
+  }, [dataset.byType.vocabulary, item, openItemDetail, primaryReading]);
+
   if (!item || !progress) return null;
+
+  const vocabPronunciationTarget =
+    item.type === 'vocabulary' && primaryReading
+      ? {
+          id: item.id,
+          kanji: item.characters,
+          kana: primaryReading,
+          meaning: item.primaryMeaning,
+          partOfSpeech: item.partOfSpeech,
+          sourceLabel: `Kurikulum Level ${item.level}`,
+          exampleJp: item.contextSentences?.[0]?.jp,
+          exampleReading: item.contextSentences?.[0]?.reading,
+          exampleTranslation: item.contextSentences?.[0]?.en,
+        }
+      : null;
 
   const headerBg =
     item.type === 'radical'
@@ -163,6 +206,28 @@ export const ItemDetailModal: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            {item.type === 'kanji' && (
+              <button
+                type="button"
+                onClick={() => openWritingPractice(item.characters)}
+                title="Latih menulis urutan goresan kanji ini"
+                className="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer"
+              >
+                <PenTool className="w-4 h-4" />
+                <span className="hidden sm:inline">Latih Menulis</span>
+              </button>
+            )}
+            {vocabPronunciationTarget && (
+              <button
+                type="button"
+                onClick={() => openPronunciationPractice(vocabPronunciationTarget)}
+                title="Latih pengucapan & pitch accent kata ini"
+                className="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer"
+              >
+                <Mic className="w-4 h-4" />
+                <span className="hidden sm:inline">Latih Ucap</span>
+              </button>
+            )}
             {primaryAudioText && (
               <button
                 type="button"
@@ -277,11 +342,20 @@ export const ItemDetailModal: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 mb-3">
-                  <div className="text-xs text-slate-500 dark:text-slate-400">Bacaan Hiragana</div>
-                  <div className="font-jp text-xl font-semibold text-slate-900 dark:text-white mt-1">
-                    {item.readings?.join('、 ')}
+                <div className="space-y-3 mb-3">
+                  <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800">
+                    <div className="text-xs text-slate-500 dark:text-slate-400">Bacaan Hiragana</div>
+                    <div className="font-jp text-xl font-semibold text-slate-900 dark:text-white mt-1">
+                      {item.readings?.join('、 ')}
+                    </div>
                   </div>
+                  {vocabPronunciationTarget && (
+                    <PronunciationCard
+                      target={vocabPronunciationTarget}
+                      homophones={vocabHomophones}
+                      onPracticeSpeak={(t) => openPronunciationPractice(t)}
+                    />
+                  )}
                 </div>
               )}
 

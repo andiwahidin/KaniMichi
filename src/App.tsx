@@ -15,6 +15,8 @@ import { KanaVocabHub } from './components/KanaVocabHub';
 import { ReadingHub } from './components/ReadingHub';
 import { ListeningHub } from './components/ListeningHub';
 import { MockExamHub } from './components/MockExamHub';
+import { WritingHub } from './components/WritingHub';
+import { PronunciationHub } from './components/PronunciationHub';
 
 const AppShell: React.FC = () => {
   const { activeView, extraStudyMode, setActiveView } = useApp();
@@ -35,6 +37,8 @@ const AppShell: React.FC = () => {
         {activeView === 'grammar' && <GrammarHub />}
         {activeView === 'reading' && <ReadingHub />}
         {activeView === 'listening' && <ListeningHub />}
+        {activeView === 'writing' && <WritingHub />}
+        {activeView === 'pronunciation' && <PronunciationHub />}
         {activeView === 'mock-exam' && <MockExamHub />}
         {activeView === 'lesson' && <LessonSession />}
         {activeView === 'review' && <ReviewSession mode="srs" />}
@@ -107,6 +111,20 @@ const AppShell: React.FC = () => {
                 className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               >
                 Chōkai
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('writing')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Menulis
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveView('pronunciation')}
+                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+              >
+                Pelafalan
               </button>
               <button
                 type="button"

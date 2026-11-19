@@ -8,9 +8,11 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronUp,
+  Ear,
   FastForward,
   Keyboard,
   ListChecks,
+  Mic,
   Play,
   RotateCcw,
   Search,
@@ -29,22 +31,31 @@ import {
 } from '../types/kanaVocab';
 import { SrsStage } from '../types/curriculum';
 import { speakJapanese } from '../utils/audio';
-import { levenshtein } from '../utils/kana';
+import { katakanaToHiragana, levenshtein, romajiToHiragana } from '../utils/kana';
 import {
   formatRelativeTime,
   getCategoryLabel,
   getSrsCategory,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { PronunciationCard } from './PronunciationCard';
+import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
 type HubMode = 'catalog' | 'lesson' | 'review' | 'drill';
-type QuizMode = 'context' | 'meaning';
+type KanaQuestionKind = 'context' | 'meaning' | 'listening' | 'pronunciation';
+type QuizMode = 'mixed' | KanaQuestionKind;
 type StageFilter = 'all' | 'unstarted' | 'apprentice' | 'guru-plus' | 'burned';
 
 interface QuizQueueEntry {
   item: KanaVocabItem;
+  kind: KanaQuestionKind;
   hadMistake: boolean;
   shuffledChoices: string[];
+}
+
+interface ItemTracker {
+  remaining: number;
+  hadMistake: boolean;
 }
 
 interface SessionSummaryRow {
@@ -110,6 +121,8 @@ export const KanaVocabHub: React.FC = () => {
     submitKanaVocabReview,
     resurrectKanaVocabItem,
     fastForwardTime,
+    openPronunciationPractice,
+    recordPronunciationAttempt,
   } = useApp();
 
   const [data, setData] = useState<KanaVocabDataset | null>(null);
@@ -123,7 +136,7 @@ export const KanaVocabHub: React.FC = () => {
 
   // Study session state
   const [mode, setMode] = useState<HubMode>('catalog');
-  const [quizMode, setQuizMode] = useState<QuizMode>('context');
+  const [quizMode, setQuizMode] = useState<QuizMode>('mixed');
 
   // Lesson Study phase
   const [lessonBatch, setLessonBatch] = useState<KanaVocabItem[]>([]);
@@ -132,18 +145,26 @@ export const KanaVocabHub: React.FC = () => {
 
   // Quiz / Review / Drill queue
   const [quizQueue, setQuizQueue] = useState<QuizQueueEntry[]>([]);
+  const [itemTrackers, setItemTrackers] = useState<Record<string, ItemTracker>>({});
+  const [sessionTotalQuestions, setSessionTotalQuestions] = useState(0);
+  const [completedQuestions, setCompletedQuestions] = useState(0);
   const [typedValue, setTypedValue] = useState('');
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<{
     status: 'idle' | 'correct' | 'typo-accepted' | 'incorrect';
     userAnswer: string;
+    detailMessage?: string;
     stageChange?: { previousStage: SrsStage; newStage: SrsStage };
   }>({ status: 'idle', userAnswer: '' });
   const [showNoteDrawer, setShowNoteDrawer] = useState(false);
   const [sessionResults, setSessionResults] = useState<SessionSummaryRow[]>([]);
   const [sessionDone, setSessionDone] = useState(false);
 
+  const includeListening = state.settings.includeVocabListeningQuiz !== false;
+  const includePronunciation = state.settings.includeVocabPronunciationQuiz !== false;
+  const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
   const inputRef = useRef<HTMLInputElement>(null);
+  const advanceQueueRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     let active = true;
@@ -283,21 +304,85 @@ export const KanaVocabHub: React.FC = () => {
     });
   }, [data, selectedLevel, categoryFilter, stageFilter, searchQuery, progressMap]);
 
+  const currentEntry = quizQueue[0] ?? null;
+  const activeQuestionKind: KanaQuestionKind =
+    quizMode === 'mixed' ? (currentEntry?.kind ?? 'context') : quizMode;
+
+  const isInActiveQuiz =
+    (mode === 'review' || mode === 'drill' || (mode === 'lesson' && lessonPhase === 'quiz')) &&
+    Boolean(currentEntry);
+
   useEffect(() => {
     if (
-      (mode === 'review' || mode === 'drill' || (mode === 'lesson' && lessonPhase === 'quiz')) &&
-      quizMode === 'meaning' &&
+      isInActiveQuiz &&
+      (activeQuestionKind === 'meaning' || activeQuestionKind === 'listening') &&
       feedback.status === 'idle'
     ) {
       inputRef.current?.focus();
     }
-  }, [mode, lessonPhase, quizMode, feedback.status, quizQueue.length]);
+  }, [isInActiveQuiz, activeQuestionKind, feedback.status, quizQueue.length, completedQuestions]);
+
+  // Auto-play audio when a listening dictation question appears
+  useEffect(() => {
+    if (!isInActiveQuiz || !currentEntry || activeQuestionKind !== 'listening' || feedback.status !== 'idle') {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      speakJapanese(currentEntry.item.word, 0.9);
+    }, 180);
+    return () => window.clearTimeout(timer);
+  }, [isInActiveQuiz, currentEntry?.item.id, activeQuestionKind, feedback.status, completedQuestions, quizQueue.length]);
 
   const resetQuestionUi = () => {
     setTypedValue('');
     setSelectedChoice(null);
     setFeedback({ status: 'idle', userAnswer: '' });
     setShowNoteDrawer(false);
+  };
+
+  const buildQuizSession = (items: KanaVocabItem[], format: QuizMode) => {
+    const entries: QuizQueueEntry[] = [];
+    const trackers: Record<string, ItemTracker> = {};
+
+    const orderedItems = shuffleArray(items);
+    for (const item of orderedItems) {
+      const kinds: KanaQuestionKind[] =
+        format === 'mixed'
+          ? [
+              'context',
+              ...(includeListening ? (['listening'] as KanaQuestionKind[]) : []),
+              ...(includePronunciation ? (['pronunciation'] as KanaQuestionKind[]) : []),
+            ]
+          : [format];
+
+      trackers[item.id] = { remaining: kinds.length, hadMistake: false };
+      for (const kind of kinds) {
+        entries.push({
+          item,
+          kind,
+          hadMistake: false,
+          shuffledChoices: shuffleArray(item.quiz.choices),
+        });
+      }
+    }
+
+    // Shuffle entries and gently avoid back-to-back identical item IDs when possible
+    const shuffled = shuffleArray(entries);
+    for (let i = 1; i < shuffled.length; i++) {
+      if (shuffled[i].item.id === shuffled[i - 1].item.id) {
+        const swapIdx = shuffled.findIndex(
+          (e, idx) =>
+            idx > i &&
+            e.item.id !== shuffled[i - 1].item.id &&
+            e.item.id !== shuffled[i].item.id
+        );
+        if (swapIdx !== -1) {
+          [shuffled[i], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[i]];
+        }
+      }
+    }
+
+    return { entries: shuffled, trackers };
   };
 
   const startLessonSession = (customItems?: KanaVocabItem[]) => {
@@ -321,24 +406,22 @@ export const KanaVocabHub: React.FC = () => {
   };
 
   const beginLessonQuiz = () => {
-    const entries: QuizQueueEntry[] = shuffleArray(lessonBatch).map((item) => ({
-      item,
-      hadMistake: false,
-      shuffledChoices: shuffleArray(item.quiz.choices),
-    }));
+    const { entries, trackers } = buildQuizSession(lessonBatch, quizMode);
     setQuizQueue(entries);
+    setItemTrackers(trackers);
+    setSessionTotalQuestions(entries.length);
+    setCompletedQuestions(0);
     setLessonPhase('quiz');
     resetQuestionUi();
   };
 
   const startReviewSession = () => {
     if (allDueItems.length === 0) return;
-    const entries: QuizQueueEntry[] = shuffleArray(allDueItems).map((item) => ({
-      item,
-      hadMistake: false,
-      shuffledChoices: shuffleArray(item.quiz.choices),
-    }));
+    const { entries, trackers } = buildQuizSession(allDueItems, quizMode);
     setQuizQueue(entries);
+    setItemTrackers(trackers);
+    setSessionTotalQuestions(entries.length);
+    setCompletedQuestions(0);
     setSessionResults([]);
     setSessionDone(false);
     resetQuestionUi();
@@ -354,13 +437,12 @@ export const KanaVocabHub: React.FC = () => {
     if (pool.length === 0) return;
 
     const picked = items ? items : shuffleArray(pool).slice(0, Math.min(10, pool.length));
-    const entries: QuizQueueEntry[] = picked.map((item) => ({
-      item,
-      hadMistake: false,
-      shuffledChoices: shuffleArray(item.quiz.choices),
-    }));
+    const { entries, trackers } = buildQuizSession(picked, quizMode);
     setDetailItem(null);
     setQuizQueue(entries);
+    setItemTrackers(trackers);
+    setSessionTotalQuestions(entries.length);
+    setCompletedQuestions(0);
     setSessionResults([]);
     setSessionDone(false);
     resetQuestionUi();
@@ -373,48 +455,109 @@ export const KanaVocabHub: React.FC = () => {
     resetQuestionUi();
   };
 
-  const currentEntry = quizQueue[0] ?? null;
+  const finalizeQuestionAttempt = (
+    isSuccess: boolean,
+    resultStatus: 'correct' | 'typo-accepted' | 'incorrect',
+    userAnswer: string,
+    detailMessage?: string
+  ) => {
+    if (!currentEntry || feedback.status !== 'idle') return;
+    const item = currentEntry.item;
+    const tracker = itemTrackers[item.id] ?? { remaining: 1, hadMistake: currentEntry.hadMistake };
 
-  const evaluateAnswer = (answerText: string, isContextChoice: boolean) => {
+    if (isSuccess) {
+      const nextRemaining = Math.max(0, tracker.remaining - 1);
+      const everHadMistake = tracker.hadMistake || currentEntry.hadMistake;
+      setItemTrackers((prev) => ({
+        ...prev,
+        [item.id]: { remaining: nextRemaining, hadMistake: everHadMistake },
+      }));
+      setCompletedQuestions((c) => c + 1);
+
+      let stageChange: { previousStage: SrsStage; newStage: SrsStage } | undefined;
+      if (nextRemaining === 0) {
+        if (mode === 'review') {
+          stageChange = submitKanaVocabReview(item.id, everHadMistake);
+        }
+        setSessionResults((prev) => [
+          ...prev,
+          {
+            item,
+            correct: !everHadMistake,
+            previousStage: stageChange?.previousStage,
+            newStage: stageChange?.newStage,
+          },
+        ]);
+      }
+
+      setFeedback({ status: resultStatus, userAnswer, detailMessage, stageChange });
+    } else {
+      setItemTrackers((prev) => ({
+        ...prev,
+        [item.id]: { ...tracker, hadMistake: true },
+      }));
+      setFeedback({ status: 'incorrect', userAnswer, detailMessage });
+      setShowNoteDrawer(true);
+    }
+  };
+
+  const evaluateAnswer = (answerText: string, kind: KanaQuestionKind) => {
     if (!currentEntry || feedback.status !== 'idle') return;
     const item = currentEntry.item;
 
     let resultStatus: 'correct' | 'typo-accepted' | 'incorrect' = 'incorrect';
-    if (isContextChoice) {
+    let detailMessage: string | undefined;
+
+    if (kind === 'context') {
       setSelectedChoice(answerText);
       resultStatus = answerText === item.word ? 'correct' : 'incorrect';
-    } else {
+    } else if (kind === 'meaning') {
       resultStatus = checkEnglishMeaning(answerText, item).status;
+    } else if (kind === 'listening') {
+      const rawTrim = answerText.trim();
+      const finalized = romajiToHiragana(rawTrim, true);
+      const normalizedInput = katakanaToHiragana(finalized).replace(/\s+/g, '');
+      const validTargets = Array.from(
+        new Set([
+          katakanaToHiragana(item.reading).replace(/\s+/g, ''),
+          katakanaToHiragana(item.word).replace(/\s+/g, ''),
+        ])
+      );
+      const isMatch =
+        rawTrim === item.word ||
+        rawTrim === item.reading ||
+        validTargets.includes(normalizedInput);
+      resultStatus = isMatch ? 'correct' : 'incorrect';
+      recordPronunciationAttempt('ear', isMatch, item.id);
+      if (isMatch) {
+        detailMessage = `Tepat! Audio yang terdengar: ${item.word} (${item.reading}).`;
+      } else {
+        detailMessage = `Kamu menulis "${finalized || rawTrim}". Jawaban tepat: ${item.word} (${item.reading}).`;
+      }
     }
 
     const isSuccess = resultStatus === 'correct' || resultStatus === 'typo-accepted';
 
-    if (state.settings.autoplayAudio) {
-      const audioText = isContextChoice
-        ? `${item.quiz.sentenceBefore}${item.word}${item.quiz.sentenceAfter}`
-        : item.word;
+    if (state.settings.autoplayAudio && kind !== 'listening') {
+      const audioText =
+        kind === 'context'
+          ? `${item.quiz.sentenceBefore}${item.word}${item.quiz.sentenceAfter}`
+          : item.word;
       speakJapanese(audioText, 0.92);
     }
 
-    if (isSuccess) {
-      let stageChange: { previousStage: SrsStage; newStage: SrsStage } | undefined;
-      if (mode === 'review') {
-        stageChange = submitKanaVocabReview(item.id, currentEntry.hadMistake);
-      }
-      setFeedback({ status: resultStatus, userAnswer: answerText, stageChange });
-      setSessionResults((prev) => [
-        ...prev,
-        {
-          item,
-          correct: !currentEntry.hadMistake,
-          previousStage: stageChange?.previousStage,
-          newStage: stageChange?.newStage,
-        },
-      ]);
-    } else {
-      setFeedback({ status: 'incorrect', userAnswer: answerText });
-      setShowNoteDrawer(true);
-    }
+    finalizeQuestionAttempt(isSuccess, resultStatus, answerText, detailMessage);
+  };
+
+  const handlePronunciationResult = (isCorrect: boolean, detail: string) => {
+    if (!currentEntry || feedback.status !== 'idle') return;
+    recordPronunciationAttempt('speak', isCorrect, currentEntry.item.id);
+    finalizeQuestionAttempt(
+      isCorrect,
+      isCorrect ? 'correct' : 'incorrect',
+      detail,
+      detail
+    );
   };
 
   const advanceQueue = () => {
@@ -424,6 +567,7 @@ export const KanaVocabHub: React.FC = () => {
       const remaining = quizQueue.slice(1);
       const retryEntry: QuizQueueEntry = {
         ...currentEntry,
+        kind: activeQuestionKind,
         hadMistake: true,
         shuffledChoices: shuffleArray(currentEntry.item.quiz.choices),
       };
@@ -451,14 +595,42 @@ export const KanaVocabHub: React.FC = () => {
     }
   };
 
-  const handleMeaningSubmit = (e: React.FormEvent) => {
+  advanceQueueRef.current = advanceQueue;
+
+  // Auto-advance smoothly after a brief hold when the answer is correct
+  useEffect(() => {
+    const inQuiz =
+      mode === 'review' ||
+      mode === 'drill' ||
+      (mode === 'lesson' && lessonPhase === 'quiz');
+    const isCorrect =
+      feedback.status === 'correct' || feedback.status === 'typo-accepted';
+    if (!inQuiz || !isCorrect || showNoteDrawer || autoAdvanceDelayMs <= 0) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      advanceQueueRef.current();
+    }, autoAdvanceDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [
+    mode,
+    lessonPhase,
+    feedback.status,
+    showNoteDrawer,
+    autoAdvanceDelayMs,
+    currentEntry?.item.id,
+    activeQuestionKind,
+    completedQuestions,
+  ]);
+
+  const handleTextInputSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (feedback.status !== 'idle') {
       advanceQueue();
       return;
     }
     if (!typedValue.trim()) return;
-    evaluateAnswer(typedValue, false);
+    evaluateAnswer(typedValue, activeQuestionKind);
   };
 
   useEffect(() => {
@@ -573,6 +745,22 @@ export const KanaVocabHub: React.FC = () => {
                 </div>
               )}
             </div>
+
+            <PronunciationCard
+              compact
+              target={{
+                id: item.id,
+                kanji: item.word,
+                kana: item.reading,
+                meaning: item.primaryMeaning,
+                partOfSpeech: item.partOfSpeech,
+                sourceLabel: `Kosakata Kana JLPT N${item.jlpt}`,
+                exampleJp: item.example.jp,
+                exampleReading: item.example.reading,
+                exampleTranslation: item.example.en,
+              }}
+              onPracticeSpeak={(t) => openPronunciationPractice(t)}
+            />
 
             <div className="rounded-lg border border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/30 p-4 flex items-start gap-3">
               <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
@@ -804,15 +992,21 @@ export const KanaVocabHub: React.FC = () => {
     const lvlMeta = JLPT_LEVELS.find((l) => l.level === item.jlpt) ?? JLPT_LEVELS[0];
     const catMeta = getCategoryMeta(item.category);
     const remainingCount = quizQueue.length;
-    const completedCount = sessionResults.length;
-    const totalCount = completedCount + remainingCount;
-    const progressPct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+    const totalCount = Math.max(sessionTotalQuestions, completedQuestions + remainingCount);
+    const progressPct = totalCount > 0 ? Math.round((completedQuestions / totalCount) * 100) : 0;
 
     return (
       <main className="w-full max-w-full overflow-x-clip">
         <section
           className="text-white"
-          style={{ backgroundColor: catMeta.accent }}
+          style={{
+            backgroundColor:
+              activeQuestionKind === 'listening'
+                ? '#0284C7'
+                : activeQuestionKind === 'pronunciation'
+                ? '#0D9488'
+                : catMeta.accent,
+          }}
         >
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-5 sm:py-7 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/85">
@@ -846,7 +1040,7 @@ export const KanaVocabHub: React.FC = () => {
               />
             </div>
 
-            {quizMode === 'context' ? (
+            {activeQuestionKind === 'context' ? (
               <div className="py-3 text-center space-y-3">
                 <div className="text-xs uppercase tracking-wider text-white/85 font-semibold">
                   Pilih kosakata yang tepat untuk melengkapi kalimat ({catMeta.shortLabel})
@@ -890,6 +1084,64 @@ export const KanaVocabHub: React.FC = () => {
                   </div>
                 )}
               </div>
+            ) : activeQuestionKind === 'listening' ? (
+              <div className="py-3 text-center space-y-3">
+                <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-white/90 font-semibold">
+                  <Ear className="w-3.5 h-3.5" />
+                  Listening · Dengarkan &amp; Tulis ({catMeta.shortLabel})
+                </div>
+
+                {feedback.status === 'idle' ? (
+                  <div className="space-y-3">
+                    <div className="w-16 h-16 rounded-2xl bg-white/15 border border-white/30 mx-auto flex items-center justify-center">
+                      <Volume2 className="w-8 h-8 text-white" />
+                    </div>
+                    <p className="text-sm text-white/90">
+                      Dengarkan audio lalu ketik kata yang kamu dengar (romaji otomatis jadi ひらがな)
+                    </p>
+                  </div>
+                ) : (
+                  <div className="space-y-1">
+                    <div className="font-jp text-4xl sm:text-5xl font-bold tracking-tight break-words">
+                      {item.word}
+                    </div>
+                    <div className="text-sm text-white/90">
+                      <span className="font-jp">{item.reading}</span> · {item.primaryMeaning}
+                    </div>
+                  </div>
+                )}
+
+                <div className="pt-1 flex items-center justify-center gap-2 flex-wrap">
+                  <button
+                    type="button"
+                    onClick={() => speakJapanese(item.word, 0.9)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-xs sm:text-sm font-semibold text-white cursor-pointer"
+                  >
+                    <Volume2 className="w-4 h-4" />
+                    Putar Audio
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => speakJapanese(item.word, 0.64)}
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/25 text-xs sm:text-sm font-semibold text-white cursor-pointer"
+                  >
+                    Pelan (0.64x)
+                  </button>
+                </div>
+              </div>
+            ) : activeQuestionKind === 'pronunciation' ? (
+              <div className="py-3 text-center space-y-2">
+                <div className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-white/90 font-semibold">
+                  <Mic className="w-3.5 h-3.5" />
+                  Pronunciation · Ucapkan atau Pilih Pola Pitch ({catMeta.shortLabel})
+                </div>
+                <div className="font-jp text-4xl sm:text-5xl font-bold tracking-tight break-words">
+                  {item.word}
+                </div>
+                <div className="text-sm sm:text-base text-white/90">
+                  <span className="font-jp font-semibold">{item.reading}</span> · {item.primaryMeaning}
+                </div>
+              </div>
             ) : (
               <div className="py-3 text-center space-y-2.5">
                 <div className="text-xs uppercase tracking-wider text-white/85 font-semibold">
@@ -920,37 +1172,38 @@ export const KanaVocabHub: React.FC = () => {
             <span className="text-xs text-slate-500 dark:text-slate-400">
               Format Soal:
             </span>
-            <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] p-0.5">
-              <button
-                type="button"
-                disabled={feedback.status !== 'idle'}
-                onClick={() => setQuizMode('context')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer disabled:opacity-60 ${
-                  quizMode === 'context'
-                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <ListChecks className="w-3.5 h-3.5" />
-                Konteks JLPT (4 Pilihan)
-              </button>
-              <button
-                type="button"
-                disabled={feedback.status !== 'idle'}
-                onClick={() => setQuizMode('meaning')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer disabled:opacity-60 ${
-                  quizMode === 'meaning'
-                    ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Keyboard className="w-3.5 h-3.5" />
-                Ketik Arti (Inggris)
-              </button>
+            <div className="inline-flex flex-wrap rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] p-0.5 gap-0.5">
+              {(
+                [
+                  { id: 'mixed', label: 'Lengkap', icon: Sparkles },
+                  { id: 'context', label: 'Konteks', icon: ListChecks },
+                  { id: 'meaning', label: 'Arti', icon: Keyboard },
+                  { id: 'listening', label: 'Listening', icon: Ear },
+                  { id: 'pronunciation', label: 'Pelafalan', icon: Mic },
+                ] as const
+              ).map(({ id, label, icon: Icon }) => (
+                <button
+                  key={id}
+                  type="button"
+                  disabled={feedback.status !== 'idle'}
+                  onClick={() => {
+                    setQuizMode(id);
+                    setTypedValue('');
+                  }}
+                  className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer disabled:opacity-60 ${
+                    quizMode === id
+                      ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {quizMode === 'context' ? (
+          {activeQuestionKind === 'context' ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {currentEntry.shuffledChoices.map((choice, idx) => {
                 const isAnswer = choice === item.word;
@@ -976,7 +1229,7 @@ export const KanaVocabHub: React.FC = () => {
                     key={choice}
                     type="button"
                     disabled={feedback.status !== 'idle'}
-                    onClick={() => evaluateAnswer(choice, true)}
+                    onClick={() => evaluateAnswer(choice, 'context')}
                     className={`min-h-[54px] px-4 py-3 rounded-xl border-2 text-left flex items-center justify-between gap-3 transition-colors cursor-pointer disabled:cursor-default ${btnStyle}`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
@@ -997,21 +1250,43 @@ export const KanaVocabHub: React.FC = () => {
                 );
               })}
             </div>
+          ) : activeQuestionKind === 'pronunciation' ? (
+            <VocabPronunciationQuizPanel
+              key={`${item.id}-${completedQuestions}-${quizQueue.length}`}
+              questionKey={`${item.id}-${completedQuestions}-${quizQueue.length}`}
+              kanji={item.word}
+              kana={item.reading}
+              acceptedReadings={[item.reading, item.word]}
+              partOfSpeech={item.partOfSpeech}
+              answered={feedback.status !== 'idle'}
+              onAnswer={(isCorrect, detail) => handlePronunciationResult(isCorrect, detail)}
+            />
           ) : (
-            <form onSubmit={handleMeaningSubmit} className="space-y-3">
+            <form onSubmit={handleTextInputSubmit} className="space-y-3">
               <div className="relative">
                 <input
                   ref={inputRef}
                   type="text"
                   value={typedValue}
                   disabled={feedback.status !== 'idle'}
-                  onChange={(e) => setTypedValue(e.target.value)}
-                  placeholder="Type English meaning..."
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setTypedValue(
+                      activeQuestionKind === 'listening' ? romajiToHiragana(val, false) : val
+                    );
+                  }}
+                  placeholder={
+                    activeQuestionKind === 'listening'
+                      ? 'こたえ (ketik romaji / hiragana sesuai audio)...'
+                      : 'Type English meaning...'
+                  }
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="off"
                   spellCheck={false}
                   className={`w-full px-4 py-4 pr-14 rounded-xl border-2 text-base sm:text-lg text-center focus:outline-none transition-colors ${
+                    activeQuestionKind === 'listening' ? 'font-jp' : ''
+                  } ${
                     feedback.status === 'correct' || feedback.status === 'typo-accepted'
                       ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200'
                       : feedback.status === 'incorrect'
@@ -1030,7 +1305,9 @@ export const KanaVocabHub: React.FC = () => {
                 )}
               </div>
               <p className="text-xs text-center text-slate-500 dark:text-slate-400">
-                Ketik arti dalam Bahasa Inggris (salah ketik minor tetap diterima). Tekan Enter untuk kirim.
+                {activeQuestionKind === 'listening'
+                  ? 'Ketik romaji (otomatis berubah jadi ひらがな) atau langsung kana. Tekan Enter untuk kirim.'
+                  : 'Ketik arti dalam Bahasa Inggris (salah ketik minor tetap diterima). Tekan Enter untuk kirim.'}
               </p>
             </form>
           )}
@@ -1038,7 +1315,7 @@ export const KanaVocabHub: React.FC = () => {
           {/* Feedback Banner */}
           {feedback.status !== 'idle' && (
             <div
-              className={`rounded-xl border p-4 sm:p-5 space-y-4 ${
+              className={`relative overflow-hidden rounded-xl border p-4 sm:p-5 space-y-4 ${
                 feedback.status === 'incorrect'
                   ? 'border-rose-200 dark:border-rose-900 bg-rose-50/70 dark:bg-rose-950/30'
                   : 'border-emerald-200 dark:border-emerald-900 bg-emerald-50/70 dark:bg-emerald-950/30'
@@ -1054,13 +1331,26 @@ export const KanaVocabHub: React.FC = () => {
                     }`}
                   >
                     {feedback.status === 'correct'
-                      ? 'Benar!'
+                      ? !showNoteDrawer && autoAdvanceDelayMs > 0
+                        ? 'Benar! Lanjut otomatis...'
+                        : 'Benar!'
                       : feedback.status === 'typo-accepted'
-                      ? 'Benar (sedikit typo diterima)!'
-                      : quizMode === 'context'
+                      ? !showNoteDrawer && autoAdvanceDelayMs > 0
+                        ? 'Benar (typo diterima)! Lanjut otomatis...'
+                        : 'Benar (sedikit typo diterima)!'
+                      : activeQuestionKind === 'context'
                       ? `Belum tepat — Jawaban benar: ${item.word}`
+                      : activeQuestionKind === 'listening'
+                      ? `Belum tepat — Kata yang diucapkan: ${item.word} (${item.reading})`
+                      : activeQuestionKind === 'pronunciation'
+                      ? 'Pelafalan / pola pitch belum tepat'
                       : `Belum tepat — Arti benar: ${item.primaryMeaning}`}
                   </div>
+                  {feedback.detailMessage && (
+                    <div className="text-xs text-slate-700 dark:text-slate-300">
+                      {feedback.detailMessage}
+                    </div>
+                  )}
                   <div className="text-xs text-slate-700 dark:text-slate-300">
                     <span className="font-jp font-bold">{item.word}</span> ({item.reading}) —{' '}
                     {item.primaryMeaning}
@@ -1073,7 +1363,7 @@ export const KanaVocabHub: React.FC = () => {
                   )}
                   {feedback.status === 'incorrect' && (
                     <div className="text-xs text-rose-700 dark:text-rose-300 pt-0.5">
-                      Kata ini akan muncul lagi sebentar lagi di sesi ini.
+                      Soal ini akan muncul lagi sebentar lagi di sesi ini.
                     </div>
                   )}
                 </div>
@@ -1097,18 +1387,33 @@ export const KanaVocabHub: React.FC = () => {
                   {showNoteDrawer ? (
                     <>
                       <ChevronUp className="w-4 h-4" />
-                      Sembunyikan Catatan &amp; Contoh
+                      Sembunyikan Catatan, Pitch &amp; Contoh
                     </>
                   ) : (
                     <>
                       <ChevronDown className="w-4 h-4" />
-                      Lihat Catatan Nuansa &amp; Contoh Kalimat
+                      Lihat Catatan Nuansa, Pitch &amp; Contoh Kalimat
                     </>
                   )}
                 </button>
 
                 {showNoteDrawer && (
                   <div className="mt-3 space-y-3 text-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-[#161A22] rounded-lg border border-slate-200 dark:border-slate-800 p-4">
+                    <PronunciationCard
+                      compact
+                      target={{
+                        id: item.id,
+                        kanji: item.word,
+                        kana: item.reading,
+                        meaning: item.primaryMeaning,
+                        partOfSpeech: item.partOfSpeech,
+                        sourceLabel: `Kosakata Kana JLPT N${item.jlpt}`,
+                        exampleJp: item.example.jp,
+                        exampleReading: item.example.reading,
+                        exampleTranslation: item.example.en,
+                      }}
+                      onPracticeSpeak={(t) => openPronunciationPractice(t)}
+                    />
                     <p className="text-xs sm:text-sm leading-relaxed">{item.usageNote}</p>
                     <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1">
                       <div className="flex items-start justify-between gap-2">
@@ -1131,6 +1436,16 @@ export const KanaVocabHub: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              {(feedback.status === 'correct' || feedback.status === 'typo-accepted') &&
+                !showNoteDrawer &&
+                autoAdvanceDelayMs > 0 && (
+                  <div
+                    key={`${item.id}-${activeQuestionKind}-${completedQuestions}`}
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                    style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                  />
+                )}
             </div>
           )}
         </div>
@@ -1593,6 +1908,25 @@ export const KanaVocabHub: React.FC = () => {
                         </p>
                       </div>
                     )}
+
+                    <PronunciationCard
+                      compact
+                      target={{
+                        id: detailItem.id,
+                        kanji: detailItem.word,
+                        kana: detailItem.reading,
+                        meaning: detailItem.primaryMeaning,
+                        partOfSpeech: detailItem.partOfSpeech,
+                        sourceLabel: `Kosakata Kana JLPT N${detailItem.jlpt}`,
+                        exampleJp: detailItem.example.jp,
+                        exampleReading: detailItem.example.reading,
+                        exampleTranslation: detailItem.example.en,
+                      }}
+                      onPracticeSpeak={(t) => {
+                        setDetailItem(null);
+                        openPronunciationPractice(t);
+                      }}
+                    />
 
                     <div className="rounded-lg border border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/30 p-3.5 flex items-start gap-2.5">
                       <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />

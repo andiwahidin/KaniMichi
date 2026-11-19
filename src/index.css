@@ -54,8 +54,25 @@
   animation: input-shake 0.32s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+@keyframes auto-advance-bar {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.animate-auto-advance {
+  transform-origin: left center;
+  animation-name: auto-advance-bar;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-shake {
+  .animate-shake,
+  .animate-auto-advance {
     animation: none;
   }
 }

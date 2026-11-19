@@ -121,7 +121,9 @@ export const GrammarHub: React.FC = () => {
   const [sessionResults, setSessionResults] = useState<SessionSummaryRow[]>([]);
   const [sessionDone, setSessionDone] = useState(false);
 
+  const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
   const inputRef = useRef<HTMLInputElement>(null);
+  const advanceQueueRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     let active = true;
@@ -419,6 +421,35 @@ export const GrammarHub: React.FC = () => {
       }
     }
   };
+
+  advanceQueueRef.current = advanceQueue;
+
+  // Auto-advance smoothly after a brief hold when the answer is correct
+  useEffect(() => {
+    const inQuiz =
+      mode === 'review' ||
+      mode === 'drill' ||
+      (mode === 'lesson' && lessonPhase === 'quiz');
+    if (
+      !inQuiz ||
+      feedback.status !== 'correct' ||
+      showGrammarInfo ||
+      autoAdvanceDelayMs <= 0
+    ) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      advanceQueueRef.current();
+    }, autoAdvanceDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [
+    mode,
+    lessonPhase,
+    feedback.status,
+    showGrammarInfo,
+    autoAdvanceDelayMs,
+    currentEntry?.point.id,
+  ]);
 
   const handleTypingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -1027,7 +1058,7 @@ export const GrammarHub: React.FC = () => {
           {/* Feedback Banner + Next Action */}
           {feedback.status !== 'idle' && (
             <div
-              className={`rounded-xl border p-4 sm:p-5 space-y-4 ${
+              className={`relative overflow-hidden rounded-xl border p-4 sm:p-5 space-y-4 ${
                 feedback.status === 'correct'
                   ? 'border-emerald-200 dark:border-emerald-900 bg-emerald-50/70 dark:bg-emerald-950/30'
                   : 'border-rose-200 dark:border-rose-900 bg-rose-50/70 dark:bg-rose-950/30'
@@ -1043,7 +1074,9 @@ export const GrammarHub: React.FC = () => {
                     }`}
                   >
                     {feedback.status === 'correct'
-                      ? 'Benar!'
+                      ? !showGrammarInfo && autoAdvanceDelayMs > 0
+                        ? 'Benar! Lanjut otomatis...'
+                        : 'Benar!'
                       : `Belum tepat — Jawaban benar: ${pt.quiz.answer}`}
                   </div>
                   <div className="text-xs text-slate-700 dark:text-slate-300">
@@ -1111,6 +1144,16 @@ export const GrammarHub: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              {feedback.status === 'correct' &&
+                !showGrammarInfo &&
+                autoAdvanceDelayMs > 0 && (
+                  <div
+                    key={`${pt.id}-${sessionResults.length}`}
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                    style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                  />
+                )}
             </div>
           )}
         </div>

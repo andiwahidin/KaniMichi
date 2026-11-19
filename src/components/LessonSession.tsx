@@ -5,7 +5,9 @@ import {
   Check,
   CheckCircle2,
   ChevronRight,
+  Ear,
   Home,
+  Mic,
   Volume2,
   XCircle,
 } from 'lucide-react';
@@ -18,10 +20,12 @@ import {
   validateReadingAnswer,
 } from '../utils/kana';
 import { getItemTypeLabel } from '../utils/srs';
+import { PronunciationCard } from './PronunciationCard';
+import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
 interface QuizQuestion {
   item: CurriculumItem;
-  kind: 'meaning' | 'reading';
+  kind: 'meaning' | 'reading' | 'listening' | 'pronunciation';
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -41,9 +45,14 @@ export const LessonSession: React.FC = () => {
     completeLessonBatch,
     setActiveView,
     openItemDetail,
+    openPronunciationPractice,
+    recordPronunciationAttempt,
   } = useApp();
 
   const batchSize = state.settings.lessonBatchSize;
+  const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const includeListening = state.settings.includeVocabListeningQuiz !== false;
+  const includePronunciation = state.settings.includeVocabPronunciationQuiz !== false;
 
   // Freeze current batch on mount or when starting a new batch
   const [batch, setBatch] = useState<CurriculumItem[]>(() =>
@@ -64,16 +73,65 @@ export const LessonSession: React.FC = () => {
   const [showInfo, setShowInfo] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const advanceQuizRef = useRef<() => void>(() => {});
 
   const currentSlideItem = batch[slideIdx];
   const currentQuestion = quizQueue[0];
 
-  // Auto-focus input in quiz mode
+  // Auto-focus input in quiz mode (for typed questions)
   useEffect(() => {
-    if (phase === 'quiz' && inputRef.current) {
+    if (
+      phase === 'quiz' &&
+      currentQuestion?.kind !== 'pronunciation' &&
+      inputRef.current
+    ) {
       inputRef.current.focus();
     }
-  }, [phase, quizQueue.length, answerState]);
+  }, [phase, quizQueue.length, answerState, currentQuestion?.kind]);
+
+  // Auto-play Japanese audio when entering a Listening (Dictation) question
+  useEffect(() => {
+    if (
+      phase !== 'quiz' ||
+      answerState !== 'idle' ||
+      currentQuestion?.kind !== 'listening'
+    ) {
+      return;
+    }
+    const audioText =
+      currentQuestion.item.characters || currentQuestion.item.readings?.[0];
+    if (!audioText) return;
+    const t = window.setTimeout(() => {
+      speakJapanese(audioText, 0.9);
+    }, 180);
+    return () => window.clearTimeout(t);
+  }, [phase, answerState, currentQuestion?.item.id, currentQuestion?.kind, completedQuizCount]);
+
+  // Allow Enter to advance after answering pronunciation question & J to replay listening audio
+  useEffect(() => {
+    if (phase !== 'quiz' || !currentQuestion) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (
+        currentQuestion.kind === 'pronunciation' &&
+        answerState !== 'idle' &&
+        e.key === 'Enter'
+      ) {
+        e.preventDefault();
+        advanceQuizRef.current();
+      } else if (
+        currentQuestion.kind === 'listening' &&
+        (e.key === 'j' || e.key === 'J') &&
+        document.activeElement !== inputRef.current
+      ) {
+        e.preventDefault();
+        const txt =
+          currentQuestion.item.characters || currentQuestion.item.readings?.[0];
+        if (txt) speakJapanese(txt, 0.9);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [phase, currentQuestion, answerState]);
 
   // Reset subtab when changing slide
   useEffect(() => {
@@ -115,6 +173,14 @@ export const LessonSession: React.FC = () => {
       if (item.type !== 'radical') {
         questions.push({ item, kind: 'reading' });
       }
+      if (item.type === 'vocabulary' && item.readings?.[0]) {
+        if (includeListening) {
+          questions.push({ item, kind: 'listening' });
+        }
+        if (includePronunciation) {
+          questions.push({ item, kind: 'pronunciation' });
+        }
+      }
     }
     const shuffled = shuffle(questions);
     setQuizQueue(shuffled);
@@ -135,7 +201,10 @@ export const LessonSession: React.FC = () => {
 
   const handleInputChange = (val: string) => {
     if (answerState !== 'idle') return;
-    if (currentQuestion?.kind === 'reading') {
+    if (
+      currentQuestion?.kind === 'reading' ||
+      currentQuestion?.kind === 'listening'
+    ) {
       setInputValue(romajiToHiragana(val, false));
     } else {
       setInputValue(val);
@@ -168,6 +237,48 @@ export const LessonSession: React.FC = () => {
     setShowInfo(false);
   };
 
+  advanceQuizRef.current = advanceQuiz;
+
+  // Auto-advance smoothly after a brief hold when the answer is correct
+  useEffect(() => {
+    if (
+      phase !== 'quiz' ||
+      answerState !== 'correct' ||
+      showInfo ||
+      autoAdvanceDelayMs <= 0
+    ) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      advanceQuizRef.current();
+    }, autoAdvanceDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [
+    phase,
+    answerState,
+    showInfo,
+    autoAdvanceDelayMs,
+    currentQuestion?.item.id,
+    currentQuestion?.kind,
+  ]);
+
+  const handlePronunciationAnswer = (isCorrect: boolean, detailMsg: string) => {
+    if (!currentQuestion || answerState !== 'idle') return;
+    recordPronunciationAttempt('speak', isCorrect, currentQuestion.item.id);
+    if (isCorrect) {
+      setAnswerState('correct');
+      setFeedbackMsg(
+        autoAdvanceDelayMs > 0
+          ? `${detailMsg} Lanjut otomatis...`
+          : `${detailMsg} Tekan Enter untuk melanjutkan.`
+      );
+    } else {
+      setAnswerState('incorrect');
+      setFeedbackMsg(detailMsg);
+      setShowInfo(true);
+    }
+  };
+
   const handleQuizSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!currentQuestion) return;
@@ -177,11 +288,20 @@ export const LessonSession: React.FC = () => {
       return;
     }
 
+    if (currentQuestion.kind === 'pronunciation') return;
+
     const userSynonyms = state.progress[currentQuestion.item.id]?.userSynonyms ?? [];
-    const result =
-      currentQuestion.kind === 'meaning'
-        ? validateMeaningAnswer(inputValue, currentQuestion.item, userSynonyms)
-        : validateReadingAnswer(inputValue, currentQuestion.item);
+    let result;
+    if (currentQuestion.kind === 'meaning') {
+      result = validateMeaningAnswer(inputValue, currentQuestion.item, userSynonyms);
+    } else if (
+      currentQuestion.kind === 'listening' &&
+      inputValue.trim() === currentQuestion.item.characters
+    ) {
+      result = { status: 'correct' as const, finalizedInput: inputValue.trim() };
+    } else {
+      result = validateReadingAnswer(inputValue, currentQuestion.item);
+    }
 
     if (result.finalizedInput !== undefined) {
       setInputValue(result.finalizedInput);
@@ -192,18 +312,26 @@ export const LessonSession: React.FC = () => {
       return;
     }
 
-    if (result.status === 'correct' || result.status === 'typo-accepted') {
+    const isSuccess = result.status === 'correct' || result.status === 'typo-accepted';
+    if (currentQuestion.kind === 'listening') {
+      recordPronunciationAttempt('ear', isSuccess, currentQuestion.item.id);
+    }
+
+    if (isSuccess) {
       setAnswerState('correct');
       setFeedbackMsg(
-        result.message ?? 'Tepat! Tekan Enter untuk melanjutkan.'
+        result.message ??
+          (autoAdvanceDelayMs > 0
+            ? 'Tepat! Lanjut otomatis ke soal berikutnya...'
+            : 'Tepat! Tekan Enter untuk melanjutkan.')
       );
       if (
-        currentQuestion.kind === 'reading' &&
+        (currentQuestion.kind === 'reading' || currentQuestion.kind === 'listening') &&
         state.settings.autoplayAudio
       ) {
         const audioTxt =
           currentQuestion.item.type === 'vocabulary'
-            ? currentQuestion.item.readings?.[0]
+            ? currentQuestion.item.characters
             : currentQuestion.item.primaryReadingType === 'kunyomi'
             ? currentQuestion.item.kunyomi?.[0]
             : currentQuestion.item.onyomi?.[0];
@@ -214,6 +342,8 @@ export const LessonSession: React.FC = () => {
       setFeedbackMsg(
         currentQuestion.kind === 'meaning'
           ? `Jawaban benar: ${currentQuestion.item.primaryMeaning}`
+          : currentQuestion.kind === 'listening'
+          ? `Yang diucapkan: ${currentQuestion.item.characters}（${currentQuestion.item.readings?.join('、 ')}） · ${currentQuestion.item.primaryMeaning}`
           : `Bacaan benar: ${
               currentQuestion.item.type === 'vocabulary'
                 ? currentQuestion.item.readings?.join('、 ')
@@ -362,9 +492,50 @@ export const LessonSession: React.FC = () => {
             <div className="text-xs font-medium text-white/85 mb-2">
               Level {qItem.level} · {getItemTypeLabel(qItem.type)}
             </div>
-            <div className="font-jp text-5xl sm:text-7xl font-bold tracking-tight select-all break-words">
-              {qItem.characters}
-            </div>
+            {currentQuestion.kind === 'listening' && answerState === 'idle' ? (
+              <div className="space-y-3 py-1">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 mx-auto">
+                  <Ear className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-sm text-white/90 font-medium">
+                  Dengarkan audio lalu ketik bacaan yang kamu dengar
+                </div>
+                <div className="flex items-center justify-center gap-2.5 pt-1">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      speakJapanese(qItem.characters || qItem.readings?.[0] || '', 0.9)
+                    }
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 text-xs sm:text-sm font-bold hover:bg-white/90 transition-colors cursor-pointer"
+                  >
+                    <Volume2 className="w-4 h-4" />
+                    Putar Audio
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      speakJapanese(qItem.characters || qItem.readings?.[0] || '', 0.64)
+                    }
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+                  >
+                    Pelan (0.64x)
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                <div className="font-jp text-5xl sm:text-7xl font-bold tracking-tight select-all break-words">
+                  {qItem.characters}
+                </div>
+                {(currentQuestion.kind === 'pronunciation' ||
+                  (currentQuestion.kind === 'listening' && answerState !== 'idle')) && (
+                  <div className="text-sm sm:text-base text-white/90 font-jp">
+                    {qItem.readings?.[0]} ·{' '}
+                    <span className="font-sans">{qItem.primaryMeaning}</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -373,6 +544,18 @@ export const LessonSession: React.FC = () => {
           {currentQuestion.kind === 'meaning' ? (
             <span>
               {getItemTypeLabel(qItem.type)} — <strong>Arti</strong> (Bahasa Inggris)
+            </span>
+          ) : currentQuestion.kind === 'listening' ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Ear className="w-4 h-4 text-sky-400" />
+              {getItemTypeLabel(qItem.type)} —{' '}
+              <strong>Listening (Dengarkan &amp; Tulis ひらがな)</strong>
+            </span>
+          ) : currentQuestion.kind === 'pronunciation' ? (
+            <span className="inline-flex items-center gap-1.5">
+              <Mic className="w-4 h-4 text-teal-400" />
+              {getItemTypeLabel(qItem.type)} —{' '}
+              <strong>Pronunciation (Ucapkan atau Pilih Pola Pitch)</strong>
             </span>
           ) : (
             <span>
@@ -391,67 +574,107 @@ export const LessonSession: React.FC = () => {
 
         {/* Input & Feedback */}
         <div className="max-w-2xl w-full mx-auto px-4 py-8 flex-1 space-y-5">
-          <form onSubmit={handleQuizSubmit} className="space-y-3">
-            <div className={`relative ${shake ? 'animate-shake' : ''}`}>
-              <input
-                ref={inputRef}
-                type="text"
-                value={inputValue}
-                onChange={(e) => handleInputChange(e.target.value)}
-                readOnly={answerState !== 'idle'}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                spellCheck={false}
-                placeholder={
-                  currentQuestion.kind === 'meaning'
-                    ? 'Ketik arti dalam Bahasa Inggris...'
-                    : 'Ketik romaji (otomatis ke ひらがな)...'
-                }
-                className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
-                  currentQuestion.kind === 'reading' ? 'font-jp' : 'font-body'
-                } ${
-                  answerState === 'correct'
-                    ? 'bg-emerald-600 border-emerald-600 text-white'
-                    : answerState === 'incorrect'
-                    ? 'bg-rose-600 border-rose-600 text-white'
-                    : 'bg-white dark:bg-[#161A22] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:border-[#0284C7]'
-                }`}
+          {currentQuestion.kind === 'pronunciation' && qItem.readings?.[0] ? (
+            <div className="space-y-4">
+              <VocabPronunciationQuizPanel
+                questionKey={`lesson-${qItem.id}-${completedQuizCount}`}
+                kanji={qItem.characters}
+                kana={qItem.readings[0]}
+                acceptedReadings={qItem.readings}
+                partOfSpeech={qItem.partOfSpeech}
+                answered={answerState !== 'idle'}
+                onAnswer={handlePronunciationAnswer}
               />
-              <button
-                type="submit"
-                aria-label="Kirim jawaban"
-                className={`absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-colors cursor-pointer ${
-                  answerState === 'idle'
-                    ? 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-              <span>
-                {currentQuestion.kind === 'reading'
-                  ? 'Mode IME Aktif: ketik romaji (contoh: ichi → いち)'
-                  : 'Masukkan arti Bahasa Inggris (atau sinonim pribadimu)'}
-              </span>
               {answerState !== 'idle' && (
-                <button
-                  type="button"
-                  onClick={() => setShowInfo((v) => !v)}
-                  className="font-semibold text-[#0284C7] hover:underline cursor-pointer"
-                >
-                  {showInfo ? 'Sembunyikan Info' : 'Lihat Info Item'}
-                </button>
+                <div className="flex items-center justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowInfo((v) => !v)}
+                    className="text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
+                  >
+                    {showInfo ? 'Sembunyikan Info' : 'Lihat Info Item'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={advanceQuiz}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold cursor-pointer"
+                  >
+                    Lanjut
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               )}
             </div>
-          </form>
+          ) : (
+            <form onSubmit={handleQuizSubmit} className="space-y-3">
+              <div className={`relative ${shake ? 'animate-shake' : ''}`}>
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => handleInputChange(e.target.value)}
+                  readOnly={answerState !== 'idle'}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  spellCheck={false}
+                  placeholder={
+                    currentQuestion.kind === 'meaning'
+                      ? 'Ketik arti dalam Bahasa Inggris...'
+                      : currentQuestion.kind === 'listening'
+                      ? 'Ketik apa yang kamu dengar (romaji → ひらがな)...'
+                      : 'Ketik romaji (otomatis ke ひらがな)...'
+                  }
+                  className={`w-full text-center text-lg sm:text-2xl py-3.5 sm:py-4 px-10 sm:px-12 rounded-xl border-2 transition-colors focus:outline-none ${
+                    currentQuestion.kind === 'reading' ||
+                    currentQuestion.kind === 'listening'
+                      ? 'font-jp'
+                      : 'font-body'
+                  } ${
+                    answerState === 'correct'
+                      ? 'bg-emerald-600 border-emerald-600 text-white'
+                      : answerState === 'incorrect'
+                      ? 'bg-rose-600 border-rose-600 text-white'
+                      : 'bg-white dark:bg-[#161A22] border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:border-[#0284C7]'
+                  }`}
+                />
+                <button
+                  type="submit"
+                  aria-label="Kirim jawaban"
+                  className={`absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-colors cursor-pointer ${
+                    answerState === 'idle'
+                      ? 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                      : 'text-white/90 hover:text-white'
+                  }`}
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span>
+                  {currentQuestion.kind === 'listening'
+                    ? 'Dengarkan suara lalu ketik bacaannya (romaji otomatis ke ひらがな)'
+                    : currentQuestion.kind === 'reading'
+                    ? 'Mode IME Aktif: ketik romaji (contoh: ichi → いち)'
+                    : 'Masukkan arti Bahasa Inggris (atau sinonim pribadimu)'}
+                </span>
+                {answerState !== 'idle' && (
+                  <button
+                    type="button"
+                    onClick={() => setShowInfo((v) => !v)}
+                    className="font-semibold text-[#0284C7] hover:underline cursor-pointer"
+                  >
+                    {showInfo ? 'Sembunyikan Info' : 'Lihat Info Item'}
+                  </button>
+                )}
+              </div>
+            </form>
+          )}
 
           {feedbackMsg && (
             <div
-              className={`px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2.5 ${
+              className={`relative overflow-hidden px-4 py-3 rounded-lg text-sm font-medium flex items-center gap-2.5 ${
                 answerState === 'correct'
                   ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800'
                   : answerState === 'incorrect'
@@ -465,6 +688,13 @@ export const LessonSession: React.FC = () => {
                 <XCircle className="w-4 h-4 shrink-0" />
               ) : null}
               <span>{feedbackMsg}</span>
+              {answerState === 'correct' && !showInfo && autoAdvanceDelayMs > 0 && (
+                <div
+                  key={`${qItem.id}-${currentQuestion.kind}-${completedQuizCount}`}
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                  style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                />
+              )}
             </div>
           )}
 
@@ -751,22 +981,41 @@ export const LessonSession: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="text-xs text-slate-500 dark:text-slate-400">Bacaan Kosakata</div>
-                    <div className="font-jp text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1 break-words">
-                      {currentSlideItem.readings?.join('、 ')}
+                <div className="space-y-4">
+                  <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                    <div className="min-w-0">
+                      <div className="text-xs text-slate-500 dark:text-slate-400">Bacaan Kosakata</div>
+                      <div className="font-jp text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1 break-words">
+                        {currentSlideItem.readings?.join('、 ')}
+                      </div>
                     </div>
+                    {primaryAudio && (
+                      <button
+                        type="button"
+                        onClick={() => speakJapanese(primaryAudio)}
+                        className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#7C3AED] text-white text-xs font-semibold hover:bg-[#6D28D9] cursor-pointer shrink-0"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                        Dengarkan
+                      </button>
+                    )}
                   </div>
-                  {primaryAudio && (
-                    <button
-                      type="button"
-                      onClick={() => speakJapanese(primaryAudio)}
-                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#7C3AED] text-white text-xs font-semibold hover:bg-[#6D28D9] cursor-pointer shrink-0"
-                    >
-                      <Volume2 className="w-4 h-4" />
-                      Dengarkan
-                    </button>
+                  {currentSlideItem.readings?.[0] && (
+                    <PronunciationCard
+                      compact
+                      target={{
+                        id: currentSlideItem.id,
+                        kanji: currentSlideItem.characters,
+                        kana: currentSlideItem.readings[0],
+                        meaning: currentSlideItem.primaryMeaning,
+                        partOfSpeech: currentSlideItem.partOfSpeech,
+                        sourceLabel: `Kurikulum Level ${currentSlideItem.level}`,
+                        exampleJp: currentSlideItem.contextSentences?.[0]?.jp,
+                        exampleReading: currentSlideItem.contextSentences?.[0]?.reading,
+                        exampleTranslation: currentSlideItem.contextSentences?.[0]?.en,
+                      }}
+                      onPracticeSpeak={(t) => openPronunciationPractice(t)}
+                    />
                   )}
                 </div>
               )}

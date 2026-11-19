@@ -294,6 +294,97 @@ export const SettingsModal: React.FC = () => {
               </button>
             </div>
 
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4">
+              <div>
+                <div className="font-medium text-slate-800 dark:text-slate-200">
+                  Lanjut Otomatis (Jawaban Benar)
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">
+                  Jeda sebelum otomatis pindah ke soal berikutnya tanpa tekan Enter
+                </div>
+              </div>
+              <div className="inline-flex self-start sm:self-auto items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-lg shrink-0">
+                {(
+                  [
+                    { ms: 1000, label: '1 dtk' },
+                    { ms: 1500, label: '1.5 dtk' },
+                    { ms: 2500, label: '2.5 dtk' },
+                    { ms: 0, label: 'Manual' },
+                  ] as const
+                ).map((opt) => {
+                  const activeMs = state.settings.autoAdvanceDelayMs ?? 1500;
+                  return (
+                    <button
+                      key={opt.ms}
+                      type="button"
+                      onClick={() => updateSettings({ autoAdvanceDelayMs: opt.ms })}
+                      className={`px-2.5 py-1.5 text-xs font-semibold rounded-md font-mono-num transition-colors cursor-pointer whitespace-nowrap ${
+                        activeMs === opt.ms
+                          ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <div className="font-medium text-slate-800 dark:text-slate-200">
+                  Soal Listening Kosakata (Dengarkan &amp; Tulis)
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">
+                  Sertakan soal dikte audio saat kuis pelajaran, review, dan latihan kosakata
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  updateSettings({
+                    includeVocabListeningQuiz:
+                      state.settings.includeVocabListeningQuiz === false,
+                  })
+                }
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap ${
+                  state.settings.includeVocabListeningQuiz !== false
+                    ? 'bg-[#0284C7] text-white'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                {state.settings.includeVocabListeningQuiz !== false ? 'Aktif' : 'Nonaktif'}
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <div className="font-medium text-slate-800 dark:text-slate-200">
+                  Soal Pronunciation Kosakata (Ucap &amp; Pitch)
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">
+                  Sertakan soal pelafalan mikrofon atau pilih pola pitch accent saat kuis kosakata
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  updateSettings({
+                    includeVocabPronunciationQuiz:
+                      state.settings.includeVocabPronunciationQuiz === false,
+                  })
+                }
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap ${
+                  state.settings.includeVocabPronunciationQuiz !== false
+                    ? 'bg-[#0284C7] text-white'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                {state.settings.includeVocabPronunciationQuiz !== false ? 'Aktif' : 'Nonaktif'}
+              </button>
+            </div>
+
             <div className="flex items-center justify-between gap-4">
               <div>
                 <div className="font-medium text-slate-800 dark:text-slate-200">

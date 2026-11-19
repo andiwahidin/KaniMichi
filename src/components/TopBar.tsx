@@ -10,6 +10,8 @@ const BASE_NAV_ITEMS: { id: ActiveView; label: string }[] = [
   { id: 'kanji', label: 'Kanji' },
   { id: 'vocabulary', label: 'Kosakata' },
   { id: 'grammar', label: 'Grammar' },
+  { id: 'writing', label: 'Menulis' },
+  { id: 'pronunciation', label: 'Pelafalan' },
 ];
 
 export const TopBar: React.FC = () => {
@@ -60,7 +62,7 @@ export const TopBar: React.FC = () => {
         {/* Zone 2: Concise Single-Line Text Nav Links */}
         <nav
           aria-label="Navigasi utama"
-          className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium"
+          className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium"
         >
           {BASE_NAV_ITEMS.map((item) => {
             const isActive =
@@ -149,7 +151,7 @@ export const TopBar: React.FC = () => {
             type="button"
             aria-label={mobileMenuOpen ? 'Tutup menu' : 'Buka menu'}
             onClick={() => setMobileMenuOpen((v) => !v)}
-            className="md:hidden p-2 min-w-[40px] min-h-[40px] flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg cursor-pointer"
+            className="lg:hidden p-2 min-w-[40px] min-h-[40px] flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg cursor-pointer"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -158,7 +160,7 @@ export const TopBar: React.FC = () => {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] px-4 py-3">
+        <div className="lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] px-4 py-3">
           <nav className="flex flex-col gap-1">
             {BASE_NAV_ITEMS.map((item) => {
               const isActive = activeView === item.id;

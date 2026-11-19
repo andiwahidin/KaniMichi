@@ -32,6 +32,11 @@ import type { KanaVocabProgress } from '../types/kanaVocab';
 import type { ReadingProgress } from '../types/reading';
 import type { ListeningProgress } from '../types/listening';
 import type { MockExamResult } from '../types/mockExam';
+import type { WritingCharProgress } from '../types/writing';
+import type {
+  PronunciationProgress,
+  PronunciationTargetWord,
+} from '../types/pronunciation';
 import {
   calculateNextReviewAt,
   calculateNextSrsStage,
@@ -112,6 +117,21 @@ interface AppContextValue {
     listenCount: number
   ) => void;
   recordMockExamResult: (result: MockExamResult) => void;
+  writingTargetChar: string | null;
+  openWritingPractice: (char?: string) => void;
+  recordWritingPractice: (
+    char: string,
+    score: number,
+    passedRecall: boolean
+  ) => void;
+  pronunciationTarget: PronunciationTargetWord | null;
+  openPronunciationPractice: (target?: PronunciationTargetWord) => void;
+  clearPronunciationTarget: () => void;
+  recordPronunciationAttempt: (
+    kind: 'ear' | 'speak',
+    isCorrect: boolean,
+    pairId?: string
+  ) => void;
   updateSettings: (partial: Partial<UserSettings>) => void;
   toggleVacationMode: () => void;
   fastForwardTime: (hours: number) => void;
@@ -227,6 +247,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authModalTab, setAuthModalTab] = useState<AuthModalTab>('login');
   const [extraStudyMode, setExtraStudyMode] = useState<ExtraStudyMode>('recent-mistakes');
+  const [writingTargetChar, setWritingTargetChar] = useState<string | null>(null);
+  const [pronunciationTarget, setPronunciationTarget] =
+    useState<PronunciationTargetWord | null>(null);
 
   const [cloudUser, setCloudUser] = useState<User | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
@@ -538,17 +561,31 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     deltaReviews: number,
     deltaCorrect: number,
     deltaLessons: number,
-    timestamp: number
+    timestamp: number,
+    deltaReviewMinutes?: number,
+    deltaStudyMinutes?: number
   ): Pick<UserState, 'history' | 'streakDays' | 'lastActiveDate' | 'totalReviewsDone'> => {
     const today = getTodayDateStr(timestamp);
     const history = [...prev.history];
     const idx = history.findIndex((h) => h.date === today);
+    const addReviewMin =
+      deltaReviewMinutes !== undefined ? deltaReviewMinutes : deltaReviews * 0.55;
+    const addStudyMin =
+      deltaStudyMinutes !== undefined ? deltaStudyMinutes : deltaLessons * 1.8;
+
     if (idx >= 0) {
+      const existing = history[idx];
+      const baseReviewMin =
+        existing.reviewMinutes ?? existing.reviewsCompleted * 0.55;
+      const baseStudyMin =
+        existing.studyMinutes ?? existing.lessonsCompleted * 1.8;
       history[idx] = {
-        ...history[idx],
-        reviewsCompleted: history[idx].reviewsCompleted + deltaReviews,
-        correctCount: history[idx].correctCount + deltaCorrect,
-        lessonsCompleted: history[idx].lessonsCompleted + deltaLessons,
+        ...existing,
+        reviewsCompleted: existing.reviewsCompleted + deltaReviews,
+        correctCount: existing.correctCount + deltaCorrect,
+        lessonsCompleted: existing.lessonsCompleted + deltaLessons,
+        reviewMinutes: Math.round((baseReviewMin + addReviewMin) * 10) / 10,
+        studyMinutes: Math.round((baseStudyMin + addStudyMin) * 10) / 10,
       };
     } else {
       history.push({
@@ -556,6 +593,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         reviewsCompleted: deltaReviews,
         correctCount: deltaCorrect,
         lessonsCompleted: deltaLessons,
+        reviewMinutes: Math.round(addReviewMin * 10) / 10,
+        studyMinutes: Math.round(addStudyMin * 10) / 10,
       });
     }
 
@@ -979,7 +1018,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         totalQuestions,
         correctCount,
         0,
-        ts
+        ts,
+        0,
+        Math.max(1, Math.round((elapsedSec / 60) * 10) / 10)
       );
 
       return {
@@ -1018,7 +1059,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         1,
         isCorrect ? 1 : 0,
         0,
-        ts
+        ts,
+        0,
+        Math.max(1, Math.round(listenCount * 0.8 * 10) / 10)
       );
 
       return {
@@ -1044,12 +1087,119 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         result.totalQuestions,
         result.totalCorrect,
         0,
-        ts
+        ts,
+        Math.max(1, Math.round((result.elapsedSec / 60) * 10) / 10),
+        0
       );
       return {
         ...prev,
         ...activity,
         mockExamHistory: nextHistory,
+      };
+    });
+  };
+
+  const openWritingPractice = (char?: string) => {
+    setWritingTargetChar(char ?? null);
+    setSelectedItemId(null);
+    setActiveView('writing');
+  };
+
+  const openPronunciationPractice = (target?: PronunciationTargetWord) => {
+    setPronunciationTarget(target ?? null);
+    setSelectedItemId(null);
+    setActiveView('pronunciation');
+  };
+
+  const clearPronunciationTarget = () => {
+    setPronunciationTarget(null);
+  };
+
+  const recordWritingPractice = (
+    char: string,
+    score: number,
+    passedRecall: boolean
+  ) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.writingProgress?.[char];
+      const clampedScore = Math.max(0, Math.min(100, Math.round(score)));
+      const updated: WritingCharProgress = {
+        char,
+        attempts: (existing?.attempts ?? 0) + 1,
+        bestScore: Math.max(existing?.bestScore ?? 0, clampedScore),
+        recallPassed: (existing?.recallPassed ?? false) || passedRecall,
+        lastPracticedAt: ts,
+      };
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        clampedScore >= 65 ? 1 : 0,
+        0,
+        ts,
+        0,
+        1
+      );
+      return {
+        ...prev,
+        ...activity,
+        writingProgress: {
+          ...(prev.writingProgress ?? {}),
+          [char]: updated,
+        },
+      };
+    });
+  };
+
+  const recordPronunciationAttempt = (
+    kind: 'ear' | 'speak',
+    isCorrect: boolean,
+    pairId?: string
+  ) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing: PronunciationProgress = prev.pronunciationProgress ?? {
+        earQuizAttempts: 0,
+        earQuizCorrect: 0,
+        speakingAttempts: 0,
+        speakingMatched: 0,
+        practicedPairIds: [],
+        lastPracticedAt: null,
+      };
+      const nextPairIds =
+        pairId && !existing.practicedPairIds.includes(pairId)
+          ? [...existing.practicedPairIds, pairId]
+          : existing.practicedPairIds;
+
+      const updated: PronunciationProgress = {
+        earQuizAttempts: existing.earQuizAttempts + (kind === 'ear' ? 1 : 0),
+        earQuizCorrect:
+          existing.earQuizCorrect + (kind === 'ear' && isCorrect ? 1 : 0),
+        speakingAttempts: existing.speakingAttempts + (kind === 'speak' ? 1 : 0),
+        speakingMatched:
+          existing.speakingMatched + (kind === 'speak' && isCorrect ? 1 : 0),
+        practicedPairIds: nextPairIds,
+        lastPracticedAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        isCorrect ? 1 : 0,
+        0,
+        ts,
+        0,
+        0.8
+      );
+
+      return {
+        ...prev,
+        ...activity,
+        pronunciationProgress: updated,
       };
     });
   };
@@ -1523,6 +1673,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         recordReadingAttempt,
         recordListeningAttempt,
         recordMockExamResult,
+        writingTargetChar,
+        openWritingPractice,
+        recordWritingPractice,
+        pronunciationTarget,
+        openPronunciationPractice,
+        clearPronunciationTarget,
+        recordPronunciationAttempt,
         updateSettings,
         toggleVacationMode,
         fastForwardTime,

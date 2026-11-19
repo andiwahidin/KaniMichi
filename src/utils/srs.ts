@@ -326,12 +326,16 @@ export function createStarterState(
     const d = getTodayDateStr(now - daysAgo * DAY_MS);
     const counts = [14, 22, 18, 28, 12];
     const lessons = [5, 5, 4, 5, 3];
+    const reviewMins = [9, 14, 11, 19, 8];
+    const studyMins = [12, 16, 10, 15, 9];
     const total = counts[idx];
     return {
       date: d,
       reviewsCompleted: total,
       correctCount: Math.round(total * 0.88),
       lessonsCompleted: lessons[idx],
+      reviewMinutes: reviewMins[idx],
+      studyMinutes: studyMins[idx],
     };
   });
 
