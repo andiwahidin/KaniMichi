@@ -312,7 +312,7 @@ export const ItemDetailModal: React.FC = () => {
                       <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
                         {sent.reading}
                       </p>
-                      <p className="text-sm text-slate-700 dark:text-slate-300">{sent.id}</p>
+                      <p className="text-sm text-slate-700 dark:text-slate-300">{sent.en}</p>
                     </div>
                     <button
                       type="button"

@@ -16,7 +16,7 @@ export type ReadingType = 'onyomi' | 'kunyomi';
 export interface ContextSentence {
   jp: string;
   reading: string;
-  id: string;
+  en: string;
 }
 
 export interface CurriculumItem {
@@ -24,9 +24,9 @@ export interface CurriculumItem {
   type: ItemType;
   level: number;
   characters: string;
-  /** Primary Indonesian meaning */
+  /** Primary English meaning */
   primaryMeaning: string;
-  /** All accepted meanings (Indonesian + English equivalents) */
+  /** All accepted English meanings */
   acceptedMeanings: string[];
   /** Kanji readings */
   onyomi?: string[];
@@ -39,9 +39,9 @@ export interface CurriculumItem {
   partOfSpeech?: string;
   /** Component radical IDs (for Kanji) or component kanji IDs (for Vocabulary) */
   componentIds?: string[];
-  /** Mnemonic story for meaning (Indonesian) */
+  /** Mnemonic story for meaning (English) */
   meaningMnemonic: string;
-  /** Mnemonic story for reading (Indonesian, for Kanji & Vocab) */
+  /** Mnemonic story for reading (English, for Kanji & Vocab) */
   readingMnemonic?: string;
   /** Stroke count (for Kanji) */
   strokes?: number;

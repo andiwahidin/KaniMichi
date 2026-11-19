@@ -734,7 +734,7 @@ export const AdminPanel: React.FC = () => {
           <section className="lg:col-span-7 bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6">
             {!selectedItem ? (
               <div className="py-16 text-center text-sm text-slate-500 dark:text-slate-400">
-                Pilih salah satu Radikal, Kanji, atau Kosakata di panel kiri untuk menyunting arti dan mnemonik bahasa Indonesianya.
+                Pilih salah satu Radikal, Kanji, atau Kosakata di panel kiri untuk menyunting arti dan mnemoniknya.
               </div>
             ) : (
               <form onSubmit={handleSaveCurriculumEdit} className="space-y-4">
@@ -776,7 +776,7 @@ export const AdminPanel: React.FC = () => {
 
                 <div className="space-y-1.5">
                   <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                    Arti Utama (Bahasa Indonesia / Inggris)
+                    Arti Utama (Bahasa Inggris)
                   </label>
                   <input
                     type="text"

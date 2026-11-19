@@ -49,107 +49,107 @@ interface CuratedOverlay {
   contextSentences?: ContextSentence[];
 }
 
-/** Hand-crafted Indonesian mnemonics & example sentences overlaid on early core items */
+/** Hand-crafted English mnemonics & example sentences overlaid on early core items */
 const CURATED_OVERLAYS: Record<string, CuratedOverlay> = {
   'radical:一': {
-    meaningMnemonic: 'Satu garis horizontal datar yang membentang lurus di bawah kaki kita — persis seperti permukaan Tanah yang rata.',
+    meaningMnemonic: 'A single flat horizontal line stretching beneath your feet — just like the flat surface of the Ground.',
   },
   'radical:八': {
-    meaningMnemonic: 'Dua garis miring yang melebar ke kiri dan kanan seperti sepasang Sirip ikan paus yang meluncur di lautan.',
+    meaningMnemonic: 'Two slanted strokes flaring outward like a pair of whale Fins gliding through the ocean.',
   },
   'radical:十': {
-    meaningMnemonic: 'Satu garis vertikal dan satu garis horizontal yang berpotongan tepat di tengah, membentuk tanda Salib atau tanda tambah.',
+    meaningMnemonic: 'One vertical line and one horizontal line intersecting cleanly at the center to form a Cross.',
   },
   'radical:口': {
-    meaningMnemonic: 'Kotak persegi terbuka lebar seolah seseorang sedang membuka Mulutnya sambil berkata "Aaa!".',
+    meaningMnemonic: 'A wide-open square box, just like someone opening their Mouth wide to say "Ahhh!"',
   },
   'radical:人': {
-    meaningMnemonic: 'Dua kaki yang sedang melangkah maju dari samping — bentuk sederhana dari seorang Orang yang berjalan.',
+    meaningMnemonic: 'Two legs mid-stride seen from the side — the simplest silhouette of a Person walking.',
   },
   'radical:大': {
-    meaningMnemonic: 'Sosok Orang yang merentangkan kedua tangannya selebar mungkin untuk menunjukkan sesuatu yang sangat Besar.',
+    meaningMnemonic: 'A Person stretching both arms out as wide as possible to show how Big something is.',
   },
   'radical:山': {
-    meaningMnemonic: 'Tiga puncak menjulang ke langit dengan puncak tertinggi di tengah — siluet klasik Gunung.',
+    meaningMnemonic: 'Three jagged peaks rising toward the sky with the tallest in the middle — the classic silhouette of a Mountain.',
   },
   'radical:川': {
-    meaningMnemonic: 'Tiga garis mengalir vertikal seperti arus air Sungai yang deras menuju laut.',
+    meaningMnemonic: 'Three vertical flowing lines rushing downward like the currents of a River heading to the sea.',
   },
   'radical:女': {
-    meaningMnemonic: 'Siluet anggun seorang Wanita yang duduk berlutut dengan kedua tangan dilipat di depan.',
+    meaningMnemonic: 'The graceful silhouette of a Woman kneeling with her arms folded neatly in front.',
   },
   'radical:力': {
-    meaningMnemonic: 'Bentuk lengan berotot yang sedang melentur menunjukkan Kekuatan besar.',
+    meaningMnemonic: 'A flexed, muscular arm showing off raw Power and strength.',
   },
   'kanji:一': {
-    meaningMnemonic: 'Hanya ada satu garis Tanah (一). Satu garis melambangkan angka Satu.',
-    readingMnemonic: 'Saat duduk sendirian di atas satu garis tanah, kulitmu terasa gatal ("itchy" → いち). Ingat: satu = いち.',
+    meaningMnemonic: 'There is only one Ground (一) stroke here. A single line stands for the number One.',
+    readingMnemonic: 'While sitting alone on this single line of ground, your skin starts getting itchy ("itchy" → いち). Remember: One = いち.',
   },
   'kanji:二': {
-    meaningMnemonic: 'Dua tumpukan garis sejajar — satu di atas dan satu di bawah, melambangkan angka Dua.',
-    readingMnemonic: 'Kamu menekuk kedua lutut ("knee" → に) di atas dua garis ini. Dua = に.',
+    meaningMnemonic: 'Two parallel strokes stacked together — one on top, one on bottom — representing the number Two.',
+    readingMnemonic: 'You bend both knees ("knee" → に) right on top of these two lines. Two = に.',
   },
   'kanji:三': {
-    meaningMnemonic: 'Tiga garis bertumpuk rapi — langit, manusia, dan bumi. Tiga garis berarti angka Tiga.',
-    readingMnemonic: 'Kamu menyapa tiga teman dengan akhiran sopan "-san" (さん). Tiga = さん.',
+    meaningMnemonic: 'Three neatly stacked lines — heaven, humanity, and earth. Three strokes mean Three.',
+    readingMnemonic: 'You greet three friends politely with the suffix "-san" (さん). Three = さん.',
   },
   'kanji:八': {
-    meaningMnemonic: 'Radikal Sirip (八) yang terbelah dua seperti angka Delapan yang terbuka di bawah.',
-    readingMnemonic: 'Ada delapan anak ayam baru menetas ("hatch" → はち) dan langsung berenang memakai siripnya.',
+    meaningMnemonic: 'The Fins (八) radical splitting cleanly into two strokes, representing the number Eight.',
+    readingMnemonic: 'Eight baby chicks hatch ("hatch" → はち) out of their eggs and immediately swim away with their fins.',
   },
   'kanji:十': {
-    meaningMnemonic: 'Radikal Salib (十) menandakan persimpangan sempurna yang mengumpulkan semua jari menjadi Sepuluh.',
-    readingMnemonic: 'Kamu meminum sepuluh gelas jus ("juice" → じゅう) tepat di persimpangan salib.',
+    meaningMnemonic: 'The Cross (十) radical marks a complete crossroads bringing all ten fingers together: Ten.',
+    readingMnemonic: 'You drink ten tall glasses of juice ("juice" → じゅう) right at the crossroads.',
   },
   'kanji:口': {
-    meaningMnemonic: 'Sama persis dengan radikal Mulut (口): sebuah rongga terbuka untuk makan dan berbicara.',
-    readingMnemonic: 'Dari mulut terbuka keluar suara batuk ("cough" → こう). On\'yomi: こう.',
+    meaningMnemonic: 'Identical to the Mouth (口) radical: an open square cavity used for eating and speaking.',
+    readingMnemonic: 'Out of your wide-open mouth comes a loud cough ("cough" → こう). On\'yomi: こう.',
   },
   'kanji:人': {
-    meaningMnemonic: 'Radikal Orang (人) berdiri tegak dengan dua kaki — arti kanjinya sama persis: Orang.',
-    readingMnemonic: 'Bayangkan seorang ninja (にん) melompat cepat. Ninja juga adalah Orang (にん / じん).',
+    meaningMnemonic: 'The Person (人) radical standing tall on two legs — the kanji means the exact same thing: Person.',
+    readingMnemonic: 'Picture a ninja (にん) leaping across the rooftops. Under the mask, a ninja is still a Person (にん / じん).',
   },
   'kanji:大': {
-    meaningMnemonic: 'Seorang Orang (人) merentangkan tangannya lebar-lebar untuk menunjukkan sesuatu yang Besar.',
-    readingMnemonic: 'Orang besar ini memakai dasi ("tie" → たい) raksasa berwarna mencolok. On\'yomi: たい / だい.',
+    meaningMnemonic: 'A Person (人) spreading both arms wide to show off something truly Big.',
+    readingMnemonic: 'This giant person wears an absurdly oversized tie ("tie" → たい). On\'yomi: たい / だい.',
   },
   'kanji:山': {
-    meaningMnemonic: 'Sama persis dengan radikal Gunung (山): tiga puncak tinggi menjulang.',
-    readingMnemonic: 'Kamu mendaki gunung tinggi mengendarai motor Yamaha (やま). Kun\'yomi: やま, On\'yomi: さん.',
+    meaningMnemonic: 'Identical to the Mountain (山) radical: three towering peaks.',
+    readingMnemonic: 'You ride a Yamaha (やま) motorcycle all the way up the mountain trail. Kun\'yomi: やま, On\'yomi: さん.',
   },
   'kanji:川': {
-    meaningMnemonic: 'Sama persis dengan radikal Sungai (川): tiga jalur aliran air.',
-    readingMnemonic: 'Di tepi sungai kamu melihat kawanmu ("kawa" → かわ) sedang memancing.',
+    meaningMnemonic: 'Identical to the River (川) radical: three streams of flowing water.',
+    readingMnemonic: 'A sleek Kawasaki (かわ) boat races down the river current. Kun\'yomi: かわ.',
   },
   'vocabulary:一': {
     contextSentences: [
-      { jp: '一から始めましょう。', reading: 'いちからはじめましょう。', id: 'Mari kita mulai dari satu (dari awal).' },
+      { jp: '一から始めましょう。', reading: 'いちからはじめましょう。', en: 'Let\'s start from one (from the very beginning).' },
     ],
   },
   'vocabulary:人口': {
-    meaningMnemonic: 'Gabungan Orang (人) dan Mulut (口). Menghitung berapa banyak mulut orang di suatu wilayah = Populasi!',
-    readingMnemonic: 'Gabungan On\'yomi じん (人) + こう (口) = じんこう.',
+    meaningMnemonic: 'Combines Person (人) and Mouth (口). Counting how many people\'s mouths live in an area gives you the Population!',
+    readingMnemonic: 'Standard On\'yomi compound: じん (人) + こう (口) = じんこう.',
     contextSentences: [
-      { jp: '東京の人口はとても多いです。', reading: 'とうきょうのじんこうはとてもおおいです。', id: 'Populasi Tokyo sangat banyak.' },
+      { jp: '東京の人口はとても多いです。', reading: 'とうきょうのじんこうはとてもおおいです。', en: 'Tokyo\'s population is very large.' },
     ],
   },
   'vocabulary:大人': {
-    meaningMnemonic: 'Besar (大) + Orang (人). Orang yang sudah tumbuh besar adalah Orang Dewasa.',
-    readingMnemonic: 'Bacaan khusus (jukujikun): おとな.',
+    meaningMnemonic: 'Big (大) + Person (人). A person who has grown big is an Adult.',
+    readingMnemonic: 'Irregular jukujikun reading: おとな.',
     contextSentences: [
-      { jp: '大人の切符を一枚ください。', reading: 'おとなのきっぷをいちまいください。', id: 'Tolong satu tiket dewasa.' },
+      { jp: '大人の切符を一枚ください。', reading: 'おとなのきっぷをいちまいください。', en: 'One adult ticket, please.' },
     ],
   },
   'vocabulary:日本': {
-    meaningMnemonic: 'Matahari (日) + Asal (本) = Negeri Asal Matahari Terbit, yaitu Jepang!',
+    meaningMnemonic: 'Sun (日) + Origin (本) = Land of the Rising Sun, Japan!',
     contextSentences: [
-      { jp: '来年、日本へ旅行したいです。', reading: 'らいねん、にほんへりょこうしたいです。', id: 'Tahun depan saya ingin berwisata ke Jepang.' },
+      { jp: '来年、日本へ旅行したいです。', reading: 'らいねん、にほんへりょこうしたいです。', en: 'I want to travel to Japan next year.' },
     ],
   },
   'vocabulary:火山': {
-    meaningMnemonic: 'Api (火) + Gunung (山). Gunung yang menyemburkan api adalah Gunung Berapi.',
+    meaningMnemonic: 'Fire (火) + Mountain (山). A mountain that erupts with fire is a Volcano.',
     contextSentences: [
-      { jp: 'インドネシアには多くの火山があります。', reading: 'いんどねしあにはおおくのかざんがあります。', id: 'Di Indonesia terdapat banyak gunung berapi.' },
+      { jp: '日本には多くの火山があります。', reading: 'にほんにはおおくのかざんがあります。', en: 'There are many volcanoes in Japan.' },
     ],
   },
 };
@@ -217,7 +217,7 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         acceptedMeanings,
         meaningMnemonic:
           overlay?.meaningMnemonic ??
-          `Radikal ${characters} melambangkan konsep "${primaryMeaning}". Kenali bentuk dasarnya karena radikal ini menjadi batu bata penyusun kanji di level ${level} dan selanjutnya.`,
+          `The radical ${characters} represents "${primaryMeaning}". Remember its visual shape well — it acts as a building block for kanji in Level ${level} and beyond.`,
       };
     } else if (typeNum === 1) {
       const [, , , , , , onyomi, kunyomi, primaryTypeNum, componentIds, strokes, jlpt] = tuple;
@@ -280,8 +280,8 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
           .filter(Boolean);
         item.meaningMnemonic =
           compNames.length > 0
-            ? `Kanji ${item.characters} berarti "${item.primaryMeaning}". Tersusun dari komponen radikal ${compNames.join(' + ')} — gabungkan makna visual komponen tersebut untuk mengingat artinya.`
-            : `Kanji ${item.characters} memiliki arti utama "${item.primaryMeaning}" pada Level ${item.level}.`;
+            ? `The kanji ${item.characters} means "${item.primaryMeaning}". It combines the radical components ${compNames.join(' + ')} — link these visual pieces together to lock in the meaning.`
+            : `The kanji ${item.characters} carries the primary meaning "${item.primaryMeaning}" at Level ${item.level}.`;
       }
       if (!item.readingMnemonic) {
         const isKun = item.primaryReadingType === 'kunyomi';
@@ -289,8 +289,8 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         const label = isKun ? "Kun'yomi" : "On'yomi";
         item.readingMnemonic =
           mainReadings.length > 0
-            ? `Fokus hafalkan bacaan ${label} utama: ${mainReadings.join('、 ')}. Ucapkan berulang bersama artinya "${item.primaryMeaning}" agar kuat di memori.`
-            : `Perhatikan pola bacaan kanji ${item.characters} saat muncul di berbagai kosakata.`;
+            ? `Focus on memorizing the primary ${label} reading: ${mainReadings.join('、 ')}. Say it aloud together with "${item.primaryMeaning}" to reinforce recall.`
+            : `Pay close attention to how ${item.characters} is read across vocabulary compounds.`;
       }
     } else if (item.type === 'vocabulary') {
       if (!item.meaningMnemonic) {
@@ -302,12 +302,12 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
           .filter(Boolean);
         item.meaningMnemonic =
           compNames.length > 0
-            ? `Kosakata ${item.characters} (${item.partOfSpeech ?? 'Kosakata'}) berarti "${item.primaryMeaning}". Terbentuk dari kanji ${compNames.join(' + ')}.`
-            : `Kosakata ${item.characters} berarti "${item.primaryMeaning}".`;
+            ? `The vocabulary word ${item.characters} (${item.partOfSpeech ?? 'Vocabulary'}) means "${item.primaryMeaning}". It is built from the kanji ${compNames.join(' + ')}.`
+            : `The vocabulary word ${item.characters} means "${item.primaryMeaning}".`;
       }
       if (!item.readingMnemonic) {
         const readStr = (item.readings ?? []).join('、 ');
-        item.readingMnemonic = `Dibaca ${readStr}. Dengarkan pelafalan audionya dan perhatikan bagaimana bacaan kanji penyusunnya berpadu dalam kata ini.`;
+        item.readingMnemonic = `Read as ${readStr}. Listen to the audio and notice how the component kanji readings combine in this word.`;
       }
     }
   }

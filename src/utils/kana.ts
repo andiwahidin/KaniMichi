@@ -200,7 +200,7 @@ export function validateMeaningAnswer(
   if (/[\u3040-\u30ff\u4e00-\u9faf]/.test(rawInput)) {
     return {
       status: 'shake',
-      message: 'Pertanyaan ini meminta ARTI (Bahasa Indonesia/Inggris), bukan bacaan Jepang.',
+      message: 'Pertanyaan ini meminta ARTI (Bahasa Inggris), bukan bacaan Jepang.',
     };
   }
 

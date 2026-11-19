@@ -674,7 +674,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
       <div className="bg-slate-900 text-white py-3 px-4 text-center text-sm font-medium border-t border-white/10">
         {currentQuestion.kind === 'meaning' ? (
           <span>
-            {getItemTypeLabel(item.type)} — <strong className="font-bold">Arti</strong>
+            {getItemTypeLabel(item.type)} — <strong className="font-bold">Arti (Bahasa Inggris)</strong>
           </span>
         ) : (
           <span>
@@ -707,7 +707,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               spellCheck={false}
               placeholder={
                 currentQuestion.kind === 'meaning'
-                  ? 'Ketik arti dalam Bahasa Indonesia / Inggris...'
+                  ? 'Ketik arti dalam Bahasa Inggris...'
                   : 'Ketik romaji (otomatis ke ひらがな)...'
               }
               className={`w-full text-center text-xl sm:text-2xl py-4 px-12 rounded-xl border-2 transition-colors focus:outline-none ${
@@ -737,7 +737,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
             <span>
               {currentQuestion.kind === 'reading'
                 ? 'IME Hiragana aktif: ketik romaji (mis. yama → やま, nn → ん)'
-                : 'Ketik arti utama, alternatif, atau sinonim pribadimu'}
+                : 'Ketik arti Bahasa Inggris, alternatif, atau sinonim pribadimu'}
             </span>
             <div className="flex items-center gap-3">
               {answerState !== 'idle' && (

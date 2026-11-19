@@ -372,7 +372,7 @@ export const LessonSession: React.FC = () => {
         <div className="bg-slate-900 text-white py-3 px-4 text-center text-sm font-semibold">
           {currentQuestion.kind === 'meaning' ? (
             <span>
-              {getItemTypeLabel(qItem.type)} — <strong>Arti</strong> (Bahasa Indonesia / Inggris)
+              {getItemTypeLabel(qItem.type)} — <strong>Arti</strong> (Bahasa Inggris)
             </span>
           ) : (
             <span>
@@ -405,7 +405,7 @@ export const LessonSession: React.FC = () => {
                 spellCheck={false}
                 placeholder={
                   currentQuestion.kind === 'meaning'
-                    ? 'Ketik arti...'
+                    ? 'Ketik arti dalam Bahasa Inggris...'
                     : 'Ketik romaji (otomatis ke ひらがな)...'
                 }
                 className={`w-full text-center text-xl sm:text-2xl py-4 px-12 rounded-xl border-2 transition-colors focus:outline-none ${
@@ -435,7 +435,7 @@ export const LessonSession: React.FC = () => {
               <span>
                 {currentQuestion.kind === 'reading'
                   ? 'Mode IME Aktif: ketik romaji (contoh: ichi → いち)'
-                  : 'Menerima arti Bahasa Indonesia maupun Bahasa Inggris'}
+                  : 'Masukkan arti Bahasa Inggris (atau sinonim pribadimu)'}
               </span>
               {answerState !== 'idle' && (
                 <button
@@ -777,7 +777,7 @@ export const LessonSession: React.FC = () => {
                         <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
                           {s.reading}
                         </p>
-                        <p className="text-sm text-slate-700 dark:text-slate-300">{s.id}</p>
+                        <p className="text-sm text-slate-700 dark:text-slate-300">{s.en}</p>
                       </div>
                       <button
                         type="button"

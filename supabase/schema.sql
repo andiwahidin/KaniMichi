@@ -264,8 +264,23 @@ create policy "Admins can delete curriculum overrides"
   on public.curriculum_overrides for delete
   using (public.is_admin());
 
+-- 6. Hak akses (GRANT) eksplisit untuk role anon & authenticated + refresh schema cache
+grant usage on schema public to anon, authenticated;
+grant execute on function public.is_admin() to anon, authenticated;
+
+grant select, insert, update on public.profiles to authenticated;
+grant select, insert, update, delete on public.user_srs_state to authenticated;
+
+grant select on public.announcements to anon, authenticated;
+grant insert, update, delete on public.announcements to authenticated;
+
+grant select on public.curriculum_overrides to anon, authenticated;
+grant insert, update, delete on public.curriculum_overrides to authenticated;
+
+notify pgrst, 'reload schema';
+
 -- ============================================================================
--- CATATAN: Jika kamu ingin menjadikan email tertentu sebagai Admin secara manual,
--- jalankan baris ini (hilangkan tanda -- di awal):
+-- CATATAN: Email ndwahidin@gmail.com otomatis dijadikan Admin.
+-- Untuk mempromosikan email lain secara manual:
 -- update public.profiles set role = 'admin' where email = 'emailkamu@gmail.com';
 -- ============================================================================
