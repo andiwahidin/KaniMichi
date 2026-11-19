@@ -20,6 +20,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { loadKanaVocabDataset } from '../data/kanaVocab';
 import {
   MINIMAL_PAIRS,
@@ -34,7 +35,11 @@ import type {
   PronunciationTargetWord,
   PronunciationWord,
 } from '../types/pronunciation';
-import { speakJapanese, stopSpeech } from '../utils/audio';
+import {
+  setExternalAudioPlaying,
+  speakJapanese,
+  stopSpeech,
+} from '../utils/audio';
 import { katakanaToHiragana, romajiToHiragana } from '../utils/kana';
 import {
   detectPitchAutocorrelation,
@@ -152,6 +157,7 @@ export const PronunciationHub: React.FC = () => {
     recordPronunciationAttempt,
   } = useApp();
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
   const progress = state.pronunciationProgress;
 
   const [kanaVocabData, setKanaVocabData] = useState<KanaVocabDataset | null>(null);
@@ -737,18 +743,26 @@ export const PronunciationHub: React.FC = () => {
       let timerId: number | null = null;
       const earParticle = word.particle ?? 'が';
       const levels = earParticle ? [...wordLevels, particleLevel] : wordLevels;
+      setExternalAudioPlaying('ear-seq', true);
       const stopTone = playPitchMelody(levels, {
         stepMs: 220,
         onComplete: () => {
           if (cancelled) return;
           timerId = window.setTimeout(() => {
-            if (!cancelled) speakJapanese(speechText, 0.88);
+            if (!cancelled) {
+              speakJapanese(speechText, 0.88, 'narrator', () => {
+                setExternalAudioPlaying('ear-seq', false);
+              });
+            } else {
+              setExternalAudioPlaying('ear-seq', false);
+            }
           }, 160);
         },
       });
       cancelAudioRef.current = () => {
         cancelled = true;
         if (timerId !== null) window.clearTimeout(timerId);
+        setExternalAudioPlaying('ear-seq', false);
         stopTone();
         stopSpeech();
       };
@@ -783,13 +797,14 @@ export const PronunciationHub: React.FC = () => {
     recordPronunciationAttempt('ear', isCorrect, earQuestion.pair.id);
   };
 
-  // Auto-advance Ear Quiz on correct answer (respecting user autoAdvanceDelayMs setting)
+  // Auto-advance Ear Quiz after audio finishes + brief hold on correct answer
   useEffect(() => {
     if (
       activeTab !== 'ear-quiz' ||
       earSelection === null ||
       earSelection !== earQuestion.targetIdx ||
       earPausedAuto ||
+      isAudioPlaying ||
       autoAdvanceDelayMs <= 0
     ) {
       return;
@@ -804,6 +819,7 @@ export const PronunciationHub: React.FC = () => {
     earQuestion.id,
     earQuestion.targetIdx,
     earPausedAuto,
+    isAudioPlaying,
     autoAdvanceDelayMs,
   ]);
 
@@ -2239,7 +2255,9 @@ export const PronunciationHub: React.FC = () => {
                     >
                       {earSelection === earQuestion.targetIdx
                         ? !earPausedAuto && autoAdvanceDelayMs > 0
-                          ? 'Tepat! Lanjut otomatis ke soal berikutnya...'
+                          ? isAudioPlaying
+                            ? 'Tepat! Menunggu audio selesai...'
+                            : 'Tepat! Lanjut otomatis ke soal berikutnya...'
                           : 'Tepat!'
                         : `Belum tepat — yang diucapkan adalah ${earQuestion.pair.words[earQuestion.targetIdx].kanji} (${earQuestion.pair.words[earQuestion.targetIdx].meaningId})`}
                     </div>
@@ -2272,6 +2290,7 @@ export const PronunciationHub: React.FC = () => {
 
                 {earSelection === earQuestion.targetIdx &&
                   !earPausedAuto &&
+                  !isAudioPlaying &&
                   autoAdvanceDelayMs > 0 && (
                     <div
                       key={earQuestion.id}

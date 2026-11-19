@@ -185,6 +185,132 @@ function loadSavedState(dataset: CurriculumDataset): UserState {
   return createStarterState(dataset);
 }
 
+function mergeRecordByRecency<T>(
+  remote: Record<string, T> | undefined,
+  local: Record<string, T> | undefined,
+  scoreFn: (entry: T) => number
+): { merged: Record<string, T>; localContributed: boolean } {
+  const result: Record<string, T> = { ...(remote ?? {}) };
+  let localContributed = false;
+
+  for (const [key, localVal] of Object.entries(local ?? {})) {
+    const remoteVal = result[key];
+    if (!remoteVal || scoreFn(localVal) > scoreFn(remoteVal)) {
+      result[key] = localVal;
+      localContributed = true;
+    }
+  }
+
+  return { merged: result, localContributed };
+}
+
+function mergeCloudAndLocalModules(
+  remote: UserState,
+  local: UserState | null
+): { merged: UserState; needsCloudPush: boolean } {
+  if (!local) {
+    return { merged: remote, needsCloudPush: false };
+  }
+
+  let needsCloudPush = false;
+
+  const grammar = mergeRecordByRecency(
+    remote.grammarProgress,
+    local.grammarProgress,
+    (g) =>
+      (g.lastReviewedAt ?? g.startedAt ?? 0) +
+      g.srsStage * 1000 +
+      (g.correctCount + g.incorrectCount) * 10
+  );
+  if (grammar.localContributed) needsCloudPush = true;
+
+  const kanaVocab = mergeRecordByRecency(
+    remote.kanaVocabProgress,
+    local.kanaVocabProgress,
+    (k) =>
+      (k.lastReviewedAt ?? k.startedAt ?? 0) +
+      k.srsStage * 1000 +
+      (k.correctCount + k.incorrectCount) * 10
+  );
+  if (kanaVocab.localContributed) needsCloudPush = true;
+
+  const reading = mergeRecordByRecency(
+    remote.readingProgress,
+    local.readingProgress,
+    (r) => (r.lastAttemptAt ?? 0) + r.attempts * 1000
+  );
+  if (reading.localContributed) needsCloudPush = true;
+
+  const listening = mergeRecordByRecency(
+    remote.listeningProgress,
+    local.listeningProgress,
+    (l) => (l.lastAttemptAt ?? 0) + l.attempts * 1000
+  );
+  if (listening.localContributed) needsCloudPush = true;
+
+  const writing = mergeRecordByRecency(
+    remote.writingProgress,
+    local.writingProgress,
+    (w) => (w.lastPracticedAt ?? 0) + w.attempts * 1000
+  );
+  if (writing.localContributed) needsCloudPush = true;
+
+  const examMap = new Map<string, MockExamResult>();
+  for (const item of remote.mockExamHistory ?? []) {
+    examMap.set(item.id, item);
+  }
+  for (const item of local.mockExamHistory ?? []) {
+    if (!examMap.has(item.id)) {
+      examMap.set(item.id, item);
+      needsCloudPush = true;
+    }
+  }
+  const mockExamHistory = Array.from(examMap.values())
+    .sort((a, b) => b.completedAt - a.completedAt)
+    .slice(0, 30);
+
+  let pronunciationProgress = remote.pronunciationProgress;
+  if (local.pronunciationProgress) {
+    const r = remote.pronunciationProgress;
+    const l = local.pronunciationProgress;
+    const rTotal = (r?.earQuizAttempts ?? 0) + (r?.speakingAttempts ?? 0);
+    const lTotal = (l.earQuizAttempts ?? 0) + (l.speakingAttempts ?? 0);
+    const mergedPracticed = Array.from(
+      new Set([...(r?.practicedPairIds ?? []), ...(l.practicedPairIds ?? [])])
+    );
+    if (
+      !r ||
+      lTotal > rTotal ||
+      mergedPracticed.length > (r.practicedPairIds?.length ?? 0)
+    ) {
+      pronunciationProgress = {
+        earQuizAttempts: Math.max(r?.earQuizAttempts ?? 0, l.earQuizAttempts ?? 0),
+        earQuizCorrect: Math.max(r?.earQuizCorrect ?? 0, l.earQuizCorrect ?? 0),
+        speakingAttempts: Math.max(r?.speakingAttempts ?? 0, l.speakingAttempts ?? 0),
+        speakingMatched: Math.max(r?.speakingMatched ?? 0, l.speakingMatched ?? 0),
+        practicedPairIds: mergedPracticed,
+        lastPracticedAt:
+          Math.max(r?.lastPracticedAt ?? 0, l.lastPracticedAt ?? 0) || null,
+      };
+      needsCloudPush = true;
+    }
+  }
+
+  return {
+    merged: {
+      ...remote,
+      grammarProgress: grammar.merged,
+      kanaVocabProgress: kanaVocab.merged,
+      readingProgress: reading.merged,
+      listeningProgress: listening.merged,
+      writingProgress: writing.merged,
+      mockExamHistory,
+      pronunciationProgress,
+    },
+    needsCloudPush,
+  };
+}
+
 function applyCurriculumOverrides(
   base: CurriculumDataset,
   overrides: Record<string, CurriculumOverride>
@@ -265,6 +391,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const stateRef = useRef<UserState | null>(null);
   const skipNextCloudSaveRef = useRef(false);
   const cloudHydratedUserRef = useRef<string | null>(null);
+  const hasPendingCloudSaveRef = useRef(false);
 
   useEffect(() => {
     stateRef.current = state;
@@ -458,9 +585,16 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       .then(async (remoteState) => {
         if (!active) return;
         if (remoteState) {
-          const reconciled = reconcileUnlocksAndLevelUp(remoteState, baseDataset).nextState;
+          const { merged, needsCloudPush } = mergeCloudAndLocalModules(
+            remoteState,
+            stateRef.current
+          );
+          const reconciled = reconcileUnlocksAndLevelUp(merged, baseDataset).nextState;
           skipNextCloudSaveRef.current = true;
           setState(reconciled);
+          if (needsCloudPush) {
+            await saveCloudSrsState(userId, reconciled);
+          }
         } else if (stateRef.current) {
           await saveCloudSrsState(userId, stateRef.current);
         }
@@ -483,7 +617,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   }, [cloudUser, baseDataset, Boolean(state)]);
 
-  // Debounced auto-save to Supabase whenever local state updates
+  // Debounced auto-save to Supabase whenever local state updates (plus immediate flush on tab hide/reload)
   useEffect(() => {
     if (!supabase || !cloudUser || !state) return;
     if (cloudHydratedUserRef.current !== cloudUser.id) return;
@@ -495,7 +629,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     const userId = cloudUser.id;
     const snapshot = state;
+    hasPendingCloudSaveRef.current = true;
+
     const timer = window.setTimeout(() => {
+      hasPendingCloudSaveRef.current = false;
       setCloudSyncing(true);
       saveCloudSrsState(userId, snapshot)
         .then(() => {
@@ -510,10 +647,37 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         .finally(() => {
           setCloudSyncing(false);
         });
-    }, 1200);
+    }, 400);
 
     return () => window.clearTimeout(timer);
   }, [cloudUser, state]);
+
+  useEffect(() => {
+    if (!supabase || !cloudUser) return;
+    const userId = cloudUser.id;
+    const flushNow = () => {
+      if (
+        !hasPendingCloudSaveRef.current ||
+        cloudHydratedUserRef.current !== userId ||
+        !stateRef.current
+      ) {
+        return;
+      }
+      hasPendingCloudSaveRef.current = false;
+      void saveCloudSrsState(userId, stateRef.current);
+    };
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') {
+        flushNow();
+      }
+    };
+    window.addEventListener('pagehide', flushNow);
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => {
+      window.removeEventListener('pagehide', flushNow);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  }, [cloudUser]);
 
   const lessonQueue = useMemo(
     () => (state && dataset ? getLessonQueue(state, dataset) : []),

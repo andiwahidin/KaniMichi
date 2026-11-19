@@ -1,4 +1,5 @@
 import type { PitchPatternType } from '../types/pronunciation';
+import { setExternalAudioPlaying } from './audio';
 
 const SMALL_KANA = new Set([
   'ゃ',
@@ -149,6 +150,8 @@ function getAudioContext(): AudioContext | null {
   return sharedAudioCtx;
 }
 
+let pitchMelodySeq = 0;
+
 /**
  * Plays a gentle musical pitch-contour guide (Low vs High mora tones) using Web Audio API
  * and calls `onStep(index)` in sync with each mora beat so the SVG pitch diagram animates live.
@@ -167,6 +170,9 @@ export function playPitchMelody(
     options.onComplete?.();
     return () => {};
   }
+
+  const sourceId = `pitch-${++pitchMelodySeq}`;
+  setExternalAudioPlaying(sourceId, true);
 
   const stepMs = options.stepMs ?? 240;
   const stepSec = stepMs / 1000;
@@ -211,6 +217,7 @@ export function playPitchMelody(
 
   const endTimer = window.setTimeout(() => {
     if (!cancelled) {
+      setExternalAudioPlaying(sourceId, false);
       options.onStep?.(null);
       options.onComplete?.();
     }
@@ -219,6 +226,7 @@ export function playPitchMelody(
 
   return () => {
     cancelled = true;
+    setExternalAudioPlaying(sourceId, false);
     timers.forEach((id) => window.clearTimeout(id));
     activeNodes.forEach((osc) => {
       try {

@@ -117,12 +117,26 @@ function isMissingTableError(err: { code?: string; message?: string } | null): b
   );
 }
 
+interface CloudModuleProgressPayload {
+  grammarProgress?: UserState['grammarProgress'];
+  kanaVocabProgress?: UserState['kanaVocabProgress'];
+  readingProgress?: UserState['readingProgress'];
+  listeningProgress?: UserState['listeningProgress'];
+  mockExamHistory?: UserState['mockExamHistory'];
+  writingProgress?: UserState['writingProgress'];
+  pronunciationProgress?: UserState['pronunciationProgress'];
+}
+
+type CloudSettingsRow = UserState['settings'] & {
+  _moduleProgress?: CloudModuleProgressPayload;
+};
+
 interface UserSrsRow {
   user_id: string;
   current_level: number;
   progress: UserState['progress'];
   history: UserState['history'];
-  settings: UserState['settings'];
+  settings: CloudSettingsRow;
   streak_days: number;
   last_active_date: string | null;
   total_reviews_done: number;
@@ -174,17 +188,32 @@ export async function fetchCloudSrsState(
   if (!data) return null;
 
   const row = data as Omit<UserSrsRow, 'user_id'>;
+  const rawSettings = (row.settings ?? {}) as Partial<CloudSettingsRow>;
+  const modules = rawSettings._moduleProgress;
+
   return {
     currentLevel: row.current_level ?? 1,
     progress: row.progress ?? {},
+    grammarProgress: modules?.grammarProgress,
+    kanaVocabProgress: modules?.kanaVocabProgress,
+    readingProgress: modules?.readingProgress,
+    listeningProgress: modules?.listeningProgress,
+    mockExamHistory: Array.isArray(modules?.mockExamHistory)
+      ? modules.mockExamHistory
+      : undefined,
+    writingProgress: modules?.writingProgress,
+    pronunciationProgress: modules?.pronunciationProgress,
     history: Array.isArray(row.history) ? row.history : [],
     settings: {
-      lessonBatchSize: row.settings?.lessonBatchSize ?? 5,
-      autoplayAudio: row.settings?.autoplayAudio ?? true,
-      darkMode: row.settings?.darkMode ?? false,
-      vacationMode: row.settings?.vacationMode ?? false,
-      vacationStartedAt: row.settings?.vacationStartedAt ?? null,
-      dailyReviewGoal: row.settings?.dailyReviewGoal ?? 25,
+      lessonBatchSize: rawSettings.lessonBatchSize ?? 5,
+      autoplayAudio: rawSettings.autoplayAudio ?? true,
+      darkMode: rawSettings.darkMode ?? false,
+      vacationMode: rawSettings.vacationMode ?? false,
+      vacationStartedAt: rawSettings.vacationStartedAt ?? null,
+      dailyReviewGoal: rawSettings.dailyReviewGoal ?? 25,
+      autoAdvanceDelayMs: rawSettings.autoAdvanceDelayMs ?? 1500,
+      includeVocabListeningQuiz: rawSettings.includeVocabListeningQuiz ?? true,
+      includeVocabPronunciationQuiz: rawSettings.includeVocabPronunciationQuiz ?? true,
     },
     streakDays: row.streak_days ?? 0,
     lastActiveDate: row.last_active_date ?? null,
@@ -198,12 +227,34 @@ export async function saveCloudSrsState(
   state: UserState
 ): Promise<void> {
   if (!supabase) return;
+  const moduleProgress: CloudModuleProgressPayload = {
+    grammarProgress: state.grammarProgress ?? {},
+    kanaVocabProgress: state.kanaVocabProgress ?? {},
+    readingProgress: state.readingProgress ?? {},
+    listeningProgress: state.listeningProgress ?? {},
+    mockExamHistory: state.mockExamHistory ?? [],
+    writingProgress: state.writingProgress ?? {},
+    pronunciationProgress: state.pronunciationProgress,
+  };
+
   const payload: UserSrsRow = {
     user_id: userId,
     current_level: state.currentLevel,
     progress: state.progress,
     history: state.history,
-    settings: state.settings,
+    settings: {
+      lessonBatchSize: state.settings.lessonBatchSize,
+      autoplayAudio: state.settings.autoplayAudio,
+      darkMode: state.settings.darkMode,
+      vacationMode: state.settings.vacationMode,
+      vacationStartedAt: state.settings.vacationStartedAt,
+      dailyReviewGoal: state.settings.dailyReviewGoal,
+      autoAdvanceDelayMs: state.settings.autoAdvanceDelayMs ?? 1500,
+      includeVocabListeningQuiz: state.settings.includeVocabListeningQuiz ?? true,
+      includeVocabPronunciationQuiz:
+        state.settings.includeVocabPronunciationQuiz ?? true,
+      _moduleProgress: moduleProgress,
+    },
     streak_days: state.streakDays,
     last_active_date: state.lastActiveDate,
     total_reviews_done: state.totalReviewsDone,

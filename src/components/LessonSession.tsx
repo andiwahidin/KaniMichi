@@ -12,8 +12,9 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem } from '../types/curriculum';
-import { speakJapanese } from '../utils/audio';
+import { speakJapanese, stopSpeech } from '../utils/audio';
 import {
   romajiToHiragana,
   validateMeaningAnswer,
@@ -51,6 +52,7 @@ export const LessonSession: React.FC = () => {
 
   const batchSize = state.settings.lessonBatchSize;
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
   const includeListening = state.settings.includeVocabListeningQuiz !== false;
   const includePronunciation = state.settings.includeVocabPronunciationQuiz !== false;
 
@@ -232,6 +234,7 @@ export const LessonSession: React.FC = () => {
     }
 
     setInputValue('');
+    stopSpeech();
     setAnswerState('idle');
     setFeedbackMsg(null);
     setShowInfo(false);
@@ -239,12 +242,13 @@ export const LessonSession: React.FC = () => {
 
   advanceQuizRef.current = advanceQuiz;
 
-  // Auto-advance smoothly after a brief hold when the answer is correct
+  // Auto-advance smoothly after audio finishes + brief hold when the answer is correct
   useEffect(() => {
     if (
       phase !== 'quiz' ||
       answerState !== 'correct' ||
       showInfo ||
+      isAudioPlaying ||
       autoAdvanceDelayMs <= 0
     ) {
       return;
@@ -257,6 +261,7 @@ export const LessonSession: React.FC = () => {
     phase,
     answerState,
     showInfo,
+    isAudioPlaying,
     autoAdvanceDelayMs,
     currentQuestion?.item.id,
     currentQuestion?.kind,
@@ -687,14 +692,27 @@ export const LessonSession: React.FC = () => {
               ) : answerState === 'incorrect' ? (
                 <XCircle className="w-4 h-4 shrink-0" />
               ) : null}
-              <span>{feedbackMsg}</span>
-              {answerState === 'correct' && !showInfo && autoAdvanceDelayMs > 0 && (
-                <div
-                  key={`${qItem.id}-${currentQuestion.kind}-${completedQuizCount}`}
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
-                  style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
-                />
-              )}
+              <span>
+                {feedbackMsg}
+                {answerState === 'correct' &&
+                  !showInfo &&
+                  autoAdvanceDelayMs > 0 &&
+                  isAudioPlaying && (
+                    <span className="ml-1.5 text-xs opacity-80">
+                      (Menunggu audio selesai...)
+                    </span>
+                  )}
+              </span>
+              {answerState === 'correct' &&
+                !showInfo &&
+                !isAudioPlaying &&
+                autoAdvanceDelayMs > 0 && (
+                  <div
+                    key={`${qItem.id}-${currentQuestion.kind}-${completedQuizCount}`}
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                    style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                  />
+                )}
             </div>
           )}
 

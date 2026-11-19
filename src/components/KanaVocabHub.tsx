@@ -21,6 +21,7 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { JLPT_LEVELS } from '../data/grammar';
 import { KANA_VOCAB_CATEGORIES, loadKanaVocabDataset } from '../data/kanaVocab';
 import { JlptLevel } from '../types/grammar';
@@ -30,7 +31,7 @@ import {
   KanaVocabItem,
 } from '../types/kanaVocab';
 import { SrsStage } from '../types/curriculum';
-import { speakJapanese } from '../utils/audio';
+import { speakJapanese, stopSpeech } from '../utils/audio';
 import { katakanaToHiragana, levenshtein, romajiToHiragana } from '../utils/kana';
 import {
   formatRelativeTime,
@@ -163,6 +164,7 @@ export const KanaVocabHub: React.FC = () => {
   const includeListening = state.settings.includeVocabListeningQuiz !== false;
   const includePronunciation = state.settings.includeVocabPronunciationQuiz !== false;
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceQueueRef = useRef<() => void>(() => {});
 
@@ -562,6 +564,7 @@ export const KanaVocabHub: React.FC = () => {
 
   const advanceQueue = () => {
     if (!currentEntry || feedback.status === 'idle') return;
+    stopSpeech();
 
     if (feedback.status === 'incorrect') {
       const remaining = quizQueue.slice(1);
@@ -597,7 +600,7 @@ export const KanaVocabHub: React.FC = () => {
 
   advanceQueueRef.current = advanceQueue;
 
-  // Auto-advance smoothly after a brief hold when the answer is correct
+  // Auto-advance smoothly after audio finishes + brief hold when the answer is correct
   useEffect(() => {
     const inQuiz =
       mode === 'review' ||
@@ -605,7 +608,13 @@ export const KanaVocabHub: React.FC = () => {
       (mode === 'lesson' && lessonPhase === 'quiz');
     const isCorrect =
       feedback.status === 'correct' || feedback.status === 'typo-accepted';
-    if (!inQuiz || !isCorrect || showNoteDrawer || autoAdvanceDelayMs <= 0) {
+    if (
+      !inQuiz ||
+      !isCorrect ||
+      showNoteDrawer ||
+      isAudioPlaying ||
+      autoAdvanceDelayMs <= 0
+    ) {
       return;
     }
     const timer = window.setTimeout(() => {
@@ -617,6 +626,7 @@ export const KanaVocabHub: React.FC = () => {
     lessonPhase,
     feedback.status,
     showNoteDrawer,
+    isAudioPlaying,
     autoAdvanceDelayMs,
     currentEntry?.item.id,
     activeQuestionKind,
@@ -1332,11 +1342,15 @@ export const KanaVocabHub: React.FC = () => {
                   >
                     {feedback.status === 'correct'
                       ? !showNoteDrawer && autoAdvanceDelayMs > 0
-                        ? 'Benar! Lanjut otomatis...'
+                        ? isAudioPlaying
+                          ? 'Benar! Menunggu audio selesai...'
+                          : 'Benar! Lanjut otomatis...'
                         : 'Benar!'
                       : feedback.status === 'typo-accepted'
                       ? !showNoteDrawer && autoAdvanceDelayMs > 0
-                        ? 'Benar (typo diterima)! Lanjut otomatis...'
+                        ? isAudioPlaying
+                          ? 'Benar (typo diterima)! Menunggu audio selesai...'
+                          : 'Benar (typo diterima)! Lanjut otomatis...'
                         : 'Benar (sedikit typo diterima)!'
                       : activeQuestionKind === 'context'
                       ? `Belum tepat — Jawaban benar: ${item.word}`
@@ -1439,6 +1453,7 @@ export const KanaVocabHub: React.FC = () => {
 
               {(feedback.status === 'correct' || feedback.status === 'typo-accepted') &&
                 !showNoteDrawer &&
+                !isAudioPlaying &&
                 autoAdvanceDelayMs > 0 && (
                   <div
                     key={`${item.id}-${activeQuestionKind}-${completedQuestions}`}

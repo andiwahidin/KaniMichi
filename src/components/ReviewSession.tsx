@@ -15,8 +15,9 @@ import {
   XCircle,
 } from 'lucide-react';
 import { ReviewOutcome, useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem, ExtraStudyMode } from '../types/curriculum';
-import { speakJapanese } from '../utils/audio';
+import { speakJapanese, stopSpeech } from '../utils/audio';
 import {
   romajiToHiragana,
   validateMeaningAnswer,
@@ -155,6 +156,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
   const [sessionFinished, setSessionFinished] = useState(false);
 
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceToNextRef = useRef<() => void>(() => {});
   const currentQuestion = queue[0];
@@ -292,17 +294,19 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     setAnswerState('idle');
     setFeedbackMsg(null);
     setShowInfo(false);
+    stopSpeech();
     setSrsToast(null);
   };
 
   advanceToNextRef.current = advanceToNext;
 
-  // Auto-advance smoothly after a brief hold when the answer is correct
+  // Auto-advance smoothly after audio finishes + brief hold when the answer is correct
   useEffect(() => {
     if (
       sessionFinished ||
       answerState !== 'correct' ||
       showInfo ||
+      isAudioPlaying ||
       autoAdvanceDelayMs <= 0
     ) {
       return;
@@ -315,6 +319,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     sessionFinished,
     answerState,
     showInfo,
+    isAudioPlaying,
     autoAdvanceDelayMs,
     currentQuestion?.item.id,
     currentQuestion?.kind,
@@ -1041,14 +1046,27 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
             ) : answerState === 'incorrect' ? (
               <XCircle className="w-4 h-4 shrink-0" />
             ) : null}
-            <span>{feedbackMsg}</span>
-            {answerState === 'correct' && !showInfo && autoAdvanceDelayMs > 0 && (
-              <div
-                key={`${item.id}-${currentQuestion.kind}-${answeredTotalCount}`}
-                className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
-                style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
-              />
-            )}
+            <span>
+              {feedbackMsg}
+              {answerState === 'correct' &&
+                !showInfo &&
+                autoAdvanceDelayMs > 0 &&
+                isAudioPlaying && (
+                  <span className="ml-1.5 text-xs opacity-80">
+                    (Menunggu audio selesai...)
+                  </span>
+                )}
+            </span>
+            {answerState === 'correct' &&
+              !showInfo &&
+              !isAudioPlaying &&
+              autoAdvanceDelayMs > 0 && (
+                <div
+                  key={`${item.id}-${currentQuestion.kind}-${answeredTotalCount}`}
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                  style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                />
+              )}
           </div>
         )}
 

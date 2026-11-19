@@ -19,6 +19,7 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { JLPT_LEVELS, loadGrammarDataset } from '../data/grammar';
 import {
   GrammarDataset,
@@ -26,7 +27,7 @@ import {
   JlptLevel,
 } from '../types/grammar';
 import { SrsStage } from '../types/curriculum';
-import { speakJapanese } from '../utils/audio';
+import { speakJapanese, stopSpeech } from '../utils/audio';
 import { katakanaToHiragana, romajiToHiragana } from '../utils/kana';
 import {
   formatRelativeTime,
@@ -122,6 +123,7 @@ export const GrammarHub: React.FC = () => {
   const [sessionDone, setSessionDone] = useState(false);
 
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceQueueRef = useRef<() => void>(() => {});
 
@@ -387,6 +389,7 @@ export const GrammarHub: React.FC = () => {
 
   const advanceQueue = () => {
     if (!currentEntry || feedback.status === 'idle') return;
+    stopSpeech();
 
     if (feedback.status === 'incorrect') {
       // Re-queue failed item a couple positions later so user practices it again
@@ -424,7 +427,7 @@ export const GrammarHub: React.FC = () => {
 
   advanceQueueRef.current = advanceQueue;
 
-  // Auto-advance smoothly after a brief hold when the answer is correct
+  // Auto-advance smoothly after audio finishes + brief hold when the answer is correct
   useEffect(() => {
     const inQuiz =
       mode === 'review' ||
@@ -434,6 +437,7 @@ export const GrammarHub: React.FC = () => {
       !inQuiz ||
       feedback.status !== 'correct' ||
       showGrammarInfo ||
+      isAudioPlaying ||
       autoAdvanceDelayMs <= 0
     ) {
       return;
@@ -447,6 +451,7 @@ export const GrammarHub: React.FC = () => {
     lessonPhase,
     feedback.status,
     showGrammarInfo,
+    isAudioPlaying,
     autoAdvanceDelayMs,
     currentEntry?.point.id,
   ]);
@@ -1075,7 +1080,9 @@ export const GrammarHub: React.FC = () => {
                   >
                     {feedback.status === 'correct'
                       ? !showGrammarInfo && autoAdvanceDelayMs > 0
-                        ? 'Benar! Lanjut otomatis...'
+                        ? isAudioPlaying
+                          ? 'Benar! Menunggu audio selesai...'
+                          : 'Benar! Lanjut otomatis...'
                         : 'Benar!'
                       : `Belum tepat — Jawaban benar: ${pt.quiz.answer}`}
                   </div>
@@ -1147,6 +1154,7 @@ export const GrammarHub: React.FC = () => {
 
               {feedback.status === 'correct' &&
                 !showGrammarInfo &&
+                !isAudioPlaying &&
                 autoAdvanceDelayMs > 0 && (
                   <div
                     key={`${pt.id}-${sessionResults.length}`}
