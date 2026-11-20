@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   AlertCircle,
   ArrowRight,
@@ -20,6 +20,7 @@ import {
   Volume2,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import {
   buildKanjiWritingEntries,
   getCharacterStrokePaths,
@@ -35,7 +36,7 @@ import {
   WritingMode,
   WritingScript,
 } from '../types/writing';
-import { speakJapanese } from '../utils/audio';
+import { speakJapanese, stopSpeech } from '../utils/audio';
 import { evaluateFreehandDrawing } from '../utils/strokeGeometry';
 import { WritingCanvas } from './WritingCanvas';
 
@@ -391,8 +392,13 @@ export const WritingHub: React.FC = () => {
     setSelectedChar(queue[0].char);
   };
 
+  const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
+  const isAudioPlaying = useIsAudioPlaying();
+  const advanceDrillRef = useRef<() => void>(() => {});
+
   const advanceDrill = () => {
     if (!drill || !completedBanner) return;
+    stopSpeech();
     const nextResults = [
       ...drill.results,
       {
@@ -418,6 +424,31 @@ export const WritingHub: React.FC = () => {
       setSelectedChar(drill.queue[nextIndex].char);
     }
   };
+
+  advanceDrillRef.current = advanceDrill;
+
+  // Auto-advance Writing Drill after completion audio finishes + brief hold
+  useEffect(() => {
+    if (
+      !drill ||
+      drill.finished ||
+      !completedBanner ||
+      isAudioPlaying ||
+      autoAdvanceDelayMs <= 0
+    ) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      advanceDrillRef.current();
+    }, autoAdvanceDelayMs);
+    return () => window.clearTimeout(timer);
+  }, [
+    drill?.index,
+    drill?.finished,
+    completedBanner,
+    isAudioPlaying,
+    autoAdvanceDelayMs,
+  ]);
 
   const activeProgress = writingProgressMap[activeEntry.char];
   const totalStrokes = strokePaths?.length ?? activeEntry.strokes ?? 0;
@@ -799,17 +830,24 @@ export const WritingHub: React.FC = () => {
 
             {/* Completion CTA Strip (Next Character / Advance Drill / Retry) */}
             {completedBanner && (
-              <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl border border-emerald-200 dark:border-emerald-900 bg-emerald-50/60 dark:bg-emerald-950/25">
+              <div className="relative overflow-hidden flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl border border-emerald-200 dark:border-emerald-900 bg-emerald-50/60 dark:bg-emerald-950/25">
                 <div className="text-xs sm:text-sm text-emerald-900 dark:text-emerald-200 font-medium">
                   Skor <strong className="font-mono-num">{completedBanner.score}%</strong> ·{' '}
-                  {mode === 'learn'
+                  {drill && autoAdvanceDelayMs > 0
+                    ? isAudioPlaying
+                      ? 'Menunggu audio selesai...'
+                      : 'Lanjut otomatis ke karakter berikutnya...'
+                    : mode === 'learn'
                     ? 'Siap diuji tanpa bayangan?'
                     : 'Penguasaan tersimpan otomatis ke akunmu.'}
                 </div>
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    onClick={() => resetCanvasState(mode)}
+                    onClick={() => {
+                      stopSpeech();
+                      resetCanvasState(mode);
+                    }}
                     className="min-h-[40px] px-3 py-1.5 rounded-lg border border-emerald-300 dark:border-emerald-800 text-xs font-semibold text-emerald-800 dark:text-emerald-200 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 cursor-pointer"
                   >
                     Tulis Ulang
@@ -845,6 +883,13 @@ export const WritingHub: React.FC = () => {
                     </button>
                   )}
                 </div>
+                {drill && !isAudioPlaying && autoAdvanceDelayMs > 0 && (
+                  <div
+                    key={`${activeEntry.char}-${drill.index}`}
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500/75 dark:bg-emerald-400/75 animate-auto-advance"
+                    style={{ animationDuration: `${autoAdvanceDelayMs}ms` }}
+                  />
+                )}
               </div>
             )}
 

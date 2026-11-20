@@ -68,10 +68,16 @@ export function subscribeAudioPlaying(listener: () => void): () => void {
 }
 
 let speechToken = 0;
+let activeUtterance: SpeechSynthesisUtterance | null = null;
+let speechStartTimer: number | null = null;
 let speechPollTimer: number | null = null;
 let speechWatchdogTimer: number | null = null;
 
 function clearSpeechMonitors(): void {
+  if (speechStartTimer !== null) {
+    window.clearTimeout(speechStartTimer);
+    speechStartTimer = null;
+  }
   if (speechPollTimer !== null) {
     window.clearInterval(speechPollTimer);
     speechPollTimer = null;
@@ -87,6 +93,7 @@ function clearSpeechMonitors(): void {
  */
 export function stopSpeech(): void {
   speechToken += 1;
+  activeUtterance = null;
   clearSpeechMonitors();
   setExternalAudioPlaying('tts', false);
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
@@ -99,8 +106,8 @@ export function stopSpeech(): void {
 
 /**
  * Speak a single Japanese utterance using Web Speech API (ja-JP).
- * Tracks live playback state reliably (including browser onend fallback monitors)
- * and gracefully degrades if speechSynthesis is unavailable.
+ * Tracks live playback state reliably across desktop and mobile browsers (Android Chrome/Opera/Safari)
+ * so auto-advance always waits until audio has genuinely finished playing.
  */
 export function speakJapanese(
   text: string,
@@ -127,6 +134,7 @@ export function speakJapanese(
     if (settled) return;
     settled = true;
     if (myToken === speechToken) {
+      activeUtterance = null;
       clearSpeechMonitors();
       setExternalAudioPlaying('tts', false);
     }
@@ -134,52 +142,102 @@ export function speakJapanese(
   };
 
   try {
-    window.speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    const wasSpeaking = synth.speaking || synth.pending;
+    synth.cancel();
+    // Mark audio playing synchronously so quiz auto-advance timers pause immediately
     setExternalAudioPlaying('tts', true);
 
-    const utterance = new SpeechSynthesisUtterance(clean);
-    utterance.lang = 'ja-JP';
-    utterance.rate = rate;
-
-    const jaVoices = pickJapaneseVoices();
-    const { voice, pitch } = getVoiceAndPitch(role, jaVoices);
-    utterance.pitch = pitch;
-    if (voice) {
-      utterance.voice = voice;
-    }
-
-    let hasStarted = false;
-    const startedAt = Date.now();
-
-    utterance.onstart = () => {
-      if (myToken !== speechToken) return;
-      hasStarted = true;
-    };
-    utterance.onend = finish;
-    utterance.onerror = finish;
-
-    // Fallback monitor in case mobile/desktop browsers silently drop utterance.onend
-    speechPollTimer = window.setInterval(() => {
-      if (myToken !== speechToken) {
-        clearSpeechMonitors();
-        return;
-      }
-      const synth = window.speechSynthesis;
-      const elapsed = Date.now() - startedAt;
-      if (hasStarted && !synth.speaking && !synth.pending) {
-        finish();
-      } else if (!hasStarted && elapsed > 1800 && !synth.speaking && !synth.pending) {
-        finish();
-      }
-    }, 220);
-
-    const maxDurationMs = Math.min(
-      30000,
-      Math.max(4500, Math.round((clean.length * 420) / Math.max(0.5, rate)) + 3000)
+    const safeRate = Math.max(0.5, Math.min(2, rate));
+    const estimatedMs = Math.max(
+      900,
+      Math.round((clean.length * 195) / safeRate) + 450
     );
-    speechWatchdogTimer = window.setTimeout(finish, maxDurationMs);
 
-    window.speechSynthesis.speak(utterance);
+    const startSpeaking = () => {
+      if (myToken !== speechToken) return;
+      try {
+        const utterance = new SpeechSynthesisUtterance(clean);
+        utterance.lang = 'ja-JP';
+        utterance.rate = safeRate;
+
+        const jaVoices = pickJapaneseVoices();
+        const { voice, pitch } = getVoiceAndPitch(role, jaVoices);
+        utterance.pitch = pitch;
+        if (voice) {
+          utterance.voice = voice;
+        }
+
+        // Keep strong module reference to prevent Chromium/Android GC from dropping onend
+        activeUtterance = utterance;
+
+        let hasStarted = false;
+        let quietTicks = 0;
+        const startedAt = Date.now();
+
+        utterance.onstart = () => {
+          if (myToken !== speechToken) return;
+          hasStarted = true;
+          quietTicks = 0;
+        };
+        utterance.onend = () => {
+          if (myToken !== speechToken) return;
+          finish();
+        };
+        utterance.onerror = (ev) => {
+          if (myToken !== speechToken) return;
+          // Ignore stale cancellation errors if another utterance replaced us
+          if (ev.error === 'interrupted' || ev.error === 'canceled') {
+            finish();
+            return;
+          }
+          finish();
+        };
+
+        // Mobile-safe fallback monitor in case browser silently drops utterance.onend
+        speechPollTimer = window.setInterval(() => {
+          if (myToken !== speechToken) {
+            clearSpeechMonitors();
+            return;
+          }
+          const elapsed = Date.now() - startedAt;
+          const isQuiet = !synth.speaking && !synth.pending;
+
+          if (isQuiet) {
+            quietTicks += 1;
+          } else {
+            quietTicks = 0;
+            hasStarted = true;
+          }
+
+          if (hasStarted && quietTicks >= 3 && elapsed >= Math.min(1000, estimatedMs * 0.45)) {
+            finish();
+          } else if (!hasStarted && quietTicks >= 3 && elapsed >= Math.max(2600, estimatedMs)) {
+            finish();
+          }
+        }, 250);
+
+        const maxDurationMs = Math.min(
+          35000,
+          Math.max(6000, Math.round(estimatedMs * 2.2) + 3000)
+        );
+        speechWatchdogTimer = window.setTimeout(finish, maxDurationMs);
+
+        synth.speak(utterance);
+      } catch {
+        finish();
+      }
+    };
+
+    // On Chromium/Android, brief pause after cancel() avoids dropping the next utterance
+    if (wasSpeaking) {
+      speechStartTimer = window.setTimeout(() => {
+        speechStartTimer = null;
+        startSpeaking();
+      }, 60);
+    } else {
+      startSpeaking();
+    }
   } catch {
     finish();
   }
@@ -231,6 +289,7 @@ export function playDialogueSequence(
   const speakAt = (idx: number) => {
     if (cancelled) return;
     if (idx >= cues.length) {
+      activeUtterance = null;
       setExternalAudioPlaying('dialogue', false);
       options.onComplete?.();
       return;
@@ -250,6 +309,8 @@ export function playDialogueSequence(
       if (voice) {
         utterance.voice = voice;
       }
+
+      activeUtterance = utterance;
 
       const nextStep = () => {
         if (cancelled) return;
@@ -271,6 +332,7 @@ export function playDialogueSequence(
       window.speechSynthesis.speak(utterance);
     } catch {
       if (!cancelled) {
+        activeUtterance = null;
         setExternalAudioPlaying('dialogue', false);
         options.onError?.();
       }

@@ -1047,15 +1047,15 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               <XCircle className="w-4 h-4 shrink-0" />
             ) : null}
             <span>
-              {feedbackMsg}
               {answerState === 'correct' &&
-                !showInfo &&
-                autoAdvanceDelayMs > 0 &&
-                isAudioPlaying && (
-                  <span className="ml-1.5 text-xs opacity-80">
-                    (Menunggu audio selesai...)
-                  </span>
-                )}
+              !showInfo &&
+              autoAdvanceDelayMs > 0 &&
+              isAudioPlaying
+                ? feedbackMsg.replace(
+                    /Lanjut otomatis\.\.\./,
+                    'Menunggu audio selesai...'
+                  )
+                : feedbackMsg}
             </span>
             {answerState === 'correct' &&
               !showInfo &&
