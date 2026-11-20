@@ -1,0 +1,311 @@
+{
+  "level": 3,
+  "pack": "n3-pack2",
+  "items": [
+    {
+      "id": "l-n3-11",
+      "jlpt": 3,
+      "taskType": "kadai",
+      "titleJp": "プレゼン前[まえ]のプリンター故障[こしょう]",
+      "titleEn": "Printer Jam Before a Presentation",
+      "situationEn": "Two colleagues deal with a jammed office printer 20 minutes before a client meeting.",
+      "introJp": "会社[かいしゃ]で女[おんな]の人[ひと]と男[おとこ]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]はこのあとどうしますか。",
+      "introEn": "A woman and a man are talking at an office. What will the man do next?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "困[こま]ったな、三階[さんがい]のプリンター、また紙[かみ]が詰[つ]まっちゃったよ。あと二十分[にじゅっぷん]で会議[かいぎ]が始[はじ]まるのに。",
+          "en": "Oh no, the 3rd-floor printer jammed again. And the meeting starts in 20 minutes!"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "何部[なんぶ]印刷[いんさつ]する予定[よてい]だったんですか。",
+          "en": "How many copies were you planning to print?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "二十部[にじゅうぶ]なんだけど、まだ五部[ごぶ]しか出[で]てないんだ。修理[しゅうり]を呼[よ]んでいたら間[ま]に合[あ]わないよね。",
+          "en": "Twenty copies, and only five have come out. Calling repair won't make it in time."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "修理[しゅうり]の連絡[れんらく]は私[わたし]が総務[そうむ]にしておきますよ。佐藤[さとう]さんはデータを持[も]って五階[ごかい]のコピー機[き]で残[のこ]りを印刷[いんさつ]してきてください。",
+          "en": "I'll contact General Affairs for repairs. Sato-san, please take the file and print the remaining copies on the 5th-floor copier."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "助[たす]かるよ！じゃあ、USBに入[い]れてすぐ五階[ごかい]へ行[い]ってくるね。",
+          "en": "You're a lifesaver! I'll put it on a USB drive and head to the 5th floor right away."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]はこのあとどうしますか。",
+      "questionEn": "What will the man do next?",
+      "choices": [
+        "総務[そうむ]に修理[しゅうり]の連絡[れんらく]をする",
+        "五階[ごかい]で残[のこ]りの資料[しりょう]を十五部[じゅうごぶ]印刷[いんさつ]する",
+        "会議[かいぎ]の開始[かいし]を二十分[にじゅっぷん]遅[おく]らせてもらう",
+        "三階[さんがい]のプリンターから詰[つ]まった紙[かみ]を直[なお]す"
+      ],
+      "choicesEn": [
+        "Contact General Affairs for repair",
+        "Print the remaining 15 copies on the 5th floor",
+        "Ask to delay the meeting by 20 minutes",
+        "Fix the jammed paper in the 3rd-floor printer"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The woman handles calling General Affairs, while the man takes the file on a USB to print the remaining copies (20 minus 5 = 15) on the 5th floor.",
+      "keyPhrases": [
+        {
+          "jp": "紙[かみ]が詰[つ]まる",
+          "reading": "かみがつまる",
+          "en": "paper jams"
+        },
+        {
+          "jp": "〜しておく",
+          "reading": "しておく",
+          "en": "to do something in advance / handle it"
+        },
+        {
+          "jp": "助[たす]かる",
+          "reading": "たすかる",
+          "en": "that's a huge help; lifesaver"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-12",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "カフェが週末[しゅうまつ]のWi-Fiを止[と]めた理由[りゆう]",
+      "titleEn": "Why the Café Stopped Weekend Free Wi-Fi",
+      "situationEn": "A café owner explains a new weekend policy to a regular customer.",
+      "introJp": "カフェで店員[てんいん]と客[きゃく]が話[はな]しています。このカフェが土日[どにち]に無料[むりょう]Wi-Fiを止[と]めた理由[りゆう]は何[なに]ですか。",
+      "introEn": "A café clerk and a customer are talking. Why did the café stop offering free Wi-Fi on weekends?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "あれ、今日[きょう]はWi-Fiがつながらないんですね。機械[きかい]の調子[ちょうし]が悪[わる]いんですか。",
+          "en": "Oh, the Wi-Fi isn't connecting today. Is the router acting up?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "いえ、故障[こしょう]ではないんです。実[じつ]は先月[せんげつ]から、土曜日[どようび]と日曜日[にちようび]だけ無料[むりょう]Wi-Fiを休止[きゅうし]しているんです。",
+          "en": "No, it's not broken. Actually, starting last month, we suspended free Wi-Fi on Saturdays and Sundays only."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "そうなんですか。通信費[つうしんひ]が高[たか]くなったんですか。",
+          "en": "Really? Did the internet bill go up?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "いいえ、週末[しゅうまつ]にパソコンで長時間[ちょうじかん]仕事[しごと]をする方[かた]が増[ふ]えて、お茶[ちゃ]を飲[の]みに来[き]たお客様[きゃくさま]が席[せき]に座[すわ]れないことが続[つづ]いたんです。平日[へいじつ]はこれまで通[どお]り使[つか]えますよ。",
+          "en": "No—more people were working on laptops for hours on weekends, so customers coming for coffee repeatedly couldn't find a seat. On weekdays you can still use it as before."
+        }
+      ],
+      "questionJp": "このカフェが土日[どにち]に無料[むりょう]Wi-Fiを止[と]めた理由[りゆう]は何[なに]ですか。",
+      "questionEn": "Why did the café stop free Wi-Fi on weekends?",
+      "choices": [
+        "Wi-Fiの機械[きかい]が故障[こしょう]したから",
+        "インターネットの通信費[つうしんひ]を節約[せつやく]するため",
+        "パソコンで長居[ながい]する客[きゃく]が増[ふ]え、他[ほか]の客[きゃく]が座[すわ]れなくなったから",
+        "店内[てんない]で静[しず]かに会話[かいわ]をしてほしいから"
+      ],
+      "choicesEn": [
+        "Because the Wi-Fi router broke",
+        "To save on internet communication costs",
+        "Because long-staying laptop users left no seats for other customers",
+        "Because they wanted customers to chat quietly"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The clerk rejects both malfunction and cost, explaining that long-staying laptop workers prevented weekend coffee guests from getting seats.",
+      "keyPhrases": [
+        {
+          "jp": "休止[きゅうし]する",
+          "reading": "きゅうしする",
+          "en": "to suspend; pause"
+        },
+        {
+          "jp": "これまで通[どお]り",
+          "reading": "これまでどおり",
+          "en": "as before; as usual"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-13",
+      "jlpt": 3,
+      "taskType": "gaiyou",
+      "titleJp": "語学[ごがく]学習[がくしゅう]を続[つづ]ける「小[ちい]さな習慣[しゅうかん]」",
+      "titleEn": "Podcast on Micro-Habits for Language Learners",
+      "situationEn": "A language coach speaks on an educational podcast about sustaining daily study.",
+      "introJp": "ラジオで語学[ごがく]の先生[せんせい]が話[はな]しています。先生[せんせい]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "introEn": "A language teacher is speaking on the radio. What is the main point the teacher wants to convey?",
+      "lines": [
+        {
+          "speaker": "Coach",
+          "role": "female",
+          "jp": "外国語[がいこくご]の勉強[べんきょう]を始[はじ]めた人[ひと]の多[おお]くが、「毎日[まいにち]二時間[にじかん]勉強[べんきょう]する」といった高[たか]い目標[もくひょう]を立[た]ててしまいます。",
+          "en": "Many people who start studying a foreign language set lofty goals like \"I will study two hours every day.\""
+        },
+        {
+          "speaker": "Coach",
+          "role": "female",
+          "jp": "すると、仕事[しごと]が忙[いそが]しくて一日[いちにち]でもできない日[ひ]があると、「自分[じぶん]には無理[むり]だ」と挫折[ざせつ]しやすくなるのです。",
+          "en": "Then, when work gets busy and they miss even a single day, they easily get discouraged thinking \"I can't do this.\""
+        },
+        {
+          "speaker": "Coach",
+          "role": "female",
+          "jp": "大切[たいせつ]なのは、たとえ五分[ごふん]でも「歯[は]を磨[みが]いたあとに単語[たんご]を三[みっ]つ見[み]る」というように、すでに毎日[まいにち]している行動[こうどう]に小[ちい]さく結[むす]びつけることです。やる気[き]に頼[たよ]らず、無理[むり]なく続[つづ]けられる仕組み[しくみ]を作[つく]りましょう。",
+          "en": "What matters is tying a tiny habit—even five minutes, like reviewing three words after brushing your teeth—to an action you already do daily. Don't rely on willpower; build a system you can sustain effortlessly."
+        }
+      ],
+      "questionJp": "先生[せんせい]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "questionEn": "What is the teacher's main message?",
+      "choices": [
+        "最初[さいしょ]から毎日[まいにち]二時間[にじかん]以上[いじょう]勉強[べんきょう]する決意[けつい]が必要[ひつよう]だ。",
+        "日常[にちじょう]の習慣[しゅうかん]に小[ちい]さな学習[がくしゅう]を結[むす]びつけ、無理[むり]なく続[つづ]ける仕組み[しくみ]が大切[たいせつ]だ。",
+        "仕事[しごと]が忙[いそが]しい時期[じき]は外国語[がいこくご]の勉強[べんきょう]を休[やす]むべきだ。",
+        "単語[たんご]を覚[おぼ]えるときは夜[よる]より朝[あさ]のほうが記憶[きおく]に残りやすい。"
+      ],
+      "choicesEn": [
+        "You need determination to study over 2 hours a day from the start.",
+        "Linking tiny study habits to daily routines creates a sustainable system.",
+        "You should pause language study whenever work gets busy.",
+        "Morning is better than night for memorizing vocabulary."
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The teacher advises against overly ambitious targets and instead recommends attaching a tiny study habit to an existing daily routine rather than relying on willpower.",
+      "keyPhrases": [
+        {
+          "jp": "挫折[ざせつ]する",
+          "reading": "ざせつする",
+          "en": "to give up; suffer a setback"
+        },
+        {
+          "jp": "〜に頼[たよ]らず",
+          "reading": "にたよらず",
+          "en": "without relying on ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n3-14",
+      "jlpt": 3,
+      "taskType": "sokuji",
+      "titleJp": "同僚[どうりょう]からお土産[みやげ]をもらう",
+      "titleEn": "Quick Response: Accepting a Colleague's Souvenir",
+      "situationEn": "A colleague returns from a business trip and hands you a box of local sweets.",
+      "introJp": "会社[かいしゃ]で同僚[どうりょう]がお土産[みやげ]をくれました。何[なん]と言[い]いますか。",
+      "introEn": "A colleague gives you a souvenir at the office. What should you say?",
+      "lines": [
+        {
+          "speaker": "Colleague",
+          "role": "male",
+          "jp": "これ、出張[しゅっちょう]で行[い]った京都[きょうと]のお土産[みやげ]です。よかったらどうぞ。",
+          "en": "Here's a souvenir from my business trip to Kyoto. Please take it if you'd like."
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural reply?",
+      "choices": [
+        "わあ、わざわざすみません。いただきます。",
+        "いいえ、お気[き]になさらず。",
+        "こちらこそ、お世話[せわ]になりました。"
+      ],
+      "choicesEn": [
+        "Oh, thank you for going out of your way! I'll gladly accept it.",
+        "No, please don't worry about it.",
+        "Likewise, thank you for your help."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"わざわざすみません。いただきます\" politely expresses appreciation for someone going to the trouble of buying a souvenir and accepts it warmly.",
+      "keyPhrases": [
+        {
+          "jp": "わざわざ",
+          "reading": "わざわざ",
+          "en": "going out of one's way"
+        },
+        {
+          "jp": "いただきます",
+          "reading": "いただきます",
+          "en": "I humbly receive / accept this"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-15",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "国際[こくさい]交流[こうりゅう]ボランティアの登録[とうろく]条件[じょうけん]",
+      "titleEn": "Volunteer Registration Conditions",
+      "situationEn": "A student calls a city international center to ask about registering as an event volunteer.",
+      "introJp": "女[おんな]の学生[がくせい]が国際[こくさい]交流[こうりゅう]センターへ電話[でんわ]しています。登録[とうろく]するために必要[ひつよう]なことは何[なに]ですか。",
+      "introEn": "A female student calls an international exchange center. What is required in order to register?",
+      "lines": [
+        {
+          "speaker": "Student",
+          "role": "female",
+          "jp": "あの、来月[らいげつ]の国際[こくさい]交流[こうりゅう]祭[まつり]のボランティアに登録[とうろく]したいんですが、英語[えいご]の資格[しかく]は必要[ひつよう]ですか。",
+          "en": "Um, I'd like to register as a volunteer for next month's international festival. Do I need an English qualification?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "male",
+          "jp": "いえ、語学[ごがく]の資格[しかく]やボランティア経験[けいけん]は問[と]いませんよ。市内[しない]在住[ざいじゅう]でなくても、通学[つうがく]や通勤[つうきん]していれば大丈夫[だいじょうぶ]です。",
+          "en": "No, language certifications and prior volunteer experience aren't required. Even if you don't live in the city, commuting here for school or work is fine."
+        },
+        {
+          "speaker": "Student",
+          "role": "female",
+          "jp": "よかった！私[わたし]、市[し]の大学[だいがく]に通[かよ]っています。すぐ申し込[もうしこ]めますか。",
+          "en": "Great! I attend a university in the city. Can I apply right away?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "male",
+          "jp": "はい。ただ、登録[とうろく]前[まえ]に一回[いっかい]だけオンラインの説明会[せつめいかい]に参加[さんか]していただくことが条件[じょうけん]になっています。今週[こんしゅう]金曜[きんよう]か来週[らいしゅう]火曜[かよう]から選[えら]べますよ。",
+          "en": "Yes. However, attending one online orientation session prior to registration is a requirement. You can choose between this Friday or next Tuesday."
+        }
+      ],
+      "questionJp": "登録[とうろく]するために必[かなら]ず必要[ひつよう]なことは何[なに]ですか。",
+      "questionEn": "What is strictly required in order to register?",
+      "choices": [
+        "英語[えいご]の資格[しかく]を持[も]っていること",
+        "ボランティアの経験[けいけん]があること",
+        "市[し]の中[なか]に住[す]んでいること",
+        "事前[じぜん]にオンライン説明会[せつめいかい]へ参加[さんか]すること"
+      ],
+      "choicesEn": [
+        "Holding an English certification",
+        "Having prior volunteer experience",
+        "Living inside the city",
+        "Attending an online orientation beforehand"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Certifications, experience, and city residence are explicitly not required (commuting suffices), whereas attending one online orientation before registering is mandatory.",
+      "keyPhrases": [
+        {
+          "jp": "経験[けいけん]は問[と]わない",
+          "reading": "けいけんはとわない",
+          "en": "experience is not required"
+        },
+        {
+          "jp": "条件[じょうけん]になっている",
+          "reading": "じょうけんになっている",
+          "en": "is set as a condition"
+        }
+      ]
+    }
+  ]
+}

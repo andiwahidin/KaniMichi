@@ -1,0 +1,331 @@
+{
+  "level": 4,
+  "pack": "n4-pack2",
+  "items": [
+    {
+      "id": "rd-n4-11",
+      "jlpt": 4,
+      "order": 11,
+      "passageType": "notice",
+      "titleJp": "市民[しみん]スポーツセンター プール休館[きゅうかん]のお知[し]らせ",
+      "titleEn": "Community Sports Center Pool Closure Notice",
+      "recommendedMinutes": 4,
+      "contextEn": "Notice posted on the bulletin board of a city sports center.",
+      "paragraphs": [
+        "市民[しみん]スポーツセンターをご利用[りよう]のみなさまへ",
+        "設備[せつび]の点検[てんけん]と清掃[せいそう]のため、六月[ろくがつ]十二日[じゅうににち]（月[げつ]）から十六日[じゅうろくにち]（金[きん]）までの五日間[いつかかん]、屋内[おくない]プールをお休[やす]みいたします。",
+        "なお、二階[にかい]のトレーニング室[しつ]と体育館[たいいくかん]は通常[つうじょう]どおり午前[ごぜん]九時[くじ]から午後[ごご]九時[くじ]まで使[つか]うことができます。プール会員[かいいん]の方[かた]は、この期間[きかん]だけ無料[むりょう]でトレーニング室[しつ]をご利用[りよう]いただけます。"
+      ],
+      "translationEn": [
+        "To all users of the Community Sports Center,",
+        "Due to equipment inspection and cleaning, the indoor pool will be closed for five days from Monday, June 12 through Friday, June 16.",
+        "Please note that the 2nd-floor training room and gymnasium remain open as usual from 9:00 AM to 9:00 PM. Pool members may use the training room free of charge during this period only."
+      ],
+      "keyVocab": [
+        {
+          "word": "設備",
+          "reading": "せつび",
+          "en": "equipment; facilities"
+        },
+        {
+          "word": "点検",
+          "reading": "てんけん",
+          "en": "inspection; check"
+        },
+        {
+          "word": "通常どおり",
+          "reading": "つうじょうどおり",
+          "en": "as usual"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-11-q1",
+          "promptJp": "六月[ろくがつ]十二日[じゅうににち]から十六日[じゅうろくにち]まで、使[つか]えないのはどこですか。",
+          "promptEn": "Which facility cannot be used from June 12 to June 16?",
+          "choices": [
+            "二階[にかい]のトレーニング室[しつ]",
+            "体育館[たいいくかん]",
+            "屋内[おくない]プール",
+            "スポーツセンター全部[ぜんぶ]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Only the indoor pool (屋内プール) is closed for inspection and cleaning; the training room and gym remain open."
+        },
+        {
+          "id": "rd-n4-11-q2",
+          "promptJp": "プール会員[かいいん]の人[ひと]について、正[ただ]しいのはどれですか。",
+          "promptEn": "What is true for pool members?",
+          "choices": [
+            "六月[ろくがつ]十七日[じゅうしちにち]からもずっとトレーニング室[しつ]が無料[むりょう]になる。",
+            "プールが休[やす]みの五日間[いつかかん]は、お金[かね]を払[はら]わずにトレーニング室[しつ]を使[つか]える。",
+            "休[やす]みの間[あいだ]は体育館[たいいくかん]に入[はい]ることができない。",
+            "午前[ごぜん]中[ちゅう]しかトレーニング室[しつ]を使[つか]えない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states that during this period only (この期間だけ), pool members can use the training room for free (無料で)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-12",
+      "jlpt": 4,
+      "order": 12,
+      "passageType": "email",
+      "titleJp": "先輩[せんぱい]への教科書[きょうかしょ]のお願[ねが]い",
+      "titleEn": "Borrowing a Textbook from a Senior",
+      "recommendedMinutes": 4,
+      "contextEn": "Email from a university sophomore to a senior in the same club.",
+      "paragraphs": [
+        "佐藤[さとう]先輩[せんぱい]",
+        "お疲れ様[おつかれさま]です。二年生[にねんせい]のケンタです。先月[せんげつ]のサークル合宿[がっしゅく]では、いろいろ教[おし]えていただきありがとうございました。",
+        "ところで、来週[らいしゅう]から始[はじ]まる「日本[にほん]経済[けいざい]入門[にゅうもん]」の授業[じゅぎょう]を取[と]ることにしました。もし先輩[せんぱい]が去年[きょねん]使[つか]った教科書[きょうかしょ]をまだお持[も]ちでしたら、今[こん]学期[がっき]の間[あいだ]、貸[か]していただけないでしょうか。生協[せいきょう]の本屋[ほんや]で売[う]り切[き]れてしまって困[こま]っています。ご都合[つごう]のよいときに部室[ぶしつ]へ伺[うかが]います。"
+      ],
+      "translationEn": [
+        "Sato-senpai,",
+        "Good work! This is Kenta, a second-year student. Thank you for teaching me so many things at last month's club training camp.",
+        "By the way, I decided to take the \"Introduction to Japanese Economics\" class starting next week. If you still have the textbook you used last year, could you possibly lend it to me for this semester? It is sold out at the university co-op bookstore, so I'm in trouble. I can drop by the clubroom whenever it is convenient for you."
+      ],
+      "keyVocab": [
+        {
+          "word": "合宿",
+          "reading": "がっしゅく",
+          "en": "training camp; group stay"
+        },
+        {
+          "word": "売り切れる",
+          "reading": "うりきれる",
+          "en": "to sell out"
+        },
+        {
+          "word": "伺う",
+          "reading": "うかがう",
+          "en": "to visit (humble)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-12-q1",
+          "promptJp": "ケンタさんはどうして困[こま]っていますか。",
+          "promptEn": "Why is Kenta in trouble?",
+          "choices": [
+            "授業[じゅぎょう]の教室[きょうしつ]がわからないから。",
+            "欲[ほ]しい教科書[きょうかしょ]が本屋[ほんや]で売[う]り切[き]れてしまったから。",
+            "佐藤[さとう]先輩[せんぱい]から借[か]りた本[ほん]をなくしたから。",
+            "サークル合宿[がっしゅく]に参加[さんか]できなかったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Kenta writes \"生協の本屋で売り切れてしまって困っています\" (It sold out at the co-op bookstore, so I am in trouble)."
+        },
+        {
+          "id": "rd-n4-12-q2",
+          "promptJp": "ケンタさんは佐藤[さとう]先輩[せんぱい]に何[なに]をお願[ねが]いしていますか。",
+          "promptEn": "What is Kenta asking Sato-senpai?",
+          "choices": [
+            "今[こん]学期[がっき]の間[あいだ]、教科書[きょうかしょ]を貸[か]してほしい。",
+            "経済[けいざい]の授業[じゅぎょう]に一緒[いっしょ]に出[で]てほしい。",
+            "生協[せいきょう]の本屋[ほんや]で教科書[きょうかしょ]を買[か]ってきてほしい。",
+            "来週[らいしゅう]の合宿[がっしゅく]の予定[よてい]を教[おし]えてほしい。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "He politely asks to borrow the textbook Sato used last year for this semester (今学期の間、貸していただけないでしょうか)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-13",
+      "jlpt": 4,
+      "order": 13,
+      "passageType": "short",
+      "titleJp": "ベランダで始[はじ]めた野菜[やさい]づくり",
+      "titleEn": "Starting a Balcony Vegetable Garden",
+      "recommendedMinutes": 4,
+      "contextEn": "Short blog post about growing vegetables at home.",
+      "paragraphs": [
+        "この春[はる]、アパートの狭[せま]いベランダでミニトマトを育[そだ]て始[はじ]めました。スーパーで買[か]うほうが安[やす]いかもしれませんが、自分[じぶん]で育[そだ]ててみたかったのです。",
+        "毎朝[まいあさ]起[お]きてすぐ水[みず]をやり、葉[は]っぱの様子[ようす]を見[み]るのが楽[たの]しみになりました。最初[さいしょ]は虫[むし]がついてしまって心配[しんぱい]しましたが、本[ほん]で調[しら]べて対策[たいさく]をしたら元気[げんき]になりました。",
+        "先週[せんしゅう]、やっと赤[あか]い実[み]を三[みっ]つ収穫[しゅうかく]しました。少[すこ]し小[ちい]さかったけれど、とても甘[あま]くて感動[かんどう]しました。"
+      ],
+      "translationEn": [
+        "This spring, I started growing cherry tomatoes on my small apartment balcony. Buying them at the supermarket might be cheaper, but I wanted to try growing them myself.",
+        "Watering them first thing every morning and checking the leaves became something I look forward to. At first, bugs got on them and I was worried, but after looking up remedies in a book and taking action, they became healthy again.",
+        "Last week, I finally harvested three red tomatoes. They were a little small, yet they were very sweet and I was deeply moved."
+      ],
+      "keyVocab": [
+        {
+          "word": "育てる",
+          "reading": "そだてる",
+          "en": "to grow; raise"
+        },
+        {
+          "word": "対策",
+          "reading": "たいさく",
+          "en": "countermeasure; remedy"
+        },
+        {
+          "word": "収穫",
+          "reading": "しゅうかく",
+          "en": "harvest"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-13-q1",
+          "promptJp": "虫[むし]がついたとき、この人[ひと]はどうしましたか。",
+          "promptEn": "What did the writer do when bugs got on the plants?",
+          "choices": [
+            "野菜[やさい]づくりをあきらめてスーパーで買[か]った。",
+            "本[ほん]で調[しら]べて対策[たいさく]をした。",
+            "水[みず]をやるのを一週間[いっしゅうかん]やめた。",
+            "広[ひろ]い庭[にわ]がある家[いえ]に引[ひ]っ越[こ]した。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 says \"本で調べて対策をしたら元気になりました\" (I looked it up in a book, took countermeasures, and they recovered)."
+        },
+        {
+          "id": "rd-n4-13-q2",
+          "promptJp": "収穫[しゅうかく]したミニトマトはどうでしたか。",
+          "promptEn": "How were the harvested cherry tomatoes?",
+          "choices": [
+            "大[おお]きかったが、あまり甘[あま]くなかった。",
+            "まだ緑色[みどりいろ]で、少[すこ]し酸[す]っぱかった。",
+            "少[すこ]し小[ちい]さかったが、とても甘[あま]かった。",
+            "十個[じゅっこ]以上[いじょう]とれて、友達[ともだち]にあげた。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 notes they were slightly small but very sweet (少し小さかったけれど、とても甘くて感動しました)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-14",
+      "jlpt": 4,
+      "order": 14,
+      "passageType": "essay",
+      "titleJp": "手書[てが]きの手紙[てがみ]がうれしい理由[りゆう]",
+      "titleEn": "Why Handwritten Letters Feel Special",
+      "recommendedMinutes": 4,
+      "contextEn": "Short reflective essay on digital messaging versus handwritten letters.",
+      "paragraphs": [
+        "スマートフォンを使[つか]えば、どんなに遠[とお]くにいる友達[ともだち]にも一秒[いちびょう]でメッセージを送[おく]ることができる。とても便利[べんり]で、私[わたし]も毎日[まいにち]使[つか]っている。",
+        "しかし先日[せんじつ]、祖母[そぼ]から誕生日[たんじょうび]のハガキが届[とど]いたとき、スマートフォンでは感[かん]じられない温[あたた]かさを感[かん]じた。一文字[ひともじ]ずつ丁寧[ていねい]に書[か]かれた字[じ]を見[み]ると、私[わたし]のために時間[じかん]を使[つか]ってくれたことが伝[つた]わってくるからだ。",
+        "急[いそ]ぎの連絡[れんらく]はメッセージで十分[じゅうぶん]だが、大切[たいせつ]な感謝[かんしゃ]を伝[つた]えたいときは、手間[てま]がかかっても手書[てが]きで送[おく]る価値[かち]があると思[おも]う。"
+      ],
+      "translationEn": [
+        "With a smartphone, you can send a message in one second to a friend no matter how far away they are. It is very convenient, and I use it every day too.",
+        "However, the other day, when a birthday postcard arrived from my grandmother, I felt a warmth that cannot be felt on a smartphone. Looking at the characters written carefully one by one conveys that she spent time for me.",
+        "Text messages are plenty for urgent communication, yet when you want to express important gratitude, I think it is worth sending something handwritten even if it takes effort."
+      ],
+      "keyVocab": [
+        {
+          "word": "温かさ",
+          "reading": "あたたかさ",
+          "en": "warmth"
+        },
+        {
+          "word": "手間がかかる",
+          "reading": "てまがかかる",
+          "en": "to take time and effort"
+        },
+        {
+          "word": "価値",
+          "reading": "かち",
+          "en": "value; worth"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-14-q1",
+          "promptJp": "筆者[ひっしゃ]が祖母[そぼ]のハガキに温[あたた]かさを感[かん]じたのはなぜですか。",
+          "promptEn": "Why did the author feel warmth from the grandmother's postcard?",
+          "choices": [
+            "かわいい写真[しゃしん]がたくさんついていたから。",
+            "自分[じぶん]のために時間[じかん]を使[つか]って丁寧[ていねい]に書[か]いてくれたことが伝[つた]わるから。",
+            "スマートフォンより早[はや]く届[とど]いたから。",
+            "長[なが]い文章[ぶんしょう]でニュースが書[か]いてあったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that seeing the carefully written letters conveys that her grandmother spent time for her."
+        },
+        {
+          "id": "rd-n4-14-q2",
+          "promptJp": "筆者[ひっしゃ]の考[かんが]えに合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the author's view?",
+          "choices": [
+            "スマートフォンのメッセージは使[つか]わないほうがいい。",
+            "急[いそ]ぎの連絡[れんらく]も必[かなら]ず手紙[てがみ]で送[おく]るべきだ。",
+            "大切[たいせつ]な感謝[かんしゃ]を伝[つた]えるときは、手書[てが]きで送[おく]る価値[かち]がある。",
+            "手書[てが]きの字[じ]がきれいな人[ひと]だけ手紙[てがみ]を書[か]くべきだ。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 states digital messages are fine for urgent matters, while handwritten notes are worth the effort for important gratitude."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-15",
+      "jlpt": 4,
+      "order": 15,
+      "passageType": "short",
+      "titleJp": "初[はじ]めての新幹線[しんかんせん]",
+      "titleEn": "Riding the Shinkansen for the First Time",
+      "recommendedMinutes": 4,
+      "contextEn": "Short travel essay by an exchange student riding the bullet train.",
+      "paragraphs": [
+        "先週[せんしゅう]の土曜日[どようび]、初[はじ]めて新幹線[しんかんせん]に乗[の]って大阪[おおさか]へ行[い]きました。出発[しゅっぱつ]の前[まえ]に駅[えき]で駅弁[えきべん]とお茶[ちゃ]を買[か]いました。",
+        "新幹線[しんかんせん]はとても速[はや]いのに、中[なか]は思[おも]っていたよりずっと静[しず]かで、ほとんど揺[ゆ]れませんでした。窓側[まどがわ]の席[せき]を予約[よやく]しておいたので、晴[は]れた空[そら]の下[した]に富士山[ふじさん]をはっきり見[み]ることができました。",
+        "飛行機[ひこうき]と比[くら]べて空港[くうこう]まで行[い]く時間[じかん]がいらないので、東京[とうきょう]と大阪[おおさか]の間[あいだ]は新幹線[しんかんせん]がとても便利[べんり]だと思[おも]いました。"
+      ],
+      "translationEn": [
+        "Last Saturday, I rode the Shinkansen for the first time to go to Osaka. Before departure, I bought a station bento box and tea at the station.",
+        "Even though the Shinkansen is very fast, the inside was much quieter than I had expected and barely shook at all. Because I had reserved a window seat in advance, I was able to clearly see Mount Fuji under the clear sky.",
+        "Compared to airplanes, you do not need time to get to the airport, so I felt the Shinkansen is very convenient between Tokyo and Osaka."
+      ],
+      "keyVocab": [
+        {
+          "word": "揺れる",
+          "reading": "ゆれる",
+          "en": "to shake; sway"
+        },
+        {
+          "word": "窓側",
+          "reading": "まどがわ",
+          "en": "window side"
+        },
+        {
+          "word": "比べる",
+          "reading": "くらべる",
+          "en": "to compare"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-15-q1",
+          "promptJp": "新幹線[しんかんせん]に乗[の]ってみて、筆者[ひっしゃ]が驚[おどろ]いたり感心[かんしん]したりしたことは何[なに]ですか。",
+          "promptEn": "What impressed the writer upon riding the Shinkansen?",
+          "choices": [
+            "駅弁[えきべん]が無料[むりょう]でもらえたこと。",
+            "とても速[はや]いのに、中[なか]が静[しず]かであまり揺[ゆ]れなかったこと。",
+            "切符[きっぷ]の予約[よやく]をしなくても必[かなら]ず窓側[まどがわ]に座[すわ]れること。",
+            "飛行機[ひこうき]より運賃[うんちん]が半分[はんぶん]だったこと。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 remarks that despite its speed, the interior was far quieter than expected and barely shook."
+        },
+        {
+          "id": "rd-n4-15-q2",
+          "promptJp": "筆者[ひっしゃ]が東京[とうきょう]・大阪[おおさか]間[かん]で新幹線[しんかんせん]を便利[べんり]だと思[おも]った理由[りゆう]はどれですか。",
+          "promptEn": "Why did the writer think the Shinkansen is convenient between Tokyo and Osaka?",
+          "choices": [
+            "空港[くうこう]へ移動[いどう]する時間[じかん]が必要[ひつよう]ないから。",
+            "夜[よる]おそくまで何本[なんぼん]も走[はし]っているから。",
+            "必[かなら]ず富士山[ふじさん]が見[み]えるから。",
+            "席[せき]でコーヒーを作[つく]れるから。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Paragraph 3 states that compared to flying, you do not need time to travel to the airport (空港まで行く時間がいらないので)."
+        }
+      ]
+    }
+  ]
+}

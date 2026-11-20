@@ -21,6 +21,7 @@ import {
 import { getLevelMeta, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { CurriculumItem } from '../types/curriculum';
+import { LevelProgressBar } from './LevelProgressBar';
 import {
   buildReviewForecast,
   formatRelativeTime,
@@ -61,6 +62,7 @@ export const Dashboard: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedDay, setExpandedDay] = useState<string>(() => getTodayDateStr(now));
   const [dismissedAnnId, setDismissedAnnId] = useState<string | null>(null);
+  const [levelItemTab, setLevelItemTab] = useState<'all' | 'radical' | 'kanji' | 'vocabulary'>('all');
   const latestAnnouncement = announcements.find((a) => a.id !== dismissedAnnId) ?? null;
 
   const levelMeta = getLevelMeta(state.currentLevel);
@@ -71,7 +73,7 @@ export const Dashboard: React.FC = () => {
     [state, dataset, now]
   );
 
-  // Level Progress metrics (Radicals & Kanji of current level)
+  // Level Progress metrics (Radicals, Kanji & Vocabulary of current level)
   const levelItems = dataset.byLevel[state.currentLevel] ?? [];
   const levelRadicals = useMemo(
     () => levelItems.filter((i) => i.type === 'radical'),
@@ -81,14 +83,40 @@ export const Dashboard: React.FC = () => {
     () => levelItems.filter((i) => i.type === 'kanji'),
     [levelItems]
   );
+  const levelVocab = useMemo(
+    () => levelItems.filter((i) => i.type === 'vocabulary'),
+    [levelItems]
+  );
 
-  const guruRadicalsCount = levelRadicals.filter(
-    (r) => (state.progress[r.id]?.srsStage ?? -1) >= 5
-  ).length;
-  const guruKanjiCount = levelKanji.filter(
-    (k) => (state.progress[k.id]?.srsStage ?? -1) >= 5
-  ).length;
+  const levelMastery = useMemo(() => {
+    const countCategory = (items: CurriculumItem[]) => {
+      let mastered = 0;
+      let learning = 0;
+      for (const item of items) {
+        const stage = state.progress[item.id]?.srsStage ?? null;
+        if (stage !== null && stage >= 5) mastered += 1;
+        else if (stage !== null && stage >= 1) learning += 1;
+      }
+      return { mastered, learning, total: items.length };
+    };
+    return {
+      radicals: countCategory(levelRadicals),
+      kanji: countCategory(levelKanji),
+      vocabulary: countCategory(levelVocab),
+    };
+  }, [levelRadicals, levelKanji, levelVocab, state.progress]);
+
   const requiredKanjiForLevelUp = Math.ceil(levelKanji.length * 0.9);
+
+  const handleInspectLevelCategory = (
+    category: 'radical' | 'kanji' | 'vocabulary'
+  ) => {
+    setLevelItemTab(category);
+    const target = document.getElementById('level-items-section');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   // Next scheduled review timestamp if 0 available right now
   const nextScheduledReview = useMemo(() => {
@@ -635,6 +663,19 @@ export const Dashboard: React.FC = () => {
         </div>
       </section>
 
+      {/* LEVEL MASTERY PROGRESS BAR (RADICALS, KANJI & VOCABULARY VS TARGET) */}
+      <LevelProgressBar
+        currentLevel={state.currentLevel}
+        maxLevel={MAX_LEVEL}
+        tierLabel={levelMeta.tier}
+        radicals={levelMastery.radicals}
+        kanji={levelMastery.kanji}
+        vocabulary={levelMastery.vocabulary}
+        requiredKanjiForLevelUp={requiredKanjiForLevelUp}
+        onExploreLevels={() => setActiveView('levels')}
+        onInspectCategory={handleInspectLevelCategory}
+      />
+
       {/* PERSIAPAN JLPT — TAHAP 1 (GRAMMAR), TAHAP 2 (NON-KANJI KANA), TAHAP 3 (DOKKAI), TAHAP 4 (CHŌKAI) */}
       <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         {/* Stage 1: Grammar SRS */}
@@ -644,7 +685,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 1 · Tata Bahasa
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              100 Pola Grammar N5–N1
+              150 Pola Grammar N5–N1
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Latihan kalimat rumpang SRS dengan Pilihan Ganda &amp; IME Hiragana.
@@ -654,7 +695,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Mulai <strong className="text-slate-900 dark:text-white">{grammarSummary.started}/100</strong>
+                Mulai <strong className="text-slate-900 dark:text-white">{grammarSummary.started}/150</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
@@ -687,7 +728,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 2 · Non-Kanji SRS
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              150 Kata Kana &amp; Katakana
+              200 Kata Kana &amp; Katakana
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Adverbia, penghubung, onomatope, dan serapan katakana N5–N1.
@@ -697,7 +738,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Mulai <strong className="text-slate-900 dark:text-white">{kanaVocabSummary.started}/150</strong>
+                Mulai <strong className="text-slate-900 dark:text-white">{kanaVocabSummary.started}/200</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
@@ -730,7 +771,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 3 · Membaca Dokkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              50 Wacana &amp; 103 Soal
+              75 Wacana &amp; 156 Soal
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Pengumuman, email bisnis, esai, dan perbandingan A/B dengan timer.
@@ -740,11 +781,11 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/50</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/75</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
-                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/103</strong>
+                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/156</strong>
               </span>
             </div>
 
@@ -765,7 +806,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 4 · Mendengarkan Chōkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              50 Audio Dialog N5–N1
+              75 Audio Dialog N5–N1
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Kadai, Pointo, Gaiyō, Sokuji Ōtō &amp; Tōgō Rikai dengan transkrip.
@@ -775,7 +816,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/50</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/75</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
@@ -883,7 +924,7 @@ export const Dashboard: React.FC = () => {
               Pitch Accent &amp; Latihan Ucap
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Kurva pitch accent &amp; panduan pelafalan untuk seluruh <strong className="font-mono-num text-slate-800 dark:text-slate-200">{(dataset.counts.vocabulary + 150).toLocaleString('id-ID')}</strong> kosakata, pasangan minimal (<span className="font-jp">花</span> vs <span className="font-jp">鼻</span>, <span className="font-jp">好き</span> vs <span className="font-jp">月</span>), tes dengar, dan cek mikrofon langsung.
+              Kurva pitch accent &amp; panduan pelafalan untuk seluruh <strong className="font-mono-num text-slate-800 dark:text-slate-200">{(dataset.counts.vocabulary + 200).toLocaleString('id-ID')}</strong> kosakata, pasangan minimal (<span className="font-jp">花</span> vs <span className="font-jp">鼻</span>, <span className="font-jp">好き</span> vs <span className="font-jp">月</span>), tes dengar, dan cek mikrofon langsung.
             </p>
           </div>
 
@@ -918,156 +959,187 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* LEFT COLUMN (8 cols) */}
         <div className="lg:col-span-8 space-y-6">
-          {/* LEVEL PROGRESS CARD */}
-          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">
-            <div className="flex flex-wrap items-center justify-between gap-3">
+          {/* LEVEL ITEMS CARD (RADIKAL, KANJI & KOSAKATA) */}
+          <section
+            id="level-items-section"
+            className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-5 scroll-mt-20"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-                  Progres Level {state.currentLevel} — {levelMeta.tier}
+                  Daftar Item Level {state.currentLevel} — {levelMeta.tier}
                 </h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  {state.currentLevel < MAX_LEVEL
-                    ? `Capai tahap Guru pada minimal 90% Kanji (${requiredKanjiForLevelUp} dari ${levelKanji.length} Kanji) untuk naik ke Level ${state.currentLevel + 1}.`
-                    : 'Kamu berada di Level 60 — level tertinggi KaniMichi!'}
+                  Klik item mana saja untuk melihat mnemonik, cara baca, dan tahap SRS.
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setActiveView('levels')}
-                className="text-xs font-semibold text-[#0284C7] hover:underline whitespace-nowrap cursor-pointer"
-              >
-                Jelajahi 60 Level →
-              </button>
-            </div>
 
-            {/* Dual Progress Bars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-slate-700 dark:text-slate-300">
-                    Radikal Guru
-                  </span>
-                  <span className="font-mono-num text-slate-600 dark:text-slate-400">
-                    {guruRadicalsCount} / {levelRadicals.length}
-                  </span>
-                </div>
-                <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-[#0284C7] rounded-full transition-all duration-300"
-                    style={{
-                      width: `${
-                        levelRadicals.length
-                          ? Math.round((guruRadicalsCount / levelRadicals.length) * 100)
-                          : 0
-                      }%`,
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-slate-700 dark:text-slate-300">
-                    Kanji Guru (Syarat Naik Level)
-                  </span>
-                  <span className="font-mono-num text-slate-600 dark:text-slate-400">
-                    {guruKanjiCount} / {levelKanji.length} (target {requiredKanjiForLevelUp})
-                  </span>
-                </div>
-                <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-[#DB2777] rounded-full transition-all duration-300"
-                    style={{
-                      width: `${
-                        levelKanji.length
-                          ? Math.round((guruKanjiCount / levelKanji.length) * 100)
-                          : 0
-                      }%`,
-                    }}
-                  />
-                </div>
+              <div className="inline-flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-lg self-start sm:self-auto overflow-x-auto max-w-full">
+                {(
+                  [
+                    { id: 'all', label: 'Semua' },
+                    { id: 'radical', label: `Radikal (${levelRadicals.length})` },
+                    { id: 'kanji', label: `Kanji (${levelKanji.length})` },
+                    { id: 'vocabulary', label: `Kosakata (${levelVocab.length})` },
+                  ] as const
+                ).map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setLevelItemTab(tab.id)}
+                    className={`px-2.5 py-1.5 text-xs font-medium rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                      levelItemTab === tab.id
+                        ? 'bg-white dark:bg-[#161A22] text-slate-900 dark:text-white shadow-sm'
+                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
               </div>
             </div>
 
-            {/* Interactive Radical & Kanji Tiles */}
+            {/* Interactive Radical, Kanji & Vocabulary Tiles */}
             <div className="space-y-5 pt-2 border-t border-slate-100 dark:border-slate-800">
-              {levelRadicals.length > 0 && (
-                <div>
-                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5">
-                    Radikal Level {state.currentLevel} ({levelRadicals.length})
+              {(levelItemTab === 'all' || levelItemTab === 'radical') &&
+                levelRadicals.length > 0 && (
+                  <div>
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5 font-mono-num tabular-nums">
+                      Radikal Level {state.currentLevel} · {levelMastery.radicals.mastered}/{levelRadicals.length} dikuasai
+                    </div>
+                    <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+                      {levelRadicals.map((rad) => {
+                        const stage = state.progress[rad.id]?.srsStage ?? null;
+                        const locked = stage === null;
+                        return (
+                          <button
+                            key={rad.id}
+                            type="button"
+                            onClick={() => openItemDetail(rad.id)}
+                            title={`${rad.characters} — ${rad.primaryMeaning} (${
+                              stage === null ? 'Terkunci' : SRS_STAGE_NAMES[stage]
+                            })`}
+                            className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
+                              locked
+                                ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-50'
+                                : 'border-slate-200 dark:border-slate-800 hover:border-[#0284C7] bg-slate-50/70 dark:bg-slate-800/40'
+                            }`}
+                          >
+                            <div className="font-jp text-xl font-bold text-white bg-[#0284C7] rounded py-1.5 leading-none">
+                              {rad.characters}
+                            </div>
+                            <div className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-1">
+                              {rad.primaryMeaning}
+                            </div>
+                            {renderProgressPips(stage)}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
-                    {levelRadicals.map((rad) => {
-                      const stage = state.progress[rad.id]?.srsStage ?? null;
-                      const locked = stage === null;
-                      return (
-                        <button
-                          key={rad.id}
-                          type="button"
-                          onClick={() => openItemDetail(rad.id)}
-                          title={`${rad.characters} — ${rad.primaryMeaning} (${
-                            stage === null ? 'Terkunci' : SRS_STAGE_NAMES[stage]
-                          })`}
-                          className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
-                            locked
-                              ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-50'
-                              : 'border-slate-200 dark:border-slate-800 hover:border-[#0284C7] bg-slate-50/70 dark:bg-slate-800/40'
-                          }`}
-                        >
-                          <div className="font-jp text-xl font-bold text-white bg-[#0284C7] rounded py-1.5 leading-none">
-                            {rad.characters}
-                          </div>
-                          <div className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-1">
-                            {rad.primaryMeaning}
-                          </div>
-                          {renderProgressPips(stage)}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+                )}
 
-              <div>
-                <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5">
-                  Kanji Level {state.currentLevel} ({levelKanji.length})
-                </div>
-                <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 gap-2">
-                  {levelKanji.map((kanji) => {
-                    const stage = state.progress[kanji.id]?.srsStage ?? null;
-                    const locked = stage === null;
-                    return (
-                      <button
-                        key={kanji.id}
-                        type="button"
-                        onClick={() => openItemDetail(kanji.id)}
-                        title={`${kanji.characters} — ${kanji.primaryMeaning} (${
-                          stage === null
-                            ? 'Terkunci — Guru radikalnya dulu'
-                            : SRS_STAGE_NAMES[stage]
-                        })`}
-                        className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
-                          locked
-                            ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-55'
-                            : 'border-slate-200 dark:border-slate-800 hover:border-[#DB2777] bg-slate-50/70 dark:bg-slate-800/40'
-                        }`}
-                      >
-                        <div
-                          className={`font-jp text-xl font-bold text-white rounded py-1.5 leading-none ${
-                            locked ? 'bg-slate-400 dark:bg-slate-700' : 'bg-[#DB2777]'
-                          }`}
+              {(levelItemTab === 'all' || levelItemTab === 'kanji') &&
+                levelKanji.length > 0 && (
+                  <div>
+                    <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5 font-mono-num tabular-nums">
+                      Kanji Level {state.currentLevel} · {levelMastery.kanji.mastered}/{levelKanji.length} dikuasai
+                    </div>
+                    <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 gap-2">
+                      {levelKanji.map((kanji) => {
+                        const stage = state.progress[kanji.id]?.srsStage ?? null;
+                        const locked = stage === null;
+                        return (
+                          <button
+                            key={kanji.id}
+                            type="button"
+                            onClick={() => openItemDetail(kanji.id)}
+                            title={`${kanji.characters} — ${kanji.primaryMeaning} (${
+                              stage === null
+                                ? 'Terkunci — Guru radikalnya dulu'
+                                : SRS_STAGE_NAMES[stage]
+                            })`}
+                            className={`min-w-0 p-2 rounded-lg border text-center transition-colors cursor-pointer ${
+                              locked
+                                ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-55'
+                                : 'border-slate-200 dark:border-slate-800 hover:border-[#DB2777] bg-slate-50/70 dark:bg-slate-800/40'
+                            }`}
+                          >
+                            <div
+                              className={`font-jp text-xl font-bold text-white rounded py-1.5 leading-none ${
+                                locked ? 'bg-slate-400 dark:bg-slate-700' : 'bg-[#DB2777]'
+                              }`}
+                            >
+                              {kanji.characters}
+                            </div>
+                            <div className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-1">
+                              {kanji.primaryMeaning}
+                            </div>
+                            {renderProgressPips(stage)}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+              {(levelItemTab === 'all' || levelItemTab === 'vocabulary') &&
+                levelVocab.length > 0 && (
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2.5">
+                      <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 font-mono-num tabular-nums">
+                        Kosakata Level {state.currentLevel} · {levelMastery.vocabulary.mastered}/{levelVocab.length} dikuasai
+                      </div>
+                      {levelItemTab === 'all' && levelVocab.length > 16 && (
+                        <button
+                          type="button"
+                          onClick={() => setLevelItemTab('vocabulary')}
+                          className="text-xs font-semibold text-[#7C3AED] dark:text-violet-400 hover:underline whitespace-nowrap cursor-pointer"
                         >
-                          {kanji.characters}
-                        </div>
-                        <div className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-1">
-                          {kanji.primaryMeaning}
-                        </div>
-                        {renderProgressPips(stage)}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+                          Lihat semua ({levelVocab.length}) →
+                        </button>
+                      )}
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+                      {(levelItemTab === 'vocabulary'
+                        ? levelVocab
+                        : levelVocab.slice(0, 16)
+                      ).map((vocab) => {
+                        const stage = state.progress[vocab.id]?.srsStage ?? null;
+                        const locked = stage === null;
+                        return (
+                          <button
+                            key={vocab.id}
+                            type="button"
+                            onClick={() => openItemDetail(vocab.id)}
+                            title={`${vocab.characters} — ${vocab.primaryMeaning} (${
+                              stage === null
+                                ? 'Terkunci — Guru kanjinya dulu'
+                                : SRS_STAGE_NAMES[stage]
+                            })`}
+                            className={`min-w-0 p-2 rounded-lg border text-left transition-colors cursor-pointer ${
+                              locked
+                                ? 'border-dashed border-slate-300 dark:border-slate-700 opacity-55'
+                                : 'border-slate-200 dark:border-slate-800 hover:border-[#7C3AED] bg-slate-50/70 dark:bg-slate-800/40'
+                            }`}
+                          >
+                            <div
+                              className={`font-jp text-sm font-bold text-white rounded px-2 py-1 truncate ${
+                                locked ? 'bg-slate-400 dark:bg-slate-700' : 'bg-[#7C3AED]'
+                              }`}
+                            >
+                              {vocab.characters}
+                            </div>
+                            <div className="text-[11px] text-slate-600 dark:text-slate-300 truncate mt-1">
+                              {vocab.primaryMeaning}
+                            </div>
+                            {renderProgressPips(stage)}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
             </div>
           </section>
 

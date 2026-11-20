@@ -1,0 +1,387 @@
+{
+  "level": 5,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "g-n5-21",
+      "jlpt": 5,
+      "order": 21,
+      "pattern": "～ましょう / ～ましょうか",
+      "reading": "～ましょう / ～ましょうか",
+      "meaning": "let's ... / shall I ...?",
+      "structure": "Verb (masu-stem) + ましょう / ましょうか",
+      "explanation": "～ましょう invites someone to do something together (\"Let's...\"). Adding か (～ましょうか) turns it into a polite offer to help (\"Shall I...?\").",
+      "confusableWith": "～ませんか is softer and asks for the listener's willingness; ～ましょう is a more direct proposal.",
+      "examples": [
+        {
+          "jp": "いっしょに昼ごはんを食べましょう。",
+          "reading": "いっしょにひるごはんをたべましょう。",
+          "en": "Let's eat lunch together."
+        },
+        {
+          "jp": "重そうですね。荷物を持ちましょうか。",
+          "reading": "おもそうですね。にもつをもちましょうか。",
+          "en": "That looks heavy. Shall I carry your bag?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ちょっと疲れましたね。少し休み",
+        "sentenceAfter": "。",
+        "en": "I'm a bit tired. Let's take a short break.",
+        "answer": "ましょう",
+        "acceptedAnswers": [
+          "ましょう"
+        ],
+        "choices": [
+          "ましょう",
+          "ません",
+          "ました",
+          "ますか"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-22",
+      "jlpt": 5,
+      "order": 22,
+      "pattern": "～ませんか",
+      "reading": "～ませんか",
+      "meaning": "won't you ...? / would you like to ...?",
+      "structure": "Verb (masu-stem) + ませんか",
+      "explanation": "A polite, considerate way to invite someone to do something together, leaving room for them to decline comfortably.",
+      "confusableWith": "Unlike plain negative questions, ～ませんか in invitations means \"Would you like to...?\" rather than asking why someone is not doing it.",
+      "examples": [
+        {
+          "jp": "土曜日に映画を見ませんか。",
+          "reading": "どようびにえいがをみませんか。",
+          "en": "Would you like to watch a movie on Saturday?"
+        },
+        {
+          "jp": "コーヒーでも飲みませんか。",
+          "reading": "コーヒーでものみませんか。",
+          "en": "Won't you have some coffee or something?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "あした、いっしょに美術館へ行き",
+        "sentenceAfter": "。",
+        "en": "Would you like to go to the art museum together tomorrow?",
+        "answer": "ませんか",
+        "acceptedAnswers": [
+          "ませんか"
+        ],
+        "choices": [
+          "ませんか",
+          "ましたか",
+          "ましょうか",
+          "ていますか"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-23",
+      "jlpt": 5,
+      "order": 23,
+      "pattern": "～が好きです / ～が上手です",
+      "reading": "～がすきです / ～がじょうずです",
+      "meaning": "to like ... / to be good at ...",
+      "structure": "Noun + が + 好きです / 嫌いです / 上手です / 下手です",
+      "explanation": "In Japanese, adjectives of preference and ability (好き, 嫌い, 上手, 下手) mark their target with the particle が rather than を.",
+      "confusableWith": "Learners often mistakenly use を (e.g. 日本語を好き); always use が with 好き and 上手.",
+      "examples": [
+        {
+          "jp": "わたしは日本の音楽が好きです。",
+          "reading": "わたしはにほんのおんがくがすきです。",
+          "en": "I like Japanese music."
+        },
+        {
+          "jp": "マリアさんは料理がとても上手です。",
+          "reading": "マリアさんはりょうりがとてもじょうずです。",
+          "en": "Maria is very good at cooking."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "弟はサッカー",
+        "sentenceAfter": "とても上手です。",
+        "en": "My younger brother is very good at soccer.",
+        "answer": "が",
+        "acceptedAnswers": [
+          "が"
+        ],
+        "choices": [
+          "が",
+          "を",
+          "に",
+          "で"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-24",
+      "jlpt": 5,
+      "order": 24,
+      "pattern": "～があります / ～がいます",
+      "reading": "～があります / ～がいます",
+      "meaning": "there is / exists (inanimate vs. animate)",
+      "structure": "Place に + Thing が あります / Living thing が います",
+      "explanation": "あります is used for inanimate objects, plants, and events; います is used for people and animals. The location of existence is marked with に.",
+      "confusableWith": "Do not use あります for people or pets—even if they are sleeping or still, always use います.",
+      "examples": [
+        {
+          "jp": "机の上に辞書があります。",
+          "reading": "つくえのうえにじしょがあります。",
+          "en": "There is a dictionary on the desk."
+        },
+        {
+          "jp": "庭に白い猫が二匹います。",
+          "reading": "にわにしろいねこがにひきいます。",
+          "en": "There are two white cats in the garden."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "教室の中に学生が十人",
+        "sentenceAfter": "。",
+        "en": "There are ten students inside the classroom.",
+        "answer": "います",
+        "acceptedAnswers": [
+          "います"
+        ],
+        "choices": [
+          "います",
+          "あります",
+          "します",
+          "なります"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-25",
+      "jlpt": 5,
+      "order": 25,
+      "pattern": "～に行く / ～に来る",
+      "reading": "～にいく / ～にくる",
+      "meaning": "to go / come in order to do ...",
+      "structure": "Verb (masu-stem) / Action Noun + に + 行く / 来る / 帰る",
+      "explanation": "Indicates the purpose of going, coming, or returning somewhere. Attach に directly to the Verb masu-stem or a verbal noun (like 買い物).",
+      "confusableWith": "For full clauses or non-movement verbs, use ～ために (N4); for movement verbs, masu-stem + に行く is the most natural.",
+      "examples": [
+        {
+          "jp": "デパートへ靴を買いに行きます。",
+          "reading": "デパートへくつをかいにいきます。",
+          "en": "I am going to the department store to buy shoes."
+        },
+        {
+          "jp": "友達がうちへ遊びに来ました。",
+          "reading": "ともだちがうちへあそびにきました。",
+          "en": "My friend came over to my house to hang out."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "週末、図書館へ本を借り",
+        "sentenceAfter": "行きます。",
+        "en": "On the weekend, I will go to the library to borrow books.",
+        "answer": "に",
+        "acceptedAnswers": [
+          "に"
+        ],
+        "choices": [
+          "に",
+          "で",
+          "を",
+          "から"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-26",
+      "jlpt": 5,
+      "order": 26,
+      "pattern": "～ので",
+      "reading": "～ので",
+      "meaning": "because; since (soft, objective reason)",
+      "structure": "Plain Verb/i-adj + ので | Noun/na-adj + なので",
+      "explanation": "Expresses cause or reason in a softer, more polite and objective tone than ～から. Often used when making polite requests or giving excuses.",
+      "confusableWith": "Unlike ～から, nouns and na-adjectives require な before ので (静かなので, 雨なので).",
+      "examples": [
+        {
+          "jp": "雨が降っているので、傘を持っていきます。",
+          "reading": "あめがふっているので、かさをもっていきます。",
+          "en": "Because it is raining, I will take an umbrella."
+        },
+        {
+          "jp": "ここは静かなので、勉強しやすいです。",
+          "reading": "ここはしずかなので、べんきょうしやすいです。",
+          "en": "Since it is quiet here, it is easy to study."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "明日はテストがある",
+        "sentenceAfter": "、早く寝ます。",
+        "en": "Because I have a test tomorrow, I will go to bed early.",
+        "answer": "ので",
+        "acceptedAnswers": [
+          "ので"
+        ],
+        "choices": [
+          "ので",
+          "のに",
+          "まで",
+          "より"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-27",
+      "jlpt": 5,
+      "order": 27,
+      "pattern": "～と思います",
+      "reading": "～とおもいます",
+      "meaning": "I think that ...",
+      "structure": "Plain form (Verb / i-adj / na-adj だ / Noun だ) + と思います",
+      "explanation": "Expresses the speaker's personal opinion or conjecture. The clause before と思います must be in plain (casual) form, even in polite sentences.",
+      "confusableWith": "Remember to add だ after nouns and na-adjectives before と思います (便利だと思います), not です.",
+      "examples": [
+        {
+          "jp": "この映画はとても面白いと思います。",
+          "reading": "このえいがはとてもおもしろいとおもいます。",
+          "en": "I think this movie is very interesting."
+        },
+        {
+          "jp": "あしたは晴れると思います。",
+          "reading": "あしたははれるとおもいます。",
+          "en": "I think it will be sunny tomorrow."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "駅に近いので、このアパートは便利だ",
+        "sentenceAfter": "思います。",
+        "en": "Because it is close to the station, I think this apartment is convenient.",
+        "answer": "と",
+        "acceptedAnswers": [
+          "と"
+        ],
+        "choices": [
+          "と",
+          "が",
+          "を",
+          "に"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-28",
+      "jlpt": 5,
+      "order": 28,
+      "pattern": "～でしょう / ～だろう",
+      "reading": "～でしょう / ～だろう",
+      "meaning": "probably; I suppose / right? (seeking agreement)",
+      "structure": "Plain Verb/i-adj + でしょう | Noun/na-adj (drop だ) + でしょう",
+      "explanation": "Indicates probability (\"probably\") with falling intonation, or seeks confirmation (\"right?\") with rising intonation. だろう is the casual equivalent.",
+      "confusableWith": "Drop だ after nouns and na-adjectives before でしょう (雨でしょう, not 雨だでしょう).",
+      "examples": [
+        {
+          "jp": "午後から雪が降るでしょう。",
+          "reading": "ごごからゆきがふるでしょう。",
+          "en": "It will probably snow from the afternoon."
+        },
+        {
+          "jp": "このケーキ、おいしいでしょう？",
+          "reading": "このケーキ、おいしいでしょう？",
+          "en": "This cake is delicious, right?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "天気予報によると、明日は暖かくなる",
+        "sentenceAfter": "。",
+        "en": "According to the weather forecast, tomorrow will probably become warm.",
+        "answer": "でしょう",
+        "acceptedAnswers": [
+          "でしょう",
+          "だろう"
+        ],
+        "choices": [
+          "でしょう",
+          "ましょう",
+          "ください",
+          "たいです"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-29",
+      "jlpt": 5,
+      "order": 29,
+      "pattern": "～しか～ない",
+      "reading": "～しか～ない",
+      "meaning": "only; nothing but (with negative nuance)",
+      "structure": "Noun / Counter + しか + Negative Verb",
+      "explanation": "Means \"only\" with a nuance that the amount is insufficient or smaller than expected. It MUST always be paired with a negative verb.",
+      "confusableWith": "だけ can be used with affirmative verbs and is neutral; しか always requires a negative verb and emphasizes scarcity.",
+      "examples": [
+        {
+          "jp": "財布に五百円しかありません。",
+          "reading": "さいふにごひゃくえんしかありません。",
+          "en": "I only have 500 yen in my wallet."
+        },
+        {
+          "jp": "時間がないので、パンを一つしか食べませんでした。",
+          "reading": "じかんがないので、パンをひとつしかたべませんでした。",
+          "en": "Because I had no time, I only ate one piece of bread."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "昨日は忙しくて、三時間",
+        "sentenceAfter": "寝られませんでした。",
+        "en": "Yesterday I was busy and could only sleep for three hours.",
+        "answer": "しか",
+        "acceptedAnswers": [
+          "しか"
+        ],
+        "choices": [
+          "しか",
+          "だけ",
+          "ほど",
+          "より"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-30",
+      "jlpt": 5,
+      "order": 30,
+      "pattern": "～や～など",
+      "reading": "～や～など",
+      "meaning": "... and ..., and so on (non-exhaustive list)",
+      "structure": "Noun A + や + Noun B (+ など)",
+      "explanation": "Lists representative examples while implying there are other similar items not mentioned. Often paired with など (\"etc.\") at the end.",
+      "confusableWith": "と lists every item exhaustively (A and B only); や implies an open-ended sample (A, B, and others).",
+      "examples": [
+        {
+          "jp": "かばんの中にノートやペンなどが入っています。",
+          "reading": "かばんのなかにノートやペンなどがはいっています。",
+          "en": "There are notebooks, pens, and so on inside the bag."
+        },
+        {
+          "jp": "休みの日は掃除や洗濯をします。",
+          "reading": "やすみのひはそうじやせんたくをします。",
+          "en": "On my days off, I do cleaning, laundry, and things like that."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "スーパーでりんご",
+        "sentenceAfter": "バナナなどを買いました。",
+        "en": "I bought apples, bananas, and so on at the supermarket.",
+        "answer": "や",
+        "acceptedAnswers": [
+          "や"
+        ],
+        "choices": [
+          "や",
+          "に",
+          "で",
+          "へ"
+        ]
+      }
+    }
+  ]
+}

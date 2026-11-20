@@ -223,7 +223,7 @@ export const GrammarHub: React.FC = () => {
       burned += levelStats[lvl].burned;
     }
     return {
-      total: grammarData?.points.length ?? 100,
+      total: grammarData?.points.length ?? 150,
       started,
       guruPlus,
       burned,
@@ -497,7 +497,7 @@ export const GrammarHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 100 Pola Tata Bahasa JLPT N5–N1...
+            Memuat 150 Pola Tata Bahasa JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan kalimat contoh, aturan struktur, dan bank kuis SRS.
@@ -1187,28 +1187,28 @@ export const GrammarHub: React.FC = () => {
             type="button"
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            1. Grammar (100)
+            1. Grammar ({totals.total})
           </button>
           <button
             type="button"
             onClick={() => setActiveView('kana-vocab')}
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            2. Kana JLPT (150)
+            2. Kana JLPT (200)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('reading')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (50)
+            3. Dokkai (75)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (50)
+            4. Chōkai (75)
           </button>
           <button
             type="button"
@@ -1234,7 +1234,7 @@ export const GrammarHub: React.FC = () => {
             Tata Bahasa JLPT (Bunpō SRS N5–N1)
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
-            100 pola tata bahasa inti JLPT dengan penjelasan bahasa Inggris otentik, jebakan soal ujian, dan jadwal review SRS yang tersinkronisasi otomatis ke akunmu.
+            {totals.total} pola tata bahasa inti JLPT dengan penjelasan bahasa Inggris otentik, jebakan soal ujian, dan jadwal review SRS yang tersinkronisasi otomatis ke akunmu.
           </p>
         </div>
       </div>

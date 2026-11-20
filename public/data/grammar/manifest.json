@@ -1,35 +1,40 @@
 {
-  "version": 2,
-  "totalCount": 100,
+  "version": 3,
+  "totalCount": 150,
   "levels": {
     "1": {
-      "count": 20,
+      "count": 30,
       "packs": [
-        "n1.json"
+        "n1.json",
+        "n1-pack2.json"
       ]
     },
     "2": {
-      "count": 20,
+      "count": 30,
       "packs": [
-        "n2.json"
+        "n2.json",
+        "n2-pack2.json"
       ]
     },
     "3": {
-      "count": 20,
+      "count": 30,
       "packs": [
-        "n3.json"
+        "n3.json",
+        "n3-pack2.json"
       ]
     },
     "4": {
-      "count": 20,
+      "count": 30,
       "packs": [
-        "n4.json"
+        "n4.json",
+        "n4-pack2.json"
       ]
     },
     "5": {
-      "count": 20,
+      "count": 30,
       "packs": [
-        "n5.json"
+        "n5.json",
+        "n5-pack2.json"
       ]
     }
   }

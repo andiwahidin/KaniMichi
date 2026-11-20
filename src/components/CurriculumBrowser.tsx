@@ -391,7 +391,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
               onClick={() => setActiveView('kana-vocab')}
               className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
             >
-              Kosakata Non-Kanji JLPT (150)
+              Kosakata Non-Kanji JLPT (200)
             </button>
           </div>
           <span className="text-xs text-slate-500 dark:text-slate-400">

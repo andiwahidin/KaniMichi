@@ -792,14 +792,14 @@ export const ReadingHub: React.FC = () => {
             onClick={() => setActiveView('grammar')}
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            1. Grammar (100)
+            1. Grammar (150)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('kana-vocab')}
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            2. Kana JLPT (150)
+            2. Kana JLPT (200)
           </button>
           <button
             type="button"
@@ -812,7 +812,7 @@ export const ReadingHub: React.FC = () => {
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai
+            4. Chōkai (75)
           </button>
           <button
             type="button"

@@ -1,0 +1,330 @@
+{
+  "level": 5,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "kv-n5-31",
+      "jlpt": 5,
+      "order": 31,
+      "word": "ちょっと",
+      "reading": "ちょっと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "a little; a moment; slightly",
+      "acceptedMeanings": [
+        "a little",
+        "a bit",
+        "a moment",
+        "slightly"
+      ],
+      "usageNote": "Used constantly for small amounts, brief waits, and polite soft refusals.",
+      "example": {
+        "jp": "ちょっと待ってください。すぐ行きます。",
+        "reading": "ちょっとまってください。すぐいきます。",
+        "en": "Please wait a moment. I will be right there."
+      },
+      "quiz": {
+        "sentenceBefore": "すみません、",
+        "sentenceAfter": "聞いてもいいですか。",
+        "en": "Excuse me, may I ask you something for a moment?",
+        "choices": [
+          "ちょっと",
+          "たくさん",
+          "ぜんぜん",
+          "いつも"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-32",
+      "jlpt": 5,
+      "order": 32,
+      "word": "たくさん",
+      "reading": "たくさん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "a lot; many; much",
+      "acceptedMeanings": [
+        "a lot",
+        "many",
+        "much",
+        "plenty"
+      ],
+      "usageNote": "Works for both countable and uncountable nouns, either adverbially (たくさん食べた) or with の (たくさんの人).",
+      "example": {
+        "jp": "京都で写真をたくさん撮りました。",
+        "reading": "きょうとでしゃしんをたくさんとりました。",
+        "en": "I took a lot of photos in Kyoto."
+      },
+      "quiz": {
+        "sentenceBefore": "パーティーには友達が",
+        "sentenceAfter": "来ました。",
+        "en": "Many friends came to the party.",
+        "choices": [
+          "たくさん",
+          "あまり",
+          "ちょうど",
+          "まだ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-33",
+      "jlpt": 5,
+      "order": 33,
+      "word": "もうすぐ",
+      "reading": "もうすぐ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "soon; very soon; almost",
+      "acceptedMeanings": [
+        "soon",
+        "very soon",
+        "almost",
+        "shortly"
+      ],
+      "usageNote": "Indicates that an event or season is about to arrive shortly.",
+      "example": {
+        "jp": "もうすぐ桜の季節になりますね。",
+        "reading": "もうすぐさくらのきせつになりますね。",
+        "en": "It will be cherry blossom season very soon, won't it?"
+      },
+      "quiz": {
+        "sentenceBefore": "急いでください。",
+        "sentenceAfter": "電車が来ますよ。",
+        "en": "Please hurry. The train is coming very soon!",
+        "choices": [
+          "もうすぐ",
+          "まだ",
+          "ときどき",
+          "ゆっくり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-34",
+      "jlpt": 5,
+      "order": 34,
+      "word": "だいたい",
+      "reading": "だいたい",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "roughly; mostly; approximately",
+      "acceptedMeanings": [
+        "roughly",
+        "mostly",
+        "approximately",
+        "about"
+      ],
+      "usageNote": "Gives an approximate figure or states that something is mostly complete.",
+      "example": {
+        "jp": "駅まで歩いてだいたい十分かかります。",
+        "reading": "えきまであるいてだいたいじゅっぷんかかります。",
+        "en": "It takes roughly ten minutes to walk to the station."
+      },
+      "quiz": {
+        "sentenceBefore": "宿題は",
+        "sentenceAfter": "終わりました。あと一問だけです。",
+        "en": "My homework is mostly finished. Only one question left.",
+        "choices": [
+          "だいたい",
+          "ぜんぜん",
+          "まっすぐ",
+          "びっくり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-35",
+      "jlpt": 5,
+      "order": 35,
+      "word": "まず",
+      "reading": "まず",
+      "category": "connector",
+      "partOfSpeech": "Adverb / Connector",
+      "primaryMeaning": "first of all; to begin with",
+      "acceptedMeanings": [
+        "first of all",
+        "first",
+        "to begin with"
+      ],
+      "usageNote": "Introduces the very first step in instructions, recipes, or explanations.",
+      "example": {
+        "jp": "まず、名前と電話番号を書いてください。",
+        "reading": "まず、なまえとでんわばんごうをかいてください。",
+        "en": "First of all, please write your name and phone number."
+      },
+      "quiz": {
+        "sentenceBefore": "料理を始める前に、",
+        "sentenceAfter": "手を洗いましょう。",
+        "en": "Before starting to cook, let's wash our hands first.",
+        "choices": [
+          "まず",
+          "でも",
+          "だから",
+          "しかし"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-36",
+      "jlpt": 5,
+      "order": 36,
+      "word": "けれども",
+      "reading": "けれども",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "but; however; although",
+      "acceptedMeanings": [
+        "but",
+        "however",
+        "although",
+        "though"
+      ],
+      "usageNote": "Softer, slightly more polite conjunction than が or でも; often shortened to けど in casual speech.",
+      "example": {
+        "jp": "この店は少し高いです。けれども、とてもおいしいです。",
+        "reading": "このみせはすこしたかいです。けれども、とてもおいしいです。",
+        "en": "This shop is a bit expensive. However, it is very delicious."
+      },
+      "quiz": {
+        "sentenceBefore": "昨日たくさん勉強しました。",
+        "sentenceAfter": "、テストは難しかったです。",
+        "en": "I studied a lot yesterday. However, the test was difficult.",
+        "choices": [
+          "けれども",
+          "だから",
+          "そして",
+          "それから"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-37",
+      "jlpt": 5,
+      "order": 37,
+      "word": "ぴったり",
+      "reading": "ぴったり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / na-adj",
+      "primaryMeaning": "exact fit; spot on; right on time",
+      "acceptedMeanings": [
+        "exact fit",
+        "perfect fit",
+        "spot on",
+        "exactly"
+      ],
+      "usageNote": "Describes clothes fitting perfectly, arriving on the exact dot, or a matching answer.",
+      "example": {
+        "jp": "この靴は私の足にぴったりです。",
+        "reading": "このくつはわたしのあしにぴったりです。",
+        "en": "These shoes fit my feet perfectly."
+      },
+      "quiz": {
+        "sentenceBefore": "計算したら、お金が千円",
+        "sentenceAfter": "ありました。",
+        "en": "When I counted, I had exactly 1,000 yen.",
+        "choices": [
+          "ぴったり",
+          "ゆっくり",
+          "びっくり",
+          "にぎやか"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-38",
+      "jlpt": 5,
+      "order": 38,
+      "word": "ふわふわ",
+      "reading": "ふわふわ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / suru-verb",
+      "primaryMeaning": "fluffy; soft and airy",
+      "acceptedMeanings": [
+        "fluffy",
+        "soft",
+        "airy",
+        "spongy"
+      ],
+      "usageNote": "Describes the soft texture of bread, towels, clouds, or kittens.",
+      "example": {
+        "jp": "焼きたてのパンはふわふわしておいしいです。",
+        "reading": "やきたてのパンはふわふわしておいしいです。",
+        "en": "Freshly baked bread is fluffy and delicious."
+      },
+      "quiz": {
+        "sentenceBefore": "新しいタオルはとても",
+        "sentenceAfter": "していて気持ちがいいです。",
+        "en": "The new towel is very fluffy and feels great.",
+        "choices": [
+          "ふわふわ",
+          "はっきり",
+          "まっすぐ",
+          "しっかり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-39",
+      "jlpt": 5,
+      "order": 39,
+      "word": "スーパー",
+      "reading": "スーパー",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "supermarket",
+      "acceptedMeanings": [
+        "supermarket",
+        "grocery store"
+      ],
+      "usageNote": "Abbreviation of スーパーマーケット; in Japan, スーパー almost always means grocery supermarket.",
+      "example": {
+        "jp": "仕事の帰りにスーパーで野菜を買います。",
+        "reading": "しごとのかえりにスーパーでやさいをかいます。",
+        "en": "I buy vegetables at the supermarket on my way home from work."
+      },
+      "quiz": {
+        "sentenceBefore": "牛乳がなくなったので、近くの",
+        "sentenceAfter": "へ買いに行きます。",
+        "en": "We ran out of milk, so I am going to the nearby supermarket to buy some.",
+        "choices": [
+          "スーパー",
+          "アパート",
+          "エレベーター",
+          "パソコン"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-40",
+      "jlpt": 5,
+      "order": 40,
+      "word": "ホテル",
+      "reading": "ホテル",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "hotel",
+      "acceptedMeanings": [
+        "hotel"
+      ],
+      "usageNote": "Western-style hotel, contrasted with traditional Japanese inn (旅館 / りょかん).",
+      "example": {
+        "jp": "駅の前のホテルを二泊予約しました。",
+        "reading": "えきのまえのホテルをにはくよやくしました。",
+        "en": "I reserved a hotel in front of the station for two nights."
+      },
+      "quiz": {
+        "sentenceBefore": "旅行の前にインターネットで安い",
+        "sentenceAfter": "を探しました。",
+        "en": "Before the trip, I searched online for an affordable hotel.",
+        "choices": [
+          "ホテル",
+          "デパート",
+          "エアコン",
+          "アルバイト"
+        ]
+      }
+    }
+  ]
+}

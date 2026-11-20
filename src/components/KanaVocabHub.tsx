@@ -269,7 +269,7 @@ export const KanaVocabHub: React.FC = () => {
       burned += levelStats[lvl].burned;
     }
     return {
-      total: data?.items.length ?? 150,
+      total: data?.items.length ?? 200,
       started,
       guruPlus,
       burned,
@@ -676,7 +676,7 @@ export const KanaVocabHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 150 Kosakata Non-Kanji JLPT N5–N1...
+            Memuat 200 Kosakata Non-Kanji JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan adverbia kana, kata penghubung, onomatope, dan serapan katakana.
@@ -1493,7 +1493,7 @@ export const KanaVocabHub: React.FC = () => {
             type="button"
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            Kosakata Non-Kanji JLPT (150)
+            Kosakata Non-Kanji JLPT ({totals.total})
           </button>
         </div>
 
@@ -1511,7 +1511,7 @@ export const KanaVocabHub: React.FC = () => {
           Kosakata Non-Kanji (Kana, Katakana &amp; Onomatope)
         </h1>
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-          150 kosakata wajib JLPT yang tidak muncul di kurikulum kanji — mencakup adverbia hiragana, kata penghubung bacaan, onomatope (giongo/gitaigo), dan serapan katakana beserta jebakan <em>false friends</em>.
+          {totals.total} kosakata wajib JLPT yang tidak muncul di kurikulum kanji — mencakup adverbia hiragana, kata penghubung bacaan, onomatope (giongo/gitaigo), dan serapan katakana beserta jebakan <em>false friends</em>.
         </p>
       </div>
 

@@ -1,0 +1,331 @@
+{
+  "level": 5,
+  "pack": "n5-pack2",
+  "items": [
+    {
+      "id": "rd-n5-11",
+      "jlpt": 5,
+      "order": 11,
+      "passageType": "notice",
+      "titleJp": "さくらクリニック 受付[うけつけ]時間[じかん]のお知[し]らせ",
+      "titleEn": "Sakura Clinic Reception Hours Notice",
+      "recommendedMinutes": 3,
+      "contextEn": "Notice posted on the entrance door of a neighborhood clinic.",
+      "paragraphs": [
+        "さくらクリニック 受付[うけつけ]時間[じかん]",
+        "月曜日[げつようび]・火曜日[かようび]・木曜日[もくようび]・金曜日[きんようび]：午前[ごぜん]九時[くじ]〜十二時[じゅうにじ]／午後[ごご]三時[さんじ]〜六時[ろくじ]\n土曜日[どようび]：午前[ごぜん]九時[くじ]〜午後[ごご]一時[いちじ]（午後[ごご]は休[やす]み）",
+        "お休[やす]み：水曜日[すいようび]・日曜日[にちようび]・祝日[しゅくじつ]\n※初[はじ]めて来[く]る人[ひと]は、保険証[ほけんしょう]を持[も]ってきてください。受付[うけつけ]は終[お]わる三十分[さんじゅっぷん]前[まえ]までです。"
+      ],
+      "translationEn": [
+        "Sakura Clinic Reception Hours",
+        "Monday, Tuesday, Thursday, Friday: 9:00 AM–12:00 PM / 3:00 PM–6:00 PM\nSaturday: 9:00 AM–1:00 PM (closed in the afternoon)",
+        "Closed: Wednesday, Sunday, and National Holidays\n*First-time visitors, please bring your health insurance card. Check-in closes 30 minutes before the end of hours."
+      ],
+      "keyVocab": [
+        {
+          "word": "受付",
+          "reading": "うけつけ",
+          "en": "reception; check-in"
+        },
+        {
+          "word": "祝日",
+          "reading": "しゅくじつ",
+          "en": "national holiday"
+        },
+        {
+          "word": "保険証",
+          "reading": "ほけんしょう",
+          "en": "health insurance card"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-11-q1",
+          "promptJp": "土曜日[どようび]は、何時[なんじ]まで受付[うけつけ]ができますか。",
+          "promptEn": "Until what time can you check in on Saturday?",
+          "choices": [
+            "午前[ごぜん]十一時半[じゅういちじはん]まで",
+            "午後[ごご]十二時半[じゅうにじはん]まで",
+            "午後[ごご]一時[いちじ]まで",
+            "午後[ごご]五時半[ごじはん]まで"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Saturday hours end at 1:00 PM (午後一時), and check-in closes 30 minutes before closing time, which is 12:30 PM (午後十二時半)."
+        },
+        {
+          "id": "rd-n5-11-q2",
+          "promptJp": "このクリニックが休[やす]みの日[ひ]はどれですか。",
+          "promptEn": "Which day is this clinic closed?",
+          "choices": [
+            "火曜日[かようび]",
+            "水曜日[すいようび]",
+            "木曜日[もくようび]",
+            "土曜日[どようび]の午前[ごぜん]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The notice states closed days (お休み) are Wednesday (水曜日), Sunday, and national holidays."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-12",
+      "jlpt": 5,
+      "order": 12,
+      "passageType": "email",
+      "titleJp": "週末[しゅうまつ]のカフェの予定[よてい]",
+      "titleEn": "Weekend Café Plan Message",
+      "recommendedMinutes": 3,
+      "contextEn": "Short message from a friend named Emi about meeting at a new café.",
+      "paragraphs": [
+        "アキラさんへ",
+        "今週[こんしゅう]の日曜日[にちようび]、駅前[えきまえ]の新[あたら]しいカフェに行[い]きませんか。ケーキがとてもおいしいと聞[き]きました。",
+        "私[わたし]は午前中[ごぜんちゅう]に図書館[としょかん]で勉強[べんきょう]するので、午後[ごご]二時[にじ]ごろがいいです。もし雨[あめ]が降[ふ]ったら、バスで行[い]きましょう。返事[へんじ]を待[ま]っています。\nえみ"
+      ],
+      "translationEn": [
+        "To Akira,",
+        "Would you like to go to the new café in front of the station this Sunday? I heard their cake is very delicious.",
+        "I will be studying at the library in the morning, so around 2:00 PM would be good. If it rains, let's go by bus. Waiting for your reply.\nEmi"
+      ],
+      "keyVocab": [
+        {
+          "word": "週末",
+          "reading": "しゅうまつ",
+          "en": "weekend"
+        },
+        {
+          "word": "午前中",
+          "reading": "ごぜんちゅう",
+          "en": "during the morning"
+        },
+        {
+          "word": "返事",
+          "reading": "へんじ",
+          "en": "reply; response"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-12-q1",
+          "promptJp": "えみさんは日曜日[にちようび]の午前[ごぜん]に何[なに]をしますか。",
+          "promptEn": "What will Emi do on Sunday morning?",
+          "choices": [
+            "カフェでケーキを食[た]べます。",
+            "図書館[としょかん]で勉強[べんきょう]します。",
+            "バスで駅[えき]へ行[い]きます。",
+            "家[いえ]でアキラさんを待[ま]ちます。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Emi writes \"私は午前中に図書館で勉強するので\" (I will study at the library in the morning)."
+        },
+        {
+          "id": "rd-n5-12-q2",
+          "promptJp": "雨[あめ]が降[ふ]ったら、二人[ふたり]はどうしますか。",
+          "promptEn": "What will the two do if it rains?",
+          "choices": [
+            "カフェに行[い]くのをやめます。",
+            "図書館[としょかん]で会[あ]います。",
+            "バスでカフェへ行[い]きます。",
+            "月曜日[げつようび]に変[か]えます。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "She writes \"もし雨が降ったら、バスで行きましょう\" (If it rains, let's go by bus)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-13",
+      "jlpt": 5,
+      "order": 13,
+      "passageType": "short",
+      "titleJp": "私[わたし]の好[す]きなラーメン屋[や]",
+      "titleEn": "My Favorite Ramen Shop",
+      "recommendedMinutes": 3,
+      "contextEn": "Short journal entry by a student about a favorite local shop.",
+      "paragraphs": [
+        "大学[だいがく]の近[ちか]くに小[ちい]さなラーメン屋[や]があります。席[せき]は十[じゅう]しかありませんが、いつも学生[がくせい]でいっぱいです。",
+        "私[わたし]が一番[いちばん]好[す]きなのは、しょうゆラーメンです。七百円[ななひゃくえん]で、量[りょう]も多[おお]いです。店[みせ]のおじさんはとても元気[げんき]で、いつも「いらっしゃいませ！」と大[おお]きな声[こえ]であいさつしてくれます。",
+        "寒[さむ]い日[ひ]にここで熱[あつ]いラーメンを食[た]べると、とても幸[しあわ]せな気持[きも]ちになります。"
+      ],
+      "translationEn": [
+        "There is a small ramen shop near my university. It only has ten seats, but it is always packed with students.",
+        "My absolute favorite is the soy sauce ramen. It is 700 yen and the portion is generous too. The shop owner is very energetic and always greets us in a loud voice saying \"Welcome!\"",
+        "When I eat hot ramen here on a cold day, I feel very happy."
+      ],
+      "keyVocab": [
+        {
+          "word": "席",
+          "reading": "せき",
+          "en": "seat"
+        },
+        {
+          "word": "量",
+          "reading": "りょう",
+          "en": "amount; portion"
+        },
+        {
+          "word": "幸せ",
+          "reading": "しあわせ",
+          "en": "happy; fortunate"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-13-q1",
+          "promptJp": "このラーメン屋[や]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about this ramen shop?",
+          "choices": [
+            "とても大[おお]きい店[みせ]で、席[せき]がたくさんある。",
+            "しょうゆラーメンは七百円[ななひゃくえん]で、量[りょう]が多[おお]い。",
+            "大学[だいがく]から遠[とお]いので、客[きゃく]が少[すく]ない。",
+            "店[みせ]の人[ひと]は静[しず]かであまり話[はな]さない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explicitly states the soy sauce ramen is 700 yen and the portion is large (七百円で、量も多いです)."
+        },
+        {
+          "id": "rd-n5-13-q2",
+          "promptJp": "私[わたし]はどんなとき、とても幸[しあわ]せな気持[きも]ちになりますか。",
+          "promptEn": "When does the writer feel very happy?",
+          "choices": [
+            "寒[さむ]い日[ひ]にこの店[みせ]で熱[あつ]いラーメンを食[た]べるとき",
+            "暑[あつ]い日[ひ]に冷[つめ]たいラーメンを作[つく]るとき",
+            "大学[だいがく]のテストが終[お]わったとき",
+            "友達[ともだち]と十人[じゅうにん]で店[みせ]へ行[い]くとき"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The final sentence says: \"寒い日にここで熱いラーメンを食べると、とても幸せな気持ちになります.\""
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-14",
+      "jlpt": 5,
+      "order": 14,
+      "passageType": "short",
+      "titleJp": "北海道[ほっかいどう]の夏休[なつやす]み",
+      "titleEn": "Summer Vacation in Hokkaido",
+      "recommendedMinutes": 3,
+      "contextEn": "Short diary entry about a summer family trip.",
+      "paragraphs": [
+        "去年[きょねん]の八月[はちがつ]、家族[かぞく]で北海道[ほっかいどう]へ旅行[りょこう]に行[い]きました。東京[とうきょう]はとても暑[あつ]かったですが、北海道[ほっかいどう]は涼[すず]しくて過[す]ごしやすかったです。",
+        "私[わたし]たちはレンタカーを借[か]りて、きれいな花[はな]の畑[はたけ]を見[み]に行[い]きました。そこで飲[の]んだ牛乳[ぎゅうにゅう]とアイスクリームは、忘[わす]れられない味[あじ]でした。",
+        "今度[こんど]は冬[ふゆ]に行[い]って、雪[ゆき]まつりを見[み]たいと思[おも]っています。"
+      ],
+      "translationEn": [
+        "Last August, I went on a trip to Hokkaido with my family. Tokyo was very hot, but Hokkaido was cool and comfortable.",
+        "We rented a car and went to see beautiful flower fields. The milk and ice cream we had there had an unforgettable taste.",
+        "Next time, I want to go in winter and see the Snow Festival."
+      ],
+      "keyVocab": [
+        {
+          "word": "涼しい",
+          "reading": "すずしい",
+          "en": "cool (weather)"
+        },
+        {
+          "word": "畑",
+          "reading": "はたけ",
+          "en": "field; farm"
+        },
+        {
+          "word": "牛乳",
+          "reading": "ぎゅうにゅう",
+          "en": "cow's milk"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-14-q1",
+          "promptJp": "去年[きょねん]の八月[はちがつ]、北海道[ほっかいどう]の天気[てんき]はどうでしたか。",
+          "promptEn": "How was the weather in Hokkaido last August?",
+          "choices": [
+            "東京[とうきょう]より暑[あつ]かった。",
+            "雪[ゆき]がたくさん降[ふ]っていた。",
+            "涼[すず]しくて過[す]ごしやすかった。",
+            "毎日[まいにち]雨[あめ]が降[ふ]っていた。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 1 contrasts hot Tokyo with cool, comfortable Hokkaido (涼しくて過ごしやすかったです)."
+        },
+        {
+          "id": "rd-n5-14-q2",
+          "promptJp": "この人[ひと]は今度[こんど]、北海道[ほっかいどう]で何[なに]をしたいですか。",
+          "promptEn": "What does the writer want to do in Hokkaido next time?",
+          "choices": [
+            "もう一度[いちど]花[はな]の畑[はたけ]へ行[い]きたい。",
+            "冬[ふゆ]に行[い]って雪[ゆき]まつりを見[み]たい。",
+            "レンタカーを買[か]いたい。",
+            "東京[とうきょう]から電車[でんしゃ]で行[い]きたい。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence says: \"今度は冬に行って、雪まつりを見たいと思っています.\""
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-15",
+      "jlpt": 5,
+      "order": 15,
+      "passageType": "notice",
+      "titleJp": "アパートの自転車[じてんしゃ]置[お]き場[ば]のルール",
+      "titleEn": "Apartment Bicycle Parking Rules",
+      "recommendedMinutes": 3,
+      "contextEn": "Rule sign posted at the bicycle parking area of an apartment building.",
+      "paragraphs": [
+        "住人[じゅうにん]のみなさまへ（自転車[じてんしゃ]置[お]き場[ば]のお願[ねが]い）",
+        "一[いち]．自転車[じてんしゃ]は白[しろ]い線[せん]の中[なか]にきれいに並[なら]べてください。\n二[に]．管理人[かんりにん]からもらったシールを、自転車[じてんしゃ]の後[うし]ろにはってください。",
+        "三[さん]．一[ひと]部屋[へや]につき、自転車[じてんしゃ]は二台[にだい]まで置[お]けます。\n※シールのない自転車[じてんしゃ]は、来月[らいげつ]十日[とおか]に片付[かたづ]けます。"
+      ],
+      "translationEn": [
+        "To all residents (Request regarding the bicycle parking area)",
+        "1. Please line up bicycles neatly inside the white lines.\n2. Please put the sticker you received from the building manager on the back of your bicycle.",
+        "3. Up to two bicycles may be parked per apartment room.\n*Bicycles without a sticker will be removed on the 10th of next month."
+      ],
+      "keyVocab": [
+        {
+          "word": "並べる",
+          "reading": "ならべる",
+          "en": "to line up; arrange"
+        },
+        {
+          "word": "管理人",
+          "reading": "かんりにん",
+          "en": "building manager; caretaker"
+        },
+        {
+          "word": "片付ける",
+          "reading": "かたづける",
+          "en": "to tidy up; clear away"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-15-q1",
+          "promptJp": "管理人[かんりにん]からもらったシールはどこにはりますか。",
+          "promptEn": "Where should you put the sticker from the manager?",
+          "choices": [
+            "アパートのドアの前[まえ]",
+            "自転車[じてんしゃ]の後[うし]ろ",
+            "白[しろ]い線[せん]の上[うえ]",
+            "自転車[じてんしゃ]の前[まえ]のかご"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Rule 2 states to put the sticker on the back of the bicycle (自転車の後ろにはってください)."
+        },
+        {
+          "id": "rd-n5-15-q2",
+          "promptJp": "ルールについて、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement about the rules is correct?",
+          "choices": [
+            "一[ひと]部屋[へや]に三台[さんだい]まで自転車[じてんしゃ]を置[お]ける。",
+            "シールがなくても来月[らいげつ]二十日[はつか]まで大丈夫[だいじょうぶ]だ。",
+            "一[ひと]部屋[へや]に二台[にだい]まで置[お]けて、シールが必要[ひつよう]だ。",
+            "白[しろ]い線[せん]の外[そと]に置[お]いてもいい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Up to 2 bicycles per room are allowed (二台まで), and a sticker is required or they will be cleared on the 10th of next month."
+        }
+      ]
+    }
+  ]
+}

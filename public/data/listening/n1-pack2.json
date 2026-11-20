@@ -1,0 +1,321 @@
+{
+  "level": 1,
+  "pack": "n1-pack2",
+  "items": [
+    {
+      "id": "l-n1-11",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "プレスリリース訂正[ていせい]と報道[ほうどう]解禁[かいきん]の調整[ちょうせい]",
+      "titleEn": "Coordinating Press Embargo & Correction Notice",
+      "situationEn": "A PR director and a coordinator handle an error found in a press release one hour before embargo lift.",
+      "introJp": "企業[きぎょう]の広報部[こうほうぶ]で部長[ぶちょう]と担当[たんとう]者[しゃ]が話[はな]しています。担当[たんとう]者[しゃ]はこれから何[なに]を最優先[さいゆうせん]で行[おこな]いますか。",
+      "introEn": "A PR director and coordinator are speaking. What will the coordinator do as top priority next?",
+      "lines": [
+        {
+          "speaker": "Coordinator",
+          "role": "female",
+          "jp": "部長[ぶちょう]、先[さき]ほど報道[ほうどう]各社[かくしゃ]へ事前[じぜん]配布[はいふ]したプレスリリースですが、新製品[しんせいひん]の発売日[はつばいび]に誤記[ごき]が見[み]つかりました。午後[ごご]三時[さんじ]の情報[じょうほう]解禁[かいきん]まであと一時間[いちじかん]しかありません。",
+          "en": "Director, we found a typo in the launch date on the press release distributed under embargo earlier. There is only one hour left until the 3:00 PM embargo lifts."
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "それはまずいな。公式サイト[こうしきさいと]の公開[こうかい]データも間違[まちが]っているのか？",
+          "en": "That's serious. Is the data queued for the official website wrong too?"
+        },
+        {
+          "speaker": "Coordinator",
+          "role": "female",
+          "jp": "サイト側[がわ]はウェブ担当[たんとう]が今[いま]修正[しゅうせい]に入[はい]っています。問題[もんだい]はすでにメールを送[おく]った記者[きしゃ]三十名[さんじゅうめい]への対応[たいおう]です。",
+          "en": "The web team is already fixing the site side. The issue is handling the 30 reporters who already received the email."
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "わかった。解禁[かいきん]時刻[じこく]の変更[へんこう]は混乱[こんらん]を招[まね]くから据[す]え置[お]こう。君[きみ]は大至急[だいしきゅう]、差[さ]し替[か]え版[ばん]のPDFと訂正[ていせい]箇所[かしょ]を明記[めいき]したお詫[わ]びメールを全[ぜん]記者[きしゃ]へ一斉[いっせい]送信[そうしん]してくれ。主要[しゅよう]三紙[さんし]への直接[ちょくせつ]の電話[でんわ]フォローは私[わたし]が受[う]け持[も]つ。",
+          "en": "Got it. Changing the embargo time will cause confusion, so keep it as is. Urgently blast a replacement PDF and an apology email clearly specifying the correction to all reporters. I'll take care of direct phone follow-ups to the three major newspapers."
+        },
+        {
+          "speaker": "Coordinator",
+          "role": "female",
+          "jp": "承知[しょうち]いたしました。直[ただ]ちに作成[さくせい]して送信[そうしん]します。",
+          "en": "Understood. I will prepare and send it immediately."
+        }
+      ],
+      "questionJp": "担当[たんとう]者[しゃ]はこれから最優先[さいゆうせん]で何[なに]を行[おこな]いますか。",
+      "questionEn": "What will the coordinator do first as top priority?",
+      "choices": [
+        "情報[じょうほう]解禁[かいきん]の時刻[じこく]を延期[えんき]する連絡[れんらく]を入[い]れる",
+        "公式サイト[こうしきさいと]の公開[こうかい]データを修正[しゅうせい]する",
+        "差[さ]し替[か]え版[ばん]と訂正[ていせい]箇所[かしょ]を明記[めいき]したメールを全[ぜん]記者[きしゃ]へ送信[そうしん]する",
+        "主要[しゅよう]三紙[さんし]の記者[きしゃ]へ直接[ちょくせつ]電話[でんわ]で謝罪[しゃざい]する"
+      ],
+      "choicesEn": [
+        "Notify reporters that the embargo time is postponed",
+        "Fix the official website data",
+        "Send the replacement PDF and correction notice email to all reporters",
+        "Call reporters at the three major newspapers directly"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The web team is fixing the website, the embargo time stays unchanged (据え置こう), and the director handles calling the 3 major papers; the coordinator must send the replacement PDF and correction email to all reporters.",
+      "keyPhrases": [
+        {
+          "jp": "据[す]え置[お]く",
+          "reading": "すえおく",
+          "en": "to leave unchanged; keep as is"
+        },
+        {
+          "jp": "差[さ]し替[か]え版[ばん]",
+          "reading": "さしかえばん",
+          "en": "replacement version"
+        },
+        {
+          "jp": "受[う]け持[も]つ",
+          "reading": "うけもつ",
+          "en": "to take charge of"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-12",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "市立[しりつ]公文書館[こうぶんしょかん]が全面[ぜんめん]民営化[みんえいか]を見送[みおく]った背景[はいけい]",
+      "titleEn": "Why a Municipal Archive Rejected Full Privatization",
+      "situationEn": "A municipal policy advisor explains on a panel why full privatization of the city archives was shelved.",
+      "introJp": "パネル討論[とうろん]で自治体[じちたい]の顧問[こもん]が話[はな]しています。公文書館[こうぶんしょかん]の全面[ぜんめん]民営化[みんえいか]を見送[みおく]った決定[けってい]的[てき]な理由[りゆう]は何[なに]ですか。",
+      "introEn": "A municipal advisor speaks on a panel. What was the decisive reason for shelving full privatization of the public archives?",
+      "lines": [
+        {
+          "speaker": "Moderator",
+          "role": "female",
+          "jp": "財政[ざいせい]改革[かいかく]の一環[いっかん]として検討[けんとう]されていた公文書館[こうぶんしょかん]の全面[ぜんめん]民営化[みんえいか]ですが、最終的に見送[みおく]られましたね。民間[みんかん]からの応募[おうぼ]がなかったのでしょうか。",
+          "en": "Full privatization of the municipal archives was considered as part of fiscal reform, yet it was ultimately shelved. Were there no private bidders?"
+        },
+        {
+          "speaker": "Advisor",
+          "role": "male",
+          "jp": "いえ、運営[うんえい]コスト削減[さくげん]の観点[かんてん]からは魅力[みりょく]的[てき]な提案[ていあん]が複数[ふくすう]寄せられました。ただ、議論[ぎろん]を深[ふか]めるなかで、公文書[こうぶんしょ]の選別[せんべつ]と廃棄[はいき]の判断[はんだん]を数年[すうねん]ごとの契約[けいやく]で入[い]れ替[か]わる事業者[じぎょうしゃ]に委[ゆだ]ねることの危[あや]うさが浮上[ふじょう]したのです。",
+          "en": "No, we received several attractive proposals from a cost-reduction standpoint. However, as discussions deepened, the danger emerged of entrusting decisions on selecting and discarding public records to contractors who rotate every few years."
+        },
+        {
+          "speaker": "Advisor",
+          "role": "male",
+          "jp": "行政[ぎょうせい]の説明[せつめい]責任[せきにん]を支[ささ]える記録[きろく]は、短期[たんき]的[てき]な収支[しゅうし]ではなく数十年[すうじゅうねん]単位[たんい]の継続性[けいぞくせい]が不可欠[ふかけつ]です。そこで受付[うけつけ]や展示[てんじ]など一部[いちぶ]業務[ぎょうむ]の委託[いたく]にとどめ、資料[しりょう]評価[ひょうか]の中核[ちゅうかく]は市[し]の直営[ちょくえい]で残[のこ]す結論[けつろん]に至[いた]りました。",
+          "en": "Records supporting administrative accountability require multi-decade continuity rather than short-term profit margins. Thus we concluded to outsource only partial tasks like reception and exhibits while keeping core record evaluation directly managed by the city."
+        }
+      ],
+      "questionJp": "全面[ぜんめん]民営化[みんえいか]を見送[みおく]った決定[けってい]的[てき]な理由[りゆう]は何[なに]ですか。",
+      "questionEn": "What was the decisive reason for shelving full privatization?",
+      "choices": [
+        "民間[みんかん]企業[きぎょう]から応募[おうぼ]が集[あつ]まらなかったから",
+        "公文書[こうぶんしょ]の選別[せんべつ]・保存[ほぞん]には長期[ちょうき]的[てき]な継続性[けいぞくせい]が不可欠[ふかけつ]で、契約[けいやく]で交代[こうたい]する事業者[じぎょうしゃ]に全面[ぜんめん]委託[いたく]できないから",
+        "市民[しみん]から展示[てんじ]業務[ぎょうむ]の委託[いたく]に対[たい]する強[つよ]い反対[はんたい]があったから",
+        "民間[みんかん]委託[いたく]のほうが運営[うんえい]コストが高[たか]くつく試算[しさん]が出[で]たから"
+      ],
+      "choicesEn": [
+        "Because no private companies applied",
+        "Because selecting/preserving public records requires multi-decade continuity that cannot be fully entrusted to rotating contractors",
+        "Because citizens strongly opposed outsourcing exhibitions",
+        "Because estimates showed private operation would cost more"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Attractive cost-saving proposals existed, but entrusting archival selection and disposal to rotating short-term contractors threatened multi-decade administrative accountability.",
+      "keyPhrases": [
+        {
+          "jp": "委[ゆだ]ねる",
+          "reading": "ゆだねる",
+          "en": "to entrust; leave to"
+        },
+        {
+          "jp": "〜にとどめる",
+          "reading": "にとどめる",
+          "en": "to limit/confine to ..."
+        },
+        {
+          "jp": "結論[けつろん]に至[いた]る",
+          "reading": "けつろんにいたる",
+          "en": "to arrive at a conclusion"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-13",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "リスク認知[にんち]における心理[しんり]的[てき]バイアス",
+      "titleEn": "Lecture: Cognitive Bias in Risk Perception",
+      "situationEn": "A university psychology professor lectures on why humans misjudge rare versus everyday risks.",
+      "introJp": "大学[だいがく]の講義[こうぎ]で教授[きょうじゅ]が話[はな]しています。教授[きょうじゅ]がこの講義[こうぎ]で最[もっと]も強調[きょうちょう]していることは何[なに]ですか。",
+      "introEn": "A professor is giving a university lecture. What is the professor emphasizing most?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "私[わたし]たちは危険[きけん]の大小[だいしょう]を統計[とうけい]的[てき]な確率[かくりつ]で冷静[れいせい]に判断[はんだん]していると思[おも]いがちですが、実際[じっさい]には「頭[あたま]に思[おも]い浮[う]かべやすさ」に強[つよ]く左右[さゆう]されます。",
+          "en": "We tend to think we judge the magnitude of danger calmly by statistical probability, yet in reality we are strongly swayed by how easily an image comes to mind."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "たとえば、航空機[こうくうき]事故[じこ]のように映像[えいぞう]が鮮烈[せんれつ]で報道[ほうどう]量[りょう]が多[おお]い事象[じしょう]ほど、発生[はっせい]確率[かくりつ]を実際[じっさい]より遥[はる]かに高[たか]く見積[みつ]もってしまいます。逆[ぎゃく]に、日常[にちじょう]的[てき]な生活[せいかつ]習慣[しゅうかん]病[びょう]や家庭[かてい]内[ない]事故[じこ]は派手[はで]さがないため過小[かしょう]評価[ひょうか]されやすいのです。",
+          "en": "For example, events with vivid imagery and heavy media coverage like plane crashes lead us to vastly overestimate their probability. Conversely, everyday lifestyle diseases or household accidents lack drama and are easily underestimated."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "この認知[にんち]の歪[ゆが]みを自覚[じかく]せずに政策[せいさく]や個人[こじん]の備[そな]えを決[き]めると、発生[はっせい]頻度[ひんど]の極[きわ]めて低[ひく]い脅威[きょうい]に過剰[かじょう]な資源[しげん]を割[さ]き、身近[みぢか]で深刻[しんこく]な危険[きけん]を見過[みす]ごす結果[けっか]を招[まね]きかねません。",
+          "en": "If we decide public policy or personal preparedness without recognizing this cognitive distortion, we risk devoting excessive resources to ultra-rare threats while overlooking serious everyday hazards."
+        }
+      ],
+      "questionJp": "教授[きょうじゅ]が最[もっと]も強調[きょうちょう]していることは何[なに]ですか。",
+      "questionEn": "What is the professor emphasizing most?",
+      "choices": [
+        "報道[ほうどう]機関[きかん]は航空機[こうくうき]事故[じこ]の映像[えいぞう]を放送[ほうそう]すべきではない。",
+        "鮮烈[せんれつ]な印象[いんしょう]に左右[さゆう]される認知[にんち]の偏[かたよ]りを自覚[じかく]しないと、身近[みぢか]で深刻[しんこく]なリスクを見過[みす]ごすおそれがある。",
+        "人間[にんげん]は統計[とうけい]データを見[み]れば直感的[ちょっかんてき]な恐怖[きょうふ]を完全[かんぜん]に克服[こくふく]できる。",
+        "家庭[かてい]内[ない]事故[じこ]よりまれな災害[さいがい]への予算[よさん]を優先[ゆうせん]すべきだ。"
+      ],
+      "choicesEn": [
+        "Media outlets should stop broadcasting footage of plane crashes.",
+        "Without recognizing how vivid impressions bias risk perception, we risk neglecting serious everyday hazards.",
+        "Humans can completely overcome intuitive fear simply by viewing statistics.",
+        "Budgets should prioritize rare disasters over household accidents."
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The professor highlights the availability bias—vivid rare events feel likelier than mundane serious risks—warning that ignoring this bias misallocates policy and personal preparedness.",
+      "keyPhrases": [
+        {
+          "jp": "過小評価[かしょうひょうか]する",
+          "reading": "かしょうひょうかする",
+          "en": "to underestimate"
+        },
+        {
+          "jp": "資源[しげん]を割[さ]く",
+          "reading": "しげんをさく",
+          "en": "to allocate/spare resources"
+        },
+        {
+          "jp": "招[まね]きかねない",
+          "reading": "まねきかねない",
+          "en": "might invite / could lead to (undesirable result)"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-14",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "厳しい[きびしい]条件[じょうけん]への丁寧[ていねい]な譲歩[じょうほ]",
+      "titleEn": "Quick Response: Formal N1 Business Negotiation Reply",
+      "situationEn": "A client asks whether your company can accept a tight delivery deadline with partial compromise.",
+      "introJp": "取引先[とりひきさき]の担当[たんとう]者[しゃ]が厳[きび]しい納期[のうき]を求[もと]めています。何[なん]と答[こた]えますか。",
+      "introEn": "A client requests a very tight delivery schedule. What is the most appropriate formal business response?",
+      "lines": [
+        {
+          "speaker": "Client",
+          "role": "male",
+          "jp": "なんとか今月末[こんげつまつ]までに納品[のうひん]していただけないでしょうか。そこを曲[ま]げてお願[ねが]いします。",
+          "en": "Could you somehow deliver by the end of this month? Please bend the rules for us just this once."
+        }
+      ],
+      "questionJp": "前向[まえむ]きに検討[けんとう]したいとき、何[なん]と答[こた]えますか。",
+      "questionEn": "When you want to respond constructively while checking internally, what should you say?",
+      "choices": [
+        "お言葉[ことば]ですが、規則[きそく]ですので一切[いっさい]曲[ま]げられません。",
+        "承知[しょうち]いたしました。社[しゃ]に持[も]ち帰[かえ]り、ご要望[ようぼう]に沿[そ]えるよう最大限[さいだいげん]調整[ちょうせい]いたします。",
+        "そうですね、曲[ま]げてもよろしいかと思[おも]います。"
+      ],
+      "choicesEn": [
+        "With all due respect, rules are rules and cannot be bent at all.",
+        "Understood. I will take this back to our company and adjust as much as possible to meet your request.",
+        "Yes, I think it might be okay to bend it."
+      ],
+      "answerIndex": 1,
+      "explanationEn": "\"社に持ち帰り、ご要望に沿えるよう最大限調整いたします\" is the idiomatic, polished N1 business response signaling willingness to work toward the client's request while checking internal capacity.",
+      "keyPhrases": [
+        {
+          "jp": "そこを曲[ま]げて",
+          "reading": "そこをまげて",
+          "en": "please make an exception / bend on that point"
+        },
+        {
+          "jp": "要望[ようぼう]に沿[そ]う",
+          "reading": "ようぼうにそう",
+          "en": "to meet a request / align with wishes"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-15",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "再生[さいせい]可能[かのう]エネルギー実証[じっしょう]地域[ちいき]の選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Selecting a Renewable Energy Pilot Site",
+      "situationEn": "Three committee members review four candidate towns for a municipal renewable-energy microgrid pilot.",
+      "introJp": "検討[けんとう]委員[いいん]会[かい]で、再生[さいせい]可能[かのう]エネルギーの実証[じっしょう]実験[じっけん]を行[おこな]う地域[ちいき]を四[よっ]つの候補[こうほ]から選[えら]んでいます。最終的にどの地域[ちいき]が選[えら]ばれましたか。",
+      "introEn": "A committee is selecting a pilot site for a renewable energy microgrid from four candidates. Which town was ultimately selected?",
+      "lines": [
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "実証[じっしょう]実験[じっけん]の候補[こうほ]四[よん]地域[ちいき]について整理[せいり]します。まずＡ町[まち]は日照[にっしょう]時間[じかん]が最長[さいちょう]ですが、送電網[そうでんもう]の老朽化[ろうきゅうか]が激[はげ]しく、改修[かいしゅう]に三年[さんねん]かかります。来年度[らいねんど]開始[かいし]という国の補助[ほじょ]要件[ようけん]を満[み]たせません。",
+          "en": "Let's review our four pilot candidates. First, Town A has the longest sunshine hours, but its grid is severely aged and needs 3 years of upgrades—failing the national grant condition to launch next fiscal year."
+        },
+        {
+          "speaker": "Engineer",
+          "role": "female",
+          "jp": "Ｂ町[まち]は送電網[そうでんもう]が整備[せいび]済[ず]みで風力[ふうりょく]資源[しげん]も豊富[ほうふ]ですが、騒音[そうおん]への懸念[けねん]から地元[じもと]住民[じゅうみん]の合意[ごうい]形成[けいせい]が難航[なんこう]しています。合意[ごうい]なしで着工[ちゃっこう]するのは現実[げんじつ]的[てき]ではありません。",
+          "en": "Town B has an upgraded grid and abundant wind resources, yet consensus with local residents has stalled over noise concerns. Breaking ground without agreement isn't realistic."
+        },
+        {
+          "speaker": "Policy Lead",
+          "role": "male2",
+          "jp": "残[のこ]るＣ町[まち]とＤ町[まち]はいずれも来年度[らいねんど]着工[ちゃっこう]が可能[かのう]で、住民[じゅうみん]の賛同[さんどう]も得[え]られています。Ｃ町[まち]は人口[じんこう]規模[きぼ]が大[おお]きくデータ量[りょう]は豊富[ほうふ]ですが、災害[さいがい]時[じ]の自立[じりつ]運転[うんてん]を検証[けんしょう]するための蓄電池[ちくでんち]設置[せっち]用地[ようち]が確保[かくほ]できていません。",
+          "en": "Both remaining Towns C and D can launch next fiscal year and have resident approval. Town C has a larger population and rich data volume, but it has not secured land for the battery storage needed to verify off-grid disaster operation."
+        },
+        {
+          "speaker": "Engineer",
+          "role": "female",
+          "jp": "一方[いっぽう]Ｄ町[まち]は小規模[しょうきぼ]ですが、廃校[はいこう]跡地[あとち]に蓄電池[ちくでんち]設備[せつび]をすぐ配置[はいち]でき、停電[ていでん]時[じ]の避難所[ひなんじょ]への電力[でんりょく]供給[きょうきゅう]モデルまで一体[いったい]で検証[けんしょう]できます。",
+          "en": "On the other hand, although Town D is smaller in scale, battery storage can be deployed immediately on a former school site, allowing end-to-end testing including power supply to evacuation shelters during blackouts."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "今回[こんかい]の事業[じぎょう]の核心[かくしん]は防災[ぼうさい]拠点[きょてん]としての自立[じりつ]運用[うんよう]だ。規模[きぼ]は小[ちい]さくても確実[かくじつ]に検証[けんしょう]できるＤ町[まち]を第一[だいいち]候補[こうほ]として採択[さいたく]しよう。",
+          "en": "The core of this project is autonomous operation as a disaster-resilience hub. Even if smaller in scale, let's select Town D as our primary choice since it enables reliable verification."
+        }
+      ],
+      "questionJp": "最終的にどの地域[ちいき]が選[えら]ばれましたか。",
+      "questionEn": "Which town was ultimately selected?",
+      "choices": [
+        "Ａ町[まち]",
+        "Ｂ町[まち]",
+        "Ｃ町[まち]",
+        "Ｄ町[まち]"
+      ],
+      "choicesEn": [
+        "Town A",
+        "Town B",
+        "Town C",
+        "Town D"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Town A fails the next-year launch deadline; Town B lacks resident consensus; Town C lacks land for battery storage. Town D meets timeline, resident support, and immediate battery/shelter verification on a former school site.",
+      "keyPhrases": [
+        {
+          "jp": "合意形成[ごういけいせい]が難航[なんこう]する",
+          "reading": "ごういけいせいがなんこうする",
+          "en": "consensus-building stalls / runs into difficulty"
+        },
+        {
+          "jp": "採択[さいたく]する",
+          "reading": "さいたくする",
+          "en": "to adopt; select formally"
+        }
+      ]
+    }
+  ]
+}

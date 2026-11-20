@@ -1,0 +1,396 @@
+{
+  "level": 3,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "g-n3-21",
+      "jlpt": 3,
+      "order": 21,
+      "pattern": "～とは限らない",
+      "reading": "～とはかぎらない",
+      "meaning": "not necessarily; not always the case",
+      "structure": "Plain form (Noun/na-adj drop だ) + とは限らない",
+      "explanation": "Partially negates a general assumption or stereotype, stating that exceptions exist (\"just because X is true doesn't necessarily mean Y\"). Often paired with 必ずしも.",
+      "confusableWith": "～わけではない explains a nuance (\"it doesn't mean that...\"), whereas ～とは限らない specifically rejects universal rules (\"not always\").",
+      "examples": [
+        {
+          "jp": "高いものが必ずしも品質が良いとは限らない。",
+          "reading": "たかいものがかならずしもひんしつがよいとはかぎらない。",
+          "en": "Expensive things are not necessarily high in quality."
+        },
+        {
+          "jp": "有名な店だからといって、おいしいとは限らない。",
+          "reading": "ゆうめいなみせだからといって、おいしいとはかぎらない。",
+          "en": "Just because a restaurant is famous does not necessarily mean it is delicious."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "勉強時間が長ければ、点数が上がる",
+        "sentenceAfter": "。",
+        "en": "Studying for a long time does not necessarily mean your score will rise.",
+        "answer": "とは限らない",
+        "acceptedAnswers": [
+          "とは限らない",
+          "とはかぎらない"
+        ],
+        "choices": [
+          "とは限らない",
+          "にちがいない",
+          "にすぎない",
+          "はずがない"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-22",
+      "jlpt": 3,
+      "order": 22,
+      "pattern": "～に関して / ～に関する",
+      "reading": "～にかんして / ～にかんする",
+      "meaning": "regarding; concerning; related to",
+      "structure": "Noun + に関して(は/も) / に関する + Noun",
+      "explanation": "A slightly more formal and broader equivalent of ～について, covering not only the core subject itself but also surrounding matters related to it.",
+      "confusableWith": "Use ～について in casual speech; use ～に関して in reports, business emails, and official notices.",
+      "examples": [
+        {
+          "jp": "新しい制度に関して、いくつか質問があります。",
+          "reading": "あたらしいせいどにかんして、いくつか質問があります。",
+          "en": "I have several questions regarding the new system."
+        },
+        {
+          "jp": "環境問題に関する資料を集めています。",
+          "reading": "かんきょうもんだいにかんするしりょうをあつめています。",
+          "en": "I am gathering materials related to environmental issues."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "新商品の発売",
+        "sentenceAfter": "お知らせがあります。",
+        "en": "There is an announcement regarding the launch of the new product.",
+        "answer": "に関する",
+        "acceptedAnswers": [
+          "に関する",
+          "にかんする"
+        ],
+        "choices": [
+          "に関する",
+          "に対する",
+          "にとって",
+          "によって"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-23",
+      "jlpt": 3,
+      "order": 23,
+      "pattern": "～を中心に(して)",
+      "reading": "～をちゅうしんに",
+      "meaning": "centered on; focusing mainly on ...",
+      "structure": "Noun + を中心に(して) / を中心とした + Noun",
+      "explanation": "Indicates that a person, place, topic, or demographic serves as the central focus or core of an activity, group, or trend.",
+      "confusableWith": "Do not confuse with ～をもとに (based on a source/data); ～を中心に highlights the hub or primary focus.",
+      "examples": [
+        {
+          "jp": "このカフェは若い女性を中心に人気がある。",
+          "reading": "このカフェはわかいじょせいをちゅうしんににんきがある。",
+          "en": "This café is popular mainly among young women."
+        },
+        {
+          "jp": "明日の会議では来年度の予算を中心に話し合います。",
+          "reading": "あしたのかいぎではらいねんどのよさんをちゅうしんにはなしあいます。",
+          "en": "At tomorrow's meeting, we will focus our discussion on next year's budget."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このイベントは地元の学生",
+        "sentenceAfter": "企画されました。",
+        "en": "This event was planned with local students at the center.",
+        "answer": "を中心に",
+        "acceptedAnswers": [
+          "を中心に",
+          "をちゅうしんに"
+        ],
+        "choices": [
+          "を中心に",
+          "にかわって",
+          "のおかげで",
+          "にくらべて"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-24",
+      "jlpt": 3,
+      "order": 24,
+      "pattern": "～に比べて",
+      "reading": "～にくらべて",
+      "meaning": "compared with ...",
+      "structure": "Noun + に比べて / と比べて",
+      "explanation": "Explicitly compares two things, timeframes, or standards to highlight a clear difference or change.",
+      "confusableWith": "More formal and emphatic than plain ～より, especially when comparing past vs. present conditions.",
+      "examples": [
+        {
+          "jp": "去年と比べて、今年の冬はかなり暖かい。",
+          "reading": "きょねんとくらべて、ことしのふゆはかなりあたたかい。",
+          "en": "Compared with last year, this winter is considerably warmer."
+        },
+        {
+          "jp": "都会に比べて、田舎の生活は時間がゆっくり流れる。",
+          "reading": "とかいにくらべて、いなかのせいかつはじかんがゆっくりながれる。",
+          "en": "Compared with the city, time flows slowly in rural life."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "十年前に",
+        "sentenceAfter": "、スマートフォンの性能は大きく進化した。",
+        "en": "Compared with ten years ago, smartphone performance has evolved greatly.",
+        "answer": "比べて",
+        "acceptedAnswers": [
+          "比べて",
+          "くらべて"
+        ],
+        "choices": [
+          "比べて",
+          "加えて",
+          "対して",
+          "関して"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-25",
+      "jlpt": 3,
+      "order": 25,
+      "pattern": "～に加えて",
+      "reading": "～にくわえて",
+      "meaning": "in addition to ...",
+      "structure": "Noun + に加えて",
+      "explanation": "Adds another factor, feature, or problem on top of an already substantial one. Common in news, essays, and formal explanations.",
+      "confusableWith": "Whereas ～だけでなく contrasts A and B, ～に加えて emphasizes cumulative stacking of factors.",
+      "examples": [
+        {
+          "jp": "強い風に加えて、激しい雨も降ってきた。",
+          "reading": "つよいかぜにくわえて、はげしいあめもふってきた。",
+          "en": "In addition to strong winds, heavy rain also began to fall."
+        },
+        {
+          "jp": "英語に加えて、中国語も話せるのは大きな強みだ。",
+          "reading": "えいごにくわえて、ちゅうごくごもはなせるのはおおきなつよみだ。",
+          "en": "Being able to speak Chinese in addition to English is a major strength."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "原材料の値上がり",
+        "sentenceAfter": "、人手不足も深刻になっている。",
+        "en": "In addition to rising raw material costs, labor shortages are also becoming serious.",
+        "answer": "に加えて",
+        "acceptedAnswers": [
+          "に加えて",
+          "にくわえて"
+        ],
+        "choices": [
+          "に加えて",
+          "に比べて",
+          "を通じて",
+          "をもとに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-26",
+      "jlpt": 3,
+      "order": 26,
+      "pattern": "～を通じて / ～を通して",
+      "reading": "～をつうじて / ～をとおして",
+      "meaning": "through (a medium/experience) / throughout (a period)",
+      "structure": "Noun + を通じて / を通して",
+      "explanation": "Has two key uses: (1) via a medium, person, or experience (SNSを通じて), and (2) continuously throughout an entire period (一年を通して).",
+      "confusableWith": "を通じて is slightly more formal and preferred for passive/natural channels; を通して is slightly more direct for intentional means.",
+      "examples": [
+        {
+          "jp": "ボランティア活動を通して、多くの友達ができた。",
+          "reading": "ボランティアかつどうをとおして、おおくのともだちができた。",
+          "en": "Through volunteer activities, I made many friends."
+        },
+        {
+          "jp": "この地域は一年を通じて温暖な気候だ。",
+          "reading": "このちいきはいちねんをつうじておんだんなきこうだ。",
+          "en": "This region has a mild climate throughout the year."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "海外留学の経験",
+        "sentenceAfter": "、自分の考え方が大きく広がった。",
+        "en": "Through the experience of studying abroad, my perspective broadened greatly.",
+        "answer": "を通して",
+        "acceptedAnswers": [
+          "を通して",
+          "をとおして",
+          "を通じて",
+          "をつうじて"
+        ],
+        "choices": [
+          "を通して",
+          "に比べて",
+          "に対して",
+          "にとって"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-27",
+      "jlpt": 3,
+      "order": 27,
+      "pattern": "～といえば",
+      "reading": "～といえば",
+      "meaning": "speaking of ...; when you mention ...",
+      "structure": "Noun / Plain Clause + といえば",
+      "explanation": "Used either to state the first iconic thing that comes to mind (京都といえばお寺) or to pivot a conversation to a related topic (\"Speaking of...\").",
+      "confusableWith": "～というと seeks clarification or shares a factual association; ～といえば smoothly changes the subject or cites a classic association.",
+      "examples": [
+        {
+          "jp": "日本の秋といえば、やはり紅葉が美しいですね。",
+          "reading": "にほんのあきといえば、やはりこうようがうつくしいですね。",
+          "en": "Speaking of autumn in Japan, the autumn foliage is indeed beautiful."
+        },
+        {
+          "jp": "そういえば、佐藤さんから連絡はありましたか。",
+          "reading": "そういえば、さとうさんかられんらくはありましたか。",
+          "en": "Come to think of it, have you heard from Sato-san?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "北海道",
+        "sentenceAfter": "、新鮮な海鮮丼やラーメンが有名だ。",
+        "en": "Speaking of Hokkaido, fresh seafood bowls and ramen are famous.",
+        "answer": "といえば",
+        "acceptedAnswers": [
+          "といえば",
+          "と言えば"
+        ],
+        "choices": [
+          "といえば",
+          "にとって",
+          "について",
+          "のおかげで"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-28",
+      "jlpt": 3,
+      "order": 28,
+      "pattern": "～ほど～はない",
+      "reading": "～ほど～はない",
+      "meaning": "nothing is as ... as ... (strongest superlative)",
+      "structure": "Noun / Clause + ほど + Adjective / Verb-ない + はない",
+      "explanation": "Emphasizes that something holds the highest degree of a quality by stating that nothing else reaches its level.",
+      "confusableWith": "Stronger and more expressive than ～の中で一番, often used for emotional statements or proverbs.",
+      "examples": [
+        {
+          "jp": "健康ほど大切なものはない。",
+          "reading": "けんこうほどたいせつなものはない。",
+          "en": "There is nothing as precious as health."
+        },
+        {
+          "jp": "今年の夏ほど暑かった年は今までになかった。",
+          "reading": "ことしのなつほどあつかったとしはいままでになかった。",
+          "en": "There has never been a year as hot as this summer."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "努力が報われたとき",
+        "sentenceAfter": "うれしい瞬間はない。",
+        "en": "There is no happier moment than when one's efforts pay off.",
+        "answer": "ほど",
+        "acceptedAnswers": [
+          "ほど"
+        ],
+        "choices": [
+          "ほど",
+          "より",
+          "だけ",
+          "ばかり"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-29",
+      "jlpt": 3,
+      "order": 29,
+      "pattern": "～ような気がする",
+      "reading": "～ようなきがする",
+      "meaning": "I have a feeling that ...; it somehow feels like ...",
+      "structure": "Plain Verb/i-adj + ような気がする | Noun の + ような気がする",
+      "explanation": "Expresses a vague intuition, hunch, or faint memory without asserting certainty.",
+      "confusableWith": "Softer and more intuitive than ～と思う or ～はずだ.",
+      "examples": [
+        {
+          "jp": "あの人、どこかで会ったような気がする。",
+          "reading": "あのひと、どこかであったようなきがする。",
+          "en": "I have a feeling I have met that person somewhere before."
+        },
+        {
+          "jp": "今日はうまくいくような気がします。",
+          "reading": "きょうはうまくいくようなきがします。",
+          "en": "I have a feeling things will go well today."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "さっきから、外で誰かが呼んでいる",
+        "sentenceAfter": "。",
+        "en": "For a while now, I've had a feeling someone is calling outside.",
+        "answer": "ような気がする",
+        "acceptedAnswers": [
+          "ような気がする",
+          "ようなきがする"
+        ],
+        "choices": [
+          "ような気がする",
+          "にちがいない",
+          "わけにはいかない",
+          "ことにしている"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-30",
+      "jlpt": 3,
+      "order": 30,
+      "pattern": "～てばかりいる",
+      "reading": "～てばかりいる",
+      "meaning": "do nothing but ...; always doing ... (critical nuance)",
+      "structure": "Verb (て-form) + ばかりいる",
+      "explanation": "Criticizes someone (or oneself) for repeatedly doing one unproductive thing to the exclusion of everything else.",
+      "confusableWith": "Noun + ばかり + Verb focuses on the object (お菓子ばかり食べる), whereas Verb-て + ばかりいる focuses on the repeated action.",
+      "examples": [
+        {
+          "jp": "弟は休みの日にゲームをしてばかりいる。",
+          "reading": "おとうとはやすみのひにゲームをしてばかりいる。",
+          "en": "My younger brother does nothing but play video games on his days off."
+        },
+        {
+          "jp": "文句を言ってばかりいないで、自分でやってみたらどう？",
+          "reading": "もんくをいってばかりいないで、じぶんでやってみたらどう？",
+          "en": "Instead of always complaining, why don't you try doing it yourself?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "テスト前なのに、スマホを見",
+        "sentenceAfter": "。",
+        "en": "Even though it's before the test, I keep doing nothing but looking at my smartphone.",
+        "answer": "てばかりいる",
+        "acceptedAnswers": [
+          "てばかりいる"
+        ],
+        "choices": [
+          "てばかりいる",
+          "ておいている",
+          "てみている",
+          "てある"
+        ]
+      }
+    }
+  ]
+}

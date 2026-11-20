@@ -1,0 +1,312 @@
+{
+  "level": 2,
+  "pack": "n2-pack2",
+  "items": [
+    {
+      "id": "l-n2-11",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "新入[しんにゅう]社員[しゃいん]向[む]けマニュアルの更新[こうしん]",
+      "titleEn": "Updating Onboarding Docs Before New Hires Arrive",
+      "situationEn": "A team lead and a staff member review tasks before new hires join next Monday.",
+      "introJp": "会社[かいしゃ]で上司[じょうし]と部下[ぶか]が話[はな]しています。部下[ぶか]は今日[きょう]中[じゅう]にまず何[なに]をしますか。",
+      "introEn": "A manager and a subordinate are talking at the office. What will the subordinate do first today?",
+      "lines": [
+        {
+          "speaker": "Manager",
+          "role": "female",
+          "jp": "来週[らいしゅう]月曜[げつよう]から新入[しんにゅう]社員[しゃいん]が三人[さんにん]入[はい]るけど、受[う]け入[い]れ準備[じゅんび]はどこまで進[すす]んでる？",
+          "en": "Three new hires start next Monday—how far along are the onboarding preparations?"
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "male",
+          "jp": "パソコンと社員証[しゃいんしょう]の手配[てはい]は終[お]わりました。あとは業務[ぎょうむ]マニュアルの改訂[かいてい]と、初日[しょにち]の歓迎[かんげい]ランチの店[みせ]の予約[よやく]が残[のこ]っています。",
+          "en": "PCs and ID cards are all arranged. What remains is updating the operations manual and booking a restaurant for the Day-1 welcome lunch."
+        },
+        {
+          "speaker": "Manager",
+          "role": "female",
+          "jp": "ありがとう。ランチの予約[よやく]は明日[あした]でもいいけど、マニュアルは先月[せんげつ]変[か]わった経費[けいひ]システムの手順[てじゅん]が古[ふる]いままだよね。それだけは今日[きょう]中[じゅう]に書[か]き換[か]えて共有[きょうゆう]フォルダに上[あ]げておいてくれる？",
+          "en": "Thanks. The lunch reservation can wait until tomorrow, but the manual still has outdated steps for the expense system that changed last month. Could you rewrite just that section and upload it to the shared folder by today?"
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "male",
+          "jp": "承知[しょうち]しました。印刷[いんさつ]もしておきましょうか。",
+          "en": "Understood. Shall I print copies too?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "female",
+          "jp": "いや、ペーパーレスだから印刷[いんさつ]はいらないよ。アップロードだけで大丈夫[だいじょうぶ]。",
+          "en": "No, we're paperless so no printing needed. Just uploading it is fine."
+        }
+      ],
+      "questionJp": "部下[ぶか]は今日[きょう]中[じゅう]に何[なに]をしますか。",
+      "questionEn": "What will the subordinate do by the end of today?",
+      "choices": [
+        "歓迎[かんげい]ランチの店[みせ]を予約[よやく]する",
+        "経費[けいひ]システムの手順[てじゅん]を書[か]き換[か]え、共有[きょうゆう]フォルダにアップロードする",
+        "マニュアルを三人[さんにん]分[ぶん]印刷[いんさつ]する",
+        "パソコンと社員証[しゃいんしょう]を手配[てはい]する"
+      ],
+      "choicesEn": [
+        "Book the welcome lunch restaurant",
+        "Rewrite the expense system steps and upload to the shared folder",
+        "Print three copies of the manual",
+        "Arrange PCs and employee ID cards"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "PCs/IDs are done, lunch booking can wait until tomorrow, and printing is declined due to paperless policy—so today's task is updating the expense steps and uploading the manual.",
+      "keyPhrases": [
+        {
+          "jp": "手配[てはい]が終[お]わる",
+          "reading": "てはいがおわる",
+          "en": "arrangements are complete"
+        },
+        {
+          "jp": "承知[しょうち]しました",
+          "reading": "しょうちしました",
+          "en": "understood (formal business)"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-12",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "地方[ちほう]鉄道[てつどう]が急行[きゅうこう]停車駅[ていしゃえき]を見直[みなお]した理由[りゆう]",
+      "titleEn": "Why the Regional Rail Line Changed Express Stops",
+      "situationEn": "A railway spokesperson explains a timetable revision during a local news segment.",
+      "introJp": "ニュースで鉄道[てつどう]会社[がいしゃ]の担当[たんとう]者[しゃ]が話[はな]しています。急行[きゅうこう]電車[でんしゃ]の停車駅[ていしゃえき]を増[ふ]やした一番[いちばん]の理由[りゆう]は何[なに]ですか。",
+      "introEn": "A railway spokesperson is speaking on the news. What is the primary reason for adding express train stops?",
+      "lines": [
+        {
+          "speaker": "Reporter",
+          "role": "female",
+          "jp": "来月[らいげつ]のダイヤ改正[かいせい]で、急行[きゅうこう]電車[でんしゃ]の停車駅[ていしゃえき]が二駅[ふたえき]増[ふ]えますね。所要[しょよう]時間[じかん]が少[すこ]し延[の]びるという声[こえ]もありますが、なぜでしょうか。",
+          "en": "In next month's timetable revision, express trains will stop at two additional stations. Some note travel time will lengthen slightly—why make this change?"
+        },
+        {
+          "speaker": "Spokesperson",
+          "role": "male",
+          "jp": "確[たし]かに終点[しゅうてん]までは三分[さんぷん]ほど長[なが]くなります。ただ、ここ数年[すうねん]で新[あら]たに停車[ていしゃ]する二駅[ふたえき]の周辺[しゅうへん]に大型[おおがた]マンションや病院[びょういん]が建[た]ち、乗降[じょうこう]客数[きゃくすう]が急増[きゅうぞう]しているんです。",
+          "en": "True, reaching the terminus takes about three minutes longer. However, in the past few years large condominiums and a hospital were built around those two stations, causing ridership to surge."
+        },
+        {
+          "speaker": "Spokesperson",
+          "role": "male",
+          "jp": "普通[ふつう]電車[でんしゃ]だけでは朝[あさ]の混雑[こんざつ]が限界[げんかい]に達[たっ]しており、乗客[じょうきゃく]を分散[ぶんさん]させることが最優先[さいゆうせん]でした。車両[しゃりょう]を増[ふ]やす案[あん]もありましたが、ホームの工事[こうじ]に数年[すうねん]かかるため、まず停車駅[ていしゃえき]の見直[みなお]しに踏[ふ]み切[き]りました。",
+          "en": "Local trains alone reached their limit during morning rush hour, so distributing passengers was top priority. Adding train cars was considered, but platform construction would take years, so we moved forward with revising stops first."
+        }
+      ],
+      "questionJp": "急行[きゅうこう]電車[でんしゃ]の停車駅[ていしゃえき]を増[ふ]やした一番[いちばん]の理由[りゆう]は何[なに]ですか。",
+      "questionEn": "What is the primary reason for adding stops to the express train?",
+      "choices": [
+        "終点[しゅうてん]までの所要[しょよう]時間[じかん]を短縮[たんしゅく]するため",
+        "利用客[りようきゃく]が急増[きゅうぞう]した駅[えき]の朝[あさ]の混雑[こんざつ]を分散[ぶんさん]させるため",
+        "ホームの拡張[かくちょう]工事[こうじ]が完了[かんりょう]したから",
+        "普通[ふつう]電車[でんしゃ]の本数[ほんすう]を削減[さくげん]するため"
+      ],
+      "choicesEn": [
+        "To shorten travel time to the terminus",
+        "To disperse severe morning crowding at stations where ridership surged",
+        "Because platform expansion work was completed",
+        "To reduce the number of local trains"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Ridership surged around the two stations due to new apartments and a hospital, pushing local trains to their limit; dispersing morning passengers was the top priority.",
+      "keyPhrases": [
+        {
+          "jp": "限界[げんかい]に達[たっ]する",
+          "reading": "げんかいにたっする",
+          "en": "to reach the limit"
+        },
+        {
+          "jp": "踏[ふ]み切[き]る",
+          "reading": "ふみきる",
+          "en": "to take the plunge; go ahead with a decision"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-13",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "伝統[でんとう]工芸[こうげい]の定額[ていがく]レンタル事業[じぎょう]",
+      "titleEn": "Interview: Subscription Models for Traditional Crafts",
+      "situationEn": "A radio host interviews a workshop director trying a subscription rental service for pottery.",
+      "introJp": "ラジオで伝統[でんとう]工芸[こうげい]の工房[こうぼう]代表[だいひょう]がインタビューに答[こた]えています。このサービスを始[はじ]めたねらいは何[なに]ですか。",
+      "introEn": "A traditional craft workshop director is interviewed on the radio. What is the goal of launching this service?",
+      "lines": [
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "高価[こうか]な伝統[でんとう]の焼[や]き物[もの]を月額[げつがく]制[せい]で貸[か]し出[だ]すサービスが話題[わだい]ですね。なぜ売[う]るだけでなくレンタルを始[はじ]めたのですか。",
+          "en": "Your monthly subscription rental for expensive traditional pottery is getting attention. Why start rentals instead of only selling?"
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "若[わか]い世代[せだい]から「興味[きょうみ]はあるけれど、いきなり数万円[すうまんえん]の器[うつわ]を買[か]うのは勇気[ゆうき]がいる」という声[こえ]を多[おお]く聞[き]いたんです。",
+          "en": "We heard many younger people say, \"I'm interested, but buying a dish worth tens of thousands of yen right away takes courage.\""
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "そこで、まず気軽[きがる]に食卓[しょくたく]で使[つか]ってもらい、手触[てざわ]りや料理[りょうり]の映[は]え方[かた]を実感[じっかん]してもらうことにしたんです。実際[じっさい]、半年[はんとし]レンタルした方[かた]の三割[さんわり]が気に入[きにい]って購入[こうにゅう]してくださっています。割[わ]れたときの保証[ほしょう]も付[つ]けて心理[しんり]的[てき]なハードルを下[さ]げました。",
+          "en": "So we decided to let them try using it casually at their dining table first and feel the texture and how it elevates food. In fact, 30% of those who rent for six months fall in love with it and purchase it. We also included breakage coverage to lower the psychological barrier."
+        }
+      ],
+      "questionJp": "工房[こうぼう]代表[だいひょう]がレンタルサービスを始[はじ]めた一番[いちばん]のねらいは何[なに]ですか。",
+      "questionEn": "What is the workshop director's main aim in starting the rental service?",
+      "choices": [
+        "器[うつわ]の販売[はんばい]をやめてレンタル専門[せんもん]の事業[じぎょう]へ転換[てんかん]すること",
+        "高価[こうか]な器[うつわ]をいきなり買[か]う心理[しんり]的[てき]ハードルを下[さ]げ、まず使[つか]って良[よ]さを知[し]ってもらうこと",
+        "在庫[ざいこ]として余[あま]った古[ふる]い作品[さくひん]を処分[しょぶん]すること",
+        "海外[かいがい]の高級[こうきゅう]レストランにだけ器[うつわ]を貸[か]し出[だ]すこと"
+      ],
+      "choicesEn": [
+        "To stop selling pottery and switch exclusively to rentals",
+        "To lower the psychological barrier and let people experience the craft before buying",
+        "To clear out leftover old inventory",
+        "To rent vessels exclusively to luxury overseas restaurants"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The director wanted to lower the hesitation of paying tens of thousands of yen upfront by letting younger customers try the pottery at home with breakage protection.",
+      "keyPhrases": [
+        {
+          "jp": "勇気[ゆうき]がいる",
+          "reading": "ゆうきがいる",
+          "en": "takes courage"
+        },
+        {
+          "jp": "心理的[しんりてき]ハードルを下[さ]げる",
+          "reading": "しんりてきはーどるをさげる",
+          "en": "to lower the psychological barrier"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-14",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "上司[じょうし]の日程[にってい]の勘違[かんちが]いを指摘[してき]する",
+      "titleEn": "Quick Response: Tactfully Correcting a Boss's Date Mistake",
+      "situationEn": "Your boss mentions a client visit as being on Thursday, when it is actually on Wednesday.",
+      "introJp": "会社[かいしゃ]で上司[じょうし]が予定[よてい]を間違[まちが]えています。部下[ぶか]は何[なん]と言[い]いますか。",
+      "introEn": "Your manager has the date wrong at the office. What is the most tactful reply?",
+      "lines": [
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "来週[らいしゅう]の木曜日[もくようび]のＡ社[しゃ]訪問[ほうもん]、資料[しりょう]はもうできてる？",
+          "en": "For next Thursday's visit to Company A, are the handouts ready?"
+        }
+      ],
+      "questionJp": "予定[よてい]が水曜日[すいようび]のとき、部下[ぶか]は何[なん]と言[い]いますか。",
+      "questionEn": "When the visit is actually on Wednesday, how should the subordinate reply?",
+      "choices": [
+        "部長[ぶちょう]、間違[まちが]っていますよ。水曜日[すいようび]ですから。",
+        "あ、恐縮[きょうしゅく]ですが、Ａ社[しゃ]の訪問[ほうもん]は水曜日[すいようび]の予定[よてい]だったかと存[ぞん]じますが……。",
+        "水曜日[すいようび]に変[か]えておきましたので、木曜日[もくようび]は休[やす]みです。"
+      ],
+      "choicesEn": [
+        "Director, you're wrong. It's Wednesday.",
+        "Ah, pardon me, I believe the visit to Company A was scheduled for Wednesday...",
+        "I changed it to Wednesday, so Thursday is off."
+      ],
+      "answerIndex": 1,
+      "explanationEn": "\"恐縮ですが、〜だったかと存じますが\" is the polite, softened Japanese business phrase for tactfully correcting a superior's mistake without sounding blunt.",
+      "keyPhrases": [
+        {
+          "jp": "恐縮[きょうしゅく]ですが",
+          "reading": "きょうしゅくですが",
+          "en": "I'm sorry to interject, but..."
+        },
+        {
+          "jp": "〜かと存[ぞん]じます",
+          "reading": "かとぞんじます",
+          "en": "I believe it is ... (humble)"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-15",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "社員[しゃいん]研修[けんしゅう]合宿[がっしゅく]の会場[かいじょう]選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Choosing a Company Retreat Venue",
+      "situationEn": "Two HR staff members evaluate four candidate venues for a 2-day company training retreat.",
+      "introJp": "会社[かいしゃ]で人事部[じんじぶ]の二人[ふたり]が、社員[しゃいん]研修[けんしゅう]合宿[がっしゅく]の会場[かいじょう]を四[よっ]つの候補[こうほ]から選[えら]んでいます。どの会場[かいじょう]に決[き]まりましたか。",
+      "introEn": "Two HR staff members are selecting a training retreat venue from four options. Which venue did they choose?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "来月[らいげつ]の研修[けんしゅう]合宿[がっしゅく]、候補[こうほ]を四[よっ]つに絞[しぼ]りました。まず、海辺[うみべ]ホテルは設備[せつび]が新[あたら]しくてWi-Fiも高速[こうそく]ですが、予算[よさん]を一人[ひとり]あたり五千円[ごせんえん]オーバーします。",
+          "en": "I narrowed next month's retreat down to four candidates. First, Seaside Hotel has new facilities and fast Wi-Fi, but it exceeds budget by 5,000 yen per person."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "予算[よさん]オーバーは稟議[りんぎ]が通[とお]らないから厳[きび]しいね。次[つぎ]の高原[こうげん]ロッジはどう？",
+          "en": "Over budget won't pass approval, so that's tough. How about the second one, Highland Lodge?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "高原[こうげん]ロッジは予算[よさん]内[ない]で自然[しぜん]も豊[ゆた]かですが、最寄[もよ]り駅[えき]からバスが一時間[いちじかん]に一本[いっぽん]しかなく、移動[いどう]に往復[おうふく]四時間[よじかん]かかります。",
+          "en": "Highland Lodge is within budget and rich in nature, but buses from the nearest station run only once an hour, taking four hours round-trip."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "一泊[いっぱく]二日[ふつか]で移動[いどう]に四時間[よじかん]はきついなぁ。残[のこ]りの湖畔[こはん]研修[けんしゅう]センターと駅前[えきまえ]ビジネスホテルは？",
+          "en": "Four hours of travel for an overnight trip is rough. What about the remaining Lakeside Training Center and Station Business Hotel?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "駅前[えきまえ]ホテルは駅[えき]から徒歩[とほ]三分[さんぷん]で予算[よさん]内[ない]ですが、グループワーク用[よう]の大会議室[だいかいぎしつ]が埋[う]まっていて、小部屋[こべや]に分[わ]かれるしかありません。一方[いっぽう]、湖畔[こはん]センターは電車[でんしゃ]で一時間[いちじかん]ほど、予算[よさん]内[ない]で五十名[ごじゅうめい]入[はい]る大会議室[だいかいぎしつ]も空[あ]いています。温泉[おんせん]はありませんが……。",
+          "en": "Station Hotel is a 3-minute walk and within budget, yet its large conference room for group work is booked, forcing us into small rooms. On the other hand, Lakeside Center is about an hour by train, within budget, and has a 50-person conference hall available—though it has no hot spring..."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "研修[けんしゅう]が目的[もくてき]だから温泉[おんせん]はなくて構[かま]わないよ。全員[ぜんいん]一斉[いっせい]にワークショップができるほうが大事[だいじ]だ。そこに決[き]めよう。",
+          "en": "Training is the goal, so no hot spring is fine. Having everyone do the workshop together is more important. Let's decide on that one."
+        }
+      ],
+      "questionJp": "どの会場[かいじょう]に決[き]まりましたか。",
+      "questionEn": "Which venue was chosen?",
+      "choices": [
+        "海辺[うみべ]ホテル",
+        "高原[こうげん]ロッジ",
+        "湖畔[こはん]研修[けんしゅう]センター",
+        "駅前[えきまえ]ビジネスホテル"
+      ],
+      "choicesEn": [
+        "Seaside Hotel",
+        "Highland Lodge",
+        "Lakeside Training Center",
+        "Station Business Hotel"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Seaside Hotel is over budget; Highland Lodge takes 4 hours round-trip; Station Hotel lacks a large conference room. Lakeside Training Center fits budget, travel time, and group-workshop hall needs.",
+      "keyPhrases": [
+        {
+          "jp": "稟議[りんぎ]が通[とお]らない",
+          "reading": "りんぎがとおらない",
+          "en": "won't pass internal approval"
+        },
+        {
+          "jp": "一斉[いっせい]に",
+          "reading": "いっせいに",
+          "en": "all together; simultaneously"
+        }
+      ]
+    }
+  ]
+}

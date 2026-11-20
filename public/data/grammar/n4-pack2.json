@@ -1,0 +1,393 @@
+{
+  "level": 4,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "g-n4-21",
+      "jlpt": 4,
+      "order": 21,
+      "pattern": "～てくる / ～ていく",
+      "reading": "～てくる / ～ていく",
+      "meaning": "to change up to now / to continue changing from now on",
+      "structure": "Verb (て-form) + くる / いく",
+      "explanation": "～てくる describes a change continuing from the past up to the present (or movement toward the speaker). ～ていく describes a change continuing from now into the future (or movement away).",
+      "confusableWith": "Besides physical movement (買ってくる), pay attention to temporal aspect: 寒くなってきた (has gotten cold) vs. 寒くなっていく (will keep getting colder).",
+      "examples": [
+        {
+          "jp": "最近、日本語のニュースが少しわかってきました。",
+          "reading": "さいきん、にほんごのニュースがすこしわかってきました。",
+          "en": "Recently, I have come to understand Japanese news a little."
+        },
+        {
+          "jp": "これからも毎日漢字を勉強していきます。",
+          "reading": "これからもまいにちかんじをべんきょうしていきます。",
+          "en": "I will keep studying kanji every day from now on."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "秋になって、だんだん涼しくなって",
+        "sentenceAfter": "ました。",
+        "en": "Autumn has arrived, and it has gradually become cooler.",
+        "answer": "き",
+        "acceptedAnswers": [
+          "き",
+          "来"
+        ],
+        "choices": [
+          "き",
+          "み",
+          "おき",
+          "あり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-22",
+      "jlpt": 4,
+      "order": 22,
+      "pattern": "～ようだ / ～みたいだ",
+      "reading": "～ようだ / ～みたいだ",
+      "meaning": "it seems like ... / looks just like ...",
+      "structure": "Plain Verb/i-adj + ようだ | Noun の + ようだ (Casual: Noun + みたいだ)",
+      "explanation": "Expresses conjecture based on direct sensory clues (\"it seems that\") or simile (\"like a ...\"). みたいだ is the conversational equivalent of ようだ.",
+      "confusableWith": "Unlike そうだ (hearsay or immediate visual guess), ようだ conveys a reasoned impression drawn from evidence.",
+      "examples": [
+        {
+          "jp": "外が濡れているので、夜中に雨が降ったようです。",
+          "reading": "そとがぬれているので、よなかにあめがふったようです。",
+          "en": "The ground is wet outside, so it seems it rained during the night."
+        },
+        {
+          "jp": "今日は春みたいに暖かいですね。",
+          "reading": "きょうははるみたいにあたたかいですね。",
+          "en": "Today is warm like spring, isn't it?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "電気も消えているし、誰もいない",
+        "sentenceAfter": "です。",
+        "en": "The lights are off too, so it seems nobody is here.",
+        "answer": "よう",
+        "acceptedAnswers": [
+          "よう",
+          "みたい"
+        ],
+        "choices": [
+          "よう",
+          "そう",
+          "はず",
+          "つもり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-23",
+      "jlpt": 4,
+      "order": 23,
+      "pattern": "～らしい",
+      "reading": "～らしい",
+      "meaning": "apparently; I heard that ... / typical of ...",
+      "structure": "Plain form (drop だ for Noun/na-adj) + らしい",
+      "explanation": "Expresses conjecture based on indirect information or rumors (\"apparently\"). When attached directly to a noun (春らしい), it means \"typical of / truly like\".",
+      "confusableWith": "そうだ (hearsay) strictly relays what was heard; らしい adds the speaker's own judgment that the report is probably true.",
+      "examples": [
+        {
+          "jp": "駅の近くに新しいパン屋ができたらしいですよ。",
+          "reading": "えきのちかくにあたらしいパンやができたらしいですよ。",
+          "en": "Apparently a new bakery opened near the station."
+        },
+        {
+          "jp": "今日は十月らしい涼しい天気です。",
+          "reading": "きょうはじゅうがつらしいすずしいてんきです。",
+          "en": "Today is cool weather typical of October."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ニュースによると、来月から電車賃が上がる",
+        "sentenceAfter": "です。",
+        "en": "According to the news, train fares will apparently go up starting next month.",
+        "answer": "らしい",
+        "acceptedAnswers": [
+          "らしい"
+        ],
+        "choices": [
+          "らしい",
+          "やすい",
+          "にくい",
+          "ほしい"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-24",
+      "jlpt": 4,
+      "order": 24,
+      "pattern": "～ところだ",
+      "reading": "～ところだ",
+      "meaning": "about to / right in the middle of / just finished",
+      "structure": "V-dict (about to) / V-ている (in the middle) / V-た (just did) + ところだ",
+      "explanation": "Highlights an exact point in time relative to an action: 食べるところ (about to eat), 食べているところ (eating right now), 食べたところ (just finished eating).",
+      "confusableWith": "～たばかり emphasizes psychological recency (even months ago), whereas ～たところ strictly refers to mere moments ago.",
+      "examples": [
+        {
+          "jp": "今ちょうど家を出るところです。",
+          "reading": "いまちょうどいえをでるところです。",
+          "en": "I am just about to leave the house right now."
+        },
+        {
+          "jp": "たった今、駅に着いたところです。",
+          "reading": "たったいま、えきについたところです。",
+          "en": "I just arrived at the station this very moment."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "すみません、今ちょうど会議を始めた",
+        "sentenceAfter": "なんです。",
+        "en": "Excuse me, we have literally just started the meeting.",
+        "answer": "ところ",
+        "acceptedAnswers": [
+          "ところ"
+        ],
+        "choices": [
+          "ところ",
+          "つもり",
+          "あいだ",
+          "とおり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-25",
+      "jlpt": 4,
+      "order": 25,
+      "pattern": "～たばかり",
+      "reading": "～たばかり",
+      "meaning": "just did ... (feels very recent)",
+      "structure": "Verb (た-form) + ばかりだ",
+      "explanation": "States that an action occurred recently from the speaker's subjective perspective—even if days, weeks, or months have passed.",
+      "confusableWith": "Can be used for \"I just moved to Japan last month\" (先月日本に来たばかり), where ～たところ would sound unnatural.",
+      "examples": [
+        {
+          "jp": "先月この会社に入ったばかりです。",
+          "reading": "せんげつこのかいしゃにはいったばかりです。",
+          "en": "I just joined this company last month."
+        },
+        {
+          "jp": "買ったばかりの傘を電車に忘れてしまいました。",
+          "reading": "かったばかりのかさをでんしゃにわすれてしまいました。",
+          "en": "I accidentally left the umbrella I had just bought on the train."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本に来た",
+        "sentenceAfter": "なので、まだ知らないことが多いです。",
+        "en": "Since I just came to Japan, there are still many things I do not know.",
+        "answer": "ばかり",
+        "acceptedAnswers": [
+          "ばかり"
+        ],
+        "choices": [
+          "ばかり",
+          "ながら",
+          "つもり",
+          "ために"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-26",
+      "jlpt": 4,
+      "order": 26,
+      "pattern": "～(ら)れる (Pasif / Ukemi)",
+      "reading": "～(ら)れる",
+      "meaning": "passive voice (is done / was adversely affected by)",
+      "structure": "Group 1: a-stem + れる | Group 2: stem + られる | する→される | 来る→来られる",
+      "explanation": "Forms the passive voice, marking the doer with に. Japanese also uses the \"suffering passive\" when someone is inconvenienced by another's action (e.g. 雨に降られた).",
+      "confusableWith": "For Group 2 verbs, passive (見られる) looks identical to the potential form; distinguish them via context and particles (に for the agent).",
+      "examples": [
+        {
+          "jp": "先生に作文をほめられました。",
+          "reading": "せんせいにさくぶんをほめられました。",
+          "en": "I was praised by the teacher for my essay."
+        },
+        {
+          "jp": "満員電車で隣の人に足を踏まれました。",
+          "reading": "まんいんでんしゃでとなりのひとにあしをふまれました。",
+          "en": "I had my foot stepped on by the person next to me on the crowded train."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "帰り道で急に雨に",
+        "sentenceAfter": "、服が濡れてしまいました。",
+        "en": "On the way home I got caught in sudden rain, and my clothes got wet.",
+        "answer": "降られて",
+        "acceptedAnswers": [
+          "降られて",
+          "ふられて"
+        ],
+        "choices": [
+          "降られて",
+          "降らせて",
+          "降って",
+          "降れて"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-27",
+      "jlpt": 4,
+      "order": 27,
+      "pattern": "～(さ)せる (Kausatif / Shieki)",
+      "reading": "～(さ)せる",
+      "meaning": "to make / let someone do ...",
+      "structure": "Group 1: a-stem + せる | Group 2: stem + させる | する→させる | 来る→来させる",
+      "explanation": "Expresses either compulsion (\"make someone do\") or permission (\"let someone do\"). Combined with ～てください, it politely asks permission (\"please let me...\").",
+      "confusableWith": "Intransitive verbs mark the person with を (子供を歩かせる), while transitive verbs mark the person with に (子供に野菜を食べさせる).",
+      "examples": [
+        {
+          "jp": "母は毎日私にピアノを練習させます。",
+          "reading": "はははまいにちわたしにピアノをれんしゅうさせます。",
+          "en": "My mother makes me practice the piano every day."
+        },
+        {
+          "jp": "少し考えさせてください。",
+          "reading": "すこしかんがえさせてください。",
+          "en": "Please let me think about it for a little while."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "大事なことなので、もう少し私に考え",
+        "sentenceAfter": "ください。",
+        "en": "Since it is important, please let me think about it a bit more.",
+        "answer": "させて",
+        "acceptedAnswers": [
+          "させて"
+        ],
+        "choices": [
+          "させて",
+          "られて",
+          "しられて",
+          "して"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-28",
+      "jlpt": 4,
+      "order": 28,
+      "pattern": "～(さ)せられる (Kausatif-Pasif)",
+      "reading": "～(さ)せられる",
+      "meaning": "to be made to do ... (against one's will)",
+      "structure": "Causative stem + られる (Group 1 often contracts to ～される)",
+      "explanation": "Combines causative and passive to express being forced or obliged to do something reluctantly. Group 1 verbs (except す-verbs) frequently shorten to ～される (待たされる, 書かされる).",
+      "confusableWith": "Do not confuse plain passive (待たれた = was waited for) with causative-passive (待たされた = was made to wait).",
+      "examples": [
+        {
+          "jp": "人気のレストランで一時間も待たされました。",
+          "reading": "にんきのレストランでいちじかんもまたされました。",
+          "en": "I was made to wait for a whole hour at the popular restaurant."
+        },
+        {
+          "jp": "子供のころ、嫌いなピーマンを食べさせられました。",
+          "reading": "こどものころ、きらいなピーマンをたべさせられました。",
+          "en": "When I was a child, I was forced to eat green peppers I hated."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "病院がとても混んでいて、二時間近く",
+        "sentenceAfter": "。",
+        "en": "The hospital was very crowded, and I was made to wait nearly two hours.",
+        "answer": "待たされました",
+        "acceptedAnswers": [
+          "待たされました",
+          "またされました",
+          "待たせられました",
+          "またせられました"
+        ],
+        "choices": [
+          "待たされました",
+          "待たれました",
+          "待たせました",
+          "待っていました"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-29",
+      "jlpt": 4,
+      "order": 29,
+      "pattern": "～かどうか",
+      "reading": "～かどうか",
+      "meaning": "whether or not ...",
+      "structure": "Plain form (drop だ for Noun/na-adj) + かどうか",
+      "explanation": "Embeds a yes/no question inside a larger sentence, usually followed by verbs of knowing, checking, asking, or deciding (わかる, 調べる, 聞く).",
+      "confusableWith": "When an interrogative word (何, どこ, いつ) is already present, use ～か instead of ～かどうか.",
+      "examples": [
+        {
+          "jp": "明日の試合に参加できるかどうか、まだわかりません。",
+          "reading": "あしたのしあいにさんかできるかどうか、まだわかりません。",
+          "en": "I still do not know whether or not I can join tomorrow's match."
+        },
+        {
+          "jp": "サイズがこの部屋に合うかどうか測ってみます。",
+          "reading": "サイズがこのへやにあうかどうかはかってみます。",
+          "en": "I will measure to see whether the size fits this room."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "鍵を閉めた",
+        "sentenceAfter": "、もう一度確認してください。",
+        "en": "Please check once more whether or not you locked the door.",
+        "answer": "かどうか",
+        "acceptedAnswers": [
+          "かどうか"
+        ],
+        "choices": [
+          "かどうか",
+          "ように",
+          "ために",
+          "ばかり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-30",
+      "jlpt": 4,
+      "order": 30,
+      "pattern": "～てほしい",
+      "reading": "～てほしい",
+      "meaning": "I want someone to do ...",
+      "structure": "Person に + Verb (て-form) + ほしい / ないでほしい",
+      "explanation": "Expresses the speaker's wish for someone else to perform (or not perform) an action. Use ～ないでほしい for \"I want you not to...\".",
+      "confusableWith": "Use ～たい for your own actions, and ～てほしい when you want another person to do something.",
+      "examples": [
+        {
+          "jp": "困ったときは、いつでも相談してほしいです。",
+          "reading": "こまったときは、いつでもそうだんしてほしいです。",
+          "en": "Whenever you are in trouble, I want you to consult me."
+        },
+        {
+          "jp": "このことは他の人には言わないでほしい。",
+          "reading": "このことはほかのひとにはいわないでほしい。",
+          "en": "I want you not to tell anyone else about this."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "大事な会議なので、絶対に遅れないで",
+        "sentenceAfter": "です。",
+        "en": "Since it is an important meeting, I want you definitely not to be late.",
+        "answer": "ほしい",
+        "acceptedAnswers": [
+          "ほしい",
+          "欲しい"
+        ],
+        "choices": [
+          "ほしい",
+          "たい",
+          "やすい",
+          "らしい"
+        ]
+      }
+    }
+  ]
+}

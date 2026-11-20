@@ -1,0 +1,329 @@
+{
+  "level": 2,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "kv-n2-31",
+      "jlpt": 2,
+      "order": 31,
+      "word": "そもそも",
+      "reading": "そもそも",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Conjunction",
+      "primaryMeaning": "in the first place; fundamentally",
+      "acceptedMeanings": [
+        "in the first place",
+        "originally",
+        "fundamentally"
+      ],
+      "usageNote": "Returns a discussion to its fundamental premise or original starting point.",
+      "example": {
+        "jp": "そもそも、この調査の目的は何だったでしょうか。",
+        "reading": "そもそも、このちょうさのもくてきはなんだったでしょうか。",
+        "en": "In the first place, what was the purpose of this survey?"
+      },
+      "quiz": {
+        "sentenceBefore": "細かな修正の前に、",
+        "sentenceAfter": "この企画が必要なのか考え直すべきだ。",
+        "en": "Before making minor edits, we should rethink whether this project is needed in the first place.",
+        "choices": [
+          "そもそも",
+          "あいにく",
+          "とっくに",
+          "せめて"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-32",
+      "jlpt": 2,
+      "order": 32,
+      "word": "たちまち",
+      "reading": "たちまち",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "in an instant; rapidly; all at once",
+      "acceptedMeanings": [
+        "in an instant",
+        "immediately",
+        "rapidly",
+        "in no time"
+      ],
+      "usageNote": "Describes a sudden, dramatic spread or change (news going viral, skies turning dark).",
+      "example": {
+        "jp": "その動画はSNSで話題になり、たちまち世界中に広まった。",
+        "reading": "そのどうがはSNSでわだいになり、たちまちせかいじゅうにひろまった。",
+        "en": "The video became a hot topic on social media and spread worldwide in no time."
+      },
+      "quiz": {
+        "sentenceBefore": "限定スイーツは開店と同時に客が殺到し、",
+        "sentenceAfter": "売り切れてしまった。",
+        "en": "Customers flooded in for the limited sweets as soon as the store opened, and they sold out in an instant.",
+        "choices": [
+          "たちまち",
+          "およそ",
+          "むしろ",
+          "かえって"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-33",
+      "jlpt": 2,
+      "order": 33,
+      "word": "ひとまず",
+      "reading": "ひとまず",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "for the time being; for now",
+      "acceptedMeanings": [
+        "for the time being",
+        "for now",
+        "tentatively"
+      ],
+      "usageNote": "Signals a temporary pause or provisional conclusion before deciding the next step.",
+      "example": {
+        "jp": "今日の議論はひとまずここで終了としましょう。",
+        "reading": "きょうのぎろんはひとまずここでしゅうりょうとしましょう。",
+        "en": "Let's wrap up today's discussion here for now."
+      },
+      "quiz": {
+        "sentenceBefore": "トラブルの原因は調査中ですが、",
+        "sentenceAfter": "システムは復旧しました。",
+        "en": "The cause of the issue is under investigation, but for now the system has been restored.",
+        "choices": [
+          "ひとまず",
+          "いっそう",
+          "かならずしも",
+          "おそらく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-34",
+      "jlpt": 2,
+      "order": 34,
+      "word": "なおさら",
+      "reading": "なおさら",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "all the more; even more so",
+      "acceptedMeanings": [
+        "all the more",
+        "even more",
+        "still more"
+      ],
+      "usageNote": "Emphasizes that a tendency or necessity becomes even stronger under a specific condition.",
+      "example": {
+        "jp": "普段でも道が混むのに、雨の日はなおさら時間がかかる。",
+        "reading": "ふだんでもみちがこむのに、あめのひはなおさらじかんがかかる。",
+        "en": "The roads are crowded even normally, and on rainy days it takes all the more time."
+      },
+      "quiz": {
+        "sentenceBefore": "一人で住むのも大変だが、家族がいれば",
+        "sentenceAfter": "計画的な家計管理が必要だ。",
+        "en": "Living alone is hard enough, and if you have a family, careful budgeting is all the more necessary.",
+        "choices": [
+          "なおさら",
+          "せめて",
+          "なにも",
+          "あいにく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-35",
+      "jlpt": 2,
+      "order": 35,
+      "word": "あるいは",
+      "reading": "あるいは",
+      "category": "connector",
+      "partOfSpeech": "Conjunction / Adverb",
+      "primaryMeaning": "or; alternatively / possibly",
+      "acceptedMeanings": [
+        "or",
+        "alternatively",
+        "possibly",
+        "perhaps"
+      ],
+      "usageNote": "Formal equivalent of または when presenting options; at sentence start can also mean \"perhaps\".",
+      "example": {
+        "jp": "お申し込みは郵送、あるいはウェブサイトから受け付けております。",
+        "reading": "おもうしこみはゆうそう、あるいはウェブサイトからうけつけております。",
+        "en": "Applications are accepted by mail or via the website."
+      },
+      "quiz": {
+        "sentenceBefore": "ご不明な点は電話、",
+        "sentenceAfter": "専用フォームよりお問い合わせください。",
+        "en": "For any questions, please contact us by phone or via the dedicated form.",
+        "choices": [
+          "あるいは",
+          "すなわち",
+          "すると",
+          "もっとも"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-36",
+      "jlpt": 2,
+      "order": 36,
+      "word": "それゆえ",
+      "reading": "それゆえ",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "therefore; consequently; for that reason",
+      "acceptedMeanings": [
+        "therefore",
+        "consequently",
+        "for that reason"
+      ],
+      "usageNote": "Formal logical connector common in N2/N1 essays and academic reading passages.",
+      "example": {
+        "jp": "この技術は極めて繊細だ。それゆえ、熟練した職人の手が欠かせない。",
+        "reading": "このぎじゅつはきわめてせんさいだ。それゆえ、じゅくれんしたしょくにんのてがかかせない。",
+        "en": "This technique is extraordinarily delicate. Therefore, the hands of skilled artisans are indispensable."
+      },
+      "quiz": {
+        "sentenceBefore": "情報は鮮度が命である。",
+        "sentenceAfter": "、迅速な共有体制が求められる。",
+        "en": "Freshness is the lifeblood of information. Therefore, a rapid sharing system is required.",
+        "choices": [
+          "それゆえ",
+          "それにもかかわらず",
+          "なお",
+          "もっとも"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-37",
+      "jlpt": 2,
+      "order": 37,
+      "word": "ずらり",
+      "reading": "ずらり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "lined up in an impressive row",
+      "acceptedMeanings": [
+        "lined up in a row",
+        "in a long row",
+        "arrayed"
+      ],
+      "usageNote": "Always followed by と (ずらりと並ぶ) to paint a vivid picture of many items or people arranged in order.",
+      "example": {
+        "jp": "会場の棚には受賞作品がずらりと並んでいた。",
+        "reading": "かいじょうのたなにはじゅしょうさくひんがずらりとならんでいた。",
+        "en": "Award-winning works were lined up in an impressive row on the venue shelves."
+      },
+      "quiz": {
+        "sentenceBefore": "新装開店の本屋には、話題の新刊が",
+        "sentenceAfter": "と並んでいた。",
+        "en": "In the newly renovated bookstore, trending new releases were lined up in rows.",
+        "choices": [
+          "ずらり",
+          "ばったり",
+          "あっさり",
+          "ぐったり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-38",
+      "jlpt": 2,
+      "order": 38,
+      "word": "しっとり",
+      "reading": "しっとり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / suru-verb",
+      "primaryMeaning": "moist and soft; calm and refined",
+      "acceptedMeanings": [
+        "moist",
+        "soft and moist",
+        "calm",
+        "refined"
+      ],
+      "usageNote": "Positive word for pleasantly moist cake/skin/air, or a serene, refined atmosphere (never soggy/wet like びっしょり).",
+      "example": {
+        "jp": "このチーズケーキは口当たりがしっとりしていて絶品だ。",
+        "reading": "このチーズケーキはくちあたりがしっとりしていてぜっぴんだ。",
+        "en": "This cheesecake has a moist texture and is exquisite."
+      },
+      "quiz": {
+        "sentenceBefore": "化粧水を変えたら、乾燥していた肌が",
+        "sentenceAfter": "と潤うようになった。",
+        "en": "After switching toners, my dry skin became softly moisturized.",
+        "choices": [
+          "しっとり",
+          "ぼろぼろ",
+          "ぐったり",
+          "めっきり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-39",
+      "jlpt": 2,
+      "order": 39,
+      "word": "スキル",
+      "reading": "スキル",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "skill; professional capability",
+      "acceptedMeanings": [
+        "skill",
+        "skills",
+        "capability"
+      ],
+      "usageNote": "Used widely in career contexts: スキルアップ (upskilling), コミュニケーションスキル.",
+      "example": {
+        "jp": "研修を通じてデータ分析のスキルを磨きたい。",
+        "reading": "けんしゅうをつうじてデータぶんせきのスキルをみがきたい。",
+        "en": "I want to sharpen my data analysis skills through the training."
+      },
+      "quiz": {
+        "sentenceBefore": "変化の激しい時代では、学び続けて自分の",
+        "sentenceAfter": "を高めることが大切だ。",
+        "en": "In a rapidly changing era, it is important to keep learning and elevate your skills.",
+        "choices": [
+          "スキル",
+          "リスク",
+          "ニーズ",
+          "プロセス"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-40",
+      "jlpt": 2,
+      "order": 40,
+      "word": "モチベーション",
+      "reading": "モチベーション",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "motivation; drive",
+      "acceptedMeanings": [
+        "motivation",
+        "drive",
+        "morale"
+      ],
+      "usageNote": "Commonly paired with 保つ (maintain), 上がる (rise), or 下がる (drop).",
+      "example": {
+        "jp": "小さな目標を達成すると、学習のモチベーションが保ちやすい。",
+        "reading": "ちいさなもくひょうをたっせいすると、がくしゅうのモチベーションがたもちやすい。",
+        "en": "Achieving small goals makes it easier to maintain study motivation."
+      },
+      "quiz": {
+        "sentenceBefore": "正当な評価を受けることは、社員の",
+        "sentenceAfter": "向上に直結する。",
+        "en": "Receiving fair evaluation directly connects to improving employee motivation.",
+        "choices": [
+          "モチベーション",
+          "コンセプト",
+          "アプローチ",
+          "ノウハウ"
+        ]
+      }
+    }
+  ]
+}

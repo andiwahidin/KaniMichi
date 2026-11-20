@@ -1,0 +1,329 @@
+{
+  "level": 4,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "kv-n4-31",
+      "jlpt": 4,
+      "order": 31,
+      "word": "ずいぶん",
+      "reading": "ずいぶん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "considerably; quite; surprisingly",
+      "acceptedMeanings": [
+        "considerably",
+        "quite",
+        "surprisingly",
+        "very"
+      ],
+      "usageNote": "Expresses that a degree or change is noticeably greater than expected.",
+      "example": {
+        "jp": "久しぶりに会ったら、背がずいぶん伸びていました。",
+        "reading": "ひさしぶりにあったら、せがずいぶんのびていました。",
+        "en": "When I saw him after a long time, he had grown considerably taller."
+      },
+      "quiz": {
+        "sentenceBefore": "去年と比べて、日本語が",
+        "sentenceAfter": "上手になりましたね。",
+        "en": "Compared to last year, your Japanese has gotten quite good!",
+        "choices": [
+          "ずいぶん",
+          "めったに",
+          "たまに",
+          "そろそろ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-32",
+      "jlpt": 4,
+      "order": 32,
+      "word": "けっこう",
+      "reading": "けっこう",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / na-adj",
+      "primaryMeaning": "quite; fairly / no thank you (polite)",
+      "acceptedMeanings": [
+        "quite",
+        "fairly",
+        "fine",
+        "no thank you"
+      ],
+      "usageNote": "As an adverb means \"surprisingly/fairly\" (けっこう重い); as a predicate 結構です politely declines an offer.",
+      "example": {
+        "jp": "駅から歩くとけっこう時間がかかりますよ。",
+        "reading": "えきからあるくとけっこうじかんがかかりますよ。",
+        "en": "Walking from the station takes quite a bit of time."
+      },
+      "quiz": {
+        "sentenceBefore": "見た目は小さかったけれど、食べてみたら",
+        "sentenceAfter": "おなかいっぱいになった。",
+        "en": "It looked small, but when I ate it, I got fairly full.",
+        "choices": [
+          "けっこう",
+          "ぜひ",
+          "きっと",
+          "ほとんど"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-33",
+      "jlpt": 4,
+      "order": 33,
+      "word": "しばらく",
+      "reading": "しばらく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "for a while; for some time",
+      "acceptedMeanings": [
+        "for a while",
+        "for some time",
+        "a little while"
+      ],
+      "usageNote": "Refers to an indefinite moderate period of time—minutes, days, or months depending on context.",
+      "example": {
+        "jp": "雨がやむまで、しばらくここで待ちましょう。",
+        "reading": "あめがやむまで、しばらくここでまちましょう。",
+        "en": "Let's wait here for a while until the rain stops."
+      },
+      "quiz": {
+        "sentenceBefore": "けがをしたので、",
+        "sentenceAfter": "運動を休むことにしました。",
+        "en": "Since I got injured, I decided to take a break from exercise for a while.",
+        "choices": [
+          "しばらく",
+          "ようやく",
+          "すっかり",
+          "なるべく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-34",
+      "jlpt": 4,
+      "order": 34,
+      "word": "さっき",
+      "reading": "さっき",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "a little while ago; just now",
+      "acceptedMeanings": [
+        "a little while ago",
+        "just now",
+        "earlier"
+      ],
+      "usageNote": "Conversational word for a short time ago within the same day (formal equivalent: 先ほど).",
+      "example": {
+        "jp": "さっき田中さんから電話がありましたよ。",
+        "reading": "さっき たなかさんからでんわがありましたよ。",
+        "en": "There was a phone call from Tanaka-san a little while ago."
+      },
+      "quiz": {
+        "sentenceBefore": "あれ、",
+        "sentenceAfter": "までここに置いてあった鍵がない。",
+        "en": "Huh, the key that was sitting right here just a moment ago is gone.",
+        "choices": [
+          "さっき",
+          "そろそろ",
+          "ようやく",
+          "めったに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-35",
+      "jlpt": 4,
+      "order": 35,
+      "word": "いよいよ",
+      "reading": "いよいよ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "at last; finally (long-awaited moment)",
+      "acceptedMeanings": [
+        "at last",
+        "finally",
+        "more and more"
+      ],
+      "usageNote": "Builds anticipation right as a long-awaited event is about to begin (e.g. exam day, departure).",
+      "example": {
+        "jp": "いよいよ来週から日本留学が始まります。",
+        "reading": "いよいよらいしゅうからにほんりゅうがくがはじまります。",
+        "en": "My study abroad in Japan is finally starting next week."
+      },
+      "quiz": {
+        "sentenceBefore": "三か月準備してきた文化祭が、",
+        "sentenceAfter": "明日始まります。",
+        "en": "The school festival we prepared for three months is finally starting tomorrow.",
+        "choices": [
+          "いよいよ",
+          "たまに",
+          "やっぱり",
+          "ほとんど"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-36",
+      "jlpt": 4,
+      "order": 36,
+      "word": "なぜなら",
+      "reading": "なぜなら",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "because; the reason is that ...",
+      "acceptedMeanings": [
+        "because",
+        "the reason is",
+        "for"
+      ],
+      "usageNote": "Introduces a clear explanation after stating an opinion; usually closes the sentence with ～からだ.",
+      "example": {
+        "jp": "朝に勉強するのが一番いい。なぜなら、頭がすっきりしているからだ。",
+        "reading": "あさにべんきょうするのがいちばんいい。なぜなら、あたまがすっきりしているからだ。",
+        "en": "Studying in the morning is best. Because your mind is clear."
+      },
+      "quiz": {
+        "sentenceBefore": "私は自転車で通勤している。",
+        "sentenceAfter": "、満員電車に乗らなくていいからだ。",
+        "en": "I commute by bicycle. Because I don't have to ride crowded trains.",
+        "choices": [
+          "なぜなら",
+          "ところで",
+          "それでは",
+          "たとえば"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-37",
+      "jlpt": 4,
+      "order": 37,
+      "word": "どんどん",
+      "reading": "どんどん",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "rapidly; steadily; one after another",
+      "acceptedMeanings": [
+        "rapidly",
+        "steadily",
+        "fast",
+        "vigorously"
+      ],
+      "usageNote": "Describes smooth, energetic progress or rapid increase without hesitation.",
+      "example": {
+        "jp": "分からないことがあったら、どんどん質問してください。",
+        "reading": "わからないことがあったら、どんどんしつもんしてください。",
+        "en": "If there is anything you don't understand, please ask questions freely."
+      },
+      "quiz": {
+        "sentenceBefore": "毎日練習したら、ピアノが",
+        "sentenceAfter": "上手になった。",
+        "en": "When I practiced every day, my piano playing improved steadily.",
+        "choices": [
+          "どんどん",
+          "うっかり",
+          "いらいら",
+          "ぐっすり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-38",
+      "jlpt": 4,
+      "order": 38,
+      "word": "ばらばら",
+      "reading": "ばらばら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "na-adj / Adverb",
+      "primaryMeaning": "scattered; inconsistent; all apart",
+      "acceptedMeanings": [
+        "scattered",
+        "inconsistent",
+        "falling apart",
+        "separate"
+      ],
+      "usageNote": "Describes objects scattered apart or schedules/opinions that do not match up.",
+      "example": {
+        "jp": "家族の休みがばらばらで、なかなか旅行に行けない。",
+        "reading": "かぞくのやすみがばらばらで、なかなかりょこうにいけない。",
+        "en": "Our family's days off are all different, so we can't easily go on a trip."
+      },
+      "quiz": {
+        "sentenceBefore": "強い風で、プリントが床に",
+        "sentenceAfter": "に散らばってしまった。",
+        "en": "Because of the strong wind, the handouts scattered all over the floor.",
+        "choices": [
+          "ばらばら",
+          "ぴかぴか",
+          "にこにこ",
+          "わくわく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-39",
+      "jlpt": 4,
+      "order": 39,
+      "word": "キャンセル",
+      "reading": "キャンセル",
+      "category": "katakana",
+      "partOfSpeech": "Noun / suru-verb",
+      "primaryMeaning": "cancellation; to cancel",
+      "acceptedMeanings": [
+        "cancel",
+        "cancellation"
+      ],
+      "usageNote": "Standard word for canceling reservations, orders, or appointments (予約をキャンセルする).",
+      "example": {
+        "jp": "急に熱が出たので、ホテルの予約をキャンセルしました。",
+        "reading": "きゅうにねつがでたので、ホテルのよやくをキャンセルしました。",
+        "en": "Because I suddenly got a fever, I canceled my hotel reservation."
+      },
+      "quiz": {
+        "sentenceBefore": "台風で飛行機が飛ばなくなり、旅行を",
+        "sentenceAfter": "することになった。",
+        "en": "The flight was grounded by the typhoon, so we had to cancel the trip.",
+        "choices": [
+          "キャンセル",
+          "アンケート",
+          "コンセント",
+          "レポート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-40",
+      "jlpt": 4,
+      "order": 40,
+      "word": "サービス",
+      "reading": "サービス",
+      "category": "katakana",
+      "partOfSpeech": "Noun / suru-verb",
+      "primaryMeaning": "service; complimentary freebie (false friend!)",
+      "acceptedMeanings": [
+        "service",
+        "complimentary",
+        "free of charge"
+      ],
+      "usageNote": "False friend alert: in Japanese restaurants/shops, サービスです often means \"it's on the house (free bonus)!\".",
+      "example": {
+        "jp": "こちらのデザートはお店からのサービスです。",
+        "reading": "こちらのデザートはおみせからのサービスです。",
+        "en": "This dessert is complimentary from the restaurant."
+      },
+      "quiz": {
+        "sentenceBefore": "常連のお客さんなので、コーヒーを一杯",
+        "sentenceAfter": "してくれました。",
+        "en": "Because I'm a regular customer, they gave me a cup of coffee on the house.",
+        "choices": [
+          "サービス",
+          "マンション",
+          "スケジュール",
+          "ビニール"
+        ]
+      }
+    }
+  ]
+}

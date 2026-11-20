@@ -1,0 +1,310 @@
+{
+  "level": 4,
+  "pack": "n4-pack2",
+  "items": [
+    {
+      "id": "l-n4-11",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "図書館[としょかん]のグループ学習室[がくしゅうしつ]の予約[よやく]",
+      "titleEn": "Reserving a Library Study Room",
+      "situationEn": "A university student asks a librarian how to reserve a group study room.",
+      "introJp": "大学[だいがく]の図書館[としょかん]で学生[がくせい]と係[かかり]の人[ひと]が話[はな]しています。学生[がくせい]はこれから何[なに]をしますか。",
+      "introEn": "A student and a library staff member are talking. What will the student do next?",
+      "lines": [
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "すみません、来週[らいしゅう]の月曜日[げつようび]にグループ学習室[がくしゅうしつ]を予約[よやく]したいんですが。",
+          "en": "Excuse me, I'd like to reserve a group study room for next Monday."
+        },
+        {
+          "speaker": "Librarian",
+          "role": "female",
+          "jp": "はい、何人[なんにん]でご利用[りよう]ですか。三階[さんがい]の部屋[へや]は三人[さんにん]以上[いじょう]から予約[よやく]できます。",
+          "en": "Sure, how many people will be using it? Rooms on the 3rd floor can be reserved for three or more people."
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "四人[よにん]で使[つか]います。今[いま]、このカウンターで申[もう]し込[こ]めますか。",
+          "en": "Four of us will use it. Can I apply here at the counter right now?"
+        },
+        {
+          "speaker": "Librarian",
+          "role": "female",
+          "jp": "実[じつ]は今月[こんげつ]から、予約[よやく]は図書館[としょかん]のウェブサイトからだけになったんです。ただ、当日[とうじつ]鍵[かぎ]を借[か]りるときは学生証[がくせいしょう]を持[も]ってカウンターへ来[き]てください。",
+          "en": "Actually, starting this month, reservations can only be made through the library website. However, on the day itself, please bring your student ID to the counter to borrow the key."
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "わかりました。じゃあ、今[いま]スマホで予約[よやく]してみます。",
+          "en": "Got it. Then I'll try reserving it on my smartphone right now."
+        }
+      ],
+      "questionJp": "学生[がくせい]はこれから何[なに]をしますか。",
+      "questionEn": "What will the student do next?",
+      "choices": [
+        "カウンターで申込書[もうしこみしょ]を書[か]く",
+        "ウェブサイトから学習室[がくしゅうしつ]を予約[よやく]する",
+        "学生証[がくせいしょう]を見[み]せて鍵[かぎ]を借[か]りる",
+        "三階[さんがい]へ見[み]に行[い]く"
+      ],
+      "choicesEn": [
+        "Fill out an application form at the counter",
+        "Reserve the study room via the website",
+        "Show his student ID and borrow the key",
+        "Go look at the 3rd floor"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Reservations are now website-only, so the student concludes he will reserve it on his smartphone right now. Showing his ID for the key is only on the day of use (当日).",
+      "keyPhrases": [
+        {
+          "jp": "三人[さんにん]以上[いじょう]",
+          "reading": "さんにんいじょう",
+          "en": "three or more people"
+        },
+        {
+          "jp": "〜だけになった",
+          "reading": "だけになった",
+          "en": "became exclusively ..."
+        },
+        {
+          "jp": "当日[とうじつ]",
+          "reading": "とうじつ",
+          "en": "on the day of the event"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-12",
+      "jlpt": 4,
+      "taskType": "point",
+      "titleJp": "ヨガ教室[きょうしつ]を変[か]えた理由[りゆう]",
+      "titleEn": "Why Sakura Switched Yoga Classes",
+      "situationEn": "Two friends talk over coffee about Sakura changing her yoga class.",
+      "introJp": "女[おんな]の人[ひと]と男[おとこ]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]はどうしてヨガ教室[きょうしつ]を変[か]えましたか。",
+      "introEn": "A woman and a man are talking. Why did the woman change her yoga class?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "さくらさん、駅前[えきまえ]のヨガ教室[きょうしつ]、辞[や]めたんだって？月謝[げっしゃ]が高[たか]かったの？",
+          "en": "Sakura, I heard you quit the yoga class in front of the station? Was the monthly fee expensive?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "ううん、値段[ねだん]はすごく安[やす]かったし、先生[せんせい]も優[やさ]しくてよかったんだよ。",
+          "en": "No, the price was really cheap and the teacher was kind and great."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "じゃあ、どうして？家[いえ]から遠[とお]かった？",
+          "en": "Then why? Was it far from your home?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "ううん、近[ちか]かったんだけど、仕事[しごと]のあとに行[い]ける夜[よる]のクラスが人気[にんき]すぎて、ほとんど予約[よやく]が取[と]れなかったの。せっかくお金[かね]を払[はら]っているのに行[い]けなかったら意味[いみ]がないでしょ。",
+          "en": "No, it was close, but the evening classes I can attend after work were so popular that I could barely get a reservation. Paying money when I can't even go is pointless, right?"
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はどうしてヨガ教室[きょうしつ]を変[か]えましたか。",
+      "questionEn": "Why did the woman switch yoga classes?",
+      "choices": [
+        "月謝[げっしゃ]が高[たか]すぎたから",
+        "家[いえ]から通[かよ]うのが遠[とお]かったから",
+        "夜[よる]のクラスの予約[よやく]がほとんど取[と]れなかったから",
+        "先生[せんせい]の教[おし]え方[かた]が厳[きび]しかったから"
+      ],
+      "choicesEn": [
+        "Because the monthly fee was too high",
+        "Because it was far from her home",
+        "Because she could hardly book the evening classes",
+        "Because the instructor was strict"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "She rules out price, instructor, and distance—the real reason is the after-work evening classes were so popular she could rarely book a spot.",
+      "keyPhrases": [
+        {
+          "jp": "せっかく〜のに",
+          "reading": "せっかくのに",
+          "en": "even though one went to the trouble of ..."
+        },
+        {
+          "jp": "予約[よやく]が取[と]れない",
+          "reading": "よやくがとれない",
+          "en": "unable to get a reservation"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-13",
+      "jlpt": 4,
+      "taskType": "gaiyou",
+      "titleJp": "地域[ちいき]の花火[はなび]大会[たいかい]の案内[あんない]",
+      "titleEn": "Local Fireworks Festival Announcement",
+      "situationEn": "A city hall radio broadcast announces guidelines for the upcoming fireworks festival.",
+      "introJp": "ラジオで花火[はなび]大会[たいかい]のお知[し]らせを聞[き]いています。一番[いちばん]注意[ちゅうい]してほしいと言[い]っていることは何[なに]ですか。",
+      "introEn": "You are listening to a radio announcement about a fireworks festival. What is the main warning being emphasized?",
+      "lines": [
+        {
+          "speaker": "Announcer",
+          "role": "male",
+          "jp": "今週[こんしゅう]土曜日[どようび]の夜[よる]七時[しちじ]から、川[かわ]沿[ぞ]いの公園[こうえん]で夏[なつ]の花火[はなび]大会[たいかい]が行[おこな]われます。",
+          "en": "This Saturday from 7:00 PM, the summer fireworks festival will take place at the riverside park."
+        },
+        {
+          "speaker": "Announcer",
+          "role": "male",
+          "jp": "当日[とうじつ]は夕方[ゆうがた]五時[ごじ]から会場[かいじょう]の周辺[しゅうへん]の道路[どうろ]が通行[つうこう]止[ど]めになります。また、公園[こうえん]の駐車場[ちゅうしゃじょう]は使[つか]えませんので、必[かなら]ず電車[でんしゃ]やバスでお越[こ]しください。",
+          "en": "On the day, roads around the venue will be closed to traffic from 5:00 PM. Also, the park parking lot cannot be used, so please be sure to come by train or bus."
+        },
+        {
+          "speaker": "Announcer",
+          "role": "male",
+          "jp": "なお、小雨[こさめ]の場合[ばあい]は予定[よてい]どおり実施[じっし]しますが、強[つよ]い風[かぜ]や大雨[おおあめ]のときは日曜日[にちようび]に延期[えんき]します。",
+          "en": "Please note that it will proceed as scheduled in light rain, but in strong wind or heavy rain it will be postponed to Sunday."
+        }
+      ],
+      "questionJp": "会場[かいじょう]へ行[い]く人[ひと]に一番[いちばん]お願[ねが]いしていることは何[なに]ですか。",
+      "questionEn": "What is the announcement mainly asking attendees to do?",
+      "choices": [
+        "夕方[ゆうがた]五時[ごじ]より前[まえ]に車[くるま]で駐車場[ちゅうしゃじょう]へ入[はい]ること",
+        "車[くるま]ではなく電車[でんしゃ]やバスで会場[かいじょう]へ来[く]ること",
+        "小雨[こさめ]が降[ふ]ったら日曜日[にちようび]に来[く]ること",
+        "公園[こうえん]の中[なか]で食事[しょくじ]をしないこと"
+      ],
+      "choicesEn": [
+        "Enter the parking lot by car before 5:00 PM",
+        "Come to the venue by train or bus instead of by car",
+        "Come on Sunday if there is light rain",
+        "Not eat inside the park"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Surrounding roads close at 5 PM and the parking lot is unavailable, so attendees are specifically urged to use trains or buses (必ず電車やバスでお越しください).",
+      "keyPhrases": [
+        {
+          "jp": "通行止[つうこうど]め",
+          "reading": "つうこうどめ",
+          "en": "road closed to traffic"
+        },
+        {
+          "jp": "お越[こ]しください",
+          "reading": "おこしください",
+          "en": "please come (respectful)"
+        },
+        {
+          "jp": "延期[えんき]する",
+          "reading": "えんきする",
+          "en": "to postpone"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-14",
+      "jlpt": 4,
+      "taskType": "sokuji",
+      "titleJp": "約束[やくそく]に遅[おく]れたときの謝罪[しゃざい]",
+      "titleEn": "Quick Response: Apologizing for Being Late",
+      "situationEn": "A friend arrives 10 minutes late to meet you and apologizes.",
+      "introJp": "友達[ともだち]が約束[やくそく]の時間に遅[おく]れて来[き]ました。何[なん]と返事[へんじ]しますか。",
+      "introEn": "Your friend arrives late to meet you. How should you reply?",
+      "lines": [
+        {
+          "speaker": "Friend",
+          "role": "female",
+          "jp": "ごめんね、電車[でんしゃ]が止[と]まっちゃって、長[なが]く待[ま]たせちゃった？",
+          "en": "Sorry! The train stopped—did I keep you waiting long?"
+        }
+      ],
+      "questionJp": "何[なん]と返事[へんじ]しますか。",
+      "questionEn": "What is the most natural response?",
+      "choices": [
+        "ううん、私[わたし]も今[いま]来[き]たばかりだから大丈夫[だいじょうぶ]だよ。",
+        "はい、もうすぐ着[つ]くと思[おも]います。",
+        "どういたしまして、気[き]にしないで。"
+      ],
+      "choicesEn": [
+        "No, I just got here myself, so it's totally fine.",
+        "Yes, I think I'll arrive soon.",
+        "You're welcome, don't worry about it."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"私も今来たばかりだから大丈夫だよ\" naturally reassures a friend who apologizes for being late. Option 2 answers as if still en route, and Option 3 (\"you're welcome\") responds to thanks, not an apology.",
+      "keyPhrases": [
+        {
+          "jp": "待[ま]たせる",
+          "reading": "またせる",
+          "en": "to keep someone waiting"
+        },
+        {
+          "jp": "〜たばかり",
+          "reading": "たばかり",
+          "en": "just did ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n4-15",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "雨[あめ]の日[ひ]の遠足[えんそく]の持[も]ち物[もの]",
+      "titleEn": "Packing for a Rainy School Excursion",
+      "situationEn": "A teacher informs students about what to bring if tomorrow's excursion is rainy.",
+      "introJp": "学校[がっこう]で先生[せんせい]が明日[あした]の遠足[えんそく]について話[はな]しています。雨[あめ]のとき、学生[がくせい]が持[も]ってこなくてもいいものはどれですか。",
+      "introEn": "A teacher talks about tomorrow's excursion. If it rains, which item do students NOT need to bring?",
+      "lines": [
+        {
+          "speaker": "Teacher",
+          "role": "male",
+          "jp": "みなさん、明日[あした]の遠足[えんそく]ですが、雨[あめ]が降[ふ]りそうですね。もし雨[あめ]だったら、山[やま]には行[い]かずに科学[かがく]博物館[はくぶつかん]へ行[い]きます。",
+          "en": "Everyone, for tomorrow's excursion it looks like it might rain. If it rains, instead of going to the mountain, we will go to the Science Museum."
+        },
+        {
+          "speaker": "Teacher",
+          "role": "male",
+          "jp": "お弁当[べんとう]と飲[の]み物[もの]は博物館[はくぶつかん]の中[なか]で食[た]べるので、必[かなら]ず持[も]ってきてください。筆記[ひっき]用具[ようぐ]もレポートを書[か]くので必要[ひつよう]です。",
+          "en": "We will eat lunch inside the museum, so be sure to bring your bento and a drink. Writing utensils are also needed for writing a report."
+        },
+        {
+          "speaker": "Teacher",
+          "role": "male",
+          "jp": "ただし、雨[あめ]の場合[ばあい]は外[そと]に座[すわ]りませんから、レジャーシートは家[いえ]に置[お]いてきて構[かま]いません。",
+          "en": "However, in case of rain we won't sit outside, so you may leave your picnic sheet at home."
+        }
+      ],
+      "questionJp": "雨[あめ]のとき、学生[がくせい]が持[も]ってこなくてもいいものはどれですか。",
+      "questionEn": "If it rains, what do students NOT need to bring?",
+      "choices": [
+        "お弁当[べんとう]",
+        "飲[の]み物[もの]",
+        "筆記[ひっき]用具[ようぐ]",
+        "レジャーシート"
+      ],
+      "choicesEn": [
+        "Bento box",
+        "Drink",
+        "Writing utensils",
+        "Picnic sheet"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "The teacher specifies that bento, drinks, and writing utensils are still required, whereas the picnic sheet (レジャーシート) can be left at home.",
+      "keyPhrases": [
+        {
+          "jp": "〜ずに",
+          "reading": "ずに",
+          "en": "without doing ..."
+        },
+        {
+          "jp": "〜て構[かま]いません",
+          "reading": "てかまいません",
+          "en": "it is fine to ...; you may ..."
+        }
+      ]
+    }
+  ]
+}

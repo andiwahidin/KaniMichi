@@ -1,0 +1,352 @@
+{
+  "level": 1,
+  "pack": "n1-pack2",
+  "items": [
+    {
+      "id": "rd-n1-11",
+      "jlpt": 1,
+      "order": 11,
+      "passageType": "notice",
+      "titleJp": "学術[がくじゅつ]誌[し] 査読[さどく]委員[いいん]公募[こうぼ]および倫理[りんり]規定[きてい]（抜粋[ばっすい]）",
+      "titleEn": "Call for Peer Reviewers & Ethics Guidelines (Excerpt)",
+      "recommendedMinutes": 6,
+      "contextEn": "Official editorial guideline excerpt from a Japanese academic journal.",
+      "paragraphs": [
+        "本誌[ほんし]『現代[げんだい]社会[しゃかい]研究[けんきゅう]』では、投稿[とうこう]論文[ろんぶん]の厳正[げんせい]な審査[しんさ]体制[たいせい]を維持[いじ]するため、新[あら]たに査読[さどく]委員[いいん]を募集[ぼしゅう]いたします。応募[おうぼ]要件[ようけん]は、博士[はくし]号[ごう]を有[ゆう]すること、または過去[かこ]五年[ごねん]以内[いない]に査読[さどく]付[づ]き学術[がくじゅつ]誌[し]へ筆頭[ひっとう]著者[ちょしゃ]として二編[にへん]以上[いじょう]の論文[ろんぶん]を発表[はっぴょう]していることとします。",
+        "利益[りえき]相反[そうはん]の回避[かいひ]：査読[さどく]依頼[いらい]を受[う]けた論文[ろんぶん]の著者[ちょしゃ]と同一[どういつ]研究[けんきゅう]機関[きかん]に所属[しょぞく]している場合[ばあい]、あるいは過去[かこ]三年[さんねん]以内[いない]に共同[きょうどう]研究[けんきゅう]を行[おこな]っていた場合[ばあい]は、直[ただ]ちに編集[へんしゅう]委員[いいん]会[かい]へ辞退[じたい]を申[もう]し出[で]なければなりません。",
+        "守秘[しゅひ]義務[ぎむ]：審査[しんさ]過程[かてい]で知[し]り得[え]た未公刊[みこうかん]データや草稿[そうこう]内容[ないよう]を、自身[じしん]の研究[けんきゅう]に転用[てんよう]したり外部[がいぶ]の生成[せいせい]ツール等[とう]へ入力[にゅうりょく]したりする行為[こうい]は固[かた]く禁[きん]じます。"
+      ],
+      "translationEn": [
+        "To maintain a rigorous review system for submitted manuscripts, the journal \"Contemporary Social Studies\" is recruiting new peer reviewers. Eligibility requires holding a doctoral degree, OR having published at least two peer-reviewed journal articles as first author within the past five years.",
+        "Avoidance of Conflict of Interest: If a reviewer belongs to the same research institution as the author of an assigned manuscript, or has conducted joint research with them within the past three years, they must immediately notify the editorial board to decline the assignment.",
+        "Confidentiality Obligation: Diverting unpublished data or draft contents obtained during review for one's own research, or inputting them into external generative tools or the like, is strictly prohibited."
+      ],
+      "keyVocab": [
+        {
+          "word": "査読",
+          "reading": "さどく",
+          "en": "peer review"
+        },
+        {
+          "word": "利益相反",
+          "reading": "りえきそうはん",
+          "en": "conflict of interest"
+        },
+        {
+          "word": "転用する",
+          "reading": "てんようする",
+          "en": "to divert; appropriate for another use"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-11-q1",
+          "promptJp": "次[つぎ]のうち、査読[さどく]委員[いいん]に応募[おうぼ]でき、かつ担当[たんとう]論文[ろんぶん]を辞退[じたい]しなくてよいのはどの人[ひと]か。",
+          "promptEn": "Who below is eligible to apply AND does not have to decline the assigned paper?",
+          "choices": [
+            "博士[はくし]号[ごう]を持[も]つが、著者[ちょしゃ]と同[おな]じ大学[だいがく]に所属[しょぞく]している研究者[けんきゅうしゃ]。",
+            "博士[はくし]号[ごう]はないが、三年[さんねん]前[まえ]に筆頭[ひっとう]著者[ちょしゃ]として査読[さどく]論文[ろんぶん]を二編[にへん]発表[はっぴょう]しており、著者[ちょしゃ]と四年[よねん]前[まえ]に共同[きょうどう]研究[けんきゅう]をした別[べつ]機関[きかん]の研究者[けんきゅうしゃ]。",
+            "博士[はくし]号[ごう]はなく、二年[にねん]前[まえ]に第二[だいに]著者[ちょしゃ]として論文[ろんぶん]を三編[さんぺん]発表[はっぴょう]した研究者[けんきゅうしゃ]。",
+            "博士[はくし]号[ごう]を持[も]ち、昨年[さくねん]著者[ちょしゃ]と共同[きょうどう]研究[けんきゅう]を行[おこな]った研究者[けんきゅうしゃ]。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Option 2 meets the alternative requirement (2 first-author peer-reviewed papers within 5 years), is at a different institution, and collaborated 4 years ago (outside the 3-year conflict window)."
+        },
+        {
+          "id": "rd-n1-11-q2",
+          "promptJp": "守秘[しゅひ]義務[ぎむ]の規定[きてい]に違反[いはん]する行為[こうい]はどれか。",
+          "promptEn": "Which action violates the confidentiality rule?",
+          "choices": [
+            "査読[さどく]依頼[いらい]を利益[りえき]相反[そうはん]を理由[りゆう]に辞退[じたい]すること。",
+            "未公刊[みこうかん]の草稿[そうこう]を要約[ようやく]させるため外部[がいぶ]の生成[せいせい]ツールへ入力[にゅうりょく]すること。",
+            "公刊[こうかん]済[ず]みの先行[せんこう]研究[けんきゅう]を引用[いんよう]して審査[しんさ]コメントを書[か]くこと。",
+            "査読[さどく]期限[きげん]の延長[えんちょう]を編集[へんしゅう]委員[いいん]会[かい]へ相談[そうだん]すること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 explicitly prohibits inputting unpublished data or draft text into external generative tools."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-12",
+      "jlpt": 1,
+      "order": 12,
+      "passageType": "short",
+      "titleJp": "記録[きろく]の過剰[かじょう]と「忘却[ぼうきゃく]」の効用[こうよう]",
+      "titleEn": "Excessive Recording and the Utility of Forgetting",
+      "recommendedMinutes": 5,
+      "contextEn": "Short philosophical reflection on digital photography and human memory.",
+      "paragraphs": [
+        "旅先[たびさき]の風景[ふうけい]も日常[にちじょう]の食事[しょくじ]も、瞬時[しゅんじ]に高画質[こうがしつ]で保存[ほぞん]できるようになった今日[こんにち]、記憶[きおく]が薄[うす]れていくこと自体[じたい]が欠陥[けっかん]であるかのように語[かた]られがちだ。",
+        "だが、人間[にんげん]の記憶[きおく]は単[たん]なる映像[えいぞう]の複製[ふくせい]ではない。細部[さいぶ]が削[そ]ぎ落[お]とされ、時間[じかん]の経過[けいか]とともに再構成[さいこうせい]されるからこそ、ある体験[たいけん]は現在[げんざい]の自分[じぶん]にとって固有[こゆう]の意味[いみ]を帯[お]びる。",
+        "すべてを外部[がいぶ]に記録[きろく]し続[つづ]ける営[いとな]みは、忘却[ぼうきゃく]という濾過[ろか]装置[そうち]を奪[うば]い、体験[たいけん]を単[たん]なる過去[かこ]のデータへと平板化[へいばんか]させてしまう危[あや]うさを孕[はら]んでいる。"
+      ],
+      "translationEn": [
+        "Today, when both travel landscapes and everyday meals can be instantly saved in high resolution, the very fading of memory tends to be spoken of as if it were a defect.",
+        "Yet human memory is not a mere duplication of footage. Precisely because details are pared away and reconstructed with the passage of time, an experience takes on a singular meaning for one's present self.",
+        "The practice of continually recording everything externally harbors the danger of stripping away the filtering mechanism of forgetting, flattening lived experience into mere archived data."
+      ],
+      "keyVocab": [
+        {
+          "word": "削ぎ落とす",
+          "reading": "そぎおとす",
+          "en": "to pare away; strip down"
+        },
+        {
+          "word": "濾過装置",
+          "reading": "ろかそうち",
+          "en": "filtering mechanism"
+        },
+        {
+          "word": "孕む",
+          "reading": "はらむ",
+          "en": "to harbor; contain (a risk)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-12-q1",
+          "promptJp": "筆者[ひっしゃ]は「忘却[ぼうきゃく]」をどのような働[はたら]きとして捉[とら]えているか。",
+          "promptEn": "How does the author view the function of \"forgetting\"?",
+          "choices": [
+            "技術[ぎじゅつ]の進歩[しんぽ]によって克服[こくふく]されるべき人間[にんげん]の弱点[じゃくてん]。",
+            "細部[さいぶ]を削[そ]ぎ落[お]として体験[たいけん]に固有[こゆう]の意味[いみ]を与[あた]える濾過[ろか]装置[そうち]。",
+            "過去[かこ]の失敗[しっぱい]を隠蔽[いんぺい]するための心理[しんり]的[てき]防衛[ぼうえい]。",
+            "高画質[こうがしつ]な写真[しゃしん]を見返[みかえ]すことで補[おぎな]われる機能[きのう]。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 2 and 3 describe forgetting as a filter that pares away details and lets experiences acquire personal meaning."
+        },
+        {
+          "id": "rd-n1-12-q2",
+          "promptJp": "すべてを外部[がいぶ]に記録[きろく]し続[つづ]けることの問題点[もんだいてん]は何か。",
+          "promptEn": "What is the danger of continuously recording everything externally?",
+          "choices": [
+            "保存[ほぞん]容量[ようりょう]のコストが膨大[ぼうだい]になること。",
+            "体験[たいけん]が再構成[さいこうせい]される機会[きかい]を失[うしな]い、平板[へいばん]な過去[かこ]データになってしまうこと。",
+            "写真[しゃしん]の撮影[さつえい]技術[ぎじゅつ]が向上[こうじょう]しなくなること。",
+            "他人[たにん]と体験[たいけん]を共有[きょうゆう]できなくなること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 warns it removes the filter of forgetting and flattens lived experiences into mere past data."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-13",
+      "jlpt": 1,
+      "order": 13,
+      "passageType": "essay",
+      "titleJp": "効率性[こうりつせい]の追求[ついきゅう]が組織[そしき]の回復力[かいふくりょく]を損[そこ]なうとき",
+      "titleEn": "When Pursuing Efficiency Erodes Institutional Resilience",
+      "recommendedMinutes": 7,
+      "contextEn": "Critical essay on organizational systems and the value of redundancy.",
+      "paragraphs": [
+        "現代[げんだい]の経営[けいえい]や行政[ぎょうせい]において、「無駄[むだ]の徹底[てってい]的[てき]な排除[はいじょ]」は疑[うたが]いようのない善[ぜん]とみなされてきた。在庫[ざいこ]を極限[きょくげん]まで圧縮[あっしゅく]し、人員[じんいん]配置[はいち]を平時[へいじ]の需要[じゅよう]に寸分[すんぶん]違[たが]わず合[あ]わせる設計[せっけい]は、順調[じゅんちょう]な局面[きょくめん]では高[たか]い収益[しゅうえき]をもたらす。",
+        "しかし、ひとたび災害[さいがい]や供給網[きょうきゅうもう]の途絶[とぜつ]といった想定[そうてい]外[がい]の衝撃[しょうげき]に見舞[みま]われると、ギリギリまで最適化[さいてきか]された仕組み[しくみ]ほど脆[もろ]く崩[くず]れ去[さ]る。平時[へいじ]には「余剰[よじょう]」や「非効率[ひこうりつ]」と断[だん]じられていた予備[よび]の資源[しげん]や重複[ちょうふく]した経路[けいろ]こそが、危機[きき]において機能[きのう]を維持[いじ]する緩衝材[かんしょうざい]だったからである。",
+        "もとより放漫[ほうまん]な浪費[ろうひ]を擁護[ようご]するつもりはない。肝要[かんよう]なのは、短期[たんき]的[てき]な効率[こうりつ]のみを唯一[ゆいいつ]の尺度[しゃくど]とするのではなく、不確実性[ふかくじつせい]に耐[た]えうる「意図[いと]的[てき]な冗長性[じょうちょうせい]」を合理[ごうり]的[てき]な保険[ほけん]として再評価[さいひょうか]する視点[してん]である。"
+      ],
+      "translationEn": [
+        "In modern management and public administration, the \"thorough elimination of waste\" has been regarded as an unquestionable good. Designs that compress inventory to the utmost limit and match staffing precisely to peacetime demand yield high returns during smooth conditions.",
+        "Yet the moment an unforeseen shock such as a disaster or supply-chain disruption strikes, the more tightly optimized a system is, the more fragiley it collapses. This is because the reserve resources and duplicate pathways condemned in peacetime as \"surplus\" or \"inefficiency\" were precisely the shock absorbers preserving function in a crisis.",
+        "Needless to say, I have no intention of defending reckless waste. What is crucial is not treating short-term efficiency as the sole yardstick, but re-evaluating \"intentional redundancy\" capable of withstanding uncertainty as rational insurance."
+      ],
+      "keyVocab": [
+        {
+          "word": "緩衝材",
+          "reading": "かんしょうざい",
+          "en": "buffer; shock absorber"
+        },
+        {
+          "word": "放漫な",
+          "reading": "ほうまんな",
+          "en": "reckless; lax"
+        },
+        {
+          "word": "冗長性",
+          "reading": "じょうちょうせい",
+          "en": "redundancy"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-13-q1",
+          "promptJp": "極限[きょくげん]まで最適化[さいてきか]された仕組み[しくみ]が危機[きき]に脆[もろ]い理由[りゆう]は何か。",
+          "promptEn": "Why are systems optimized to the extreme fragile in a crisis?",
+          "choices": [
+            "平時[へいじ]の収益[しゅうえき]が低[ひく]く、設備[せつび]投資[とうし]ができないから。",
+            "衝撃[しょうげき]を吸収[きゅうしゅう]する予備[よび]資源[しげん]や重複[ちょうふく]経路[けいろ]を無駄[むだ]として削[けず]ってしまっているから。",
+            "現場[げんば]の社員[しゃいん]が危機[きき]対応[たいおう]マニュアルを読[よ]んでいないから。",
+            "行政[ぎょうせい]の規制[きせい]が厳[きび]しすぎるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that backup resources and redundant paths—which act as shock absorbers in crises—were stripped away as \"inefficiency.\""
+        },
+        {
+          "id": "rd-n1-13-q2",
+          "promptJp": "筆者[ひっしゃ]が提言[ていげん]している視点[してん]に最[もっと]も近[ちか]いものはどれか。",
+          "promptEn": "Which choice best matches the perspective the author proposes?",
+          "choices": [
+            "効率性[こうりつせい]を完全[かんぜん]に放棄[ほうき]し、コストを度外視[どがいし]して資源[しげん]を蓄[たくわ]えるべきだ。",
+            "放漫[ほうまん]な浪費[ろうひ]は避[さ]けつつも、不確実性[ふかくじつせい]に備[そな]える意図[いと]的[てき]な冗長性[じょうちょうせい]を合理的[ごうりてき]な保険[ほけん]として評価[ひょうか]すべきだ。",
+            "危機[きき]が起[お]きてから外部[がいぶ]の資源[しげん]を調達[ちょうたつ]する体制[たいせい]を整[ととの]えるべきだ。",
+            "短期[たんき]的[てき]な収益[しゅうえき]を最大化[さいだいか]すれば自然[しぜん]に回復力[かいふくりょく]も高[たか]まる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 distinguishes reckless waste from intentional redundancy, urging us to re-evaluate the latter as rational insurance."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-14",
+      "jlpt": 1,
+      "order": 14,
+      "passageType": "essay",
+      "titleJp": "推薦[すいせん]アルゴリズムと「偶発[ぐうはつ]的[てき]な出会[であ]い」の喪失[そうしつ]",
+      "titleEn": "Recommendation Algorithms & the Loss of Serendipity",
+      "recommendedMinutes": 7,
+      "contextEn": "Essay examining how personalized media feeds shape public discourse.",
+      "paragraphs": [
+        "動画[どうが]配信[はいしん]やニュースアプリに組[く]み込[こ]まれた推薦[すいせん]アルゴリズムは、利用者[りようしゃ]の閲覧[えつらん]履歴[りれき]を精緻[せいち]に分析[ぶんせき]し、好み[このみ]に合致[がっち]する情報[じょうほう]を間断[かんだん]なく提示[ていじ]する。情報[じょうほう]探索[たんさく]の労力[ろうりょく]を劇的[げきてき]に減[へ]らした功績[こうせき]は否定[ひてい]しがたい。",
+        "半面[はんめん]、快適[かいてき]な最適化[さいてきか]は、私[わたし]たちが異質[いしつ]な価値観[かちかん]や予期[よき]せぬ領域[りょういき]と偶発[ぐうはつ]的[てき]に遭遇[そうぐう]する機会[きかい]を静[しず]かに狭[せば]めている。かつて書店[しょてん]の棚[たな]を歩[ある]く際[さい]、目当[めあ]ての本[ほん]の隣[となり]で偶然[ぐうぜん]手[て]に取[と]った一冊[いっさつ]が視野[しや]を一変[いっぺん]させるような体験[たいけん]は、アルゴリズムの設計[せっけい]思想[しそう]とは相[あい]容[い]れにくい。",
+        "民主[みんしゅ]社会[しゃかい]における公共[こうきょう]的[てき]な議論[ぎろん]は、自分[じぶん]とは異[こと]なる前提[ぜんてい]に立[た]つ他者[たしゃ]の存在[そんざい]を日常[にちじょう]的[てき]に可視化[かしか]することで成立[せいりつ]する。便利[べんり]さの代償[だいしょう]として何[なに]を手放[てばな]しているのかを自覚[じかく]し、意識[いしき]的[てき]に「異質[いしつ]なものへの回路[かいろ]」を残[のこ]す工夫[くふう]が問[と]われている。"
+      ],
+      "translationEn": [
+        "Recommendation algorithms built into video streaming and news apps meticulously analyze browsing histories and continuously present information matching a user's preferences. Their achievement in dramatically reducing the effort of searching for information is hard to deny.",
+        "On the flip side, comfortable optimization quietly narrows opportunities for us to serendipitously encounter unfamiliar values or unexpected domains. The experience of walking past bookstore shelves and unexpectedly picking up a volume next to the book you sought—only to have your worldview transformed—is difficult to reconcile with algorithmic design philosophy.",
+        "Public debate in a democratic society rests on daily visibility of others who hold premises different from one's own. We are challenged to recognize what we are giving up as the price of convenience, and deliberately maintain pathways to the unfamiliar."
+      ],
+      "keyVocab": [
+        {
+          "word": "精緻に",
+          "reading": "せいちに",
+          "en": "meticulously; with precision"
+        },
+        {
+          "word": "相容れない",
+          "reading": "あいいれない",
+          "en": "incompatible; irreconcilable"
+        },
+        {
+          "word": "代償",
+          "reading": "だいしょう",
+          "en": "price; trade-off; compensation"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-14-q1",
+          "promptJp": "筆者[ひっしゃ]が「書店[しょてん]の棚[たな]を歩[ある]く体験[たいけん]」を持[も]ち出[だ]したのはなぜか。",
+          "promptEn": "Why does the author bring up the experience of browsing bookstore shelves?",
+          "choices": [
+            "紙[かみ]の本[ほん]のほうがデジタル情報[じょうほう]より正確[せいかく]だと示[しめ]すため。",
+            "推薦[すいせん]アルゴリズムでは生[う]まれにくい「偶発[ぐうはつ]的[てき]な出会[であ]い」の具体例[ぐたいれい]を示[しめ]すため。",
+            "書店[しょてん]の経営[けいえい]難[なん]を救[すく]う策[さく]を提案[ていあん]するため。",
+            "情報[じょうほう]探索[たんさく]の労力[ろうりょく]を惜[お]しむべきではないと主張[しゅちょう]するため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The bookstore example illustrates serendipitous discovery of unexpected ideas, which clashes with preference-matching algorithms."
+        },
+        {
+          "id": "rd-n1-14-q2",
+          "promptJp": "この文章[ぶんしょう]の結論[けつろん]として最[もっと]も適切[てきせつ]なものはどれか。",
+          "promptEn": "Which option best captures the conclusion of this essay?",
+          "choices": [
+            "ニュースアプリや動画[どうが]配信[はいしん]の推薦[すいせん]機能[きのう]は法[ほう]的[てき]に禁止[きんし]すべきだ。",
+            "最適化[さいてきか]の代償[だいしょう]を自覚[じかく]し、異質[いしつ]な視点[してん]と出会[であ]う回路[かいろ]を意識[いしき]的[てき]に残[のこ]す必要[ひつよう]がある。",
+            "閲覧[えつらん]履歴[りれき]を分析[ぶんせき]すれば、民主[みんしゅ]社会[しゃかい]の議論[ぎろん]はより円滑[えんかつ]になる。",
+            "利用者[りようしゃ]が自分[じぶん]の好[この]みを正確[せいかく]に把握[はあく]することが最優先[さいゆうせん]だ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 concludes that we must recognize the cost of convenience and consciously preserve pathways to differing viewpoints."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-15",
+      "jlpt": 1,
+      "order": 15,
+      "passageType": "comparison",
+      "titleJp": "消滅[しょうめつ]危機[きき]方言[ほうげん]の継承[けいしょう]をめぐる視点[してん]（Tōgō Rikai）",
+      "titleEn": "Preserving Endangered Local Dialects (A/B Comparison)",
+      "recommendedMinutes": 8,
+      "contextEn": "Two linguists debate how endangered regional dialects should be preserved.",
+      "labelA": "文章[ぶんしょう]A（記録[きろく]・アーカイブ重視[じゅうし]の視点[してん]）",
+      "labelB": "文章[ぶんしょう]B（生活[せいかつ]実践[じっせん]・変容[へんよう]容認[ようにん]の視点[してん]）",
+      "paragraphs": [
+        "日本[にほん]各地[かくち]で高齢化[こうれいか]と過疎化[かそか]が進[すす]むなか、伝統[でんとう]的[てき]な方言[ほうげん]の流暢[りゅうちょう]な話者[わしゃ]は急速[きゅうそく]に減少[げんしょう]している。言語[げんご]にはその土地[とち]固有[こゆう]の自然[しぜん]観[かん]や生活[せいかつ]知[ち]が刻[きざ]まれており、一度[いちど]途絶[とだ]えれば二度[にど]と復元[ふくげん]できない。",
+        "したがって最優先[さいゆうせん]すべきは、高[こう]齢[れい]話者[わしゃ]が健在[けんざい]なうちに音声[おんせい]・映像[えいぞう]・語彙[ごい]体系[たいけい]を網羅[もうら]的[てき]にデジタル記録[きろく]し、後世[こうせい]の研究[けんきゅう]や教育[きょういく]へ託[たく]すことである。時間[じかん]的[てき]猶予[ゆうよ]が乏[とぼ]しい現状[げんじょう]では、厳密[げんみつ]な記述[きじゅつ]保存[ほぞん]こそが最も確実[かくじつ]な手立[てだ]てだ。"
+      ],
+      "paragraphsB": [
+        "方言[ほうげん]を精密[せいみつ]に記録[きろく]する意義[いぎ]は認[みと]めるものの、アーカイブに収[おさ]めただけで言語[げんご]が「生[い]き残[のこ]った」とは言[い]い難[がた]い。博物館[はくぶつかん]の標本[ひょうほん]のように凍結[とうけつ]された言葉[ことば]は、日常[にちじょう]の感情[かんじょう]を運[はこ]ぶ生[なま]きた媒体[ばいたい]ではなくなってしまうからだ。",
+        "むしろ重要[じゅうよう]なのは、若[わか]い世代[せだい]が標準語[ひょうじゅんご]と交[ま]ぜながらＳＮＳや地域[ちいき]イベントで自由[じゆう]に使[つか]う「新[しん]方言[ほうげん]」的な実践[じっせん]を歓迎[かんげい]することだ。純粋[じゅんすい]な古形[こけい]に固執[こしつ]するあまり使用[しよう]の敷居[しきい]を上[あ]げてしまっては、継承[けいしょう]そのものを遠[とお]ざけてしまう。"
+      ],
+      "translationEn": [
+        "As aging and depopulation progress across Japan, fluent speakers of traditional dialects are rapidly declining. Inscribed within a language are views of nature and lived knowledge unique to its region; once severed, they can never be restored.",
+        "Therefore, the top priority is to comprehensively create digital records of audio, video, and lexical systems while elderly speakers are still well, entrusting them to future research and education. Given how little time remains, rigorous descriptive preservation is the most dependable measure."
+      ],
+      "translationBEn": [
+        "While acknowledging the value of precisely documenting dialects, one can hardly say a language has \"survived\" merely by placing it in an archive. Words frozen like museum specimens cease to be living mediums carrying everyday emotion.",
+        "Rather, what matters is welcoming \"neo-dialect\" practices in which younger generations freely blend dialect with standard Japanese on social media or at local events. Clinging to pure archaic forms and raising the barrier to use only pushes genuine continuity further away."
+      ],
+      "keyVocab": [
+        {
+          "word": "網羅的",
+          "reading": "もうらてき",
+          "en": "comprehensive; exhaustive"
+        },
+        {
+          "word": "固執する",
+          "reading": "こしつする",
+          "en": "to cling stubbornly to"
+        },
+        {
+          "word": "敷居",
+          "reading": "しきい",
+          "en": "threshold; barrier to entry"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-15-q1",
+          "promptJp": "文章[ぶんしょう]Aがデジタル記録[きろく]を最優先[さいゆうせん]すべきだとする根拠[こんきょ]は何か。",
+          "promptEn": "On what grounds does Passage A argue digital documentation must be the top priority?",
+          "choices": [
+            "若[わか]い世代[せだい]が方言[ほうげん]に関心[かんしん]を示[しめ]さないから。",
+            "高齢[こうれい]話者[わしゃ]の減少[げんしょう]により時間[じかん]的[てき]猶予[ゆうよ]が乏[とぼ]しく、一度[いちど]途絶[とだ]えると復元[ふくげん]できないから。",
+            "ＳＮＳでの方言[ほうげん]使用[しよう]が言葉[ことば]の正確[せいかく]さを損[そこ]なうから。",
+            "記録[きろく]さえ残[のこ]せば自然[しぜん]に日常[にちじょう]会話[かいわ]へ戻[もど]るから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage A emphasizes that fluent elderly speakers are declining rapidly and once lost, a dialect cannot be reconstructed."
+        },
+        {
+          "id": "rd-n1-15-q2",
+          "promptJp": "文章[ぶんしょう]Bの筆者[ひっしゃ]が「純粋[じゅんすい]な古形[こけい]への固執[こしつ]」を批判[ひはん]する理由[りゆう]はどれか。",
+          "promptEn": "Why does the author of Passage B criticize clinging to pure archaic forms?",
+          "choices": [
+            "古形[こけい]の記録[きろく]には莫大[ばくだい]な予算[よさん]がかかるから。",
+            "使う際の敷居[しきい]が高[たか]くなり、結果[けっか]として次世代[じせだい]への継承[けいしょう]を妨[さまた]げるから。",
+            "標準語[ひょうじゅんご]の習得[しゅうとく]が遅[おく]れるおそれがあるから。",
+            "博物館[はくぶつかん]での展示[てんじ]が難[むずか]しくなるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage B argues that insisting on pure archaic forms raises the barrier to using the dialect and undermines continuity."
+        },
+        {
+          "id": "rd-n1-15-q3",
+          "promptJp": "AとBの議論[ぎろん]の関係[かんけい]として最[もっと]も適切[てきせつ]な説明[せつめい]はどれか。",
+          "promptEn": "Which statement best characterizes the relationship between Passages A and B?",
+          "choices": [
+            "BはAの記録[きろく]保存[ほぞん]の意義[いぎ]を全[まった]く否定[ひてい]し、記録[きろく]作業[さぎょう]の中止[ちゅうし]を求[もと]めている。",
+            "Aは厳密[げんみつ]な記録[きろく]保存[ほぞん]の緊急性[きんきゅうせい]を説[と]き、Bは記録[きろく]の意義[いぎ]を認[みと]めつつも日常[にちじょう]での柔軟[じゅうなん]な使用[しよう]こそが継承[けいしょう]の鍵[かぎ]だと補[おぎな]い論[ろん]じている。",
+            "AもBも、若者[わかもの]の「新[しん]方言[ほうげん]」を伝統[でんとう]破壊[はかい]として問題[もんだい]視[し]している。",
+            "Aは学校[がっこう]教育[きょういく]での方言[ほうげん]義務化[ぎむか]を主張[しゅちょう]し、BはＳＮＳでの使用[しよう]規制[きせい]を主張[しゅちょう]している。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage A stresses urgent documentation, while Passage B acknowledges documentation's value yet contends living, flexible everyday use is essential for real survival."
+        }
+      ]
+    }
+  ]
+}

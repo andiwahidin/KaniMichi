@@ -1,0 +1,352 @@
+{
+  "level": 3,
+  "pack": "n3-pack2",
+  "items": [
+    {
+      "id": "rd-n3-11",
+      "jlpt": 3,
+      "order": 11,
+      "passageType": "notice",
+      "titleJp": "排水管[はいすいかん]清掃[せいそう]・点検[てんけん]のお知[し]らせ",
+      "titleEn": "Apartment Water Pipe Cleaning & Inspection Notice",
+      "recommendedMinutes": 5,
+      "contextEn": "Official notice distributed to all residents of a residential building.",
+      "paragraphs": [
+        "居住者[きょじゅうしゃ]各位[かくい]\n下記[かき]の日程[にってい]で、各[かく]お部屋[へや]の台所[だいどころ]・洗面所[せんめんじょ]・浴室[よくしつ]の排水管[はいすいかん]清掃[せいそう]を行[おこな]います。",
+        "実施日[じっしび]：十月[じゅうがつ]二十一日[にじゅういちにち]（土[ど]）\n時間[じかん]：一階[いっかい]〜三階[さんがい] 午前[ごぜん]九時[くじ]〜十二時[じゅうにじ] ／ 四階[よんかい]〜六階[ろっかい] 午後[ごご]一時[いちじ]〜四時[よじ]\n※作業[さぎょう]は一[ひと]部屋[へや]につき約[やく]十五分[じゅうごふん]です。必[かなら]ずご在宅[ざいたく]ください。",
+        "ご都合[つごう]が悪[わる]い場合[ばあい]は、十月[じゅうがつ]十七日[じゅうしちにち]（火[か]）までに管理[かんり]会社[がいしゃ]へお電話[でんわ]いただければ、別日[べつじつ]への変更[へんこう]が可能[かのう]です。なお、作業[さぎょう]当日[とうじつ]はシンク下[した]の荷物[にもつ]をあらかじめ片付[かたづ]けておいてください。"
+      ],
+      "translationEn": [
+        "To all residents,\nWater pipe cleaning for the kitchen, washbasin, and bathroom of each unit will be conducted according to the schedule below.",
+        "Date: Saturday, October 21\nTime: Floors 1–3: 9:00 AM–12:00 PM / Floors 4–6: 1:00 PM–4:00 PM\n*The work takes about 15 minutes per unit. Please make sure you are at home.",
+        "If the schedule is inconvenient, you may reschedule to another day by calling the management company by Tuesday, October 17. Additionally, on the day of work, please clear out belongings stored under the sink beforehand."
+      ],
+      "keyVocab": [
+        {
+          "word": "排水管",
+          "reading": "はいすいかん",
+          "en": "drain pipe"
+        },
+        {
+          "word": "在宅",
+          "reading": "ざいたく",
+          "en": "being at home"
+        },
+        {
+          "word": "あらかじめ",
+          "reading": "あらかじめ",
+          "en": "in advance; beforehand"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-11-q1",
+          "promptJp": "五階[ごかい]に住[す]んでいる人[ひと]が、十月[じゅうがつ]二十一日[にじゅういちにち]の午後[ごご]に留守[るす]にする場合[ばあい]、どうすればいいですか。",
+          "promptEn": "What should a resident on the 5th floor do if they will be away on the afternoon of October 21?",
+          "choices": [
+            "鍵[かぎ]を管理[かんり]会社[がいしゃ]に預[あず]けておけば、連絡[れんらく]しなくてよい。",
+            "十月[じゅうがつ]十七日[じゅうしちにち]までに管理[かんり]会社[がいしゃ]へ電話[でんわ]して日[ひ]を変[か]えてもらう。",
+            "午前[ごぜん]九時[くじ]から十二時[じゅうにじ]の間[あいだ]に作業[さぎょう]員[いん]を呼[よ]ぶ。",
+            "シンク下[した]の荷物[にもつ]だけ片付[かたづ]けて、そのまま出[で]かけてよい。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Residents must be home (必ずご在宅ください), and if unavailable, they can call the management company by October 17 to reschedule."
+        },
+        {
+          "id": "rd-n3-11-q2",
+          "promptJp": "清掃[せいそう]当日[とうじつ]までに住民[じゅうみん]が準備[じゅんび]しておくことは何[なに]ですか。",
+          "promptEn": "What must residents prepare by the day of cleaning?",
+          "choices": [
+            "水道[すいどう]を一日[いちにち]止[と]めておく。",
+            "台所[だいどころ]のシンクの下[した]にある荷物[にもつ]を片付[かたづ]けておく。",
+            "作業[さぎょう]料[りょう]を現金[げんきん]で用意[ようい]しておく。",
+            "浴室[よくしつ]のドアを外[はず]しておく。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence instructs residents to clear belongings from under the sink in advance (シンク下の荷物をあらかじめ片付けておいてください)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-12",
+      "jlpt": 3,
+      "order": 12,
+      "passageType": "email",
+      "titleJp": "セミナー会場[かいじょう]の設備[せつび]確認[かくにん]のお願[ねが]い",
+      "titleEn": "Confirming Venue Details for a Seminar",
+      "recommendedMinutes": 5,
+      "contextEn": "Business email from an event organizer to a rental conference center.",
+      "paragraphs": [
+        "ポートホール貸[か]し会議室[かいぎしつ] ご担当[たんとう]者[しゃ]様[さま]",
+        "いつもお世話[せわ]になっております。青葉[あおば]出版[しゅっぱん]の渡辺[わたなべ]と申[もう]します。来月[らいげつ]三日[みっか]に予約[よやく]しております「第三[だいさん]会議室[かいぎしつ]」につきまして、二点[にてん]確認[かくにん]させてください。",
+        "一点目[いってんめ]ですが、当初[とうしょ]は参加者[さんかしゃ]四十名[よんじゅうめい]の予定[よてい]でしたが、申[もう]し込[こ]みが増[ふ]え、現在[げんざい]五十二名[ごじゅうにめい]となっております。椅子[いす]を追加[ついか]していただくことは可能[かのう]でしょうか。二点目[にてんめ]として、プロジェクターとワイヤレスマイク二本[にほん]をお借[か]りしたいのですが、当日[とうじつ]の受付[うけつけ]で申[もう]し出[で]ればよろしいでしょうか。お忙[いそが]しいところ恐縮[きょうしゅく]ですが、ご返信[へんしん]をお待ち[まち]しております。"
+      ],
+      "translationEn": [
+        "To the person in charge at Port Hall Rental Conference Rooms,",
+        "Thank you for your continued support. My name is Watanabe from Aoba Publishing. Regarding Conference Room 3, which we reserved for the 3rd of next month, please allow me to confirm two points.",
+        "First, although we initially expected 40 participants, applications have increased and we currently have 52. Would it be possible to add extra chairs? Second, we would like to borrow a projector and two wireless microphones—is it fine to request them at reception on the day of the event? I apologize for troubling you while you are busy, and I look forward to your reply."
+      ],
+      "keyVocab": [
+        {
+          "word": "当初",
+          "reading": "とうしょ",
+          "en": "initially; at first"
+        },
+        {
+          "word": "申し出る",
+          "reading": "もうしでる",
+          "en": "to request; propose; report"
+        },
+        {
+          "word": "恐縮",
+          "reading": "きょうしゅく",
+          "en": "feeling obliged; sorry to trouble"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-12-q1",
+          "promptJp": "渡辺[わたなべ]さんが椅子[いす]の追加[ついか]を相談[そうだん]している理由[りゆう]は何[なに]ですか。",
+          "promptEn": "Why is Watanabe asking about adding chairs?",
+          "choices": [
+            "会議室[かいぎしつ]を別[べつ]の部屋[へや]に変[か]えたから。",
+            "参加者[さんかしゃ]が最初[さいしょ]の予定[よてい]より十二人[じゅうににん]増[ふ]えたから。",
+            "机[つくえ]を使[つか]わずに椅子[いす]だけでセミナーを行[おこな]うから。",
+            "講師[こうし]の数[かず]が増[ふ]えたから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Participants grew from the initial 40 to 52 (an increase of 12 people)."
+        },
+        {
+          "id": "rd-n3-12-q2",
+          "promptJp": "このメールの内容[ないよう]と合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the content of the email?",
+          "choices": [
+            "渡辺[わたなべ]さんはすでにマイクの予約[よやく]を済[す]ませている。",
+            "プロジェクターは青葉[あおば]出版[しゅっぱん]が持[も]ち込[こ]む予定[よてい]だ。",
+            "機材[きざい]を当日[とうじつ]受付[うけつけ]で借[か]りられるか確認[かくにん]している。",
+            "セミナーの日程[にってい]を来月[らいげつ]三日[みっか]から変更[へんこう]したい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Watanabe asks whether requesting the projector and two wireless mics at reception on the day is acceptable."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-13",
+      "jlpt": 3,
+      "order": 13,
+      "passageType": "short",
+      "titleJp": "衝動買[しょうどうが]いを防[ふせ]ぐ「三日[みっか]ルール」",
+      "titleEn": "The \"Three-Day Rule\" Against Impulse Buying",
+      "recommendedMinutes": 4,
+      "contextEn": "Short lifestyle column about mindful spending habits.",
+      "paragraphs": [
+        "ネット通販[つうはん]が普及[ふきゅう]し、夜中[よなか]でもワンクリックで欲[ほ]しいものが買[か]える時代[じだい]になった。しかし、届[とど]いてから「どうしてこれを買[か]ったのだろう」と後悔[こうかい]した経験[けいけん]は誰[だれ]にでもあるはずだ。",
+        "そんな衝動買[しょうどうが]いを減[へ]らすために、私[わたし]は「三日[みっか]ルール」を実践[じっせん]している。欲[ほ]しいものを見[み]つけてもすぐには買[か]わず、お気[き]に入[い]りリストに入[い]れて三日間[みっかかん]だけ待[ま]つのだ。",
+        "不思議[ふしぎ]なことに、三日[みっか]たつと半分[はんぶん]以上[いじょう]のものは「別[べつ]に今[いま]でなくてもいい」と感[かん]じるようになる。逆[ぎゃく]に、それでも欲[ほ]しいと思[おも]えるものは、買[か]ったあとも長[なが]く大切[たいせつ]に使[つか]うことが多い。"
+      ],
+      "translationEn": [
+        "With the spread of online shopping, we live in an era where you can buy whatever you want with one click even late at night. Yet everyone has probably experienced regretting a purchase after it arrives, thinking \"Why did I buy this?\"",
+        "To reduce such impulse buying, I practice the \"Three-Day Rule.\" Even when I find something I want, I do not buy it immediately; I put it in my favorites list and wait just three days.",
+        "Strangely enough, after three days pass, I feel I don't really need more than half of those items right now. Conversely, items I still want after waiting are often ones I use and cherish for a long time after buying."
+      ],
+      "keyVocab": [
+        {
+          "word": "衝動買い",
+          "reading": "しょうどうがい",
+          "en": "impulse buying"
+        },
+        {
+          "word": "実践する",
+          "reading": "じっせんする",
+          "en": "to put into practice"
+        },
+        {
+          "word": "逆に",
+          "reading": "ぎゃくに",
+          "en": "conversely; on the contrary"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-13-q1",
+          "promptJp": "筆者[ひっしゃ]の「三日[みっか]ルール」とはどのような方法[ほうほう]ですか。",
+          "promptEn": "What is the author's \"Three-Day Rule\"?",
+          "choices": [
+            "ネット通販[つうはん]は三日[みっか]に一回[いっかい]しか見[み]ない。",
+            "欲[ほ]しいものがあってもすぐ買[か]わず、三日間[みっかかん]待[ま]ってから考[かんが]える。",
+            "買[か]ったものを三日間[みっかかん]使[つか]ってみて、いらなければ返品[へんぴん]する。",
+            "三日間[みっかかん]お金[かね]を一切[いっさい]使[つか]わないようにする。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains saving desired items to a favorites list and waiting three days before deciding."
+        },
+        {
+          "id": "rd-n3-13-q2",
+          "promptJp": "三日[みっか]待[ま]ってもまだ欲[ほ]しいものについて、筆者[ひっしゃ]はどう述[の]べていますか。",
+          "promptEn": "What does the author say about items they still want after waiting three days?",
+          "choices": [
+            "人気[にんき]商品[しょうひん]なので売[う]り切[き]れていることが多い。",
+            "買[か]ったあとも長[なが]く大切[たいせつ]に使[つか]うことが多い。",
+            "値段[ねだん]が安[やす]くなっていることが多い。",
+            "結局[けっきょく]あまり使[つか]わずに後悔[こうかい]することが多い。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states that items still wanted after three days tend to be used and cherished for a long time."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-14",
+      "jlpt": 3,
+      "order": 14,
+      "passageType": "essay",
+      "titleJp": "イヤホンを外[はず]して歩[ある]く時間[じかん]",
+      "titleEn": "Walking Without Headphones",
+      "recommendedMinutes": 5,
+      "contextEn": "Reflective essay on information overload and noticing everyday surroundings.",
+      "paragraphs": [
+        "通勤[つうきん]や散歩[さんぽ]のとき、イヤホンで音楽[おんがく]やニュースを聴[き]きながら歩[ある]く人[ひと]が増[ふ]えている。移動[いどう]時間[じかん]を有効[ゆうこう]に使[つか]えるのは確[たし]かに魅力[みりょく]的[てき]だ。",
+        "ところが最近[さいきん]、私[わたし]はわざとイヤホンを家[いえ]に置[お]いて歩[ある]く日[ひ]を作[つく]るようにしている。すると、普段[ふだん]は気[き]づかなかった鳥[とり]の声[こえ]や、パン屋[や]の前[まえ]を通[とお]るときの音[おと]、風[かぜ]で揺[ゆ]れる木々[きぎ]のざわめきが耳[みみ]に入[はい]ってくる。",
+        "常[つね]に何[なに]かの情報[じょうほう]を頭[あたま]に入[い]れ続[つづ]けていると、自分[じぶん]の考[かんが]えを整理[せいり]する余白[よはく]がなくなってしまう。何[なに]も聴[き]かずに歩[ある]く十[じゅっ]分間[ぷんかん]は、一見[いっけん]無駄[むだ]なようでいて、実[じつ]は頭[あたま]を休[やす]める大切[たいせつ]な時間[じかん]なのかもしれない。"
+      ],
+      "translationEn": [
+        "More and more people walk during their commute or strolls while listening to music or news through earphones. Using travel time productively is certainly appealing.",
+        "Recently, however, I intentionally make days where I leave my earphones at home and walk. When I do, birdsong I normally never noticed, sounds when passing a bakery, and the rustling of trees swaying in the wind reach my ears.",
+        "If we constantly keep feeding information into our heads, we lose the margin needed to organize our own thoughts. Ten minutes of walking without listening to anything may look wasteful at first glance, yet it might actually be precious time to rest the mind."
+      ],
+      "keyVocab": [
+        {
+          "word": "有効に",
+          "reading": "ゆうこうに",
+          "en": "effectively; productively"
+        },
+        {
+          "word": "余白",
+          "reading": "よはく",
+          "en": "blank space; mental margin"
+        },
+        {
+          "word": "一見",
+          "reading": "いっけん",
+          "en": "at first glance"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-14-q1",
+          "promptJp": "筆者[ひっしゃ]がイヤホンを家[いえ]に置[お]いて歩[ある]いたとき、どんなことがありましたか。",
+          "promptEn": "What happened when the author walked after leaving earphones at home?",
+          "choices": [
+            "ニュースが聴[き]けなくて仕事[しごと]に困[こま]った。",
+            "普段[ふだん]気[き]づかない街[まち]や自然[しぜん]の音[おと]が聞[き]こえてきた。",
+            "歩[ある]く速度[そくど]がいつもの二倍[にばい]になった。",
+            "退屈[たいくつ]ですぐに家[いえ]へ戻[もど]ってしまった。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 describes noticing birdsong, neighborhood sounds, and rustling trees that normally go unnoticed."
+        },
+        {
+          "id": "rd-n3-14-q2",
+          "promptJp": "この文章[ぶんしょう]で筆者[ひっしゃ]が最[もっと]も言[い]いたいことは何[なに]ですか。",
+          "promptEn": "What is the author's main message?",
+          "choices": [
+            "歩[ある]きながら音楽[おんがく]を聴[き]くのは危険[きけん]なので禁止[きんし]すべきだ。",
+            "移動[いどう]時間[じかん]はできる限[かぎ]り英語[えいご]やニュースの勉強[べんきょう]に充[あ]てるべきだ。",
+            "情報[じょうほう]を入れずに歩[ある]く時間[じかん]は、頭[あたま]を休[やす]め考[かんが]えを整理[せいり]するうえで大切[たいせつ]だ。",
+            "毎日[まいにち]必[かなら]ず一時間[いちじかん]以上[いじょう]散歩[さんぽ]をしたほうがいい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 concludes that walking without input preserves mental margin to organize thoughts and rest the mind."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-15",
+      "jlpt": 3,
+      "order": 15,
+      "passageType": "comparison",
+      "titleJp": "在宅[ざいたく]勤務[きんむ]と出社[しゅっしゃ]（A/B比較[ひかく]）",
+      "titleEn": "Working From Home vs. Commuting (A/B Comparison)",
+      "recommendedMinutes": 6,
+      "contextEn": "Two employees share contrasting perspectives on remote work versus working in the office.",
+      "labelA": "Aさんの意見[いけん]（在宅[ざいたく]勤務[きんむ]派[は]）",
+      "labelB": "Bさんの意見[いけん]（出社[しゅっしゃ]派[は]）",
+      "paragraphs": [
+        "在宅[ざいたく]勤務[きんむ]の最大[さいだい]の利点[りてん]は、満員[まんいん]電車[でんしゃ]に乗[の]らなくて済[す]むことだ。往復[おうふく]二時間[にじかん]の通勤[つうきん]時間[じかん]がなくなったおかげで、睡眠[すいみん]時間[じかん]が増[ふ]え、仕事[しごと]への集中力[しゅうちゅうりょく]も高[たか]まった。",
+        "また、周[まわ]りの話[はな]し声[ごえ]に邪魔[じゃま]されず、自分[じぶん]のペースで資料[しりょう]作成[さくせい]ができる点[てん]もありがたい。もちろん同僚[どうりょう]との雑談[ざつだん]は減[へ]ったが、週[しゅう]に一度[いちど]オンラインで相談[そうだん]会[かい]を開[ひら]けば十分[じゅうぶん]だと感[かん]じている。"
+      ],
+      "paragraphsB": [
+        "通勤[つうきん]がない在宅[ざいたく]勤務[きんむ]は確[たし]かに楽[らく]だが、私[わたし]はオフィスへ出社[しゅっしゃ]するほうを好[この]んでいる。家[いえ]だと仕事[しごと]とプライベートを切[き]り替[か]えるのが難[むずか]しく、つい夜[よる]遅[おそ]くまでパソコンを開[ひら]いてしまうからだ。",
+        "さらに、オフィスにいれば「ちょっと聞[き]いてもいいですか」と隣[となり]の席[せき]で気軽に相談[そうだん]できる。メールやチャットでは伝[つた]わりにくい細[こま]かいニュアンスも、顔[かお]を合[あ]わせて話[はな]せばすぐに解決[かいけつ]できると思[おも]う。"
+      ],
+      "translationEn": [
+        "The biggest advantage of working from home is avoiding packed commuter trains. Thanks to eliminating a two-hour round-trip commute, my sleep time increased and my concentration at work improved as well.",
+        "I also appreciate being able to prepare documents at my own pace without being interrupted by surrounding chatter. Of course casual talk with colleagues has decreased, but I feel holding an online consultation session once a week is sufficient."
+      ],
+      "translationBEn": [
+        "Working from home with no commute is certainly easy, but I prefer going into the office. At home it is hard to switch between work and personal life, and I end up keeping my laptop open until late at night.",
+        "Moreover, at the office I can casually consult someone at the next desk with a quick \"May I ask you something?\" Subtle nuances that are hard to convey via email or chat can be resolved right away when talking face to face."
+      ],
+      "keyVocab": [
+        {
+          "word": "在宅勤務",
+          "reading": "ざいたくきんむ",
+          "en": "working from home; telework"
+        },
+        {
+          "word": "切り替える",
+          "reading": "きりかえる",
+          "en": "to switch over; change gears"
+        },
+        {
+          "word": "気軽に",
+          "reading": "きがるに",
+          "en": "casually; without hesitation"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-15-q1",
+          "promptJp": "Aさんが在宅[ざいたく]勤務[きんむ]を良[よ]いと思[おも]っている点[てん]はどれですか。",
+          "promptEn": "What does Person A see as an advantage of working from home?",
+          "choices": [
+            "同僚[どうりょう]との雑談[ざつだん]が前[まえ]より増[ふ]えたこと。",
+            "通勤[つうきん]時間[じかん]がなくなって睡眠[すいみん]や集中力[しゅうちゅうりょく]が増[ふ]えたこと。",
+            "仕事[しごと]とプライベートの切[き]り替[か]えが簡単[かんたん]なこと。",
+            "会社[かいしゃ]から高[たか]い交通費[こうつうひ]がもらえること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Person A highlights saving 2 hours of commuting, getting more sleep, and concentrating better without chatter."
+        },
+        {
+          "id": "rd-n3-15-q2",
+          "promptJp": "Bさんが在宅[ざいたく]勤務[きんむ]の難[むずか]しさとして挙[あ]げていることは何[なに]ですか。",
+          "promptEn": "What difficulty of working from home does Person B point out?",
+          "choices": [
+            "自宅[じたく]のインターネットが遅[おそ]すぎること。",
+            "仕事[しごと]と私生活[しせいかつ]の切[き]り替[か]えが難[むずか]しく、夜遅[よるおそ]くまで働[はたら]いてしまうこと。",
+            "一人[ひとり]で資料[しりょう]を作[つく]るのが寂[さび]しいこと。",
+            "オンライン会議[かいぎ]の回数[かいすう]が多[おお]すぎること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Person B says it is hard to separate work and private life at home, leading to working late at night."
+        },
+        {
+          "id": "rd-n3-15-q3",
+          "promptJp": "AさんとBさんの両[りょう]方[ほう]に共通[きょうつう]している認識[にんしき]はどれですか。",
+          "promptEn": "What point do both Person A and Person B recognize?",
+          "choices": [
+            "在宅[ざいたく]勤務[きんむ]では通勤[つうきん]の負担[ふたん]がなくなる。",
+            "メールやチャットだけでどんな問題[もんだい]もすぐ解決[かいけつ]できる。",
+            "全員[ぜんいん]が毎日[まいにち]出社[しゅっしゃ]するべきだ。",
+            "在宅[ざいたく]勤務[きんむ]は仕事[しごと]の効率[こうりつ]が必[かなら]ず下[さ]がる。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Person A calls eliminating the commute the biggest benefit, and Person B also acknowledges \"通勤がない在宅勤務は確かに楽だが\" (telework without a commute is certainly easy)."
+        }
+      ]
+    }
+  ]
+}

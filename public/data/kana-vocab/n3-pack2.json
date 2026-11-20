@@ -1,0 +1,331 @@
+{
+  "level": 3,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "kv-n3-31",
+      "jlpt": 3,
+      "order": 31,
+      "word": "わりと",
+      "reading": "わりと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "relatively; comparatively; pretty",
+      "acceptedMeanings": [
+        "relatively",
+        "comparatively",
+        "fairly",
+        "pretty"
+      ],
+      "usageNote": "Conversational adverb (also わりあい) meaning more so than one might expect.",
+      "example": {
+        "jp": "今日の試験は思っていたよりわりと簡単だった。",
+        "reading": "きょうのしけんはおもっていたよりわりとかんたんだった。",
+        "en": "Today's exam was relatively easier than I had thought."
+      },
+      "quiz": {
+        "sentenceBefore": "この道は朝でも",
+        "sentenceAfter": "すいているので歩きやすい。",
+        "en": "This road is relatively empty even in the morning, so it's easy to walk.",
+        "choices": [
+          "わりと",
+          "まさか",
+          "いきなり",
+          "わざと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-32",
+      "jlpt": 3,
+      "order": 32,
+      "word": "たいてい",
+      "reading": "たいてい",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "usually; generally; mostly",
+      "acceptedMeanings": [
+        "usually",
+        "generally",
+        "mostly",
+        "ordinarily"
+      ],
+      "usageNote": "Indicates what normally happens most of the time (similar to ふだん or いつも, with room for occasional exceptions).",
+      "example": {
+        "jp": "日曜日はたいてい家でゆっくり過ごします。",
+        "reading": "にちようびはたいていいえでゆっくりすごします。",
+        "en": "On Sundays I usually spend time relaxing at home."
+      },
+      "quiz": {
+        "sentenceBefore": "昼ごはんは",
+        "sentenceAfter": "会社の食堂で食べています。",
+        "en": "I usually eat lunch at the company cafeteria.",
+        "choices": [
+          "たいてい",
+          "たまたま",
+          "せっかく",
+          "わざわざ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-33",
+      "jlpt": 3,
+      "order": 33,
+      "word": "おもわず",
+      "reading": "おもわず",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "unintentionally; reflexively; without thinking",
+      "acceptedMeanings": [
+        "unintentionally",
+        "reflexively",
+        "involuntarily",
+        "without thinking"
+      ],
+      "usageNote": "Describes a spontaneous, involuntary reaction triggered by surprise, joy, or humor.",
+      "example": {
+        "jp": "美しい夜景を見て、おもわず「わあ」と声が出た。",
+        "reading": "うつくしいやけいをみて、おもわず「わあ」とこえがでた。",
+        "en": "Seeing the gorgeous night view, I involuntarily let out a \"wow\"."
+      },
+      "quiz": {
+        "sentenceBefore": "友人の面白い話を聞いて、",
+        "sentenceAfter": "吹き出してしまった。",
+        "en": "Hearing my friend's funny story, I burst out laughing without thinking.",
+        "choices": [
+          "おもわず",
+          "わざと",
+          "どうしても",
+          "さすがに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-34",
+      "jlpt": 3,
+      "order": 34,
+      "word": "やがて",
+      "reading": "やがて",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "before long; eventually; in due course",
+      "acceptedMeanings": [
+        "before long",
+        "eventually",
+        "soon",
+        "in due course"
+      ],
+      "usageNote": "Slightly literary/written adverb marking a natural transition over time.",
+      "example": {
+        "jp": "小さな町だったが、やがて大きな商業都市に発展した。",
+        "reading": "ちいさなまちだったが、やがておおきなしょうぎょうとしにはってんした。",
+        "en": "It was a small town, but before long it developed into a major commercial city."
+      },
+      "quiz": {
+        "sentenceBefore": "雨が小降りになり、",
+        "sentenceAfter": "東の空から太陽が顔を出した。",
+        "en": "The rain lightened, and before long the sun peeked out from the eastern sky.",
+        "choices": [
+          "やがて",
+          "つい",
+          "ぎりぎり",
+          "こっそり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-35",
+      "jlpt": 3,
+      "order": 35,
+      "word": "ちなみに",
+      "reading": "ちなみに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "by the way; incidentally (related fact)",
+      "acceptedMeanings": [
+        "by the way",
+        "incidentally",
+        "for reference"
+      ],
+      "usageNote": "Adds a helpful side note directly connected to the current topic (unlike ところで, which switches to a totally new topic).",
+      "example": {
+        "jp": "入場料は千円です。ちなみに、学生は半額になります。",
+        "reading": "にゅうじょうりょうはせんえんです。ちなみに、がくせいははんがくになります。",
+        "en": "Admission is 1,000 yen. Incidentally, students get half off."
+      },
+      "quiz": {
+        "sentenceBefore": "会議は三時からです。",
+        "sentenceAfter": "、資料はすでにメールで送ってあります。",
+        "en": "The meeting starts at 3:00. By the way, I have already sent the handouts by email.",
+        "choices": [
+          "ちなみに",
+          "ところが",
+          "したがって",
+          "ただし"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-36",
+      "jlpt": 3,
+      "order": 36,
+      "word": "それにしても",
+      "reading": "それにしても",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "even so; all the same; still",
+      "acceptedMeanings": [
+        "even so",
+        "all the same",
+        "still",
+        "be that as it may"
+      ],
+      "usageNote": "Acknowledges a previous fact before voicing surprise, doubt, or a strong personal impression.",
+      "example": {
+        "jp": "夏だから仕方ないが、それにしても今日は暑すぎる。",
+        "reading": "なつだからしかたないが、それにしてもきょうはあつすぎる。",
+        "en": "It's summer so it can't be helped, but even so today is way too hot."
+      },
+      "quiz": {
+        "sentenceBefore": "渋滞しているとは聞いていたが、",
+        "sentenceAfter": "到着が遅すぎる。",
+        "en": "I heard there was traffic, but even so their arrival is way too late.",
+        "choices": [
+          "それにしても",
+          "つまり",
+          "しかも",
+          "したがって"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-37",
+      "jlpt": 3,
+      "order": 37,
+      "word": "うろうろ",
+      "reading": "うろうろ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / suru-verb",
+      "primaryMeaning": "wandering aimlessly; loitering around",
+      "acceptedMeanings": [
+        "wandering aimlessly",
+        "loitering",
+        "pacing around"
+      ],
+      "usageNote": "Describes walking around in circles looking lost, indecisive, or suspicious.",
+      "example": {
+        "jp": "駅の出口が分からなくて、十分ほどうろうろしてしまった。",
+        "reading": "えきのでぐちがわからなくて、じゅっぷんほどうろうろしてしまった。",
+        "en": "I couldn't find the station exit and ended up wandering around for about ten minutes."
+      },
+      "quiz": {
+        "sentenceBefore": "道に迷って、同じ場所を何度も",
+        "sentenceAfter": "してしまった。",
+        "en": "I got lost and ended up wandering around the same area repeatedly.",
+        "choices": [
+          "うろうろ",
+          "のんびり",
+          "すっきり",
+          "すらすら"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-38",
+      "jlpt": 3,
+      "order": 38,
+      "word": "ぺらぺら",
+      "reading": "ぺらぺら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "na-adj / Adverb",
+      "primaryMeaning": "fluent (in a language); paper-thin",
+      "acceptedMeanings": [
+        "fluent",
+        "fluently",
+        "paper-thin"
+      ],
+      "usageNote": "Most commonly used in JLPT to mean speaking a foreign language effortlessly (日本語がぺらぺら).",
+      "example": {
+        "jp": "彼は三か国語がぺらぺらだそうだ。",
+        "reading": "かれはさんかこくごがぺらぺらだそうだ。",
+        "en": "I heard he is fluent in three languages."
+      },
+      "quiz": {
+        "sentenceBefore": "日本に五年住んでいるだけあって、日本語が",
+        "sentenceAfter": "だ。",
+        "en": "As expected of someone who has lived in Japan for five years, she is fluent in Japanese.",
+        "choices": [
+          "ぺらぺら",
+          "びっしょり",
+          "がっかり",
+          "ぎりぎり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-39",
+      "jlpt": 3,
+      "order": 39,
+      "word": "イメージ",
+      "reading": "イメージ",
+      "category": "katakana",
+      "partOfSpeech": "Noun / suru-verb",
+      "primaryMeaning": "mental image; impression; to picture",
+      "acceptedMeanings": [
+        "image",
+        "impression",
+        "mental picture"
+      ],
+      "usageNote": "Used heavily for brand impression or imagining a scene (イメージと違う, イメージする).",
+      "example": {
+        "jp": "実際に会ってみると、最初のイメージとずいぶん違った。",
+        "reading": "じっさいにあってみると、さいしょのイメージとずいぶんちがった。",
+        "en": "When I actually met him, he was quite different from my initial impression."
+      },
+      "quiz": {
+        "sentenceBefore": "新しいロゴは、清潔感のある",
+        "sentenceAfter": "を目指してデザインされた。",
+        "en": "The new logo was designed aiming for a clean impression.",
+        "choices": [
+          "イメージ",
+          "クレーム",
+          "トラブル",
+          "コスト"
+        ]
+      }
+    },
+    {
+      "id": "kv-n3-40",
+      "jlpt": 3,
+      "order": 40,
+      "word": "システム",
+      "reading": "システム",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "system; mechanism; framework",
+      "acceptedMeanings": [
+        "system",
+        "mechanism",
+        "framework"
+      ],
+      "usageNote": "Refers both to IT software systems and organizational rules/procedures (予約システム).",
+      "example": {
+        "jp": "来月から新しいオンライン予約システムが導入されます。",
+        "reading": "らいげつからあたらしいオンラインよやくシステムがどうにゅうされます。",
+        "en": "A new online reservation system will be introduced next month."
+      },
+      "quiz": {
+        "sentenceBefore": "手続きを簡単にするために、社内の申請",
+        "sentenceAfter": "を見直した。",
+        "en": "To simplify procedures, we reviewed the internal application system.",
+        "choices": [
+          "システム",
+          "マナー",
+          "ストレス",
+          "メリット"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "level": 2,
+  "pack": "n2-pack2",
+  "items": [
+    {
+      "id": "rd-n2-11",
+      "jlpt": 2,
+      "order": 11,
+      "passageType": "notice",
+      "titleJp": "交通費[こうつうひ]・出張[しゅっちょう]経費[けいひ]精算[せいさん]ルール改定[かいてい]のご案内[あんない]",
+      "titleEn": "Expense Reimbursement Policy Revision",
+      "recommendedMinutes": 5,
+      "contextEn": "Internal corporate memo from the Accounting Department.",
+      "paragraphs": [
+        "社員[しゃいん]各位[かくい]（経理部[けいりぶ]より重要[じゅうよう]なお知[し]らせ）\n来月[らいげつ]一日[ついたち]より、業務[ぎょうむ]に伴[ともな]う交通費[こうつうひ]および出張[しゅっちょう]経費[けいひ]の精算[せいさん]手続き[てつづき]を一部[いちぶ]変更[へんこう]いたします。",
+        "一[いち]．申請[しんせい]期限[きげん]：従来[じゅうらい]は翌月末[よくげつまつ]までとしていましたが、改定後[かいていご]は利用日[りようび]から十四日[じゅうよっか]以内[いない]とします。期限[きげん]を過[す]ぎた申請[しんせい]は、原則[げんそく]として精算[せいさん]対象[たいしょう]外[がい]となります。\n二[に]．領収書[りょうしゅうしょ]：三千円[さんぜんえん]以上[いじょう]のタクシー代[だい]および宿泊費[しゅくはくひ]については、紙[かみ]の原本[げんぽん]提出[ていしゅつ]を廃止[はいし]し、社内[しゃない]システムへの画像[がぞう]アップロードへ完全[かんぜん]移行[いこう]します。",
+        "なお、やむを得[え]ない理由[りゆう]で申請[しんせい]が遅[おく]れる場合[ばあい]は、期限[きげん]前[まえ]に所属[しょぞく]長[ちょう]の承認[しょうにん]を得[え]たうえで経理部[けいりぶ]へ連絡[れんらく]してください。"
+      ],
+      "translationEn": [
+        "To all employees (Important notice from the Accounting Department)\nEffective the 1st of next month, we will partially revise the reimbursement procedures for work-related transportation and business travel expenses.",
+        "1. Submission deadline: Previously set at the end of the following month, after the revision claims must be submitted within 14 days of the date of use. Claims past the deadline will in principle be ineligible for reimbursement.\n2. Receipts: For taxi fares and lodging fees of 3,000 yen or more, submitting original paper receipts will be abolished and fully transitioned to image uploads on the internal system.",
+        "If a submission will be delayed for unavoidable reasons, please obtain your department manager's approval prior to the deadline and notify the Accounting Department."
+      ],
+      "keyVocab": [
+        {
+          "word": "精算",
+          "reading": "せいさん",
+          "en": "settlement of accounts; reimbursement"
+        },
+        {
+          "word": "原本",
+          "reading": "げんぽん",
+          "en": "original document"
+        },
+        {
+          "word": "やむを得ない",
+          "reading": "やむをえない",
+          "en": "unavoidable"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-11-q1",
+          "promptJp": "改定後[かいていご]のルールについて、正[ただ]しいものはどれですか。",
+          "promptEn": "Which statement is correct regarding the revised policy?",
+          "choices": [
+            "経費[けいひ]の申請[しんせい]は翌月末[よくげつまつ]までであればいつでもよい。",
+            "五千円[ごせんえん]の宿泊費[しゅくはくひ]は、領収書[りょうしゅうしょ]の紙[かみ]の原本[げんぽん]を経理部[けいりぶ]へ提出[ていしゅつ]する。",
+            "四千円[よんせんえん]のタクシー代[だい]は、利用日[りようび]から十四日[じゅうよっか]以内[いない]に画像[がぞう]をシステムへアップロードして申請[しんせい]する。",
+            "三千円[さんぜんえん]未満[みまん]の交通費[こうつうひ]は申請[しんせい]できなくなる。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Expenses must be filed within 14 days, and taxi/lodging receipts of 3,000 yen or more are uploaded as images rather than submitted on paper."
+        },
+        {
+          "id": "rd-n2-11-q2",
+          "promptJp": "やむを得[え]ない事情[じじょう]で十四日[じゅうよっか]以内[いない]に申請[しんせい]できないときは、どうする必要がありますか。",
+          "promptEn": "What must be done if an unavoidable circumstance prevents filing within 14 days?",
+          "choices": [
+            "期限[きげん]が過[す]ぎてから経理部[けいりぶ]に謝罪[しゃざい]メールを送[おく]る。",
+            "期限[きげん]前[まえ]に所属[しょぞく]長[ちょう]の承認[しょうにん]を受[う]け、経理部[けいりぶ]へ連絡[れんらく]する。",
+            "翌月[よくげつ]の精算[せいさん]にまとめて申請[しんせい]すれば問題[もんだい]ない。",
+            "どんな理由[りゆう]であっても一切[いっさい]精算[せいさん]されない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states you must get your manager's approval BEFORE the deadline and contact Accounting."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-12",
+      "jlpt": 2,
+      "order": 12,
+      "passageType": "email",
+      "titleJp": "納品[のうひん]遅延[ちえん]のお詫[わ]びと今後の対応[たいおう]について",
+      "titleEn": "Apology & Recovery Plan for Delayed Shipment",
+      "recommendedMinutes": 5,
+      "contextEn": "Formal Japanese business apology email from a supplier to a corporate buyer.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]北星[ほくせい]商事[しょうじ] 資材部[しざいぶ] 中村[なかむら]様[さま]\n平素[へいそ]より格別[かくべつ]のご高配[こうはい]を賜[たまわ]り、厚[あつ]く御礼[おんれい]申[もう]し上[あ]げます。東和[とうわ]製作所[せいさくしょ]の森[もり]でございます。",
+        "このたび、五月[ごがつ]十日[とおか]に納品[のうひん]予定[よてい]でした精密[せいみつ]部品[ぶひん]A-200につきまして、協力[きょうりょく]工場[こうじょう]における検査[けんさ]機器[きき]の不具合[ふぐあい]により、出荷[しゅっか]が二日[ふつか]遅[おく]れる見込[みこ]みとなりました。貴社[きしゃ]の生産[せいさん]計画[けいかく]に多[た]大[だい]なご迷惑[めいわく]をおかけしますこと、深[ふか]くお詫[わ]び申[もう]し上[あ]げます。",
+        "現在[げんざい]、検品[けんぴん]が完了[かんりょう]している半分[はんぶん]の数量[すうりょう]につきましては、弊社[へいしゃ]負担[ふたん]のチャーター便[びん]にて当初[とうしょ]予定[よてい]どおり十日[とおか]午前[ごぜん]中[ちゅう]にお届[とど]けいたします。残[のこ]りの半分[はんぶん]は十二日[じゅうににち]の午前[ごぜん]着[ちゃく]にて手配[てはい]済[ず]みでございます。再発[さいはつ]防止[ぼうし]策[さく]につきましては、改[あらた]めて報告書[ほうこくしょ]を提出[ていしゅつ]いたします。"
+      ],
+      "translationEn": [
+        "Mr. Nakamura, Materials Department, Hokusei Trading Co., Ltd.\nWe sincerely thank you for your continued patronage. This is Mori from Towa Manufacturing.",
+        "Regarding the precision part A-200 scheduled for delivery on May 10, due to a malfunction in inspection equipment at a partner factory, shipment is expected to be delayed by two days. We deeply apologize for causing significant inconvenience to your production schedule.",
+        "For the half of the quantity that has already passed inspection, we will deliver it as originally scheduled by the morning of the 10th via a chartered vehicle at our expense. The remaining half has been arranged for morning arrival on the 12th. Regarding measures to prevent recurrence, we will submit a formal report separately."
+      ],
+      "keyVocab": [
+        {
+          "word": "不具合",
+          "reading": "ふぐあい",
+          "en": "malfunction; defect"
+        },
+        {
+          "word": "見込み",
+          "reading": "みこみ",
+          "en": "prospect; expectation"
+        },
+        {
+          "word": "再発防止",
+          "reading": "さいはつぼうし",
+          "en": "prevention of recurrence"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-12-q1",
+          "promptJp": "納品[のうひん]が遅[おく]れることになった原因[げんいん]は何[なに]ですか。",
+          "promptEn": "What caused the delivery delay?",
+          "choices": [
+            "チャーター便[びん]の手配[てはい]が間[ま]に合[あ]わなかったこと。",
+            "協力[きょうりょく]工場[こうじょう]の検査[けんさ]機器[きき]に不具合[ふぐあい]が起[お]きたこと。",
+            "部品[ぶひん]の注文[ちゅうもん]数量[すうりょう]を誤[あやま]って受注[じゅちゅう]したこと。",
+            "天候[てんこう]不良[ふりょう]で道路[どうろ]が通行[つうこう]止[ど]めになったこと。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 states the delay is due to a malfunction of inspection equipment at a partner factory (協力工場における検査機器の不具合)."
+        },
+        {
+          "id": "rd-n2-12-q2",
+          "promptJp": "部品[ぶひん]A-200の納品[のうひん]方法[ほうほう]として正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement accurately describes the delivery plan for part A-200?",
+          "choices": [
+            "全量[ぜんりょう]が五月[ごがつ]十二日[じゅうににち]の午前[ごぜん]にまとめて届[とど]く。",
+            "半分[はんぶん]は十日[とおか]午前[ごぜん]に東和[とうわ]製作所[せいさくしょ]の負担[ふたん]で届[とど]き、残[のこ]りは十二日[じゅうににち]午前[ごぜん]に届[とど]く。",
+            "十日[とおか]に届[とど]けるチャーター便[びん]の費用[ひよう]は北星[ほくせい]商事[しょうじ]が負担[ふたん]する。",
+            "検品[けんぴん]を省略[しょうりゃく]して十日[とおか]に全量[ぜんりょう]を出荷[しゅっか]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Half (already inspected) arrives on the morning of the 10th via chartered delivery paid by Towa Manufacturing (弊社負担), and the rest arrives the morning of the 12th."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-13",
+      "jlpt": 2,
+      "order": 13,
+      "passageType": "short",
+      "titleJp": "検索[けんさく]できることと「知[し]っている」ことの錯覚[さっかく]",
+      "titleEn": "The Illusion of Knowing Through Search Engines",
+      "recommendedMinutes": 5,
+      "contextEn": "Short commentary on cognitive psychology and digital information habits.",
+      "paragraphs": [
+        "現代[げんだい]では、わからない言葉[ことば]や歴史[れきし]の年号[ねんごう]があっても、数秒[すうびょう]検索[けんさく]すれば答[こた]えにたどり着[つ]く。その便利[べんり]さゆえに、人[ひと]は「いつでも調[しら]べられる情報[じょうほう]」を、あたかも自分[じぶん]の頭[あたま]の中[なか]にある知識[ちしき]であるかのように錯覚[さっかく]しがちだ。",
+        "しかし、断片[だんぺん]的[てき]な事実[じじつ]を検索[けんさく]して確認[かくにん]することと、複数の知識[ちしき]を結[むす]びつけて自分[じぶん]なりの意見[いけん]を築[きず]くことは全[まった]く別[べつ]である。",
+        "検索[けんさく]ツールは記憶[きおく]を補[おぎな]う優秀[ゆうしゅう]な道具[どうぐ]だが、基礎[きそ]となる知識[ちしき]を自分[じぶん]の内側[うちがわ]に蓄[たくわ]えておかなければ、そもそも「何[なに]を問[と]うべきか」さえ思[おも]い浮[う]かばないのである。"
+      ],
+      "translationEn": [
+        "Today, even if there is an unfamiliar term or historical date, we can reach the answer within seconds by searching. Because of that convenience, people tend to fall under the illusion that information they can look up anytime is already knowledge inside their own heads.",
+        "However, looking up and verifying fragmentary facts is completely different from connecting multiple pieces of knowledge to form one's own perspective.",
+        "Search tools are excellent instruments for supplementing memory, yet unless we accumulate foundational knowledge within ourselves, we cannot even think of what questions to ask in the first place."
+      ],
+      "keyVocab": [
+        {
+          "word": "錯覚",
+          "reading": "さっかく",
+          "en": "illusion; misperception"
+        },
+        {
+          "word": "断片的",
+          "reading": "だんぺんてき",
+          "en": "fragmentary"
+        },
+        {
+          "word": "蓄える",
+          "reading": "たくわえる",
+          "en": "to store up; accumulate"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-13-q1",
+          "promptJp": "筆者[ひっしゃ]が言[い]う「錯覚[さっかく]」とはどのようなことですか。",
+          "promptEn": "What is the \"illusion\" the author refers to?",
+          "choices": [
+            "ネットの情報[じょうほう]がすべて正[ただ]しいと信[しん]じ込[こ]むこと。",
+            "いつでも検索[けんさく]できる情報[じょうほう]を、自分[じぶん]がすでに知[し]っていると勘違[かんちが]いすること。",
+            "検索[けんさく]を繰[く]り返[かえ]すことで記憶力[きおくりょく]が上[あ]がると思[おも]うこと。",
+            "本[ほん]を読[よ]むより検索[けんさく]のほうが時間[じかん]がかかると感[かん]じること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 defines the illusion as treating searchable information as if it were already knowledge inside one's own mind."
+        },
+        {
+          "id": "rd-n2-13-q2",
+          "promptJp": "筆者[ひっしゃ]はなぜ自分[じぶん]の中[なか]に基礎[きそ]知識[ちしき]を蓄[たくわ]える必要[ひつよう]があると述[の]べていますか。",
+          "promptEn": "Why does the author say we need to store foundational knowledge within ourselves?",
+          "choices": [
+            "検索[けんさく]ツールが使[つか]えない場所[ばしょ]が増[ふ]えているから。",
+            "基礎[きそ]知識[ちしき]がないと、何[なに]を疑問[ぎもん]に思[おも]い何[なに]を問[と]うべきかすら浮[う]かばないから。",
+            "検索[けんさく]結果[けっか]を読[よ]む速度[そくど]が落[お]ちてしまうから。",
+            "記憶[きおく]テストで高[こう]得点[とくてん]を取[と]るため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 argues that without internal foundational knowledge, one cannot even conceive what to ask (そもそも「何を問うべきか」さえ思い浮かばない)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-14",
+      "jlpt": 2,
+      "order": 14,
+      "passageType": "essay",
+      "titleJp": "「第三[だいさん]の居場所[いばしょ]」としての公共[こうきょう]図書館[としょかん]",
+      "titleEn": "Designing Public Libraries as Third Places",
+      "recommendedMinutes": 6,
+      "contextEn": "Essay on evolving roles of public libraries in modern cities.",
+      "paragraphs": [
+        "かつて公共[こうきょう]図書館[としょかん]といえば、静粛[せいしゅく]が保[たも]たれ、本[ほん]を借[か]りて黙々[もくもく]と読[よ]む場所[ばしょ]という印象[いんしょう]が強[つよ]かった。ところが近年[きんねん]、カフェを併設[へいせつ]したり、子[こ]ども連[づ]れでも気兼[きが]ねなく過[す]ごせる会話[かいわ]可能[かのう]エリアを設[もう]けたりする図書館[としょかん]が増[ふ]えている。",
+        "この変化[へんか]の背景[はいけい]には、都市部[としぶ]を中心に、家庭[かてい]でも職場[しょくば]・学校[がっこう]でもない「第三[だいさん]の居場所[いばしょ]」が失[うしな]われつつあるという課題[かだい]がある。商業[しょうぎょう]施設[しせつ]とは異[こと]なり、図書館[としょかん]は何かを購入[こうにゅう]しなくても誰[だれ]もが滞在[たいざい]できる貴重[きちょう]な公共[こうきょう]空間[くうかん]なのだ。",
+        "もちろん、静[しず]かに研究[けんきゅう]や読書[どくしょ]に集中[しゅうちゅう]したい利用者[りようしゃ]の権利[けんり]も軽視[けいし]できない。だからこそ、館内[かんない]を音[おと]のレベルに応[おう]じて区域[くいき]分[わ]けする工夫[くふう]こそが、多様な人々[ひとびと]が共存[きょうぞん]するこれからの図書館[としょかん]に求[もと]められている。"
+      ],
+      "translationEn": [
+        "In the past, public libraries strongly evoked the image of places where strict silence was maintained and people borrowed and read books quietly. In recent years, however, more libraries are adding cafés or creating conversation-friendly zones where even parents with children can spend time without hesitation.",
+        "Behind this shift lies the issue that, particularly in urban areas, \"third places\"—neither home nor workplace/school—are disappearing. Unlike commercial facilities, libraries are precious public spaces where anyone can stay without having to buy anything.",
+        "Of course, the right of patrons who wish to concentrate quietly on research or reading cannot be neglected either. Precisely for that reason, thoughtfully zoning the building according to sound levels is what future libraries need so diverse people can coexist."
+      ],
+      "keyVocab": [
+        {
+          "word": "併設する",
+          "reading": "へいせつする",
+          "en": "to establish alongside; attach"
+        },
+        {
+          "word": "気兼ねなく",
+          "reading": "きがねなく",
+          "en": "without hesitation; freely"
+        },
+        {
+          "word": "軽視する",
+          "reading": "けいしする",
+          "en": "to make light of; neglect"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-14-q1",
+          "promptJp": "図書館[としょかん]が商業[しょうぎょう]施設[しせつ]と異[こと]なる点[てん]として、筆者[ひっしゃ]は何[なに]を挙[あ]げていますか。",
+          "promptEn": "What distinguishes libraries from commercial facilities according to the author?",
+          "choices": [
+            "最新[さいしん]の雑誌[ざっし]やカフェメニューが充実[じゅうじつ]している点[てん]。",
+            "商品[しょうひん]を購入[こうにゅう]しなくても誰[だれ]でも滞在[たいざい]できる点[てん]。",
+            "二十四時間[にじゅうよじかん]いつでも利用[りよう]できる点[てん]。",
+            "会話[かいわ]が完全[かんぜん]に禁止[きんし]されている点[てん]。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 highlights that unlike commercial spaces, anyone can stay in a library without purchasing anything."
+        },
+        {
+          "id": "rd-n2-14-q2",
+          "promptJp": "これからの図書館[としょかん]に求[もと]められる工夫[くふう]とは何[なに]ですか。",
+          "promptEn": "What design approach is needed for future libraries?",
+          "choices": [
+            "静粛[せいしゅく]エリアを廃止[はいし]し、全館[ぜんかん]で会話[かいわ]を自由[じゆう]にする。",
+            "音[おと]のレベルに応[おう]じて区域[くいき]を分[わ]け、多様な利用者[りようしゃ]が共存[きょうぞん]できるようにする。",
+            "図書館[としょかん]を商業[しょうぎょう]施設[しせつ]の中[なか]に移転[いてん]させる。",
+            "子[こ]ども連[づ]れの利用[りよう]時間[じかん]を平日[へいじつ]のみに制限[せいげん]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 concludes that zoning by sound level (音のレベルに応じて区域分けする工夫) enables quiet readers and social visitors to coexist."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-15",
+      "jlpt": 2,
+      "order": 15,
+      "passageType": "comparison",
+      "titleJp": "週休[しゅうきゅう]三日[みっか]制[せい]の導入[どうにゅう]をめぐって（A/B比較[ひかく]）",
+      "titleEn": "Debating the Four-Day Workweek (A/B Comparison)",
+      "recommendedMinutes": 7,
+      "contextEn": "Two business commentators present contrasting evaluations of introducing a 4-day workweek.",
+      "labelA": "文章[ぶんしょう]A（導入[どうにゅう]に前向[まえむ]きな立場[たちば]）",
+      "labelB": "文章[ぶんしょう]B（慎重[しんちょう]な立場[たちば]）",
+      "paragraphs": [
+        "週休[しゅうきゅう]三日[みっか]制[せい]は、単[たん]なる労働[ろうどう]時間[じかん]の短縮[たんしゅく]にとどまらず、業務[ぎょうむ]の無駄[むだ]を見直[みなお]す絶好[ぜっこう]の契機[けいき]となる。実際[じっさい]、試行[しこう]導入[どうにゅう]した企業[きぎょう]では、会議[かいぎ]時間[じかん]の削減[さくげん]やデジタル化[か]が進[すす]み、生産性[せいさんせい]が維持[いじ]・向上[こうじょう]した事例[じれい]も少[すく]なくない。",
+        "さらに、増[ふ]えた休日[きゅうじつ]を資格[しかく]取得[しゅとく]や育児[いくじ]・介護[かいご]に充[あ]てることで、離職率[りしょくりつ]の低下[ていか]や優秀[ゆうしゅう]な人材[じんざい]の確保[かくほ]にもつながる。働[はたら]き方[かた]の選択肢[せんたくし]を広[ひろ]げる意義[いぎ]は大[おお]きい。"
+      ],
+      "paragraphsB": [
+        "週休[しゅうきゅう]三日[みっか]制[せい]の理念[りねん]自体は理解[りかい]できるが、すべての業種[ぎょうしゅ]に一律[いちりつ]に当てはめるのは現実[げんじつ]的[てき]ではない。医療[いりょう]・介護[かいご]・小売[こうり]など人手[ひとで]不足[ぶそく]が深刻[しんこく]な現場[げんば]では、営業[えいぎょう]体制[たいせい]を維持[いじ]するための代替[だいたい]要員[よういん]を確保[かくほ]するのが極[きわ]めて困難[こんなん]だ。",
+        "また、総[そう]労働[ろうどう]時間[じかん]を減[へ]らさず一日[いちにち]十時間[じゅうじかん]勤務[きんむ]に圧縮[あっしゅく]する形[かたち]では、かえって疲労[ひろう]が蓄積[ちくせき]し、子育て[こそだて]世代[せだい]の負担[ふたん]が増[ふ]えるおそれもある。給与[きゅうよ]水準[すいじゅん]とのバランスを含[ふく]め、慎重[しんちょう]な設計[せっけい]が不可欠[ふかけつ]である。"
+      ],
+      "translationEn": [
+        "A four-day workweek is not merely a reduction in working hours; it serves as an ideal catalyst for reviewing operational waste. In fact, at companies that piloted it, trimming meeting lengths and advancing digitalization progressed, with numerous cases maintaining or even improving productivity.",
+        "Furthermore, using the extra day off for earning qualifications, childcare, or nursing care lowers turnover and helps attract talented personnel. Broadening workstyle choices holds major significance."
+      ],
+      "translationBEn": [
+        "While the ideal of a four-day workweek is understandable in itself, applying it uniformly across all industries is unrealistic. In fields facing acute labor shortages such as healthcare, nursing care, and retail, securing replacement staff to maintain operations is extremely difficult.",
+        "Moreover, compressing schedules into 10-hour days without reducing total hours risks accumulating fatigue and increasing burdens on working parents. Careful design—including the balance with salary levels—is indispensable."
+      ],
+      "keyVocab": [
+        {
+          "word": "契機",
+          "reading": "けいき",
+          "en": "catalyst; turning point"
+        },
+        {
+          "word": "一律に",
+          "reading": "いちりつに",
+          "en": "uniformly; across the board"
+        },
+        {
+          "word": "代替要員",
+          "reading": "だいたいよういん",
+          "en": "replacement personnel"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-15-q1",
+          "promptJp": "文章[ぶんしょう]Aでは、週休[しゅうきゅう]三日[みっか]制[せい]を試行[しこう]した企業[きぎょう]でどのような変化[へんか]が起[お]きたと述[の]べていますか。",
+          "promptEn": "According to Passage A, what happened at companies that piloted a four-day workweek?",
+          "choices": [
+            "会議[かいぎ]が増[ふ]えて業務[ぎょうむ]が複雑[ふくざつ]になった。",
+            "無駄[むだ]の見直[みなお]しやデジタル化[か]が進[すす]み、生産性[せいさんせい]が維持[いじ]または向上[こうじょう]した例[れい]がある。",
+            "給与[きゅうよ]を二割[にわり]減[へ]らしたことで利益[りえき]が拡大[かくだい]した。",
+            "すべての社員[しゃいん]が副業[ふくぎょう]を始[はじ]めた。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage A notes that cutting meeting time and digitalizing workflows helped maintain or boost productivity."
+        },
+        {
+          "id": "rd-n2-15-q2",
+          "promptJp": "文章[ぶんしょう]Bが指摘[してき]している問題点[もんだいてん]はどれですか。",
+          "promptEn": "Which problem does Passage B point out?",
+          "choices": [
+            "大企業[だいきぎょう]では絶対[ぜったい]に生産性[せいさんせい]が上[あ]がらないこと。",
+            "人手[ひとで]不足[ぶそく]の業種[ぎょうしゅ]での人員[じんいん]確保[かくほ]や、一日[いちにち]の勤務[きんむ]時間[じかん]圧縮[あっしゅく]による疲労[ひろう]の懸念[けねん]。",
+            "社員[しゃいん]が休日[きゅうじつ]の過[す]ごし方[かた]を見つけられないこと。",
+            "デジタル化[か]にかかる費用[ひよう]が高[たか]すぎること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage B warns about staffing shortages in healthcare/retail/care and increased fatigue from compressed 10-hour workdays."
+        },
+        {
+          "id": "rd-n2-15-q3",
+          "promptJp": "子育て[こそだて]世代[せだい]への影響[えいきょう]について、AとBの捉[とら]え方[かた]の違[ちが]いはどれですか。",
+          "promptEn": "How do Passages A and B differ regarding the impact on working parents?",
+          "choices": [
+            "AもBも、子育て[こそだて]世代[せだい]には必[かなら]ず悪影響[あくえいきょう]があると考[かんが]えている。",
+            "Aは休日[きゅうじつ]を育児[いくじ]に充[あ]てられる利点[りてん]を挙[あ]げ、Bは一日[いちにち]の勤務[きんむ]圧縮[あっしゅく]が負担[ふたん]増[ぞう]につながるおそれを指摘[してき]している。",
+            "Aは子育て[こそだて]世代[せだい]を対象[たいしょう]外[がい]としており、Bは子育て[こそだて]世代[せだい]のみ導入[どうにゅう]すべきだとしている。",
+            "両[りょう]者[しゃ]とも子育て[こそだて]への影響[えいきょう]には触[ふ]れていない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Passage A sees the extra day off as helpful for childcare, whereas Passage B warns compressed 10-hour workdays could increase burdens on parenting households."
+        }
+      ]
+    }
+  ]
+}

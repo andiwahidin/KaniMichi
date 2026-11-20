@@ -1,0 +1,396 @@
+{
+  "level": 2,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "g-n2-21",
+      "jlpt": 2,
+      "order": 21,
+      "pattern": "～恐れがある",
+      "reading": "～おそれがある",
+      "meaning": "there is a risk/danger that ...",
+      "structure": "Verb (dictionary) / Noun の + 恐れがある",
+      "explanation": "Formal expression used in news, weather warnings, and business reports to warn of a negative possibility or hazard.",
+      "confusableWith": "～かもしれない is neutral and conversational; ～恐れがある is strictly for undesirable outcomes in formal contexts.",
+      "examples": [
+        {
+          "jp": "今夜から明朝にかけて、大雨による土砂災害の恐れがある。",
+          "reading": "こんやからみょうちょうにかけて、おおあめによるどしゃさいがいのおそれがある。",
+          "en": "From tonight to tomorrow morning, there is a risk of landslides due to heavy rain."
+        },
+        {
+          "jp": "このまま対策を取らなければ、個人情報が漏れる恐れがある。",
+          "reading": "このままたいさくをとらなければ、こじんじょうほうがもれるおそれがある。",
+          "en": "If we do not take measures, there is a danger that personal data may leak."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "台風の接近により、新幹線が運休する",
+        "sentenceAfter": "。",
+        "en": "Due to the approaching typhoon, there is a risk that the Shinkansen will be suspended.",
+        "answer": "恐れがある",
+        "acceptedAnswers": [
+          "恐れがある",
+          "おそれがある"
+        ],
+        "choices": [
+          "恐れがある",
+          "にほかならない",
+          "にすぎない",
+          "わけがない"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-22",
+      "jlpt": 2,
+      "order": 22,
+      "pattern": "～次第 (しだい)",
+      "reading": "～しだい",
+      "meaning": "as soon as ... (formal) / depending on ...",
+      "structure": "Verb (masu-stem) + 次第 (as soon as) | Noun + 次第だ (depends on)",
+      "explanation": "After a Verb masu-stem (確認次第), it formally means \"as soon as ... (will do next)\". After a Noun (努力次第だ), it means \"it depends entirely on...\".",
+      "confusableWith": "In the \"as soon as\" sense, the main clause must express a future intention or request—never a past event.",
+      "examples": [
+        {
+          "jp": "結果が分かり次第、メールでご連絡いたします。",
+          "reading": "けっかがわかりしだい、メールでごれんらくいたします。",
+          "en": "As soon as the results are known, I will contact you by email."
+        },
+        {
+          "jp": "成功するかどうかは、あなたの努力次第です。",
+          "reading": "せいこうするかどうかは、あなたのどりょくしだいです。",
+          "en": "Whether you succeed or not depends on your effort."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "資料の準備ができ",
+        "sentenceAfter": "、皆様に共有いたします。",
+        "en": "As soon as the materials are ready, I will share them with everyone.",
+        "answer": "次第",
+        "acceptedAnswers": [
+          "次第",
+          "しだい"
+        ],
+        "choices": [
+          "次第",
+          "途端",
+          "際して",
+          "反して"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-23",
+      "jlpt": 2,
+      "order": 23,
+      "pattern": "～にあたらない",
+      "reading": "～にあたらない",
+      "meaning": "not worth ...; no need to ...",
+      "structure": "Verb (dictionary) / Noun + にあたらない",
+      "explanation": "States that something does not warrant a strong reaction such as surprise, praise, or criticism (often with 驚く, 感心する, 非難する).",
+      "confusableWith": "Do not confuse with ～にあたって (\"on the occasion of\"); ～にあたらない means \"does not merit / is not surprising\".",
+      "examples": [
+        {
+          "jp": "あれだけ練習したのだから、優勝しても驚くにあたらない。",
+          "reading": "あれだけれんしゅうしたのだから、ゆうしょうしてもおどろくにあたらない。",
+          "en": "Given how much she practiced, it is no surprise that she won."
+        },
+        {
+          "jp": "ほんの少し手伝っただけで、お礼を言われるほどのことにはあたらない。",
+          "reading": "ほんのすこしてつだっただけで、おれいをいわれるほどのことにはあたらない。",
+          "en": "I only helped a tiny bit; it hardly merits your thanks."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "事前の調査結果を見れば、この失敗は驚く",
+        "sentenceAfter": "。",
+        "en": "Looking at the preliminary survey results, this failure is hardly surprising.",
+        "answer": "にあたらない",
+        "acceptedAnswers": [
+          "にあたらない",
+          "に当たらない"
+        ],
+        "choices": [
+          "にあたらない",
+          "にほかならない",
+          "にすぎない",
+          "にかぎらない"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-24",
+      "jlpt": 2,
+      "order": 24,
+      "pattern": "～に際して",
+      "reading": "～にさいして",
+      "meaning": "on the occasion of ...; when (formal milestone)",
+      "structure": "Noun / Verb (dictionary) + に際して(は) / に際し",
+      "explanation": "Formal written/spoken expression marking a significant moment, transition, or special procedure (\"upon / on the occasion of\").",
+      "confusableWith": "Very close to ～にあたって, though ～に際して focuses slightly more on the timing/occasion itself rather than proactive preparation.",
+      "examples": [
+        {
+          "jp": "ご契約に際して、身分証明書をご提示ください。",
+          "reading": "ごけいやくにさいして、みぶんしょうめいしょをごていじください。",
+          "en": "Upon signing the contract, please present your ID."
+        },
+        {
+          "jp": "退任に際し、これまで支えてくださった皆様に感謝申し上げます。",
+          "reading": "たいにんにさいし、これまでささえてくださったみなさまにかんしゃもうしあげます。",
+          "en": "On the occasion of stepping down, I express my gratitude to everyone who supported me."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "海外へ長期出張する",
+        "sentenceAfter": "、必ず保険に加入してください。",
+        "en": "When going on a long-term overseas business trip, please be sure to enroll in insurance.",
+        "answer": "に際して",
+        "acceptedAnswers": [
+          "に際して",
+          "にさいして"
+        ],
+        "choices": [
+          "に際して",
+          "に反して",
+          "にかかわらず",
+          "にわたって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-25",
+      "jlpt": 2,
+      "order": 25,
+      "pattern": "～に反して",
+      "reading": "～にはんして",
+      "meaning": "contrary to ...; going against ...",
+      "structure": "Noun + に反して / に反する + Noun",
+      "explanation": "Indicates a result that contradicts expectations, predictions, wishes, or rules (予想に反して, 規則に反する).",
+      "confusableWith": "～にもかかわらず concedes a fact (\"despite\"); ～に反して highlights direct opposition to an expectation or standard.",
+      "examples": [
+        {
+          "jp": "予想に反して、新商品は発売初日から大ヒットとなった。",
+          "reading": "よそうにはんして、しんしょうひんははつばいしょにちからだヒットとなった。",
+          "en": "Contrary to expectations, the new product became a huge hit from day one."
+        },
+        {
+          "jp": "親の期待に反して、彼は大学進学を選ばなかった。",
+          "reading": "おやのきたいにはんして、かれはだいがくしんがくをえらばなかった。",
+          "en": "Contrary to his parents' expectations, he chose not to go to university."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "天気予報の予想",
+        "sentenceAfter": "、午後は雲一つない晴天になった。",
+        "en": "Contrary to the weather forecast's prediction, the afternoon turned into a cloudless sunny sky.",
+        "answer": "に反して",
+        "acceptedAnswers": [
+          "に反して",
+          "にはんして"
+        ],
+        "choices": [
+          "に反して",
+          "に際して",
+          "にしたがって",
+          "にともなって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-26",
+      "jlpt": 2,
+      "order": 26,
+      "pattern": "～を踏まえて",
+      "reading": "～をふまえて",
+      "meaning": "based on; taking ... into consideration",
+      "structure": "Noun + を踏まえて / を踏まえた + Noun",
+      "explanation": "Indicates that a decision, plan, or revision was carefully constructed on the foundation of prior results, feedback, or reality.",
+      "confusableWith": "～をもとに is often used for creative works or raw material; ～を踏まえて emphasizes analytical reflection on facts/feedback.",
+      "examples": [
+        {
+          "jp": "前回の反省を踏まえて、運営マニュアルを改訂した。",
+          "reading": "ぜんかいのはんせいをふまえて、うんえいマニュアルをかいていした。",
+          "en": "Taking last time's lessons into account, we revised the operations manual."
+        },
+        {
+          "jp": "利用者の意見を踏まえた改善案を提案します。",
+          "reading": "りようしゃのいけんをふまえたかいぜんあんをていあんします。",
+          "en": "We propose an improvement plan based on user feedback."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "顧客アンケートの結果",
+        "sentenceAfter": "、来月のサービス内容を見直すことになった。",
+        "en": "Based on the customer survey results, it was decided to review next month's service offerings.",
+        "answer": "を踏まえて",
+        "acceptedAnswers": [
+          "を踏まえて",
+          "をふまえて"
+        ],
+        "choices": [
+          "を踏まえて",
+          "をめぐって",
+          "を問わず",
+          "をはじめ"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-27",
+      "jlpt": 2,
+      "order": 27,
+      "pattern": "～を問わず",
+      "reading": "～をとわず",
+      "meaning": "regardless of ...; irrespective of ...",
+      "structure": "Noun + を問わず / は問わず",
+      "explanation": "Formal expression meaning a condition (such as age, gender, nationality, experience, or weather) does not restrict eligibility or applicability.",
+      "confusableWith": "Often used in job ads and notices with concise nouns like 年齢を問わず, 昼夜を問わず, 経験を問わず.",
+      "examples": [
+        {
+          "jp": "このコンテストは年齢や国籍を問わず、誰でも応募できる。",
+          "reading": "このコンテストはねんれいやこくせきをとわず、だれでもおうぼできる。",
+          "en": "Anyone can apply for this contest regardless of age or nationality."
+        },
+        {
+          "jp": "ここは昼夜を問わず人通りが多い。",
+          "reading": "ここはちゅうやをとわずひとどおりがおおい。",
+          "en": "This street has heavy foot traffic regardless of day or night."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "経験の有無",
+        "sentenceAfter": "、やる気のあるスタッフを募集しています。",
+        "en": "Regardless of whether you have experience, we are recruiting motivated staff.",
+        "answer": "を問わず",
+        "acceptedAnswers": [
+          "を問わず",
+          "をとわず"
+        ],
+        "choices": [
+          "を問わず",
+          "を踏まえて",
+          "をめぐって",
+          "にわたって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-28",
+      "jlpt": 2,
+      "order": 28,
+      "pattern": "～ものだ (Umum / Nasihat / Nostalgia)",
+      "reading": "～ものだ",
+      "meaning": "naturally; should (general truth) / used to (nostalgia)",
+      "structure": "V-dict / V-ない + ものだ (truth/advice) | V-た + ものだ (nostalgia)",
+      "explanation": "With present plain verbs, states a general truth or social expectation (\"one ought to...\"). With past tense (V-たものだ), expresses fond nostalgia (\"used to...\").",
+      "confusableWith": "Distinguish from ～ことだ (direct personal advice) and ～はずだ (logical deduction).",
+      "examples": [
+        {
+          "jp": "子供のころは、よく川で魚を捕って遊んだものだ。",
+          "reading": "こどものころは、よくかわでさかなをとってあそんだものだ。",
+          "en": "When I was a child, I used to often play by catching fish in the river."
+        },
+        {
+          "jp": "人の悪口は言わないものだ。",
+          "reading": "ひとのわるぐちはいわないものだ。",
+          "en": "One should not speak ill of others."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "学生時代は、終電まで友達と語り合った",
+        "sentenceAfter": "。",
+        "en": "In my student days, I used to talk with friends until the last train.",
+        "answer": "ものだ",
+        "acceptedAnswers": [
+          "ものだ"
+        ],
+        "choices": [
+          "ものだ",
+          "わけだ",
+          "ばかりだ",
+          "ところだ"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-29",
+      "jlpt": 2,
+      "order": 29,
+      "pattern": "～きり / ～っきり",
+      "reading": "～きり / ～っきり",
+      "meaning": "ever since ... (and nothing after) / only ...",
+      "structure": "Verb (た-form) + きり (+ negative) | Noun + きり",
+      "explanation": "After V-た, indicates that after one past action, an expected follow-up has never happened since. After a noun (二人きり), means \"only/just\".",
+      "confusableWith": "～っぱなし focuses on leaving something carelessly open/on; ～きり emphasizes that no subsequent contact or change occurred.",
+      "examples": [
+        {
+          "jp": "彼とは卒業式で会ったきり、一度も連絡を取っていない。",
+          "reading": "かれとはそつぎょうしきであったきり、いちどもれんらくをとっていない。",
+          "en": "Since seeing him at graduation, I haven't been in touch even once."
+        },
+        {
+          "jp": "本を貸したきり、まだ返してもらっていない。",
+          "reading": "ほんをかしたきり、まだかえしてもらっていない。",
+          "en": "Ever since I lent the book, I still haven't had it returned."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "息子は朝出かけた",
+        "sentenceAfter": "、夜になっても帰ってこない。",
+        "en": "Ever since my son went out this morning, he still hasn't come home even at night.",
+        "answer": "きり",
+        "acceptedAnswers": [
+          "きり",
+          "っきり"
+        ],
+        "choices": [
+          "きり",
+          "ながら",
+          "ばかり",
+          "つつ"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-30",
+      "jlpt": 2,
+      "order": 30,
+      "pattern": "～てしょうがない / ～てたまらない",
+      "reading": "～てしょうがない / ～てたまらない",
+      "meaning": "unbearably ...; cannot help feeling ...",
+      "structure": "Verb/Adjective (て-form) + しょうがない / たまらない",
+      "explanation": "Expresses an intense, uncontrollable feeling or bodily sensation (\"so ... that I can't stand it\"). Used primarily for the speaker's own emotions or sensations.",
+      "confusableWith": "More emotional and visceral than とても; avoid using it for objective facts like \"this book is very cheap\".",
+      "examples": [
+        {
+          "jp": "来月の旅行が楽しみでたまらない。",
+          "reading": "らいげつのりょこうがたのしみでたまらない。",
+          "en": "I am unbearably excited for next month's trip."
+        },
+        {
+          "jp": "昨夜よく眠れなかったので、眠くてしょうがない。",
+          "reading": "さくやよくねむれなかったので、ねむくてしょうがない。",
+          "en": "Since I couldn't sleep well last night, I am unbearably sleepy."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "故郷を離れて三年、家族に会いたく",
+        "sentenceAfter": "。",
+        "en": "Three years away from my hometown, I miss my family unbearably.",
+        "answer": "てたまらない",
+        "acceptedAnswers": [
+          "てたまらない",
+          "てしょうがない",
+          "てしかたがない"
+        ],
+        "choices": [
+          "てたまらない",
+          "てならない",
+          "てばかりいる",
+          "てみせる"
+        ]
+      }
+    }
+  ]
+}

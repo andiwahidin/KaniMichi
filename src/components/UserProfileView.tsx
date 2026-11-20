@@ -12,6 +12,7 @@ import {
 import { MAX_LEVEL, getLevelMeta } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { getSrsDistribution } from '../utils/srs';
+import { ProfileProgressCharts } from './ProfileProgressCharts';
 
 export const UserProfileView: React.FC = () => {
   const {
@@ -209,6 +210,15 @@ export const UserProfileView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Recharts Analytics: Riwayat Progres, Item Dikuasai & Akurasi Mingguan */}
+      <ProfileProgressCharts
+        state={state}
+        dataset={dataset}
+        srsDist={srsDist}
+        onStartLesson={() => setActiveView('lesson')}
+        onStartReview={() => setActiveView('review')}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Account Info, Profile Edit, Security */}

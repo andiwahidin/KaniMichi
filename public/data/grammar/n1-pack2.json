@@ -1,0 +1,394 @@
+{
+  "level": 1,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "g-n1-21",
+      "jlpt": 1,
+      "order": 21,
+      "pattern": "～いかんだ / ～いかんによっては",
+      "reading": "～いかんだ / ～いかんによっては",
+      "meaning": "depends entirely on ... / depending on ...",
+      "structure": "Noun (+ の) + いかんだ / いかんによって(は)",
+      "explanation": "A highly formal, literary equivalent of ～次第だ, stating that a major outcome hinges completely on a decisive factor.",
+      "confusableWith": "Unlike ～いかんにかかわらず (\"regardless of\"), ～いかんによっては means the result changes depending on the factor.",
+      "examples": [
+        {
+          "jp": "今後の交渉の結果いかんによっては、計画を全面的に見直す必要がある。",
+          "reading": "こんごのこうしょうのけっかいかんによっては、けいかくをぜんめんてきにみなおすひつようがある。",
+          "en": "Depending on the outcome of future negotiations, we may need to overhaul the plan completely."
+        },
+        {
+          "jp": "プロジェクトの成否は初動の対応いかんだ。",
+          "reading": "プロジェクトのせいひはしょどうのたいおういかんだ。",
+          "en": "The success or failure of the project depends on the initial response."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今回の実証実験の結果",
+        "sentenceAfter": "、全国展開の可否が決まる。",
+        "en": "Depending on the results of this pilot test, whether to roll out nationwide will be decided.",
+        "answer": "いかんによって",
+        "acceptedAnswers": [
+          "いかんによって",
+          "いかんによっては",
+          "如何によって",
+          "如何によっては"
+        ],
+        "choices": [
+          "いかんによって",
+          "をよそに",
+          "を限りに",
+          "に引き換え"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-22",
+      "jlpt": 1,
+      "order": 22,
+      "pattern": "～が早いか",
+      "reading": "～がはやいか",
+      "meaning": "the instant ...; no sooner than ...",
+      "structure": "Verb (dictionary / past) + が早いか",
+      "explanation": "Dramatically describes a second action occurring almost simultaneously with the first—literally \"before one can tell which was faster\". Always used for observed/past events, not speaker intentions.",
+      "confusableWith": "Very close to ～や否や, though ～が早いか emphasizes swift physical motion or sudden action.",
+      "examples": [
+        {
+          "jp": "終了のチャイムが鳴るが早いか、生徒たちは教室を飛び出した。",
+          "reading": "しゅうりょうのチャイムがなるがはやいか、せいとたちはきょうしつをとびだした。",
+          "en": "The instant the dismissal bell rang, the students bolted out of the classroom."
+        },
+        {
+          "jp": "彼は席に着くが早いか、パソコンを開いて作業を始めた。",
+          "reading": "かれはせきにつくがはやいか、パソコンをひらいてさぎょうをはじめた。",
+          "en": "No sooner had he sat down than he opened his laptop and started working."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "電車がホームに停まる",
+        "sentenceAfter": "、乗客が一斉に降り始めた。",
+        "en": "The instant the train stopped at the platform, passengers began getting off all at once.",
+        "answer": "が早いか",
+        "acceptedAnswers": [
+          "が早いか",
+          "がはやいか"
+        ],
+        "choices": [
+          "が早いか",
+          "ばこそ",
+          "とはいえ",
+          "ならまだしも"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-23",
+      "jlpt": 1,
+      "order": 23,
+      "pattern": "～なり",
+      "reading": "～なり",
+      "meaning": "as soon as ... (surprising immediate action)",
+      "structure": "Verb (dictionary) + なり",
+      "explanation": "Indicates that immediately after doing A, the same subject unexpectedly did B (often leaving the first state unfinished). Both clauses share the same subject and end in past tense.",
+      "confusableWith": "Do not confuse with ～なりに (\"in one's own way\") or AなりBなり (\"either A or B\").",
+      "examples": [
+        {
+          "jp": "彼は帰宅するなり、コートも脱がずにベッドに倒れ込んだ。",
+          "reading": "かれはきたくするなり、コートもぬがずにベッドにたおれこんだ。",
+          "en": "The moment he got home, he collapsed onto the bed without even taking off his coat."
+        },
+        {
+          "jp": "彼女は手紙を読むなり、急に涙を流し始めた。",
+          "reading": "かのじょはてがみをよむなり、きゅうになみだをながしはじめた。",
+          "en": "As soon as she read the letter, she suddenly burst into tears."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "部長は会議室に入る",
+        "sentenceAfter": "、厳しい表情で資料を机に置いた。",
+        "en": "As soon as the manager entered the meeting room, he set the documents down with a stern look.",
+        "answer": "なり",
+        "acceptedAnswers": [
+          "なり"
+        ],
+        "choices": [
+          "なり",
+          "べく",
+          "つつ",
+          "ゆえ"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-24",
+      "jlpt": 1,
+      "order": 24,
+      "pattern": "～そばから",
+      "reading": "～そばから",
+      "meaning": "no sooner than ... (frustratingly undone right away)",
+      "structure": "Verb (dictionary / た-form) + そばから",
+      "explanation": "Expresses frustration that as soon as an action is done, it is repeatedly undone or nullified immediately afterward.",
+      "confusableWith": "Unlike ～が早いか (a single vivid event), ～そばから describes a recurring, exasperating cycle.",
+      "examples": [
+        {
+          "jp": "新しい英単語を覚えるそばから忘れてしまう。",
+          "reading": "あたらしいえいたんごをおぼえるそばからわすれてしまう。",
+          "en": "No sooner do I memorize new English words than I forget them."
+        },
+        {
+          "jp": "部屋を片付けるそばから、子供がおもちゃを散らかす。",
+          "reading": "へやをかたづけるそばから、こどもがおもちゃをちらかす。",
+          "en": "As fast as I tidy the room, the kids scatter their toys again."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "メモを取る",
+        "sentenceAfter": "、そのメモをどこに置いたか忘れてしまう。",
+        "en": "No sooner do I jot down a note than I forget where I put it.",
+        "answer": "そばから",
+        "acceptedAnswers": [
+          "そばから"
+        ],
+        "choices": [
+          "そばから",
+          "を皮切りに",
+          "を限りに",
+          "に即して"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-25",
+      "jlpt": 1,
+      "order": 25,
+      "pattern": "～てやまない",
+      "reading": "～てやまない",
+      "meaning": "cannot stop ...; earnestly wish / deeply respect",
+      "structure": "Emotion / Wish Verb (て-form) + やまない",
+      "explanation": "Formal, elevated expression showing a deep, ceaseless wish, gratitude, or admiration. Commonly pairs with 願う, 期待する, 尊敬する, 感謝する, 愛する.",
+      "confusableWith": "Restricted to positive/elevated emotional verbs; never used for mundane physical actions like \"cannot stop eating\".",
+      "examples": [
+        {
+          "jp": "貴社の益々のご発展を心より願ってやみません。",
+          "reading": "きしゃのますますのごはってんをこころからねがってやみません。",
+          "en": "I earnestly wish for your company's continued prosperity from the bottom of my heart."
+        },
+        {
+          "jp": "長年地域医療を支えてこられた先生を尊敬してやまない。",
+          "reading": "ながねんちいきいりょうをささえてこられたせんせいをそんけいしてやまない。",
+          "en": "I hold boundless respect for the doctor who has supported local healthcare for decades."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "被災地の一日も早い復興を願っ",
+        "sentenceAfter": "。",
+        "en": "We earnestly pray for the earliest possible recovery of the disaster-stricken area.",
+        "answer": "てやまない",
+        "acceptedAnswers": [
+          "てやまない",
+          "てやみません"
+        ],
+        "choices": [
+          "てやまない",
+          "てたまらない",
+          "てばかりいる",
+          "てならない"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-26",
+      "jlpt": 1,
+      "order": 26,
+      "pattern": "～に難くない (にかたくない)",
+      "reading": "～にかたくない",
+      "meaning": "it is not hard to ... (imagine / guess)",
+      "structure": "Verb (dictionary) / Verbal Noun + に難くない",
+      "explanation": "Formal written expression meaning \"it is easy to imagine/infer\" given the circumstances. Almost exclusively pairs with 想像する, 推測する, 理解する, 察する.",
+      "confusableWith": "Do not confuse with ～に足りない (\"not worth\"); ～に難くない means \"not difficult to (imagine)\".",
+      "examples": [
+        {
+          "jp": "当時の関係者の苦労は想像に難くない。",
+          "reading": "とうじのかんけいしゃのくろうはそうぞうにかたくない。",
+          "en": "It is not hard to imagine the hardships faced by those involved at the time."
+        },
+        {
+          "jp": "データの傾向を見れば、今後の課題は推測するに難くない。",
+          "reading": "データのけいこうをみれば、こんごのかだいはすいそくするにかたくない。",
+          "en": "Looking at the data trends, future challenges are not difficult to infer."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "異国の地で一から事業を立ち上げた苦労は、想像",
+        "sentenceAfter": "。",
+        "en": "The hardship of starting a business from scratch in a foreign land is not hard to imagine.",
+        "answer": "に難くない",
+        "acceptedAnswers": [
+          "に難くない",
+          "にかたくない"
+        ],
+        "choices": [
+          "に難くない",
+          "に足りない",
+          "に堪えない",
+          "に即して"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-27",
+      "jlpt": 1,
+      "order": 27,
+      "pattern": "～をもって",
+      "reading": "～をもって",
+      "meaning": "with / by means of (formal) / as of (cutoff time)",
+      "structure": "Noun + をもって / をもちまして",
+      "explanation": "Very formal expression with two main uses: (1) marking the exact time/date something concludes (本日をもって終了), and (2) marking a means or attitude (誠意をもって対応する).",
+      "confusableWith": "Close to ～を限りに for endings, but ～をもって is standard in official announcements and business closing statements.",
+      "examples": [
+        {
+          "jp": "誠に勝手ながら、本店舗は今月末をもちまして閉店いたします。",
+          "reading": "まことにかってながら、ほんてんぽはこんげつまつをもちましてへいてんいたします。",
+          "en": "We regret to inform you that this store will close as of the end of this month."
+        },
+        {
+          "jp": "皆様のご意見には誠意をもって対応してまいります。",
+          "reading": "みなさまのごいけんにはせいいをもってたいおうしてまいります。",
+          "en": "We will respond to your feedback with utmost sincerity."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "これを",
+        "sentenceAfter": "、本日のシンポジウムを閉会いたします。",
+        "en": "With this, we hereby close today's symposium.",
+        "answer": "もちまして",
+        "acceptedAnswers": [
+          "もちまして",
+          "もって"
+        ],
+        "choices": [
+          "もちまして",
+          "よそに",
+          "ものともせず",
+          "皮切りに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-28",
+      "jlpt": 1,
+      "order": 28,
+      "pattern": "～ずにはおかない",
+      "reading": "～ずにはおかない",
+      "meaning": "cannot fail to ...; inevitably makes one ...",
+      "structure": "Verb (ない-stem) + ずにはおかない (する → せずにはおかない)",
+      "explanation": "Indicates either strong determination (\"will definitely do\") or an inevitable emotional impact on anyone who encounters something (\"cannot fail to move/impress\").",
+      "confusableWith": "～ずにはいられない is an involuntary personal urge (\"I can't help doing\"); ～ずにはおかない describes an external force/work compelling a reaction, or firm resolve.",
+      "examples": [
+        {
+          "jp": "彼女の圧倒的な演奏は、聴く者を感動させずにはおかない。",
+          "reading": "かのじょのあっとうてきなえんそうは、きくものをかんどうさせずにはおかない。",
+          "en": "Her breathtaking performance cannot fail to move everyone who hears it."
+        },
+        {
+          "jp": "この歴史的な映像は、見る人に深い問いを投げかけずにはおかない。",
+          "reading": "このれきしてきなえいぞうは、みるひとにふかいといをなげかけずにはおかない。",
+          "en": "This historic footage inevitably poses profound questions to its viewers."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "その小説の結末は、読者に強い余韻を残さ",
+        "sentenceAfter": "。",
+        "en": "The ending of that novel cannot fail to leave a deep lingering impression on readers.",
+        "answer": "ずにはおかない",
+        "acceptedAnswers": [
+          "ずにはおかない"
+        ],
+        "choices": [
+          "ずにはおかない",
+          "ないまでも",
+          "ないものでもない",
+          "ざるを得ない"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-29",
+      "jlpt": 1,
+      "order": 29,
+      "pattern": "～まじき",
+      "reading": "～まじき",
+      "meaning": "unbefitting of ...; unforgivable for ...",
+      "structure": "Role Noun + にあるまじき + Noun | Verb (dictionary) + まじき + Noun",
+      "explanation": "Archaic-flavored formal modifier expressing severe moral condemnation of behavior wholly unacceptable for someone's position or profession.",
+      "confusableWith": "Almost always appears as a pre-noun modifier (e.g. 指導者にあるまじき発言, 許すまじき行為).",
+      "examples": [
+        {
+          "jp": "データを改ざんするなど、研究者にあるまじき行為だ。",
+          "reading": "データをかいざんするなど、けんきゅうしゃにあるまじきこういだ。",
+          "en": "Falsifying data is conduct utterly unbefitting of a researcher."
+        },
+        {
+          "jp": "プロとしてあるまじき不注意なミスをしてしまった。",
+          "reading": "プロとしてあるまじきふちゅういなミスをしてしまった。",
+          "en": "I made a careless mistake inexcusable for a professional."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "顧客の信頼を裏切るような、責任者にある",
+        "sentenceAfter": "発言だった。",
+        "en": "It was a remark utterly unbefitting of a person in charge, betraying customer trust.",
+        "answer": "まじき",
+        "acceptedAnswers": [
+          "まじき"
+        ],
+        "choices": [
+          "まじき",
+          "べく",
+          "ごとき",
+          "たりとも"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-30",
+      "jlpt": 1,
+      "order": 30,
+      "pattern": "～極まりない / ～の極み",
+      "reading": "～きわまりない / ～のきわみ",
+      "meaning": "extremely ...; the height of ...",
+      "structure": "na-adj stem + 極まりない | Noun + の極み",
+      "explanation": "Literary intensifier expressing the absolute extreme of a quality or emotion (often negative with 極まりない such as 失礼極まりない, 危険極まりない, and either positive or negative with の極み such as 光栄の極み).",
+      "confusableWith": "Cannot attach directly to i-adjectives (use a Sino-Japanese noun/na-adj instead, e.g. 不愉快極まりない).",
+      "examples": [
+        {
+          "jp": "説明もなしに一方的に契約を打ち切るとは、失礼極まりない。",
+          "reading": "せつめいもなしにいっぽうてきにけいやくをうちきるとは、しつれいきわまりない。",
+          "en": "Terminating the contract unilaterally without explanation is the height of rudeness."
+        },
+        {
+          "jp": "このような権威ある賞をいただき、光栄の極みです。",
+          "reading": "このようなけんいあるしょうをいただき、こうえいのきわみです。",
+          "en": "Receiving such a prestigious award is the greatest honor."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "安全確認を怠って作業を進めるのは、危険",
+        "sentenceAfter": "。",
+        "en": "Proceeding with the work while neglecting safety checks is extraordinarily dangerous.",
+        "answer": "極まりない",
+        "acceptedAnswers": [
+          "極まりない",
+          "きわまりない"
+        ],
+        "choices": [
+          "極まりない",
+          "に足りない",
+          "を禁じ得ない",
+          "に堪えない"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "level": 1,
+  "pack": "pack2",
+  "items": [
+    {
+      "id": "kv-n1-31",
+      "jlpt": 1,
+      "order": 31,
+      "word": "あながち",
+      "reading": "あながち",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not necessarily; not altogether (with negative)",
+      "acceptedMeanings": [
+        "not necessarily",
+        "not altogether",
+        "not wholly"
+      ],
+      "usageNote": "Always pairs with a negative predicate (あながち間違いではない = not altogether wrong). Classic N1 exam item.",
+      "example": {
+        "jp": "彼の指摘は厳しいが、あながち的外れとも言えない。",
+        "reading": "かれのしてきはきびしいが、あながちまとはずれともいえない。",
+        "en": "His criticism is harsh, yet it cannot altogether be called off the mark."
+      },
+      "quiz": {
+        "sentenceBefore": "一見極端な意見に聞こえるが、",
+        "sentenceAfter": "否定できない部分もある。",
+        "en": "At first glance it sounds like an extreme opinion, but there are parts that cannot altogether be denied.",
+        "choices": [
+          "あながち",
+          "ひたすら",
+          "さぞ",
+          "やたらに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-32",
+      "jlpt": 1,
+      "order": 32,
+      "word": "すべからく",
+      "reading": "すべからく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "by all means; ought to (literary obligation)",
+      "acceptedMeanings": [
+        "by all means",
+        "ought to",
+        "as a matter of duty"
+      ],
+      "usageNote": "Traditional literary adverb pairing with ～べし / ～べきだ (\"ought to\"). Often misread as \"all\" — JLPT tests its true prescriptive sense!",
+      "example": {
+        "jp": "指導的立場にある者は、すべからく言行を一致させるべきである。",
+        "reading": "しどうてきたちばにあるものは、すべからくげんこうをいっちさせるべきである。",
+        "en": "Those in leadership positions ought by all means to align their words and deeds."
+      },
+      "quiz": {
+        "sentenceBefore": "公職に就く者は、",
+        "sentenceAfter": "高い倫理観を持つべきである。",
+        "en": "Those who take public office ought by all means to uphold high ethical standards.",
+        "choices": [
+          "すべからく",
+          "おのずと",
+          "まんざら",
+          "すかさず"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-33",
+      "jlpt": 1,
+      "order": 33,
+      "word": "たちどころに",
+      "reading": "たちどころに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "on the spot; instantaneously; in a flash",
+      "acceptedMeanings": [
+        "on the spot",
+        "instantaneously",
+        "immediately",
+        "in a flash"
+      ],
+      "usageNote": "Emphasizes impressive speed in solving a problem or producing an immediate effect.",
+      "example": {
+        "jp": "熟練の技師が一目見ただけで、故障の原因をたちどころに突き止めた。",
+        "reading": "じゅくれんのぎしがひとめみただけで、こしょうのげんいんをたちどころにつきとめた。",
+        "en": "With just a glance, the seasoned engineer pinpointed the cause of the failure on the spot."
+      },
+      "quiz": {
+        "sentenceBefore": "新しいアルゴリズムを導入したところ、処理の遅延が",
+        "sentenceAfter": "解消された。",
+        "en": "Upon introducing the new algorithm, the processing delay was resolved instantaneously.",
+        "choices": [
+          "たちどころに",
+          "もっぱら",
+          "かりに",
+          "ことごとく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-34",
+      "jlpt": 1,
+      "order": 34,
+      "word": "まんまと",
+      "reading": "まんまと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "neatly; completely (tricked/pulled off)",
+      "acceptedMeanings": [
+        "neatly",
+        "completely",
+        "cleverly",
+        "hook line and sinker"
+      ],
+      "usageNote": "Describes successfully pulling off a scheme or falling completely for someone's trap (まんまと騙される).",
+      "example": {
+        "jp": "相手の巧みな駆け引きに、まんまと乗せられてしまった。",
+        "reading": "あいてのたくみなかけひきに、まんまとのせられてしまった。",
+        "en": "I fell hook, line, and sinker for the opponent's clever tactics."
+      },
+      "quiz": {
+        "sentenceBefore": "巧妙な偽サイトに気づかず、",
+        "sentenceAfter": "パスワードを入力してしまった。",
+        "en": "Without noticing the clever phishing site, I fell right into the trap and entered my password.",
+        "choices": [
+          "まんまと",
+          "あえて",
+          "さぞ",
+          "おのずと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-35",
+      "jlpt": 1,
+      "order": 35,
+      "word": "しかるに",
+      "reading": "しかるに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "nevertheless; however; and yet (formal)",
+      "acceptedMeanings": [
+        "nevertheless",
+        "however",
+        "and yet",
+        "yet"
+      ],
+      "usageNote": "Elevated written adversative conjunction used in legal, academic, and critical prose.",
+      "example": {
+        "jp": "事前合意は明確であった。しかるに、当日の運用はその趣旨から逸脱していた。",
+        "reading": "じぜんごういはめいかくであった。しかるに、とうじつのうんようはそのしゅしからいつだつしていた。",
+        "en": "The prior agreement was clear. Nevertheless, the actual execution deviated from its intent."
+      },
+      "quiz": {
+        "sentenceBefore": "十分な予算が配分されていた。",
+        "sentenceAfter": "、現場の改善は一向に進まなかった。",
+        "en": "A sufficient budget had been allocated. Nevertheless, on-site improvements made no progress at all.",
+        "choices": [
+          "しかるに",
+          "ゆえに",
+          "いわば",
+          "ひいては"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-36",
+      "jlpt": 1,
+      "order": 36,
+      "word": "さりながら",
+      "reading": "さりながら",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "be that as it may; however; still",
+      "acceptedMeanings": [
+        "be that as it may",
+        "however",
+        "nevertheless",
+        "still"
+      ],
+      "usageNote": "Refined, dignified concessive conjunction close to さりとて; concedes the preceding argument while raising a serious reservation.",
+      "example": {
+        "jp": "自動化による恩恵は計り知れない。さりながら、人間の判断力を手放してはならない。",
+        "reading": "じどうかによるおんけいははかりしれない。さりながら、にんげんのはんだんりょくをてばなしてはならない。",
+        "en": "The benefits of automation are immeasurable. Be that as it may, we must not surrender human judgment."
+      },
+      "quiz": {
+        "sentenceBefore": "理念そのものは崇高である。",
+        "sentenceAfter": "、現実の制度設計には多くの課題が残る。",
+        "en": "The ideal itself is noble. Still, many challenges remain in designing the actual system.",
+        "choices": [
+          "さりながら",
+          "ひいては",
+          "ゆえに",
+          "かたや"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-37",
+      "jlpt": 1,
+      "order": 37,
+      "word": "びくとも",
+      "reading": "びくとも",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not budge an inch; completely unfazed",
+      "acceptedMeanings": [
+        "not budge",
+        "unfazed",
+        "unshaken",
+        "not flinch"
+      ],
+      "usageNote": "Always followed by しない (びくともしない) to depict rock-solid physical stability or calm composure under pressure.",
+      "example": {
+        "jp": "どれほど厳しい批判を受けても、彼の信念はびくともしなかった。",
+        "reading": "どれほどきびしいひはんをうけても、かれのしんねんはびくともしなかった。",
+        "en": "No matter how harsh the criticism, his conviction did not waver an inch."
+      },
+      "quiz": {
+        "sentenceBefore": "強風が吹き荒れたが、新たに補強した橋は",
+        "sentenceAfter": "しなかった。",
+        "en": "Strong winds raged, yet the newly reinforced bridge did not budge an inch.",
+        "choices": [
+          "びくとも",
+          "うやむや",
+          "うんざり",
+          "しんみり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-38",
+      "jlpt": 1,
+      "order": 38,
+      "word": "しぶしぶ",
+      "reading": "しぶしぶ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "reluctantly; grudgingly",
+      "acceptedMeanings": [
+        "reluctantly",
+        "grudgingly",
+        "unwillingly"
+      ],
+      "usageNote": "Describes agreeing to or carrying out something with obvious hesitation or reluctance.",
+      "example": {
+        "jp": "周囲から強く説得され、彼はしぶしぶ条件を受け入れた。",
+        "reading": "しゅういからつよくせっとくされ、かれはしぶしぶじょうけんをうけいれた。",
+        "en": "Strongly persuaded by those around him, he reluctantly accepted the terms."
+      },
+      "quiz": {
+        "sentenceBefore": "最初は反対していた課長も、データを見て",
+        "sentenceAfter": "承認の印を押した。",
+        "en": "The section chief, who initially opposed it, grudgingly stamped his approval after seeing the data.",
+        "choices": [
+          "しぶしぶ",
+          "きっぱり",
+          "ずばり",
+          "じんわり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-39",
+      "jlpt": 1,
+      "order": 39,
+      "word": "シビア",
+      "reading": "シビア",
+      "category": "katakana",
+      "partOfSpeech": "na-adj",
+      "primaryMeaning": "strict; harsh; unforgiving; demanding",
+      "acceptedMeanings": [
+        "strict",
+        "harsh",
+        "severe",
+        "unforgiving"
+      ],
+      "usageNote": "Used frequently in business/news Japanese for tight deadlines, tough markets, or strict evaluation criteria.",
+      "example": {
+        "jp": "消費者の目は年々シビアになっており、品質の妥協は許されない。",
+        "reading": "しょうひしゃのめはねんねんシビアになっており、ひんしつのだきょうはゆるされない。",
+        "en": "Consumers' eyes are growing stricter every year, and no compromise on quality is tolerated."
+      },
+      "quiz": {
+        "sentenceBefore": "今回の予算査定はかなり",
+        "sentenceAfter": "な基準で行われた。",
+        "en": "This round of budget screening was conducted under fairly strict criteria.",
+        "choices": [
+          "シビア",
+          "ジレンマ",
+          "インフラ",
+          "パラダイム"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-40",
+      "jlpt": 1,
+      "order": 40,
+      "word": "レガシー",
+      "reading": "レガシー",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "legacy (cultural heritage or outdated IT system)",
+      "acceptedMeanings": [
+        "legacy",
+        "heritage",
+        "outdated system"
+      ],
+      "usageNote": "Has two key nuances in modern Japanese: positive Olympic/cultural legacy, or aging IT systems (レガシーシステム).",
+      "example": {
+        "jp": "老朽化したレガシーシステムの刷新が企業の急務となっている。",
+        "reading": "ろうきゅうかしたレガシーシステムのさっしんがきぎょうのきゅうむとなっている。",
+        "en": "Modernizing aging legacy systems has become an urgent priority for companies."
+      },
+      "quiz": {
+        "sentenceBefore": "国際大会の開催を、地域社会に長く残る",
+        "sentenceAfter": "へとつなげたい。",
+        "en": "We want to connect hosting the international event to a lasting legacy for the local community.",
+        "choices": [
+          "レガシー",
+          "コンセンサス",
+          "インセンティブ",
+          "ポテンシャル"
+        ]
+      }
+    }
+  ]
+}

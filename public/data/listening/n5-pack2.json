@@ -1,0 +1,321 @@
+{
+  "level": 5,
+  "pack": "n5-pack2",
+  "items": [
+    {
+      "id": "l-n5-11",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "パン屋[や]での注文[ちゅうもん]",
+      "titleEn": "Ordering at a Bakery",
+      "situationEn": "A customer is ordering bread and a drink at a neighborhood bakery.",
+      "introJp": "パン屋[や]で女[おんな]の人[ひと]と店員[てんいん]が話[はな]しています。女[おんな]の人[ひと]は何[なに]を買[か]いますか。",
+      "introEn": "A woman and a clerk are talking at a bakery. What will the woman buy?",
+      "lines": [
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "いらっしゃいませ。ご注文[ちゅうもん]はお決[き]まりですか。",
+          "en": "Welcome! Have you decided on your order?"
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "はい、カレーパンを二[ふた]つと、メロンパンを一[ひと]つください。",
+          "en": "Yes, two curry buns and one melon bread, please."
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "申[もう]し訳[わけ]ありません。カレーパンは今[いま]一[ひと]つしか残[のこ]っていないんです。次[つぎ]が焼[や]けるまで二十分[にじゅっぷん]かかりますが……。",
+          "en": "I'm very sorry. We only have one curry bun left right now. It will take 20 minutes until the next batch is baked..."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "そうですか。時間[じかん]がないので、じゃあカレーパンは一[ひと]つでいいです。代[か]わりにサンドイッチを一[ひと]つください。",
+          "en": "I see. I don't have time, so one curry bun is fine. Instead, please give me one sandwich."
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "かしこまりました。メロンパンも一[ひと]つでよろしいですか。",
+          "en": "Certainly. And one melon bread as well?"
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "はい、お願[ねが]いします。",
+          "en": "Yes, please."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は何[なに]を買[か]いますか。",
+      "questionEn": "What will the woman buy?",
+      "choices": [
+        "カレーパン二[ふた]つとメロンパン一[ひと]つ",
+        "カレーパン一[ひと]つとメロンパン一[ひと]つとサンドイッチ一[ひと]つ",
+        "カレーパン一[ひと]つとサンドイッチ二[ふた]つ",
+        "メロンパン一[ひと]つとサンドイッチ一[ひと]つ"
+      ],
+      "choicesEn": [
+        "Two curry buns and one melon bread",
+        "One curry bun, one melon bread, and one sandwich",
+        "One curry bun and two sandwiches",
+        "One melon bread and one sandwich"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "She originally asked for 2 curry buns and 1 melon bread, but since only 1 curry bun was left, she kept 1 curry bun, added 1 sandwich instead, and confirmed 1 melon bread.",
+      "keyPhrases": [
+        {
+          "jp": "〜しか残[のこ]っていない",
+          "reading": "しかのこっていない",
+          "en": "only ... left"
+        },
+        {
+          "jp": "代[か]わりに",
+          "reading": "かわりに",
+          "en": "instead; in place of"
+        },
+        {
+          "jp": "かしこまりました",
+          "reading": "かしこまりました",
+          "en": "certainly (polite clerk response)"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-12",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "今日[きょう]バスで来[き]た理由[りゆう]",
+      "titleEn": "Why Takeshi Took the Bus Today",
+      "situationEn": "Two coworkers chat in the office about how Takeshi commuted this morning.",
+      "introJp": "会社[かいしゃ]で女[おんな]の人[ひと]と男[おとこ]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]は今日[きょう]、どうしてバスで来[き]ましたか。",
+      "introEn": "A woman and a man are talking at the office. Why did the man come by bus today?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "たけしさん、おはようございます。今日[きょう]はバスで来[き]たんですか。いつも自転車[じてんしゃ]ですよね。",
+          "en": "Good morning, Takeshi. Did you come by bus today? You usually ride your bicycle, right?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "ええ。朝[あさ]は雨[あめ]が降[ふ]っていなかったんですけど、天気[てんき]予報[よほう]で夕方[ゆうがた]から強[つよ]い雨[あめ]になると言[い]っていたんです。",
+          "en": "Yes. It wasn't raining this morning, but the weather forecast said it will rain heavily starting in the evening."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "なるほど。自転車[じてんしゃ]が壊[こわ]れたのかと思[おも]いました。",
+          "en": "I see. I thought your bicycle had broken."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "いいえ、自転車[じてんしゃ]は大丈夫[だいじょうぶ]です。荷物[にもつ]も少[すく]なかったので、今日[きょう]はバスにしました。",
+          "en": "No, my bicycle is fine. I didn't have much luggage either, so I took the bus today."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は今日[きょう]、どうしてバスで来[き]ましたか。",
+      "questionEn": "Why did the man take the bus today?",
+      "choices": [
+        "朝[あさ]から強[つよ]い雨[あめ]が降[ふ]っていたから",
+        "夕方[ゆうがた]から雨[あめ]が降[ふ]る予報[よほう]だったから",
+        "自転車[じてんしゃ]が壊[こわ]れてしまったから",
+        "今日[きょう]は荷物[にもつ]がとても多[おお]かったから"
+      ],
+      "choicesEn": [
+        "Because it was raining heavily since morning",
+        "Because rain was forecast from the evening",
+        "Because his bicycle broke",
+        "Because he had a lot of luggage today"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "He explains it was not raining in the morning, his bike is fine, and his luggage was light—he took the bus because the forecast predicted heavy rain from the evening.",
+      "keyPhrases": [
+        {
+          "jp": "天気予報[てんきよほう]",
+          "reading": "てんきよほう",
+          "en": "weather forecast"
+        },
+        {
+          "jp": "〜のかと思[おも]いました",
+          "reading": "のかとおもいました",
+          "en": "I thought maybe ..."
+        },
+        {
+          "jp": "〜にしました",
+          "reading": "にしました",
+          "en": "decided on ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n5-13",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "スピーチ大会[たいかい]の教室[きょうしつ]準備[じゅんび]",
+      "titleEn": "Preparing the Classroom for a Speech Contest",
+      "situationEn": "A Japanese language teacher gives instructions to a student before a speech contest.",
+      "introJp": "教室[きょうしつ]で先生[せんせい]と学生[がくせい]が話[はな]しています。学生[がくせい]はまず何[なに]をしますか。",
+      "introEn": "A teacher and a student are talking in a classroom. What will the student do first?",
+      "lines": [
+        {
+          "speaker": "Teacher",
+          "role": "female",
+          "jp": "アリさん、スピーチ大会[たいかい]の準備[じゅんび]を手伝[てつだ]ってくれますか。",
+          "en": "Ali, could you help prepare for the speech contest?"
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "はい、いいですよ。机[つくえ]を後[うし]ろに運[はこ]びましょうか。",
+          "en": "Yes, gladly. Shall I move the desks to the back?"
+        },
+        {
+          "speaker": "Teacher",
+          "role": "female",
+          "jp": "あ、机[つくえ]はさっき別[べつ]の学生[がくせい]が動[うご]かしてくれました。それより、窓[まど]を開[あ]けて空気[くうき]を入[い]れ替[か]えてください。そのあとで、椅子[いす]を二十[にじゅう]並[なら]べましょう。",
+          "en": "Oh, another student moved the desks earlier. Instead, please open the windows to let fresh air in. After that, let's line up twenty chairs."
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "jp": "わかりました。すぐやります。",
+          "en": "Understood. I'll do it right away."
+        }
+      ],
+      "questionJp": "学生[がくせい]はまず何[なに]をしますか。",
+      "questionEn": "What will the student do first?",
+      "choices": [
+        "机[つくえ]を後[うし]ろに運[はこ]ぶ",
+        "窓[まど]を開[あ]ける",
+        "椅子[いす]を二十[にじゅう]並[なら]べる",
+        "別[べつ]の学生[がくせい]を呼[よ]ぶ"
+      ],
+      "choicesEn": [
+        "Move the desks to the back",
+        "Open the windows",
+        "Line up twenty chairs",
+        "Call another student"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The desks are already moved; the teacher tells Ali to open the windows first, and line up chairs after that (そのあとで).",
+      "keyPhrases": [
+        {
+          "jp": "さっき",
+          "reading": "さっき",
+          "en": "a moment ago; earlier"
+        },
+        {
+          "jp": "それより",
+          "reading": "それより",
+          "en": "rather than that; instead"
+        },
+        {
+          "jp": "そのあとで",
+          "reading": "そのあとで",
+          "en": "after that"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-14",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "電車[でんしゃ]で席[せき]を譲[ゆず]る",
+      "titleEn": "Quick Response: Offering a Seat on the Train",
+      "situationEn": "A passenger on a train offers their seat to an elderly woman.",
+      "introJp": "電車[でんしゃ]の中[なか]で男[おとこ]の人[ひと]が言[い]いました。女[おんな]の人[ひと]は何[なん]と言[い]いますか。",
+      "introEn": "A man speaks on a train. What should the woman reply?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "あの、どうぞこちらにお座[すわ]りください。",
+          "en": "Excuse me, please feel free to sit here."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural response?",
+      "choices": [
+        "いいえ、座[すわ]りません。",
+        "すみません、ありがとうございます。",
+        "こちらこそ、どうぞ。"
+      ],
+      "choicesEn": [
+        "No, I won't sit.",
+        "Excuse me, thank you very much.",
+        "Likewise, please go ahead."
+      ],
+      "answerIndex": 1,
+      "explanationEn": "\"すみません、ありがとうございます\" is the standard polite Japanese way to accept a kind offer like a seat. Option 1 is blunt, and Option 3 makes no sense when receiving a seat.",
+      "keyPhrases": [
+        {
+          "jp": "どうぞお座[すわ]りください",
+          "reading": "どうぞおすわりください",
+          "en": "please have a seat"
+        },
+        {
+          "jp": "すみません、ありがとうございます",
+          "reading": "すみません、ありがとうございます",
+          "en": "thank you for your kindness (accepting a favor)"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-15",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "スーパーの安売[やすう]りの日[ひ]",
+      "titleEn": "Supermarket Discount Day & Hours",
+      "situationEn": "A store announcement plays inside a neighborhood supermarket.",
+      "introJp": "スーパーでお知[し]らせを聞[き]いています。野菜[やさい]が安[やす]いのはいつですか。",
+      "introEn": "You are listening to an announcement in a supermarket. When are vegetables on sale?",
+      "lines": [
+        {
+          "speaker": "Store Announcer",
+          "role": "female",
+          "jp": "お客様[きゃくさま]にお知[し]らせいたします。このスーパーでは、毎週[まいしゅう]火曜日[かようび]は野菜[やさい]と果物[くだもの]が全品[ぜんぴん]二割[にわり]引[び]きになります。",
+          "en": "Attention shoppers. At this supermarket, every Tuesday all vegetables and fruits are 20% off."
+        },
+        {
+          "speaker": "Store Announcer",
+          "role": "female",
+          "jp": "また、木曜日[もくようび]は魚[さかな]と肉[にく]が安[やす]くなります。なお、安売[やすう]りは午前[ごぜん]十時[じゅうじ]から午後[ごご]三時[さんじ]までですので、お早[はや]めにお買[か]い求[もと]めください。",
+          "en": "Also, on Thursdays fish and meat are discounted. Please note that the sale runs from 10:00 AM to 3:00 PM, so please shop early."
+        }
+      ],
+      "questionJp": "野菜[やさい]が安[やす]いのはいつですか。",
+      "questionEn": "When are vegetables discounted?",
+      "choices": [
+        "火曜日[かようび]の午前[ごぜん]十時[じゅうじ]から午後[ごご]三時[さんじ]まで",
+        "火曜日[かようび]の一日中[いちにちじゅう]",
+        "木曜日[もくようび]の午前[ごぜん]十時[じゅうじ]から午後[ごご]三時[さんじ]まで",
+        "毎週[まいしゅう]日曜日[にちようび]の午後[ごご]三時[さんじ]から"
+      ],
+      "choicesEn": [
+        "Tuesday from 10:00 AM to 3:00 PM",
+        "All day Tuesday",
+        "Thursday from 10:00 AM to 3:00 PM",
+        "Every Sunday from 3:00 PM"
+      ],
+      "answerIndex": 0,
+      "explanationEn": "Vegetables and fruits are 20% off on Tuesdays (火曜日), and the sale hours are 10:00 AM to 3:00 PM (午前十時から午後三時まで).",
+      "keyPhrases": [
+        {
+          "jp": "二割[にわり]引[び]き",
+          "reading": "にわりびき",
+          "en": "20% off"
+        },
+        {
+          "jp": "お早[はや]めに",
+          "reading": "おはやめに",
+          "en": "early; before it's too late"
+        }
+      ]
+    }
+  ]
+}
