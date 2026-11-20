@@ -4,6 +4,7 @@ import {
   ReadingPassage,
   ReadingPassageType,
 } from '../types/reading';
+import { createJlptPackLoader, type JlptPackManifest } from './packLoader';
 
 export const READING_PASSAGE_TYPES: {
   id: ReadingPassageType;
@@ -18,8 +19,7 @@ export const READING_PASSAGE_TYPES: {
   { id: 'comparison', label: 'Perbandingan Teks A/B', shortLabel: 'Teks A/B', accent: '#7C3AED' },
 ];
 
-let cachedReading: ReadingDataset | null = null;
-let loadingReadingPromise: Promise<ReadingDataset> | null = null;
+export type { JlptPackManifest as ReadingManifest };
 
 function buildReadingDataset(passages: ReadingPassage[]): ReadingDataset {
   const byId: Record<string, ReadingPassage> = {};
@@ -43,30 +43,16 @@ function buildReadingDataset(passages: ReadingPassage[]): ReadingDataset {
   return { passages, byId, byJlpt };
 }
 
-export async function loadReadingDataset(): Promise<ReadingDataset> {
-  if (cachedReading) return cachedReading;
-  if (!loadingReadingPromise) {
-    const base = import.meta.env.BASE_URL.endsWith('/')
-      ? import.meta.env.BASE_URL
-      : `${import.meta.env.BASE_URL}/`;
-    loadingReadingPromise = fetch(`${base}data/reading-jlpt.json`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Gagal memuat kurikulum Membaca Dokkai (${res.status})`);
-        }
-        return res.json() as Promise<{ version: number; passages: ReadingPassage[] }>;
-      })
-      .then((raw) => {
-        cachedReading = buildReadingDataset(raw.passages);
-        return cachedReading;
-      })
-      .catch((err) => {
-        loadingReadingPromise = null;
-        throw err;
-      });
-  }
-  return loadingReadingPromise;
-}
+const readingLoader = createJlptPackLoader<ReadingPassage, ReadingDataset>({
+  dir: 'reading',
+  label: 'Membaca Dokkai',
+  buildDataset: buildReadingDataset,
+});
+
+export const loadReadingManifest = readingLoader.loadManifest;
+export const loadReadingLevel = readingLoader.loadLevel;
+export const loadReadingLevels = readingLoader.loadLevels;
+export const loadReadingDataset = readingLoader.loadAll;
 
 /** Strip inline kanji[reading] furigana markup to obtain plain Japanese text for audio/exam display */
 export function stripFuriganaMarkup(text: string): string {

@@ -1,0 +1,794 @@
+{
+  "level": 2,
+  "pack": "n2",
+  "items": [
+    {
+      "id": "g-n2-01",
+      "jlpt": 2,
+      "order": 1,
+      "pattern": "～わけにはいかない",
+      "reading": "～わけにはいかない",
+      "meaning": "cannot afford to ~; cannot possibly ~ (due to social/moral reasons)",
+      "structure": "Verb (dictionary form) + わけにはいかない",
+      "explanation": "Indicates that even if the speaker wants to do something, social rules, responsibility, or common sense prevent them from doing it. With ない-form (～ないわけにはいかない), it means 'cannot help but / must do ~'.",
+      "confusableWith": "JLPT favorite: わけがない (logical impossibility) vs. わけにはいかない (moral/situational impossibility).",
+      "examples": [
+        {
+          "jp": "明日は大事な面接があるので、遅刻するわけにはいかない。",
+          "reading": "あしたはだいじなめんせつがあるので、ちこくするわけにはいかない。",
+          "en": "I have an important interview tomorrow, so I cannot afford to be late."
+        },
+        {
+          "jp": "上司に頼まれたら、断るわけにはいかない。",
+          "reading": "じょうしにたのまれたら、ことわるわけにはいかない。",
+          "en": "When asked by my boss, I cannot very well refuse."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "みんなが頑張っているのに、私だけ休む",
+        "sentenceAfter": "。",
+        "en": "Everyone else is working hard, so I can't just take time off by myself.",
+        "answer": "わけにはいかない",
+        "acceptedAnswers": [
+          "わけにはいかない",
+          "わけにはいきません"
+        ],
+        "choices": [
+          "わけではない",
+          "わけにはいかない",
+          "わけがない",
+          "にすぎない"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-02",
+      "jlpt": 2,
+      "order": 2,
+      "pattern": "～ざるを得ない",
+      "reading": "～ざるをえない",
+      "meaning": "have no choice but to ~; cannot help but ~",
+      "structure": "Verb (ない-form drop ない) + ざるを得ない (する → せざるを得ない)",
+      "explanation": "Formal expression meaning circumstances force someone to take an unwanted action because no alternative exists.",
+      "confusableWith": "JLPT trap: する becomes せざるを得ない (NOT しざるを得ない).",
+      "examples": [
+        {
+          "jp": "大雪で電車が止まったので、歩いて帰らざるを得なかった。",
+          "reading": "おおゆきででんしゃがとまったので、あるいてかえらざるをえなかった。",
+          "en": "Because trains stopped due to heavy snow, I had no choice but to walk home."
+        },
+        {
+          "jp": "予算不足のため、計画を変更せざるを得ない。",
+          "reading": "よさんぶそくのため、けいかくをへんこうせざるをえない。",
+          "en": "Due to insufficient budget, we are forced to revise the plan."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "証拠がある以上、自分のミスを認め",
+        "sentenceAfter": "。",
+        "en": "Given the evidence, I have no choice but to admit my mistake.",
+        "answer": "ざるを得ない",
+        "acceptedAnswers": [
+          "ざるをえない",
+          "ざるを得ない",
+          "ざるを得ません",
+          "ざるをえません"
+        ],
+        "choices": [
+          "ざるを得ない",
+          "かねない",
+          "に違いない",
+          "にすぎない"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-03",
+      "jlpt": 2,
+      "order": 3,
+      "pattern": "～かねない",
+      "reading": "～かねない",
+      "meaning": "might ~; there is a risk of ~ (undesirable outcome)",
+      "structure": "Verb (ます-stem) + かねない",
+      "explanation": "Expresses concern that a dangerous or undesirable event could very well happen if the current situation continues.",
+      "confusableWith": "Opposite in feel to ～かねる (cannot bring oneself to / difficult to do politely). かねない ALWAYS warns of a bad possibility.",
+      "examples": [
+        {
+          "jp": "そんなスピードで運転していたら、事故を起こしかねない。",
+          "reading": "そんなすぴーどでうんてんしていたら、じこをおこしかねない。",
+          "en": "If you keep driving at that speed, you could easily cause an accident."
+        },
+        {
+          "jp": "無理を続けると、体を壊しかねませんよ。",
+          "reading": "むりをつづけると、からだをこわしかねませんよ。",
+          "en": "If you keep overworking, you risk ruining your health."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このまま放置すれば、さらに大きな問題に発展し",
+        "sentenceAfter": "。",
+        "en": "If left as is, it could escalate into an even bigger problem.",
+        "answer": "かねない",
+        "acceptedAnswers": [
+          "かねない",
+          "かねません"
+        ],
+        "choices": [
+          "かねる",
+          "かねない",
+          "きれない",
+          "抜く"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-04",
+      "jlpt": 2,
+      "order": 4,
+      "pattern": "～かねる",
+      "reading": "～かねる",
+      "meaning": "cannot easily ~; hesitate to ~ (polite refusal / difficulty)",
+      "structure": "Verb (ます-stem) + かねる / かねます",
+      "explanation": "Used in formal or business Japanese to politely decline a request or express psychological/practical inability to do something.",
+      "confusableWith": "Often appears in customer service phrases like 分かりかねます ('I'm afraid I cannot say') or お答えしかねます.",
+      "examples": [
+        {
+          "jp": "申し訳ありませんが、そのご要望にはお応えしかねます。",
+          "reading": "もうしわけありませんが、そのごようぼうにはおこたえしかねます。",
+          "en": "I am very sorry, but we are unable to accommodate that request."
+        },
+        {
+          "jp": "私の一存では判断しかねます。",
+          "reading": "わたしのいちぞんでははんだんしかねます。",
+          "en": "I am not in a position to make that judgment on my own."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "個人情報のため、お教えし",
+        "sentenceAfter": "。",
+        "en": "As it is personal information, I am afraid I cannot disclose it.",
+        "answer": "かねます",
+        "acceptedAnswers": [
+          "かねます",
+          "かねる"
+        ],
+        "choices": [
+          "かねます",
+          "かねません",
+          "きれます",
+          "がちです"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-05",
+      "jlpt": 2,
+      "order": 5,
+      "pattern": "～にすぎない",
+      "reading": "～にすぎない",
+      "meaning": "is nothing more than ~; is merely ~",
+      "structure": "Plain form (drop だ) / Noun + にすぎない",
+      "explanation": "Downplays the significance, scale, or status of something ('just / merely / only').",
+      "confusableWith": "Do not confuse with ～に違いない (certainty) or ～に限らない (not limited to).",
+      "examples": [
+        {
+          "jp": "それは単なる噂にすぎない。",
+          "reading": "それはたんなるうわさにすぎない。",
+          "en": "That is nothing more than a mere rumor."
+        },
+        {
+          "jp": "私は自分の仕事をしたにすぎません。",
+          "reading": "わたしはじぶんのしごとをしたにすぎません。",
+          "en": "I merely did my own job."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今回の成功はまだ第一歩",
+        "sentenceAfter": "。",
+        "en": "This success is nothing more than the first step.",
+        "answer": "にすぎない",
+        "acceptedAnswers": [
+          "にすぎない",
+          "に過ぎない",
+          "にすぎません",
+          "に過ぎません"
+        ],
+        "choices": [
+          "にすぎない",
+          "にほかならない",
+          "にかぎらない",
+          "にともなう"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-06",
+      "jlpt": 2,
+      "order": 6,
+      "pattern": "～にほかならない",
+      "reading": "～にほかならない",
+      "meaning": "is none other than ~; is precisely because of ~",
+      "structure": "Noun / Clause + から + にほかならない",
+      "explanation": "Emphatically identifies the single true essence or root cause of something in formal writing or speeches.",
+      "confusableWith": "Often pairs with ～からにほかならない ('it is precisely because ~').",
+      "examples": [
+        {
+          "jp": "彼が成功したのは、毎日の努力の結果にほかならない。",
+          "reading": "かれがせいこうしたのは、まいにちのどりょくのけっかにほかならない。",
+          "en": "His success is none other than the result of his daily effort."
+        },
+        {
+          "jp": "厳しく叱るのは、あなたのためを思うからにほかならない。",
+          "reading": "きびしくしかるのは、あなたのためをおもうからにほかならない。",
+          "en": "I scold you strictly precisely because I care about your future."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "この商品が売れているのは、品質が高いから",
+        "sentenceAfter": "。",
+        "en": "This product is selling well precisely because its quality is high.",
+        "answer": "にほかならない",
+        "acceptedAnswers": [
+          "にほかならない",
+          "に他ならない"
+        ],
+        "choices": [
+          "にすぎない",
+          "にほかならない",
+          "にかかわらず",
+          "にくわえて"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-07",
+      "jlpt": 2,
+      "order": 7,
+      "pattern": "～にあたって",
+      "reading": "～にあたって",
+      "meaning": "on the occasion of ~; when embarking on ~",
+      "structure": "Verb (dictionary form) / Noun + にあたって / にあたり",
+      "explanation": "Formal expression marking a major milestone, ceremony, or significant new undertaking (launching a project, opening a ceremony, moving abroad).",
+      "confusableWith": "Only used for important, positive, or formal occasions — never for trivial daily actions or negative accidents.",
+      "examples": [
+        {
+          "jp": "新製品を発売するにあたって、大規模な調査を行った。",
+          "reading": "しんせいひんをはつばいするにあたって、だいきぼなちょうさをおこなった。",
+          "en": "Ahead of launching the new product, we conducted a large-scale survey."
+        },
+        {
+          "jp": "開会にあたり、社長よりご挨拶申し上げます。",
+          "reading": "かいかいにあたり、しゃちょうよりごあいさつもうしあげます。",
+          "en": "On the occasion of the opening, our president will deliver remarks."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "留学生活を始める",
+        "sentenceAfter": "、明確な目標を立てた。",
+        "en": "Upon starting my study abroad life, I set clear goals.",
+        "answer": "にあたって",
+        "acceptedAnswers": [
+          "にあたって",
+          "にあたり",
+          "に当たって"
+        ],
+        "choices": [
+          "にあたって",
+          "にかけて",
+          "にわたって",
+          "をめぐって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-08",
+      "jlpt": 2,
+      "order": 8,
+      "pattern": "～にわたって",
+      "reading": "～にわたって",
+      "meaning": "over / throughout / spanning (time, distance, or fields)",
+      "structure": "Noun + にわたって / にわたり / にわたる + Noun",
+      "explanation": "Emphasizes a wide expanse of time, geographical area, or multiple fields/topics.",
+      "confusableWith": "JLPT trap: にわたって spans an ENTIRE range continuously (三日間にわたって = over three full days), while にかけて marks a vague boundary ('from A into B').",
+      "examples": [
+        {
+          "jp": "会議は五時間にわたって行われた。",
+          "reading": "かいぎはごじかんにわたっておこなわれた。",
+          "en": "The meeting was held over a span of five hours."
+        },
+        {
+          "jp": "彼女は幅広い分野にわたる知識を持っている。",
+          "reading": "かのじょははばひろいぶんやにわたるちしきをもっている。",
+          "en": "She possesses knowledge spanning a wide range of fields."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "台風の影響で、全国",
+        "sentenceAfter": "大雨が降った。",
+        "en": "Due to the typhoon, heavy rain fell across the entire country.",
+        "answer": "にわたって",
+        "acceptedAnswers": [
+          "にわたって",
+          "にわたり"
+        ],
+        "choices": [
+          "にあたって",
+          "にわたって",
+          "をめぐって",
+          "にそって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-09",
+      "jlpt": 2,
+      "order": 9,
+      "pattern": "～をめぐって",
+      "reading": "～をめぐって",
+      "meaning": "concerning ~; surrounding ~ (dispute, debate, or competition)",
+      "structure": "Noun + をめぐって / をめぐる + Noun",
+      "explanation": "Indicates a central issue around which multiple parties argue, debate, or compete.",
+      "confusableWith": "Unlike について (neutral topic), をめぐって strongly implies opposing viewpoints, debate, or conflict.",
+      "examples": [
+        {
+          "jp": "新空港の建設をめぐって、激しい議論が続いている。",
+          "reading": "しんくうこうのけんせつをめぐって、はげしいぎろんがつづいている。",
+          "en": "Fierce debate continues surrounding the construction of the new airport."
+        },
+        {
+          "jp": "遺産をめぐる争いが起きた。",
+          "reading": "いさんをめぐるあらそいがおきた。",
+          "en": "A dispute broke out over the inheritance."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "消費税の引き上げ",
+        "sentenceAfter": "、国会で議論が交わされた。",
+        "en": "Debate was exchanged in parliament over the consumption tax hike.",
+        "answer": "をめぐって",
+        "acceptedAnswers": [
+          "をめぐって",
+          "を巡って"
+        ],
+        "choices": [
+          "をめぐって",
+          "にわたって",
+          "にそって",
+          "にもとづいて"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-10",
+      "jlpt": 2,
+      "order": 10,
+      "pattern": "～にもかかわらず",
+      "reading": "～にもかかわらず",
+      "meaning": "in spite of ~; despite ~ (formal)",
+      "structure": "Plain form (drop だ) / Noun + にもかかわらず",
+      "explanation": "Formal written/spoken equivalent of のに, highlighting a strong contrast between a condition and an unexpected result.",
+      "confusableWith": "Do not confuse with ～にかかわらず ('regardless of ~', which pairs with opposite pairs like 天気にかかわらず).",
+      "examples": [
+        {
+          "jp": "大雨にもかかわらず、多くの観客が集まった。",
+          "reading": "おおあめにもかかわらず、おおくのかんきゃくがあつまった。",
+          "en": "Despite the heavy rain, a large crowd of spectators gathered."
+        },
+        {
+          "jp": "何度も注意したにもかかわらず、同じミスを繰り返した。",
+          "reading": "なんどもちゅういしたにもかかわらず、おなじみすをくりかえした。",
+          "en": "In spite of being warned repeatedly, he repeated the same mistake."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "高齢である",
+        "sentenceAfter": "、彼は毎年マラソンを完走する。",
+        "en": "Despite his advanced age, he completes a marathon every year.",
+        "answer": "にもかかわらず",
+        "acceptedAnswers": [
+          "にもかかわらず",
+          "にも関わらず"
+        ],
+        "choices": [
+          "にかかわらず",
+          "にもかかわらず",
+          "にしたがって",
+          "にくわえて"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-11",
+      "jlpt": 2,
+      "order": 11,
+      "pattern": "～にかかわらず",
+      "reading": "～にかかわらず",
+      "meaning": "regardless of ~; irrespective of ~",
+      "structure": "Noun / Verb (dictionary + ない) + にかかわらず",
+      "explanation": "States that a rule, condition, or outcome applies equally without being affected by the stated variable (age, gender, weather, yes/no).",
+      "confusableWith": "JLPT trap: にもかかわらず = despite a specific actual fact; にかかわらず = regardless of any value of a variable.",
+      "examples": [
+        {
+          "jp": "年齢や性別にかかわらず、誰でも応募できます。",
+          "reading": "ねんれいやせいべつにかかわらず、だれでもおうぼできます。",
+          "en": "Regardless of age or gender, anyone can apply."
+        },
+        {
+          "jp": "好きか嫌いかにかかわらず、やらなければならない。",
+          "reading": "すきかきらいかにかかわらず、やらなければならない。",
+          "en": "Regardless of whether you like it or not, you have to do it."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "経験の有無",
+        "sentenceAfter": "、やる気のある人を募集しています。",
+        "en": "Regardless of whether you have experience, we are recruiting motivated people.",
+        "answer": "にかかわらず",
+        "acceptedAnswers": [
+          "にかかわらず",
+          "に関わらず"
+        ],
+        "choices": [
+          "にもかかわらず",
+          "にかかわらず",
+          "にもとづいて",
+          "にそって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-12",
+      "jlpt": 2,
+      "order": 12,
+      "pattern": "～にしたがって / ～につれて",
+      "reading": "～にしたがって",
+      "meaning": "as ~; in proportion to ~ (parallel change)",
+      "structure": "Verb (dictionary form) / Noun + にしたがって / につれて",
+      "explanation": "Describes two continuous changes progressing together: as A increases or progresses, B naturally changes alongside it.",
+      "confusableWith": "にしたがって can also mean 'in accordance with rules/instructions' (指示にしたがって), whereas につれて ONLY expresses parallel change.",
+      "examples": [
+        {
+          "jp": "秋が深まるにつれて、朝晩が冷え込んできた。",
+          "reading": "あきがふかまるにつれて、あさばんがひえこんできた。",
+          "en": "As autumn deepens, mornings and evenings have grown chilly."
+        },
+        {
+          "jp": "ITの発展にしたがって、働き方も多様化している。",
+          "reading": "あいてぃーのはってんにしたがって、はたらきかたもたようかしている。",
+          "en": "Alongside the advancement of IT, work styles are also diversifying."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "山の上へ登る",
+        "sentenceAfter": "、気温が下がってきた。",
+        "en": "As we climbed higher up the mountain, the temperature dropped.",
+        "answer": "につれて",
+        "acceptedAnswers": [
+          "につれて",
+          "にしたがって",
+          "に従って"
+        ],
+        "choices": [
+          "につれて",
+          "にかけて",
+          "にあたって",
+          "をめぐって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-13",
+      "jlpt": 2,
+      "order": 13,
+      "pattern": "～にともなって",
+      "reading": "～にともなって",
+      "meaning": "along with ~; accompanied by ~",
+      "structure": "Verb (dictionary form) / Noun + にともなって / にともなう + Noun",
+      "explanation": "Formal expression indicating that as a large-scale social, economic, or structural change occurs, a related secondary change accompanies it.",
+      "confusableWith": "More formal and often used in news/essays for institutional or societal shifts than につれて.",
+      "examples": [
+        {
+          "jp": "少子高齢化にともなって、労働力不足が深刻化している。",
+          "reading": "しょうしこうれいかにともなって、ろうどうりょくぶそくがしんこくかしている。",
+          "en": "Along with the declining birthrate and aging population, labor shortages are worsening."
+        },
+        {
+          "jp": "人口増加にともなう環境問題が議論されている。",
+          "reading": "じんこうぞうかにともなうかんきょうもんだいがぎろんされている。",
+          "en": "Environmental issues accompanying population growth are being debated."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "都市の再開発",
+        "sentenceAfter": "、古い商店街が姿を消した。",
+        "en": "Along with urban redevelopment, the old shopping street disappeared.",
+        "answer": "にともなって",
+        "acceptedAnswers": [
+          "にともなって",
+          "に伴って",
+          "にともない",
+          "に伴い"
+        ],
+        "choices": [
+          "にともなって",
+          "に反して",
+          "にこたえて",
+          "にそって"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-14",
+      "jlpt": 2,
+      "order": 14,
+      "pattern": "～一方で",
+      "reading": "～いっぽうで",
+      "meaning": "on the other hand ~; while also ~",
+      "structure": "Plain form (な-Adj+な / Noun+の) + 一方で(は)",
+      "explanation": "Presents two contrasting or coexisting aspects of the same subject, or compares two opposing situations.",
+      "confusableWith": "Do not confuse with Verb + 一方だ ('continues to worsen/change in one direction only').",
+      "examples": [
+        {
+          "jp": "スマホは便利な一方で、依存症の問題もある。",
+          "reading": "すまほはべんりないっぽうで、いぞんしょうのもんだいもある。",
+          "en": "While smartphones are convenient, on the other hand there is also the issue of addiction."
+        },
+        {
+          "jp": "彼は会社員として働く一方で、小説も書いている。",
+          "reading": "かれはかいしゃいんとしてはたらくいっぽうで、しょうせつもかいている。",
+          "en": "While working as an office worker, he also writes novels."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "観光客が増えている",
+        "sentenceAfter": "、地域のマナー問題が指摘されている。",
+        "en": "While the number of tourists is increasing, on the other hand local etiquette issues are being pointed out.",
+        "answer": "一方で",
+        "acceptedAnswers": [
+          "一方で",
+          "いっぽうで",
+          "一方",
+          "いっぽう"
+        ],
+        "choices": [
+          "一方で",
+          "おかげで",
+          "あげくに",
+          "ついでに"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-15",
+      "jlpt": 2,
+      "order": 15,
+      "pattern": "～ばかりか",
+      "reading": "～ばかりか",
+      "meaning": "not only ~ but also ~ (strong emphasis)",
+      "structure": "Plain form (drop だ for Noun; な-Adj+な/である) + ばかりか",
+      "explanation": "Emphasizes that something goes even further than A, extending unexpectedly to B (often paired with ～まで or ～も).",
+      "confusableWith": "Stronger and more written/dramatic than ～だけでなく.",
+      "examples": [
+        {
+          "jp": "彼は英語ばかりか、中国語やフランス語も話せる。",
+          "reading": "かれはえいごばかりか、ちゅうごくごやふらんすごもはなせる。",
+          "en": "He can speak not only English, but also Chinese and French."
+        },
+        {
+          "jp": "熱があるばかりか、咳も止まらない。",
+          "reading": "ねつがあるばかりか、せきもとまらない。",
+          "en": "Not only do I have a fever, my cough won't stop either."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼女は歌がうまい",
+        "sentenceAfter": "、作曲も自分でこなす。",
+        "en": "Not only is she a great singer, she also composes music herself.",
+        "answer": "ばかりか",
+        "acceptedAnswers": [
+          "ばかりか"
+        ],
+        "choices": [
+          "ばかりに",
+          "ばかりか",
+          "どころか",
+          "くせに"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-16",
+      "jlpt": 2,
+      "order": 16,
+      "pattern": "～どころか",
+      "reading": "～どころか",
+      "meaning": "far from ~; let alone ~",
+      "structure": "Plain form (drop だ) / Noun + どころか",
+      "explanation": "Strongly denies A and shows that reality is actually the opposite or far more extreme than A.",
+      "confusableWith": "JLPT trap: ばかりか = A is true AND B is also true; どころか = A is NOT true at all, reality is the opposite B.",
+      "examples": [
+        {
+          "jp": "涼しくなるどころか、ますます暑くなってきた。",
+          "reading": "すずしくなるどころか、ますますあつくなってきた。",
+          "en": "Far from getting cooler, it has become even hotter."
+        },
+        {
+          "jp": "漢字どころか、ひらがなもまだ読めない。",
+          "reading": "かんじどころか、ひらがなもまだよめない。",
+          "en": "Let alone kanji, I can't even read hiragana yet."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "休む",
+        "sentenceAfter": "、残業で毎日終電だ。",
+        "en": "Far from taking a break, I'm catching the last train every day due to overtime.",
+        "answer": "どころか",
+        "acceptedAnswers": [
+          "どころか"
+        ],
+        "choices": [
+          "ばかりか",
+          "どころか",
+          "だけでなく",
+          "に加えて"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-17",
+      "jlpt": 2,
+      "order": 17,
+      "pattern": "～ものの",
+      "reading": "～ものの",
+      "meaning": "although ~; even though ~ (acknowledging a fact before a caveat)",
+      "structure": "Plain form (な-Adj+な / Noun+である) + ものの",
+      "explanation": "Acknowledges that Clause A is genuinely true, yet Clause B turns out contrary to what one would expect from A. Slightly literary/formal.",
+      "confusableWith": "Similar to けれども, but carries a clearer sense of 'I did/it is A, alright, yet unfortunately B'.",
+      "examples": [
+        {
+          "jp": "春になったものの、まだ寒い日が続いている。",
+          "reading": "はるになったものの、まださむいひがつづいている。",
+          "en": "Although spring has arrived, cold days still continue."
+        },
+        {
+          "jp": "車を買ったものの、駐車場が高くて困っている。",
+          "reading": "くるまをかったものの、ちゅうしゃじょうがたかくてこまっている。",
+          "en": "Although I bought a car, I'm troubled by how expensive parking is."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "高い辞書を買った",
+        "sentenceAfter": "、ほとんど使っていない。",
+        "en": "Although I bought an expensive dictionary, I hardly use it.",
+        "answer": "ものの",
+        "acceptedAnswers": [
+          "ものの"
+        ],
+        "choices": [
+          "ものの",
+          "ものなら",
+          "ものだから",
+          "ものか"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-18",
+      "jlpt": 2,
+      "order": 18,
+      "pattern": "～ことから",
+      "reading": "～ことから",
+      "meaning": "from the fact that ~; because ~ (origin of a name, inference, or cause)",
+      "structure": "Plain form (な-Adj+な / Noun+である) + ことから",
+      "explanation": "Explains the reasoning behind a deduction, the origin of a name/nickname, or the trigger of a consequence.",
+      "confusableWith": "Very frequent in JLPT reading passages explaining etymologies ('named X from the fact that ~') and scientific inferences.",
+      "examples": [
+        {
+          "jp": "形が富士山に似ていることから、郷土富士と呼ばれている。",
+          "reading": "かたちがふじさんににていることから、きょうどふじとよばれている。",
+          "en": "From the fact that its shape resembles Mt. Fuji, it is called a local Fuji."
+        },
+        {
+          "jp": "明かりがついていることから、彼はまだ部屋にいるようだ。",
+          "reading": "あかりがついていることから、かれはまだへやにいるようだ。",
+          "en": "Judging from the fact that the light is on, he seems to still be in his room."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "二人の苗字が同じである",
+        "sentenceAfter": "、兄弟だと勘違いされた。",
+        "en": "Because the two share the same surname, they were mistaken for brothers.",
+        "answer": "ことから",
+        "acceptedAnswers": [
+          "ことから"
+        ],
+        "choices": [
+          "ことから",
+          "ことに",
+          "ことには",
+          "ことだから"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-19",
+      "jlpt": 2,
+      "order": 19,
+      "pattern": "～をもとに(して)",
+      "reading": "～をもとに",
+      "meaning": "based on ~ (source material / inspiration)",
+      "structure": "Noun + をもとに(して) / をもとにした + Noun",
+      "explanation": "Indicates the foundational data, true story, or source material used to create something (a movie, report, design, plan).",
+      "confusableWith": "Compare with ～にもとづいて (strictly adhering to rules, laws, or facts) vs. ～をもとに (using as creative/base material).",
+      "examples": [
+        {
+          "jp": "この映画は実際に起きた事件をもとに作られました。",
+          "reading": "このえいがはじっさいにおきたじけんをもとにつくられました。",
+          "en": "This movie was made based on an actual incident."
+        },
+        {
+          "jp": "アンケートの結果をもとに、改善案をまとめた。",
+          "reading": "あんけーとのけっかをもとに、かいぜんあんをまとめた。",
+          "en": "Based on the survey results, we compiled an improvement proposal."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "自分の体験",
+        "sentenceAfter": "、一冊の本を書いた。",
+        "en": "I wrote a book based on my own experiences.",
+        "answer": "をもとに",
+        "acceptedAnswers": [
+          "をもとに",
+          "をもとにして",
+          "を基に"
+        ],
+        "choices": [
+          "をめぐって",
+          "をもとに",
+          "を問わず",
+          "をはじめ"
+        ]
+      }
+    },
+    {
+      "id": "g-n2-20",
+      "jlpt": 2,
+      "order": 20,
+      "pattern": "～をはじめ(として)",
+      "reading": "～をはじめ",
+      "meaning": "starting with ~; including ~ (listing a prime example)",
+      "structure": "Noun + をはじめ(として) / をはじめとする + Noun",
+      "explanation": "Cites the most representative or prominent example first, indicating that many others belong to the same group.",
+      "confusableWith": "Formal equivalent of ～などを. Always pick the most notable/representative member before をはじめ.",
+      "examples": [
+        {
+          "jp": "東京をはじめ、日本の大都市は電車網が発達している。",
+          "reading": "とうきょうをはじめ、にほんのだいとしはでんしゃもうがはったつしている。",
+          "en": "Starting with Tokyo, major Japanese cities have well-developed rail networks."
+        },
+        {
+          "jp": "校長先生をはじめとする先生方に感謝します。",
+          "reading": "こうちょうせんせいをはじめとするせんせいがたにかんしゃします。",
+          "en": "I thank the teachers, starting with the principal."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "すしや天ぷら",
+        "sentenceAfter": "、日本料理は世界中で人気がある。",
+        "en": "Starting with sushi and tempura, Japanese cuisine is popular worldwide.",
+        "answer": "をはじめ",
+        "acceptedAnswers": [
+          "をはじめ",
+          "をはじめとして",
+          "を初め"
+        ],
+        "choices": [
+          "をはじめ",
+          "をもとに",
+          "を問わず",
+          "をめぐって"
+        ]
+      }
+    }
+  ]
+}

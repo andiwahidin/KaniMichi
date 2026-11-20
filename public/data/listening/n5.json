@@ -1,0 +1,647 @@
+{
+  "level": 5,
+  "pack": "n5",
+  "items": [
+    {
+      "id": "l-n5-1",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "駅[えき]での待[ま]ち合[あ]わせ",
+      "titleEn": "Meeting at the Station",
+      "situationEn": "A man and a woman are talking on the phone about where and when to meet before going to a movie.",
+      "introJp": "男[おとこ]の人[ひと]と女[おんな]の人[ひと]が電話[でんわ]で話[はな]しています。二人[ふたり]は何時[なんじ]にどこで会[あ]いますか。",
+      "introEn": "A man and a woman are talking on the phone. What time and where will the two of them meet?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "もしもし、田中[たなか]さん？今日[きょう]の映画[えいが]、何時[なんじ]からでしたっけ。",
+          "en": "Hello, Tanaka-san? What time does today's movie start again?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "二時[にじ]からですよ。一時半[いちじはん]に駅[えき]の北口[きたぐち]で会[あ]いましょうか。",
+          "en": "It starts at 2:00. Shall we meet at the North Exit of the station at 1:30?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あっ、すみません。チケットを買[か]いたいので、もう少[すこ]し早[はや]いほうがいいと思[おも]います。一時十五分[いちじじゅうごふん]はどうですか。",
+          "en": "Oh, sorry. I want to buy tickets, so I think a little earlier would be better. How about 1:15?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わかりました。じゃあ、一時十五分[いちじじゅうごふん]に北口[きたぐち]の本屋[ほんや]の前[まえ]にしましょう。",
+          "en": "Got it. Then let's make it 1:15 in front of the bookstore at the North Exit."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あ、北口[きたぐち]の本屋[ほんや]は先月[せんげつ]閉[し]まりましたよ。南口[みなみぐち]のカフェの前[まえ]はどうですか。",
+          "en": "Oh, the bookstore at the North Exit closed last month. How about in front of the café at the South Exit?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "そうなんですか！じゃあ、そこにしましょう。",
+          "en": "Really! Okay, let's meet there then."
+        }
+      ],
+      "questionJp": "二人[ふたり]は何時[なんじ]にどこで会[あ]いますか。",
+      "questionEn": "What time and where will the two meet?",
+      "choices": [
+        "一時半[いちじはん]・北口[きたぐち]の本屋[ほんや]の前[まえ]",
+        "一時十五分[いちじじゅうごふん]・北口[きたぐち]の本屋[ほんや]の前[まえ]",
+        "一時十五分[いちじじゅうごふん]・南口[みなみぐち]のカフェの前[まえ]",
+        "二時[にじ]・南口[みなみぐち]のカフェの前[まえ]"
+      ],
+      "choicesEn": [
+        "1:30, in front of the North Exit bookstore",
+        "1:15, in front of the North Exit bookstore",
+        "1:15, in front of the South Exit café",
+        "2:00, in front of the South Exit café"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "They first change the time from 1:30 to 1:15 (一時十五分) so they can buy tickets. Then the woman points out that the North Exit bookstore closed last month and suggests the South Exit café (南口のカフェの前), which the man agrees to (\"じゃあ、そこにしましょう\").",
+      "keyPhrases": [
+        {
+          "jp": "〜でしたっけ",
+          "reading": "でしたっけ",
+          "en": "was it ... again? (asking to confirm something forgotten)"
+        },
+        {
+          "jp": "〜にしましょう",
+          "reading": "にしましょう",
+          "en": "let's decide on ..."
+        },
+        {
+          "jp": "閉[し]まりました",
+          "reading": "しまりました",
+          "en": "closed down"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-2",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "日曜日[にちようび]のピクニック",
+      "titleEn": "Sunday Picnic Preparations",
+      "situationEn": "Two university students are dividing up items to bring to a picnic on Sunday.",
+      "introJp": "女[おんな]の学生[がくせい]と男[おとこ]の学生[がくせい]が話[はな]しています。男[おとこ]の学生[がくせい]は何[なに]を持[も]って行[い]きますか。",
+      "introEn": "A female student and a male student are talking. What will the male student bring?",
+      "lines": [
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "日曜日[にちようび]のピクニック、楽[たの]しみですね。食[た]べ物[もの]はどうしましょうか。",
+          "en": "I'm looking forward to Sunday's picnic. What should we do about food?"
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "僕[ぼく]がサンドイッチを作[つく]って行[い]きましょうか。",
+          "en": "Shall I make and bring sandwiches?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "あ、サンドイッチはもう山下[やました]さんが作[つく]ると言[い]っていましたよ。私[わたし]は果物[くだもの]とお茶[ちゃ]を持[も]って行[い]きます。",
+          "en": "Oh, Yamashita-san already said they're making sandwiches. I'll bring fruit and tea."
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "そうですか。じゃあ、お菓子[かし]と紙[かみ]コップを買[か]って行[い]きますね。",
+          "en": "I see. Then I'll buy and bring snacks and paper cups."
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "紙[かみ]コップは家[いえ]にたくさんあるので、大丈夫[だいじょうぶ]ですよ。お菓子[かし]だけお願[ねが]いします。",
+          "en": "I have plenty of paper cups at home, so no need. Just the snacks, please."
+        }
+      ],
+      "questionJp": "男[おとこ]の学生[がくせい]は何[なに]を持[も]って行[い]きますか。",
+      "questionEn": "What will the male student bring?",
+      "choices": [
+        "サンドイッチ",
+        "果物[くだもの]とお茶[ちゃ]",
+        "お菓子[かし]と紙[かみ]コップ",
+        "お菓子[かし]だけ"
+      ],
+      "choicesEn": [
+        "Sandwiches",
+        "Fruit and tea",
+        "Snacks and paper cups",
+        "Only snacks"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Yamashita is bringing sandwiches, and the female student is bringing fruit, tea, and paper cups (she says she has plenty at home). She asks him to bring only snacks (\"お菓子だけお願いします\").",
+      "keyPhrases": [
+        {
+          "jp": "持[も]って行[い]く",
+          "reading": "もっていく",
+          "en": "to bring / take along"
+        },
+        {
+          "jp": "大丈夫[だいじょうぶ]ですよ",
+          "reading": "だいじょうぶですよ",
+          "en": "no need / I've got it covered (polite refusal)"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-3",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "病院[びょういん]での薬[くすり]の説明[せつめい]",
+      "titleEn": "Medicine Instructions at the Clinic",
+      "situationEn": "A doctor is explaining how to take two kinds of medicine to a patient.",
+      "introJp": "病院[びょういん]で医者[いしゃ]が女[おんな]の人[ひと]に話[はな]しています。女[おんな]の人[ひと]は白[しろ]い薬[くすり]をいつ飲[の]みますか。",
+      "introEn": "At a clinic, a doctor is speaking to a woman. When should the woman take the white medicine?",
+      "lines": [
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "風邪[かぜ]ですね。薬[くすり]を二種類[にしゅるい]出[だ]しますよ。白[しろ]い薬[くすり]と黄色[きいろ]い薬[くすり]です。",
+          "en": "It's a cold. I'll prescribe two kinds of medicine: white medicine and yellow medicine."
+        },
+        {
+          "speaker": "Patient",
+          "role": "female",
+          "jp": "はい、ありがとうございます。いつ飲[の]めばいいですか。",
+          "en": "Yes, thank you. When should I take them?"
+        },
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "白[しろ]い薬[くすり]は朝[あさ]と夜[よる]、ご飯[はん]を食[た]べた後[あと]に飲[の]んでください。昼[ひる]は飲[の]まなくていいです。",
+          "en": "Please take the white medicine in the morning and evening, after eating. You don't need to take it at noon."
+        },
+        {
+          "speaker": "Patient",
+          "role": "female",
+          "jp": "わかりました。黄色[きいろ]い薬[くすり]は？",
+          "en": "Understood. What about the yellow medicine?"
+        },
+        {
+          "speaker": "Doctor",
+          "role": "male",
+          "jp": "黄色[きいろ]い薬[くすり]は熱[ねつ]が高[たか]い時[とき]だけ飲[の]んでください。",
+          "en": "Please take the yellow medicine only when you have a high fever."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は白[しろ]い薬[くすり]をいつ飲[の]みますか。",
+      "questionEn": "When should the woman take the white medicine?",
+      "choices": [
+        "朝[あさ]と昼[ひる]と夜[よる]、ご飯[はん]の後[あと]",
+        "朝[あさ]と夜[よる]、ご飯[はん]の後[あと]",
+        "朝[あさ]と夜[よる]、ご飯[はん]の前[まえ]",
+        "熱[ねつ]が高[たか]い時[とき]だけ"
+      ],
+      "choicesEn": [
+        "Morning, noon, and evening, after meals",
+        "Morning and evening, after meals",
+        "Morning and evening, before meals",
+        "Only when she has a high fever"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The doctor specifies that the white medicine is taken morning and night after meals (\"朝と夜、ご飯を食べた後に飲んでください\") and explicitly says noon is unnecessary. Taking it only for a high fever applies to the yellow medicine.",
+      "keyPhrases": [
+        {
+          "jp": "ご飯[はん]を食[た]べた後[あと]に",
+          "reading": "ごはんをたべたあとに",
+          "en": "after eating a meal"
+        },
+        {
+          "jp": "飲[の]まなくていいです",
+          "reading": "のまなくていいです",
+          "en": "you don't need to take/drink it"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-4",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（教室[きょうしつ]で）",
+      "titleEn": "Quick Response: Borrowing a Pen",
+      "situationEn": "Listen to a classmate speaking to you in class and choose the most natural reply.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Classmate",
+          "role": "female",
+          "jp": "すみません、ペンを忘[わす]れてしまったんです。ちょっと借[か]りてもいいですか。",
+          "en": "Excuse me, I accidentally forgot my pen. May I borrow one for a moment?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "ええ、いいですよ。どうぞ。",
+        "はい、ペンを忘[わす]れました。",
+        "いいえ、借[か]りましたよ。"
+      ],
+      "choicesEn": [
+        "Yes, sure. Here you go.",
+        "Yes, I forgot my pen.",
+        "No, I borrowed it."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "When someone asks \"〜てもいいですか\" (May I...?), the natural polite way to grant permission while handing an object over is \"ええ、いいですよ。どうぞ。\" (Yes, go ahead. Here you go.)",
+      "keyPhrases": [
+        {
+          "jp": "〜てもいいですか",
+          "reading": "てもいいですか",
+          "en": "May I ...?"
+        },
+        {
+          "jp": "どうぞ",
+          "reading": "どうぞ",
+          "en": "please / here you go"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-5",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "カフェのランチセット",
+      "titleEn": "Café Lunch Set Hours",
+      "situationEn": "A customer asks a café clerk about the lunch menu and prices.",
+      "introJp": "カフェで客[きゃく]と店員[てんいん]が話[はな]しています。ランチセットはいくらですか。",
+      "introEn": "A customer and a clerk are speaking at a café. How much is the lunch set?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "すみません、ランチセットはまだありますか。",
+          "en": "Excuse me, do you still have the lunch set?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "はい、二時[にじ]までですから、まだ大丈夫[だいじょうぶ]ですよ。カレーとサラダとコーヒーのセットです。",
+          "en": "Yes, it's until 2:00, so you're still in time. It's a set with curry, salad, and coffee."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "いくらですか。",
+          "en": "How much is it?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "普段[ふだん]は千円[せんえん]ですが、今日[きょう]は水曜日[すいようび]なので、八百円[はっぴゃくえん]になります。",
+          "en": "Normally it's 1,000 yen, but since today is Wednesday, it's 800 yen."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "わあ、安[やす]いですね！じゃあ、それをお願[ねが]いします。",
+          "en": "Wow, that's cheap! Then I'll have that, please."
+        }
+      ],
+      "questionJp": "今日[きょう]、ランチセットはいくらですか。",
+      "questionEn": "How much is the lunch set today?",
+      "choices": [
+        "七百円[ななひゃくえん]",
+        "八百円[はっぴゃくえん]",
+        "九百円[きゅうひゃくえん]",
+        "千円[せんえん]"
+      ],
+      "choicesEn": [
+        "700 yen",
+        "800 yen",
+        "900 yen",
+        "1,000 yen"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Although the regular price is 1,000 yen (\"普段は千円ですが\"), the clerk explains that today is Wednesday so it is discounted to 800 yen (\"八百円になります\").",
+      "keyPhrases": [
+        {
+          "jp": "普段[ふだん]は〜ですが",
+          "reading": "ふだんは〜ですが",
+          "en": "normally it is ..., but"
+        },
+        {
+          "jp": "〜になります",
+          "reading": "になります",
+          "en": "comes to / will be (polite pricing phrase)"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-6",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "部屋[へや]の掃除[そうじ]と買[か]い物[もの]",
+      "titleEn": "Cleaning & Grocery Shopping Before Guests Arrive",
+      "situationEn": "A mother and son divide chores before grandparents visit.",
+      "introJp": "お母[かあ]さんと息子[むすこ]が家[いえ]で話[はな]しています。息子[むすこ]はこの後[あと]、何[なに]をしますか。",
+      "introEn": "A mother and son are talking at home. What will the son do next?",
+      "lines": [
+        {
+          "speaker": "Mother",
+          "role": "female",
+          "jp": "けんた、今日[きょう]の午後[ごご]三時[さんじ]におじいちゃんたちが来[く]るよ。手伝[てつだ]ってくれる？",
+          "en": "Kenta, Grandpa and Grandma are coming at 3:00 PM today. Can you help me?"
+        },
+        {
+          "speaker": "Son",
+          "role": "male",
+          "jp": "いいよ。何[なに]をすればいい？リビングを掃除[そうじ]しようか。",
+          "en": "Sure. What should I do? Shall I clean the living room?"
+        },
+        {
+          "speaker": "Mother",
+          "role": "female",
+          "jp": "リビングはさっき終[お]わったの。スーパーでりんごとオレンジジュースを買[か]って来[き]てほしいな。",
+          "en": "I finished the living room just now. I'd like you to go buy apples and orange juice at the supermarket."
+        },
+        {
+          "speaker": "Son",
+          "role": "male",
+          "jp": "わかった。あ、お茶[ちゃ]は買[か]わなくていいの？",
+          "en": "Got it. Oh, don't we need to buy tea?"
+        },
+        {
+          "speaker": "Mother",
+          "role": "female",
+          "jp": "お茶[ちゃ]はたくさんあるから大丈夫[だいじょうぶ]。じゃあ、お願[ねが]いね。",
+          "en": "We have plenty of tea, so that's fine. Thanks in advance!"
+        }
+      ],
+      "questionJp": "息子[むすこ]はこの後[あと]、何[なに]をしますか。",
+      "questionEn": "What will the son do next?",
+      "choices": [
+        "リビングを掃除[そうじ]する",
+        "スーパーでりんごとオレンジジュースを買[か]う",
+        "スーパーでお茶[ちゃ]とりんごを買[か]う",
+        "駅[えき]までおじいちゃんを迎[むか]えに行[い]く"
+      ],
+      "choicesEn": [
+        "Clean the living room",
+        "Buy apples and orange juice at the supermarket",
+        "Buy tea and apples at the supermarket",
+        "Go pick up Grandpa at the station"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The mother already cleaned the living room and has plenty of tea. She asks Kenta to buy apples and orange juice at the supermarket.",
+      "keyPhrases": [
+        {
+          "jp": "手伝[てつだ]ってくれる",
+          "reading": "てつだってくれる",
+          "en": "will you help me?"
+        },
+        {
+          "jp": "買[か]って来[き]てほしい",
+          "reading": "かってきてほしい",
+          "en": "I want you to go buy"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-7",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "雨[あめ]の日[ひ]の靴[くつ]選[えら]び",
+      "titleEn": "Choosing Shoes at a Shoe Store",
+      "situationEn": "A customer talks with a shoe store clerk about which sneakers to buy.",
+      "introJp": "靴屋[くつや]で女[おんな]の人[ひと]と店員[てんいん]が話[はな]しています。女[おんな]の人[ひと]はどの靴[くつ]を買[か]いますか。",
+      "introEn": "A woman and a clerk are talking at a shoe store. Which shoes will the woman buy?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "すみません、この白[しろ]いスニーカー、二十四[にじゅうよん]センチはありますか。",
+          "en": "Excuse me, do you have these white sneakers in 24 cm?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "少々[しょうしょう]お待[ま]ちください。……申[もう]し訳[わけ]ありません、白[しろ]は二十四[にじゅうよん]センチが売[う]り切[き]れています。黒[くろ]と青[あお]ならございますよ。",
+          "en": "One moment please... I'm sorry, 24 cm in white is sold out. We do have black and blue."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "そうですか。うーん、黒[くろ]のほうが汚[よご]れが目立[めだ]たなくていいですね。履[は]いてみてもいいですか。",
+          "en": "I see. Hmm, black is nice because dirt won't show. May I try them on?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "はい、どうぞ。いかがですか。",
+          "en": "Yes, please go ahead. How are they?"
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "すごく軽[かる]くて歩[ある]きやすいです！じゃあ、これをください。",
+          "en": "They're super light and easy to walk in! I'll take these, please."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はどの靴[くつ]を買[か]いますか。",
+      "questionEn": "Which shoes will the woman buy?",
+      "choices": [
+        "白[しろ]いスニーカー",
+        "黒[くろ]いスニーカー",
+        "青[あお]いスニーカー",
+        "赤[あか]いスニーカー"
+      ],
+      "choicesEn": [
+        "White sneakers",
+        "Black sneakers",
+        "Blue sneakers",
+        "Red sneakers"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "White in 24 cm is sold out. She tries on the black pair because dirt is less noticeable, likes how light they feel, and buys them.",
+      "keyPhrases": [
+        {
+          "jp": "売[う]り切[き]れています",
+          "reading": "うりきれています",
+          "en": "is sold out"
+        },
+        {
+          "jp": "履[は]いてみてもいいですか",
+          "reading": "はいてみてもいいですか",
+          "en": "may I try them on?"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-8",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（食[た]べ物[もの]の感想[かんそう]）",
+      "titleEn": "Quick Response: Returning Home Greeting",
+      "situationEn": "You arrive home and your host mother greets you at the doorway.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Host Mother",
+          "role": "female",
+          "jp": "おかえりなさい！今日[きょう]は早[はや]かったですね。",
+          "en": "Welcome home! You're back early today."
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "ただいま。授業[じゅぎょう]が早[はや]く終[お]わったんです。",
+        "いってきます。また夜[よる]に帰[かえ]ります。",
+        "おやすみなさい。よく眠[ねむ]れました。"
+      ],
+      "choicesEn": [
+        "I'm home. Class finished early.",
+        "I'm heading out. I'll be back tonight.",
+        "Good night. I slept well."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "The natural reply to \"おかえりなさい\" (Welcome home) is \"ただいま\" (I'm home), followed by a natural reason why you returned early.",
+      "keyPhrases": [
+        {
+          "jp": "おかえりなさい",
+          "reading": "おかえりなさい",
+          "en": "Welcome home"
+        },
+        {
+          "jp": "ただいま",
+          "reading": "ただいま",
+          "en": "I'm home"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-9",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "日本語[にほんご]クラスの宿題[しゅくだい]",
+      "titleEn": "Japanese Class Homework Deadline",
+      "situationEn": "A teacher announces this week's homework to students at the end of class.",
+      "introJp": "教室[きょうしつ]で先生[せんせい]が学生[がくせい]に話[はな]しています。学生[がくせい]はいつまでに作文[さくぶん]を出[だ]しますか。",
+      "introEn": "A teacher is speaking to students in class. By when must students hand in the essay?",
+      "lines": [
+        {
+          "speaker": "Teacher",
+          "role": "female",
+          "jp": "みなさん、今日[きょう]の授業[じゅぎょう]はここまでです。宿題[しゅくだい]が二[ふた]つあります。",
+          "en": "Everyone, that's all for today's class. There are two homework assignments."
+        },
+        {
+          "speaker": "Teacher",
+          "role": "female",
+          "jp": "まず、漢字[かんじ]のプリントは明日[あした]、火曜日[かようび]の朝[あさ]に出[だ]してください。",
+          "en": "First, please turn in the kanji worksheet tomorrow, Tuesday morning."
+        },
+        {
+          "speaker": "Teacher",
+          "role": "female",
+          "jp": "もう一[ひと]つ、「私[わたし]の趣味[しゅみ]」についての作文[さくぶん]は、今週[こんしゅう]の木曜日[もくようび]までに出[だ]してください。金曜日[きんようび]はテストがありますから、木曜日[もくようび]までに忘[わす]れないでくださいね。",
+          "en": "The other one, the essay on \"My Hobby,\" is due by this Thursday. Since there is a test on Friday, please don't forget to submit it by Thursday."
+        }
+      ],
+      "questionJp": "学生[がくせい]はいつまでに作文[さくぶん]を出[だ]しますか。",
+      "questionEn": "By when must students submit the essay?",
+      "choices": [
+        "火曜日[かようび]",
+        "水曜日[すいようび]",
+        "木曜日[もくようび]",
+        "金曜日[きんようび]"
+      ],
+      "choicesEn": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The kanji worksheet is due Tuesday, the test is Friday, and the essay (\"作文\") is due Thursday (\"木曜日までに出してください\").",
+      "keyPhrases": [
+        {
+          "jp": "〜までに出[だ]す",
+          "reading": "までにだす",
+          "en": "to submit by (a deadline)"
+        },
+        {
+          "jp": "作文[さくぶん]",
+          "reading": "さくぶん",
+          "en": "composition / essay"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-10",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "レストランでの席[せき]の希望[きぼう]",
+      "titleEn": "Choosing a Table at a Restaurant",
+      "situationEn": "A man and woman enter a restaurant and decide where to sit.",
+      "introJp": "レストランで店員[てんいん]と女[おんな]の人[ひと]が話[はな]しています。二人[ふたり]はどこに座[すわ]りますか。",
+      "introEn": "A server and a woman are speaking at a restaurant. Where will the two sit?",
+      "lines": [
+        {
+          "speaker": "Server",
+          "role": "male",
+          "jp": "いらっしゃいませ。何名[なんめい]様[さま]ですか。",
+          "en": "Welcome. How many in your party?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "二人[ふたり]です。窓[まど]の近[ちか]くの席[せき]は空[あ]いていますか。",
+          "en": "Two people. Is a table near the window available?"
+        },
+        {
+          "speaker": "Server",
+          "role": "male",
+          "jp": "すみません、窓側[まどがわ]は今[いま]いっぱいなんです。入口[いりぐち]の近[ちか]くか、奥[おく]の静[しず]かな席[せき]なら空[あ]いていますが。",
+          "en": "I'm sorry, the window side is full right now. A table near the entrance or a quiet table in the back is available."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "入口[いりぐち]の近[ちか]くは少[すこ]し寒[さむ]いですね。奥[おく]の席[せき]をお願[ねが]いします。",
+          "en": "Near the entrance is a bit chilly. The table in the back, please."
+        }
+      ],
+      "questionJp": "二人[ふたり]はどこに座[すわ]りますか。",
+      "questionEn": "Where will the two sit?",
+      "choices": [
+        "窓[まど]の近[ちか]くの席[せき]",
+        "入口[いりぐち]の近[ちか]くの席[せき]",
+        "奥[おく]の静[しず]かな席[せき]",
+        "カウンターの席[せき]"
+      ],
+      "choicesEn": [
+        "A window seat",
+        "A seat near the entrance",
+        "A quiet seat in the back",
+        "A counter seat"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Window seats are full and near the entrance is chilly, so the woman requests the quiet seat in the back (\"奥の席をお願いします\").",
+      "keyPhrases": [
+        {
+          "jp": "空[あ]いていますか",
+          "reading": "あいていますか",
+          "en": "is it available / vacant?"
+        },
+        {
+          "jp": "奥[おく]の席[せき]",
+          "reading": "おくのせき",
+          "en": "seat in the back"
+        }
+      ]
+    }
+  ]
+}

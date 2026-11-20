@@ -19,13 +19,14 @@ import {
 import { useApp } from '../context/AppContext';
 import { JLPT_LEVELS } from '../data/grammar';
 import {
-  loadReadingDataset,
+  loadReadingLevel,
+  loadReadingManifest,
   READING_PASSAGE_TYPES,
+  ReadingManifest,
   stripFuriganaMarkup,
 } from '../data/reading';
 import { JlptLevel } from '../types/grammar';
 import {
-  ReadingDataset,
   ReadingPassage,
   ReadingPassageType,
 } from '../types/reading';
@@ -88,10 +89,19 @@ function formatTimer(seconds: number): string {
   return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
+function getJlptFromReadingId(id: string): JlptLevel | null {
+  const match = id.match(/-n([1-5])-/i);
+  return match ? (Number(match[1]) as JlptLevel) : null;
+}
+
 export const ReadingHub: React.FC = () => {
   const { state, setActiveView, recordReadingAttempt } = useApp();
 
-  const [data, setData] = useState<ReadingDataset | null>(null);
+  const [manifest, setManifest] = useState<ReadingManifest | null>(null);
+  const [passagesByLevel, setPassagesByLevel] = useState<
+    Partial<Record<JlptLevel, ReadingPassage[]>>
+  >({});
+  const [loadingLevel, setLoadingLevel] = useState<JlptLevel | null>(5);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   // Catalog filters
@@ -109,11 +119,12 @@ export const ReadingHub: React.FC = () => {
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
 
+  // Load lightweight manifest once on mount
   useEffect(() => {
     let active = true;
-    loadReadingDataset()
-      .then((ds) => {
-        if (active) setData(ds);
+    loadReadingManifest()
+      .then((m) => {
+        if (active) setManifest(m);
       })
       .catch((err) => {
         if (active) {
@@ -126,6 +137,35 @@ export const ReadingHub: React.FC = () => {
       active = false;
     };
   }, []);
+
+  // Load only the selected JLPT level's JSON pack(s) on demand
+  useEffect(() => {
+    if (passagesByLevel[selectedLevel]) {
+      setLoadingLevel(null);
+      return;
+    }
+    let active = true;
+    setLoadingLevel(selectedLevel);
+    loadReadingLevel(selectedLevel)
+      .then((items) => {
+        if (!active) return;
+        setPassagesByLevel((prev) => ({ ...prev, [selectedLevel]: items }));
+        setLoadingLevel(null);
+      })
+      .catch((err) => {
+        if (active) {
+          setLoadingLevel(null);
+          setLoadError(
+            err instanceof Error
+              ? err.message
+              : `Gagal memuat paket Membaca JLPT N${selectedLevel}.`
+          );
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedLevel, passagesByLevel]);
 
   // Stop speech when leaving passage or unmounting
   useEffect(() => {
@@ -147,60 +187,85 @@ export const ReadingHub: React.FC = () => {
 
   const progressMap = state.readingProgress ?? {};
 
-  const levelStats = useMemo(() => {
-    const map: Record<
-      JlptLevel,
-      { total: number; completed: number; totalQuestions: number; bestCorrect: number }
-    > = {
-      5: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0 },
-      4: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0 },
-      3: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0 },
-      2: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0 },
-      1: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0 },
-    };
-    if (!data) return map;
-
-    for (const p of data.passages) {
-      const b = map[p.jlpt];
-      b.total += 1;
-      b.totalQuestions += p.questions.length;
-      const prog = progressMap[p.id];
-      if (prog) {
-        if (prog.completedAt !== null) b.completed += 1;
-        b.bestCorrect += Math.min(prog.bestScore, p.questions.length);
+  const passagesById = useMemo(() => {
+    const map: Record<string, ReadingPassage> = {};
+    for (const list of Object.values(passagesByLevel)) {
+      if (!list) continue;
+      for (const p of list) {
+        map[p.id] = p;
       }
     }
     return map;
-  }, [data, progressMap]);
+  }, [passagesByLevel]);
+
+  const levelStats = useMemo(() => {
+    const map: Record<
+      JlptLevel,
+      {
+        total: number;
+        completed: number;
+        totalQuestions: number;
+        bestCorrect: number;
+        loaded: boolean;
+      }
+    > = {
+      5: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0, loaded: false },
+      4: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0, loaded: false },
+      3: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0, loaded: false },
+      2: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0, loaded: false },
+      1: { total: 0, completed: 0, totalQuestions: 0, bestCorrect: 0, loaded: false },
+    };
+
+    for (const lvl of [5, 4, 3, 2, 1] as JlptLevel[]) {
+      const loadedList = passagesByLevel[lvl];
+      if (loadedList) {
+        map[lvl].loaded = true;
+        map[lvl].total = loadedList.length;
+        for (const p of loadedList) {
+          map[lvl].totalQuestions += p.questions.length;
+          const prog = progressMap[p.id];
+          if (prog) {
+            if (prog.completedAt !== null) map[lvl].completed += 1;
+            map[lvl].bestCorrect += Math.min(prog.bestScore, p.questions.length);
+          }
+        }
+      } else {
+        map[lvl].total = manifest?.levels[String(lvl)]?.count ?? 0;
+        for (const [id, prog] of Object.entries(progressMap)) {
+          if (getJlptFromReadingId(id) !== lvl) continue;
+          if (prog.completedAt !== null) map[lvl].completed += 1;
+          map[lvl].bestCorrect += prog.bestScore;
+        }
+      }
+    }
+    return map;
+  }, [manifest, passagesByLevel, progressMap]);
 
   const totals = useMemo(() => {
     let completed = 0;
-    let totalQuestions = 0;
     let bestCorrect = 0;
     for (const lvl of [5, 4, 3, 2, 1] as JlptLevel[]) {
       completed += levelStats[lvl].completed;
-      totalQuestions += levelStats[lvl].totalQuestions;
       bestCorrect += levelStats[lvl].bestCorrect;
     }
     return {
-      totalPassages: data?.passages.length ?? 50,
+      totalPassages: manifest?.totalCount ?? 50,
       completed,
-      totalQuestions,
       bestCorrect,
     };
-  }, [levelStats, data]);
+  }, [levelStats, manifest]);
 
   const activeLevelMeta = useMemo(
     () => JLPT_LEVELS.find((l) => l.level === selectedLevel) ?? JLPT_LEVELS[0],
     [selectedLevel]
   );
 
+  const selectedLevelPassages = passagesByLevel[selectedLevel] ?? [];
+
   const filteredPassages = useMemo(() => {
-    if (!data) return [];
-    const list = data.byJlpt[selectedLevel] ?? [];
-    if (typeFilter === 'all') return list;
-    return list.filter((p) => p.passageType === typeFilter);
-  }, [data, selectedLevel, typeFilter]);
+    if (typeFilter === 'all') return selectedLevelPassages;
+    return selectedLevelPassages.filter((p) => p.passageType === typeFilter);
+  }, [selectedLevelPassages, typeFilter]);
 
   const getTypeMeta = (t: ReadingPassageType) =>
     READING_PASSAGE_TYPES.find((m) => m.id === t) ?? READING_PASSAGE_TYPES[0];
@@ -266,12 +331,12 @@ export const ReadingHub: React.FC = () => {
     );
   }
 
-  if (!data) {
+  if (!manifest) {
     return (
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 50 Wacana Dokkai JLPT N5–N1...
+            Memuat Kurikulum Dokkai JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan wacana pendek, pengumuman, email bisnis, esai opini, dan perbandingan teks A/B.
@@ -284,7 +349,7 @@ export const ReadingHub: React.FC = () => {
   // =========================================================================
   // VIEW 1: ACTIVE READING EXAM & REVIEW VIEW
   // =========================================================================
-  const activePassage = activePassageId ? data.byId[activePassageId] : null;
+  const activePassage = activePassageId ? passagesById[activePassageId] : null;
   if (activePassage) {
     const lvlMeta = JLPT_LEVELS.find((l) => l.level === activePassage.jlpt) ?? JLPT_LEVELS[0];
     const typeMeta = getTypeMeta(activePassage.passageType);
@@ -297,7 +362,7 @@ export const ReadingHub: React.FC = () => {
     const targetSec = activePassage.recommendedMinutes * 60;
     const overPace = elapsedSec > targetSec;
 
-    const sameLevelList = data.byJlpt[activePassage.jlpt] ?? [];
+    const sameLevelList = passagesByLevel[activePassage.jlpt] ?? [];
     const currentIdxInLevel = sameLevelList.findIndex((p) => p.id === activePassage.id);
     const nextPassage =
       currentIdxInLevel >= 0 && currentIdxInLevel + 1 < sameLevelList.length
@@ -740,14 +805,14 @@ export const ReadingHub: React.FC = () => {
             type="button"
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (50)
+            3. Dokkai ({totals.totalPassages})
           </button>
           <button
             type="button"
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (50)
+            4. Chōkai
           </button>
           <button
             type="button"
@@ -759,7 +824,7 @@ export const ReadingHub: React.FC = () => {
         </div>
 
         <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
-          {totals.completed} / {totals.totalPassages} Wacana Lulus · {totals.bestCorrect} / {totals.totalQuestions} Soal Benar
+          {totals.completed} / {totals.totalPassages} Wacana Lulus · {totals.bestCorrect} Soal Benar
         </div>
       </div>
 
@@ -772,7 +837,7 @@ export const ReadingHub: React.FC = () => {
           Latihan Membaca JLPT (Dokkai N5–N1)
         </h1>
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-          50 wacana autentik (103 soal) bergaya ujian JLPT — mulai dari pengumuman, email bisnis, wacana pendek, esai opini, hingga perbandingan dua teks (Tōgō Rikai) lengkap dengan pengatur waktu baca, toggle furigana, audio, dan pembahasan bahasa Inggris.
+          {totals.totalPassages} wacana autentik bergaya ujian JLPT — mulai dari pengumuman, email bisnis, wacana pendek, esai opini, hingga perbandingan dua teks (Tōgō Rikai) lengkap dengan pengatur waktu baca, toggle furigana, audio, dan pembahasan bahasa Inggris.
         </p>
       </div>
 
@@ -818,8 +883,10 @@ export const ReadingHub: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between gap-1 text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono-num">
-                <span>{st.totalQuestions} soal</span>
-                {st.bestCorrect > 0 && (
+                <span>
+                  {st.loaded ? `${st.totalQuestions} soal` : `${st.total} wacana`}
+                </span>
+                {st.bestCorrect > 0 && st.loaded && (
                   <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                     {accPct}%
                   </span>
@@ -875,7 +942,11 @@ export const ReadingHub: React.FC = () => {
           ))}
         </div>
 
-        {filteredPassages.length === 0 ? (
+        {loadingLevel === selectedLevel ? (
+          <div className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">
+            Memuat paket wacana JLPT {activeLevelMeta.code}...
+          </div>
+        ) : filteredPassages.length === 0 ? (
           <div className="py-10 text-center text-sm text-slate-500 dark:text-slate-400">
             Belum ada wacana dengan format ini di level {activeLevelMeta.code}. Pilih "Semua Format".
           </div>

@@ -1,22 +1,84 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { TopBar } from './components/TopBar';
 import { Dashboard } from './components/Dashboard';
-import { CurriculumBrowser } from './components/CurriculumBrowser';
-import { LessonSession } from './components/LessonSession';
-import { ReviewSession } from './components/ReviewSession';
 import { ItemDetailModal } from './components/ItemDetailModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AuthModal } from './components/AuthModal';
-import { UserProfileView } from './components/UserProfileView';
-import { AdminPanel } from './components/AdminPanel';
-import { GrammarHub } from './components/GrammarHub';
-import { KanaVocabHub } from './components/KanaVocabHub';
-import { ReadingHub } from './components/ReadingHub';
-import { ListeningHub } from './components/ListeningHub';
-import { MockExamHub } from './components/MockExamHub';
-import { WritingHub } from './components/WritingHub';
-import { PronunciationHub } from './components/PronunciationHub';
+
+const CurriculumBrowser = lazy(() =>
+  import('./components/CurriculumBrowser').then((m) => ({
+    default: m.CurriculumBrowser,
+  }))
+);
+const LessonSession = lazy(() =>
+  import('./components/LessonSession').then((m) => ({
+    default: m.LessonSession,
+  }))
+);
+const ReviewSession = lazy(() =>
+  import('./components/ReviewSession').then((m) => ({
+    default: m.ReviewSession,
+  }))
+);
+const UserProfileView = lazy(() =>
+  import('./components/UserProfileView').then((m) => ({
+    default: m.UserProfileView,
+  }))
+);
+const AdminPanel = lazy(() =>
+  import('./components/AdminPanel').then((m) => ({
+    default: m.AdminPanel,
+  }))
+);
+const GrammarHub = lazy(() =>
+  import('./components/GrammarHub').then((m) => ({
+    default: m.GrammarHub,
+  }))
+);
+const KanaVocabHub = lazy(() =>
+  import('./components/KanaVocabHub').then((m) => ({
+    default: m.KanaVocabHub,
+  }))
+);
+const ReadingHub = lazy(() =>
+  import('./components/ReadingHub').then((m) => ({
+    default: m.ReadingHub,
+  }))
+);
+const ListeningHub = lazy(() =>
+  import('./components/ListeningHub').then((m) => ({
+    default: m.ListeningHub,
+  }))
+);
+const MockExamHub = lazy(() =>
+  import('./components/MockExamHub').then((m) => ({
+    default: m.MockExamHub,
+  }))
+);
+const WritingHub = lazy(() =>
+  import('./components/WritingHub').then((m) => ({
+    default: m.WritingHub,
+  }))
+);
+const PronunciationHub = lazy(() =>
+  import('./components/PronunciationHub').then((m) => ({
+    default: m.PronunciationHub,
+  }))
+);
+
+const ModuleLoadingFallback: React.FC = () => (
+  <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
+      <div className="font-display text-base font-bold text-slate-900 dark:text-white">
+        Memuat modul latihan...
+      </div>
+      <p className="text-xs text-slate-500 dark:text-slate-400">
+        Menyiapkan tampilan dan materi belajar KaniMichi.
+      </p>
+    </div>
+  </main>
+);
 
 const AppShell: React.FC = () => {
   const { activeView, extraStudyMode, setActiveView } = useApp();
@@ -29,24 +91,26 @@ const AppShell: React.FC = () => {
 
       <div className="flex-1 min-w-0 w-full">
         {activeView === 'dashboard' && <Dashboard />}
-        {activeView === 'levels' && <CurriculumBrowser mode="levels" />}
-        {activeView === 'radicals' && <CurriculumBrowser mode="radicals" />}
-        {activeView === 'kanji' && <CurriculumBrowser mode="kanji" />}
-        {activeView === 'vocabulary' && <CurriculumBrowser mode="vocabulary" />}
-        {activeView === 'kana-vocab' && <KanaVocabHub />}
-        {activeView === 'grammar' && <GrammarHub />}
-        {activeView === 'reading' && <ReadingHub />}
-        {activeView === 'listening' && <ListeningHub />}
-        {activeView === 'writing' && <WritingHub />}
-        {activeView === 'pronunciation' && <PronunciationHub />}
-        {activeView === 'mock-exam' && <MockExamHub />}
-        {activeView === 'lesson' && <LessonSession />}
-        {activeView === 'review' && <ReviewSession mode="srs" />}
-        {activeView === 'extra-study' && (
-          <ReviewSession mode="extra" extraMode={extraStudyMode} />
-        )}
-        {activeView === 'profile' && <UserProfileView />}
-        {activeView === 'admin' && <AdminPanel />}
+        <Suspense fallback={<ModuleLoadingFallback />}>
+          {activeView === 'levels' && <CurriculumBrowser mode="levels" />}
+          {activeView === 'radicals' && <CurriculumBrowser mode="radicals" />}
+          {activeView === 'kanji' && <CurriculumBrowser mode="kanji" />}
+          {activeView === 'vocabulary' && <CurriculumBrowser mode="vocabulary" />}
+          {activeView === 'kana-vocab' && <KanaVocabHub />}
+          {activeView === 'grammar' && <GrammarHub />}
+          {activeView === 'reading' && <ReadingHub />}
+          {activeView === 'listening' && <ListeningHub />}
+          {activeView === 'writing' && <WritingHub />}
+          {activeView === 'pronunciation' && <PronunciationHub />}
+          {activeView === 'mock-exam' && <MockExamHub />}
+          {activeView === 'lesson' && <LessonSession />}
+          {activeView === 'review' && <ReviewSession mode="srs" />}
+          {activeView === 'extra-study' && (
+            <ReviewSession mode="extra" extraMode={extraStudyMode} />
+          )}
+          {activeView === 'profile' && <UserProfileView />}
+          {activeView === 'admin' && <AdminPanel />}
+        </Suspense>
       </div>
 
       {!isFullStudySession && (

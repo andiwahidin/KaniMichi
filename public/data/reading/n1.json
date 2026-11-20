@@ -1,0 +1,697 @@
+{
+  "level": 1,
+  "pack": "n1",
+  "items": [
+    {
+      "id": "rd-n1-01",
+      "jlpt": 1,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "翻訳[ほんやく]の不完全[ふかんぜん]さと豊[ゆた]かさ",
+      "titleEn": "The Imperfection and Richness of Translation",
+      "recommendedMinutes": 6,
+      "contextEn": "JLPT N1 philosophical essay on literary translation and nuance.",
+      "paragraphs": [
+        "機械[きかい]翻訳[ほんやく]の精度[せいど]が飛躍[ひやく]的[てき]に向上[こうじょう]した今日[こんにち]、異[こと]なる言語[げんご]間[かん]の壁[かべ]はもはや過去[かこ]のものになりつつあるという見方[みかた]がある。確[たし]かに、事実[じじつ]関係[かんけい]や業務[ぎょうむ]上の要件[ようけん]を迅速[じんそく]に伝達[でんたつ]する場面[ばめん]では、その恩恵[おんけい]は計[はか]り知[し]れない。",
+        "しかしながら、言葉[ことば]とは単[たん]なる情報[じょうほう]の記号[きごう]にとどまるものではない。ある単語[たんご]が背負[せお]う歴史[れきし]的[てき]文脈[ぶんみゃく]や、語感[ごかん]が喚起[かんき]する微細[びさい]な情緒[じょうちょ]は、別[べつ]の言語[げんご]へ一対一[いったいいち]で置換[ちかん]できる性質[せいしつ]のものではないのである。",
+        "だからこそ、翻訳[ほんやく]とは常[つね]に何[なに]かを失[うしな]う営[いとな]みであり、同時[どうじ]に、原文[げんぶん]の奥底[おくそこ]にある響[ひび]きを別[べつ]の器[うつわ]に注[そそ]ぎ直[なお]す創造[そうぞう]的[てき]な解釈[かいしゃく]でもある。完全[かんぜん]な一致[いっち]があり得[え]ないからこそ、一[ひと]つの名作[めいさく]に幾[いく]つもの異[こと]なる訳文[やくぶん]が生[う]まれ、読者[どくしゃ]の世界[せかい]を広[ひろ]げてきたのだ。"
+      ],
+      "translationEn": [
+        "Today, as machine translation accuracy improves dramatically, there is a view that barriers between different languages are becoming a thing of the past. Indeed, in situations requiring rapid transmission of facts or business requirements, its benefits are immeasurable.",
+        "However, language does not remain a mere code for information. The historical context a word carries and the subtle emotions evoked by its ring are not of a nature that can be swapped one-to-one into another language.",
+        "Precisely for this reason, translation is an endeavor that always loses something, and at the same time a creative interpretation that pours the resonance deep inside the original into a different vessel. Because perfect equivalence is impossible, multiple distinct translations have been born for a single masterpiece, expanding readers' worlds."
+      ],
+      "keyVocab": [
+        {
+          "word": "恩恵",
+          "reading": "おんけい",
+          "en": "benefit; blessing"
+        },
+        {
+          "word": "喚起する",
+          "reading": "かんきする",
+          "en": "to evoke; arouse"
+        },
+        {
+          "word": "置換する",
+          "reading": "ちかんする",
+          "en": "to replace; substitute"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-01-q1",
+          "promptJp": "筆者[ひっしゃ]が、言葉[ことば]を別[べつ]の言語[げんご]へ一対一[いったいいち]で置換[ちかん]できないと述[の]べる根拠[こんきょ]は何か。",
+          "promptEn": "On what basis does the author argue that words cannot be substituted one-to-one across languages?",
+          "choices": [
+            "機械[きかい]翻訳[ほんやく]の学習[がくしゅう]データがいまだ不足[ふそく]しているから。",
+            "言葉[ことば]は単[たん]なる情報[じょうほう]記号[きごう]ではなく、歴史[れきし]的[てき]文脈[ぶんみゃく]や微細[びさい]な情緒[じょうちょ]を伴[ともな]うから。",
+            "読者[どくしゃ]の語学[ごがく]力[りょく]が時代[じだい]とともに低下[ていか]しているから。",
+            "文学[ぶんがく]作品[さくひん]の著作権[ちょさくけん]が厳[きび]しく制限[せいげん]されているから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that words carry historical context and subtle emotional resonance beyond mere informational symbols."
+        },
+        {
+          "id": "rd-n1-01-q2",
+          "promptJp": "筆者[ひっしゃ]は「完全[かんぜん]な一致[いっち]があり得[え]ない」ことをどのように捉[とら]えているか。",
+          "promptEn": "How does the author view the impossibility of \"perfect equivalence\" in translation?",
+          "choices": [
+            "翻訳[ほんやく]という行為[こうい]自体[じたい]の限界[げんかい]であり、原書[げんしょ]で読[よ]む以外[いがい]に価値[かち]はない。",
+            "多様な解釈[かいしゃく]や訳文[やくぶん]を生み出し、読者[どくしゃ]の世界[せかい]を豊[ゆた]かにする源泉[げんせん]である。",
+            "将来[しょうらい]の技術[ぎじゅつ]革新[かくしん]によって完全[かんぜん]に解消[かいしょう]されるべき欠陥[けっかん]である。",
+            "ビジネス文書[ぶんしょ]において最[もっと]も深刻[しんこく]な障害[しょうがい]である。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 frames the impossibility of exact equivalence positively: it births multiple creative translations that broaden readers' worlds."
+        },
+        {
+          "id": "rd-n1-01-q3",
+          "promptJp": "本文[ほんぶん]の論旨[ろんし]と合致[がっち]するものはどれか。",
+          "promptEn": "Which statement aligns with the passage's argument?",
+          "choices": [
+            "機械[きかい]翻訳[ほんやく]は実務[じつむ]の場面[ばめん]でも全[まった]く信用[しんよう]できない。",
+            "名作[めいさく]の翻訳[ほんやく]は最[もっと]も正確[せいかく]な一種類[いっしゅるい]に統一[とういつ]すべきだ。",
+            "機械[きかい]翻訳[ほんやく]の実用[じつよう]的[てき]価値[かち]は認[みと]めつつも、翻訳[ほんやく]の本質[ほんしつ]には創造[そうぞう]的[てき]解釈[かいしゃく]がある。",
+            "言葉[ことば]の情緒[じょうちょ]は情報[じょうほう]伝達[でんたつ]の妨[さまた]げになる。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The author balances praise for machine translation's practical utility (Para 1) with an argument for translation as creative interpretation (Para 3)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-02",
+      "jlpt": 1,
+      "order": 2,
+      "passageType": "comparison",
+      "titleJp": "「失敗[しっぱい]の許容[きょよう]」と組織[そしき]の革新[かくしん]",
+      "titleEn": "Tolerating Failure vs. Maintaining Standards in Organizations",
+      "recommendedMinutes": 6,
+      "contextEn": "JLPT N1 Integrated Reading (Tōgō Rikai) — comparing two management perspectives.",
+      "labelA": "文章[ぶんしょう] A",
+      "labelB": "文章[ぶんしょう] B",
+      "paragraphs": [
+        "前例[ぜんれい]のない新[しん]規[き]事業[じぎょう]を生み出すには、減点[げんてん]主義[しゅぎ]を排[はい]し、挑戦[ちょうせん]に伴[ともな]う失敗[しっぱい]を許容[きょよう]する風土[ふうど]が不可欠[ふかけつ]だ。一度[いちど]の蹉跌[さてつ]で評価[ひょうか]を落[お]とす組織[そしき]では、社員[しゃいん]は無難[ぶなん]な選択[せんたく]に終始[しゅうし]し、結果[けっか]として組織[そしき]全体[ぜんたい]の停滞[ていたい]を招[まね]く。"
+      ],
+      "paragraphsB": [
+        "「失敗[しっぱい]を恐[おそ]れるな」という標語[ひょうご]が独[ひと]り歩[ある]きすることには危惧[きぐ]を覚[おぼ]える。準備[じゅんび]不足[ぶそく]や確認[かくにん]怠慢[たいまん]による防[ふせ]げたはずの過失[かしつ]まで「挑戦[ちょうせん]の証[あかし]」として甘[あま]やかしてはならない。許容[きょよう]すべきは、綿密[めんみつ]な仮説[かせつ]検証[けんしょう]を尽[つ]くした末[すえ]の未知[みち]領域[りょういき]での失敗[しっぱい]に限[かぎ]られるべきだ。"
+      ],
+      "translationEn": [
+        "[Text A] To create unprecedented new ventures, eliminating a demerit-based culture and fostering a climate that tolerates failure accompanying bold attempts is indispensable. In an organization where a single setback ruins one's evaluation, employees stick solely to safe choices, ultimately inviting stagnation across the entire organization."
+      ],
+      "translationBEn": [
+        "[Text B] I feel apprehension when the slogan \"don't fear failure\" takes on a life of its own. Preventable blunders caused by poor preparation or negligent verification must not be coddled as \"badges of challenge.\" What should be tolerated ought to be strictly limited to failures in uncharted territory after exhausting thorough hypothesis testing."
+      ],
+      "keyVocab": [
+        {
+          "word": "減点主義",
+          "reading": "げんてんしゅぎ",
+          "en": "demerit-based evaluation system"
+        },
+        {
+          "word": "蹉跌",
+          "reading": "さてつ",
+          "en": "setback; stumbling"
+        },
+        {
+          "word": "危惧を覚える",
+          "reading": "きぐをおぼえる",
+          "en": "to feel apprehension / concern"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-02-q1",
+          "promptJp": "失敗[しっぱい]の扱[あつか]いに関[かん]するAとBの主張[しゅちょう]の関係[かんけい]として最[もっと]も適切[てきせつ]なのはどれか。",
+          "promptEn": "Which best describes the relationship between Text A and Text B regarding handling failure?",
+          "choices": [
+            "Aは失敗[しっぱい]の許容[きょよう]を求[もと]め、Bはあらゆる失敗[しっぱい]を厳罰[げんばつ]化[か]すべきだと全面[ぜんめん]対立[たいりつ]している。",
+            "Aは挑戦[ちょうせん]を促[うなが]すために失敗[しっぱい]を許容[きょよう]する風土[ふうど]を重視[じゅうし]し、Bは許容[きょよう]する失敗[しっぱい]の条件[じょうけん]を厳密[げんみつ]に線引[せんび]きしている。",
+            "AもBも、無難[ぶなん]な選択[せんたく]を続[つづ]けることが最[もっと]も安全[あんぜん]だと述[の]べている。",
+            "Aは若手[わかて]社員[しゃいん]のミスのみを許[ゆる]し、Bは管理[かんり]職[しょく]の責任[せきにん]を追及[ついきゅう]している。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text B does not reject tolerating failure completely; rather, it draws a strict boundary between negligent mistakes vs. well-prepared exploration."
+        },
+        {
+          "id": "rd-n1-02-q2",
+          "promptJp": "文章[ぶんしょう]Bの筆者[ひっしゃ]が許容[きょよう]すべきだと考[かんが]えている失敗[しっぱい]はどれか。",
+          "promptEn": "Which kind of failure does the author of Text B believe should be tolerated?",
+          "choices": [
+            "確認[かくにん]不足[ぶそく]で起[お]きた初歩[しょほ]的[てき]な入力[にゅうりょく]ミス",
+            "綿密[めんみつ]な仮説[かせつ]検証[けんしょう]を尽[つ]くした上[うえ]で未知[みち]の領域[りょういき]に挑[いど]んだ結果[けっか]の失敗[しっぱい]",
+            "準備[じゅんび]を省[はぶ]いてスピード優先[ゆうせん]で実行[じっこう]した際の失敗[しっぱい]",
+            "過去[かこ]にも何度[なんど]も繰[く]り返[かえ]されている業務[ぎょうむ]上の過失[かしつ]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text B's final sentence specifies failures in uncharted territory after thorough hypothesis testing (綿密な仮説検証を尽くした末の未知領域での失敗)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-03",
+      "jlpt": 1,
+      "order": 3,
+      "passageType": "essay",
+      "titleJp": "専門[せんもん]化[か]の死角[しかく]と「越境[えっきょう]」の価値[かち]",
+      "titleEn": "Blind Spots of Specialization and Crossing Boundaries",
+      "recommendedMinutes": 6,
+      "contextEn": "N1 academic commentary on interdisciplinary thinking.",
+      "paragraphs": [
+        "近代[きんだい]以降[いこう]、学問[がくもん]も産業[さんぎょう]も細分化[さいぶんか]と専門[せんもん]化[か]を推[お]し進[すす]めることで、目覚[めざ]ましい成果[せいか]を収[おさ]めてきた。一[ひと]つの領域[りょういき]を深掘[ふかぼ]りする姿勢[しせい]が、人類[じんるい]の知見[ちけん]を飛躍[ひやく]的[てき]に拡張[かくちょう]したことは疑[うたが]いようがない。",
+        "しかし、気候[きこう]変動[へんどう]やAI倫理[りんり]のように現代[げんだい]社会[しゃかい]が直面[ちょくめん]する複合[ふくごう]的[てき]な課題[かだい]は、単一[たんいつ]の専門[せんもん]分野[ぶんや]の枠内[わくない]だけでは到底[とうてい]解決[かいけつ]し得[え]ない。専門[せんもん]性[せい]が深化[しんか]するほど、かえって他[た]分野[ぶんや]との共通[きょうつう]言語[げんご]が失[うしな]われ、部分[ぶぶん]最適[さいてき]に陥[おちい]る危[あや]うさすら生[しょう]じている。",
+        "今[いま]求[もと]められているのは、専門[せんもん]を捨[す]てて浅[あさ]く広[ひろ]く知[し]ることではない。確[たし]かな専門[せんもん]という足場[あしば]を持[も]ちつつ、あえて異[こと]なる領域[りょういき]へ越境[えっきょう]し、違和感[いわかん]を対話[たいわ]の糸口[いとぐち]へと変[か]えていく知性[ちせい]である。"
+      ],
+      "translationEn": [
+        "Since the modern era, both academia and industry have achieved remarkable results by advancing subdivision and specialization. There is no doubt that digging deeply into a single domain dramatically expanded human knowledge.",
+        "However, complex challenges facing contemporary society—such as climate change and AI ethics—cannot possibly be solved within the confines of a single specialized field. The deeper specialization becomes, the more common language with other fields is lost, even giving rise to the risk of falling into local optimization.",
+        "What is needed today is not abandoning one's specialty to know things broadly yet shallowly. It is an intellect that retains the solid footing of a true specialty while deliberately crossing into unfamiliar domains and turning discomfort into a starting point for dialogue."
+      ],
+      "keyVocab": [
+        {
+          "word": "細分化",
+          "reading": "さいぶんか",
+          "en": "subdivision; fragmentation"
+        },
+        {
+          "word": "部分最適",
+          "reading": "ぶぶんさいてき",
+          "en": "local optimization (at the expense of the whole)"
+        },
+        {
+          "word": "越境",
+          "reading": "えっきょう",
+          "en": "crossing boundaries / borders"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-03-q1",
+          "promptJp": "専門[せんもん]性[せい]が深化[しんか]することで生[しょう]じている問題[もんだい]として筆者[ひっしゃ]が挙[あ]げているのは何か。",
+          "promptEn": "What problem does the author cite as arising from deepening specialization?",
+          "choices": [
+            "研究者[けんきゅうしゃ]の数[かず]が急激[きゅうげき]に減少[げんしょう]していること。",
+            "他[た]分野[ぶんや]との共通[きょうつう]言語[げんご]が失[うしな]われ、複合[ふくごう]的[てき]課題[かだい]への全体[ぜんたい]最適[さいてき]が見[み]えにくくなること。",
+            "近代[きんだい]以前[いぜん]の知識[ちしき]が全[すべ]て誤[あやま]りだったと判明[はんめい]したこと。",
+            "専門[せんもん]書[しょ]の価格[かかく]が高騰[こうとう]していること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that deeper specialization erodes shared language across fields and leads to local optimization (部分最適)."
+        },
+        {
+          "id": "rd-n1-03-q2",
+          "promptJp": "筆者[ひっしゃ]が理想[りそう]とする知性[ちせい]のあり方[かた]はどれか。",
+          "promptEn": "What ideal form of intellect does the author advocate?",
+          "choices": [
+            "専門[せんもん]分野[ぶんや]を持[も]たず、あらゆる領域[りょういき]を浅[あさ]く広[ひろ]く学[まな]ぶこと。",
+            "異[こと]分野[ぶんや]との対立[たいりつ]を避[さ]け、自分[じぶん]の専門[せんもん]だけに専念[せんねん]すること。",
+            "確[たし]かな専門[せんもん]を基盤[きばん]にしながら異[こと]分野[ぶんや]へ越境[えっきょう]し、違和感[いわかん]を対話[たいわ]につなげること。",
+            "AIに専門[せんもん]判断[はんだん]を委[ゆだ]ね、人間[にんげん]は芸術[げいじゅつ]に集中[しゅうちゅう]すること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 explicitly rejects shallow generalism and defines the ideal as combining a solid specialty with boundary-crossing dialogue."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-04",
+      "jlpt": 1,
+      "order": 4,
+      "passageType": "notice",
+      "titleJp": "学術[がくじゅつ]シンポジウム発表[はっぴょう]要旨[ようし]募集[ぼしゅう]要項[ようこう]",
+      "titleEn": "Academic Symposium Abstract Submission Guidelines",
+      "recommendedMinutes": 5,
+      "contextEn": "N1 Information Retrieval notice with multiple interlocking conditions.",
+      "paragraphs": [
+        "【第[だい]18回[かい] 環境[かんきょう]政策[せいさく]シンポジウム 発表[はっぴょう]募集[ぼしゅう]】\n募集[ぼしゅう]区分[くぶん]：A. 口頭[こうとう]発表[はっぴょう]（20分[ぷん]＋質疑[しつぎ]10分[ぷん]） / B. ポスター発表[はっぴょう]（展示[てんじ]＋自由[じゆう]討論[とうろん]）",
+        "応募[おうぼ]要件[ようけん]：①筆頭[ひっとう]発表[はっぴょう]者[しゃ]は本[ほん]学会[がっかい]の正会員[せいかいいん]または学生[がくせい]会員[かいいん]であること（未[み]入会[にゅうかい]者[しゃ]は要旨[ようし]提出[ていしゅつ]前[まえ]に入会[にゅうかい]手続[てつづ]きを完了[かんりょう]すること）。②発表[はっぴょう]内容[ないよう]は未[み]発表[はっぴょう]のオリジナル研究[けんきゅう]に限[かぎ]る。ただし、口頭[こうとう]発表[はっぴょう]に不採用[ふさいよう]となった場合[ばあい]、希望[きぼう]すればポスター発表[はっぴょう]へ振[ふ]り替[か]え審査[しんさ]を行[おこな]う。",
+        "締切[しめきり]：要旨[ようし]（800字[じ]以内[いない]）は8月[はちがつ]20日[はつか]17時[じ]必着[ひっちゃく]。採否[さいひ]通知[つうち]は9月[くがつ]15日[じゅうごにち]予定[よてい]。なお、学生[がくせい]会員[かいいん]は参加[さんか]費[ひ]（一般[いっぱん]6,000円[えん]）が半額[はんがく]となる。"
+      ],
+      "translationEn": [
+        "[18th Environmental Policy Symposium Call for Papers] Categories: A. Oral Presentation (20 min + 10 min Q&A) / B. Poster Presentation (display + open discussion).",
+        "Eligibility: (1) The lead presenter must be a regular or student member of the society (non-members must complete membership enrollment BEFORE submitting an abstract). (2) Content must be unpublished original research. Note that if an oral presentation is not accepted, it may be redirected for poster review upon request.",
+        "Deadline: Abstracts (within 800 characters) must arrive by August 20 at 17:00. Acceptance notifications are scheduled for September 15. Furthermore, student members pay half of the standard 6,000-yen registration fee."
+      ],
+      "keyVocab": [
+        {
+          "word": "要旨",
+          "reading": "ようし",
+          "en": "abstract; summary"
+        },
+        {
+          "word": "必着",
+          "reading": "ひっちゃく",
+          "en": "must arrive by (strict deadline)"
+        },
+        {
+          "word": "採否",
+          "reading": "さいひ",
+          "en": "acceptance or rejection"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-04-q1",
+          "promptJp": "現在[げんざい]未[み]入会[にゅうかい]の大学院生[だいがくいんせい]が口頭[こうとう]発表[はっぴょう]に応募[おうぼ]したい場合[ばあい]、正[ただ]しい手順[てじゅん]と参加[さんか]費[ひ]の組[く]み合[あ]わせはどれか。",
+          "promptEn": "For a graduate student who is not yet a member wishing to apply for an oral presentation, what is the correct sequence and fee?",
+          "choices": [
+            "採否[さいひ]通知[つうち]の後[のち]に入会[にゅうかい]し、参加[さんか]費[ひ]6,000円[えん]を払[はら]う。",
+            "要旨[ようし]提出[ていしゅつ]前[まえ]に学生[がくせい]会員[かいいん]として入会[にゅうかい]を完了[かんりょう]し、参加[さんか]費[ひ]は3,000円[えん]になる。",
+            "800字[じ]以上[いじょう]の要旨[ようし]を先[さき]に出[だ]し、当日[とうじつ]入会[にゅうかい]すれば無料[むりょう]になる。",
+            "学生[がくせい]会員[かいいん]はポスター発表[はっぴょう]にしか応募[おうぼ]できない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Non-members must finish enrollment BEFORE submitting the abstract; as a student member, the fee is half of 6,000 yen = 3,000 yen."
+        },
+        {
+          "id": "rd-n1-04-q2",
+          "promptJp": "この募集[ぼしゅう]要項[ようこう]の内容[ないよう]に合[あ]っているものはどれか。",
+          "promptEn": "Which statement agrees with the submission guidelines?",
+          "choices": [
+            "すでに出版[しゅっぱん]された論文[ろんぶん]でも要約[ようやく]すれば応募[おうぼ]できる。",
+            "口頭[こうとう]発表[はっぴょう]が不採用[ふさいよう]になった場合[ばあい]、希望[きぼう]すればポスター発表[はっぴょう]として再[さい]審査[しんさ]を受[う]けられる。",
+            "要旨[ようし]は8月[はちがつ]20日[はつか]の消印[けしいん]があれば有効[ゆうこう]である。",
+            "口頭[こうとう]発表[はっぴょう]は質疑[しつぎ]応答[おうとう]を含[ふく]めて20分[ぷん]である。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explicitly allows rejected oral submissions to be redirected for poster review upon request. (1) fails unpublished rule; (3) fails 必着 (must arrive by 17:00); (4) fails 20+10=30 min."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-05",
+      "jlpt": 1,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "「余白[よはく]」を設計[せっけい]する都市[とし]づくり",
+      "titleEn": "Designing \"Unassigned Margin\" Into Urban Planning",
+      "recommendedMinutes": 6,
+      "contextEn": "N1 urban design essay on functional efficiency vs. civic vitality.",
+      "paragraphs": [
+        "再開発[さいかいはつ]によって生[う]まれ変[か]わる現代[げんだい]の街並[まちな]みは、動線[どうせん]が緻密[ちみつ]に計算[けいさん]され、商業[しょうぎょう]施設[しせつ]から広場[ひろば]に至るまで一切[いっさい]の無駄[むだ]がない。しかし、細部[さいぶ]まで用途[ようと]が規定[きてい]され尽[つ]くした空間[くうかん]ほど、不思議[ふしぎ]と人[ひと]の居場所[いばしょ]としての温[ぬく]もりに欠[か]けることがある。",
+        "建築[けんちく]家[か]たちの間[あいだ]では近年[きんねん]、あえて用途[ようと]を限定[げんてい]しない「余白[よはく]」を街[まち]に残[のこ]す重要[じゅうよう]性[せい]が論[ろん]じられている。ベンチ一[ひと]つ置[お]かれただけの小[ちい]さな空[あ]き地[ち]や、住民[じゅうみん]が自由[じゆう]に市[いち]を開[ひら]ける軒先[のきさき]のような場所[ばしょ]があってこそ、想定[そうてい]外[がい]の出会[であ]いや独自[どくじ]の地域[ちいき]文化[ぶんか]が芽生[めば]えるからだ。",
+        "完璧[かんぺき]な管理[かんり]と効率[こうりつ]の追求[ついきゅう]は、時[とき]に街[まち]から自発[じはつ]的[てき]な生命力[せいめいりょく]を奪[うば]いかねない。使い手[つかいて]の想像力[そうぞうりょく]に委[ゆだ]ねられた余白[よはく]を残[のこ]すことこそ、長く愛[あい]される都市[とし]を育[そだ]てる要諦[ようてい]なのではないだろうか。"
+      ],
+      "translationEn": [
+        "Modern townscapes reborn through redevelopment have meticulously calculated pedestrian flows and zero waste from commercial complexes to plazas. Yet strangely, the more completely every detail's purpose is prescribed, the more a space can lack warmth as a place where people truly belong.",
+        "In recent years, architects have been debating the importance of deliberately leaving \"margins\" with unassigned purposes in cities. Precisely because spaces exist like a small open lot with just a bench or eaves where residents can freely host markets, unexpected encounters and unique local cultures take root.",
+        "The pursuit of flawless control and efficiency can at times rob a city of its spontaneous vitality. Leaving open margins entrusted to the imagination of its users may well be the essential principle for nurturing a city loved for generations."
+      ],
+      "keyVocab": [
+        {
+          "word": "緻密",
+          "reading": "ちみつ",
+          "en": "meticulous; intricate"
+        },
+        {
+          "word": "委ねる",
+          "reading": "ゆだねる",
+          "en": "to entrust to"
+        },
+        {
+          "word": "要諦",
+          "reading": "ようてい",
+          "en": "essential point; core principle"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-05-q1",
+          "promptJp": "筆者[ひっしゃ]は、用途[ようと]が細部[さいぶ]まで規定[きてい]された再開発[さいかいはつ]空間[くうかん]にどんな問題[もんだい]を見出[みいだ]しているか。",
+          "promptEn": "What flaw does the author see in redeveloped spaces where every detail's use is strictly prescribed?",
+          "choices": [
+            "建設[けんせつ]費[ひ]が回収[かいしゅう]できず商業[しょうぎょう]施設[しせつ]が赤字[あかじ]になること。",
+            "居場所[いばしょ]としての温[ぬく]もりや、街[まち]の自発[じはつ]的[てき]な生命力[せいめいりょく]が失[うしな]われかねないこと。",
+            "動線[どうせん]が複雑[ふくざつ]すぎて高齢者[こうれいしゃ]が迷[まよ]いやすいこと。",
+            "防災[ぼうさい]上[じょう]の安全[あんぜん]基準[きじゅん]を満[み]たしていないこと。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 1 and 3 warn that over-prescribed, hyper-efficient spaces can lack human warmth and sap spontaneous civic vitality."
+        },
+        {
+          "id": "rd-n1-05-q2",
+          "promptJp": "街[まち]に「余白[よはく]」を残[のこ]すことで期待[きたい]される効果[こうか]は何か。",
+          "promptEn": "What positive effect is expected from leaving \"margins\" in urban spaces?",
+          "choices": [
+            "商業[しょうぎょう]施設[しせつ]の売上[うりあげ]が確実[かくじつ]に倍増[ばいぞう]する。",
+            "管理[かんり]コストが完全にゼロになる。",
+            "使い手[つかいて]の想像力[そうぞうりょく]によって、想定[そうてい]外[がい]の出会[であ]いや独自[どくじ]の地域[ちいき]文化[ぶんか]が育[そだ]つ。",
+            "自動車[じどうしゃ]の渋滞[じゅうたい]が解消[かいしょう]される。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraphs 2 and 3 highlight unexpected encounters, unique local culture, and spaces shaped by users' imagination."
+        },
+        {
+          "id": "rd-n1-05-q3",
+          "promptJp": "この文章[ぶんしょう]の結論[けつろん]として最[もっと]もふさわしいものはどれか。",
+          "promptEn": "Which best captures the passage's conclusion?",
+          "choices": [
+            "都市[とし]の再開発[さいかいはつ]は全面[ぜんめん]中止[ちゅうし]し、昔[むかし]の街並[まちな]みを保存[ほぞん]すべきだ。",
+            "効率[こうりつ]や管理[かんり]を徹底[てってい]するほど、住民[じゅうみん]の満足[まんぞく]度[ど]は高[たか]まる。",
+            "使い手[つかいて]に委[ゆだ]ねる自由[じゆう]な余白[よはく]を設計[せっけい]に組[く]み込[こ]むことが、愛[あい]される都市[とし]づくりの鍵[かぎ]である。",
+            "建築[けんちく]家[か]は商業[しょうぎょう]施設[しせつ]よりも住宅[じゅうたく]設計[せっけい]に専念[せんねん]すべきだ。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence directly states that leaving margins entrusted to users' imagination is the core principle for nurturing beloved cities."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-06",
+      "jlpt": 1,
+      "order": 6,
+      "passageType": "essay",
+      "titleJp": "「わからないこと」に耐[た]える力[ちから]",
+      "titleEn": "The Capacity to Endure Not Knowing",
+      "recommendedMinutes": 6,
+      "contextEn": "Philosophical essay adapted in the style of JLPT N1 Chōbun/Chūbun reading.",
+      "paragraphs": [
+        "検索[けんさく]エンジンや生成[せいせい]AIの普及[ふきゅう]により、私[わたし]たちは疑問[ぎもん]を抱[いだ]いた瞬間[しゅんかん]に「一応[いちおう]の答[こた]え」を手[て]に入[い]れられる時代[じだい]を生[い]きている。しかし、即座[そくざ]に明快[めいかい]な解答[かいとう]を得[え]る習慣[しゅうかん]が身[み]につくほど、私[わたし]たちは「白黒[しろくろ]のつかない曖昧[あいまい]さ」に耐[た]える力[ちから]を失[うしな]いつつあるのではないか。",
+        "実社会[じっしゃかい]における複雑[ふくざつ]な課題[かだい]や人間[にんげん]関係[かんけい]には、単一[たんいつ]の正解[せいかい]など存在[そんざい]しないことが大半[たいはん]である。にもかかわらず、早急[さっきゅう]に結論[けつろん]を下[くだ]そうと焦[あせ]るあまり、物事[ものごと]を単純[たんじゅん]な二項[にこう]対立[たいりつ]に押[お]し込[こ]めてしまう危[あや]うさがある。",
+        "真[しん]の思考力[しこうりょく]とは、素早[すばや]く正解[せいかい]を導[みちび]き出[だ]す能力[のうりょく]だけを指[さ]すのではない。むしろ、容易[ようい]に答[こた]えの出[で]ない問[と]いを抱[かか]えたまま、性急[せいきゅう]な判断[はんだん]を留保[りゅうほ]し、多角的[たかくてき]に眺[なが]め続[つづ]ける粘[ねば]り強[づよ]さにこそ宿[やど]るのではないだろうか。"
+      ],
+      "translationEn": [
+        "With the spread of search engines and generative AI, we live in an era where we can obtain a \"provisional answer\" the instant a question arises. Yet the more ingrained the habit of getting immediate, crisp answers becomes, aren't we losing the capacity to tolerate ambiguity that cannot be cleanly divided into black and white?",
+        "In most complex real-world problems and human relationships, no single correct answer exists. Nevertheless, in our haste to reach an immediate conclusion, there is a danger of cramming reality into simplistic binary oppositions.",
+        "True thinking ability does not refer solely to the skill of rapidly deriving right answers. Rather, doesn't it reside precisely in the tenacity to hold onto questions with no easy answer, suspend hasty judgment, and keep viewing them from multiple angles?"
+      ],
+      "keyVocab": [
+        {
+          "word": "二項[にこう]対立[たいりつ]",
+          "reading": "にこうたいりつ",
+          "en": "binary opposition / dichotomy"
+        },
+        {
+          "word": "留保[りゅうほ]する",
+          "reading": "りゅうほする",
+          "en": "to withhold / suspend (judgment)"
+        },
+        {
+          "word": "宿[やど]る",
+          "reading": "やどる",
+          "en": "to dwell / reside in"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-06-q1",
+          "promptJp": "筆者[ひっしゃ]が現代人[げんだいじん]について懸念[けねん]していることは何[なん]か。",
+          "promptEn": "What concern does the author express about modern people?",
+          "choices": [
+            "検索[けんさく]ツールを使[つか]いこなせず情報[じょうほう]格差[かくさ]が広[ひろ]がっていること",
+            "即答[そくとう]に慣[な]れるあまり、曖昧[あいまい]さに耐[た]えられず物事[ものごと]を単純化[たんじゅんか]しがちなこと",
+            "AIの回答[かいとう]を一切[いっさい]信用[しんよう]せず、判断[はんだん]が遅[おく]れすぎていること",
+            "複雑[ふくざつ]な問[と]いを立[た]てること自体[じたい]を法律[ほうりつ]で禁[きん]じようとしていること"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 1 and 2 warn that becoming used to instant answers erodes our tolerance for ambiguity and pushes us into simplistic binary judgments."
+        },
+        {
+          "id": "rd-n1-06-q2",
+          "promptJp": "筆者[ひっしゃ]の考[かんが]える「真[しん]の思考力[しこうりょく]」に最[もっと]も近[ちか]いものはどれか。",
+          "promptEn": "Which best captures what the author considers \"true thinking ability\"?",
+          "choices": [
+            "膨大[ぼうだい]な知識[ちしき]を暗記[あんき]し、誰[だれ]よりも速[はや]く正解[せいかい]を出[だ]す力[ちから]",
+            "答[こた]えの定[さだ]まらない問[と]いに対し、拙速[せっそく]な断定[だんてい]を避[さ]けて多面的[ためんてき]に考[かんが]え続[つづ]ける力[ちから]",
+            "対立[たいりつ]する意見[いけん]のうち多数派[たすうは]の結論[けつろん]を素早[すばや]く採用[さいよう]する力[ちから]",
+            "デジタル機器[きき]を一切[いっさい]使[つか]わずに論文[ろんぶん]を執筆[しっぴつ]する力[ちから]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 defines it via \"〜にこそ宿る\": suspending hasty judgment on hard questions and persistently examining them from multiple perspectives."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-07",
+      "jlpt": 1,
+      "order": 7,
+      "passageType": "essay",
+      "titleJp": "都市[とし]の「余白[よはく]」がもたらす創造性[そうぞうせい]",
+      "titleEn": "The Creativity Born from Urban \"Blank Space\"",
+      "recommendedMinutes": 6,
+      "contextEn": "Urban architecture criticism on over-planned public spaces.",
+      "paragraphs": [
+        "近年[きんねん]の大規模[だいきぼ]な都市[とし]再開発[さいかいはつ]では、収益性[しゅうえきせい]と管理[かんり]のしやすさが優先[ゆうせん]され、あらゆる空間[くうかん]に明確[めいかく]な用途[ようと]が割[わ]り振[ふ]られる傾向[けいこう]にある。商業[しょうぎょう]エリア、歩行[ほこう]動線[どうせん]、有料[ゆうりょう]ラウンジといった具合[ぐあい]に、隙間[すきま]なく設計[せっけい]し尽[つ]くされた街[まち]は一見[いっけん]快適[かいてき]で美[うつく]しい。",
+        "しかし、用途[ようと]が厳密[げんみつ]に規定[きてい]された空間[くうかん]からは、偶発的[ぐうはつてき]な出会[であ]いや実験的[じっけんてき]な試[こころ]みが生[う]まれにくい。かつて街[まち]の活気[かっき]を支[ささ]えてきたのは、決[けっ]して洗練[せんれん]された施設[しせつ]だけではなく、使[つか]い方[かた]が定[さだ]まっていない広場[ひろば]や路地[ろじ]裏[うら]といった「余白[よはく]」の存在[そんざい]だった。",
+        "効率[こうりつ]一辺倒[いっぺんとう]の設計[せっけい]は短期的[たんきてき]な採算[さいさん]を生[う]んでも、長期的[ちょうきてき]には街[まち]から固有[こゆう]の文化[ぶんか]を奪[うば]いかねない。あえて用途[ようと]を決め込[きめこ]まない余白[よはく]を残[のこ]すことこそ、都市[とし]が自発的[じはつてき]に新陳[しんちん]代謝[たいしゃ]を続[つづ]けるための必要[ひつよう]条件[じょうけん]なのである。"
+      ],
+      "translationEn": [
+        "In recent large-scale urban redevelopments, profitability and ease of management tend to take priority, assigning a clear function to every square meter. A city designed down to the last gap—commercial zones, pedestrian corridors, paid lounges—appears comfortable and attractive at first glance.",
+        "Yet spaces whose uses are strictly prescribed rarely foster serendipitous encounters or experimental endeavors. What historically sustained urban vitality was never polished facilities alone, but the presence of \"blank spaces\" such as undefined plazas and back alleys.",
+        "Design obsessed solely with efficiency may yield short-term returns, yet in the long run risks stripping a city of its unique culture. Deliberately leaving blank spaces without predetermined functions is an essential condition for a city to keep renewing itself organically."
+      ],
+      "keyVocab": [
+        {
+          "word": "偶発的[ぐうはつてき]",
+          "reading": "ぐうはつてき",
+          "en": "serendipitous / accidental"
+        },
+        {
+          "word": "一辺倒[いっぺんとう]",
+          "reading": "いっぺんとう",
+          "en": "devoted exclusively to one thing"
+        },
+        {
+          "word": "新陳[しんちん]代謝[たいしゃ]",
+          "reading": "しんちんたいしゃ",
+          "en": "metabolism / organic renewal"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-07-q1",
+          "promptJp": "筆者[ひっしゃ]が述[の]べる都市[とし]の「余白[よはく]」とはどのような空間[くうかん]か。",
+          "promptEn": "What kind of space does the author mean by urban \"blank space\" (余白)?",
+          "choices": [
+            "収益[しゅうえき]を最大化[さいだいか]するために開発[かいはつ]された商業[しょうぎょう]施設[しせつ]",
+            "用途[ようと]が厳密[げんみつ]に固定[こてい]されておらず、人々が自由[じゆう]に関[かか]われる空間[くうかん]",
+            "安全[あんぜん]管理[かんり]のため住民[じゅうみん]の立[た]ち入[い]りを禁[きん]じた保護[ほご]区域[くいき]",
+            "再開発[さいかいはつ]の予算[よさん]不足[ぶそく]によって放置[ほうち]された空き地[あきち]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 2 and 3 define 余白 as plazas or alleys whose usage is not rigidly predetermined, enabling spontaneous encounters and cultural renewal."
+        },
+        {
+          "id": "rd-n1-07-q2",
+          "promptJp": "効率[こうりつ]だけを重視[じゅうし]した再開発[さいかいはつ]の問題点[もんだいてん]として、筆者[ひっしゃ]が指摘[してき]しているのはどれか。",
+          "promptEn": "What flaw does the author identify in redevelopment focused solely on efficiency?",
+          "choices": [
+            "短期的[たんきてき]な収益[しゅうえき]すら全[まった]く得[え]られなくなること",
+            "景観[けいかん]が乱[みだ]れて観光客[かんこうきゃく]が減少[げんしょう]すること",
+            "長期的[ちょうきてき]に街[まち]独自[どくじ]の文化[ぶんか]や自発的[じはつてき]な活力[かつりょく]を損[そこ]なうおそれがあること",
+            "歩行者[ほこうしゃ]の移動[いどう]が不便[ふべん]になり事故[じこ]が増[ふ]えること"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 states that while efficiency-only design may produce short-term profitability, long-term it risks robbing the city of its distinctive culture (\"街から固有の文化を奪いかねない\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-08",
+      "jlpt": 1,
+      "order": 8,
+      "passageType": "short",
+      "titleJp": "翻訳[ほんやく]の不可能性[ふかのうせい]と豊[ゆた]かさ",
+      "titleEn": "The Impossibility and Richness of Translation",
+      "recommendedMinutes": 5,
+      "contextEn": "Literary criticism short passage on translating across languages.",
+      "paragraphs": [
+        "ある言語[げんご]で書[か]かれた文学[ぶんがく]作品[さくひん]を別[べつ]の言語[げんご]へ移[うつ]し替[か]えるとき、原文[げんぶん]の響[ひび]きや文化的[ぶんかてき]な含意[がんい]を余[あま]すところなく再現[さいげん]することは原理的[げんりてき]に不可能[ふかのう]である。そのため翻訳[ほんやく]はしばしば「裏切[うらぎ]り」と評[ひょう]されてきた。",
+        "しかし逆[ぎゃく]に言[い]えば、完全[かんぜん]な置き換[おきか]えができないからこそ、翻訳者[ほんやくしゃ]は自国[じこく]の言葉[ことば]の限界[げんかい]と向[む]き合[あ]い、新[あら]たな表現[ひょうげん]を搾[しぼ]り出[だ]さざるを得[え]ない。翻訳[ほんやく]とは単[たん]なる意味[いみ]の伝達[でんたつ]にとどまらず、受[う]け入[い]れ側[がわ]の言語[げんご]そのものを揺[ゆ]さぶり、豊[ゆた]かに耕[たがや]す創造[そうぞう]行為[こうい]なのである。"
+      ],
+      "translationEn": [
+        "When transferring a literary work written in one language into another, it is fundamentally impossible to reproduce every nuance of the original's cadence and cultural implications without remainder. For this reason, translation has often been called a \"betrayal.\"",
+        "Conversely, however, precisely because exact substitution is impossible, translators are forced to confront the limits of their own language and wring out fresh expressions. Translation does not stop at mere transmission of meaning; it is a creative act that shakes up and richly cultivates the receiving language itself."
+      ],
+      "keyVocab": [
+        {
+          "word": "含意[がんい]",
+          "reading": "がんい",
+          "en": "implication / undertone"
+        },
+        {
+          "word": "〜にとどまらず",
+          "reading": "にとどまらず",
+          "en": "not limited to ..."
+        },
+        {
+          "word": "耕[たがや]す",
+          "reading": "たがやす",
+          "en": "to cultivate / enrich"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-08-q1",
+          "promptJp": "筆者[ひっしゃ]は翻訳[ほんやく]の「不可能性[ふかのうせい]」をどのように捉[とら]えているか。",
+          "promptEn": "How does the author view the \"impossibility\" of exact translation?",
+          "choices": [
+            "文学[ぶんがく]作品[さくひん]の翻訳[ほんやく]自体[じたい]が無意味[むいみ]であることの証拠[しょうこ]",
+            "翻訳先[ほんやくさき]の言語[げんご]に新[あら]たな表現[ひょうげん]を生[う]み出[だ]す契機[けいき]",
+            "機械[きかい]翻訳[ほんやく]の発達[はったつ]によって早晩[そうばん]解消[かいしょう]される技術的[ぎじゅつてき]課題[かだい]",
+            "翻訳者[ほんやくしゃ]の語学力[ごがくりょく]不足[ぶそく]から生[しょう]じる一時的[いちじてき]な問題[もんだい]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 reframes impossibility positively (\"完全な置き換えができないからこそ\"): it compels translators to push the limits of the target language and generate new expressive richness."
+        },
+        {
+          "id": "rd-n1-08-q2",
+          "promptJp": "この文章[ぶんしょう]の主張[しゅちょう]として最[もっと]も適切[てきせつ]なものはどれか。",
+          "promptEn": "Which statement best summarizes the passage's main claim?",
+          "choices": [
+            "翻訳[ほんやく]は原文[げんぶん]への裏切[うらぎ]りであるため、原書[げんしょ]で読[よ]むべきだ",
+            "翻訳[ほんやく]は単[たん]なる意味[いみ]の変換[へんかん]ではなく、受[う]け入[い]れ側[がわ]の言語[げんご]を鍛[きた]え広[ひろ]げる創造[そうぞう]行為[こうい]だ",
+            "文化的[ぶんかてき]な背景[はいけい]を省[はぶ]けば完全[かんぜん]な翻訳[ほんやく]が可能[かのう]になる",
+            "翻訳者[ほんやくしゃ]は原文[げんぶん]の響[ひび]きを無視[むし]して自由[じゆう]に創作[そうさく]すべきだ"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The concluding sentence explicitly defines translation as a creative act that challenges and enriches the target language itself."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-09",
+      "jlpt": 1,
+      "order": 9,
+      "passageType": "notice",
+      "titleJp": "研究[けんきゅう]助成金[じょせいきん]公募[こうぼ]要領[ようりょう]（抜粋[ばっすい]）",
+      "titleEn": "Research Grant Call for Proposals (Excerpt)",
+      "recommendedMinutes": 5,
+      "contextEn": "Official guidelines for an academic foundation's annual research grant (Jōhō Kensaku style).",
+      "paragraphs": [
+        "【応募[おうぼ]区分[くぶん]】A枠[わく]（若手[わかて]個人[こじん]研究[けんきゅう]）：応募[おうぼ]締切[しめきり]日[び]時点[じてん]で満[まん]三十九歳[さんじゅうきゅうさい]以下[いか]、上限[じょうげん]百五十万円[ひゃくごじゅうまんえん]、期間[きかん]二年[にねん]。B枠[わく]（学際[がくさい]共同[きょうどう]研究[けんきゅう]）：年齢[ねんれい]制限[せいげん]なし、異[こと]なる専門[せんもん]分野[ぶんや]の研究者[けんきゅうしゃ]三名[さんめい]以上[いじょう]で構成[こうせい]、上限[じょうげん]五百万円[ごひゃくまんえん]、期間[きかん]三年[さんねん]。",
+        "【重複[ちょうふく]制限[せいげん]】同一[どういつ]年度[ねんど]内[ない]に、研究[けんきゅう]代表者[だいひょうしゃ]としてA枠[わく]・B枠[わく]の両方[りょうほう]へ申請[しんせい]することはできない。ただし、A枠[わく]の代表者[だいひょうしゃ]が別[べつ]課題[かだい]のB枠[わく]に共同[きょうどう]研究者[けんきゅうしゃ]（分担者[ぶんたんしゃ]）として参画[さんかく]することは妨[さまた]げない。",
+        "【使途[しと]規定[きてい]】助成金[じょせいきん]は実験[じっけん]機器[きき]購入[こうにゅう]、旅費[りょひ]、資料[しりょう]費[ひ]に充[あ]てられるが、申請者[しんせいしゃ]本人[ほんにん]の人件費[じんけんひ]および所属[しょぞく]機関[きかん]の間接[かんせつ]経費[けいひ]には使用[しよう]不可[ふか]とする。"
+      ],
+      "translationEn": [
+        "[Categories] Track A (Early-Career Individual): Age 39 or under as of the deadline, up to 1.5M yen, 2-year term. Track B (Interdisciplinary Collaborative): No age limit, team of 3+ researchers from different disciplines, up to 5M yen, 3-year term.",
+        "[Overlap Restrictions] Within the same fiscal year, one cannot apply as Principal Investigator (PI) to both Track A and Track B. However, a Track A PI is not barred from participating as a co-investigator on a separate Track B project.",
+        "[Permitted Uses] Grants may cover lab equipment, travel, and reference materials, but may not be used for the applicant's own personnel salary or institutional overhead."
+      ],
+      "keyVocab": [
+        {
+          "word": "学際[がくさい]",
+          "reading": "がくさい",
+          "en": "interdisciplinary"
+        },
+        {
+          "word": "妨[さまた]げない",
+          "reading": "さまたげない",
+          "en": "does not preclude / is permitted"
+        },
+        {
+          "word": "使途[しと]",
+          "reading": "しと",
+          "en": "purpose for which funds are used"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-09-q1",
+          "promptJp": "三十五歳[さんじゅうごさい]の化学[かがく]研究者[けんきゅうしゃ]X氏[し]の申請[しんせい]パターンとして、規定[きてい]上[じょう]認[みと]められるものはどれか。",
+          "promptEn": "Which application pattern by 35-year-old chemistry researcher X is permitted under the rules?",
+          "choices": [
+            "A枠[わく]の代表者[だいひょうしゃ]と、B枠[わく]の代表者[だいひょうしゃ]の両方[りょうほう]に応募[おうぼ]する",
+            "化学[かがく]分野[ぶんや]のみの同期[どうき]三名[さんめい]でB枠[わく]に応募[おうぼ]する",
+            "A枠[わく]の代表者[だいひょうしゃ]として申請[しんせい]しつつ、別[べつ]課題[かだい]のB枠[わく]に共同[きょうどう]研究者[けんきゅうしゃ]として加[くわ]わる",
+            "A枠[わく]で採択[さいたく]された資金[しきん]を本人[ほんにん]の給与[きゅうよ]と所属[しょぞく]大学[だいがく]の間接[かんせつ]経費[けいひ]に充[あ]てる"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 explicitly permits a Track A PI to join a separate Track B project as a co-investigator (\"共同研究者として参画することは妨げない\"). Dual PI, single-discipline Track B, and personal salary/overhead are all prohibited."
+        },
+        {
+          "id": "rd-n1-09-q2",
+          "promptJp": "B枠[わく]の応募[おうぼ]要件[ようけん]として正[ただ]しい組合[くみあわ]せはどれか。",
+          "promptEn": "Which combination accurately reflects Track B requirements?",
+          "choices": [
+            "三十九歳[さんじゅうきゅうさい]以下[いか]・期間[きかん]二年[にねん]・上限[じょうげん]五百万円[ごひゃくまんえん]",
+            "年齢[ねんれい]不問[ふもん]・異分野[いぶんや]三名[さんめい]以上[いじょう]・期間[きかん]三年[さんねん]",
+            "年齢[ねんれい]不問[ふもん]・同一[どういつ]分野[ぶんや]二名[にめい]以上[いじょう]・上限[じょうげん]五百万円[ごひゃくまんえん]",
+            "四十歳[よんじゅっさい]以上[いじょう]・異分野[いぶんや]三名[さんめい]以上[いじょう]・期間[きかん]二年[にねん]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Track B has no age limit (\"年齢制限なし\"), requires 3+ researchers across different disciplines, runs for 3 years, and caps at 5M yen."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-10",
+      "jlpt": 1,
+      "order": 10,
+      "passageType": "comparison",
+      "titleJp": "文化財[ぶんかざい]のデジタル復元[ふくげん]をめぐる議論[ぎろん]（統合[とうごう]理解[りかい]）",
+      "titleEn": "Debating Digital Restoration of Cultural Heritage (Tōgō Rikai)",
+      "recommendedMinutes": 7,
+      "contextEn": "Two museum specialists express contrasting views on using VR and 3D replicas to preserve fragile heritage sites.",
+      "labelA": "文章[ぶんしょう]A（保存[ほぞん]工学[こうがく]研究者[けんきゅうしゃ]）",
+      "labelB": "文章[ぶんしょう]B（美術史[びじゅつし]キュレーター）",
+      "paragraphs": [
+        "国宝[こくほう]級[きゅう]の壁画[へきが]や建築物[けんちくぶつ]は、観覧者[かんらんしゃ]の呼気[こき]や照明[しょうめい]によって日々[ひび]劣化[れっか]が進[すす]む。高精細[こうせいさい]スキャンとVR技術[ぎじゅつ]を用[もち]いたデジタル復元[ふくげん]は、実物[じつぶつ]を厳重[げんじゅう]に保護[ほご]しつつ、世界中[せかいじゅう]の人々[ひとびと]に細部[さいぶ]まで公開[こうかい]できる画期的[かっきてき]な手段[しゅだん]である。",
+        "肉眼[にくがん]では確認[かくにん]困難[こんなん]な筆遣[ふでづか]いや、失[うしな]われた色彩[しきさい]の推定[すいてい]復元[ふくげん]まで体感[たいかん]できる点[てん]で、デジタル展示[てんじ]は単[たん]なる実物[じつぶつ]の代用品[だいようひん]を超[こ]えた教育的[きょういくてき]価値[かち]を持[も]っている。"
+      ],
+      "paragraphsB": [
+        "文化財[ぶんかざい]のデジタル記録[きろく]が保存[ほぞん]や学術[がくじゅつ]研究[けんきゅう]に計[はか]り知[し]れない恩恵[おんけい]をもたらすことは疑[うたが]いようがない。しかしながら、「デジタルで十分[じゅうぶん]体験[たいかん]できるから実物[じつぶつ]の公開[こうかい]は原則[げんそく]不要[ふよう]」という論調[ろんちょう]には危惧[きぐ]を覚[おぼ]える。",
+        "数百年[すうひゃくねん]の時[とき]を経[へ]て傷[きず]つきながらも現存[げんそん]する実物[じつぶつ]の前[まえ]に立[た]ったときの空気感[くうきかん]や畏敬[いけい]の念[ねん]は、どれほど解像度[かいぞうど]を高[たか]めても完全[かんぜん]には代替[だいたい]できない。デジタルは実物[じつぶつ]鑑賞[かんしょう]への関心[かんしん]を深[ふか]める補完[ほかん]として位置[いち]づけるべきであり、管理[かんり]体制[たいせい]を整[ととの]えた上[うえ]での限定[げんてい]公開[こうかい]は今後も不可欠[ふかけつ]である。"
+      ],
+      "translationEn": [
+        "National-treasure murals and historic structures deteriorate daily from visitors' breath and lighting. Digital restoration using high-resolution scanning and VR is a groundbreaking means of protecting originals strictly while opening every detail to people worldwide.",
+        "By letting viewers experience brushwork invisible to the naked eye and reconstructed lost colors, digital exhibitions possess educational value that goes beyond being a mere substitute for the real thing."
+      ],
+      "translationBEn": [
+        "There is no doubt that digital archiving of cultural assets brings immeasurable benefits to preservation and scholarly research. Yet I feel uneasy about rhetoric claiming that \"since digital experiences suffice, displaying originals is in principle unnecessary.\"",
+        "The atmosphere and sense of awe felt when standing before an authentic object that survives after centuries of wear cannot be fully replaced no matter how high the resolution. Digital tools should be positioned as complements deepening interest in originals, and controlled limited viewings remain indispensable."
+      ],
+      "keyVocab": [
+        {
+          "word": "劣化[れっか]",
+          "reading": "れっか",
+          "en": "deterioration / degradation"
+        },
+        {
+          "word": "危惧[きぐ]を覚[おぼ]える",
+          "reading": "きぐをおぼえる",
+          "en": "to feel apprehension / misgivings"
+        },
+        {
+          "word": "畏敬[いけい]の念[ねん]",
+          "reading": "いけいのねん",
+          "en": "sense of awe / reverence"
+        },
+        {
+          "word": "補完[ほかん]",
+          "reading": "ほかん",
+          "en": "complement / supplement"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-10-q1",
+          "promptJp": "デジタル復元[ふくげん]の位置[いち]づけについて、AとBの立場[たちば]の違[ちが]いはどれか。",
+          "promptEn": "How do A and B differ regarding the role of digital restoration?",
+          "choices": [
+            "Aは代用品[だいようひん]を超[こ]える独自[どくじ]の価値[かち]を評価[ひょうか]しているのに対し、Bは実物[じつぶつ]鑑賞[かんしょう]を補[おぎな]う補助的[ほじょてき]役割[やくわり]にとどめるべきだと主張[しゅちょう]している",
+            "Aは学術[がくじゅつ]研究[けんきゅう]のみに限定[げんてい]すべきとし、Bは一般[いっぱん]公開[こうかい]を全面[ぜんめん]推進[すいしん]している",
+            "AはVR技術[ぎじゅつ]の解像度[かいぞうど]不足[ぶそく]を批判[ひはん]し、Bは実物[じつぶつ]よりVRのほうが優[すぐ]れていると述[の]べている",
+            "AもBも文化財[ぶんかざい]の実物[じつぶつ]公開[こうかい]を完全[かんぜん]に廃止[はいし]すべきだという点[てん]で一致[いっち]している"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "A emphasizes digital exhibits' unique educational value transcending mere substitutes, whereas B insists digital tools should complement—never replace—controlled viewing of authentic artifacts."
+        },
+        {
+          "id": "rd-n1-10-q2",
+          "promptJp": "AとBが共通[きょうつう]して認[みと]めている事項[じこう]はどれか。",
+          "promptEn": "What point do both A and B agree on?",
+          "choices": [
+            "実物[じつぶつ]の前[まえ]で得[え]られる空気感[くうきかん]はVRで完全[かんぜん]に再現[さいげん]できる",
+            "デジタル化[か]は文化財[ぶんかざい]の保存[ほぞん]に大[おお]きな意義[いぎ]がある",
+            "呼気[こき]や照明[しょうめい]による劣化[れっか]は科学[かがく]的[てき]根拠[こんきょ]がない",
+            "一般[いっぱん]観覧者[かんらんしゃ]には修復[しゅうふく]前[まえ]の傷[きず]を見[み]せるべきではない"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Both writers affirm digital technology's huge value for preserving cultural heritage (\"実物を厳重に保護しつつ\" in A; \"保存や学術研究に計り知れない恩恵をもたらす\" in B)."
+        }
+      ]
+    }
+  ]
+}

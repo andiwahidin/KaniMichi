@@ -4,6 +4,7 @@ import {
   ListeningTaskType,
   ListeningTrack,
 } from '../types/listening';
+import { createJlptPackLoader, type JlptPackManifest } from './packLoader';
 
 export interface ListeningTaskMeta {
   id: ListeningTaskType;
@@ -51,7 +52,7 @@ export const LISTENING_TASK_TYPES: ListeningTaskMeta[] = [
   },
 ];
 
-let cachedPromise: Promise<ListeningDataset> | null = null;
+export type { JlptPackManifest as ListeningManifest };
 
 function buildDataset(tracks: ListeningTrack[]): ListeningDataset {
   const byJlpt: Record<JlptLevel, ListeningTrack[]> = {
@@ -73,25 +74,13 @@ function buildDataset(tracks: ListeningTrack[]): ListeningDataset {
   return { tracks, byJlpt, byId };
 }
 
-export function loadListeningDataset(): Promise<ListeningDataset> {
-  if (cachedPromise) return cachedPromise;
+const listeningLoader = createJlptPackLoader<ListeningTrack, ListeningDataset>({
+  dir: 'listening',
+  label: 'Mendengarkan Chōkai',
+  buildDataset,
+});
 
-  const baseUrl = import.meta.env.BASE_URL || '/';
-  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
-  const url = `${normalizedBase}data/listening-jlpt.json`;
-
-  cachedPromise = fetch(url)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`Gagal memuat materi Chōkai (HTTP ${res.status})`);
-      }
-      return res.json() as Promise<{ tracks: ListeningTrack[] }>;
-    })
-    .then((raw) => buildDataset(raw.tracks))
-    .catch((err) => {
-      cachedPromise = null;
-      throw err;
-    });
-
-  return cachedPromise;
-}
+export const loadListeningManifest = listeningLoader.loadManifest;
+export const loadListeningLevel = listeningLoader.loadLevel;
+export const loadListeningLevels = listeningLoader.loadLevels;
+export const loadListeningDataset = listeningLoader.loadAll;

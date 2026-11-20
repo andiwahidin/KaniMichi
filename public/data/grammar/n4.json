@@ -1,0 +1,778 @@
+{
+  "level": 4,
+  "pack": "n4",
+  "items": [
+    {
+      "id": "g-n4-01",
+      "jlpt": 4,
+      "order": 1,
+      "pattern": "～てしまう",
+      "reading": "～てしまう",
+      "meaning": "to finish completely; to do accidentally / regrettably",
+      "structure": "Verb (て-form) + しまう / しまいます",
+      "explanation": "Has two core nuances: (1) completing an action entirely from start to finish, or (2) doing something accidentally or with regret. In casual speech it contracts to ～ちゃう / ～じゃう.",
+      "confusableWith": "Context determines whether it signals satisfaction of completion or regret over an accident.",
+      "examples": [
+        {
+          "jp": "電車の中に傘を忘れてしまいました。",
+          "reading": "でんしゃのなかにかさをわすれてしまいました。",
+          "en": "I accidentally left my umbrella on the train."
+        },
+        {
+          "jp": "この小説は一日で全部読んでしまいました。",
+          "reading": "このしょうせつはいちにちでぜんぶよんでしまいました。",
+          "en": "I finished reading this entire novel in one day."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "大切な鍵をなくし",
+        "sentenceAfter": "。",
+        "en": "I regrettably lost my important key.",
+        "answer": "てしまいました",
+        "acceptedAnswers": [
+          "てしまいました",
+          "てしまった"
+        ],
+        "choices": [
+          "てみました",
+          "ておきました",
+          "てしまいました",
+          "てあります"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-02",
+      "jlpt": 4,
+      "order": 2,
+      "pattern": "～てみる",
+      "reading": "～てみる",
+      "meaning": "to try doing ~ (to see how it turns out)",
+      "structure": "Verb (て-form) + みる / みます",
+      "explanation": "Expresses trying out an action experimentally to experience it or see the result.",
+      "confusableWith": "Different from ～ようとする (attempting with effort). ～てみる means 'give it a try and see'.",
+      "examples": [
+        {
+          "jp": "この靴をはいてみてもいいですか。",
+          "reading": "このくつをはいてみてもいいですか。",
+          "en": "May I try on these shoes?"
+        },
+        {
+          "jp": "日本料理を自分で作ってみました。",
+          "reading": "にほんりょうりをじぶんでつくってみました。",
+          "en": "I tried making Japanese food myself."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "おいしいかどうか、少し食べ",
+        "sentenceAfter": "。",
+        "en": "I'll try eating a little to see if it's delicious.",
+        "answer": "てみます",
+        "acceptedAnswers": [
+          "てみます",
+          "てみる"
+        ],
+        "choices": [
+          "てみます",
+          "ておきます",
+          "てあります",
+          "てしまいます"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-03",
+      "jlpt": 4,
+      "order": 3,
+      "pattern": "～ておく",
+      "reading": "～ておく",
+      "meaning": "to do ~ in advance / as preparation; to leave as is",
+      "structure": "Verb (て-form) + おく / おきます",
+      "explanation": "Indicates doing something beforehand in preparation for a future event, or intentionally leaving something in a certain state. Contracts to ～とく in casual speech.",
+      "confusableWith": "Focuses on the intentional preparatory action (whereas ～てある focuses on the resulting state afterward).",
+      "examples": [
+        {
+          "jp": "旅行の前にホテルを予約しておきます。",
+          "reading": "りょこうのまえにほてるをよやくしておきます。",
+          "en": "I will book the hotel in advance before the trip."
+        },
+        {
+          "jp": "会議が始まるので、資料を机に置いておいてください。",
+          "reading": "かいぎがはじまるので、しりょうをつくえにおいておいてください。",
+          "en": "Since the meeting is starting, please leave the documents on the desk."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "お客様が来る前に、部屋を掃除し",
+        "sentenceAfter": "。",
+        "en": "I will clean the room in advance before the guests arrive.",
+        "answer": "ておきます",
+        "acceptedAnswers": [
+          "ておきます",
+          "ておく"
+        ],
+        "choices": [
+          "てしまいます",
+          "ておきます",
+          "てみます",
+          "てきます"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-04",
+      "jlpt": 4,
+      "order": 4,
+      "pattern": "～てある",
+      "reading": "～てある",
+      "meaning": "has been done (and remains in that state)",
+      "structure": "Transitive Verb (て-form) + ある / あります",
+      "explanation": "Describes the current visible state of something resulting from someone's deliberate prior action. Often changes the object particle を to が.",
+      "confusableWith": "JLPT trap: ～てある pairs with TRANSITIVE verbs (窓が開けてある), while ～ている for states pairs with INTRANSITIVE verbs (窓が開いている).",
+      "examples": [
+        {
+          "jp": "壁にカレンダーが掛けてあります。",
+          "reading": "かべにかれんだーがかけてあります。",
+          "en": "A calendar is hung on the wall."
+        },
+        {
+          "jp": "テーブルの上に花がかざってあります。",
+          "reading": "てーぶるのうえにはながかざってあります。",
+          "en": "Flowers have been arranged on the table."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "冷蔵庫に冷たいビールが入れて",
+        "sentenceAfter": "よ。",
+        "en": "Cold beer has been put in the refrigerator for us.",
+        "answer": "あります",
+        "acceptedAnswers": [
+          "あります",
+          "ある"
+        ],
+        "choices": [
+          "います",
+          "あります",
+          "みます",
+          "しまいます"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-05",
+      "jlpt": 4,
+      "order": 5,
+      "pattern": "～ながら",
+      "reading": "～ながら",
+      "meaning": "while doing ~ (simultaneous actions)",
+      "structure": "Verb A (ます-stem) + ながら + Verb B",
+      "explanation": "Indicates that the SAME person performs two actions at the same time. Verb B (the final verb) is the main, primary action.",
+      "confusableWith": "Cannot be used if two different people are performing the two actions (use ～あいだに instead).",
+      "examples": [
+        {
+          "jp": "音楽を聞きながら、ジョギングします。",
+          "reading": "おんがくをききながら、じょぎんぐします。",
+          "en": "I jog while listening to music."
+        },
+        {
+          "jp": "コーヒーを飲みながら、新聞を読みました。",
+          "reading": "こーひーをのみながら、しんぶんをよみました。",
+          "en": "I read the newspaper while drinking coffee."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "スマホを見",
+        "sentenceAfter": "歩くのは危ないです。",
+        "en": "Walking while looking at your smartphone is dangerous.",
+        "answer": "ながら",
+        "acceptedAnswers": [
+          "ながら"
+        ],
+        "choices": [
+          "てから",
+          "ながら",
+          "まえに",
+          "あとで"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-06",
+      "jlpt": 4,
+      "order": 6,
+      "pattern": "～ば (pengandaian)",
+      "reading": "～ば",
+      "meaning": "if ~ (general / necessary condition)",
+      "structure": "Verb (ば-form) / い-Adj (～ければ) + Clause B",
+      "explanation": "Expresses a hypothetical or general condition ('if A, then B'). Strongly highlights the condition required for the outcome.",
+      "confusableWith": "When Clause A is an action verb, Clause B normally cannot be a command or request unless Clause A is a state verb (e.g., あれば, できなければ).",
+      "examples": [
+        {
+          "jp": "毎日練習すれば、必ず上手になります。",
+          "reading": "まいにちれんしゅうすれば、かならずじょうずになります。",
+          "en": "If you practice every day, you will definitely improve."
+        },
+        {
+          "jp": "安ければ、買いたいです。",
+          "reading": "やすければ、かいたいです。",
+          "en": "If it is cheap, I want to buy it."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ボタンを押せ",
+        "sentenceAfter": "、ドアが開きます。",
+        "en": "If you press the button, the door opens.",
+        "answer": "ば",
+        "acceptedAnswers": [
+          "ば"
+        ],
+        "choices": [
+          "ば",
+          "のに",
+          "し",
+          "より"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-07",
+      "jlpt": 4,
+      "order": 7,
+      "pattern": "～たら",
+      "reading": "～たら",
+      "meaning": "if ~; when ~ (after A happens)",
+      "structure": "Plain Past (た-form) + ら + Clause B",
+      "explanation": "The most versatile conditional in Japanese. Means 'if' for hypothetical events and 'when/once' for future events certain to occur.",
+      "confusableWith": "Unlike と and ば, ～たら freely allows requests, invitations, and speaker intentions in Clause B.",
+      "examples": [
+        {
+          "jp": "駅に着いたら、電話してください。",
+          "reading": "えきについたら、でんわしてください。",
+          "en": "When you arrive at the station, please call me."
+        },
+        {
+          "jp": "雨が降ったら、試合は中止です。",
+          "reading": "あめがふったら、しあいはちゅうしです。",
+          "en": "If it rains, the match will be canceled."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "暇になっ",
+        "sentenceAfter": "、また遊びに来てください。",
+        "en": "When you have free time, please come visit again.",
+        "answer": "たら",
+        "acceptedAnswers": [
+          "たら"
+        ],
+        "choices": [
+          "たら",
+          "のに",
+          "ながら",
+          "ばかり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-08",
+      "jlpt": 4,
+      "order": 8,
+      "pattern": "～なら",
+      "reading": "～なら",
+      "meaning": "if it is the case that ~; speaking of ~",
+      "structure": "Plain form / Noun + なら",
+      "explanation": "Picks up a topic or premise mentioned by the listener or assumed in context, and gives advice, a recommendation, or a response based on it.",
+      "confusableWith": "Unlike ～たら (which requires A to happen BEFORE B), ～なら can express things to do BEFORE A happens (日本へ行くなら、この本がおすすめ).",
+      "examples": [
+        {
+          "jp": "京都へ行くなら、秋が一番きれいですよ。",
+          "reading": "きょうとへいくなら、あきがいちばんきれいですよ。",
+          "en": "If you are going to Kyoto, autumn is the most beautiful."
+        },
+        {
+          "jp": "すしなら、駅前の店がおいしいです。",
+          "reading": "すしなら、えきまえのみせがおいしいです。",
+          "en": "If it's sushi you want, the shop in front of the station is delicious."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "パソコンを買う",
+        "sentenceAfter": "、あの店が安いですよ。",
+        "en": "If you're going to buy a PC, that store is cheap.",
+        "answer": "なら",
+        "acceptedAnswers": [
+          "なら"
+        ],
+        "choices": [
+          "なら",
+          "ても",
+          "のに",
+          "ばかり"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-09",
+      "jlpt": 4,
+      "order": 9,
+      "pattern": "～ても",
+      "reading": "～ても",
+      "meaning": "even if ~; even though ~",
+      "structure": "Verb/Adj (て-form) / Noun + でも",
+      "explanation": "States that Clause B holds true regardless of the condition in Clause A.",
+      "confusableWith": "Unlike ～のに (which expresses regret/surprise about a real fact), ～ても is frequently used for hypothetical situations ('even if').",
+      "examples": [
+        {
+          "jp": "どんなに忙しくても、朝ごはんは食べます。",
+          "reading": "どんなにいそがしくても、あさごはんはたべます。",
+          "en": "No matter how busy I am, I eat breakfast."
+        },
+        {
+          "jp": "雨が降っても、出かけます。",
+          "reading": "あめがふっても、でかけます。",
+          "en": "Even if it rains, I will go out."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "何度説明し",
+        "sentenceAfter": "、彼はわかってくれません。",
+        "en": "Even though I explain it many times, he doesn't understand.",
+        "answer": "ても",
+        "acceptedAnswers": [
+          "ても"
+        ],
+        "choices": [
+          "たら",
+          "ても",
+          "から",
+          "ので"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-10",
+      "jlpt": 4,
+      "order": 10,
+      "pattern": "～のに",
+      "reading": "～のに",
+      "meaning": "even though ~; despite ~ (with surprise or frustration)",
+      "structure": "Plain form (な-Adj/Noun + な) + のに",
+      "explanation": "Connects a factual circumstance with an unexpected or disappointing outcome, carrying a strong nuance of regret, dissatisfaction, or surprise.",
+      "confusableWith": "JLPT trap: な-adjectives and nouns require な before のに (雨なのに, 静かなのに). Also never end a のに sentence with a command or request.",
+      "examples": [
+        {
+          "jp": "一生懸命勉強したのに、試験に落ちました。",
+          "reading": "いっしょうけんめいべんきょうしたのに、しけんにおちました。",
+          "en": "Even though I studied hard, I failed the exam."
+        },
+        {
+          "jp": "今日は日曜日なのに、仕事があります。",
+          "reading": "きょうはにちようびなのに、しごとがあります。",
+          "en": "Even though today is Sunday, I have work."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "約束した",
+        "sentenceAfter": "、彼は来ませんでした。",
+        "en": "Even though he promised, he didn't come.",
+        "answer": "のに",
+        "acceptedAnswers": [
+          "のに"
+        ],
+        "choices": [
+          "ので",
+          "から",
+          "のに",
+          "ため"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-11",
+      "jlpt": 4,
+      "order": 11,
+      "pattern": "～ようにする",
+      "reading": "～ようにする",
+      "meaning": "to make an effort to ~; to make sure to ~",
+      "structure": "Verb (dictionary form / ない-form) + ようにする",
+      "explanation": "Indicates consciously trying to establish a habit or making sure to do (or avoid doing) something.",
+      "confusableWith": "Contrast with ～ようになる (a change in ability or habit that happens naturally over time).",
+      "examples": [
+        {
+          "jp": "毎日野菜を食べるようにしています。",
+          "reading": "まいにちやさいをたべるようにしています。",
+          "en": "I make sure to eat vegetables every day."
+        },
+        {
+          "jp": "遅刻しないようにしてください。",
+          "reading": "ちこくしないようにしてください。",
+          "en": "Please make sure not to be late."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "健康のために、毎日三十分歩く",
+        "sentenceAfter": "います。",
+        "en": "For my health, I make an effort to walk 30 minutes every day.",
+        "answer": "ようにして",
+        "acceptedAnswers": [
+          "ようにして",
+          "ようにする"
+        ],
+        "choices": [
+          "ようになって",
+          "ようにして",
+          "ことになって",
+          "ことにして"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-12",
+      "jlpt": 4,
+      "order": 12,
+      "pattern": "～ようになる",
+      "reading": "～ようになる",
+      "meaning": "to come to ~; to become able to ~",
+      "structure": "Verb (potential / dictionary / ない-form) + ようになる",
+      "explanation": "Expresses a gradual change in state, ability, or habit from not being the case before to being the case now.",
+      "confusableWith": "Pairs heavily with potential verbs (話せるようになる = become able to speak).",
+      "examples": [
+        {
+          "jp": "やっと漢字が読めるようになりました。",
+          "reading": "やっとかんじがよめるようになりました。",
+          "en": "I have finally become able to read kanji."
+        },
+        {
+          "jp": "最近、コーヒーが飲めるようになりました。",
+          "reading": "さいきん、こーひーがのめるようになりました。",
+          "en": "Recently, I've become able to drink coffee."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "たくさん練習して、自転車に乗れる",
+        "sentenceAfter": "。",
+        "en": "After practicing a lot, I became able to ride a bicycle.",
+        "answer": "ようになりました",
+        "acceptedAnswers": [
+          "ようになりました",
+          "ようになった"
+        ],
+        "choices": [
+          "ようにしました",
+          "ようになりました",
+          "ことにしました",
+          "ことになりました"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-13",
+      "jlpt": 4,
+      "order": 13,
+      "pattern": "～そうだ (tampak / kelihatannya)",
+      "reading": "～そうだ",
+      "meaning": "looks like ~; seems about to ~ (visual appearance)",
+      "structure": "Verb (ます-stem) / い-Adj (drop い) / な-Adj (stem) + そうだ",
+      "explanation": "Expresses an impression based on immediate visual appearance, or that an action is on the verge of happening. Exception: いい becomes よさそうだ.",
+      "confusableWith": "JLPT classic trap: Plain form + そうだ means hearsay ('I heard that ~'), whereas STEM + そうだ means appearance ('looks ~').",
+      "examples": [
+        {
+          "jp": "このケーキはとてもおいしそうですね。",
+          "reading": "このけーきはとてもおいしそうですね。",
+          "en": "This cake looks very delicious, doesn't it?"
+        },
+        {
+          "jp": "空が暗いから、今にも雨が降りそうです。",
+          "reading": "そらがくらいから、いまにもあめがふりそうです。",
+          "en": "The sky is dark, so it looks like it's about to rain any minute."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "その荷物はとても重",
+        "sentenceAfter": "ですね。持ちましょうか。",
+        "en": "That luggage looks very heavy. Shall I carry it?",
+        "answer": "そう",
+        "acceptedAnswers": [
+          "そう",
+          "そうです"
+        ],
+        "choices": [
+          "そう",
+          "よう",
+          "らしい",
+          "はず"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-14",
+      "jlpt": 4,
+      "order": 14,
+      "pattern": "～そうだ (kabar / katanya)",
+      "reading": "～そうだ",
+      "meaning": "I heard that ~; reportedly ~ (hearsay)",
+      "structure": "Plain form + そうだ / そうです",
+      "explanation": "Reports information heard from another person, news, or media without adding personal conjecture. Often paired with ～によると ('according to ~').",
+      "confusableWith": "Keep the full plain form (おいしいそうです = I heard it's delicious, vs. おいしそうです = it looks delicious).",
+      "examples": [
+        {
+          "jp": "天気予報によると、明日は雪が降るそうです。",
+          "reading": "てんきよほうによると、あしたはゆきがふるそうです。",
+          "en": "According to the weather forecast, it will snow tomorrow."
+        },
+        {
+          "jp": "田中さんは来月結婚するそうです。",
+          "reading": "たなかさんはらいげつけっこんするそうです。",
+          "en": "I heard that Mr. Tanaka is getting married next month."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ニュースによると、来年電車賃が上がる",
+        "sentenceAfter": "。",
+        "en": "According to the news, train fares will go up next year.",
+        "answer": "そうです",
+        "acceptedAnswers": [
+          "そうです",
+          "そうだ"
+        ],
+        "choices": [
+          "そうです",
+          "みたいです",
+          "はずです",
+          "つもりです"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-15",
+      "jlpt": 4,
+      "order": 15,
+      "pattern": "～ために",
+      "reading": "～ために",
+      "meaning": "in order to ~; for the sake of ~",
+      "structure": "Volitional Verb (dictionary form) / Noun + の + ために",
+      "explanation": "Expresses a clear purpose or beneficiary. When used with verbs for purpose, both clauses normally share the same subject and the first verb is controllable/volitional.",
+      "confusableWith": "Compare with ～ように (used with non-volitional or potential verbs like 忘れないように, 聞こえるように).",
+      "examples": [
+        {
+          "jp": "車を買うために、貯金しています。",
+          "reading": "くるまをかうために、ちょきんしています。",
+          "en": "I am saving money in order to buy a car."
+        },
+        {
+          "jp": "家族のために毎日働いています。",
+          "reading": "かぞくのためにまいにちはたらいています。",
+          "en": "I work every day for the sake of my family."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本語の試験に合格する",
+        "sentenceAfter": "、毎日勉強しています。",
+        "en": "I study every day in order to pass the Japanese exam.",
+        "answer": "ために",
+        "acceptedAnswers": [
+          "ために",
+          "為に"
+        ],
+        "choices": [
+          "ために",
+          "のに",
+          "ばかり",
+          "ながら"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-16",
+      "jlpt": 4,
+      "order": 16,
+      "pattern": "～てあげる / ～てくれる / ～てもらう",
+      "reading": "～てあげる / ～てくれる / ～てもらう",
+      "meaning": "do a favor for / receive a favor from",
+      "structure": "Verb (て-form) + あげる / くれる / もらう",
+      "explanation": "Expresses the direction of favors: あげる (I/someone does for another), くれる (someone does for ME or my in-group), もらう (I/subject receives a favor from someone marked with に).",
+      "confusableWith": "Never use ～てあげる when someone does something for YOU — always use ～てくれる (with the giver as subject) or ～てもらう (with you as subject).",
+      "examples": [
+        {
+          "jp": "友達が日本語を教えてくれました。",
+          "reading": "ともだちがにほんごをおしえてくれました。",
+          "en": "My friend kindly taught me Japanese."
+        },
+        {
+          "jp": "先輩にレポートを見てもらいました。",
+          "reading": "せんぱいにれぽーとをみてもらいました。",
+          "en": "I had my senior check my report for me."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "道に迷ったとき、親切な人が案内し",
+        "sentenceAfter": "。",
+        "en": "When I got lost, a kind person showed me the way.",
+        "answer": "てくれました",
+        "acceptedAnswers": [
+          "てくれました",
+          "てくれた"
+        ],
+        "choices": [
+          "てあげました",
+          "てくれました",
+          "てもらいました",
+          "てしまいました"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-17",
+      "jlpt": 4,
+      "order": 17,
+      "pattern": "～し、～し",
+      "reading": "～し、～し",
+      "meaning": "not only ~ but also ~ (listing multiple reasons)",
+      "structure": "Plain form + し、Plain form + し",
+      "explanation": "Lists two or more qualities or reasons supporting an overall conclusion, implying 'and moreover, there are other reasons too'.",
+      "confusableWith": "Used when all listed items point in the same direction (all positive or all negative).",
+      "examples": [
+        {
+          "jp": "この店は安いし、おいしいし、よく来ます。",
+          "reading": "このみせはやすいし、おいしいし、よくきます。",
+          "en": "This shop is cheap and delicious, so I come here often."
+        },
+        {
+          "jp": "頭も痛いし、熱もあるし、今日は休みます。",
+          "reading": "あたまもいたいし、ねつもあるし、きょうはやすみます。",
+          "en": "My head hurts and I also have a fever, so I'll take today off."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "あのホテルは駅から近い",
+        "sentenceAfter": "、部屋もきれいです。",
+        "en": "That hotel is close to the station, and the rooms are clean too.",
+        "answer": "し",
+        "acceptedAnswers": [
+          "し"
+        ],
+        "choices": [
+          "のに",
+          "し",
+          "ば",
+          "ても"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-18",
+      "jlpt": 4,
+      "order": 18,
+      "pattern": "～かもしれない",
+      "reading": "～かもしれない",
+      "meaning": "might ~; maybe ~; possibly ~",
+      "structure": "Plain form (drop だ for な-Adj/Noun) + かもしれない",
+      "explanation": "Indicates uncertainty or a possibility (roughly 30–50% certainty). Polite form is ～かもしれません.",
+      "confusableWith": "Do NOT insert だ after nouns or な-adjectives (雨かもしれない, NOT 雨だかもしれない).",
+      "examples": [
+        {
+          "jp": "午後は雨が降るかもしれません。",
+          "reading": "ごごはあめがふるかもしれません。",
+          "en": "It might rain in the afternoon."
+        },
+        {
+          "jp": "彼はまだそのニュースを知らないかもしれない。",
+          "reading": "かれはまだそのにゅーすをしらないかもしれない。",
+          "en": "He might not know that news yet."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "道が込んでいるから、会議に遅れる",
+        "sentenceAfter": "。",
+        "en": "The road is congested, so I might be late for the meeting.",
+        "answer": "かもしれません",
+        "acceptedAnswers": [
+          "かもしれません",
+          "かもしれない"
+        ],
+        "choices": [
+          "はずです",
+          "かもしれません",
+          "つもりです",
+          "そうです"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-19",
+      "jlpt": 4,
+      "order": 19,
+      "pattern": "～やすい / ～にくい",
+      "reading": "～やすい / ～にくい",
+      "meaning": "easy to ~ / hard to ~",
+      "structure": "Verb (ます-stem) + やすい / にくい",
+      "explanation": "Attaches to a verb stem to turn it into an い-adjective describing ease or difficulty of performing an action, or tendency (e.g., 壊れやすい = fragile/breaks easily).",
+      "confusableWith": "Always uses the ます-stem (書きやすい = easy to write), never the dictionary form.",
+      "examples": [
+        {
+          "jp": "このペンはとても書きやすいです。",
+          "reading": "このぺんはとてもかきやすいです。",
+          "en": "This pen is very easy to write with."
+        },
+        {
+          "jp": "この道は暗くて歩きにくいです。",
+          "reading": "このみちはくらくてあるきにくいです。",
+          "en": "This road is dark and hard to walk on."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "先生の字は大きくて読み",
+        "sentenceAfter": "です。",
+        "en": "The teacher's handwriting is large and easy to read.",
+        "answer": "やすい",
+        "acceptedAnswers": [
+          "やすい"
+        ],
+        "choices": [
+          "やすい",
+          "にくい",
+          "すぎる",
+          "たい"
+        ]
+      }
+    },
+    {
+      "id": "g-n4-20",
+      "jlpt": 4,
+      "order": 20,
+      "pattern": "～すぎる",
+      "reading": "～すぎる",
+      "meaning": "too much ~; overly ~",
+      "structure": "Verb (ます-stem) / い-Adj (drop い) / な-Adj (stem) + すぎる",
+      "explanation": "Expresses excessiveness beyond an appropriate or desirable limit. Conjugates as a Group 2 (る) verb.",
+      "confusableWith": "For い-adjectives, drop the final い before attaching すぎる (高すぎる, NOT 高いすぎる). Exception: いい → よすぎる.",
+      "examples": [
+        {
+          "jp": "昨日お酒を飲みすぎました。",
+          "reading": "きのうおさけをのみすぎました。",
+          "en": "I drank too much alcohol yesterday."
+        },
+        {
+          "jp": "この部屋はちょっと狭すぎます。",
+          "reading": "このへやはちょっとせますぎます。",
+          "en": "This room is a bit too cramped."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このスープは塩を入れ",
+        "sentenceAfter": "て、しょっぱいです。",
+        "en": "I put too much salt in this soup, so it's salty.",
+        "answer": "すぎ",
+        "acceptedAnswers": [
+          "すぎ",
+          "すぎる"
+        ],
+        "choices": [
+          "やす",
+          "にく",
+          "すぎ",
+          "かけ"
+        ]
+      }
+    }
+  ]
+}

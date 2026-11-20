@@ -4,6 +4,7 @@ import {
   KanaVocabDataset,
   KanaVocabItem,
 } from '../types/kanaVocab';
+import { createJlptPackLoader, type JlptPackManifest } from './packLoader';
 
 export const KANA_VOCAB_CATEGORIES: {
   id: KanaVocabCategory;
@@ -42,8 +43,7 @@ export const KANA_VOCAB_CATEGORIES: {
   },
 ];
 
-let cachedKanaVocab: KanaVocabDataset | null = null;
-let loadingKanaVocabPromise: Promise<KanaVocabDataset> | null = null;
+export type { JlptPackManifest as KanaVocabManifest };
 
 function buildKanaVocabDataset(items: KanaVocabItem[]): KanaVocabDataset {
   const byId: Record<string, KanaVocabItem> = {};
@@ -67,27 +67,13 @@ function buildKanaVocabDataset(items: KanaVocabItem[]): KanaVocabDataset {
   return { items, byId, byJlpt };
 }
 
-export async function loadKanaVocabDataset(): Promise<KanaVocabDataset> {
-  if (cachedKanaVocab) return cachedKanaVocab;
-  if (!loadingKanaVocabPromise) {
-    const base = import.meta.env.BASE_URL.endsWith('/')
-      ? import.meta.env.BASE_URL
-      : `${import.meta.env.BASE_URL}/`;
-    loadingKanaVocabPromise = fetch(`${base}data/kana-vocab-jlpt.json`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Gagal memuat kosakata Non-Kanji (${res.status})`);
-        }
-        return res.json() as Promise<{ version: number; items: KanaVocabItem[] }>;
-      })
-      .then((raw) => {
-        cachedKanaVocab = buildKanaVocabDataset(raw.items);
-        return cachedKanaVocab;
-      })
-      .catch((err) => {
-        loadingKanaVocabPromise = null;
-        throw err;
-      });
-  }
-  return loadingKanaVocabPromise;
-}
+const kanaVocabLoader = createJlptPackLoader<KanaVocabItem, KanaVocabDataset>({
+  dir: 'kana-vocab',
+  label: 'Kosakata Kana JLPT',
+  buildDataset: buildKanaVocabDataset,
+});
+
+export const loadKanaVocabManifest = kanaVocabLoader.loadManifest;
+export const loadKanaVocabLevel = kanaVocabLoader.loadLevel;
+export const loadKanaVocabLevels = kanaVocabLoader.loadLevels;
+export const loadKanaVocabDataset = kanaVocabLoader.loadAll;

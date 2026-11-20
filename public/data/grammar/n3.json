@@ -1,0 +1,784 @@
+{
+  "level": 3,
+  "pack": "n3",
+  "items": [
+    {
+      "id": "g-n3-01",
+      "jlpt": 3,
+      "order": 1,
+      "pattern": "～おかげで",
+      "reading": "～おかげで",
+      "meaning": "thanks to ~ (positive cause)",
+      "structure": "Plain form (な-Adj+な / Noun+の) + おかげで",
+      "explanation": "Attributes a positive, fortunate outcome to a specific person or circumstance. Carries a clear tone of gratitude.",
+      "confusableWith": "JLPT classic pair: おかげで is for POSITIVE outcomes, whereas せいで is for NEGATIVE outcomes (blaming).",
+      "examples": [
+        {
+          "jp": "先生のおかげで、N3に合格できました。",
+          "reading": "せんせいのおかげで、えぬさんにごうかくできました。",
+          "en": "Thanks to my teacher, I was able to pass N3."
+        },
+        {
+          "jp": "早く家を出たおかげで、電車に間に合いました。",
+          "reading": "はやくいえをでたおかげで、でんしゃにまにあいました。",
+          "en": "Thanks to leaving home early, I made the train in time."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "毎日薬を飲んだ",
+        "sentenceAfter": "、すっかり元気になりました。",
+        "en": "Thanks to taking medicine every day, I completely recovered.",
+        "answer": "おかげで",
+        "acceptedAnswers": [
+          "おかげで",
+          "お陰で"
+        ],
+        "choices": [
+          "せいで",
+          "おかげで",
+          "くせに",
+          "わりに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-02",
+      "jlpt": 3,
+      "order": 2,
+      "pattern": "～せいで",
+      "reading": "～せいで",
+      "meaning": "because of ~; due to ~ (negative cause / blame)",
+      "structure": "Plain form (な-Adj+な / Noun+の) + せいで / せいだ",
+      "explanation": "Attributes an undesirable or unfortunate result to a specific cause, often expressing regret or blame.",
+      "confusableWith": "Never use せいで for happy or welcome results (use おかげで instead).",
+      "examples": [
+        {
+          "jp": "台風が来たせいで、旅行が中止になった。",
+          "reading": "たいふうがきたせいで、りょこうがちゅうしになった。",
+          "en": "Because a typhoon came, the trip was canceled."
+        },
+        {
+          "jp": "寝不足のせいで、頭がぼーっとしている。",
+          "reading": "ねぶそくのせいで、あたまがぼーっとしている。",
+          "en": "Due to lack of sleep, my head feels foggy."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "事故の",
+        "sentenceAfter": "、高速道路がひどく渋滞している。",
+        "en": "Because of the accident, the highway is heavily congested.",
+        "answer": "せいで",
+        "acceptedAnswers": [
+          "せいで"
+        ],
+        "choices": [
+          "おかげで",
+          "せいで",
+          "かわりに",
+          "たびに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-03",
+      "jlpt": 3,
+      "order": 3,
+      "pattern": "～うちに",
+      "reading": "～うちに",
+      "meaning": "while ~ (before a state changes)",
+      "structure": "Verb (る/ている/ない) / い-Adj / な-Adj+な / Noun+の + うちに",
+      "explanation": "Two main uses: (1) Do B while condition A still lasts, before it changes (e.g., while it's warm); (2) A gradual unnoticed change occurs during A.",
+      "confusableWith": "Unlike ～あいだに (neutral timeframe), ～うちに emphasizes seizing the window before conditions change.",
+      "examples": [
+        {
+          "jp": "温かいうちに、どうぞ召し上がってください。",
+          "reading": "あたたかいうちに、どうぞめしあがってください。",
+          "en": "Please eat it while it is still warm."
+        },
+        {
+          "jp": "忘れないうちに、メモしておこう。",
+          "reading": "わすれないうちに、めもしておこう。",
+          "en": "Let's take a note before I forget."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "雨が降らない",
+        "sentenceAfter": "、洗濯物を取り込みましょう。",
+        "en": "Let's bring in the laundry before it starts raining.",
+        "answer": "うちに",
+        "acceptedAnswers": [
+          "うちに"
+        ],
+        "choices": [
+          "うちに",
+          "たびに",
+          "かわりに",
+          "とおりに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-04",
+      "jlpt": 3,
+      "order": 4,
+      "pattern": "～たびに",
+      "reading": "～たびに",
+      "meaning": "every time ~; whenever ~",
+      "structure": "Verb (dictionary form) / Noun + の + たびに",
+      "explanation": "States that whenever Event A occurs, Event B consistently happens as well.",
+      "confusableWith": "Not used for fixed daily routines like waking up (毎朝), nor with past tense verbs before たびに.",
+      "examples": [
+        {
+          "jp": "この曲を聞くたびに、高校時代を思い出す。",
+          "reading": "このきょくをきくたびに、こうこうじだいをおもいだす。",
+          "en": "Every time I hear this song, I remember my high school days."
+        },
+        {
+          "jp": "旅行のたびに、お土産を買って帰ります。",
+          "reading": "りょこうのたびに、おみやげをかってかえります。",
+          "en": "Whenever I travel, I buy souvenirs to bring home."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼に会う",
+        "sentenceAfter": "、いつも新しい話を聞かせてくれる。",
+        "en": "Every time I meet him, he always tells me a new story.",
+        "answer": "たびに",
+        "acceptedAnswers": [
+          "たびに",
+          "度に"
+        ],
+        "choices": [
+          "うちに",
+          "たびに",
+          "せいで",
+          "くせに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-05",
+      "jlpt": 3,
+      "order": 5,
+      "pattern": "～ことにする / ～ことになる",
+      "reading": "～ことにする / ～ことになる",
+      "meaning": "decide to ~ / it has been decided that ~",
+      "structure": "Verb (dictionary form / ない-form) + ことにする / ことになる",
+      "explanation": "ことにする expresses a personal, deliberate decision ('I decided to ~'). ことになる expresses an external decision, rule, or natural outcome ('it has been decided that ~').",
+      "confusableWith": "In business Japanese, people often use ことになる even for their own decisions to sound humble and polite.",
+      "examples": [
+        {
+          "jp": "来月から大阪支店に転勤することになりました。",
+          "reading": "らいげつからおおさかしてんにてんきんすることになりました。",
+          "en": "It has been decided that I will transfer to the Osaka branch next month."
+        },
+        {
+          "jp": "ダイエットのため、夜はお菓子を食べないことにしました。",
+          "reading": "だいえっとのため、よるはおかしをたべないことにしました。",
+          "en": "For my diet, I decided not to eat snacks at night."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "会社の規則で、来週から制服を着る",
+        "sentenceAfter": "。",
+        "en": "By company rules, it has been decided that we will wear uniforms from next week.",
+        "answer": "ことになりました",
+        "acceptedAnswers": [
+          "ことになりました",
+          "ことになった"
+        ],
+        "choices": [
+          "ことにしました",
+          "ことになりました",
+          "ようにしました",
+          "ようになりました"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-06",
+      "jlpt": 3,
+      "order": 6,
+      "pattern": "～はずだ",
+      "reading": "～はずだ",
+      "meaning": "should be ~; is expected to ~ (logical certainty)",
+      "structure": "Plain form (な-Adj+な / Noun+の) + はずだ",
+      "explanation": "Expresses strong logical expectation based on clear evidence, schedules, or reasoning. Negative はずがない means 'there is no way ~'.",
+      "confusableWith": "Never use はずだ for pure guesses without evidence (use かもしれない) or for moral obligations (use べきだ).",
+      "examples": [
+        {
+          "jp": "さっきメールを送ったので、もう届いているはずです。",
+          "reading": "さっきめーるをおくったので、もうとどいているはずです。",
+          "en": "I sent the email just now, so it should have arrived by now."
+        },
+        {
+          "jp": "あんなに真面目な彼が、嘘をつくはずがない。",
+          "reading": "あんなにまじめなかれが、うそをつくはずがない。",
+          "en": "There is no way someone as earnest as him would lie."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "鍵はさっきカバンに入れたから、中にある",
+        "sentenceAfter": "。",
+        "en": "I put the key in the bag earlier, so it ought to be inside.",
+        "answer": "はずです",
+        "acceptedAnswers": [
+          "はずです",
+          "はずだ"
+        ],
+        "choices": [
+          "はずです",
+          "そうです",
+          "みたいです",
+          "ばかりです"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-07",
+      "jlpt": 3,
+      "order": 7,
+      "pattern": "～わけだ",
+      "reading": "～わけだ",
+      "meaning": "that explains why ~; no wonder ~; it means that ~",
+      "structure": "Plain form (な-Adj+な / Noun+の) + わけだ",
+      "explanation": "States a natural logical conclusion or a sudden realization ('so that's why!'). Often used when connecting a known fact to its obvious consequence.",
+      "confusableWith": "Compare with ～わけではない ('it does not necessarily mean that ~') and ～わけがない ('there is no way ~').",
+      "examples": [
+        {
+          "jp": "彼女は日本に十年住んでいたそうだ。日本語が上手なわけだ。",
+          "reading": "かのじょはにほんにじゅうねんすんでいたそうだ。にほんごがじょうずなわけだ。",
+          "en": "I heard she lived in Japan for ten years. No wonder her Japanese is so good."
+        },
+        {
+          "jp": "5%割引なら、九百五十円になるわけですね。",
+          "reading": "ごぱーせんとわりびきなら、きゅうひゃくごじゅうえんになるわけですね。",
+          "en": "With a 5% discount, that means it comes to 950 yen."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ここは標高二千メートルある。夏でも涼しい",
+        "sentenceAfter": "。",
+        "en": "This place is 2,000 meters above sea level. No wonder it's cool even in summer.",
+        "answer": "わけだ",
+        "acceptedAnswers": [
+          "わけだ",
+          "わけです",
+          "訳だ",
+          "訳です"
+        ],
+        "choices": [
+          "くせだ",
+          "わけだ",
+          "とおりだ",
+          "ばかりだ"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-08",
+      "jlpt": 3,
+      "order": 8,
+      "pattern": "～わけではない",
+      "reading": "～わけではない",
+      "meaning": "it does not mean that ~; not necessarily ~",
+      "structure": "Plain form (な-Adj+な / Noun+の) + わけではない",
+      "explanation": "Partially negates a sweeping assumption or misunderstanding. Softens disagreement politely.",
+      "confusableWith": "Distinct from ～わけがない (total impossibility). わけではない simply clarifies 'not necessarily / it's not that ~'.",
+      "examples": [
+        {
+          "jp": "甘いものが嫌いなわけではないが、今は食べたくない。",
+          "reading": "あまいものがきらいなわけではないが、いまはたべたくない。",
+          "en": "It's not that I dislike sweets, I just don't feel like eating them right now."
+        },
+        {
+          "jp": "高ければ必ず質がいいというわけではない。",
+          "reading": "たかければかならずしつがいいというわけではない。",
+          "en": "Just because something is expensive doesn't necessarily mean the quality is good."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本人が全員すしが好きな",
+        "sentenceAfter": "。",
+        "en": "It is not the case that all Japanese people like sushi.",
+        "answer": "わけではない",
+        "acceptedAnswers": [
+          "わけではない",
+          "わけではありません"
+        ],
+        "choices": [
+          "わけではない",
+          "わけがない",
+          "にちがいない",
+          "ばかりだ"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-09",
+      "jlpt": 3,
+      "order": 9,
+      "pattern": "～ばかり",
+      "reading": "～ばかり",
+      "meaning": "only ~; nothing but ~; just did ~ (～たばかり)",
+      "structure": "Noun / Verb (て-form) + ばかり | Verb (た-form) + ばかり",
+      "explanation": "With Nouns or て-form, expresses doing one thing excessively (often with mild criticism). With た-form, means 'just finished doing ~ recently' (subjective recency).",
+      "confusableWith": "～たばかり can refer to weeks or months ago if it still feels fresh to the speaker, unlike ～たところ (strictly seconds/minutes ago).",
+      "examples": [
+        {
+          "jp": "弟は毎日ゲームをしてばかりいる。",
+          "reading": "おとうとはまいにちげーむをしてばかりいる。",
+          "en": "My younger brother does nothing but play games every day."
+        },
+        {
+          "jp": "先月、日本に来たばかりです。",
+          "reading": "せんげつ、にほんにきたばかりです。",
+          "en": "I just arrived in Japan last month."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このパソコンは先週買った",
+        "sentenceAfter": "なのに、もう壊れた。",
+        "en": "Even though I just bought this PC last week, it already broke.",
+        "answer": "ばかり",
+        "acceptedAnswers": [
+          "ばかり"
+        ],
+        "choices": [
+          "ばかり",
+          "ばかりに",
+          "たびに",
+          "かわりに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-10",
+      "jlpt": 3,
+      "order": 10,
+      "pattern": "～とおりに",
+      "reading": "～とおりに",
+      "meaning": "just as ~; in the exact way ~",
+      "structure": "Verb (dictionary/た-form) / Noun + の + とおりに",
+      "explanation": "Indicates following an instruction, plan, or expectation faithfully without deviation. When attached directly to a noun without の, it becomes どおり(に) (e.g., 予定どおり).",
+      "confusableWith": "Remember the voicing rule: Noun + の + とおり vs. Noun + どおり.",
+      "examples": [
+        {
+          "jp": "わたしが言うとおりに、繰り返してください。",
+          "reading": "わたしがいうとおりに、くりかえしてください。",
+          "en": "Please repeat just as I say."
+        },
+        {
+          "jp": "説明書に書いてあるとおりに組み立てた。",
+          "reading": "せつめいしょにかいてあるとおりにくみたてた。",
+          "en": "I assembled it exactly as written in the manual."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "先生が教えた",
+        "sentenceAfter": "作ったら、とてもおいしくできた。",
+        "en": "When I made it just as the teacher taught, it turned out very delicious.",
+        "answer": "とおりに",
+        "acceptedAnswers": [
+          "とおりに",
+          "通りに"
+        ],
+        "choices": [
+          "かわりに",
+          "とおりに",
+          "くせに",
+          "わりに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-11",
+      "jlpt": 3,
+      "order": 11,
+      "pattern": "～かわりに",
+      "reading": "～かわりに",
+      "meaning": "instead of ~; in exchange for ~; on behalf of ~",
+      "structure": "Plain form / Noun + の + かわりに",
+      "explanation": "Has three core uses: (1) replacing one thing/person with another, (2) doing B in exchange for A, and (3) weighing a trade-off ('it has disadvantage A, but in return advantage B').",
+      "confusableWith": "When expressing a trade-off between two adjectives, it mirrors English 'it's A, but on the other hand B'.",
+      "examples": [
+        {
+          "jp": "病気の父のかわりに、わたしが会議に出ました。",
+          "reading": "びょうきのちちのかわりに、わたしがかいぎにでました。",
+          "en": "I attended the meeting on behalf of my sick father."
+        },
+        {
+          "jp": "この部屋は駅に近いかわりに、家賃が高い。",
+          "reading": "このへやはえきにちかいかわりに、やちんがたかい。",
+          "en": "This apartment is close to the station, but in return the rent is high."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "英語を教えてあげる",
+        "sentenceAfter": "、日本語を教えてください。",
+        "en": "In exchange for me teaching you English, please teach me Japanese.",
+        "answer": "かわりに",
+        "acceptedAnswers": [
+          "かわりに",
+          "代わりに"
+        ],
+        "choices": [
+          "かわりに",
+          "とおりに",
+          "おかげで",
+          "たびに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-12",
+      "jlpt": 3,
+      "order": 12,
+      "pattern": "～によって",
+      "reading": "～によって",
+      "meaning": "depending on ~; by means of ~; due to ~",
+      "structure": "Noun + によって / による + Noun",
+      "explanation": "A cornerstone N3/N2 grammar point with four meanings: (1) variation ('depending on'), (2) agent of passive creation ('invented by'), (3) cause ('due to'), and (4) method ('through/by').",
+      "confusableWith": "Before a noun, change によって to による (地震による被害 = damage caused by the earthquake).",
+      "examples": [
+        {
+          "jp": "文化や習慣は国によって違います。",
+          "reading": "ぶんかやしゅうかんはくにによってちがいます。",
+          "en": "Culture and customs differ depending on the country."
+        },
+        {
+          "jp": "この小説は有名な作家によって書かれました。",
+          "reading": "このしょうせつはゆうめいなさっかによってかかれました。",
+          "en": "This novel was written by a famous author."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "季節",
+        "sentenceAfter": "、山の景色は大きく変わります。",
+        "en": "Depending on the season, the mountain scenery changes dramatically.",
+        "answer": "によって",
+        "acceptedAnswers": [
+          "によって"
+        ],
+        "choices": [
+          "にとって",
+          "によって",
+          "について",
+          "に対して"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-13",
+      "jlpt": 3,
+      "order": 13,
+      "pattern": "～にとって",
+      "reading": "～にとって",
+      "meaning": "for ~; from the standpoint of ~",
+      "structure": "Noun (person / group) + にとって(は) / にとっての + Noun",
+      "explanation": "Frames an evaluation or judgment specifically from the perspective of a person, group, or entity.",
+      "confusableWith": "JLPT trap: Always followed by an evaluative predicate (大切だ, 難しい, 必要だ), NOT an action verb.",
+      "examples": [
+        {
+          "jp": "外国人にとって、日本語の敬語はとても難しい。",
+          "reading": "がいこくじんにとって、にほんごのけいごはとてもむずかしい。",
+          "en": "For foreigners, Japanese honorifics are very difficult."
+        },
+        {
+          "jp": "この写真はわたしにとって一生の宝物です。",
+          "reading": "このしゃしんはわたしにとっていっしょうのたからものです。",
+          "en": "To me, this photo is a lifelong treasure."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "学生",
+        "sentenceAfter": "、辞書はなくてはならない道具だ。",
+        "en": "For students, a dictionary is an indispensable tool.",
+        "answer": "にとって",
+        "acceptedAnswers": [
+          "にとって"
+        ],
+        "choices": [
+          "について",
+          "にとって",
+          "によって",
+          "に関して"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-14",
+      "jlpt": 3,
+      "order": 14,
+      "pattern": "～について",
+      "reading": "～について",
+      "meaning": "about ~; concerning ~",
+      "structure": "Noun + について / についての + Noun",
+      "explanation": "Indicates the topic or subject matter of speaking, thinking, researching, or writing.",
+      "confusableWith": "More everyday than に関して (N2), which sounds broader and more formal.",
+      "examples": [
+        {
+          "jp": "日本の歴史について調べています。",
+          "reading": "にほんのれきしについてしらべています。",
+          "en": "I am researching about Japanese history."
+        },
+        {
+          "jp": "この計画について、何か意見はありますか。",
+          "reading": "このけいかくについて、なにかいけんはありますか。",
+          "en": "Do you have any opinions about this plan?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "環境問題",
+        "sentenceAfter": "、クラスで話し合いました。",
+        "en": "We discussed environmental issues in class.",
+        "answer": "について",
+        "acceptedAnswers": [
+          "について"
+        ],
+        "choices": [
+          "にとって",
+          "について",
+          "によって",
+          "にかけて"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-15",
+      "jlpt": 3,
+      "order": 15,
+      "pattern": "～に対して",
+      "reading": "～に対して",
+      "meaning": "toward ~; in contrast to ~; per ~",
+      "structure": "Noun + に対して / Clause + のに対して",
+      "explanation": "Shows either (1) the target of an attitude/action ('polite toward customers') or (2) a sharp contrast between two clauses ('whereas A, B').",
+      "confusableWith": "Notice how Clause + のに対して works just like 'whereas' in English.",
+      "examples": [
+        {
+          "jp": "店員はお客様に対して丁寧な言葉を使います。",
+          "reading": "てんいんはおきゃくさまにたいしてていねいなことばをつかいます。",
+          "en": "Shop staff use polite language toward customers."
+        },
+        {
+          "jp": "兄が活発なのに対して、弟はおとなしい。",
+          "reading": "あにがかっぱつなのにたいして、おとうとはおとなしい。",
+          "en": "Whereas my older brother is outgoing, my younger brother is quiet."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼の意見",
+        "sentenceAfter": "、多くの人が反対した。",
+        "en": "Many people opposed his opinion.",
+        "answer": "に対して",
+        "acceptedAnswers": [
+          "に対して",
+          "にたいして"
+        ],
+        "choices": [
+          "にとって",
+          "に対して",
+          "によって",
+          "について"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-16",
+      "jlpt": 3,
+      "order": 16,
+      "pattern": "～べきだ",
+      "reading": "～べきだ",
+      "meaning": "should ~; ought to ~ (moral/social duty)",
+      "structure": "Verb (dictionary form) + べきだ (する → するべき / すべき)",
+      "explanation": "Expresses a strong sense of moral duty, social obligation, or sensible advice. Negative form is ～べきではない ('should not').",
+      "confusableWith": "Do not use for polite suggestions to superiors; it can sound preachy. Remember する can become すべき.",
+      "examples": [
+        {
+          "jp": "約束したことは必ず守るべきだ。",
+          "reading": "やくそくしたことはかならずまもるべきだ。",
+          "en": "You should definitely keep your promises."
+        },
+        {
+          "jp": "人の悪口は言うべきではない。",
+          "reading": "ひとのわるぐちはいうべきではない。",
+          "en": "One should not speak ill of others."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "間違いに気づいたら、すぐに謝る",
+        "sentenceAfter": "。",
+        "en": "If you realize you made a mistake, you ought to apologize immediately.",
+        "answer": "べきだ",
+        "acceptedAnswers": [
+          "べきだ",
+          "べきです"
+        ],
+        "choices": [
+          "はずだ",
+          "べきだ",
+          "わけだ",
+          "つもりだ"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-17",
+      "jlpt": 3,
+      "order": 17,
+      "pattern": "～にちがいない",
+      "reading": "～にちがいない",
+      "meaning": "must be ~; without a doubt ~ (strong conviction)",
+      "structure": "Plain form (drop だ for な-Adj/Noun) + にちがいない",
+      "explanation": "Expresses the speaker's strong subjective conviction or certainty ('it must be ~ / I'm sure ~').",
+      "confusableWith": "Compared to はずだ (objective reasoning), にちがいない reflects stronger personal conviction or intuition.",
+      "examples": [
+        {
+          "jp": "こんなに雪が降っているから、明日は寒いに違いない。",
+          "reading": "こんなにゆきがふっているから、あしたはさむいにちがいない。",
+          "en": "Since it's snowing this much, tomorrow must be freezing."
+        },
+        {
+          "jp": "彼はきっと成功するに違いない。",
+          "reading": "かれはきっとせいこうするにちがいない。",
+          "en": "He will surely succeed without a doubt."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "あんなに練習したのだから、優勝する",
+        "sentenceAfter": "。",
+        "en": "Since they practiced so much, they are bound to win the championship.",
+        "answer": "にちがいない",
+        "acceptedAnswers": [
+          "にちがいない",
+          "に違いない",
+          "に違いありません",
+          "にちがいありません"
+        ],
+        "choices": [
+          "にちがいない",
+          "かもしれない",
+          "わけではない",
+          "にくせに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-18",
+      "jlpt": 3,
+      "order": 18,
+      "pattern": "～くせに",
+      "reading": "～くせに",
+      "meaning": "even though ~; despite ~ (critical / blaming tone)",
+      "structure": "Plain form (な-Adj+な / Noun+の) + くせに",
+      "explanation": "A strongly critical or sarcastic version of のに, used to reproach someone whose behavior contradicts their status, claims, or abilities.",
+      "confusableWith": "JLPT trap: Both clauses must share the SAME subject, and it can only criticize people/animals (not weather or inanimate objects).",
+      "examples": [
+        {
+          "jp": "自分は何もしないくせに、文句ばかり言う。",
+          "reading": "じぶんはなにもしないくせに、もんくばかりいう。",
+          "en": "Even though he does nothing himself, he does nothing but complain."
+        },
+        {
+          "jp": "知っているくせに、教えてくれなかった。",
+          "reading": "しっているくせに、おしえてくれなかった。",
+          "en": "Even though you knew, you didn't tell me."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "子供の",
+        "sentenceAfter": "、大人みたいな話し方をする。",
+        "en": "Even though he's just a child, he talks like an adult.",
+        "answer": "くせに",
+        "acceptedAnswers": [
+          "くせに"
+        ],
+        "choices": [
+          "わりに",
+          "くせに",
+          "おかげで",
+          "ために"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-19",
+      "jlpt": 3,
+      "order": 19,
+      "pattern": "～わりに",
+      "reading": "～わりに",
+      "meaning": "for ~; considering ~; relatively ~",
+      "structure": "Plain form (な-Adj+な / Noun+の) + わりに(は)",
+      "explanation": "States that a result or quality differs surprisingly from what one would normally expect given a standard or baseline.",
+      "confusableWith": "Unlike ～にしては (which evaluates against a concrete category like 'for a beginner'), ～わりに compares against a proportional degree ('considering its price/age').",
+      "examples": [
+        {
+          "jp": "このレストランは値段のわりに、とてもおいしい。",
+          "reading": "このれすとらんはねだんのわりに、とてもおいしい。",
+          "en": "This restaurant is very delicious considering the price."
+        },
+        {
+          "jp": "よく食べるわりに、彼はあまり太らない。",
+          "reading": "よくたべるわりに、かれはあまりふとらない。",
+          "en": "Considering how much he eats, he doesn't gain much weight."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ここは都会の",
+        "sentenceAfter": "、夜はとても静かだ。",
+        "en": "For a big city, it is very quiet at night here.",
+        "answer": "わりに",
+        "acceptedAnswers": [
+          "わりに",
+          "わりには",
+          "割に",
+          "割には"
+        ],
+        "choices": [
+          "せいで",
+          "おかげで",
+          "わりに",
+          "とおりに"
+        ]
+      }
+    },
+    {
+      "id": "g-n3-20",
+      "jlpt": 3,
+      "order": 20,
+      "pattern": "～っぱなし",
+      "reading": "～っぱなし",
+      "meaning": "to leave ~ in a state (usually neglectful)",
+      "structure": "Verb (ます-stem) + っぱなし(だ / にする)",
+      "explanation": "Indicates leaving something undone or in an unchanged state (lights left on, door left open, standing nonstop), typically with a nuance of carelessness or complaint.",
+      "confusableWith": "Contrast with ～ておく (intentional preparation) vs. ～っぱなし (careless neglect).",
+      "examples": [
+        {
+          "jp": "テレビをつけっぱなしで寝てしまった。",
+          "reading": "てれびをつけっぱなしでねてしまった。",
+          "en": "I fell asleep leaving the TV on."
+        },
+        {
+          "jp": "満員電車で一時間ずっと立ちっぱなしだった。",
+          "reading": "まんいんでんしゃでいちじかんずっとたちっぱなしだった。",
+          "en": "I was left standing nonstop for an hour on the packed train."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "水道の水を出し",
+        "sentenceAfter": "にしないでください。",
+        "en": "Please do not leave the tap water running.",
+        "answer": "っぱなし",
+        "acceptedAnswers": [
+          "っぱなし"
+        ],
+        "choices": [
+          "っぱなし",
+          "ばかり",
+          "ながら",
+          "かけ"
+        ]
+      }
+    }
+  ]
+}

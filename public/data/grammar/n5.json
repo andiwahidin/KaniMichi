@@ -1,0 +1,782 @@
+{
+  "level": 5,
+  "pack": "n5",
+  "items": [
+    {
+      "id": "g-n5-01",
+      "jlpt": 5,
+      "order": 1,
+      "pattern": "～は～です",
+      "reading": "～は～です",
+      "meaning": "A is B (topic marker + polite copula)",
+      "structure": "Noun A + は + Noun B + です",
+      "explanation": "Marks Noun A as the topic of the sentence and states that it is Noun B politely. The particle は is written with the kana for 'ha' but always pronounced 'wa'.",
+      "confusableWith": "が marks the grammatical subject or new information, whereas は sets the broader topic.",
+      "examples": [
+        {
+          "jp": "わたしは学生です。",
+          "reading": "わたしはがくせいです。",
+          "en": "I am a student."
+        },
+        {
+          "jp": "これは日本語の本です。",
+          "reading": "これはにほんごのほんです。",
+          "en": "This is a Japanese book."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "田中さん",
+        "sentenceAfter": "先生です。",
+        "en": "Mr. Tanaka is a teacher.",
+        "answer": "は",
+        "acceptedAnswers": [
+          "は"
+        ],
+        "choices": [
+          "は",
+          "を",
+          "に",
+          "で"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-02",
+      "jlpt": 5,
+      "order": 2,
+      "pattern": "～ている",
+      "reading": "～ている",
+      "meaning": "to be doing; resulting state",
+      "structure": "Verb (て-form) + いる / います",
+      "explanation": "Expresses either an action currently in progress (like 'is eating') or an ongoing state resulting from a completed change (like 'is married' or 'lives in').",
+      "confusableWith": "With instantaneous change verbs like 結婚する (marry) or 知る (come to know), ～ている describes the current state, not an action in progress.",
+      "examples": [
+        {
+          "jp": "今、音楽を聞いています。",
+          "reading": "いま、おんがくをきいています。",
+          "en": "I am listening to music right now."
+        },
+        {
+          "jp": "姉は東京に住んでいます。",
+          "reading": "あねはとうきょうにすんでいます。",
+          "en": "My older sister lives in Tokyo."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "外で雨が降っ",
+        "sentenceAfter": "。",
+        "en": "It is raining outside.",
+        "answer": "ています",
+        "acceptedAnswers": [
+          "ています",
+          "ている"
+        ],
+        "choices": [
+          "ています",
+          "てあります",
+          "てみます",
+          "てしまいます"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-03",
+      "jlpt": 5,
+      "order": 3,
+      "pattern": "～てください",
+      "reading": "～てください",
+      "meaning": "please do ~",
+      "structure": "Verb (て-form) + ください",
+      "explanation": "Used to make a polite request or give gentle instructions. Attach ください directly to the て-form of a verb.",
+      "confusableWith": "For polite negative requests ('please do not ~'), use ～ないでください instead.",
+      "examples": [
+        {
+          "jp": "ここに名前を書いてください。",
+          "reading": "ここになまえをかいてください。",
+          "en": "Please write your name here."
+        },
+        {
+          "jp": "もう少しゆっくり話してください。",
+          "reading": "もうすこしゆっくりはなしてください。",
+          "en": "Please speak a little more slowly."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ちょっと待っ",
+        "sentenceAfter": "。",
+        "en": "Please wait a moment.",
+        "answer": "てください",
+        "acceptedAnswers": [
+          "てください"
+        ],
+        "choices": [
+          "ていきます",
+          "てください",
+          "てもいいです",
+          "てから"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-04",
+      "jlpt": 5,
+      "order": 4,
+      "pattern": "～てもいいです",
+      "reading": "～てもいいです",
+      "meaning": "may ~; it is okay to ~",
+      "structure": "Verb (て-form) + もいいです(か)",
+      "explanation": "Used to ask for or grant permission. Adding か at the end turns it into a polite permission question.",
+      "confusableWith": "Do not confuse with ～てはいけません, which expresses prohibition ('must not').",
+      "examples": [
+        {
+          "jp": "ここで写真を撮ってもいいですか。",
+          "reading": "ここでしゃしんをとってもいいですか。",
+          "en": "May I take photos here?"
+        },
+        {
+          "jp": "はい、座ってもいいですよ。",
+          "reading": "はい、すわってもいいですよ。",
+          "en": "Yes, you may sit down."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "窓を開け",
+        "sentenceAfter": "か。",
+        "en": "May I open the window?",
+        "answer": "てもいいです",
+        "acceptedAnswers": [
+          "てもいいです",
+          "てもいい"
+        ],
+        "choices": [
+          "てはいけません",
+          "てもいいです",
+          "たことがあります",
+          "たいです"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-05",
+      "jlpt": 5,
+      "order": 5,
+      "pattern": "～てはいけません",
+      "reading": "～てはいけません",
+      "meaning": "must not ~; may not ~",
+      "structure": "Verb (て-form) + はいけません",
+      "explanation": "Expresses prohibition or a rule forbidding an action. Commonly seen in public signs, classroom rules, and instructions.",
+      "confusableWith": "To express 'do not have to' (lack of obligation), use ～なくてもいいです, NOT ～てはいけません.",
+      "examples": [
+        {
+          "jp": "図書館で大きな声で話してはいけません。",
+          "reading": "としょかんでおおきなこえではなしてはいけません。",
+          "en": "You must not talk loudly in the library."
+        },
+        {
+          "jp": "ここに車を止めてはいけません。",
+          "reading": "ここにくるまをとめてはいけません。",
+          "en": "You must not park your car here."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "美術館の中で食べ",
+        "sentenceAfter": "。",
+        "en": "You must not eat inside the art museum.",
+        "answer": "てはいけません",
+        "acceptedAnswers": [
+          "てはいけません",
+          "てはいけない"
+        ],
+        "choices": [
+          "てもいいです",
+          "てください",
+          "てはいけません",
+          "てから"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-06",
+      "jlpt": 5,
+      "order": 6,
+      "pattern": "～たいです",
+      "reading": "～たいです",
+      "meaning": "want to do ~",
+      "structure": "Verb (ます-stem) + たいです",
+      "explanation": "Expresses the speaker's personal desire to perform an action. It conjugates like an い-adjective (negative: ～たくないです, past: ～たかったです).",
+      "confusableWith": "Used for the speaker's own desire (or direct questions to the listener). For a third person's desire, use ～たがっている.",
+      "examples": [
+        {
+          "jp": "いつか日本へ行きたいです。",
+          "reading": "いつかにほんへいきたいです。",
+          "en": "I want to go to Japan someday."
+        },
+        {
+          "jp": "冷たい水が飲みたいです。",
+          "reading": "つめたいみずがのみたいです。",
+          "en": "I want to drink cold water."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "新しいカメラを買",
+        "sentenceAfter": "。",
+        "en": "I want to buy a new camera.",
+        "answer": "いたいです",
+        "acceptedAnswers": [
+          "いたいです",
+          "いたい"
+        ],
+        "choices": [
+          "いたいです",
+          "っています",
+          "いました",
+          "うつもりです"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-07",
+      "jlpt": 5,
+      "order": 7,
+      "pattern": "～たことがある",
+      "reading": "～たことがある",
+      "meaning": "have done ~ before (past experience)",
+      "structure": "Verb (た-form) + ことがある / ことがあります",
+      "explanation": "States whether someone has ever had a particular experience at least once in their life. Negative form ～たことがない means 'have never done'.",
+      "confusableWith": "Contrast with Dictionary-form + ことがある (N4), which means 'sometimes happens'.",
+      "examples": [
+        {
+          "jp": "富士山に登ったことがあります。",
+          "reading": "ふじさんにのぼったことがあります。",
+          "en": "I have climbed Mount Fuji before."
+        },
+        {
+          "jp": "納豆を食べたことがありません。",
+          "reading": "なっとうをたべたことがありません。",
+          "en": "I have never eaten natto."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "京都へ行った",
+        "sentenceAfter": "か。",
+        "en": "Have you ever been to Kyoto?",
+        "answer": "ことがあります",
+        "acceptedAnswers": [
+          "ことがあります",
+          "ことがある"
+        ],
+        "choices": [
+          "ほうがいいです",
+          "ことがあります",
+          "つもりです",
+          "まえに"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-08",
+      "jlpt": 5,
+      "order": 8,
+      "pattern": "～てから",
+      "reading": "～てから",
+      "meaning": "after doing ~",
+      "structure": "Verb A (て-form) + から + Clause B",
+      "explanation": "Indicates that Action B takes place after Action A is finished, often emphasizing sequential order or prerequisite.",
+      "confusableWith": "Unlike ～たあとで (which focuses on the time after), ～てから emphasizes completing A first as a step before B.",
+      "examples": [
+        {
+          "jp": "手を洗ってから、ごはんを食べます。",
+          "reading": "てをあらってから、ごはんをたべます。",
+          "en": "I eat after washing my hands."
+        },
+        {
+          "jp": "仕事が終わってから、映画を見に行きました。",
+          "reading": "しごとがおわってから、えいがをみにいきました。",
+          "en": "After finishing work, I went to see a movie."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "宿題をし",
+        "sentenceAfter": "、ゲームをします。",
+        "en": "I play games after doing my homework.",
+        "answer": "てから",
+        "acceptedAnswers": [
+          "てから"
+        ],
+        "choices": [
+          "ながら",
+          "まえに",
+          "てから",
+          "ても"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-09",
+      "jlpt": 5,
+      "order": 9,
+      "pattern": "～まえに",
+      "reading": "～まえに",
+      "meaning": "before ~; ago",
+      "structure": "Verb (dictionary form) / Noun + の + まえに",
+      "explanation": "Indicates that the main clause happens prior to the verb or noun before まえに. Even when the main clause is past tense, the verb before まえに MUST stay in the dictionary form.",
+      "confusableWith": "JLPT favorite trap: NEVER use た-form before まえに (use 寝るまえに, NOT 寝たまえに).",
+      "examples": [
+        {
+          "jp": "寝るまえに、歯をみがきます。",
+          "reading": "ねるまえに、はをみがきます。",
+          "en": "I brush my teeth before going to sleep."
+        },
+        {
+          "jp": "食事のまえに手を洗いましょう。",
+          "reading": "しょくじのまえにてをあらいましょう。",
+          "en": "Let's wash our hands before the meal."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本へ来る",
+        "sentenceAfter": "、少し日本語を勉強しました。",
+        "en": "Before coming to Japan, I studied a little Japanese.",
+        "answer": "まえに",
+        "acceptedAnswers": [
+          "まえに",
+          "前に"
+        ],
+        "choices": [
+          "あとで",
+          "まえに",
+          "てから",
+          "ながら"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-10",
+      "jlpt": 5,
+      "order": 10,
+      "pattern": "～たり～たりする",
+      "reading": "～たり～たりする",
+      "meaning": "do things like A and B",
+      "structure": "Verb A (た-form) + り + Verb B (た-form) + り + する",
+      "explanation": "Lists representative actions or states non-exhaustively, implying there may be other similar activities. The tense of the whole sentence is carried by the final する.",
+      "confusableWith": "Always remember to end the pattern with する / します, not just ～たり.",
+      "examples": [
+        {
+          "jp": "休みの日は本を読んだり、音楽を聞いたりします。",
+          "reading": "やすみのひはほんをよんだり、おんがくをきいたりします。",
+          "en": "On my days off, I do things like reading books and listening to music."
+        },
+        {
+          "jp": "昨日は買い物したり、カフェへ行ったりしました。",
+          "reading": "きのうはかいものしたり、かふぇへいったりしました。",
+          "en": "Yesterday I went shopping, visited a cafe, and so on."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "週末は掃除をし",
+        "sentenceAfter": "、料理をしたりします。",
+        "en": "On weekends I do things like cleaning and cooking.",
+        "answer": "たり",
+        "acceptedAnswers": [
+          "たり"
+        ],
+        "choices": [
+          "たり",
+          "から",
+          "ので",
+          "のに"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-11",
+      "jlpt": 5,
+      "order": 11,
+      "pattern": "～ほうがいい",
+      "reading": "～ほうがいい",
+      "meaning": "had better ~; it is better to ~",
+      "structure": "Verb (た-form / ない-form) + ほうがいい(です)",
+      "explanation": "Used to give strong advice or recommendations. Affirmative advice normally takes the た-form, while negative advice takes the ない-form.",
+      "confusableWith": "Using the dictionary form sounds more general/abstract; for direct advice to someone, JLPT tests the た-form (休んだほうがいい).",
+      "examples": [
+        {
+          "jp": "風邪ですから、早く寝たほうがいいですよ。",
+          "reading": "かぜですから、はやくねたほうがいいですよ。",
+          "en": "Since you have a cold, you had better go to bed early."
+        },
+        {
+          "jp": "あまり無理をしないほうがいいです。",
+          "reading": "あまりむりをしないほうがいいです。",
+          "en": "You had better not push yourself too hard."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "雨が降りそうだから、傘を持って行っ",
+        "sentenceAfter": "。",
+        "en": "It looks like it's going to rain, so you'd better bring an umbrella.",
+        "answer": "たほうがいいです",
+        "acceptedAnswers": [
+          "たほうがいいです",
+          "たほうがいい",
+          "た方がいいです",
+          "た方がいい"
+        ],
+        "choices": [
+          "たことがあります",
+          "たほうがいいです",
+          "てもいいです",
+          "てしまいます"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-12",
+      "jlpt": 5,
+      "order": 12,
+      "pattern": "～から (alasan)",
+      "reading": "～から",
+      "meaning": "because ~; so ~",
+      "structure": "Clause A (Reason) + から + Clause B (Result)",
+      "explanation": "Connects a reason or cause to a result, request, or judgment. Works smoothly with subjective opinions, commands, and invitations.",
+      "confusableWith": "Compared to ので (N4), から sounds more direct and subjective, and pairs more naturally with imperatives and invitations.",
+      "examples": [
+        {
+          "jp": "時間がないから、急ぎましょう。",
+          "reading": "じかんがないから、いそぎましょう。",
+          "en": "Because we don't have time, let's hurry."
+        },
+        {
+          "jp": "明日はテストがありますから、今夜勉強します。",
+          "reading": "あしたはてすとがありますから、こんやべんきょうします。",
+          "en": "Because there is a test tomorrow, I will study tonight."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今日はとても暑い",
+        "sentenceAfter": "、エアコンをつけましょう。",
+        "en": "Because it's very hot today, let's turn on the air conditioner.",
+        "answer": "から",
+        "acceptedAnswers": [
+          "から"
+        ],
+        "choices": [
+          "のに",
+          "から",
+          "まで",
+          "より"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-13",
+      "jlpt": 5,
+      "order": 13,
+      "pattern": "～より～のほうが",
+      "reading": "～より～のほうが",
+      "meaning": "B is more ~ than A",
+      "structure": "Noun A + より + Noun B + のほうが + Adjective",
+      "explanation": "Standard comparative pattern stating that B has a greater degree of a quality than A. Can also be reversed as Noun B のほうが Noun A より.",
+      "confusableWith": "Remember: より ALWAYS attaches to the item that is LESS (the benchmark of comparison).",
+      "examples": [
+        {
+          "jp": "バスより電車のほうが速いです。",
+          "reading": "ばすよりでんしゃのほうがはやいです。",
+          "en": "Trains are faster than buses."
+        },
+        {
+          "jp": "夏より冬のほうが好きです。",
+          "reading": "なつよりふゆのほうがすきです。",
+          "en": "I like winter more than summer."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "コーヒー",
+        "sentenceAfter": "お茶のほうがよく飲みます。",
+        "en": "I drink tea more often than coffee.",
+        "answer": "より",
+        "acceptedAnswers": [
+          "より"
+        ],
+        "choices": [
+          "ほど",
+          "より",
+          "まで",
+          "から"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-14",
+      "jlpt": 5,
+      "order": 14,
+      "pattern": "～の中で一番",
+      "reading": "～のなかでいちばん",
+      "meaning": "the most ~ among ~",
+      "structure": "Group Noun + の中で + Item + が + 一番 + Adjective",
+      "explanation": "Forms the superlative ('the most ~' / 'number one') within a specified category or group.",
+      "confusableWith": "Use が (not は) after the winning item or interrogative word (何がいちばん好きですか).",
+      "examples": [
+        {
+          "jp": "日本の食べ物の中で、すしが一番好きです。",
+          "reading": "にほんのたべもののなかで、すしがいちばんすきです。",
+          "en": "Among Japanese foods, I like sushi the best."
+        },
+        {
+          "jp": "一年の中で八月が一番暑いです。",
+          "reading": "いちねんのなかではちがつがいちばんあついです。",
+          "en": "August is the hottest month of the year."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "スポーツの中で、サッカーが",
+        "sentenceAfter": "おもしろいです。",
+        "en": "Among sports, soccer is the most interesting.",
+        "answer": "いちばん",
+        "acceptedAnswers": [
+          "いちばん",
+          "一番"
+        ],
+        "choices": [
+          "いちばん",
+          "あまり",
+          "とても",
+          "もっと"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-15",
+      "jlpt": 5,
+      "order": 15,
+      "pattern": "～ことができます",
+      "reading": "～ことができます",
+      "meaning": "can do ~; be able to ~",
+      "structure": "Verb (dictionary form) + ことができます / Noun + ができます",
+      "explanation": "Expresses ability or possibility. Slightly more formal and explicit than the potential verb form.",
+      "confusableWith": "Always attach ことができます to the dictionary form, never the ます-form or て-form.",
+      "examples": [
+        {
+          "jp": "わたしはピアノを弾くことができます。",
+          "reading": "わたしはぴあのをひくことができます。",
+          "en": "I can play the piano."
+        },
+        {
+          "jp": "ここではカードで払うことができます。",
+          "reading": "ここではかーどではらうことができます。",
+          "en": "You can pay by card here."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼は漢字を五百字ぐらい書く",
+        "sentenceAfter": "。",
+        "en": "He can write about 500 kanji.",
+        "answer": "ことができます",
+        "acceptedAnswers": [
+          "ことができます",
+          "ことができる"
+        ],
+        "choices": [
+          "ことがあります",
+          "ことができます",
+          "つもりです",
+          "ほうがいいです"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-16",
+      "jlpt": 5,
+      "order": 16,
+      "pattern": "～なければなりません",
+      "reading": "～なければなりません",
+      "meaning": "must do ~; have to do ~",
+      "structure": "Verb (ない-form drop い) + ければなりません",
+      "explanation": "Expresses necessity or obligation ('must / have to'). Literally translates to 'if one does not do ~, it will not do'.",
+      "confusableWith": "Contrast with ～なくてもいいです ('don't have to') and ～てはいけません ('must not').",
+      "examples": [
+        {
+          "jp": "明日までにレポートを出さなければなりません。",
+          "reading": "あしたまでにれぽーとをださなければなりません。",
+          "en": "I have to submit the report by tomorrow."
+        },
+        {
+          "jp": "薬を飲まなければなりません。",
+          "reading": "くすりをのまなければなりません。",
+          "en": "I must take my medicine."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今夜は早く帰ら",
+        "sentenceAfter": "。",
+        "en": "I have to go home early tonight.",
+        "answer": "なければなりません",
+        "acceptedAnswers": [
+          "なければなりません",
+          "なければならない"
+        ],
+        "choices": [
+          "なくてもいいです",
+          "なければなりません",
+          "ないでください",
+          "てはいけません"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-17",
+      "jlpt": 5,
+      "order": 17,
+      "pattern": "～なくてもいいです",
+      "reading": "～なくてもいいです",
+      "meaning": "do not have to ~; it is not necessary to ~",
+      "structure": "Verb (ない-form drop い) + くてもいいです",
+      "explanation": "States that an action is unnecessary or optional. Often used to relieve someone of an obligation.",
+      "confusableWith": "A classic N5 exam pair: 食べなくてもいいです (you don't have to eat it) vs. 食べてはいけません (you must not eat it).",
+      "examples": [
+        {
+          "jp": "明日は日曜日ですから、早く起きなくてもいいです。",
+          "reading": "あしたはにちようびですから、はやくおきなくてもいいです。",
+          "en": "Because tomorrow is Sunday, I don't have to wake up early."
+        },
+        {
+          "jp": "靴を脱がなくてもいいですよ。",
+          "reading": "くつをぬがなくてもいいですよ。",
+          "en": "You don't need to take off your shoes."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今日は傘を持って行か",
+        "sentenceAfter": "。",
+        "en": "You don't need to bring an umbrella today.",
+        "answer": "なくてもいいです",
+        "acceptedAnswers": [
+          "なくてもいいです",
+          "なくてもいい"
+        ],
+        "choices": [
+          "なければなりません",
+          "てはいけません",
+          "なくてもいいです",
+          "ないでください"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-18",
+      "jlpt": 5,
+      "order": 18,
+      "pattern": "～ないでください",
+      "reading": "～ないでください",
+      "meaning": "please do not ~",
+      "structure": "Verb (ない-form) + でください",
+      "explanation": "Makes a polite negative request asking someone not to do something. Softer and more polite than ～てはいけません.",
+      "confusableWith": "Remember to attach でください to the full ない-form (忘れないでください, NOT 忘れなくてください).",
+      "examples": [
+        {
+          "jp": "パスポートを忘れないでください。",
+          "reading": "ぱすぽーとをわすれないでください。",
+          "en": "Please do not forget your passport."
+        },
+        {
+          "jp": "心配しないでください。",
+          "reading": "しんぱいしないでください。",
+          "en": "Please do not worry."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ここでたばこを吸わ",
+        "sentenceAfter": "。",
+        "en": "Please do not smoke here.",
+        "answer": "ないでください",
+        "acceptedAnswers": [
+          "ないでください"
+        ],
+        "choices": [
+          "ないでください",
+          "なくてもいいです",
+          "てください",
+          "なければなりません"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-19",
+      "jlpt": 5,
+      "order": 19,
+      "pattern": "～になる",
+      "reading": "～になる",
+      "meaning": "to become ~",
+      "structure": "い-Adj (drop い + く) / な-Adj + に / Noun + に + なる",
+      "explanation": "Describes a natural or gradual change of state. い-adjectives change to ～くなる, while な-adjectives and nouns take ～になる.",
+      "confusableWith": "Compare with ～にする (to make/decide something intentionally) vs. ～になる (to become naturally).",
+      "examples": [
+        {
+          "jp": "春になって、暖かくなりました。",
+          "reading": "はるになって、あたたかくなりました。",
+          "en": "Spring has come, and it has become warm."
+        },
+        {
+          "jp": "将来、医者になりたいです。",
+          "reading": "しょうらい、いしゃになりたいです。",
+          "en": "I want to become a doctor in the future."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本語がだんだん上手",
+        "sentenceAfter": "ました。",
+        "en": "My Japanese has gradually become skillful.",
+        "answer": "になり",
+        "acceptedAnswers": [
+          "になり",
+          "になった",
+          "になります"
+        ],
+        "choices": [
+          "くなり",
+          "になり",
+          "でなり",
+          "をなり"
+        ]
+      }
+    },
+    {
+      "id": "g-n5-20",
+      "jlpt": 5,
+      "order": 20,
+      "pattern": "～つもりです",
+      "reading": "～つもりです",
+      "meaning": "intend to ~; plan to ~",
+      "structure": "Verb (dictionary form / ない-form) + つもりです",
+      "explanation": "Expresses a firm personal intention or plan for the future. Using the ない-form means 'intend not to ~'.",
+      "confusableWith": "Used for the speaker's own decisions (not uncontrollable events like weather, and rarely for superiors' plans).",
+      "examples": [
+        {
+          "jp": "来月、引っ越すつもりです。",
+          "reading": "らいげつ、ひっこすつもりです。",
+          "en": "I plan to move next month."
+        },
+        {
+          "jp": "もう甘いものは食べないつもりです。",
+          "reading": "もうあまいものはたべないつもりです。",
+          "en": "I intend not to eat sweets anymore."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "大学を卒業したら、日本で働く",
+        "sentenceAfter": "。",
+        "en": "After graduating from university, I plan to work in Japan.",
+        "answer": "つもりです",
+        "acceptedAnswers": [
+          "つもりです",
+          "つもりだ"
+        ],
+        "choices": [
+          "ことがあります",
+          "つもりです",
+          "みたいです",
+          "ばかりです"
+        ]
+      }
+    }
+  ]
+}

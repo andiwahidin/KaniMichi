@@ -1,0 +1,649 @@
+{
+  "level": 3,
+  "pack": "n3",
+  "items": [
+    {
+      "id": "rd-n3-01",
+      "jlpt": 3,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "「失敗[しっぱい]ノート」のすすめ",
+      "titleEn": "The Value of Keeping a Mistake Notebook",
+      "recommendedMinutes": 4,
+      "contextEn": "Short opinion essay about effective learning habits.",
+      "paragraphs": [
+        "テストで間違[まちが]えた問題[もんだい]を見[み]直[なお]すのは、だれにとってもあまり気持[きも]ちのいいものではない。できなかった部分[ぶぶん]は早[はや]く忘[わす]れて、次[つぎ]の新[あたら]しいページへ進[すす]みたくなるものだ。",
+        "ところが、成績[せいせき]を着実[ちゃくじつ]に伸[の]ばしている人[ひと]ほど、自分[じぶん]の失敗[しっぱい]を大切[たいせつ]に記録[きろく]している。間違[まちが]えた問題[もんだい]と「なぜ間違[まちが]えたか」を専用[せんよう]のノートに書[か]き留[と]めておくのである。",
+        "同[おな]じミスを二度[にど]と繰[く]り返[かえ]さないためには、新[あたら]しい参考[さんこう]書[しょ]を何冊[なんさつ]も買[か]うよりも、自分[じぶん]だけの「失敗[しっぱい]ノート」を繰[く]り返[かえ]し見[み]返[かえ]すほうがずっと効果[こうか]的[てき]だと言[い]える。"
+      ],
+      "translationEn": [
+        "Reviewing problems you got wrong on a test is not very pleasant for anyone. One naturally wants to forget the parts they couldn't do and move on to the next new page.",
+        "However, the more steadily people improve their grades, the more carefully they record their own mistakes. They jot down missed questions along with \"why I got it wrong\" in a dedicated notebook.",
+        "To avoid repeating the same mistakes twice, repeatedly reviewing one's own \"mistake notebook\" is far more effective than buying numerous new reference books."
+      ],
+      "keyVocab": [
+        {
+          "word": "見直す",
+          "reading": "みなおす",
+          "en": "to review; re-examine"
+        },
+        {
+          "word": "着実に",
+          "reading": "ちゃくじつに",
+          "en": "steadily; reliably"
+        },
+        {
+          "word": "効果的",
+          "reading": "こうかてき",
+          "en": "effective"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-01-q1",
+          "promptJp": "成績[せいせき]を着実[ちゃくじつ]に伸[の]ばしている人[ひと]は、どんなことをしていますか。",
+          "promptEn": "What do people who steadily improve their scores do?",
+          "choices": [
+            "新[あたら]しい参考[さんこう]書[しょ]をたくさん買[か]う。",
+            "間違[まちが]えた問題[もんだい]は早[はや]く忘[わす]れるようにする。",
+            "間違[まちが]えた問題[もんだい]とその原因[げんいん]をノートに記録[きろく]する。",
+            "友達[ともだち]のノートをコピーして暗記[あんき]する。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 explicitly notes they record both the missed question and the reason they got it wrong in a dedicated notebook."
+        },
+        {
+          "id": "rd-n3-01-q2",
+          "promptJp": "この文章[ぶんしょう]で筆者[ひっしゃ]が一番[いちばん]言[い]いたいことは何[なに]ですか。",
+          "promptEn": "What is the author's main point in this passage?",
+          "choices": [
+            "テストの点数[てんすう]を気[き]にしすぎるのはよくない。",
+            "自分[じぶん]のミスをまとめ直[なお]して復習[ふくしゅう]することが最[もっと]も効果[こうか]的[てき]だ。",
+            "参考[さんこう]書[しょ]を使[つか]わずに勉強[べんきょう]するべきだ。",
+            "ノートをきれいに書[か]けば自然[しぜん]に合格[ごうかく]できる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 concludes that reviewing your own mistake notebook is much more effective than buying many new textbooks."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-02",
+      "jlpt": 3,
+      "order": 2,
+      "passageType": "email",
+      "titleJp": "打[う]ち合[あ]わせ日程[にってい]のご連絡[れんらく]",
+      "titleEn": "Business Email: Rescheduling a Client Meeting",
+      "recommendedMinutes": 4,
+      "contextEn": "Polite business email between two companies.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]ミライ\n営業部[えいぎょうぶ] 高橋[たかはし]様[さま]",
+        "いつも大変[たいへん]お世話[せわ]になっております。ABC企画[きかく]の鈴木[すずき]でございます。",
+        "来週[らいしゅう]の水曜日[すいようび]（十五日[じゅうごにち]）午後[ごご]二時[にじ]に予定[よてい]しておりました新[しん]商品[しょうひん]の打[う]ち合[あ]わせですが、急[きゅう]な出張[しゅっちょう]が入[はい]ってしまったため、日程[にってい]を変更[へんこう]していただけないでしょうか。急[きゅう]なお願[ねが]いで大変[たいへん]申[もう]し訳[わけ]ございません。",
+        "代[か]わりの候補[こうほ]として、十六日[じゅうろくにち]（木[もく]）の午前[ごぜん]十時[じゅうじ]、または十七日[じゅうしちにち]（金[きん]）の午後[ごご]三時[さんじ]はいかがでしょうか。ご都合[つごう]のよろしい日[ひ]をお知[し]らせいただけますと幸[さいわ]いです。"
+      ],
+      "translationEn": [
+        "Mr. Takahashi, Sales Department, Mirai Corporation",
+        "Thank you always for your kind support. This is Suzuki from ABC Planning.",
+        "Regarding the new product meeting scheduled for next Wednesday (the 15th) at 2:00 PM, an urgent business trip has come up, so I was wondering if we could reschedule. I am very sorry for the sudden request.",
+        "As alternative options, how would Thursday the 16th at 10:00 AM or Friday the 17th at 3:00 PM work for you? I would appreciate it if you could let me know which date is convenient."
+      ],
+      "keyVocab": [
+        {
+          "word": "打ち合わせ",
+          "reading": "うちあわせ",
+          "en": "meeting; consultation"
+        },
+        {
+          "word": "候補",
+          "reading": "こうほ",
+          "en": "candidate; proposed option"
+        },
+        {
+          "word": "ご都合",
+          "reading": "ごつごう",
+          "en": "convenience; availability (polite)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-02-q1",
+          "promptJp": "鈴木[すずき]さんがこのメールを送[おく]った目的[もくてき]は何[なに]ですか。",
+          "promptEn": "What is Suzuki's purpose in sending this email?",
+          "choices": [
+            "新[しん]商品[しょうひん]の注文[ちゅうもん]をキャンセルするため。",
+            "水曜日[すいようび]の打[う]ち合[あ]わせの日[ひ]を変[か]えてもらうため。",
+            "高橋[たかはし]さんに出張[しゅっちょう]へ一緒[いっしょ]に行[い]ってもらうため。",
+            "打[う]ち合[あ]わせの場所[ばしょ]を確認[かくにん]するため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Suzuki asks to reschedule Wednesday's meeting because of an unexpected business trip."
+        },
+        {
+          "id": "rd-n3-02-q2",
+          "promptJp": "高橋[たかはし]さんはこのあと何[なに]をする必要[ひつよう]がありますか。",
+          "promptEn": "What does Takahashi need to do next?",
+          "choices": [
+            "十五日[じゅうごにち]の午後[ごご]二時[にじ]にABC企画[きかく]へ行[い]く。",
+            "十六日[じゅうろくにち]か十七日[じゅうしちにち]の都合[つごう]のいい日時[にちじ]を返事[へんじ]する。",
+            "自分[じぶん]で新[あたら]しい商品[しょうひん]の資料[しりょう]を作[つく]る。",
+            "出張[しゅっちょう]先[さき]のホテルを予約[よやく]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 4 asks Takahashi to reply with which of the two proposed alternative dates (the 16th or 17th) works best."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-03",
+      "jlpt": 3,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "スポーツジム会員[かいいん]プラン一覧[いちらん]",
+      "titleEn": "Gym Membership Plans & Conditions",
+      "recommendedMinutes": 4,
+      "contextEn": "Information retrieval notice — classic JLPT N3 format.",
+      "paragraphs": [
+        "【みどりスポーツクラブ 料金[りょうきん]プラン】\n① フルタイム会員[かいいん]（月[つき]8,500円[えん]）：全[すべ]ての曜日[ようび] 7:00〜22:00 利用[りよう]可[か]。プール・ジム・スタジオ全[すべ]て使[つか]えます。\n② デイ会員[かいいん]（月[つき]5,800円[えん]）：平日[へいじつ]（月[げつ]〜金[きん]）10:00〜17:00のみ利用[りよう]可[か]。プールは使[つか]えません。\n③ ナイト＆ホリデー会員[かいいん]（月[つき]6,500円[えん]）：平日[へいじつ]18:00〜22:00、土日[どにち]祝[しゅく]は終日[しゅうじつ]利用[りよう]可[か]。プールも利用[りよう]できます。",
+        "※いずれのプランも、入会[にゅうかい]金[きん]3,000円[えん]が必要[ひつよう]です。ただし、今月[こんげつ]中[ちゅう]にホームページから申[もう]し込[こ]んだ場合[ばあい]、入会[にゅうかい]金[きん]は無料[むりょう]になります。"
+      ],
+      "translationEn": [
+        "[Midori Sports Club Fee Plans] (1) Full-time Member (8,500 yen/mo): All days 7:00–22:00; pool, gym, and studio all included. (2) Day Member (5,800 yen/mo): Weekdays (Mon–Fri) 10:00–17:00 only; pool cannot be used. (3) Night & Holiday Member (6,500 yen/mo): Weekdays 18:00–22:00, weekends & holidays all day; pool also included.",
+        "*Every plan requires a 3,000-yen enrollment fee. However, if you apply via the website within this month, the enrollment fee is waived."
+      ],
+      "keyVocab": [
+        {
+          "word": "平日",
+          "reading": "へいじつ",
+          "en": "weekdays"
+        },
+        {
+          "word": "終日",
+          "reading": "しゅうじつ",
+          "en": "all day"
+        },
+        {
+          "word": "入会金",
+          "reading": "にゅうかいきん",
+          "en": "enrollment / registration fee"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-03-q1",
+          "promptJp": "会社員[かいしゃいん]の木村[きむら]さんは、仕事[しごと]のあと（19時[じ]ごろ）と日曜日[にちようび]にプールで泳[およ]ぎたいです。一番[いちばん]安[やす]くて条件[じょうけん]に合[あ]うプランはどれですか。",
+          "promptEn": "Kimura wants to swim in the pool after work (~7 PM) and on Sundays. Which is the cheapest plan that fits?",
+          "choices": [
+            "フルタイム会員[かいいん]",
+            "デイ会員[かいいん]",
+            "ナイト＆ホリデー会員[かいいん]",
+            "条件[じょうけん]に合[あ]うプランはない。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Night & Holiday (6,500 yen) covers weekdays 18:00–22:00, weekends all day, AND includes the pool — cheaper than Full-time (8,500 yen)."
+        },
+        {
+          "id": "rd-n3-03-q2",
+          "promptJp": "入会[にゅうかい]金[きん]を無料[むりょう]にするためには、どうすればいいですか。",
+          "promptEn": "How can one get the enrollment fee waived?",
+          "choices": [
+            "フルタイム会員[かいいん]を選[えら]ぶ。",
+            "今月[こんげつ]中[ちゅう]にホームページから申[もう]し込[こ]む。",
+            "友達[ともだち]と二人[ふたり]で受付[うけつけ]へ行[い]く。",
+            "一年[いちねん]ぶんの料金[りょうきん]をまとめて払[はら]う。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The footnote explicitly specifies applying via the website within this month (今月中にホームページから申し込んだ場合)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-04",
+      "jlpt": 3,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "「便利[べんり]さ」の裏側[うらがわ]",
+      "titleEn": "The Flip Side of Convenience",
+      "recommendedMinutes": 4,
+      "contextEn": "Short reflective column about digital maps and memory.",
+      "paragraphs": [
+        "昔[むかし]は初[はじ]めて行[い]く場所[ばしょ]へ出[で]かける前[まえ]に、紙[かみ]の地図[ちず]を広[ひろ]げて道順[みちじゅん]を頭[あたま]に入[い]れておいたものだ。道[みち]に迷[まよ]えば、近所[きんじょ]の店[みせ]の人[ひと]に声[こえ]をかけて場所[ばしょ]を聞[き]いた。",
+        "今[いま]はスマートフォンの地図[ちず]アプリのおかげで、迷[まよ]う心配[しんぱい]はほとんどなくなった。確[たし]かにとても助[たす]かる。",
+        "しかし、画面[がめん]の案内[あんない]どおりに歩[ある]くばかりで、二度[にど]目[め]に同[おな]じ場所[ばしょ]へ行[い]こうとしても道[みち]を覚[おぼ]えていないことが増[ふ]えた。便利[べんり]になったかわりに、自分[じぶん]で周[まわ]りの景色[けしき]を見[み]て覚[おぼ]える力[ちから]が弱[よわ]くなっているのかもしれない。"
+      ],
+      "translationEn": [
+        "In the past, before heading to a place for the first time, we used to spread out a paper map and memorize the route. If we got lost, we would speak to a local shopkeeper to ask directions.",
+        "Today, thanks to smartphone map apps, there is almost no worry of getting lost. That is certainly very helpful.",
+        "However, because we do nothing but follow the screen's directions, it happens more often that we don't remember the way when visiting the same place a second time. In exchange for convenience, our ability to observe and remember our surroundings may be weakening."
+      ],
+      "keyVocab": [
+        {
+          "word": "道順",
+          "reading": "みちじゅん",
+          "en": "route; directions"
+        },
+        {
+          "word": "案内どおり",
+          "reading": "あんないどおり",
+          "en": "just as guided"
+        },
+        {
+          "word": "かわりに",
+          "reading": "かわりに",
+          "en": "in exchange for; on the other hand"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-04-q1",
+          "promptJp": "筆者[ひっしゃ]は地図[ちず]アプリについて、どのような問題[もんだい]を感[かん]じていますか。",
+          "promptEn": "What concern does the author feel about map apps?",
+          "choices": [
+            "案内[あんない]が間違[まちが]っていることが多[おお]い。",
+            "バッテリーがすぐになくなって困[こま]る。",
+            "自分[じぶん]で道[みち]や景色[けしき]を覚[おぼ]える力[ちから]が弱[よわ]くなっているかもしれない。",
+            "紙[かみ]の地図[ちず]より使[つか]い方[かた]が難[むずか]しい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 notes that relying blindly on turn-by-turn guidance may be weakening our ability to remember routes and surroundings."
+        },
+        {
+          "id": "rd-n3-04-q2",
+          "promptJp": "本文[ほんぶん]の内容[ないよう]に合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the content of the passage?",
+          "choices": [
+            "筆者[ひっしゃ]は地図[ちず]アプリを全[まった]く使[つか]わないようにしている。",
+            "筆者[ひっしゃ]は地図[ちず]アプリの便利[べんり]さ自体[じたい]は認[みと]めている。",
+            "昔[むかし]は誰[だれ]も道[みち]に迷[まよ]わなかった。",
+            "最近[さいきん]は店[みせ]の人[ひと]に道[みち]を聞[き]く人[ひと]が増[ふ]えている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 acknowledges the app's usefulness (\"確かにとても助かる\") before raising the trade-off in Paragraph 3."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-05",
+      "jlpt": 3,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "「早起[はやお]き」が続[つづ]くコツ",
+      "titleEn": "The Secret to Sticking With Waking Up Early",
+      "recommendedMinutes": 4,
+      "contextEn": "Lifestyle essay about building sustainable morning habits.",
+      "paragraphs": [
+        "「明日[あした]から毎日[まいにち]五時[ごじ]に起[お]きて勉強[べんきょう]しよう」と決心[けっしん]しても、三日[みっか]も続[つづ]かなかった経験[けいけん]はないだろうか。急[きゅう]に生活[せいかつ]リズムを変[か]えようとすると、体[からだ]に無理[むり]がかかって挫折[ざせつ]しやすい。",
+        "習慣[しゅうかん]を定着[ていちゃく]させるコツは、最初[さいしょ]の目標[もくひょう]をできるだけ小[ちい]さくすることだ。たとえば、いきなり二時間[にじかん]早[はや]く起[お]きるのではなく、まず十五分[じゅうごふん]だけ早[はや]く起[お]きてみる。",
+        "さらに、「起[お]きたら好[す]きなコーヒーを飲[の]む」といった小[ちい]さな楽[たの]しみを用意[ようい]しておくと、つらい努力[どりょく]ではなく自然[しぜん]な日課[にっか]として続[つづ]けやすくなる。"
+      ],
+      "translationEn": [
+        "Haven't you ever resolved, \"Starting tomorrow I'll wake up at 5 AM every day to study,\" only for it not to last even three days? Trying to change your daily rhythm abruptly strains the body and easily leads to giving up.",
+        "The trick to cementing a habit is to make the initial goal as small as possible. For instance, instead of suddenly waking up two hours earlier, try waking up just 15 minutes earlier first.",
+        "Furthermore, preparing a small pleasure such as \"drinking your favorite coffee upon waking\" makes it easier to continue as a natural daily routine rather than painful effort."
+      ],
+      "keyVocab": [
+        {
+          "word": "挫折する",
+          "reading": "ざせつする",
+          "en": "to give up; suffer a setback"
+        },
+        {
+          "word": "定着させる",
+          "reading": "ていちゃくさせる",
+          "en": "to establish firmly; make stick"
+        },
+        {
+          "word": "日課",
+          "reading": "にっか",
+          "en": "daily routine"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-05-q1",
+          "promptJp": "早起[はやお]きが三日[みっか]も続[つづ]かない理由[りゆう]として挙[あ]げられているのは何[なに]ですか。",
+          "promptEn": "What reason is given for early-rising resolutions failing within three days?",
+          "choices": [
+            "コーヒーを飲[の]みすぎるから。",
+            "急[きゅう]に生活[せいかつ]リズムを変[か]えて体[からだ]に無理[むり]がかかるから。",
+            "勉強[べんきょう]する教材[きょうざい]が難[むずか]しすぎるから。",
+            "目覚[めざ]まし時計[どけい]の音が小[ちい]さいから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 states that changing your rhythm abruptly puts strain on the body and makes you likely to give up."
+        },
+        {
+          "id": "rd-n3-05-q2",
+          "promptJp": "筆者[ひっしゃ]がすすめる習慣[しゅうかん]づくりの方法[ほうほう]はどれですか。",
+          "promptEn": "Which habit-building method does the author recommend?",
+          "choices": [
+            "最初[さいしょ]から厳[きび]しい目標[もくひょう]を立てて我慢[がまん]する。",
+            "十五分[じゅうごふん]など小[ちい]さな目標[もくひょう]と、起[お]きたあとの小[ちい]さな楽[たの]しみを組[く]み合[あ]わせる。",
+            "週末[しゅうまつ]だけ五時[ごじ]に起[お]きるようにする。",
+            "夜[よる]遅[おそ]くまで勉強[べんきょう]してから寝[ね]る。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 2 and 3 advise starting with a tiny goal (like 15 minutes) paired with a small reward (like favorite coffee)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-06",
+      "jlpt": 3,
+      "order": 6,
+      "passageType": "email",
+      "titleJp": "見積書[みつもりしょ]の再送[さいそう]と納品[のうひん]日[び]のご相談[そうだん]",
+      "titleEn": "Resending a Quotation & Delivery Date Inquiry",
+      "recommendedMinutes": 4,
+      "contextEn": "Business email from a supplier to a corporate buyer.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]さくら商事[しょうじ] 営業部[えいぎょうぶ] 高橋[たかはし]様[さま]。いつも大変[たいへん]お世話[せわ]になっております。青葉[あおば]印刷[いんさつ]の鈴木[すずき]でございます。",
+        "昨日[きのう]ご依頼[いらい]いただきましたパンフレット千部[せんぶ]の見積書[みつもりしょ]を添付[てんぷ]いたしましたので、ご確認[かくにん]ください。なお、紙[かみ]の価格[かかく]が上がっている関係[かんけい]で、前回[ぜんかい]より五[ご]パーセントほど高[たか]くなっております。ご了承[りょうしょう]いただけますと幸[さいわ]いです。",
+        "また、ご希望[きぼう]の納品[のうひん]日[び]である来月[らいげつ]十日[とおか]までにお届[とど]けするためには、今週[こんしゅう]金曜日[きんようび]の午後[ごご]三時[さんじ]までに最終[さいしゅう]データをいただく必要[ひつよう]がございます。ご多忙[たぼう]のところ恐縮[きょうしゅく]ですが、ご返信[へんしん]をお待[ま]ちしております。"
+      ],
+      "translationEn": [
+        "Dear Takahashi-sama, Sales Department, Sakura Trading Co., Ltd. Thank you as always for your continued support. This is Suzuki from Aoba Printing.",
+        "I have attached the quotation for the 1,000 brochures you requested yesterday, so please review it. Please note that due to rising paper prices, it is about 5% higher than last time. We would appreciate your understanding.",
+        "Furthermore, in order to deliver by your requested date of the 10th of next month, we need to receive the final design data by 3:00 PM this Friday. Apologies for troubling you while busy, and we look forward to your reply."
+      ],
+      "keyVocab": [
+        {
+          "word": "見積書[みつもりしょ]",
+          "reading": "みつもりしょ",
+          "en": "price quotation / estimate"
+        },
+        {
+          "word": "添付[てんぷ]する",
+          "reading": "てんぷする",
+          "en": "to attach (a file)"
+        },
+        {
+          "word": "ご了承[りょうしょう]",
+          "reading": "ごりょうしょう",
+          "en": "your understanding / acknowledgement"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-06-q1",
+          "promptJp": "今回の見積[みつも]り金額[きんがく]が前回[ぜんかい]より高[たか]い理由[りゆう]は何[なん]ですか。",
+          "promptEn": "Why is the quoted price higher than last time?",
+          "choices": [
+            "注文[ちゅうもん]する部数[ぶすう]が増[ふ]えたから",
+            "納品[のうひん]日[び]を急[いそ]いでいるから",
+            "紙[かみ]の値段[ねだん]が上がっているから",
+            "新[あたら]しい印刷機[いんさつき]を使[つか]うから"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Suzuki states \"紙の価格が上がっている関係で、前回より五パーセントほど高くなっております\" (because paper prices have risen)."
+        },
+        {
+          "id": "rd-n3-06-q2",
+          "promptJp": "高橋[たかはし]さんが来月[らいげつ]十日[とおか]までにパンフレットを受[う]け取[と]るには、何[なに]をする必要[ひつよう]がありますか。",
+          "promptEn": "What must Takahashi do to receive the brochures by the 10th of next month?",
+          "choices": [
+            "来月[らいげつ]十日[とおか]に青葉[あおば]印刷[いんさつ]へ取[と]りに行[い]く",
+            "今週[こんしゅう]金曜[きんよう]の午後[ごご]三時[さんじ]までに最終[さいしゅう]データを送[おく]る",
+            "今[いま]すぐ五[ご]パーセントの料金[りょうきん]を振[ふ]り込[こ]む",
+            "部数[ぶすう]を五百部[ごひゃくぶ]に減[へ]らす"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 specifies that the final data must be submitted by 3:00 PM this Friday to meet the delivery date of the 10th."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-07",
+      "jlpt": 3,
+      "order": 7,
+      "passageType": "essay",
+      "titleJp": "「完璧[かんぺき]」を目指[めざ]しすぎない勉強[べんきょう]法[ほう]",
+      "titleEn": "A Study Method Without Over-Chasing Perfection",
+      "recommendedMinutes": 4,
+      "contextEn": "Short column from a language-learning magazine.",
+      "paragraphs": [
+        "外国語[がいこくご]を学[まな]び始[はじ]めた人[ひと]の中[なか]には、一[ひと]つの課[か]の単語[たんご]や文法[ぶんぽう]を百[ひゃく]パーセント覚[おぼ]えてからでないと次[つぎ]へ進[すす]まない人[ひと]がいる。まじめな態度[たいど]だが、実[じつ]はこれが挫折[ざせつ]の原因[げんいん]になりやすい。",
+        "人間[にんげん]の脳[のう]は、一度[いちど]で完璧[かんぺき]に記憶[きおく]するようにはできていない。同[おな]じ場所で足踏[あしぶ]みしていると、飽[あ]きてしまってやる気[き]が下[さ]がってしまうのだ。",
+        "それよりも、七割[ななわり]くらい理解[りかい]できたらどんどん先[さき]へ進[すす]み、あとで何度[なんど]も戻[もど]って復習[ふくしゅう]するほうが、結果的[けっかてき]に記憶[きおく]に残[のこ]りやすいと言[い]われている。"
+      ],
+      "translationEn": [
+        "Among people who start learning a foreign language, some refuse to move on to the next lesson until they have memorized 100% of the vocabulary and grammar in the current one. It is a conscientious attitude, yet this easily becomes a cause of giving up.",
+        "The human brain is not built to memorize perfectly in one go. If you keep treading water in the same spot, you get bored and your motivation drops.",
+        "Rather than that, it is said that moving steadily forward once you understand about 70%—and returning to review repeatedly later—ultimately makes things stick in memory much better."
+      ],
+      "keyVocab": [
+        {
+          "word": "挫折[ざせつ]",
+          "reading": "ざせつ",
+          "en": "setback / giving up"
+        },
+        {
+          "word": "足踏[あしぶ]みする",
+          "reading": "あしぶみする",
+          "en": "to mark time / stay stuck in one place"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-07-q1",
+          "promptJp": "筆者[ひっしゃ]によると、一[ひと]つの課[か]を完璧[かんぺき]にしようとしすぎるとどうなりますか。",
+          "promptEn": "According to the author, what happens if you try too hard to perfect a single lesson before moving on?",
+          "choices": [
+            "記憶[きおく]が一生[いっしょう]消[き]えなくなる",
+            "飽[あ]きてやる気[き]が下[さ]がり、挫折[ざせつ]しやすくなる",
+            "他[ほか]の人[ひと]より早[はや]く教科書[きょうかしょ]を終[お]えられる",
+            "発音[はつおん]が自然[しぜん]にきれいになる"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraphs 1 and 2 warn that staying stuck in one lesson leads to boredom, falling motivation, and giving up (挫折)."
+        },
+        {
+          "id": "rd-n3-07-q2",
+          "promptJp": "筆者[ひっしゃ]がすすめる勉強[べんきょう]の進[すす]め方[かた]はどれですか。",
+          "promptEn": "Which study approach does the author recommend?",
+          "choices": [
+            "七割[ななわり]ほど分[わ]かったら次[つぎ]へ進[すす]み、あとで何度[なんど]も復習[ふくしゅう]する",
+            "復習[ふくしゅう]はせず、一度[いちど]だけ丁寧[ていねい]に読[よ]む",
+            "単語[たんご]を全[すべ]て暗記[あんき]するまで次[つぎ]のページを開[ひら]かない",
+            "文法[ぶんぽう]は勉強[べんきょう]せず会話[かいわ]だけ練習[れんしゅう]する"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Paragraph 3 recommends advancing at around 70% comprehension and reviewing repeatedly later (\"七割くらい理解できたらどんどん先へ進み、あとで何度も戻って復習する\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-08",
+      "jlpt": 3,
+      "order": 8,
+      "passageType": "short",
+      "titleJp": "睡眠[すいみん]と昼寝[ひるね]の効果[こうか]",
+      "titleEn": "Sleep and the Power of a Short Nap",
+      "recommendedMinutes": 3,
+      "contextEn": "Health tip article from a workplace wellness newsletter.",
+      "paragraphs": [
+        "昼食[ちゅうしょく]のあと、強[つよ]い眠気[ねむけ]に襲[おそ]われて仕事[しごと]に集中[しゅうちゅう]できないことは誰[だれ]にでもある。そんなとき、無理[むり]にコーヒーを飲[の]み続[つづ]けるより、十五分[じゅうごふん]から二十分[にじゅっぷん]ほどの短[みじか]い昼寝[ひるね]をとるほうが効果的[こうかてき]だ。",
+        "ただし、三十分[さんじゅっぷん]以上[いじょう]眠[ねむ]ってしまうと脳[のう]が深[ふか]い睡眠[すいみん]に入[はい]ってしまい、起[お]きたあとかえって頭[あたま]がぼんやりする。また、夜[よる]の睡眠[すいみん]にも悪影響[あくえいきょう]が出[で]やすい。",
+        "昼寝[ひるね]の直前[ちょくぜん]にコーヒーを一杯[いっぱい]飲[の]んでおくと、ちょうど二十分[にじゅっぷん]後[ご]にカフェインが効[き]き始[はじ]め、すっきり目[め]が覚[さ]めると言[い]われている。"
+      ],
+      "translationEn": [
+        "Everyone experiences being hit by strong drowsiness after lunch and struggling to focus on work. At such times, rather than forcing yourself to keep drinking coffee, taking a short 15-to-20-minute nap is more effective.",
+        "However, if you sleep for 30 minutes or more, your brain enters deep sleep, leaving your head groggier upon waking. It also tends to negatively affect nighttime sleep.",
+        "It is said that if you drink one cup of coffee right before napping, the caffeine begins to take effect right around 20 minutes later, helping you wake up refreshed."
+      ],
+      "keyVocab": [
+        {
+          "word": "かえって",
+          "reading": "かえって",
+          "en": "on the contrary / instead"
+        },
+        {
+          "word": "すっきり",
+          "reading": "すっきり",
+          "en": "refreshed / clear-headed"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-08-q1",
+          "promptJp": "三十分[さんじゅっぷん]以上[いじょう]昼寝[ひるね]をすると、どんな問題[もんだい]が起[お]きやすいですか。",
+          "promptEn": "What problem tends to occur if you nap for 30 minutes or longer?",
+          "choices": [
+            "カフェインが全[まった]く効[き]かなくなる",
+            "起[お]きたあと頭[あたま]がぼんやりし、夜[よる]も眠[ねむ]りにくくなる",
+            "お腹[なか]がすぐ空[す]いてしまう",
+            "仕事[しごと]の集中力[しゅうちゅうりょく]が二倍[にばい]になる"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that napping 30+ minutes triggers deep sleep, making you groggy afterward and negatively affecting nighttime sleep."
+        },
+        {
+          "id": "rd-n3-08-q2",
+          "promptJp": "筆者[ひっしゃ]が紹介[しょうかい]している、すっきり目[め]を覚[さ]ます工夫[くふう]はどれですか。",
+          "promptEn": "What technique does the author mention for waking up refreshed?",
+          "choices": [
+            "昼寝[ひるね]の直前[ちょくぜん]にコーヒーを一杯[いっぱい]飲[の]んで二十分[にじゅっぷん]ほど寝[ね]る",
+            "一時間[いちじかん]しっかり寝[ね]てからコーヒーを飲[の]む",
+            "昼食[ちゅうしょく]を抜[ぬ]いて仕事[しごと]を続[つづ]ける",
+            "夕方[ゆうがた]五時[ごじ]に短[みじか]い昼寝[ひるね]をする"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Paragraph 3 explains the \"coffee nap\": drinking a cup right before a ~20-minute nap so caffeine kicks in as you wake up."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-09",
+      "jlpt": 3,
+      "order": 9,
+      "passageType": "notice",
+      "titleJp": "商店街[しょうてんがい]エコバッグキャンペーンのご案内[あんない]",
+      "titleEn": "Shopping District Eco-Bag Campaign",
+      "recommendedMinutes": 4,
+      "contextEn": "Promotional poster displayed across a neighborhood shopping street.",
+      "paragraphs": [
+        "あさひ商店街[しょうてんがい]では、プラスチックごみを減[へ]らすため、五月[ごがつ]一日[ついたち]から五月[ごがつ]三十一日[さんじゅういちにち]までエコバッグキャンペーンを行[おこな]います。",
+        "期間中[きかんちゅう]、参加店[さんかてん]（約[やく]四十店舗[よんじゅってんぽ]）で五百円[ごひゃくえん]以上[いじょう]買[か]い物[もの]をし、マイバッグを使[つか]ってレジ袋[ぶくろ]を断[ことわ]った方[かた]に、スタンプを一個[いっこ]押[お]します。",
+        "スタンプが十個[じゅっこ]たまったカードは、商店街[しょうてんがい]全店[ぜんてん]で使[つか]える五百円[ごひゃくえん]の商品券[しょうひんけん]と交換[こうかん]できます。交換[こうかん]期限[きげん]は六月[ろくがつ]十五日[じゅうごにち]までですので、お忘[わす]れなく。なお、たばこ・切手[きって]の購入[こうにゅう]は対象外[たいしょうがい]です。"
+      ],
+      "translationEn": [
+        "To reduce plastic waste, Asahi Shopping Street is holding an Eco-Bag Campaign from May 1 to May 31.",
+        "During the campaign, shoppers who spend 500 yen or more at participating stores (approx. 40 shops), use their own bag, and decline a plastic bag will receive one stamp.",
+        "A card with 10 stamps can be exchanged for a 500-yen voucher usable at all shops on the street. The exchange deadline is June 15, so don't forget. Note that purchases of tobacco and postage stamps are excluded."
+      ],
+      "keyVocab": [
+        {
+          "word": "断[ことわ]る",
+          "reading": "ことわる",
+          "en": "to decline / refuse"
+        },
+        {
+          "word": "商品券[しょうひんけん]",
+          "reading": "しょうひんけん",
+          "en": "gift voucher / coupon"
+        },
+        {
+          "word": "対象外[たいしょうがい]",
+          "reading": "たいしょうがい",
+          "en": "excluded / not eligible"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-09-q1",
+          "promptJp": "スタンプをもらうための条件[じょうけん]として正[ただ]しいのはどれですか。",
+          "promptEn": "Which condition is required to receive a stamp?",
+          "choices": [
+            "参加店[さんかてん]で切手[きって]を五百円[ごひゃくえん]分[ぶん]買[か]う",
+            "参加店[さんかてん]で五百円[ごひゃくえん]以上[いじょう]買[か]い、マイバッグを使[つか]ってレジ袋[ぶくろ]を断[ことわ]る",
+            "六月[ろくがつ]十日[とおか]にマイバッグを持[も]って買[か]い物[もの]をする",
+            "三百円[さんびゃくえん]以上[いじょう]買[か]ってレジ袋[ぶくろ]をもらう"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Shoppers must buy 500+ yen of eligible items in May at a participating store, use their own bag, and decline a plastic bag. Stamps/tobacco are excluded and May 31 is the end of the stamp-earning period."
+        },
+        {
+          "id": "rd-n3-09-q2",
+          "promptJp": "スタンプが十個[じゅっこ]たまったカードは、いつまでに商品券[しょうひんけん]と交換[こうかん]できますか。",
+          "promptEn": "By when can a completed 10-stamp card be exchanged for a voucher?",
+          "choices": [
+            "五月[ごがつ]十五日[じゅうごにち]",
+            "五月[ごがつ]三十一日[さんじゅういちにち]",
+            "六月[ろくがつ]一日[ついたち]",
+            "六月[ろくがつ]十五日[じゅうごにち]"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Paragraph 3 clearly states the exchange deadline is June 15 (\"交換期限は六月十五日までです\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-10",
+      "jlpt": 3,
+      "order": 10,
+      "passageType": "comparison",
+      "titleJp": "電子書籍[でんししょせき]と紙[かみ]の本[ほん]（比較[ひかく]）",
+      "titleEn": "E-Books vs. Paper Books (A/B Comparison)",
+      "recommendedMinutes": 5,
+      "contextEn": "Two readers share opposing preferences on a book club forum.",
+      "labelA": "意見[いけん]A（電子書籍[でんししょせき]派[は]）",
+      "labelB": "意見[いけん]B（紙[かみ]の本[ほん]派[は]）",
+      "paragraphs": [
+        "私[わたし]はほとんどの本[ほん]を電子書籍[でんししょせき]で買[か]っています。何百冊[なんびゃくさつ]もの本[ほん]をタブレット一台[いちだい]に入[い]れて持ち歩[もちある]けるので、出張[しゅっちょう]や通勤[つうきん]のとき荷物[にもつ]が軽[かる]くて済[す]みます。",
+        "また、文字[もじ]の大きさを自由[じゆう]に変[か]えられたり、分[わ]からない言葉[ことば]をすぐ辞書[じしょ]で調[しら]べられたりするのも大[おお]きな利点[りてん]です。本棚[ほんだな]の場所[ばしょ]を取[と]らない点[てん]も気[き]に入[い]っています。"
+      ],
+      "paragraphsB": [
+        "電子書籍[でんししょせき]の便利[べんり]さは認[みと]めますが、私[わたし]はやはり紙[かみ]の本[ほん]を選[えら]びます。ページをめくる感触[かんしょく]や、あとどれくらい読[よ]み残[のこ]しているかが厚[あつ]みで分[わ]かるところが好[す]きだからです。",
+        "それに、勉強[べんきょう]用[よう]の本[ほん]なら、気[き]になった場所[ばしょ]に鉛筆[えんぴつ]で直接[ちょくせつ]メモを書[か]き込[こ]んだり、前[まえ]のページと並[なら]べて見比[みくら]べたりしやすいのは紙[かみ]のほうだと思[おも]います。"
+      ],
+      "translationEn": [
+        "I buy almost all my books as e-books. Since I can carry hundreds of books inside a single tablet, my bag stays light on business trips and commutes.",
+        "Also, being able to freely adjust font size and look up unfamiliar words in a dictionary immediately is a huge advantage. I also like that they don't take up bookshelf space."
+      ],
+      "translationBEn": [
+        "I acknowledge the convenience of e-books, yet I still choose paper books. That is because I like the feel of turning pages and being able to tell how much is left to read from the thickness.",
+        "Moreover, for study books, I think paper makes it easier to jot notes directly with a pencil in spots that catch your attention and compare earlier pages side by side."
+      ],
+      "keyVocab": [
+        {
+          "word": "利点[りてん]",
+          "reading": "りてん",
+          "en": "advantage / merit"
+        },
+        {
+          "word": "見比[みくら]べる",
+          "reading": "みくらべる",
+          "en": "to compare visually"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-10-q1",
+          "promptJp": "Aが電子書籍[でんししょせき]の良[よ]い点[てん]として挙[あ]げていないのはどれですか。",
+          "promptEn": "Which is NOT mentioned by Writer A as a benefit of e-books?",
+          "choices": [
+            "移動中[いどうちゅう]の荷物[にもつ]が軽[かる]くなること",
+            "文字[もじ]の大きさを変[か]えられること",
+            "紙[かみ]の本[ほん]より値段[ねだん]がずっと安[やす]いこと",
+            "本棚[ほんだな]の場所[ばしょ]を取[と]らないこと"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Writer A mentions portability, resizable text, built-in dictionary lookup, and saving shelf space — price is never mentioned."
+        },
+        {
+          "id": "rd-n3-10-q2",
+          "promptJp": "AとBの意見[いけん]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement accurately describes A and B's views?",
+          "choices": [
+            "Bは電子書籍[でんししょせき]には全[まった]く便利[べんり]な点[てん]がないと考[かんが]えている",
+            "Bは勉強[べんきょう]用[よう]の本[ほん]には紙[かみ]のほうが向[む]いていると考[かんが]えている",
+            "Aは紙[かみ]の本[ほん]のほうが辞書[じしょ]を引[ひ]きやすいと言[い]っている",
+            "AもBも仕事[しごと]で毎日[まいにち]タブレットを使[つか]っている"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Writer B acknowledges e-books' convenience but prefers paper especially for study books (writing notes in pencil and comparing pages)."
+        }
+      ]
+    }
+  ]
+}

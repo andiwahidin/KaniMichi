@@ -1,0 +1,641 @@
+{
+  "level": 4,
+  "pack": "n4",
+  "items": [
+    {
+      "id": "rd-n4-01",
+      "jlpt": 4,
+      "order": 1,
+      "passageType": "short",
+      "titleJp": "日本[にほん]のごみの出[だ]し方[かた]",
+      "titleEn": "How to Take Out Garbage in Japan",
+      "recommendedMinutes": 3,
+      "contextEn": "Short cultural essay about local waste sorting rules.",
+      "paragraphs": [
+        "日本[にほん]に来[き]て一番[いちばん]びっくりしたのは、ごみの分[わ]け方[かた]がとても細[こま]かいことだ。わたしの住[す]んでいる町[まち]では、燃[も]えるごみ、燃[も]えないごみ、プラスチック、びん・かんの四[よっ]つに分[わ]けなければならない。",
+        "しかも、ごみを出[だ]せる曜日[ようび]と時間[じかん]も決[き]まっている。朝[あさ]八時[はちじ]までに出[だ]さなければならず、前[まえ]の晩[ばん]に出[だ]してはいけない。",
+        "最初[さいしょ]はよく間違[まちが]えて大変[たいへん]だったが、冷蔵庫[れいぞうこ]にルール表[ひょう]をはっておくようにしたら、だんだん慣[な]れてきた。"
+      ],
+      "translationEn": [
+        "What surprised me most after coming to Japan was how detailed garbage sorting is. In the town where I live, you have to sort trash into four categories: burnable, non-burnable, plastic, and bottles/cans.",
+        "Moreover, the days and times you can put out garbage are also fixed. You must put it out by 8:00 AM, and you must not put it out the night before.",
+        "At first I often made mistakes and it was tough, but once I made sure to stick the rule chart on the fridge, I gradually got used to it."
+      ],
+      "keyVocab": [
+        {
+          "word": "細かい",
+          "reading": "こまかい",
+          "en": "detailed; strict"
+        },
+        {
+          "word": "燃えるごみ",
+          "reading": "もえるごみ",
+          "en": "burnable garbage"
+        },
+        {
+          "word": "慣れる",
+          "reading": "なれる",
+          "en": "to get used to"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-01-q1",
+          "promptJp": "この町[まち]のごみのルールに合[あ]っているのはどれですか。",
+          "promptEn": "Which action follows the town's garbage rules?",
+          "choices": [
+            "ごみは前[まえ]の晩[ばん]に出[だ]しておく。",
+            "プラスチックとびんを同[おな]じ袋[ふくろ]に入[い]れる。",
+            "決[き]まった曜日[ようび]の朝[あさ]八時[はちじ]までに出[だ]す。",
+            "いつでも好[す]きな時間[じかん]に出[だ]していい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 states garbage must be put out by 8:00 AM on designated days and never the night before."
+        },
+        {
+          "id": "rd-n4-01-q2",
+          "promptJp": "筆者[ひっしゃ]はどうやってごみの分[わ]け方[かた]に慣[な]れましたか。",
+          "promptEn": "How did the author get used to sorting garbage?",
+          "choices": [
+            "近所[きんじょ]の人[ひと]に毎日[まいにち]聞[き]いた。",
+            "冷蔵庫[れいぞうこ]にルール表[ひょう]をはっておいた。",
+            "ごみを出[だ]さないようにした。",
+            "町[まち]の役所[やくしょ]へ毎週[まいしゅう]行[い]った。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 explains that posting the rule chart on the refrigerator helped the author get used to it."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-02",
+      "jlpt": 4,
+      "order": 2,
+      "passageType": "email",
+      "titleJp": "旅行[りょこう]の予定[よてい]の変更[へんこう]",
+      "titleEn": "Change of Travel Plans",
+      "recommendedMinutes": 3,
+      "contextEn": "Email from Sato to friend Kenji about a weekend trip.",
+      "paragraphs": [
+        "けんじくん、おつかれさま。佐藤[さとう]です。",
+        "今度[こんど]の日曜日[にちようび]のハイキングですが、天気[てんき]予報[よほう]によると、午前中[ごぜんちゅう]から強[つよ]い雨[あめ]が降[ふ]るそうです。山[やま]の道[みち]はぬれるとすべりやすくて危[あぶ]ないので、ハイキングは来月[らいげつ]に延期[えんき]したほうがいいと思[おも]います。",
+        "そのかわり、日曜日[にちようび]は駅前[えきまえ]の美術館[びじゅつかん]へ行[い]きませんか。新[あたら]しい写真[しゃしん]展[てん]をやっているそうですよ。よかったら、午前[ごぜん]十時[じゅうじ]に駅[えき]の改札[かいさつ]で会[あ]いましょう。"
+      ],
+      "translationEn": [
+        "Hey Kenji, hope you're well. This is Sato.",
+        "About this Sunday's hiking trip: according to the weather forecast, it will rain heavily from the morning. Mountain trails become slippery and dangerous when wet, so I think we had better postpone hiking until next month.",
+        "Instead, why don't we go to the art museum in front of the station on Sunday? I heard there is a new photo exhibition. If that sounds good, let's meet at the station ticket gate at 10:00 AM."
+      ],
+      "keyVocab": [
+        {
+          "word": "延期する",
+          "reading": "えんきする",
+          "en": "to postpone"
+        },
+        {
+          "word": "すべりやすい",
+          "reading": "すべりやすい",
+          "en": "easy to slip on; slippery"
+        },
+        {
+          "word": "改札",
+          "reading": "かいさつ",
+          "en": "station ticket gate"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-02-q1",
+          "promptJp": "どうしてハイキングを延期[えんき]したいと言[い]っていますか。",
+          "promptEn": "Why does Sato want to postpone the hike?",
+          "choices": [
+            "佐藤[さとう]さんが風邪[かぜ]を引[ひ]いたから。",
+            "雨[あめ]で山[やま]の道[みち]が危[あぶ]なくなるから。",
+            "けんじくんが仕事[しごと]で忙[いそが]しいから。",
+            "写真[しゃしん]展[てん]のチケットが安[やす]いから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Sato cites the forecast of heavy rain making the mountain trails slippery and dangerous."
+        },
+        {
+          "id": "rd-n4-02-q2",
+          "promptJp": "佐藤[さとう]さんは日曜日[にちようび]に何[なに]をしようと誘[さそ]っていますか。",
+          "promptEn": "What does Sato propose doing on Sunday instead?",
+          "choices": [
+            "うちで映画[えいが]を見[み]ること",
+            "来月[らいげつ]のホテルを予約[よやく]すること",
+            "駅前[えきまえ]の美術館[びじゅつかん]へ行くこと",
+            "午前[ごぜん]中[ちゅう]だけ山[やま]に登[のぼ]ること"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 proposes visiting the art museum in front of the station (駅前の美術館へ行きませんか)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-03",
+      "jlpt": 4,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "料理[りょうり]教室[きょうしつ]のご案内[あんない]",
+      "titleEn": "Japanese Cooking Class Announcement",
+      "recommendedMinutes": 3,
+      "contextEn": "Flyer at a local community center.",
+      "paragraphs": [
+        "外国[がいこく]人[じん]のための日本[にほん]料理[りょうり]教室[きょうしつ]を開[ひら]きます。今回[こんかい]は、だれでも簡単[かんたん]に作[つく]れる「肉[にく]じゃが」と「みそ汁[しる]」を練習[れんしゅう]します。",
+        "日時[にちじ]：十一月[じゅういちがつ]二十日[はつか]（土[ど]）13:00〜15:30\n場所[ばしょ]：市民[しみん]センター二階[にかい] 料理[りょうり]室[しつ]\n参加[さんか]費[ひ]：800円[えん]（材料[ざいりょう]代[だい]をふくみます）",
+        "申[もう]し込[こ]みは十一月[じゅういちがつ]十二日[じゅうににち]までに、電話[でんわ]か受付[うけつけ]でお願いします。定員[ていいん]は十五人[じゅうごにん]です。エプロンとタオルをご持参[じさん]ください。"
+      ],
+      "translationEn": [
+        "We are holding a Japanese cooking class for foreign residents. This time we will practice making \"nikujaga\" and \"miso soup,\" which anyone can make easily.",
+        "Date & Time: Saturday, November 20, 13:00–15:30 / Place: Civic Center 2F Cooking Room / Fee: 800 yen (includes ingredient costs).",
+        "Please apply by November 12 by phone or at the reception desk. Capacity is 15 people. Please bring your own apron and towel."
+      ],
+      "keyVocab": [
+        {
+          "word": "材料代",
+          "reading": "ざいりょうだい",
+          "en": "cost of ingredients"
+        },
+        {
+          "word": "定員",
+          "reading": "ていいん",
+          "en": "capacity; maximum participants"
+        },
+        {
+          "word": "ご持参ください",
+          "reading": "ごじさんください",
+          "en": "please bring with you (polite)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-03-q1",
+          "promptJp": "参加[さんか]したい人[ひと]は、まず何[なに]をしなければなりませんか。",
+          "promptEn": "What must someone who wants to participate do first?",
+          "choices": [
+            "十一月[じゅういちがつ]二十日[はつか]に材料[ざいりょう]を買[か]って持[も]っていく。",
+            "十一月[じゅういちがつ]十二日[じゅうににち]までに電話[でんわ]か受付[うけつけ]で申[もう]し込[こ]む。",
+            "メールで料理[りょうり]の名前[なまえ]を送[おく]る。",
+            "市民[しみん]センターでエプロンを借[か]りる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 instructs applicants to register by November 12 via phone or the reception desk."
+        },
+        {
+          "id": "rd-n4-03-q2",
+          "promptJp": "当日[とうじつ]、自分[じぶん]で持[も]っていくものは何[なに]ですか。",
+          "promptEn": "What should participants bring on the day of the class?",
+          "choices": [
+            "野菜[やさい]と肉[にく]",
+            "みそと鍋[なべ]",
+            "エプロンとタオル",
+            "料理[りょうり]の本[ほん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Ingredients are included in the 800-yen fee; participants only need to bring an apron and a towel (エプロンとタオルをご持参ください)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-04",
+      "jlpt": 4,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "アルバイトで学[まな]んだこと",
+      "titleEn": "What I Learned at My Part-Time Job",
+      "recommendedMinutes": 3,
+      "contextEn": "Student essay about working at a bakery.",
+      "paragraphs": [
+        "わたしは去年[きょねん]の秋[あき]から、駅[えき]の近[ちか]くのパン屋[や]でアルバイトをしています。働[はたら]き始[はじ]めたころは、パンの名前[なまえ]や値段[ねだん]を覚[おぼ]えるのが大変[たいへん]で、よくレジで失敗[しっぱい]してしまいました。",
+        "でも、店長[てんちょう]や先輩[せんぱい]がいつも親切[しんせつ]に教[おし]えてくれました。わたしもメモを取[と]って、家[いえ]で毎日[まいにち]声[こえ]に出[だ]して練習[れんしゅう]するようにしました。",
+        "今[いま]ではお客[きゃく]さまに笑顔[えがお]で「ありがとうございました」と言[い]えるようになり、仕事[しごと]がとても楽[たの]しいです。"
+      ],
+      "translationEn": [
+        "Since last autumn, I have been working part-time at a bakery near the station. When I first started, memorizing the names and prices of the breads was tough, and I often made mistakes at the register.",
+        "However, the store manager and senior coworkers always taught me kindly. I also made a habit of taking notes and practicing aloud at home every day.",
+        "Now I have become able to say \"Thank you very much\" to customers with a smile, and the job is very enjoyable."
+      ],
+      "keyVocab": [
+        {
+          "word": "失敗する",
+          "reading": "しっぱいする",
+          "en": "to fail; make a mistake"
+        },
+        {
+          "word": "先輩",
+          "reading": "せんぱい",
+          "en": "senior coworker"
+        },
+        {
+          "word": "声に出す",
+          "reading": "こえにだす",
+          "en": "to say out loud"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-04-q1",
+          "promptJp": "働[はたら]き始[はじ]めたころ、筆者[ひっしゃ]は何[なに]が大変[たいへん]でしたか。",
+          "promptEn": "What was difficult for the writer when first starting the job?",
+          "choices": [
+            "朝[あさ]早[はや]く起[お]きること",
+            "パンを作[つく]ること",
+            "パンの名前[なまえ]や値段[ねだん]を覚[おぼ]えること",
+            "店長[てんちょう]と話[はな]すこと"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 1 states memorizing bread names and prices was tough, leading to register mistakes."
+        },
+        {
+          "id": "rd-n4-04-q2",
+          "promptJp": "今[いま]の筆者[ひっしゃ]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which is true about the writer now?",
+          "choices": [
+            "レジがまだ苦手[にがて]でやめたがっている。",
+            "お客[きゃく]さまに笑顔[えがお]で挨拶[あいさつ]でき、仕事[しごと]が楽[たの]しい。",
+            "パン屋[や]をやめて別[べつ]の店[みせ]へ移[うつ]った。",
+            "毎日[まいにち]一人[ひとり]でパンを焼[や]いている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states they can now greet customers with a smile and find the job very enjoyable."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-05",
+      "jlpt": 4,
+      "order": 5,
+      "passageType": "essay",
+      "titleJp": "睡眠[すいみん]とスマートフォン",
+      "titleEn": "Sleep and Smartphones",
+      "recommendedMinutes": 3,
+      "contextEn": "Short health column on bedtime smartphone habits.",
+      "paragraphs": [
+        "最近[さいきん]、「夜[よる]なかなか眠[ねむ]れない」と悩[なや]んでいる若[わか]い人[ひと]が増[ふ]えているそうです。その大[おお]きな原因[げんいん]の一[ひと]つは、寝[ね]る前[まえ]のスマートフォンの使[つか]いすぎだと言[い]われています。",
+        "暗[くら]い部屋[へや]で明[あか]るい画面[がめん]を見[み]続[つづ]けると、脳[のう]が「まだ昼[ひる]だ」とかんちがいしてしまい、眠[ねむ]りにくくなるのです。",
+        "ぐっすり眠[ねむ]るためには、寝[ね]る一時間[いちじかん]前[まえ]には画面[がめん]を見[み]るのをやめて、温[あたた]かいお茶[ちゃ]を飲[の]んだり、静[しず]かな音楽[おんがく]を聞[き]いたりするほうがいいでしょう。"
+      ],
+      "translationEn": [
+        "Recently, the number of young people troubled by not being able to fall asleep easily at night is reportedly increasing. One major cause is said to be excessive smartphone use before bed.",
+        "When you keep staring at a bright screen in a dark room, your brain mistakenly thinks it is still daytime, making it harder to fall asleep.",
+        "In order to sleep soundly, it is better to stop looking at screens an hour before bed and instead drink warm tea or listen to quiet music."
+      ],
+      "keyVocab": [
+        {
+          "word": "悩む",
+          "reading": "なやむ",
+          "en": "to worry; be troubled by"
+        },
+        {
+          "word": "原因",
+          "reading": "げんいん",
+          "en": "cause; reason"
+        },
+        {
+          "word": "かんちがいする",
+          "reading": "かんちがいする",
+          "en": "to misunderstand; mistake"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-05-q1",
+          "promptJp": "寝[ね]る前[まえ]に画面[がめん]を見[み]続[つづ]けると、どうして眠[ねむ]りにくくなりますか。",
+          "promptEn": "Why does staring at a screen before bed make it harder to sleep?",
+          "choices": [
+            "部屋[へや]が寒[さむ]くなるから。",
+            "脳[のう]がまだ昼[ひる]だとかんちがいするから。",
+            "音楽[おんがく]がうるさいから。",
+            "お茶[ちゃ]を飲[の]みすぎるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explicitly explains that bright screens trick the brain into thinking it is still daytime (脳が「まだ昼だ」とかんちがいしてしまい)."
+        },
+        {
+          "id": "rd-n4-05-q2",
+          "promptJp": "ぐっすり眠[ねむ]るために、この文章[ぶんしょう]がすすめていることは何[なに]ですか。",
+          "promptEn": "What does the passage recommend for sleeping soundly?",
+          "choices": [
+            "部屋[へや]を明[あか]るくして寝[ね]ること",
+            "寝[ね]る直前[ちょくぜん]までニュースを読[よ]むこと",
+            "寝[ね]る一時間[いちじかん]前[まえ]に画面[がめん]を見[み]るのをやめること",
+            "冷[つめ]たいコーヒーを飲[の]むこと"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 advises stopping screen viewing one hour before bedtime."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-06",
+      "jlpt": 4,
+      "order": 6,
+      "passageType": "notice",
+      "titleJp": "図書館[としょかん]のシステム点検[てんけん]のお知[し]らせ",
+      "titleEn": "Library System Maintenance Notice",
+      "recommendedMinutes": 3,
+      "contextEn": "Announcement posted on a municipal library website.",
+      "paragraphs": [
+        "来週[らいしゅう]の水曜日[すいようび]、コンピュータの点検[てんけん]のため、図書館[としょかん]のウェブサイトが午前[ごぜん]九時[くじ]から午後[ごご]三時[さんじ]まで使[つか]えなくなります。",
+        "その間[あいだ]、インターネットでの本[ほん]の予約[よやく]や貸出[かしだし]期間[きかん]の延長[えんちょう]はできません。",
+        "なお、図書館[としょかん]の建物[たてもの]は普段[ふだん]どおり開[あ]いていますので、館内[かんない]で本[ほん]を読[よ]んだり、カウンターで借[か]りたり返[かえ]したりすることはできます。"
+      ],
+      "translationEn": [
+        "Next Wednesday, due to computer maintenance, the library website will be unavailable from 9:00 AM to 3:00 PM.",
+        "During that time, online book reservations and loan period extensions will not be possible.",
+        "However, the library building itself will be open as usual, so you can read books inside or borrow and return them at the counter."
+      ],
+      "keyVocab": [
+        {
+          "word": "点検[てんけん]",
+          "reading": "てんけん",
+          "en": "inspection / maintenance"
+        },
+        {
+          "word": "延長[えんちょう]",
+          "reading": "えんちょう",
+          "en": "extension (of time)"
+        },
+        {
+          "word": "普段[ふだん]どおり",
+          "reading": "ふだんどおり",
+          "en": "as usual"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-06-q1",
+          "promptJp": "来週[らいしゅう]の水曜日[すいようび]の午前[ごぜん]十一時[じゅういちじ]にできることは何[なに]ですか。",
+          "promptEn": "What can you do at 11:00 AM next Wednesday?",
+          "choices": [
+            "ウェブサイトで本[ほん]を予約[よやく]する",
+            "インターネットで返却[へんきゃく]日[び]を延[の]ばす",
+            "図書館[としょかん]のカウンターで本[ほん]を返[かえ]す",
+            "図書館[としょかん]が閉[し]まっているので何[なに]もできない"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Between 9:00 AM and 3:00 PM only the website is down; the library building is open as usual and books can be borrowed or returned at the counter."
+        },
+        {
+          "id": "rd-n4-06-q2",
+          "promptJp": "ウェブサイトが使[つか]えなくなる理由[りゆう]は何[なん]ですか。",
+          "promptEn": "Why will the website be unavailable?",
+          "choices": [
+            "図書館[としょかん]が休[やす]みだから",
+            "コンピュータを点検[てんけん]するから",
+            "新[あたら]しい本[ほん]を並[なら]べるから",
+            "建物[たてもの]を修理[しゅうり]するから"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The first sentence states \"コンピュータの点検のため\" (due to computer maintenance)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-07",
+      "jlpt": 4,
+      "order": 7,
+      "passageType": "email",
+      "titleJp": "アルバイトのシフト交代[こうたい]のお願[ねが]い",
+      "titleEn": "Part-Time Shift Swap Request",
+      "recommendedMinutes": 3,
+      "contextEn": "Message from a coworker named Yuka asking to swap shifts at a convenience store.",
+      "paragraphs": [
+        "たかしさん、お疲れ様[つかれさま]です。急[きゅう]なお願[ねが]いなんですが、今週[こんしゅう]の木曜日[もくようび]の夕方[ゆうがた]のシフトを代[か]わってもらえませんか。",
+        "急[きゅう]に大学[だいがく]のゼミの発表[はっぴょう]が入[はい]ってしまって、五時[ごじ]に店[みせ]に着[つ]けそうもないんです。",
+        "代[か]わりに、来週[らいしゅう]の日曜日[にちようび]のたかしさんのシフトに入[はい]ります。もし大丈夫[だいじょうぶ]なら、明日[あした]の昼[ひる]までに返事[へんじ]をくれると助[たす]かります。店長[てんちょう]には決[き]まってから私[わたし]が連絡[れんらく]しますね。"
+      ],
+      "translationEn": [
+        "Takashi-san, thanks for your hard work. This is a sudden favor, but could you cover my Thursday evening shift this week?",
+        "A university seminar presentation suddenly came up, and it looks like I won't make it to the store by 5:00.",
+        "In exchange, I'll take your shift next Sunday. If that works, it would really help if you could reply by noon tomorrow. Once it's decided, I'll inform the store manager myself."
+      ],
+      "keyVocab": [
+        {
+          "word": "代[か]わってもらえませんか",
+          "reading": "かわってもらえませんか",
+          "en": "could you cover/switch for me?"
+        },
+        {
+          "word": "着[つ]けそうもない",
+          "reading": "つけそうもない",
+          "en": "unlikely to make it on time"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-07-q1",
+          "promptJp": "ゆかさんはどうしてシフトを代[か]わってほしいのですか。",
+          "promptEn": "Why does Yuka want someone to cover her shift?",
+          "choices": [
+            "風邪[かぜ]を引[ひ]いてしまったから",
+            "大学[だいがく]の発表[はっぴょう]が急[きゅう]に決[き]まったから",
+            "来週[らいしゅう]の日曜日[にちようび]に旅行[りょこう]へ行[い]くから",
+            "店長[てんちょう]に頼[たの]まれたから"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "She explains that a university seminar presentation suddenly came up so she can't arrive by 5:00."
+        },
+        {
+          "id": "rd-n4-07-q2",
+          "promptJp": "たかしさんがシフトを代[か]われる場合[ばあい]、まず何[なに]をしますか。",
+          "promptEn": "If Takashi can cover the shift, what should he do?",
+          "choices": [
+            "すぐ店長[てんちょう]に電話[でんわ]する",
+            "来週[らいしゅう]の日曜日[にちようび]まで待[ま]つ",
+            "明日[あした]の昼[ひる]までにゆかさんへ返事[へんじ]をする",
+            "木曜日[もくようび]の朝[あさ]に店[みせ]へ行[い]く"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Yuka asks him to reply to her by noon tomorrow (\"明日の昼までに返事をくれると助かります\") and says she will contact the manager herself afterward."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-08",
+      "jlpt": 4,
+      "order": 8,
+      "passageType": "short",
+      "titleJp": "自転車[じてんしゃ]通勤[つうきん]を始[はじ]めて",
+      "titleEn": "Starting to Commute by Bicycle",
+      "recommendedMinutes": 3,
+      "contextEn": "A short column written by an office worker.",
+      "paragraphs": [
+        "半年前[はんとしまえ]まで、私[わたし]は毎日[まいにち]満員[まんいん]電車[でんしゃ]で会社[かいしゃ]へ通[かよ]っていました。朝[あさ]から疲[つか]れてしまい、運動[うんどう]不足[ぶそく]も気[き]になっていました。",
+        "そこで、思[おも]い切[き]って自転車[じてんしゃ]を買[か]い、片道[かたみち]三十分[さんじゅっぷん]かけて通[かよ]うことにしました。最初[さいしょ]の一週間[いっしゅうかん]は足[あし]が痛[いた]くて、やめようかと思[おも]いました。",
+        "しかし、一か月[いっかげつ]続[つづ]けると体[からだ]が慣[な]れてきて、今[いま]では季節[きせつ]の風[かぜ]を感[かん]じながら走[はし]るのが毎日[まいにち]の楽[たの]しみになっています。"
+      ],
+      "translationEn": [
+        "Until six months ago, I commuted to work every day on a packed train. I ended up exhausted from the morning, and I was also worried about a lack of exercise.",
+        "So I took the plunge, bought a bicycle, and decided to commute 30 minutes each way. During the first week my legs hurt, and I thought about quitting.",
+        "However, after keeping it up for a month my body got used to it, and now riding while feeling the seasonal breeze has become my daily joy."
+      ],
+      "keyVocab": [
+        {
+          "word": "満員[まんいん]電車[でんしゃ]",
+          "reading": "まんいんでんしゃ",
+          "en": "packed/crowded train"
+        },
+        {
+          "word": "思[おも]い切[き]って",
+          "reading": "おもいきって",
+          "en": "boldly / taking the plunge"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-08-q1",
+          "promptJp": "筆者[ひっしゃ]が自転車[じてんしゃ]通勤[つうきん]を始[はじ]めた理由[りゆう]はどれですか。",
+          "promptEn": "Why did the author start commuting by bicycle?",
+          "choices": [
+            "会社[かいしゃ]が近[ちか]くに引[ひ]っ越[こ]したから",
+            "電車[でんしゃ]代[だい]が高[たか]くなったから",
+            "満員[まんいん]電車[でんしゃ]に疲[つか]れ、運動[うんどう]不足[ぶそく]も気[き]になっていたから",
+            "友達[ともだち]から自転車[じてんしゃ]をもらったから"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "In paragraph 1, the author cites exhaustion from packed trains and concern over lack of exercise."
+        },
+        {
+          "id": "rd-n4-08-q2",
+          "promptJp": "今[いま]、筆者[ひっしゃ]は自転車[じてんしゃ]通勤[つうきん]についてどう思[おも]っていますか。",
+          "promptEn": "How does the author feel about bicycle commuting now?",
+          "choices": [
+            "足[あし]が痛[いた]いのでやめたいと思[おも]っている",
+            "体[からだ]が慣[な]れて毎日[まいにち]の楽[たの]しみになっている",
+            "一時間[いちじかん]以上[いじょう]かかって大変[たいへん]だ",
+            "電車[でんしゃ]に戻[もど]そうと考[かんが]えている"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states that after a month their body adapted and riding has become a daily enjoyment (\"毎日の楽しみになっています\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-09",
+      "jlpt": 4,
+      "order": 9,
+      "passageType": "essay",
+      "titleJp": "日本[にほん]のコンビニの便利[べんり]さ",
+      "titleEn": "The Convenience of Japanese Convenience Stores",
+      "recommendedMinutes": 3,
+      "contextEn": "An essay by an international student living in Japan.",
+      "paragraphs": [
+        "日本[にほん]に来[き]て一番[いちばん]驚[おどろ]いたのは、コンビニでできることの多[おお]さです。私[わたし]の国[くに]では、コンビニは飲[の]み物[もの]やお菓子[かし]を買[か]う場所[ばしょ]というイメージでした。",
+        "ところが日本[にほん]では、電気[でんき]代[だい]や水道[すいどう]代[だい]を払[はら]ったり、荷物[にもつ]を送[おく]ったり、コンサートやバスのチケットを買[か]ったりすることもできます。",
+        "特[とく]に助[たす]かっているのは、夜遅[よるおそ]くに大学のレポートを印刷[いんさつ]できることです。家[いえ]にプリンターがなくても困[こま]りません。"
+      ],
+      "translationEn": [
+        "What surprised me most after coming to Japan was how many things you can do at a convenience store. In my country, convenience stores had the image of a place just to buy drinks and snacks.",
+        "In Japan, however, you can pay electricity and water bills, send packages, and even buy concert or bus tickets.",
+        "What helps me especially is being able to print university reports late at night. Even without a printer at home, it's no problem."
+      ],
+      "keyVocab": [
+        {
+          "word": "ところが",
+          "reading": "ところが",
+          "en": "however / contrary to expectation"
+        },
+        {
+          "word": "印刷[いんさつ]する",
+          "reading": "いんさつする",
+          "en": "to print"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-09-q1",
+          "promptJp": "この留学生[りゅうがくせい]が特[とく]に助[たす]かっているサービスは何[なん]ですか。",
+          "promptEn": "Which service does this student find especially helpful?",
+          "choices": [
+            "お菓子[かし]を安[やす]く買[か]えること",
+            "水道[すいどう]代[だい]を払[はら]えること",
+            "夜遅[よるおそ]くにレポートを印刷[いんさつ]できること",
+            "家[いえ]まで荷物[にもつ]を運[はこ]んでくれること"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The third paragraph specifically highlights \"特に助かっているのは、夜遅くに大学のレポートを印刷できることです\" (printing university reports late at night)."
+        },
+        {
+          "id": "rd-n4-09-q2",
+          "promptJp": "文章[ぶんしょう]の内容[ないよう]と合[あ]っているのはどれですか。",
+          "promptEn": "Which statement agrees with the passage?",
+          "choices": [
+            "この学生[がくせい]の家[いえ]には新[あたら]しいプリンターがある",
+            "この学生[がくせい]の国[くに]のコンビニでも電気[でんき]代[だい]がよく払[はら]われる",
+            "日本[にほん]のコンビニではチケットを買[か]うこともできる",
+            "日本[にほん]のコンビニは夜[よる]十時[じゅうじ]に閉[し]まる"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 explicitly notes that concert and bus tickets can be bought at Japanese convenience stores."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-10",
+      "jlpt": 4,
+      "order": 10,
+      "passageType": "notice",
+      "titleJp": "ハイキングツアーのご案内[あんない]",
+      "titleEn": "Autumn Mountain Hiking Tour Guide",
+      "recommendedMinutes": 3,
+      "contextEn": "Flyer for a one-day guided hiking trip.",
+      "paragraphs": [
+        "十月[じゅうがつ]二十日[はつか]（日[にち]）に、みどり山[やま]ハイキングツアーを行[おこな]います。朝[あさ]八時[はちじ]に駅前[えきまえ]広場[ひろば]へ集合[しゅうごう]し、バスで山[やま]の入口[いりぐち]まで行[い]きます。",
+        "歩[ある]く時間[じかん]は約[やく]三時間[さんじかん]です。昼[ひる]ご飯[はん]のお弁当[べんとう]と飲[の]み物[もの]、そして歩[ある]きやすい靴[くつ]をご用意[ようい]ください。",
+        "少[すこ]しの雨[あめ]なら実施[じっし]しますが、強[つよ]い雨[あめ]や台風[たいふう]の場合[ばあい]は中止[ちゅうし]になります。中止[ちゅうし]の連絡[れんらく]は当日[とうじつ]の朝[あさ]六時半[ろくじはん]までにメールでお送[おく]りします。"
+      ],
+      "translationEn": [
+        "On Sunday, October 20, we will hold the Midori Mountain Hiking Tour. Meet at the station plaza at 8:00 AM, and we will go by bus to the trailhead.",
+        "Walking time is about three hours. Please bring a bento lunch, drinks, and comfortable walking shoes.",
+        "The tour will proceed in light rain, but will be canceled in heavy rain or a typhoon. Cancellation notices will be sent by email by 6:30 AM on the day."
+      ],
+      "keyVocab": [
+        {
+          "word": "集合[しゅうごう]する",
+          "reading": "しゅうごうする",
+          "en": "to gather / assemble"
+        },
+        {
+          "word": "実施[じっし]する",
+          "reading": "じっしする",
+          "en": "to carry out / hold (an event)"
+        },
+        {
+          "word": "中止[ちゅうし]",
+          "reading": "ちゅうし",
+          "en": "cancellation"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-10-q1",
+          "promptJp": "参加者[さんかしゃ]が自分[じぶん]で用意[ようい]するものはどれですか。",
+          "promptEn": "What must participants prepare themselves?",
+          "choices": [
+            "バス代[だい]だけ",
+            "お弁当[べんとう]と飲[の]み物[もの]と歩[ある]きやすい靴[くつ]",
+            "山[やま]の地図[ちず]とテント",
+            "お弁当[べんとう]は主催者[しゅさいしゃ]が配[くば]るので不要[ふよう]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 asks participants to prepare their own bento lunch, drinks, and comfortable walking shoes."
+        },
+        {
+          "id": "rd-n4-10-q2",
+          "promptJp": "天気[てんき]とツアーの実施[じっし]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement about the weather and tour operation is correct?",
+          "choices": [
+            "少[すこ]しでも雨[あめ]が降[ふ]ったら必[かなら]ず中止[ちゅうし]になる",
+            "強[つよ]い雨[あめ]で中止[ちゅうし]のとき、当日[とうじつ]の朝[あさ]六時半[ろくじはん]までにメールが来[く]る",
+            "中止[ちゅうし]のときは前日[ぜんじつ]の夜[よる]に電話[でんわ]が来[く]る",
+            "台風[たいふう]の日[ひ]でもバスで実施[じっし]する"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Light rain still goes ahead; only heavy rain or a typhoon cancels it, with email notification by 6:30 AM on the day."
+        }
+      ]
+    }
+  ]
+}

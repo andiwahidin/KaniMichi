@@ -1,4 +1,5 @@
 import { GrammarDataset, GrammarPoint, JlptLevel } from '../types/grammar';
+import { createJlptPackLoader, type JlptPackManifest } from './packLoader';
 
 export const JLPT_LEVELS: {
   level: JlptLevel;
@@ -44,8 +45,7 @@ export const JLPT_LEVELS: {
   },
 ];
 
-let cachedGrammar: GrammarDataset | null = null;
-let loadingGrammarPromise: Promise<GrammarDataset> | null = null;
+export type { JlptPackManifest as GrammarManifest };
 
 function buildGrammarDataset(points: GrammarPoint[]): GrammarDataset {
   const byId: Record<string, GrammarPoint> = {};
@@ -69,25 +69,13 @@ function buildGrammarDataset(points: GrammarPoint[]): GrammarDataset {
   return { points, byId, byJlpt };
 }
 
-export async function loadGrammarDataset(): Promise<GrammarDataset> {
-  if (cachedGrammar) return cachedGrammar;
-  if (!loadingGrammarPromise) {
-    const base = import.meta.env.BASE_URL.endsWith('/')
-      ? import.meta.env.BASE_URL
-      : `${import.meta.env.BASE_URL}/`;
-    loadingGrammarPromise = fetch(`${base}data/grammar-jlpt.json`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`Gagal memuat kurikulum Grammar (${res.status})`);
-        return res.json() as Promise<{ version: number; points: GrammarPoint[] }>;
-      })
-      .then((raw) => {
-        cachedGrammar = buildGrammarDataset(raw.points);
-        return cachedGrammar;
-      })
-      .catch((err) => {
-        loadingGrammarPromise = null;
-        throw err;
-      });
-  }
-  return loadingGrammarPromise;
-}
+const grammarLoader = createJlptPackLoader<GrammarPoint, GrammarDataset>({
+  dir: 'grammar',
+  label: 'Grammar JLPT',
+  buildDataset: buildGrammarDataset,
+});
+
+export const loadGrammarManifest = grammarLoader.loadManifest;
+export const loadGrammarLevel = grammarLoader.loadLevel;
+export const loadGrammarLevels = grammarLoader.loadLevels;
+export const loadGrammarDataset = grammarLoader.loadAll;

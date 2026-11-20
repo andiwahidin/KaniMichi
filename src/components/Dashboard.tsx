@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { lazy, Suspense, useMemo, useState } from 'react';
 import {
   Award,
   Bell,
@@ -21,7 +21,6 @@ import {
 import { getLevelMeta, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { CurriculumItem } from '../types/curriculum';
-import { DailyProgressChart } from './DailyProgressChart';
 import {
   buildReviewForecast,
   formatRelativeTime,
@@ -31,6 +30,12 @@ import {
   getTodayDateStr,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+
+const DailyProgressChart = lazy(() =>
+  import('./DailyProgressChart').then((m) => ({
+    default: m.DailyProgressChart,
+  }))
+);
 
 export const Dashboard: React.FC = () => {
   const {
@@ -1109,19 +1114,29 @@ export const Dashboard: React.FC = () => {
             </div>
           </section>
 
-          {/* DAILY REVIEW CONSISTENCY & ACCURACY CHART (RECHARTS) */}
-          <DailyProgressChart
-            history={state.history}
-            now={now}
-            dailyReviewGoal={state.settings.dailyReviewGoal}
-            streakDays={state.streakDays}
-            totalReviewsDone={state.totalReviewsDone}
-            hasAvailableReviews={availableReviews.length > 0}
-            onStartReview={() =>
-              setActiveView(availableReviews.length > 0 ? 'review' : 'lesson')
+          {/* DAILY REVIEW CONSISTENCY & ACCURACY CHART (RECHARTS — LAZY LOADED) */}
+          <Suspense
+            fallback={
+              <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 h-[320px] flex items-center justify-center">
+                <span className="text-xs text-slate-400 dark:text-slate-500">
+                  Memuat grafik progres harian...
+                </span>
+              </section>
             }
-            onOpenSettings={() => setSettingsOpen(true)}
-          />
+          >
+            <DailyProgressChart
+              history={state.history}
+              now={now}
+              dailyReviewGoal={state.settings.dailyReviewGoal}
+              streakDays={state.streakDays}
+              totalReviewsDone={state.totalReviewsDone}
+              hasAvailableReviews={availableReviews.length > 0}
+              onStartReview={() =>
+                setActiveView(availableReviews.length > 0 ? 'review' : 'lesson')
+              }
+              onOpenSettings={() => setSettingsOpen(true)}
+            />
+          </Suspense>
 
           {/* EXTRA STUDY + CRITICAL & RECENTLY UNLOCKED */}
           <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-6">

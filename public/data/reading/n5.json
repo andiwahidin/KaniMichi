@@ -1,0 +1,636 @@
+{
+  "level": 5,
+  "pack": "n5",
+  "items": [
+    {
+      "id": "rd-n5-01",
+      "jlpt": 5,
+      "order": 1,
+      "passageType": "short",
+      "titleJp": "わたしの日曜日[にちようび]",
+      "titleEn": "My Sunday Routine",
+      "recommendedMinutes": 2,
+      "contextEn": "Short diary passage describing a typical weekend day.",
+      "paragraphs": [
+        "わたしはまいしゅう日曜日[にちようび]の朝[あさ]、八時[はちじ]におきます。ふだんは六時[ろくじ]におきますが、日曜日[にちようび]はゆっくりねます。",
+        "朝[あさ]ごはんを食べてから、近[ちか]くの公園[こうえん]へいきます。公園[こうえん]で三十分[さんじゅっぷん]ぐらい走[はし]ります。ときどき犬[いぬ]と散歩[さんぽ]している人[ひと]に会[あ]います。",
+        "午後[ごご]は図書館[としょかん]で日本語[にほんご]の本[ほん]を読[よ]みます。夕方[ゆうがた]、スーパーで野菜[やさい]と魚[さかな]を買[か]って、うちへ帰[かえ]ります。"
+      ],
+      "translationEn": [
+        "Every Sunday morning, I wake up at eight o'clock. Normally I wake up at six, but on Sundays I sleep in leisurely.",
+        "After eating breakfast, I go to a nearby park. I run for about thirty minutes in the park. Sometimes I meet people walking their dogs.",
+        "In the afternoon, I read Japanese books at the library. In the evening, I buy vegetables and fish at the supermarket and return home."
+      ],
+      "keyVocab": [
+        {
+          "word": "ふだん",
+          "reading": "ふだん",
+          "en": "usually; on normal days"
+        },
+        {
+          "word": "散歩",
+          "reading": "さんぽ",
+          "en": "walk; stroll"
+        },
+        {
+          "word": "夕方",
+          "reading": "ゆうがた",
+          "en": "evening"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-01-q1",
+          "promptJp": "この人[ひと]は日曜日[にちようび]の朝[あさ]、何時[なんじ]におきますか。",
+          "promptEn": "What time does this person wake up on Sunday mornings?",
+          "choices": [
+            "六時[ろくじ]",
+            "七時[しちじ]",
+            "八時[はちじ]",
+            "九時[くじ]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 1 states they normally wake at 6:00, but on Sundays they wake up at 8:00 (八時におきます)."
+        },
+        {
+          "id": "rd-n5-01-q2",
+          "promptJp": "午後[ごご]、この人[ひと]はどこで何[なに]をしますか。",
+          "promptEn": "Where does this person go and what do they do in the afternoon?",
+          "choices": [
+            "公園[こうえん]で犬[いぬ]と散歩[さんぽ]します。",
+            "図書館[としょかん]で本[ほん]を読[よ]みます。",
+            "スーパーで朝[あさ]ごはんを食べます。",
+            "うちでテレビを見[み]ます。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 clearly says: \"In the afternoon, I read Japanese books at the library\" (午後は図書館で日本語の本を読みます)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-02",
+      "jlpt": 5,
+      "order": 2,
+      "passageType": "notice",
+      "titleJp": "図書館[としょかん]のお知[し]らせ",
+      "titleEn": "Library Opening Hours Notice",
+      "recommendedMinutes": 2,
+      "contextEn": "Notice posted at the entrance of Sakura City Library.",
+      "paragraphs": [
+        "さくら図書館[としょかん]をご利用[りよう]いただきありがとうございます。",
+        "来週[らいしゅう]の月曜日[げつようび]（十月[じゅうがつ]十日[とおか]）は祝日[しゅくじつ]ですが、午前[ごぜん]九時[くじ]から午後[ごご]五時[ごじ]まで開[あ]いています。ただし、次[つぎ]の日[ひ]の火曜日[かようび]はお休[やす]みになります。",
+        "本[ほん]は一人[ひとり]十冊[じゅっさつ]まで、二週間[にしゅうかん]かりることができます。返[かえ]すときは、一階[いっかい]のカウンターへお持[も]ちください。"
+      ],
+      "translationEn": [
+        "Thank you for using Sakura Library.",
+        "Next Monday (October 10) is a national holiday, but we will be open from 9:00 AM to 5:00 PM. However, the following day, Tuesday, will be closed.",
+        "Each person can borrow up to 10 books for two weeks. When returning books, please bring them to the first-floor counter."
+      ],
+      "keyVocab": [
+        {
+          "word": "祝日",
+          "reading": "しゅくじつ",
+          "en": "national holiday"
+        },
+        {
+          "word": "ただし",
+          "reading": "ただし",
+          "en": "however; note that"
+        },
+        {
+          "word": "かりる",
+          "reading": "かりる",
+          "en": "to borrow"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-02-q1",
+          "promptJp": "来週[らいしゅう]の火曜日[かようび]、図書館[としょかん]はどうなりますか。",
+          "promptEn": "What is the library status next Tuesday?",
+          "choices": [
+            "午前[ごぜん]九時[くじ]から開[あ]いています。",
+            "午後[ごご]五時[ごじ]まで開[あ]いています。",
+            "お休[やす]みです。",
+            "本[ほん]を返[かえ]すことだけできます。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The notice states that Monday is open despite the holiday, \"however, the next day, Tuesday, will be closed\" (次の日の火曜日はお休みになります)."
+        },
+        {
+          "id": "rd-n5-02-q2",
+          "promptJp": "本[ほん]は何冊[なんさつ]、どのぐらいかりられますか。",
+          "promptEn": "How many books can you borrow, and for how long?",
+          "choices": [
+            "五冊[ごさつ]、一週間[いっしゅうかん]",
+            "十冊[じゅっさつ]、一週間[いっしゅうかん]",
+            "五冊[ごさつ]、二週間[にしゅうかん]",
+            "十冊[じゅっさつ]、二週間[にしゅうかん]"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Paragraph 3 states: up to 10 books per person for two weeks (一人十冊まで、二週間)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-03",
+      "jlpt": 5,
+      "order": 3,
+      "passageType": "email",
+      "titleJp": "パーティーのしょうたいメール",
+      "titleEn": "Birthday Party Invitation Email",
+      "recommendedMinutes": 2,
+      "contextEn": "Email from Yamada to his friend Alex.",
+      "paragraphs": [
+        "アレックスさん、こんにちは。山田[やまだ]です。",
+        "今週[こんしゅう]の土曜日[どようび]に、わたしのうちで誕生[たんじょう]日[び]パーティーをします。時間[じかん]は午後[ごご]六時[ろくじ]からです。友達[ともだち]が五人[ごにん]ぐらい来[き]ます。",
+        "料理[りょうり]はわたしが作[つく]りますから、何[なに]も持[も]ってこなくてもいいです。でも、好[す]きな飲[の]み物[もの]があったら、持[も]ってきてください。来[こ]られるかどうか、木曜日[もくようび]までにメールで教[おし]えてくださいね。"
+      ],
+      "translationEn": [
+        "Hello Alex. This is Yamada.",
+        "This Saturday I am having a birthday party at my house. It starts at 6:00 PM. About five friends are coming.",
+        "I will make the food, so you do not need to bring anything. However, if you have a favorite drink, please bring it. Please let me know by email by Thursday whether you can come."
+      ],
+      "keyVocab": [
+        {
+          "word": "しょうたい",
+          "reading": "しょうたい",
+          "en": "invitation"
+        },
+        {
+          "word": "持ってこなくてもいい",
+          "reading": "もってこなくてもいい",
+          "en": "do not have to bring"
+        },
+        {
+          "word": "教える",
+          "reading": "おしえる",
+          "en": "to tell; let someone know"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-03-q1",
+          "promptJp": "アレックスさんはパーティーに何[なに]を持[も]っていかなければなりませんか。",
+          "promptEn": "What MUST Alex bring to the party?",
+          "choices": [
+            "自分[じぶん]で作[つく]った料理[りょうり]",
+            "誕生[たんじょう]日[び]のケーキ",
+            "何[なに]も持[も]っていかなくてもいいです。",
+            "五人[ごにん]ぶんの飲[の]み物[もの]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Yamada writes \"you don't have to bring anything\" (何も持ってこなくてもいいです); bringing a favorite drink is strictly optional."
+        },
+        {
+          "id": "rd-n5-03-q2",
+          "promptJp": "アレックスさんはいつまでに山田[やまだ]さんに返事[へんじ]をしますか。",
+          "promptEn": "By when should Alex reply to Yamada?",
+          "choices": [
+            "水曜日[すいようび]",
+            "木曜日[もくようび]",
+            "金曜日[きんようび]",
+            "土曜日[どようび]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence asks Alex to email by Thursday (木曜日までにメールで教えてください)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-04",
+      "jlpt": 5,
+      "order": 4,
+      "passageType": "short",
+      "titleJp": "新[あたら]しいアパート",
+      "titleEn": "My New Apartment",
+      "recommendedMinutes": 2,
+      "contextEn": "Short passage about moving to a new apartment.",
+      "paragraphs": [
+        "先月[せんげつ]、わたしは新[あたら]しいアパートにひっこしました。前[まえ]の部屋[へや]は駅[えき]から遠[とお]くて、毎日[まいにち]バスに乗[の]っていました。",
+        "今度[こんど]のアパートは駅[えき]から歩[ある]いて五分[ごふん]です。少[すこ]しせまくて、家賃[やちん]も前[まえ]より高[たか]いですが、コンビニもスーパーも近[ちか]くてとても便利[べんり]です。",
+        "それに、部屋[へや]の窓[まど]からきれいな川[かわ]が見[み]えます。わたしはこのアパートが好[す]きです。"
+      ],
+      "translationEn": [
+        "Last month, I moved to a new apartment. My previous room was far from the station, so I rode the bus every day.",
+        "This new apartment is a five-minute walk from the station. It is a bit cramped and the rent is higher than before, but both a convenience store and a supermarket are nearby so it is very convenient.",
+        "Moreover, you can see a pretty river from the room's window. I like this apartment."
+      ],
+      "keyVocab": [
+        {
+          "word": "ひっこす",
+          "reading": "ひっこす",
+          "en": "to move house"
+        },
+        {
+          "word": "せまい",
+          "reading": "せまい",
+          "en": "cramped; narrow"
+        },
+        {
+          "word": "家賃",
+          "reading": "やちん",
+          "en": "monthly rent"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-04-q1",
+          "promptJp": "新[あたら]しいアパートについて、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about the new apartment?",
+          "choices": [
+            "前[まえ]の部屋[へや]より広[ひろ]くて安[やす]いです。",
+            "駅[えき]から遠[とお]いので、バスに乗[の]ります。",
+            "前[まえ]より家賃[やちん]が高[たか]いですが、便利[べんり]です。",
+            "近[ちか]くにスーパーがありません。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 notes that it is slightly smaller and pricier than before, yet very convenient with the station, convenience store, and supermarket nearby."
+        },
+        {
+          "id": "rd-n5-04-q2",
+          "promptJp": "部屋[へや]の窓[まど]から何[なに]が見[み]えますか。",
+          "promptEn": "What can be seen from the apartment window?",
+          "choices": [
+            "大[おお]きい公園[こうえん]",
+            "きれいな川[かわ]",
+            "駅[えき]とバス停[てい]",
+            "高[たか]い山[やま]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states: \"a pretty river can be seen from the window\" (窓からきれいな川が見えます)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-05",
+      "jlpt": 5,
+      "order": 5,
+      "passageType": "notice",
+      "titleJp": "日本語[にほんご]クラスのテスト",
+      "titleEn": "Japanese Class Test Schedule",
+      "recommendedMinutes": 2,
+      "contextEn": "Memo written on a classroom whiteboard.",
+      "paragraphs": [
+        "みなさんへ",
+        "来週[らいしゅう]の金曜日[きんようび]に日本語[にほんご]のテストがあります。テストは午前[ごぜん]十時[じゅうじ]に始[はじ]まりますから、九時[くじ]五十分[ごじゅっぷん]までに三階[さんがい]の302教室[きょうしつ]へ来[き]てください。",
+        "えんぴつとけしゴムを持[も]ってきてください。辞書[じしょ]とスマートフォンは使[つか]うことができません。テストは一時間[いちじかん]です。"
+      ],
+      "translationEn": [
+        "To everyone,",
+        "There is a Japanese test next Friday. The test starts at 10:00 AM, so please come to Room 302 on the 3rd floor by 9:50 AM.",
+        "Please bring a pencil and an eraser. Dictionaries and smartphones cannot be used. The test lasts one hour."
+      ],
+      "keyVocab": [
+        {
+          "word": "教室",
+          "reading": "きょうしつ",
+          "en": "classroom"
+        },
+        {
+          "word": "けしゴム",
+          "reading": "けしごむ",
+          "en": "eraser"
+        },
+        {
+          "word": "辞書",
+          "reading": "じしょ",
+          "en": "dictionary"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-05-q1",
+          "promptJp": "学生[がくせい]は何時[なんじ]までに教室[きょうしつ]へ行[い]かなければなりませんか。",
+          "promptEn": "By what time must students arrive at the classroom?",
+          "choices": [
+            "九時[くじ]三十分[さんじゅっぷん]",
+            "九時[くじ]五十分[ごじゅっぷん]",
+            "十時[じゅうじ]",
+            "十一時[じゅういちじ]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Even though the test begins at 10:00, students are instructed to arrive by 9:50 AM (九時五十分までに)."
+        },
+        {
+          "id": "rd-n5-05-q2",
+          "promptJp": "テストのとき、使[つか]っていいものはどれですか。",
+          "promptEn": "What are students allowed to use during the test?",
+          "choices": [
+            "辞書[じしょ]",
+            "スマートフォン",
+            "えんぴつとけしゴム",
+            "日本語[にほんご]の本[ほん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Only a pencil and eraser are requested; dictionaries and smartphones are explicitly prohibited."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-06",
+      "jlpt": 5,
+      "order": 6,
+      "passageType": "notice",
+      "titleJp": "プールのお知[し]らせ",
+      "titleEn": "Swimming Pool Notice",
+      "recommendedMinutes": 2,
+      "contextEn": "Notice posted at the entrance of a local sports center.",
+      "paragraphs": [
+        "みなみスポーツセンターのプールは、火曜日[かようび]から日曜日[にちようび]まで使[つか]えます。月曜日[げつようび]は休[やす]みです。",
+        "時間[じかん]は午前[ごぜん]九時[くじ]から午後[ごご]八時[はちじ]までです。大人[おとな]は五百円[ごひゃくえん]、中学生[ちゅうがくせい]までの子[こ]どもは二百円[にひゃくえん]です。",
+        "泳[およ]ぐ前[まえ]に、必[かなら]ずシャワーを浴[あ]びてください。帽子[ぼうし]がない人[ひと]は、受付[うけつけ]で百円[ひゃくえん]で借[か]りられます。"
+      ],
+      "translationEn": [
+        "The Minami Sports Center pool can be used from Tuesday to Sunday. It is closed on Mondays.",
+        "Hours are from 9:00 AM to 8:00 PM. Admission is 500 yen for adults and 200 yen for children up to junior high school age.",
+        "Before swimming, please be sure to take a shower. Those who do not have a swim cap can rent one at reception for 100 yen."
+      ],
+      "keyVocab": [
+        {
+          "word": "必[かなら]ず",
+          "reading": "かならず",
+          "en": "be sure to / without fail"
+        },
+        {
+          "word": "受付[うけつけ]",
+          "reading": "うけつけ",
+          "en": "reception desk"
+        },
+        {
+          "word": "借[か]りられる",
+          "reading": "かりられる",
+          "en": "can borrow / rent"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-06-q1",
+          "promptJp": "大人[おとな]が帽子[ぼうし]を忘[わす]れてプールに入[はい]るとき、全部[ぜんぶ]でいくら払[はら]いますか。",
+          "promptEn": "How much does an adult pay in total if they forget their swim cap and enter the pool?",
+          "choices": [
+            "二百円[にひゃくえん]",
+            "三百円[さんびゃくえん]",
+            "五百円[ごひゃくえん]",
+            "六百円[ろっぴゃくえん]"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Adult admission is 500 yen plus 100 yen to rent a swim cap at reception, totaling 600 yen (六百円)."
+        },
+        {
+          "id": "rd-n5-06-q2",
+          "promptJp": "このプールについて、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement about this pool is correct?",
+          "choices": [
+            "月曜日[げつようび]の朝[あさ]九時[くじ]から泳[およ]げる",
+            "日曜日[にちようび]は休[やす]みだ",
+            "泳[およ]ぐ前[まえ]にシャワーを浴[あ]びる",
+            "帽子[ぼうし]は無料[むりょう]で借[か]りられる"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The notice instructs swimmers to always take a shower before swimming (\"泳ぐ前に、必ずシャワーを浴びてください\"). It is closed Mondays, open Sundays, and cap rental costs 100 yen."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-07",
+      "jlpt": 5,
+      "order": 7,
+      "passageType": "email",
+      "titleJp": "誕生日[たんじょうび]パーティーの招待[しょうたい]",
+      "titleEn": "Birthday Party Invitation Email",
+      "recommendedMinutes": 2,
+      "contextEn": "Short email from a friend named Kenji inviting you to his sister's birthday party.",
+      "paragraphs": [
+        "リーさんへ。今週[こんしゅう]の土曜日[どようび]、午後[ごご]三時[さんじ]から私[わたし]の家[いえ]で妹[いもうと]の誕生日[たんじょうび]パーティーをします。リーさんもぜひ来[き]てください。",
+        "ケーキと飲[の]み物[もの]は私[わたし]が買[か]いますから、何[なに]も持[も]って来[こ]なくていいですよ。",
+        "家[いえ]は駅[えき]の西口[にしぐち]から歩[ある]いて七分[ななふん]です。わからないときは電話[でんわ]してくださいね。けんじ"
+      ],
+      "translationEn": [
+        "To Lee-san: This Saturday from 3:00 PM, we are having my younger sister's birthday party at my house. Please come too, Lee-san!",
+        "I will buy the cake and drinks, so you don't need to bring anything.",
+        "My house is a 7-minute walk from the West Exit of the station. Please call me if you aren't sure how to get here. — Kenji"
+      ],
+      "keyVocab": [
+        {
+          "word": "ぜひ",
+          "reading": "ぜひ",
+          "en": "by all means / definitely"
+        },
+        {
+          "word": "持[も]って来[こ]なくていい",
+          "reading": "もってこなくていい",
+          "en": "you don't have to bring"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-07-q1",
+          "promptJp": "土曜日[どようび]は誰[だれ]の誕生日[たんじょうび]パーティーですか。",
+          "promptEn": "Whose birthday party is on Saturday?",
+          "choices": [
+            "リーさん",
+            "けんじさん",
+            "けんじさんの妹[いもうと]",
+            "リーさんの妹[いもうと]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Kenji writes \"私の家で妹の誕生日パーティーをします\" — it is Kenji's younger sister's birthday party."
+        },
+        {
+          "id": "rd-n5-07-q2",
+          "promptJp": "リーさんは何[なに]を持[も]って行[い]きますか。",
+          "promptEn": "What does Lee need to bring?",
+          "choices": [
+            "ケーキ",
+            "飲[の]み物[もの]",
+            "ケーキと飲[の]み物[もの]",
+            "何[なに]も持[も]って行[い]かなくていい"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Kenji says he will buy the cake and drinks himself, so Lee does not need to bring anything (\"何も持って来なくていいですよ\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-08",
+      "jlpt": 5,
+      "order": 8,
+      "passageType": "short",
+      "titleJp": "私[わたし]の毎朝[まいあさ]の習慣[しゅうかん]",
+      "titleEn": "My Morning Routine",
+      "recommendedMinutes": 2,
+      "contextEn": "A short diary essay written by a college student.",
+      "paragraphs": [
+        "私[わたし]は毎朝[まいあさ]六時[ろくじ]に起[お]きます。起[お]きてすぐ、犬[いぬ]と近[ちか]くの公園[こうえん]を三十分[さんじゅっぷん]くらい散歩[さんぽ]します。",
+        "家[いえ]に帰[かえ]ってから、パンとコーヒーの朝[あさ]ご飯[はん]を食[た]べます。ときどき卵[たまご]も作[つく]ります。",
+        "七時半[しちじはん]に家[いえ]を出[で]て、自転車[じてんしゃ]で大学[だいがく]へ行[い]きます。雨[あめ]の日[ひ]だけはバスに乗[の]ります。"
+      ],
+      "translationEn": [
+        "I wake up at 6:00 every morning. Right after getting up, I walk my dog in the nearby park for about 30 minutes.",
+        "After returning home, I eat a breakfast of bread and coffee. Sometimes I make eggs too.",
+        "I leave home at 7:30 and go to university by bicycle. Only on rainy days do I take the bus."
+      ],
+      "keyVocab": [
+        {
+          "word": "散歩[さんぽ]する",
+          "reading": "さんぽする",
+          "en": "to take a walk"
+        },
+        {
+          "word": "ときどき",
+          "reading": "ときどき",
+          "en": "sometimes"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-08-q1",
+          "promptJp": "この人[ひと]は朝[あさ]起[お]きてから、まず何[なに]をしますか。",
+          "promptEn": "What does this person do first after waking up?",
+          "choices": [
+            "パンとコーヒーを食[た]べる",
+            "犬[いぬ]と公園[こうえん]を散歩[さんぽ]する",
+            "自転車[じてんしゃ]で大学[だいがく]へ行[い]く",
+            "卵[たまご]を作[つく]る"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The writer states \"起きてすぐ、犬と近くの公園を三十分くらい散歩します\" (Right after waking up, I walk my dog in the nearby park)."
+        },
+        {
+          "id": "rd-n5-08-q2",
+          "promptJp": "晴[は]れの日[ひ]、この人[ひと]はどうやって大学[だいがく]へ行[い]きますか。",
+          "promptEn": "How does this person go to university on sunny days?",
+          "choices": [
+            "歩[ある]いて行[い]く",
+            "電車[でんしゃ]で行[い]く",
+            "バスで行[い]く",
+            "自転車[じてんしゃ]で行[い]く"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "They commute by bicycle (\"自転車で大学へ行きます\") and take the bus only when it rains."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-09",
+      "jlpt": 5,
+      "order": 9,
+      "passageType": "notice",
+      "titleJp": "アパートのゴミの出[だ]し方[かた]",
+      "titleEn": "Apartment Trash Disposal Rules",
+      "recommendedMinutes": 2,
+      "contextEn": "Rule sheet posted inside an apartment building.",
+      "paragraphs": [
+        "ゴミは朝[あさ]八時半[はちじはん]までに出[だ]してください。夜[よる]に出[だ]さないでください。",
+        "燃[も]えるゴミは火曜日[かようび]と金曜日[きんようび]です。ペットボトルと缶[かん]は水曜日[すいようび]に出[だ]してください。",
+        "大[おお]きいゴミ（いすや机[つくえ]など）はここに出[だ]せません。市役所[しやくしょ]に電話[でんわ]してください。"
+      ],
+      "translationEn": [
+        "Please put out trash by 8:30 AM. Do not put it out at night.",
+        "Burnable trash is on Tuesday and Friday. Please put out plastic bottles and cans on Wednesday.",
+        "Large trash (such as chairs and desks) cannot be placed here. Please call City Hall."
+      ],
+      "keyVocab": [
+        {
+          "word": "燃[も]えるゴミ",
+          "reading": "もえるごみ",
+          "en": "burnable garbage"
+        },
+        {
+          "word": "市役所[しやくしょ]",
+          "reading": "しやくしょ",
+          "en": "city hall"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-09-q1",
+          "promptJp": "空[から]のペットボトルはいつ出[だ]しますか。",
+          "promptEn": "When should you put out empty plastic bottles?",
+          "choices": [
+            "火曜日[かようび]の朝[あさ]八時半[はちじはん]まで",
+            "火曜日[かようび]の夜[よる]",
+            "水曜日[すいようび]の朝[あさ]八時半[はちじはん]まで",
+            "金曜日[きんようび]の朝[あさ]八時半[はちじはん]まで"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Plastic bottles and cans are collected on Wednesdays (\"水曜日\"), and all trash must be put out by 8:30 AM (never at night)."
+        },
+        {
+          "id": "rd-n5-09-q2",
+          "promptJp": "古[ふる]い机[つくえ]を捨[す]てたいとき、どうしますか。",
+          "promptEn": "What should you do if you want to throw away an old desk?",
+          "choices": [
+            "火曜日[かようび]に出[だ]す",
+            "水曜日[すいようび]に出[だ]す",
+            "夜[よる]にここへ置[お]く",
+            "市役所[しやくしょ]に電話[でんわ]する"
+          ],
+          "answerIndex": 3,
+          "explanationEn": "Large items like chairs and desks cannot be placed at the apartment trash area; residents must call City Hall (\"市役所に電話してください\")."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-10",
+      "jlpt": 5,
+      "order": 10,
+      "passageType": "short",
+      "titleJp": "去[きょ]年[ねん]の京都[きょうと]旅行[りょこう]",
+      "titleEn": "Last Year's Trip to Kyoto",
+      "recommendedMinutes": 2,
+      "contextEn": "A short reflection about a trip during autumn.",
+      "paragraphs": [
+        "去年[きょねん]の十一月[じゅういちがつ]、友達[ともだち]と二人[ふたり]で京都[きょうと]へ旅行[りょこう]に行[い]きました。東京[とうきょう]から新幹線[しんかんせん]で二時間[にじかん]くらいでした。",
+        "お寺[てら]の木[き]が赤[あか]や黄色[きいろ]になっていて、とてもきれいでした。人[ひと]が多[おお]かったですが、写真[しゃしん]をたくさん撮[と]りました。",
+        "夜[よる]は古[ふる]い旅館[りょかん]に泊[と]まって、おいしい和食[わしょく]を食[た]べました。今年[ことし]の秋[あき]もまた行[い]きたいです。"
+      ],
+      "translationEn": [
+        "Last November, I went on a trip to Kyoto with a friend (two of us). It took about two hours from Tokyo by Shinkansen.",
+        "The trees at the temples had turned red and yellow and were very beautiful. There were many people, but we took lots of photos.",
+        "At night we stayed at an old traditional inn and ate delicious Japanese food. I want to go again this autumn too."
+      ],
+      "keyVocab": [
+        {
+          "word": "旅館[りょかん]",
+          "reading": "りょかん",
+          "en": "traditional Japanese inn"
+        },
+        {
+          "word": "和食[わしょく]",
+          "reading": "わしょく",
+          "en": "Japanese cuisine"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-10-q1",
+          "promptJp": "この人[ひと]は誰[だれ]と京都[きょうと]へ行[い]きましたか。",
+          "promptEn": "Who did this person go to Kyoto with?",
+          "choices": [
+            "一人[ひとり]で",
+            "家族[かぞく]と",
+            "友達[ともだち]と一人[ひとり]",
+            "友達[ともだち]と三人[さんにん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "\"友達と二人で\" means two people total — the writer and one friend."
+        },
+        {
+          "id": "rd-n5-10-q2",
+          "promptJp": "京都[きょうと]旅行[りょこう]について、合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the passage about the Kyoto trip?",
+          "choices": [
+            "新幹線[しんかんせん]で五時間[ごじかん]かかった",
+            "お寺[てら]には人[ひと]が少[すく]なかった",
+            "古[ふる]い旅館[りょかん]に泊[と]まった",
+            "もう京都[きょうと]へ行[い]きたくない"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "They stayed at an old ryokan (\"古い旅館に泊まって\"). The train took ~2 hours, temples were crowded, and the writer wants to return this autumn."
+        }
+      ]
+    }
+  ]
+}

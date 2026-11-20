@@ -1,0 +1,996 @@
+{
+  "level": 5,
+  "pack": "n5",
+  "items": [
+    {
+      "id": "kv-n5-01",
+      "jlpt": 5,
+      "order": 1,
+      "word": "すぐ",
+      "reading": "すぐ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "immediately; right away",
+      "acceptedMeanings": [
+        "immediately; right away",
+        "immediately",
+        "right away",
+        "at once",
+        "soon"
+      ],
+      "usageNote": "Very common adverb meaning right away or nearby in distance/time.",
+      "example": {
+        "jp": "すぐに行きますので、少し待ってください。",
+        "reading": "すぐにいきますので、すこしまってください。",
+        "en": "I will go right away, so please wait a little."
+      },
+      "quiz": {
+        "sentenceBefore": "電話をしたら、彼は",
+        "sentenceAfter": "来てくれました。",
+        "en": "When I called, he came right away.",
+        "choices": [
+          "まだ",
+          "もう",
+          "いつも",
+          "すぐ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-02",
+      "jlpt": 5,
+      "order": 2,
+      "word": "まだ",
+      "reading": "まだ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "still; not yet",
+      "acceptedMeanings": [
+        "still; not yet",
+        "still",
+        "not yet",
+        "yet"
+      ],
+      "usageNote": "With an affirmative verb means \"still\"; with a negative verb (~ていません) means \"not yet\".",
+      "example": {
+        "jp": "まだ昼ごはんを食べていません。",
+        "reading": "まだひるごはんをたべていません。",
+        "en": "I have not eaten lunch yet."
+      },
+      "quiz": {
+        "sentenceBefore": "外は",
+        "sentenceAfter": "雨が降っています。",
+        "en": "It is still raining outside.",
+        "choices": [
+          "すぐ",
+          "よく",
+          "まだ",
+          "もう"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-03",
+      "jlpt": 5,
+      "order": 3,
+      "word": "もう",
+      "reading": "もう",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "already; anymore; more",
+      "acceptedMeanings": [
+        "already; anymore; more",
+        "already",
+        "anymore",
+        "no longer",
+        "more"
+      ],
+      "usageNote": "With affirmative past means \"already\"; with negative means \"not anymore\"; before a counter means \"one more\".",
+      "example": {
+        "jp": "宿題はもう終わりましたか。",
+        "reading": "しゅくだいはもうおわりましたか。",
+        "en": "Have you already finished your homework?"
+      },
+      "quiz": {
+        "sentenceBefore": "駅に着いたとき、電車は",
+        "sentenceAfter": "出発していました。",
+        "en": "When I arrived at the station, the train had already departed.",
+        "choices": [
+          "ぜんぜん",
+          "もう",
+          "まだ",
+          "あまり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-04",
+      "jlpt": 5,
+      "order": 4,
+      "word": "とても",
+      "reading": "とても",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "very; extremely",
+      "acceptedMeanings": [
+        "very; extremely",
+        "very",
+        "extremely",
+        "really",
+        "very much"
+      ],
+      "usageNote": "Standard polite intensifier used with affirmative adjectives.",
+      "example": {
+        "jp": "このラーメンはとてもおいしいです。",
+        "reading": "このらーめんはとてもおいしいです。",
+        "en": "This ramen is very delicious."
+      },
+      "quiz": {
+        "sentenceBefore": "今日のテストは",
+        "sentenceAfter": "難しかったです。",
+        "en": "Today's test was very difficult.",
+        "choices": [
+          "とても",
+          "あまり",
+          "ぜんぜん",
+          "すこし"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-05",
+      "jlpt": 5,
+      "order": 5,
+      "word": "あまり",
+      "reading": "あまり",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not very; not much",
+      "acceptedMeanings": [
+        "not very; not much",
+        "not very",
+        "not much",
+        "rarely",
+        "hardly"
+      ],
+      "usageNote": "In JLPT N5/N4, almost always pairs with a NEGATIVE predicate (あまり～ない).",
+      "example": {
+        "jp": "わたしはあまりコーヒーを飲みません。",
+        "reading": "わたしはあまりこーひーをのみません。",
+        "en": "I do not drink coffee very much."
+      },
+      "quiz": {
+        "sentenceBefore": "昨日は忙しくて、",
+        "sentenceAfter": "寝られませんでした。",
+        "en": "I was busy yesterday and could not sleep much.",
+        "choices": [
+          "とても",
+          "いつも",
+          "たくさん",
+          "あまり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-06",
+      "jlpt": 5,
+      "order": 6,
+      "word": "ぜんぜん",
+      "reading": "ぜんぜん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not at all",
+      "acceptedMeanings": [
+        "not at all",
+        "never",
+        "completely not"
+      ],
+      "usageNote": "Strongly emphasizes negation; pair with a negative verb or adjective (ぜんぜん～ない).",
+      "example": {
+        "jp": "この問題がぜんぜん分かりません。",
+        "reading": "このもんだいがぜんぜんわかりません。",
+        "en": "I do not understand this question at all."
+      },
+      "quiz": {
+        "sentenceBefore": "今日は寒くて、外に人が",
+        "sentenceAfter": "いません。",
+        "en": "It is cold today, and there is nobody outside at all.",
+        "choices": [
+          "たいてい",
+          "いつも",
+          "ぜんぜん",
+          "とても"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-07",
+      "jlpt": 5,
+      "order": 7,
+      "word": "いつも",
+      "reading": "いつも",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "always",
+      "acceptedMeanings": [
+        "always",
+        "usually",
+        "all the time"
+      ],
+      "usageNote": "Expresses habitual frequency (100% of the time).",
+      "example": {
+        "jp": "毎朝いつも七時に起きます。",
+        "reading": "まいあさいつもしちじにおきます。",
+        "en": "I always wake up at seven every morning."
+      },
+      "quiz": {
+        "sentenceBefore": "田中さんは",
+        "sentenceAfter": "笑顔で挨拶してくれます。",
+        "en": "Mr. Tanaka always greets me with a smile.",
+        "choices": [
+          "ぜんぜん",
+          "いつも",
+          "ときどき",
+          "あまり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-08",
+      "jlpt": 5,
+      "order": 8,
+      "word": "ときどき",
+      "reading": "ときどき",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "sometimes",
+      "acceptedMeanings": [
+        "sometimes",
+        "occasionally",
+        "from time to time"
+      ],
+      "usageNote": "Moderate frequency, less frequent than よく (often) or たいてい (usually).",
+      "example": {
+        "jp": "週末はときどき映画を見に行きます。",
+        "reading": "しゅうまつはときどきえいがをみにいきます。",
+        "en": "On weekends I sometimes go to watch movies."
+      },
+      "quiz": {
+        "sentenceBefore": "休みの日は",
+        "sentenceAfter": "自分で料理を作ります。",
+        "en": "On days off, I sometimes cook by myself.",
+        "choices": [
+          "ときどき",
+          "いつも",
+          "ぜんぜん",
+          "すぐ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-09",
+      "jlpt": 5,
+      "order": 9,
+      "word": "たぶん",
+      "reading": "たぶん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "probably; maybe",
+      "acceptedMeanings": [
+        "probably; maybe",
+        "probably",
+        "maybe",
+        "perhaps",
+        "likely"
+      ],
+      "usageNote": "Usually pairs with conjectural endings like ～でしょう, ～と思います, or ～かもしれません.",
+      "example": {
+        "jp": "明日はたぶん晴れると思います。",
+        "reading": "あしたはたぶんはれるとおもいます。",
+        "en": "I think it will probably be sunny tomorrow."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は",
+        "sentenceAfter": "もう家に着いたでしょう。",
+        "en": "He has probably arrived home by now.",
+        "choices": [
+          "かならず",
+          "ぜんぜん",
+          "まだ",
+          "たぶん"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-10",
+      "jlpt": 5,
+      "order": 10,
+      "word": "だんだん",
+      "reading": "だんだん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "gradually; little by little",
+      "acceptedMeanings": [
+        "gradually; little by little",
+        "gradually",
+        "little by little",
+        "step by step"
+      ],
+      "usageNote": "Describes a steady, progressive change over time (often with ～なる or ～てくる).",
+      "example": {
+        "jp": "春になって、だんだん暖かくなってきました。",
+        "reading": "はるになって、だんだんあたたかくなってきました。",
+        "en": "Spring has come, and it has gradually become warmer."
+      },
+      "quiz": {
+        "sentenceBefore": "毎日練習して、日本語が",
+        "sentenceAfter": "上手になりました。",
+        "en": "By practicing every day, my Japanese gradually improved.",
+        "choices": [
+          "まだ",
+          "ときどき",
+          "だんだん",
+          "すぐ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-11",
+      "jlpt": 5,
+      "order": 11,
+      "word": "そして",
+      "reading": "そして",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "and; and then",
+      "acceptedMeanings": [
+        "and; and then",
+        "and",
+        "and then",
+        "after that"
+      ],
+      "usageNote": "Connects two sentences chronologically or adds a second positive/parallel detail.",
+      "example": {
+        "jp": "朝ごはんを食べました。そして、学校へ行きました。",
+        "reading": "あさごはんをたべました。そして、がっこうへいきました。",
+        "en": "I ate breakfast. And then I went to school."
+      },
+      "quiz": {
+        "sentenceBefore": "スーパーで野菜を買いました。",
+        "sentenceAfter": "、家に帰りました。",
+        "en": "I bought vegetables at the supermarket. And then I went home.",
+        "choices": [
+          "それから",
+          "そして",
+          "しかし",
+          "でも"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-12",
+      "jlpt": 5,
+      "order": 12,
+      "word": "でも",
+      "reading": "でも",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "but; however",
+      "acceptedMeanings": [
+        "but; however",
+        "but",
+        "however",
+        "yet"
+      ],
+      "usageNote": "Everyday spoken conjunction introducing a contrasting sentence. More casual than しかし.",
+      "example": {
+        "jp": "このカバンは高いです。でも、とても丈夫です。",
+        "reading": "このかばんはたかいです。でも、とてもじょうぶです。",
+        "en": "This bag is expensive. However, it is very sturdy."
+      },
+      "quiz": {
+        "sentenceBefore": "日本語の漢字は難しいです。",
+        "sentenceAfter": "、勉強するのは楽しいです。",
+        "en": "Japanese kanji are difficult. However, studying them is fun.",
+        "choices": [
+          "でも",
+          "そして",
+          "だから",
+          "それで"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-13",
+      "jlpt": 5,
+      "order": 13,
+      "word": "だから",
+      "reading": "だから",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "therefore; so",
+      "acceptedMeanings": [
+        "therefore; so",
+        "therefore",
+        "so",
+        "that is why"
+      ],
+      "usageNote": "Connects a reason in sentence 1 to its logical result or action in sentence 2.",
+      "example": {
+        "jp": "明日は早いから早く寝ます。だから、今夜は遊びません。",
+        "reading": "あしたははやいからはやくねます。だから、こんやはあそびません。",
+        "en": "Tomorrow is early so I will sleep early. Therefore, I will not go out tonight."
+      },
+      "quiz": {
+        "sentenceBefore": "今日は雨が降っています。",
+        "sentenceAfter": "、傘を持って行きます。",
+        "en": "It is raining today. Therefore, I will bring an umbrella.",
+        "choices": [
+          "でも",
+          "しかし",
+          "それから",
+          "だから"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-14",
+      "jlpt": 5,
+      "order": 14,
+      "word": "それから",
+      "reading": "それから",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "after that; and also",
+      "acceptedMeanings": [
+        "after that; and also",
+        "after that",
+        "and then",
+        "furthermore",
+        "and also"
+      ],
+      "usageNote": "Used both for sequential actions (\"after that\") and for adding another item to a list.",
+      "example": {
+        "jp": "図書館で勉強しました。それから、友達とご飯を食べました。",
+        "reading": "としょかんでべんきょうしました。それから、ともだちとごはんをたべました。",
+        "en": "I studied at the library. After that, I ate with my friend."
+      },
+      "quiz": {
+        "sentenceBefore": "まずシャワーを浴びます。",
+        "sentenceAfter": "、夕ごはんを作ります。",
+        "en": "First I take a shower. After that, I make dinner.",
+        "choices": [
+          "だから",
+          "しかし",
+          "それから",
+          "でも"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-15",
+      "jlpt": 5,
+      "order": 15,
+      "word": "しかし",
+      "reading": "しかし",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "however; but (formal)",
+      "acceptedMeanings": [
+        "however; but (formal)",
+        "however",
+        "but",
+        "nevertheless"
+      ],
+      "usageNote": "More formal and written equivalent of でも, appearing constantly in JLPT reading passages.",
+      "example": {
+        "jp": "一生懸命練習しました。しかし、試合に負けてしまいました。",
+        "reading": "いっしょうけんめいれんしゅうしました。しかし、しあいにまけてしまいました。",
+        "en": "We practiced our hardest. However, we lost the match."
+      },
+      "quiz": {
+        "sentenceBefore": "何度も挑戦しました。",
+        "sentenceAfter": "、うまくいきませんでした。",
+        "en": "I tried many times. However, it did not go well.",
+        "choices": [
+          "それから",
+          "しかし",
+          "そして",
+          "だから"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-16",
+      "jlpt": 5,
+      "order": 16,
+      "word": "ゆっくり",
+      "reading": "ゆっくり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb (Mimetic)",
+      "primaryMeaning": "slowly; leisurely; at ease",
+      "acceptedMeanings": [
+        "slowly; leisurely; at ease",
+        "slowly",
+        "leisurely",
+        "at ease",
+        "unhurriedly"
+      ],
+      "usageNote": "Describes unhurried pace or taking a restful break (ゆっくり休んでください = rest well).",
+      "example": {
+        "jp": "すみません、もう少しゆっくり話してください。",
+        "reading": "すみません、もうすこしゆっくりはなしてください。",
+        "en": "Excuse me, please speak a little more slowly."
+      },
+      "quiz": {
+        "sentenceBefore": "週末は家で",
+        "sentenceAfter": "休みたいです。",
+        "en": "On the weekend I want to rest leisurely at home.",
+        "choices": [
+          "ゆっくり",
+          "はっきり",
+          "ぴったり",
+          "すっかり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-17",
+      "jlpt": 5,
+      "order": 17,
+      "word": "はっきり",
+      "reading": "はっきり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb (Mimetic)",
+      "primaryMeaning": "clearly; distinctly",
+      "acceptedMeanings": [
+        "clearly; distinctly",
+        "clearly",
+        "distinctly",
+        "plainly"
+      ],
+      "usageNote": "Used for clear vision, crisp speech, or definite opinions.",
+      "example": {
+        "jp": "眼鏡をかけると、黒板の字がはっきり見えます。",
+        "reading": "めがねをかけると、こくばんのじがはっきりみえます。",
+        "en": "When I put on glasses, I can see the board clearly."
+      },
+      "quiz": {
+        "sentenceBefore": "聞こえにくいので、もう少し",
+        "sentenceAfter": "言ってください。",
+        "en": "It is hard to hear, so please say it a bit more clearly.",
+        "choices": [
+          "ゆっくり",
+          "びっくり",
+          "さっぱり",
+          "はっきり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-18",
+      "jlpt": 5,
+      "order": 18,
+      "word": "びっくり",
+      "reading": "びっくり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Suru-verb (Mimetic)",
+      "primaryMeaning": "to be surprised; startled",
+      "acceptedMeanings": [
+        "to be surprised; startled",
+        "surprised",
+        "be surprised",
+        "startled",
+        "shocked"
+      ],
+      "usageNote": "Pairs with する (びっくりする) to express sudden surprise.",
+      "example": {
+        "jp": "急に大きな音がして、びっくりしました。",
+        "reading": "きゅうにおおきなおとがして、びっくりしました。",
+        "en": "A loud sound suddenly went off and I was startled."
+      },
+      "quiz": {
+        "sentenceBefore": "久しぶりの友達に会って、本当に",
+        "sentenceAfter": "しました。",
+        "en": "I ran into an old friend and was really surprised.",
+        "choices": [
+          "はっきり",
+          "しっかり",
+          "びっくり",
+          "ゆっくり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-19",
+      "jlpt": 5,
+      "order": 19,
+      "word": "ちょうど",
+      "reading": "ちょうど",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "just; exactly; right on",
+      "acceptedMeanings": [
+        "just; exactly; right on",
+        "just",
+        "exactly",
+        "precisely",
+        "right on"
+      ],
+      "usageNote": "Describes exact time, exact amount, or a perfect fit.",
+      "example": {
+        "jp": "今ちょうど十二時です。",
+        "reading": "いまちょうどじゅうにじです。",
+        "en": "It is exactly twelve o'clock right now."
+      },
+      "quiz": {
+        "sentenceBefore": "このシャツはサイズが",
+        "sentenceAfter": "いいです。",
+        "en": "This shirt is just the right size.",
+        "choices": [
+          "もっと",
+          "ちょうど",
+          "ちょっと",
+          "ずっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-20",
+      "jlpt": 5,
+      "order": 20,
+      "word": "しっかり",
+      "reading": "しっかり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb (Mimetic)",
+      "primaryMeaning": "firmly; properly; thoroughly",
+      "acceptedMeanings": [
+        "firmly; properly; thoroughly",
+        "firmly",
+        "properly",
+        "thoroughly",
+        "solidly"
+      ],
+      "usageNote": "Describes holding tightly, studying thoroughly, or being dependable.",
+      "example": {
+        "jp": "テストの前にしっかり復習してください。",
+        "reading": "てすとのまえにしっかりふくしゅうしてください。",
+        "en": "Please review thoroughly before the test."
+      },
+      "quiz": {
+        "sentenceBefore": "危ないので、手すりに",
+        "sentenceAfter": "つかまってください。",
+        "en": "It is dangerous, so please hold firmly onto the handrail.",
+        "choices": [
+          "しっかり",
+          "ゆっくり",
+          "びっくり",
+          "うっかり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-21",
+      "jlpt": 5,
+      "order": 21,
+      "word": "まっすぐ",
+      "reading": "まっすぐ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Na-adj",
+      "primaryMeaning": "straight ahead; directly",
+      "acceptedMeanings": [
+        "straight ahead; directly",
+        "straight",
+        "straight ahead",
+        "directly"
+      ],
+      "usageNote": "Essential for giving and understanding JLPT N5/N4 street directions.",
+      "example": {
+        "jp": "この道をまっすぐ行くと、左に銀行があります。",
+        "reading": "このみちをまっすぐいくと、ひだりにぎんこうがあります。",
+        "en": "If you go straight down this road, the bank is on the left."
+      },
+      "quiz": {
+        "sentenceBefore": "交差点を渡って、",
+        "sentenceAfter": "進んでください。",
+        "en": "Cross the intersection and proceed straight ahead.",
+        "choices": [
+          "ゆっくり",
+          "はっきり",
+          "ちょうど",
+          "まっすぐ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-22",
+      "jlpt": 5,
+      "order": 22,
+      "word": "にぎやか",
+      "reading": "にぎやか",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Na-adjective",
+      "primaryMeaning": "lively; bustling; crowded",
+      "acceptedMeanings": [
+        "lively; bustling; crowded",
+        "lively",
+        "bustling",
+        "busy",
+        "vibrant"
+      ],
+      "usageNote": "Positive description of a lively town, party, or shopping street.",
+      "example": {
+        "jp": "駅前はいつもにぎやかです。",
+        "reading": "えきまえはいつもにぎやかです。",
+        "en": "The area in front of the station is always lively."
+      },
+      "quiz": {
+        "sentenceBefore": "お祭りの日は町がとても",
+        "sentenceAfter": "になります。",
+        "en": "On festival days the town becomes very lively.",
+        "choices": [
+          "ゆっくり",
+          "はっきり",
+          "にぎやか",
+          "しずか"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-23",
+      "jlpt": 5,
+      "order": 23,
+      "word": "アルバイト",
+      "reading": "あるばいと",
+      "category": "katakana",
+      "partOfSpeech": "Noun / Suru-verb",
+      "primaryMeaning": "part-time job",
+      "acceptedMeanings": [
+        "part-time job",
+        "part time job",
+        "side job"
+      ],
+      "usageNote": "From German \"Arbeit\". Shortened to バイト in everyday speech; mostly used for student/casual part-time work.",
+      "example": {
+        "jp": "大学のあとでコンビニでアルバイトをしています。",
+        "reading": "だいがくのあとでこんびにであるばいとをしています。",
+        "en": "After university, I work a part-time job at a convenience store."
+      },
+      "quiz": {
+        "sentenceBefore": "夏休みにカフェで",
+        "sentenceAfter": "をするつもりです。",
+        "en": "I plan to work a part-time job at a cafe during summer vacation.",
+        "choices": [
+          "レストラン",
+          "アルバイト",
+          "マンション",
+          "デパート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-24",
+      "jlpt": 5,
+      "order": 24,
+      "word": "アパート",
+      "reading": "あぱーと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "apartment (smaller wooden/light-frame)",
+      "acceptedMeanings": [
+        "apartment (smaller wooden/light-frame)",
+        "apartment",
+        "flat",
+        "small apartment"
+      ],
+      "usageNote": "Refers to smaller 2-story wooden or light-steel apartment buildings (as opposed to concrete マンション).",
+      "example": {
+        "jp": "駅から歩いて十分のアパートに住んでいます。",
+        "reading": "えきからあるいてじゅっぷんのあぱーとにすんでいます。",
+        "en": "I live in an apartment ten minutes on foot from the station."
+      },
+      "quiz": {
+        "sentenceBefore": "来月、大学の近くの新しい",
+        "sentenceAfter": "に引っ越します。",
+        "en": "Next month I will move to a new apartment near the university.",
+        "choices": [
+          "アパート",
+          "アルバイト",
+          "エレベーター",
+          "スーパー"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-25",
+      "jlpt": 5,
+      "order": 25,
+      "word": "デパート",
+      "reading": "でぱーと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "department store",
+      "acceptedMeanings": [
+        "department store",
+        "mall"
+      ],
+      "usageNote": "Clipped from \"department store\". Usually multi-story stores with food basements (デパ地下).",
+      "example": {
+        "jp": "母の誕生日にデパートでプレゼントを買いました。",
+        "reading": "ははのたんじょうびにでぱーとでぷれぜんとをかいました。",
+        "en": "I bought a gift at the department store for my mother's birthday."
+      },
+      "quiz": {
+        "sentenceBefore": "日曜日に家族と",
+        "sentenceAfter": "へ買い物に行きました。",
+        "en": "On Sunday I went shopping at the department store with my family.",
+        "choices": [
+          "アパート",
+          "エレベーター",
+          "パソコン",
+          "デパート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-26",
+      "jlpt": 5,
+      "order": 26,
+      "word": "エレベーター",
+      "reading": "えれべーたー",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "elevator; lift",
+      "acceptedMeanings": [
+        "elevator; lift",
+        "elevator",
+        "lift"
+      ],
+      "usageNote": "Watch the long vowels: エレベーター (not エレベター). Contrast with エスカレーター (escalator).",
+      "example": {
+        "jp": "五階までエレベーターで行きましょう。",
+        "reading": "ごかいまでえれべーたーでいきましょう。",
+        "en": "Let's take the elevator to the fifth floor."
+      },
+      "quiz": {
+        "sentenceBefore": "荷物が多いので、階段ではなく",
+        "sentenceAfter": "を使います。",
+        "en": "Because I have a lot of luggage, I will use the elevator instead of the stairs.",
+        "choices": [
+          "エアコン",
+          "カレンダー",
+          "エレベーター",
+          "エスカレーター"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-27",
+      "jlpt": 5,
+      "order": 27,
+      "word": "エアコン",
+      "reading": "えあこん",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "air conditioner",
+      "acceptedMeanings": [
+        "air conditioner",
+        "ac",
+        "air conditioning"
+      ],
+      "usageNote": "Short for \"air conditioner\". In Japan, most units both cool in summer and heat in winter.",
+      "example": {
+        "jp": "部屋が暑いので、エアコンをつけました。",
+        "reading": "へやがあついので、えあこんをつけました。",
+        "en": "The room is hot, so I turned on the air conditioner."
+      },
+      "quiz": {
+        "sentenceBefore": "出かける前に",
+        "sentenceAfter": "を消すのを忘れないでください。",
+        "en": "Please do not forget to turn off the air conditioner before going out.",
+        "choices": [
+          "カメラ",
+          "エアコン",
+          "パソコン",
+          "リモコン"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-28",
+      "jlpt": 5,
+      "order": 28,
+      "word": "パソコン",
+      "reading": "ぱそこん",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "personal computer; PC",
+      "acceptedMeanings": [
+        "personal computer; pc",
+        "pc",
+        "personal computer",
+        "computer",
+        "laptop"
+      ],
+      "usageNote": "Clipped from \"personal computer\". Standard everyday Japanese word for computer/laptop.",
+      "example": {
+        "jp": "毎日パソコンを使ってレポートを書いています。",
+        "reading": "まいにちぱそこんをつかってれぽーとをかいています。",
+        "en": "I write reports using a computer every day."
+      },
+      "quiz": {
+        "sentenceBefore": "新しい",
+        "sentenceAfter": "を買ったので、仕事が速くなりました。",
+        "en": "I bought a new PC, so my work has become faster.",
+        "choices": [
+          "パソコン",
+          "エアコン",
+          "テレビ",
+          "カメラ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-29",
+      "jlpt": 5,
+      "order": 29,
+      "word": "コンビニ",
+      "reading": "こんびに",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "convenience store",
+      "acceptedMeanings": [
+        "convenience store",
+        "conbini"
+      ],
+      "usageNote": "Clipped from \"convenience store\". Open 24/7 for food, ATMs, bill payments, and parcels.",
+      "example": {
+        "jp": "家のすぐ近くにコンビニがあって便利です。",
+        "reading": "いえのすぐちかくにこんびにがあってべんりです。",
+        "en": "Having a convenience store right near my house is convenient."
+      },
+      "quiz": {
+        "sentenceBefore": "夜中に喉が渇いたので、",
+        "sentenceAfter": "で水を買いました。",
+        "en": "I got thirsty late at night, so I bought water at the convenience store.",
+        "choices": [
+          "デパート",
+          "レストラン",
+          "ホテル",
+          "コンビニ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n5-30",
+      "jlpt": 5,
+      "order": 30,
+      "word": "レストラン",
+      "reading": "れすとらん",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "restaurant",
+      "acceptedMeanings": [
+        "restaurant",
+        "diner"
+      ],
+      "usageNote": "Refers mainly to Western-style or sit-down restaurants.",
+      "example": {
+        "jp": "昨夜、友達とイタリアンレストランで食事をしました。",
+        "reading": "さくや、ともだちといたりあんれすとらんでしょくじをしました。",
+        "en": "Last night I had a meal at an Italian restaurant with my friend."
+      },
+      "quiz": {
+        "sentenceBefore": "駅前に新しい",
+        "sentenceAfter": "がオープンしました。",
+        "en": "A new restaurant opened in front of the station.",
+        "choices": [
+          "アパート",
+          "アルバイト",
+          "レストラン",
+          "コンビニ"
+        ]
+      }
+    }
+  ]
+}

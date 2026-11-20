@@ -1,0 +1,784 @@
+{
+  "level": 1,
+  "pack": "n1",
+  "items": [
+    {
+      "id": "g-n1-01",
+      "jlpt": 1,
+      "order": 1,
+      "pattern": "～ないまでも",
+      "reading": "～ないまでも",
+      "meaning": "even if not quite ~ (at least a lower level)",
+      "structure": "Verb (ない-form) / Noun+とまではいか+ないまでも",
+      "explanation": "States that while reaching the high standard A may not happen, a more modest yet significant level B is still achieved or desired.",
+      "confusableWith": "Often pairs with せめて ('at least') or 少なくとも in Clause B.",
+      "examples": [
+        {
+          "jp": "満点は取れないまでも、合格点は取りたい。",
+          "reading": "まんてんはとれないまでも、ごうかくてんはとりたい。",
+          "en": "Even if I can't get a perfect score, I want to at least get a passing score."
+        },
+        {
+          "jp": "毎日とは言わないまでも、週に三回は運動すべきだ。",
+          "reading": "まいにちとはいわないまでも、しゅうにさんかいはうんどうすべきだ。",
+          "en": "Even if not every day, one should exercise at least three times a week."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "プロ並みとはいか",
+        "sentenceAfter": "、人前で弾けるくらいにはなりたい。",
+        "en": "Even if not at a professional level, I want to get good enough to play in front of people.",
+        "answer": "ないまでも",
+        "acceptedAnswers": [
+          "ないまでも"
+        ],
+        "choices": [
+          "ないまでも",
+          "ないものでもない",
+          "ないではおかない",
+          "ないとも限らない"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-02",
+      "jlpt": 1,
+      "order": 2,
+      "pattern": "～を余儀なくされる",
+      "reading": "～をよぎなくされる",
+      "meaning": "to be forced to ~; to have no alternative but to ~",
+      "structure": "Noun (action / verbal noun) + を余儀なくされる",
+      "explanation": "High-register written/journalistic expression stating that unavoidable external circumstances compel an organization or person into an undesirable action.",
+      "confusableWith": "Attaches to NOUNS (延期を余儀なくされる), unlike ～ざるを得ない which attaches to VERBS.",
+      "examples": [
+        {
+          "jp": "悪天候のため、イベントの中止を余儀なくされた。",
+          "reading": "あくてんこうのため、いべんとのちゅうしをよぎなくされた。",
+          "en": "Due to bad weather, they were forced to cancel the event."
+        },
+        {
+          "jp": "資金難により、工場の閉鎖を余儀なくされている。",
+          "reading": "しきんなんにより、こうじょうのへいさをよぎなくされている。",
+          "en": "Due to financial difficulties, they are being forced to close the factory."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "地震の影響で、多くの住民が避難生活",
+        "sentenceAfter": "。",
+        "en": "Due to the earthquake, many residents were forced into evacuation shelters.",
+        "answer": "を余儀なくされた",
+        "acceptedAnswers": [
+          "を余儀なくされた",
+          "をよぎなくされた"
+        ],
+        "choices": [
+          "を余儀なくされた",
+          "を禁じ得ない",
+          "をものともせず",
+          "をよそに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-03",
+      "jlpt": 1,
+      "order": 3,
+      "pattern": "～を禁じ得ない",
+      "reading": "～をきんじえない",
+      "meaning": "cannot suppress ~; cannot help feeling ~ (strong emotion)",
+      "structure": "Emotion Noun (驚き / 怒り / 同情 / 涙) + を禁じ得ない",
+      "explanation": "Formal literary expression conveying an overwhelming, uncontrollable emotion such as shock, anger, sympathy, or admiration.",
+      "confusableWith": "Strictly limited to emotion nouns (驚き, 怒り, 涙, 笑い, 同情) — never regular action nouns.",
+      "examples": [
+        {
+          "jp": "その突然の訃報を聞き、驚きを禁じ得なかった。",
+          "reading": "そのとつぜんのふほうをきき、おどろきをきんじえなかった。",
+          "en": "Hearing the sudden news of his passing, I could not suppress my shock."
+        },
+        {
+          "jp": "被災者の苦労を思うと、同情を禁じ得ない。",
+          "reading": "ひさいしゃのくろうをおもうと、どうじょうをきんじえない。",
+          "en": "Thinking of the victims' hardship, I cannot help but feel deep sympathy."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "不正行為が発覚し、市民たちは怒り",
+        "sentenceAfter": "。",
+        "en": "With the misconduct exposed, citizens could not contain their anger.",
+        "answer": "を禁じ得なかった",
+        "acceptedAnswers": [
+          "を禁じ得なかった",
+          "をきんじえなかった",
+          "を禁じ得ない",
+          "をきんじえない"
+        ],
+        "choices": [
+          "を余儀なくされた",
+          "を禁じ得なかった",
+          "を皮切りに",
+          "を限りに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-04",
+      "jlpt": 1,
+      "order": 4,
+      "pattern": "～に足る / ～に足りない",
+      "reading": "～にたる / ～にたりない",
+      "meaning": "worthy of ~ / not worth ~",
+      "structure": "Verb (dictionary form) / Noun + に足る / に足りない",
+      "explanation": "Evaluates whether something meets the threshold of worthiness (trust, respect, praise, concern). Negative に足りない means 'trivial / beneath notice'.",
+      "confusableWith": "Common N1 collocations: 信頼に足る (trustworthy), 驚くに足りない (not worth being surprised at), 取るに足りない (trivial).",
+      "examples": [
+        {
+          "jp": "彼は十分に信頼に足る人物だ。",
+          "reading": "かれはじゅうぶんにしんらいにたるじんぶつだ。",
+          "en": "He is a person fully worthy of trust."
+        },
+        {
+          "jp": "そんな噂は気にするに足りない。",
+          "reading": "そんなうわさはきにするにたりない。",
+          "en": "Such a rumor is not even worth worrying about."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼の功績は、まさに称賛",
+        "sentenceAfter": "ものだ。",
+        "en": "His achievements are truly worthy of praise.",
+        "answer": "に足る",
+        "acceptedAnswers": [
+          "に足る",
+          "にたる"
+        ],
+        "choices": [
+          "に足る",
+          "に堪えない",
+          "に及ばない",
+          "に即して"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-05",
+      "jlpt": 1,
+      "order": 5,
+      "pattern": "～に堪えない",
+      "reading": "～にたえない",
+      "meaning": "unbearable to ~; deeply ~ (filled with emotion)",
+      "structure": "Verb (見る / 聞く) + に堪えない | Emotion Noun (感謝 / 遺憾) + に堪えない",
+      "explanation": "Two opposite-looking N1 uses: (1) With 見る/聞く, means 'too terrible/embarrassing to watch/hear'; (2) With formal emotion nouns (感謝, 遺憾, 慶賀), means 'filled with unbearable/deep emotion'.",
+      "confusableWith": "Distinguish carefully: 見るに堪えない (unbearable to watch) vs. 感謝に堪えない (deeply grateful).",
+      "examples": [
+        {
+          "jp": "あまりの惨状に、見るに堪えなかった。",
+          "reading": "あまりのさんじょうに、みるにたえなかった。",
+          "en": "The devastation was too horrible to bear watching."
+        },
+        {
+          "jp": "皆様の温かいご支援に、感謝に堪えません。",
+          "reading": "みなさまのあたたかいごしえんに、かんしゃにたえません。",
+          "en": "Words cannot express my deep gratitude for your warm support."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このような不祥事が起きたことは、誠に遺憾",
+        "sentenceAfter": "。",
+        "en": "It is deeply regrettable that such a scandal occurred.",
+        "answer": "に堪えない",
+        "acceptedAnswers": [
+          "に堪えない",
+          "にたえない",
+          "に堪えません",
+          "にたえません"
+        ],
+        "choices": [
+          "に足る",
+          "に堪えない",
+          "に先立って",
+          "に引き換え"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-06",
+      "jlpt": 1,
+      "order": 6,
+      "pattern": "～であれ～であれ",
+      "reading": "～であれ～であれ",
+      "meaning": "whether A or B (it makes no difference)",
+      "structure": "Noun A + であれ + Noun B + であれ / Interrogative + であれ",
+      "explanation": "Formal equivalent of ～でも～でも. Emphasizes that regardless of which option or extreme applies, the conclusion remains completely unchanged.",
+      "confusableWith": "Often appears in N1 paired with opposite nouns (理由が何であれ, 賛成であれ反対であれ).",
+      "examples": [
+        {
+          "jp": "どんな理由であれ、暴力は許されない。",
+          "reading": "どんなりゆうであれ、ぼうりょくはゆるされない。",
+          "en": "Whatever the reason may be, violence cannot be tolerated."
+        },
+        {
+          "jp": "国内であれ海外であれ、必要とされればどこへでも行く。",
+          "reading": "こくないであれかいがいであれ、ひつようとされればどこへでもいく。",
+          "en": "Whether domestically or overseas, I will go wherever I am needed."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "プロ",
+        "sentenceAfter": "アマチュアであれ、ルールは守らなければならない。",
+        "en": "Whether professional or amateur, one must follow the rules.",
+        "answer": "であれ",
+        "acceptedAnswers": [
+          "であれ"
+        ],
+        "choices": [
+          "であれ",
+          "であろうと",
+          "とはいえ",
+          "ならまだしも"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-07",
+      "jlpt": 1,
+      "order": 7,
+      "pattern": "～とはいえ",
+      "reading": "～とはいえ",
+      "meaning": "although ~; be that as it may ~",
+      "structure": "Plain form (Noun / な-Adj stem directly or + だ) + とはいえ",
+      "explanation": "Concedes that Fact A is true, yet emphasizes that reality in Clause B does not match what A normally implies.",
+      "confusableWith": "More formal and emphatic than といっても. Very common in N1 opinion essays.",
+      "examples": [
+        {
+          "jp": "春になったとはいえ、北国にはまだ雪が残っている。",
+          "reading": "はるになったとはいえ、きたぐににはまだゆきがのこっている。",
+          "en": "Although it is spring, snow still remains in the northern regions."
+        },
+        {
+          "jp": "古い家とはいえ、手入れが行き届いていて快適だ。",
+          "reading": "ふるいいえとはいえ、ていれがいきとどいていてかいてきだ。",
+          "en": "Even though it is an old house, it is well-maintained and comfortable."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "安価だ",
+        "sentenceAfter": "、品質に妥協するわけにはいかない。",
+        "en": "Even though it is inexpensive, we cannot compromise on quality.",
+        "answer": "とはいえ",
+        "acceptedAnswers": [
+          "とはいえ",
+          "とは言え"
+        ],
+        "choices": [
+          "とはいえ",
+          "と相まって",
+          "とばかりに",
+          "ときたら"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-08",
+      "jlpt": 1,
+      "order": 8,
+      "pattern": "～とあって",
+      "reading": "～とあって",
+      "meaning": "precisely because of the special circumstance ~",
+      "structure": "Plain form (drop だ for Noun/な-Adj) + とあって",
+      "explanation": "Explains a natural, unsurprising outcome caused by a rare, special, or widely anticipated event/status.",
+      "confusableWith": "Never used for mundane everyday reasons; requires a notable, special occasion (e.g., final concert, rare discount, famous chef).",
+      "examples": [
+        {
+          "jp": "人気バンドの解散ライブとあって、チケットは即完売した。",
+          "reading": "にんきばんどのかいさんらいぶとあって、ちけっとはそくかんばいした。",
+          "en": "Because it was the popular band's farewell concert, tickets sold out instantly."
+        },
+        {
+          "jp": "三連休の初日とあって、駅は大変な混雑だった。",
+          "reading": "さんれんきゅうのしょにちとあって、えきはたいへんなこんざつだった。",
+          "en": "Because it was the first day of a three-day weekend, the station was terribly crowded."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "百年に一度の天体ショー",
+        "sentenceAfter": "、夜空を見上げる人が絶えなかった。",
+        "en": "Because it was a once-in-a-century astronomical show, there was no end of people gazing at the night sky.",
+        "answer": "とあって",
+        "acceptedAnswers": [
+          "とあって"
+        ],
+        "choices": [
+          "とあって",
+          "とはいえ",
+          "とばかりに",
+          "としても"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-09",
+      "jlpt": 1,
+      "order": 9,
+      "pattern": "～と相まって",
+      "reading": "～とあいまって",
+      "meaning": "combined with ~; coupled with ~ (synergistic effect)",
+      "structure": "Noun A + と相まって",
+      "explanation": "Indicates that two factors interact and reinforce one another to produce an amplified result (positive or negative).",
+      "confusableWith": "Always involves two distinct factors working together synergistically (A と B が相まって / A と相まって).",
+      "examples": [
+        {
+          "jp": "円安と物価高が相まって、家計への負担が増している。",
+          "reading": "えんやすとぶっかだかがあいまって、かけいへのふたんがましている。",
+          "en": "Coupled with the weak yen and rising prices, the burden on household budgets is increasing."
+        },
+        {
+          "jp": "美しい景色と静かな音楽と相まって、心が癒された。",
+          "reading": "うつくしいけしきとしずかなおんがくとあいまって、こころがいやされた。",
+          "en": "Combined with the beautiful scenery and quiet music, my mind was soothed."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "熟練の技は最新の技術",
+        "sentenceAfter": "、世界最高水準の製品を生み出した。",
+        "en": "Master craftsmanship, combined with cutting-edge technology, produced a world-class product.",
+        "answer": "と相まって",
+        "acceptedAnswers": [
+          "と相まって",
+          "とあいまって"
+        ],
+        "choices": [
+          "と相まって",
+          "とあって",
+          "に引き換え",
+          "をよそに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-10",
+      "jlpt": 1,
+      "order": 10,
+      "pattern": "～をものともせず",
+      "reading": "～をものともせず",
+      "meaning": "undaunted by ~; in defiance of ~",
+      "structure": "Difficulty Noun + をものともせず(に)",
+      "explanation": "Praises someone's courage and determination in pushing forward without letting severe hardship, danger, or criticism deter them.",
+      "confusableWith": "Compare with ～をよそに (ignoring others' worries/opinions carelessly) — をものともせず is strictly admiring/heroic.",
+      "examples": [
+        {
+          "jp": "彼女は重い障害をものともせず、世界大会で金メダルを取った。",
+          "reading": "かのじょはおもいしょうがいをものともせず、せかいたいかいできんめだるをとった。",
+          "en": "Undaunted by her severe disability, she won the gold medal at the world championship."
+        },
+        {
+          "jp": "激しい嵐をものともせず、救助隊は現場へ向かった。",
+          "reading": "はげしいあらしをものともせず、きゅうじょたいはげんばへむかった。",
+          "en": "Braving the fierce storm, the rescue team headed to the scene."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "周囲の厳しい批判",
+        "sentenceAfter": "、彼は独自の研究を貫いた。",
+        "en": "Undaunted by harsh criticism from those around him, he persisted with his original research.",
+        "answer": "をものともせず",
+        "acceptedAnswers": [
+          "をものともせず",
+          "をものともせずに"
+        ],
+        "choices": [
+          "をものともせず",
+          "を余儀なくされ",
+          "を皮切りに",
+          "を限りに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-11",
+      "jlpt": 1,
+      "order": 11,
+      "pattern": "～をよそに",
+      "reading": "～をよそに",
+      "meaning": "paying no heed to ~; ignoring (others' expectations/worries)",
+      "structure": "Noun (people's worries, criticism, expectations) + をよそに",
+      "explanation": "Describes someone acting indifferently without caring about the anxieties, hopes, or turmoil of those around them.",
+      "confusableWith": "Usually carries a nuance of surprise, irony, or mild exasperation at the subject's indifference.",
+      "examples": [
+        {
+          "jp": "親の心配をよそに、息子は毎日夜遅くまで遊んでいる。",
+          "reading": "おやのしんぱいをよそに、むすこはまいにちよるおそくまであそんでいる。",
+          "en": "Ignoring his parents' worries, the son stays out late playing every night."
+        },
+        {
+          "jp": "世間の騒ぎをよそに、本人は落ち着き払っていた。",
+          "reading": "せけんのさわぎをよそに、ほんにんはおちつきはらっていた。",
+          "en": "Indifferent to the public uproar, the person himself remained completely calm."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "住民の反対の声",
+        "sentenceAfter": "、高層ビルの建設工事は強行された。",
+        "en": "Paying no heed to residents' voices of opposition, construction of the high-rise was pushed through.",
+        "answer": "をよそに",
+        "acceptedAnswers": [
+          "をよそに"
+        ],
+        "choices": [
+          "をよそに",
+          "をもとに",
+          "を禁じ得ず",
+          "を限りに"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-12",
+      "jlpt": 1,
+      "order": 12,
+      "pattern": "～を皮切りに",
+      "reading": "～をかわきりに",
+      "meaning": "starting with ~ (triggering a rapid series of events)",
+      "structure": "Noun + を皮切りに(して) / を皮切りとして",
+      "explanation": "Marks the very first event that sets off a chain reaction of subsequent similar events (tours, expansions, protests, reforms).",
+      "confusableWith": "Unlike ～をはじめ (listing examples statically), ～を皮切りに specifically emphasizes chronological sequence and momentum.",
+      "examples": [
+        {
+          "jp": "東京公演を皮切りに、全国十都市ツアーが始まる。",
+          "reading": "とうきょうこうえんをかわきりに、ぜんこくじゅっとしつあーがはじまる。",
+          "en": "Kicking off with the Tokyo show, a ten-city national tour begins."
+        },
+        {
+          "jp": "A社の値下げを皮切りに、業界全体で価格競争が起きた。",
+          "reading": "えーしゃのねさげをかわきりに、ぎょうかいぜんたいでかかくきょうそうがおきた。",
+          "en": "Triggered by Company A's price cut, a price war erupted across the entire industry."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "パリでの初出店",
+        "sentenceAfter": "、同社はヨーロッパ各地へ進出した。",
+        "en": "Starting with its first store opening in Paris, the company expanded across Europe.",
+        "answer": "を皮切りに",
+        "acceptedAnswers": [
+          "を皮切りに",
+          "をかわきりに",
+          "を皮切りにして"
+        ],
+        "choices": [
+          "を皮切りに",
+          "を限りに",
+          "をよそに",
+          "を余儀なくされ"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-13",
+      "jlpt": 1,
+      "order": 13,
+      "pattern": "～を限りに",
+      "reading": "～をかぎりに",
+      "meaning": "with ~ as the final time/limit; effective at the end of ~",
+      "structure": "Time Noun (今日 / 今月 / 今年) + を限りに",
+      "explanation": "Declares that a long-running activity, job, or business permanently ends at the specified point in time. (With 声/力, means 'at the top of one's voice / with all one's might'.)",
+      "confusableWith": "Used for final, decisive endings (retirement, shop closing) — not temporary pauses.",
+      "examples": [
+        {
+          "jp": "今月を限りに、三十年間続いた喫茶店を閉じることにした。",
+          "reading": "こんげつをかぎりに、さんじゅうねんかんつづいたきっさてんをとじることにした。",
+          "en": "Effective at the end of this month, we have decided to close the cafe that ran for 30 years."
+        },
+        {
+          "jp": "今日を限りに、たばこをきっぱりやめる。",
+          "reading": "きょうをかぎりに、たばこをきっぱりやめる。",
+          "en": "With today as the last day, I am quitting smoking for good."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今年度",
+        "sentenceAfter": "、長年務めた部長の職を退きます。",
+        "en": "At the end of this fiscal year, I will step down from the manager position I have held for many years.",
+        "answer": "を限りに",
+        "acceptedAnswers": [
+          "を限りに",
+          "をかぎりに"
+        ],
+        "choices": [
+          "を皮切りに",
+          "を限りに",
+          "をものともせず",
+          "を禁じ得ず"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-14",
+      "jlpt": 1,
+      "order": 14,
+      "pattern": "～べく",
+      "reading": "～べく",
+      "meaning": "in order to ~ (formal / determined purpose)",
+      "structure": "Verb (dictionary form) + べく (する → すべく / するべく)",
+      "explanation": "Classical/literary equivalent of ～ために, expressing strong resolve and purposeful effort. Appears frequently in news reports, biographies, and formal essays.",
+      "confusableWith": "JLPT trap: Both clauses MUST have the same volitional subject, and Clause B cannot be a command/request. Notice する often becomes すべく.",
+      "examples": [
+        {
+          "jp": "優勝すべく、選手たちは合宿で厳しい練習に励んでいる。",
+          "reading": "ゆうしょうすべく、せんしゅたちはがっしゅくできびしいれんしゅうにはげんでいる。",
+          "en": "In order to win the championship, the athletes are training intensely at camp."
+        },
+        {
+          "jp": "事態を収拾すべく、緊急会議が開かれた。",
+          "reading": "じたいをしゅうしゅうすべく、きんきゅうかいぎがひらかれた。",
+          "en": "An emergency meeting was convened to bring the situation under control."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "念願の資格を取得する",
+        "sentenceAfter": "、毎日三時間勉強を続けている。",
+        "en": "In order to obtain the long-awaited qualification, I continue studying three hours daily.",
+        "answer": "べく",
+        "acceptedAnswers": [
+          "べく"
+        ],
+        "choices": [
+          "べく",
+          "べからず",
+          "ばこそ",
+          "なり"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-15",
+      "jlpt": 1,
+      "order": 15,
+      "pattern": "～ばこそ",
+      "reading": "～ばこそ",
+      "meaning": "precisely because ~ (emphatic unique reason)",
+      "structure": "Verb (ば-form) / い-Adj (～ければ) / な-Adj・Noun + であれば + こそ",
+      "explanation": "Strongly emphasizes that Condition A is the exact, indispensable reason for B — nothing else could produce this outcome.",
+      "confusableWith": "Frequently used in heartfelt or philosophical statements (愛すればこそ, 努力すればこそ).",
+      "examples": [
+        {
+          "jp": "あなたの将来を思えばこそ、厳しいことも言うのです。",
+          "reading": "あなたのしょうらいをおもえばこそ、きびしいこともいうのです。",
+          "en": "It is precisely because I care about your future that I tell you hard truths."
+        },
+        {
+          "jp": "困難を乗り越えればこそ、本当の喜びが味わえる。",
+          "reading": "こんなんをのりこえればこそ、ほんとうのよろこびがあじわえる。",
+          "en": "It is precisely because one overcomes hardship that true joy can be tasted."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "健康であれ",
+        "sentenceAfter": "、毎日の仕事も趣味も楽しめるのだ。",
+        "en": "It is precisely because we are healthy that we can enjoy our daily work and hobbies.",
+        "answer": "ばこそ",
+        "acceptedAnswers": [
+          "ばこそ"
+        ],
+        "choices": [
+          "ばこそ",
+          "とはいえ",
+          "ならまだしも",
+          "ものを"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-16",
+      "jlpt": 1,
+      "order": 16,
+      "pattern": "～ならまだしも",
+      "reading": "～ならまだしも",
+      "meaning": "if it were just A it might be tolerable, but B is unacceptable",
+      "structure": "Plain form (drop だ) / Noun + ならまだしも / ならいざしらず",
+      "explanation": "Concedes that Case A might be excusable or understandable, in order to sharply criticize the far more unreasonable Case B.",
+      "confusableWith": "Always followed by a critical or exasperated Clause B.",
+      "examples": [
+        {
+          "jp": "一度の遅刻ならまだしも、今週これで三回目ですよ。",
+          "reading": "いちどのちこくならまだしも、こんしゅうこれでさんかいめですよ。",
+          "en": "Being late once might be forgivable, but this is your third time this week."
+        },
+        {
+          "jp": "子供ならまだしも、大人がそんな言い訳をするなんて情けない。",
+          "reading": "こどもならまだしも、おとながそんないいわけをするなんてなさけない。",
+          "en": "If it were a child I could understand, but it's pathetic for an adult to make such an excuse."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ちょっとした冗談",
+        "sentenceAfter": "、あそこまで人を傷つける発言は許せない。",
+        "en": "A little joke might be one thing, but remarks that hurt someone that badly are unforgivable.",
+        "answer": "ならまだしも",
+        "acceptedAnswers": [
+          "ならまだしも"
+        ],
+        "choices": [
+          "ならまだしも",
+          "であれ",
+          "とあって",
+          "ばこそ"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-17",
+      "jlpt": 1,
+      "order": 17,
+      "pattern": "～ないものでもない",
+      "reading": "～ないものでもない",
+      "meaning": "it is not impossible that ~; might very well ~",
+      "structure": "Verb / Adj (ない-form) + ものでもない",
+      "explanation": "A double-negative hedging expression indicating reluctant concession or a slight but real possibility ('I wouldn't say I can't / it's not out of the question').",
+      "confusableWith": "Do not confuse with ～ないわけにはいかない ('must do ~'). ないものでもない leaves room for possibility, not obligation.",
+      "examples": [
+        {
+          "jp": "条件次第では、引き受けないものでもない。",
+          "reading": "じょうけんしだいでは、ひきうけないものでもない。",
+          "en": "Depending on the terms, it's not out of the question for me to accept."
+        },
+        {
+          "jp": "彼の気持ちも分からないものでもないが、賛成はできない。",
+          "reading": "かれのきもちもわからないものでもないが、さんせいはできない。",
+          "en": "It's not that I can't understand his feelings, yet I cannot agree."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "もう少し予算を増やしてくれれば、検討し",
+        "sentenceAfter": "。",
+        "en": "If you increase the budget a bit more, it's not impossible for us to consider it.",
+        "answer": "ないものでもない",
+        "acceptedAnswers": [
+          "ないものでもない",
+          "ないものでもありません"
+        ],
+        "choices": [
+          "ないものでもない",
+          "ないではおかない",
+          "ないまでも",
+          "ざるを得ない"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-18",
+      "jlpt": 1,
+      "order": 18,
+      "pattern": "～に即して",
+      "reading": "～にそくして",
+      "meaning": "in accordance with ~; closely aligned with (facts/reality/law)",
+      "structure": "Noun (事実 / 実情 / 現状 / 法律) + に即して / に即した + Noun",
+      "explanation": "Formal expression meaning to act, judge, or design policies strictly grounded in actual facts, ground-level realities, or established standards.",
+      "confusableWith": "More concrete and fact-anchored than ～にそって (along a plan/guideline).",
+      "examples": [
+        {
+          "jp": "地域の実情に即した防災計画を作る必要がある。",
+          "reading": "ちいきのじつじょうにそくしたぼうさいけいかくをつくるひつようがある。",
+          "en": "We need to create a disaster plan tailored closely to local realities."
+        },
+        {
+          "jp": "事実関係に即して、冷静に判断すべきだ。",
+          "reading": "じじつかんけいにそくして、れいせいにはんだんすべきだ。",
+          "en": "We should judge calmly in strict accordance with the facts."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "現代のライフスタイル",
+        "sentenceAfter": "、新しい制度へ見直す時期に来ている。",
+        "en": "The time has come to revise the system to align with modern lifestyles.",
+        "answer": "に即して",
+        "acceptedAnswers": [
+          "に即して",
+          "にそくして"
+        ],
+        "choices": [
+          "に即して",
+          "に引き換え",
+          "に先立って",
+          "に堪えず"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-19",
+      "jlpt": 1,
+      "order": 19,
+      "pattern": "～に引き換え",
+      "reading": "～にひきかえ",
+      "meaning": "in sharp contrast to ~; unlike ~",
+      "structure": "Noun / Clause + の + に引き換え",
+      "explanation": "Draws a vivid, dramatic contrast between two people, periods, or situations — often highlighting a disappointing gap or stark reversal.",
+      "confusableWith": "Stronger and more emotional/evaluative than the neutral N3 ～に対して.",
+      "examples": [
+        {
+          "jp": "いつも落ち着いた姉に引き換え、弟はそそっかしい。",
+          "reading": "いつもおちついたあねにひきかえ、おとうとはそそっかしい。",
+          "en": "In sharp contrast to his always composed older sister, the younger brother is careless."
+        },
+        {
+          "jp": "去年の好成績に引き換え、今年のチームは低迷している。",
+          "reading": "きょねんのこうせいせきにひきかえ、ことしのちーむはていめいしている。",
+          "en": "In stark contrast to last year's strong record, this year's team is in a slump."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "都会のにぎやかさ",
+        "sentenceAfter": "、この村は時間が止まったように静かだ。",
+        "en": "In sharp contrast to the bustle of the city, this village is as quiet as if time stood still.",
+        "answer": "に引き換え",
+        "acceptedAnswers": [
+          "に引き換え",
+          "にひきかえ"
+        ],
+        "choices": [
+          "に即して",
+          "に引き換え",
+          "に先立って",
+          "に足る"
+        ]
+      }
+    },
+    {
+      "id": "g-n1-20",
+      "jlpt": 1,
+      "order": 20,
+      "pattern": "～や否や",
+      "reading": "～やいなや",
+      "meaning": "the very instant ~; no sooner had ~ than ~",
+      "structure": "Verb (dictionary form) + や否や",
+      "explanation": "Literary/formal expression indicating that Event B happens instantaneously the moment Event A occurs — often unexpectedly or beyond the speaker's control.",
+      "confusableWith": "JLPT trap: Always attaches to the DICTIONARY form (NEVER た-form), and Clause B is usually past tense and never expresses speaker's intention/command.",
+      "examples": [
+        {
+          "jp": "ベルが鳴るや否や、生徒たちは一斉に教室を飛び出した。",
+          "reading": "べるがなるやいなや、せいとたちはいっせいにきょうしつをとびだした。",
+          "en": "The instant the bell rang, the students rushed out of the classroom all at once."
+        },
+        {
+          "jp": "家を出るや否や、大粒の雨が降り出した。",
+          "reading": "いえをでるやいなや、おおつぶのあめがふりだした。",
+          "en": "No sooner had I stepped out of the house than heavy raindrops began to fall."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "スタートの合図が鳴る",
+        "sentenceAfter": "、ランナーたちは勢いよく走り出した。",
+        "en": "The very instant the starting signal sounded, the runners sprinted off vigorously.",
+        "answer": "や否や",
+        "acceptedAnswers": [
+          "や否や",
+          "やいなや"
+        ],
+        "choices": [
+          "や否や",
+          "ものなら",
+          "とはいえ",
+          "どころか"
+        ]
+      }
+    }
+  ]
+}

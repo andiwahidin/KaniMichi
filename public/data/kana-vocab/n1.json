@@ -1,0 +1,1015 @@
+{
+  "level": 1,
+  "pack": "n1",
+  "items": [
+    {
+      "id": "kv-n1-01",
+      "jlpt": 1,
+      "order": 1,
+      "word": "おのずと",
+      "reading": "おのずと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "naturally; of its own accord; automatically",
+      "acceptedMeanings": [
+        "naturally; of its own accord; automatically",
+        "naturally",
+        "of its own accord",
+        "automatically",
+        "spontaneously"
+      ],
+      "usageNote": "Literary/formal N1 adverb (also おのずから) meaning a result emerges naturally without forced intervention.",
+      "example": {
+        "jp": "毎日努力を続けていれば、道はおのずと開けてくる。",
+        "reading": "まいにちどりょくをつづけていれば、みちはおのずとひらけてくる。",
+        "en": "If you keep making effort every day, the path will naturally open up."
+      },
+      "quiz": {
+        "sentenceBefore": "立場が変われば、物の見方も",
+        "sentenceAfter": "変わってくるものだ。",
+        "en": "When one's position changes, one's perspective naturally changes too.",
+        "choices": [
+          "ひたすら",
+          "あえて",
+          "かりに",
+          "おのずと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-02",
+      "jlpt": 1,
+      "order": 2,
+      "word": "ひたすら",
+      "reading": "ひたすら",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "earnestly; single-mindedly; solely",
+      "acceptedMeanings": [
+        "earnestly; single-mindedly; solely",
+        "single-mindedly",
+        "earnestly",
+        "solely",
+        "relentlessly"
+      ],
+      "usageNote": "Expresses devoting oneself completely to one single action without distraction.",
+      "example": {
+        "jp": "彼は優勝を目指して、ひたすら練習に打ち込んだ。",
+        "reading": "かれはゆうしょうをめざして、ひたすられんしゅうにうちこんだ。",
+        "en": "Aiming for the championship, he threw himself single-mindedly into practice."
+      },
+      "quiz": {
+        "sentenceBefore": "言い訳をせず、",
+        "sentenceAfter": "謝り続けるしかなかった。",
+        "en": "Without making excuses, I had no choice but to keep apologizing earnestly.",
+        "choices": [
+          "あえて",
+          "やたらに",
+          "ひたすら",
+          "おのずと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-03",
+      "jlpt": 1,
+      "order": 3,
+      "word": "あえて",
+      "reading": "あえて",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "daringly; deliberately; choosing to ~ (despite hesitation)",
+      "acceptedMeanings": [
+        "daringly; deliberately; choosing to ~ (despite hesitation)",
+        "deliberately",
+        "daringly",
+        "intentionally",
+        "venturing to"
+      ],
+      "usageNote": "High-frequency N1 reading adverb! Signals intentionally doing (or NOT doing: あえて言わない) something despite risk or difficulty.",
+      "example": {
+        "jp": "反対意見を承知の上で、あえてこの提案をしたい。",
+        "reading": "はんたいいけんをしょうちのうえで、あえてこのていあんをしたい。",
+        "en": "Knowing there will be opposition, I still choose to make this proposal."
+      },
+      "quiz": {
+        "sentenceBefore": "彼のプライドを考え、そのミスについては",
+        "sentenceAfter": "触れなかった。",
+        "en": "Considering his pride, I deliberately refrained from mentioning that mistake.",
+        "choices": [
+          "まんざら",
+          "あえて",
+          "ひたすら",
+          "おのずと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-04",
+      "jlpt": 1,
+      "order": 4,
+      "word": "かりに",
+      "reading": "かりに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "supposing; hypothetically; even if",
+      "acceptedMeanings": [
+        "supposing; hypothetically; even if",
+        "supposing",
+        "hypothetically",
+        "assuming",
+        "if"
+      ],
+      "usageNote": "Sets up a purely hypothetical premise (almost always paired with ～としても / ～たら / ～なら).",
+      "example": {
+        "jp": "かりに計画が失敗したとしても、得るものは大きいはずだ。",
+        "reading": "かりにけいかくがしっぱいしたとしても、えるものはおおきいはずだ。",
+        "en": "Even supposing the plan fails, what we gain should be substantial."
+      },
+      "quiz": {
+        "sentenceBefore": "",
+        "sentenceAfter": "予算が倍になったとしても、期限内の完成は難しい。",
+        "en": "Hypothetically, even if the budget doubled, finishing before the deadline would be tough.",
+        "choices": [
+          "かりに",
+          "あえて",
+          "おのずと",
+          "すかさず"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-05",
+      "jlpt": 1,
+      "order": 5,
+      "word": "やたらに",
+      "reading": "やたらに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "excessively; recklessly; indiscriminately",
+      "acceptedMeanings": [
+        "excessively; recklessly; indiscriminately",
+        "excessively",
+        "recklessly",
+        "indiscriminately",
+        "blindly"
+      ],
+      "usageNote": "Carries a critical nuance of doing something without restraint, thought, or moderation.",
+      "example": {
+        "jp": "内容も確かめずに、やたらに個人情報を入力してはいけない。",
+        "reading": "ないようもたしかめずに、やたらにこじんじょうほうをにゅうりょくしてはいけない。",
+        "en": "You must not indiscriminately enter personal information without verifying the site."
+      },
+      "quiz": {
+        "sentenceBefore": "専門用語を",
+        "sentenceAfter": "使うと、かえって読みにくくなる。",
+        "en": "Using technical jargon excessively actually makes it harder to read.",
+        "choices": [
+          "おのずと",
+          "ひたすら",
+          "まんざら",
+          "やたらに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-06",
+      "jlpt": 1,
+      "order": 6,
+      "word": "まんざら",
+      "reading": "まんざら",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not altogether; not wholly (with negative)",
+      "acceptedMeanings": [
+        "not altogether; not wholly (with negative)",
+        "not altogether",
+        "not entirely",
+        "not wholly",
+        "not completely"
+      ],
+      "usageNote": "N1 idiom: ALWAYS pairs with a negative (まんざらでもない = not bad at all / secretly pleased).",
+      "example": {
+        "jp": "口では嫌だと言いつつも、まんざらでもない表情をしていた。",
+        "reading": "くちではいやだといいつつも、まんざらでもないひょうじょうをしていた。",
+        "en": "While saying he disliked it, he wore a not-altogether-displeased expression."
+      },
+      "quiz": {
+        "sentenceBefore": "彼の推測も、",
+        "sentenceAfter": "外れているわけではないようだ。",
+        "en": "His guess does not seem to be entirely off the mark either.",
+        "choices": [
+          "すかさず",
+          "あえて",
+          "まんざら",
+          "やたらに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-07",
+      "jlpt": 1,
+      "order": 7,
+      "word": "すかさず",
+      "reading": "すかさず",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "instantly; without missing a beat; immediately",
+      "acceptedMeanings": [
+        "instantly; without missing a beat; immediately",
+        "instantly",
+        "immediately",
+        "promptly",
+        "without hesitation"
+      ],
+      "usageNote": "Describes reacting instantaneously to an opening, remark, or sudden event with sharp reflexes.",
+      "example": {
+        "jp": "相手が隙を見せた瞬間、彼はすかさず反撃に出た。",
+        "reading": "あいてがすきをみせたしゅんかん、かれはすかさずはんげきにでた。",
+        "en": "The moment his opponent showed an opening, he instantly launched a counterattack."
+      },
+      "quiz": {
+        "sentenceBefore": "質問が出ると、担当者は",
+        "sentenceAfter": "的確なデータを提示した。",
+        "en": "When a question arose, the person in charge immediately presented precise data.",
+        "choices": [
+          "かりに",
+          "すかさず",
+          "おのずと",
+          "まんざら"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-08",
+      "jlpt": 1,
+      "order": 8,
+      "word": "さぞ",
+      "reading": "さぞ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "surely; no doubt (empathizing with another's feelings)",
+      "acceptedMeanings": [
+        "surely; no doubt (empathizing with another's feelings)",
+        "surely",
+        "no doubt",
+        "must be",
+        "certainly"
+      ],
+      "usageNote": "Empathizes deeply with how someone else must feel (often pairs with ～だろう / ～でしょう).",
+      "example": {
+        "jp": "長旅でお疲れでしょうから、さぞ大変だったと思います。",
+        "reading": "ながたびでおつかれでしょうから、さぞたいへんだったとおもいます。",
+        "en": "You must be tired from the long trip—it must surely have been tough."
+      },
+      "quiz": {
+        "sentenceBefore": "念願の合格を果たして、ご両親も",
+        "sentenceAfter": "お喜びのことでしょう。",
+        "en": "Having achieved your long-awaited pass, your parents must surely be delighted.",
+        "choices": [
+          "さぞ",
+          "かりに",
+          "やたらに",
+          "あえて"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-09",
+      "jlpt": 1,
+      "order": 9,
+      "word": "ことごとく",
+      "reading": "ことごとく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "completely; entirely; every single one",
+      "acceptedMeanings": [
+        "completely; entirely; every single one",
+        "completely",
+        "entirely",
+        "altogether",
+        "every single one"
+      ],
+      "usageNote": "Formal/literary adverb emphasizing that ALL attempts, expectations, or items met the same fate (often negative).",
+      "example": {
+        "jp": "彼の立てた予想はことごとく外れてしまった。",
+        "reading": "かれのたてたよそうはことごとくはずれてしまった。",
+        "en": "Every single prediction he made turned out completely wrong."
+      },
+      "quiz": {
+        "sentenceBefore": "提出した企画案は、会議で",
+        "sentenceAfter": "却下された。",
+        "en": "The proposals we submitted were all rejected without exception at the meeting.",
+        "choices": [
+          "まんざら",
+          "さぞ",
+          "かりに",
+          "ことごとく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-10",
+      "jlpt": 1,
+      "order": 10,
+      "word": "もっぱら",
+      "reading": "もっぱら",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "exclusively; chiefly; solely",
+      "acceptedMeanings": [
+        "exclusively; chiefly; solely",
+        "exclusively",
+        "chiefly",
+        "mainly",
+        "solely"
+      ],
+      "usageNote": "Indicates devoting almost all time/focus to one thing, or a rumor circulating widely (もっぱらの噂).",
+      "example": {
+        "jp": "最近は忙しくて、休日はもっぱら家で本を読んでいる。",
+        "reading": "さいきんはいそがしくて、きゅうじつはもっぱらいえでほんをよんでいる。",
+        "en": "Busy lately, on days off I spend my time almost exclusively reading at home."
+      },
+      "quiz": {
+        "sentenceBefore": "そのプロジェクトは、現在Aチームが",
+        "sentenceAfter": "担当している。",
+        "en": "That project is currently handled exclusively by Team A.",
+        "choices": [
+          "ことごとく",
+          "さぞ",
+          "もっぱら",
+          "すかさず"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-11",
+      "jlpt": 1,
+      "order": 11,
+      "word": "いわば",
+      "reading": "いわば",
+      "category": "connector",
+      "partOfSpeech": "Adverb / Conjunction",
+      "primaryMeaning": "so to speak; as it were",
+      "acceptedMeanings": [
+        "so to speak; as it were",
+        "so to speak",
+        "as it were",
+        "in a manner of speaking"
+      ],
+      "usageNote": "Introduces a metaphor or figurative comparison in essays and commentary.",
+      "example": {
+        "jp": "心臓は人間にとって、いわばエンジンと同じ役割を果たしている。",
+        "reading": "しんぞうはにんげんにとって、いわばえんじんとおなじやくわりをはたしている。",
+        "en": "For humans, the heart plays the role of an engine, so to speak."
+      },
+      "quiz": {
+        "sentenceBefore": "この古い商店街は、地域の歴史を映す",
+        "sentenceAfter": "生きた博物館だ。",
+        "en": "This old shopping street is, as it were, a living museum reflecting local history.",
+        "choices": [
+          "ゆえに",
+          "いわば",
+          "ひいては",
+          "かたや"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-12",
+      "jlpt": 1,
+      "order": 12,
+      "word": "ひいては",
+      "reading": "ひいては",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "and consequently; furthermore leading to (broader impact)",
+      "acceptedMeanings": [
+        "and consequently; furthermore leading to (broader impact)",
+        "consequently",
+        "leading to",
+        "ultimately",
+        "by extension"
+      ],
+      "usageNote": "Shows how a smaller/immediate action escalates to affect a much larger societal or global scale.",
+      "example": {
+        "jp": "個人の節電意識が、ひいては地球環境の保全につながる。",
+        "reading": "こじんのせつでんいしきが、ひいてはちきゅうかんきょうのほぜんにつながる。",
+        "en": "Individual energy-saving awareness ultimately leads to preserving the global environment."
+      },
+      "quiz": {
+        "sentenceBefore": "教育への投資は、",
+        "sentenceAfter": "国全体の競争力を高めることになる。",
+        "en": "Investment in education will, by extension, raise the competitiveness of the entire nation.",
+        "choices": [
+          "ひいては",
+          "いわば",
+          "かたや",
+          "とはいえ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-13",
+      "jlpt": 1,
+      "order": 13,
+      "word": "かたや",
+      "reading": "かたや",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "on the one hand; whereas on the other",
+      "acceptedMeanings": [
+        "on the one hand; whereas on the other",
+        "on the one hand",
+        "meanwhile",
+        "whereas"
+      ],
+      "usageNote": "Dramatically contrasts two opposing sides or situations (often paired with もう一方では or repeated かたや～かたや).",
+      "example": {
+        "jp": "かたや都心では再開発が進み、かたや地方では過疎化が止まらない。",
+        "reading": "かたやとしんではさいかいはつがすすみ、かたやちほうではかそかがとまらない。",
+        "en": "On one hand redevelopment advances in the city center, while on the other depopulation continues unchecked in rural areas."
+      },
+      "quiz": {
+        "sentenceBefore": "兄は芸術の道へ進んだ。",
+        "sentenceAfter": "、弟は実業家として成功を収めた。",
+        "en": "The older brother pursued art. Meanwhile, the younger brother achieved success as a businessman.",
+        "choices": [
+          "ひいては",
+          "いわば",
+          "ゆえに",
+          "かたや"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-14",
+      "jlpt": 1,
+      "order": 14,
+      "word": "ゆえに",
+      "reading": "ゆえに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "therefore; consequently; hence (literary)",
+      "acceptedMeanings": [
+        "therefore; consequently; hence (literary)",
+        "therefore",
+        "hence",
+        "consequently",
+        "for that reason"
+      ],
+      "usageNote": "Elevated, philosophical/academic equivalent of だから / したがって.",
+      "example": {
+        "jp": "我思う、ゆえに我あり。",
+        "reading": "われおもう、ゆえにわれあり。",
+        "en": "I think, therefore I am."
+      },
+      "quiz": {
+        "sentenceBefore": "資源には限りがある。",
+        "sentenceAfter": "、持続可能な利用方法を模索せねばならない。",
+        "en": "Resources are finite. Therefore, we must seek sustainable methods of use.",
+        "choices": [
+          "いわば",
+          "もっとも",
+          "ゆえに",
+          "かたや"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-15",
+      "jlpt": 1,
+      "order": 15,
+      "word": "さりとて",
+      "reading": "さりとて",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "even so; yet; still (caught in a dilemma)",
+      "acceptedMeanings": [
+        "even so; yet; still (caught in a dilemma)",
+        "even so",
+        "yet",
+        "still",
+        "nevertheless"
+      ],
+      "usageNote": "Literary conjunction showing reluctance: acknowledging a reason against A, yet feeling unable to choose the alternative either.",
+      "example": {
+        "jp": "このまま続けるのは苦しい。さりとて、今さら諦めるわけにもいかない。",
+        "reading": "このままつづけるのはくるしい。さりとて、いまさらあきらめるわけにもいかない。",
+        "en": "Continuing like this is painful. Yet even so, I cannot give up at this late stage."
+      },
+      "quiz": {
+        "sentenceBefore": "費用は安くはない。",
+        "sentenceAfter": "、安全性を犠牲にするわけにはいかないのだ。",
+        "en": "The cost is not cheap. Even so, we cannot sacrifice safety.",
+        "choices": [
+          "いわば",
+          "さりとて",
+          "ゆえに",
+          "ひいては"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-16",
+      "jlpt": 1,
+      "order": 16,
+      "word": "うんざり",
+      "reading": "うんざり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "fed up; sick and tired of ~",
+      "acceptedMeanings": [
+        "fed up; sick and tired of ~",
+        "fed up",
+        "sick and tired",
+        "disgusted",
+        "weary"
+      ],
+      "usageNote": "Expresses deep weariness or exasperation from endless repetition of something unpleasant.",
+      "example": {
+        "jp": "毎日同じ言い訳ばかり聞かされて、もううんざりだ。",
+        "reading": "まいにちおなじいいわけばかりきかされて、もううんざりだ。",
+        "en": "Being forced to hear the exact same excuses every day, I am completely fed up."
+      },
+      "quiz": {
+        "sentenceBefore": "連日の猛暑と満員電車には本当に",
+        "sentenceAfter": "している。",
+        "en": "I am truly sick and tired of the relentless heatwave and packed trains.",
+        "choices": [
+          "うんざり",
+          "ずばり",
+          "しんみり",
+          "こってり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-17",
+      "jlpt": 1,
+      "order": 17,
+      "word": "ずばり",
+      "reading": "ずばり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "bluntly; spot-on; straight to the point",
+      "acceptedMeanings": [
+        "bluntly; spot-on; straight to the point",
+        "spot-on",
+        "bluntly",
+        "straight to the point",
+        "directly"
+      ],
+      "usageNote": "Describes hitting the bullseye with a prediction or stating the core truth directly without sugarcoating.",
+      "example": {
+        "jp": "彼女の指摘は問題の本質をずばり突いていた。",
+        "reading": "かのじょのしてきはもんだいのほんしつをずばりついていた。",
+        "en": "Her remark hit straight to the heart of the issue."
+      },
+      "quiz": {
+        "sentenceBefore": "遠回しに言わず、結論から",
+        "sentenceAfter": "言ってください。",
+        "en": "Instead of beating around the bush, please state the conclusion straight out.",
+        "choices": [
+          "うんざり",
+          "うやむや",
+          "じんわり",
+          "ずばり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-18",
+      "jlpt": 1,
+      "order": 18,
+      "word": "うやむや",
+      "reading": "うやむや",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Na-adj / Noun",
+      "primaryMeaning": "vague; ambiguous; swept under the rug",
+      "acceptedMeanings": [
+        "vague; ambiguous; swept under the rug",
+        "vague",
+        "ambiguous",
+        "swept under the rug",
+        "hushed up"
+      ],
+      "usageNote": "Very common in N1 news/editorials: うやむやにする (cover up / leave unresolved without accountability).",
+      "example": {
+        "jp": "責任の所在をうやむやにしたまま終わらせてはいけない。",
+        "reading": "せきにんのしょざいをうやむやにしたままおわらせてはいけない。",
+        "en": "We must not let this end with accountability left vague and unresolved."
+      },
+      "quiz": {
+        "sentenceBefore": "不祥事の原因究明がいつの間にか",
+        "sentenceAfter": "になってしまった。",
+        "en": "The investigation into the scandal's cause was somehow swept under the rug.",
+        "choices": [
+          "すっきり",
+          "うんざり",
+          "うやむや",
+          "ずばり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-19",
+      "jlpt": 1,
+      "order": 19,
+      "word": "しんみり",
+      "reading": "しんみり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "quietly emotional; wistful; heart-to-heart",
+      "acceptedMeanings": [
+        "quietly emotional; wistful; heart-to-heart",
+        "wistful",
+        "quietly emotional",
+        "heart-to-heart",
+        "somber"
+      ],
+      "usageNote": "Describes a quiet, tender, reflective atmosphere—such as reminiscing peacefully or talking heart-to-heart.",
+      "example": {
+        "jp": "久しぶりに旧友と二人でしんみり語り合った。",
+        "reading": "ひさしぶりにきゅうゆうとふたりでしんみりかたりあった。",
+        "en": "For the first time in ages, my old friend and I had a quiet heart-to-heart talk."
+      },
+      "quiz": {
+        "sentenceBefore": "卒業式の歌を聞いて、みんな",
+        "sentenceAfter": "とした気持ちになった。",
+        "en": "Hearing the graduation song, everyone felt quietly emotional.",
+        "choices": [
+          "ぎっしり",
+          "しんみり",
+          "うんざり",
+          "ずばり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-20",
+      "jlpt": 1,
+      "order": 20,
+      "word": "ぎっしり",
+      "reading": "ぎっしり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "packed tightly; crammed full",
+      "acceptedMeanings": [
+        "packed tightly; crammed full",
+        "packed tightly",
+        "crammed full",
+        "chock-full",
+        "tightly packed"
+      ],
+      "usageNote": "Describes a space, schedule, or container completely packed with zero empty gaps.",
+      "example": {
+        "jp": "来月の手帳は予定がぎっしり詰まっている。",
+        "reading": "らいげつのてちょうはよていがぎっしりつまっている。",
+        "en": "Next month's planner is packed tightly with appointments."
+      },
+      "quiz": {
+        "sentenceBefore": "本棚には古い専門書が",
+        "sentenceAfter": "並べられていた。",
+        "en": "Old reference books were crammed tightly onto the bookshelf.",
+        "choices": [
+          "ぎっしり",
+          "あっさり",
+          "しんみり",
+          "うやむや"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-21",
+      "jlpt": 1,
+      "order": 21,
+      "word": "そっくり",
+      "reading": "そっくり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Na-adj / Adverb",
+      "primaryMeaning": "spitting image; identical; entirely (the whole lot)",
+      "acceptedMeanings": [
+        "spitting image; identical; entirely (the whole lot)",
+        "spitting image",
+        "identical",
+        "exact likeness",
+        "entirely"
+      ],
+      "usageNote": "Two N1 meanings: (1) looking just like someone/something, or (2) taking/leaving something wholesale (\"the entire thing\").",
+      "example": {
+        "jp": "あの兄弟は声までそっくりで、電話では区別がつかない。",
+        "reading": "あのきょうだいはこえまでそっくりで、でんわではくべつがつかない。",
+        "en": "Those brothers are identical even down to their voices—you can't tell them apart on the phone."
+      },
+      "quiz": {
+        "sentenceBefore": "古い街並みが当時の姿のまま",
+        "sentenceAfter": "残されている。",
+        "en": "The old townscape has been preserved entirely in its original form.",
+        "choices": [
+          "うやむや",
+          "うんざり",
+          "ぎりぎり",
+          "そっくり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-22",
+      "jlpt": 1,
+      "order": 22,
+      "word": "じんわり",
+      "reading": "じんわり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "gradually soaking in; slowly spreading (warmth/emotion)",
+      "acceptedMeanings": [
+        "gradually soaking in; slowly spreading (warmth/emotion)",
+        "gradually",
+        "slowly spreading",
+        "seeping in",
+        "quietly"
+      ],
+      "usageNote": "Describes gentle, gradual penetration of warmth, flavor, sweat, or deep gratitude.",
+      "example": {
+        "jp": "温かいスープを飲むと、体中に優しさがじんわり広がる。",
+        "reading": "あたたかいすーぷをのむと、からだじゅうにやさしさがじんわりひろがる。",
+        "en": "Drinking warm soup, a gentle warmth slowly spreads through my body."
+      },
+      "quiz": {
+        "sentenceBefore": "厳しい言葉に込められた愛情が、あとから",
+        "sentenceAfter": "と胸に響いた。",
+        "en": "The affection hidden in those strict words slowly sank into my heart afterward.",
+        "choices": [
+          "ぎっしり",
+          "ばったり",
+          "じんわり",
+          "ずばり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-23",
+      "jlpt": 1,
+      "order": 23,
+      "word": "きっぱり",
+      "reading": "きっぱり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "flatly; decisively; firmly (refusing or quitting)",
+      "acceptedMeanings": [
+        "flatly; decisively; firmly (refusing or quitting)",
+        "firmly",
+        "flatly",
+        "decisively",
+        "categorically"
+      ],
+      "usageNote": "Expresses an unambiguous, resolute refusal or permanent break with a habit.",
+      "example": {
+        "jp": "不当な要求に対して、彼はきっぱりと断った。",
+        "reading": "ふとうなようきゅうにたいして、かれはきっぱりとことわった。",
+        "en": "Faced with an unreasonable demand, he flatly refused."
+      },
+      "quiz": {
+        "sentenceBefore": "健康診断の結果を見て、たばこを",
+        "sentenceAfter": "やめる決心をした。",
+        "en": "Seeing his health checkup results, he resolved to quit smoking for good.",
+        "choices": [
+          "しんみり",
+          "きっぱり",
+          "うやむや",
+          "じんわり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-24",
+      "jlpt": 1,
+      "order": 24,
+      "word": "コンセンサス",
+      "reading": "こんせんさす",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "consensus; general agreement",
+      "acceptedMeanings": [
+        "consensus; general agreement",
+        "consensus",
+        "agreement",
+        "mutual accord"
+      ],
+      "usageNote": "High-register policy, business, and academic katakana term (コンセンサスを得る = obtain consensus).",
+      "example": {
+        "jp": "法改正にあたっては、国民的なコンセンサスを得ることが不可欠だ。",
+        "reading": "ほうかいせいにあたっては、こくみんてきなこんせんさすをえることがふかけつだ。",
+        "en": "In amending the law, obtaining national consensus is indispensable."
+      },
+      "quiz": {
+        "sentenceBefore": "関係部署の間で十分な",
+        "sentenceAfter": "が形成されていない。",
+        "en": "Sufficient consensus has not yet been formed among the relevant departments.",
+        "choices": [
+          "コンセンサス",
+          "ジレンマ",
+          "ポテンシャル",
+          "スキーム"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-25",
+      "jlpt": 1,
+      "order": 25,
+      "word": "ジレンマ",
+      "reading": "じれんま",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "dilemma; catch-22",
+      "acceptedMeanings": [
+        "dilemma; catch-22",
+        "dilemma",
+        "quandary",
+        "catch-22"
+      ],
+      "usageNote": "Frequent in N1 essays examining conflicting social priorities (economy vs. environment, privacy vs. convenience).",
+      "example": {
+        "jp": "経済成長と環境保護の両立というジレンマに直面している。",
+        "reading": "けいざいせいちょうとかんきょうほごのりょうりつというじれんまにちょくめんしている。",
+        "en": "We face the dilemma of balancing economic growth with environmental protection."
+      },
+      "quiz": {
+        "sentenceBefore": "理想と現実の狭間で、深い",
+        "sentenceAfter": "に陥った。",
+        "en": "Caught between ideals and reality, I fell into a deep dilemma.",
+        "choices": [
+          "コンセンサス",
+          "パラダイム",
+          "インセンティブ",
+          "ジレンマ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-26",
+      "jlpt": 1,
+      "order": 26,
+      "word": "イニシアティブ",
+      "reading": "いにしあてぃぶ",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "initiative; leadership; taking the lead",
+      "acceptedMeanings": [
+        "initiative; leadership; taking the lead",
+        "initiative",
+        "leadership",
+        "lead"
+      ],
+      "usageNote": "Common collocation: イニシアティブを取る (take the initiative / lead negotiations).",
+      "example": {
+        "jp": "国際会議の場で、日本が環境対策のイニシアティブを取った。",
+        "reading": "こくさいかいぎのばで、にほんがかんきょうたいさくのいにしあてぃぶをとった。",
+        "en": "At the international conference, Japan took the initiative on environmental measures."
+      },
+      "quiz": {
+        "sentenceBefore": "交渉の主導権、すなわち",
+        "sentenceAfter": "を握ることが重要だ。",
+        "en": "Holding the lead—that is, seizing the initiative in negotiations—is crucial.",
+        "choices": [
+          "インセンティブ",
+          "ポテンシャル",
+          "イニシアティブ",
+          "ジレンマ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-27",
+      "jlpt": 1,
+      "order": 27,
+      "word": "ポテンシャル",
+      "reading": "ぽてんしゃる",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "potential; latent capability",
+      "acceptedMeanings": [
+        "potential; latent capability",
+        "potential",
+        "latent ability",
+        "capability"
+      ],
+      "usageNote": "Used for untapped human talent, regional revitalization, or technological promise.",
+      "example": {
+        "jp": "この地域には観光資源としての高いポテンシャルが眠っている。",
+        "reading": "このちいきにはかんこうしげんとしてのたかいぽてんしゃるがねむっている。",
+        "en": "High untapped potential as a tourism resource lies dormant in this region."
+      },
+      "quiz": {
+        "sentenceBefore": "若手研究者の",
+        "sentenceAfter": "を最大限に引き出す環境を整える。",
+        "en": "We will build an environment that brings out young researchers' full potential.",
+        "choices": [
+          "インフラ",
+          "ポテンシャル",
+          "コンセンサス",
+          "ジレンマ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-28",
+      "jlpt": 1,
+      "order": 28,
+      "word": "インセンティブ",
+      "reading": "いんせんてぃぶ",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "incentive; motivating reward",
+      "acceptedMeanings": [
+        "incentive; motivating reward",
+        "incentive",
+        "motivation",
+        "reward"
+      ],
+      "usageNote": "Economics, policy, and management term appearing regularly in N1 reading comprehension.",
+      "example": {
+        "jp": "省エネ家電の購入に対し、税制上のインセンティブを設けた。",
+        "reading": "しょうえねかでんのこうにゅうにたいし、ぜいせいじょうのいんせんてぃぶをもうけた。",
+        "en": "Tax incentives were introduced for purchasing energy-saving appliances."
+      },
+      "quiz": {
+        "sentenceBefore": "社員の挑戦を促すための評価",
+        "sentenceAfter": "を導入した。",
+        "en": "We introduced evaluation incentives to encourage employees to take on challenges.",
+        "choices": [
+          "インセンティブ",
+          "ジレンマ",
+          "パラダイム",
+          "コンセンサス"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-29",
+      "jlpt": 1,
+      "order": 29,
+      "word": "インフラ",
+      "reading": "いんふら",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "infrastructure",
+      "acceptedMeanings": [
+        "infrastructure",
+        "public infrastructure"
+      ],
+      "usageNote": "Clipped from \"infrastructure\". Essential news term covering roads, power grids, water, and digital networks.",
+      "example": {
+        "jp": "老朽化した道路や水道などのインフラ整備が急務となっている。",
+        "reading": "ろうきゅうかしたどうろやすいどうなどのいんふらせいびがきゅうむとなっている。",
+        "en": "Maintaining aging infrastructure such as roads and waterworks has become an urgent task."
+      },
+      "quiz": {
+        "sentenceBefore": "災害時にも止まらない強固な通信",
+        "sentenceAfter": "の構築が求められる。",
+        "en": "Building resilient communications infrastructure that stays up during disasters is required.",
+        "choices": [
+          "ポテンシャル",
+          "インセンティブ",
+          "パラダイム",
+          "インフラ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n1-30",
+      "jlpt": 1,
+      "order": 30,
+      "word": "パラダイム",
+      "reading": "ぱらだいむ",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "paradigm; overarching framework",
+      "acceptedMeanings": [
+        "paradigm; overarching framework",
+        "paradigm",
+        "framework",
+        "model"
+      ],
+      "usageNote": "Academic/editorial term, especially in パラダイムシフト (paradigm shift).",
+      "example": {
+        "jp": "AIの普及により、教育分野で大きなパラダイムシフトが起きている。",
+        "reading": "えーあいのふきゅうにより、きょういくぶんやでおおきなぱらだいむしふとがおきている。",
+        "en": "With the spread of AI, a major paradigm shift is occurring in education."
+      },
+      "quiz": {
+        "sentenceBefore": "従来の価値観にとらわれず、新しい",
+        "sentenceAfter": "を築く時期に来ている。",
+        "en": "The time has come to build a new paradigm without being bound by conventional values.",
+        "choices": [
+          "ジレンマ",
+          "コンセンサス",
+          "パラダイム",
+          "インフラ"
+        ]
+      }
+    }
+  ]
+}

@@ -20,12 +20,13 @@ import { useApp } from '../context/AppContext';
 import { JLPT_LEVELS } from '../data/grammar';
 import {
   LISTENING_TASK_TYPES,
-  loadListeningDataset,
+  ListeningManifest,
+  loadListeningLevel,
+  loadListeningManifest,
 } from '../data/listening';
 import { stripFuriganaMarkup } from '../data/reading';
 import { JlptLevel } from '../types/grammar';
 import {
-  ListeningDataset,
   ListeningTaskType,
   ListeningTrack,
 } from '../types/listening';
@@ -86,10 +87,19 @@ const RubyText: React.FC<{ text: string; showFurigana: boolean }> = ({
   return <>{tokens}</>;
 };
 
+function getJlptFromListeningId(id: string): JlptLevel | null {
+  const match = id.match(/-n([1-5])-/i);
+  return match ? (Number(match[1]) as JlptLevel) : null;
+}
+
 export const ListeningHub: React.FC = () => {
   const { state, setActiveView, recordListeningAttempt } = useApp();
 
-  const [data, setData] = useState<ListeningDataset | null>(null);
+  const [manifest, setManifest] = useState<ListeningManifest | null>(null);
+  const [tracksByLevel, setTracksByLevel] = useState<
+    Partial<Record<JlptLevel, ListeningTrack[]>>
+  >({});
+  const [loadingLevel, setLoadingLevel] = useState<JlptLevel | null>(5);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   // Catalog state
@@ -119,11 +129,12 @@ export const ListeningHub: React.FC = () => {
 
   const speechAvailable = useMemo(() => isSpeechSupported(), []);
 
+  // Load lightweight manifest once on mount
   useEffect(() => {
     let active = true;
-    loadListeningDataset()
-      .then((ds) => {
-        if (active) setData(ds);
+    loadListeningManifest()
+      .then((m) => {
+        if (active) setManifest(m);
       })
       .catch((err) => {
         if (active) {
@@ -136,6 +147,35 @@ export const ListeningHub: React.FC = () => {
       active = false;
     };
   }, []);
+
+  // Load only the selected JLPT level's JSON pack(s) on demand
+  useEffect(() => {
+    if (tracksByLevel[selectedLevel]) {
+      setLoadingLevel(null);
+      return;
+    }
+    let active = true;
+    setLoadingLevel(selectedLevel);
+    loadListeningLevel(selectedLevel)
+      .then((items) => {
+        if (!active) return;
+        setTracksByLevel((prev) => ({ ...prev, [selectedLevel]: items }));
+        setLoadingLevel(null);
+      })
+      .catch((err) => {
+        if (active) {
+          setLoadingLevel(null);
+          setLoadError(
+            err instanceof Error
+              ? err.message
+              : `Gagal memuat paket Chōkai JLPT N${selectedLevel}.`
+          );
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedLevel, tracksByLevel]);
 
   // Always stop speech cleanly when unmounting
   useEffect(() => {
@@ -159,16 +199,26 @@ export const ListeningHub: React.FC = () => {
       1: { total: 0, passed: 0, firstListen: 0 },
     };
 
-    if (!data) return map;
-    for (const track of data.tracks) {
-      const b = map[track.jlpt];
-      b.total += 1;
-      const prog = progressMap[track.id];
-      if (prog?.passed) b.passed += 1;
-      if (prog?.passedFirstListen) b.firstListen += 1;
+    for (const lvl of [5, 4, 3, 2, 1] as JlptLevel[]) {
+      const loaded = tracksByLevel[lvl];
+      if (loaded) {
+        map[lvl].total = loaded.length;
+        for (const track of loaded) {
+          const prog = progressMap[track.id];
+          if (prog?.passed) map[lvl].passed += 1;
+          if (prog?.passedFirstListen) map[lvl].firstListen += 1;
+        }
+      } else {
+        map[lvl].total = manifest?.levels[String(lvl)]?.count ?? 0;
+        for (const [id, prog] of Object.entries(progressMap)) {
+          if (getJlptFromListeningId(id) !== lvl) continue;
+          if (prog.passed) map[lvl].passed += 1;
+          if (prog.passedFirstListen) map[lvl].firstListen += 1;
+        }
+      }
     }
     return map;
-  }, [data, progressMap]);
+  }, [manifest, tracksByLevel, progressMap]);
 
   const totals = useMemo(() => {
     let passed = 0;
@@ -178,18 +228,18 @@ export const ListeningHub: React.FC = () => {
       firstListen += levelStats[lvl].firstListen;
     }
     return {
-      totalTracks: data?.tracks.length ?? 50,
+      totalTracks: manifest?.totalCount ?? 50,
       passed,
       firstListen,
     };
-  }, [levelStats, data]);
+  }, [levelStats, manifest]);
+
+  const selectedLevelTracks = tracksByLevel[selectedLevel] ?? [];
 
   const filteredTracks = useMemo(() => {
-    if (!data) return [];
-    const base = data.byJlpt[selectedLevel] ?? [];
-    if (taskFilter === 'all') return base;
-    return base.filter((t) => t.taskType === taskFilter);
-  }, [data, selectedLevel, taskFilter]);
+    if (taskFilter === 'all') return selectedLevelTracks;
+    return selectedLevelTracks.filter((t) => t.taskType === taskFilter);
+  }, [selectedLevelTracks, taskFilter]);
 
   const getTaskMeta = (type: ListeningTaskType) =>
     LISTENING_TASK_TYPES.find((t) => t.id === type) ?? LISTENING_TASK_TYPES[0];
@@ -353,8 +403,8 @@ export const ListeningHub: React.FC = () => {
   };
 
   const handleNextTrack = () => {
-    if (!data || !activeTrack) return;
-    const sameLevel = data.byJlpt[activeTrack.jlpt] ?? [];
+    if (!activeTrack) return;
+    const sameLevel = tracksByLevel[activeTrack.jlpt] ?? [];
     const idx = sameLevel.findIndex((t) => t.id === activeTrack.id);
     if (idx >= 0 && idx + 1 < sameLevel.length) {
       openTrack(sameLevel[idx + 1]);
@@ -394,12 +444,12 @@ export const ListeningHub: React.FC = () => {
     );
   }
 
-  if (!data) {
+  if (!manifest) {
     return (
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 50 Audio Latihan Chōkai JLPT N5–N1...
+            Memuat Kurikulum Chōkai JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan dialog multi-pembicara, transkrip furigana, dan pembahasan bahasa Inggris.
@@ -416,7 +466,7 @@ export const ListeningHub: React.FC = () => {
     const lvlMeta =
       JLPT_LEVELS.find((l) => l.level === activeTrack.jlpt) ?? JLPT_LEVELS[0];
     const taskMeta = getTaskMeta(activeTrack.taskType);
-    const sameLevelList = data.byJlpt[activeTrack.jlpt] ?? [];
+    const sameLevelList = tracksByLevel[activeTrack.jlpt] ?? [];
     const currentIndex = sameLevelList.findIndex((t) => t.id === activeTrack.id);
     const hasNext = currentIndex >= 0 && currentIndex + 1 < sameLevelList.length;
     const isCorrect =
@@ -1046,7 +1096,7 @@ export const ListeningHub: React.FC = () => {
   // =========================================================================
   const activeLvlMeta =
     JLPT_LEVELS.find((l) => l.level === selectedLevel) ?? JLPT_LEVELS[0];
-  const nextUnpassed = (data.byJlpt[selectedLevel] ?? []).find(
+  const nextUnpassed = selectedLevelTracks.find(
     (t) => !progressMap[t.id]?.passed
   );
 
@@ -1080,7 +1130,7 @@ export const ListeningHub: React.FC = () => {
             type="button"
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold bg-slate-900 dark:bg-white text-white dark:text-slate-900 whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (50)
+            4. Chōkai ({totals.totalTracks})
           </button>
           <button
             type="button"
@@ -1106,7 +1156,7 @@ export const ListeningHub: React.FC = () => {
             Latihan Mendengarkan JLPT (Chōkai N5–N1)
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-3xl">
-            50 simulasi audio multi-pembicara bergaya ujian JLPT — mencakup <em>Kadai Rikai</em>, <em>Pointo Rikai</em>, <em>Gaiyō Rikai</em>, <em>Sokuji Ōtō</em> (3 pilihan audio), dan <em>Tōgō Rikai</em> lengkap dengan kontrol kecepatan, mode ujian, transkrip furigana, dan pembahasan bahasa Inggris.
+            {totals.totalTracks} simulasi audio multi-pembicara bergaya ujian JLPT — mencakup <em>Kadai Rikai</em>, <em>Pointo Rikai</em>, <em>Gaiyō Rikai</em>, <em>Sokuji Ōtō</em> (3 pilihan audio), dan <em>Tōgō Rikai</em> lengkap dengan kontrol kecepatan, mode ujian, transkrip furigana, dan pembahasan bahasa Inggris.
           </p>
         </div>
 
@@ -1187,10 +1237,10 @@ export const ListeningHub: React.FC = () => {
               : 'bg-white dark:bg-[#161A22] text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800'
           }`}
         >
-          Semua Format ({(data.byJlpt[selectedLevel] ?? []).length})
+          Semua Format ({selectedLevelTracks.length})
         </button>
         {LISTENING_TASK_TYPES.map((task) => {
-          const count = (data.byJlpt[selectedLevel] ?? []).filter(
+          const count = selectedLevelTracks.filter(
             (t) => t.taskType === task.id
           ).length;
           if (count === 0) return null;
@@ -1214,6 +1264,11 @@ export const ListeningHub: React.FC = () => {
       </div>
 
       {/* Track List */}
+      {loadingLevel === selectedLevel ? (
+        <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-10 text-center text-sm text-slate-500 dark:text-slate-400">
+          Memuat paket audio Chōkai JLPT {activeLvlMeta.code}...
+        </section>
+      ) : (
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredTracks.map((track, idx) => {
           const taskMeta = getTaskMeta(track.taskType);
@@ -1287,6 +1342,7 @@ export const ListeningHub: React.FC = () => {
           );
         })}
       </section>
+      )}
     </main>
   );
 };

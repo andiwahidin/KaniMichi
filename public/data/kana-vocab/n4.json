@@ -1,0 +1,1011 @@
+{
+  "level": 4,
+  "pack": "n4",
+  "items": [
+    {
+      "id": "kv-n4-01",
+      "jlpt": 4,
+      "order": 1,
+      "word": "きっと",
+      "reading": "きっと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "surely; certainly; without fail",
+      "acceptedMeanings": [
+        "surely; certainly; without fail",
+        "surely",
+        "certainly",
+        "definitely",
+        "undoubtedly"
+      ],
+      "usageNote": "Expresses the speaker's strong personal belief or hope about something (often pairs with ～でしょう / ～と思う).",
+      "example": {
+        "jp": "たくさん練習したから、明日はきっと勝てますよ。",
+        "reading": "たくさんれんしゅうしたから、あしたはきっとかてますよ。",
+        "en": "Since we practiced a lot, we will surely win tomorrow."
+      },
+      "quiz": {
+        "sentenceBefore": "この映画は面白いから、あなたも",
+        "sentenceAfter": "気に入ると思います。",
+        "en": "This movie is interesting, so I think you will surely like it too.",
+        "choices": [
+          "ほとんど",
+          "ぜんぜん",
+          "めったに",
+          "きっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-02",
+      "jlpt": 4,
+      "order": 2,
+      "word": "ぜひ",
+      "reading": "ぜひ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "by all means; definitely (for invitations/wishes)",
+      "acceptedMeanings": [
+        "by all means; definitely (for invitations/wishes)",
+        "by all means",
+        "definitely",
+        "really",
+        "certainly"
+      ],
+      "usageNote": "JLPT classic: pairs ONLY with wishes (～たい), requests (～てください), or invitations (～ましょう), never plain statements.",
+      "example": {
+        "jp": "日本に来たら、ぜひ京都へ行ってください。",
+        "reading": "にほんにきたら、ぜひきょうとへいってください。",
+        "en": "When you come to Japan, please visit Kyoto by all means."
+      },
+      "quiz": {
+        "sentenceBefore": "今度の日曜日、",
+        "sentenceAfter": "うちに遊びに来てください。",
+        "en": "Please come visit my home by all means this coming Sunday.",
+        "choices": [
+          "たぶん",
+          "ほとんど",
+          "ぜひ",
+          "きっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-03",
+      "jlpt": 4,
+      "order": 3,
+      "word": "ほとんど",
+      "reading": "ほとんど",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "almost; mostly; hardly (with negative)",
+      "acceptedMeanings": [
+        "almost; mostly; hardly (with negative)",
+        "almost",
+        "mostly",
+        "nearly",
+        "hardly"
+      ],
+      "usageNote": "With affirmative means \"almost all\"; with negative means \"hardly / almost not at all\".",
+      "example": {
+        "jp": "台風が近づいていて、電車はほとんど止まっています。",
+        "reading": "たいふうがちかづいていて、でんしゃはほとんどとまっています。",
+        "en": "A typhoon is approaching, and almost all trains have stopped."
+      },
+      "quiz": {
+        "sentenceBefore": "忙しすぎて、今週はテレビを",
+        "sentenceAfter": "見ていません。",
+        "en": "I have been too busy and have hardly watched TV this week.",
+        "choices": [
+          "すっかり",
+          "ほとんど",
+          "ぜひ",
+          "きっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-04",
+      "jlpt": 4,
+      "order": 4,
+      "word": "すっかり",
+      "reading": "すっかり",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "completely; totally",
+      "acceptedMeanings": [
+        "completely; totally",
+        "completely",
+        "totally",
+        "entirely",
+        "thoroughly"
+      ],
+      "usageNote": "Describes a complete change from one state to another (recovering fully, forgetting completely, seasons changing).",
+      "example": {
+        "jp": "薬を飲んだら、風邪がすっかり治りました。",
+        "reading": "くすりをのんだら、かぜがすっかりなおりました。",
+        "en": "After taking medicine, my cold completely healed."
+      },
+      "quiz": {
+        "sentenceBefore": "約束の時間だったのに、",
+        "sentenceAfter": "忘れてしまいました。",
+        "en": "Even though it was our appointment time, I completely forgot.",
+        "choices": [
+          "すっかり",
+          "そろそろ",
+          "たまに",
+          "ようやく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-05",
+      "jlpt": 4,
+      "order": 5,
+      "word": "そろそろ",
+      "reading": "そろそろ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "soon; about time to ~",
+      "acceptedMeanings": [
+        "soon; about time to ~",
+        "soon",
+        "about time",
+        "gradually",
+        "slowly"
+      ],
+      "usageNote": "Indicates that the time for an action (leaving, starting, seasonal change) is arriving right now.",
+      "example": {
+        "jp": "もう十時ですね。そろそろ失礼します。",
+        "reading": "もうじゅうじですね。そろそろしつれいします。",
+        "en": "It is already ten o'clock. It is about time for me to head out."
+      },
+      "quiz": {
+        "sentenceBefore": "寒くなってきたので、",
+        "sentenceAfter": "コートを出しましょう。",
+        "en": "It is getting cold, so let's bring out our coats soon.",
+        "choices": [
+          "すっかり",
+          "めったに",
+          "わざわざ",
+          "そろそろ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-06",
+      "jlpt": 4,
+      "order": 6,
+      "word": "ようやく",
+      "reading": "ようやく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "finally; at last (after long effort)",
+      "acceptedMeanings": [
+        "finally; at last (after long effort)",
+        "finally",
+        "at last",
+        "barely"
+      ],
+      "usageNote": "Slightly more formal than やっと. Expresses relief that something eagerly awaited has finally been achieved.",
+      "example": {
+        "jp": "三年間勉強して、ようやく試験に合格した。",
+        "reading": "さんねんかんべんきょうして、ようやくしけんにごうかくした。",
+        "en": "After studying for three years, I finally passed the exam."
+      },
+      "quiz": {
+        "sentenceBefore": "長い冬が終わり、",
+        "sentenceAfter": "暖かい春がやって来た。",
+        "en": "The long winter ended, and warm spring has finally arrived.",
+        "choices": [
+          "たまに",
+          "すっかり",
+          "ようやく",
+          "そろそろ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-07",
+      "jlpt": 4,
+      "order": 7,
+      "word": "たまに",
+      "reading": "たまに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "occasionally; once in a while",
+      "acceptedMeanings": [
+        "occasionally; once in a while",
+        "occasionally",
+        "once in a while",
+        "rarely",
+        "now and then"
+      ],
+      "usageNote": "Less frequent than ときどき (\"once in a while\"), often used for special treats or infrequent habits.",
+      "example": {
+        "jp": "普段は自炊していますが、たまに外食します。",
+        "reading": "ふだんはじすいしていますが、たまにがいしょくします。",
+        "en": "Usually I cook at home, but once in a while I eat out."
+      },
+      "quiz": {
+        "sentenceBefore": "仕事ばかりしないで、",
+        "sentenceAfter": "はゆっくり休んだほうがいいですよ。",
+        "en": "Don't just work—once in a while you should rest well.",
+        "choices": [
+          "すっかり",
+          "たまに",
+          "いつも",
+          "かならず"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-08",
+      "jlpt": 4,
+      "order": 8,
+      "word": "やっぱり",
+      "reading": "やっぱり",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "as expected; after all; still",
+      "acceptedMeanings": [
+        "as expected; after all; still",
+        "as expected",
+        "after all",
+        "still",
+        "just as i thought"
+      ],
+      "usageNote": "Colloquial form of やはり. Confirms a prior expectation or expresses returning to an original choice.",
+      "example": {
+        "jp": "やっぱり今日は雨が降りましたね。",
+        "reading": "やっぱりきょうはあめがふりましたね。",
+        "en": "Just as expected, it rained today."
+      },
+      "quiz": {
+        "sentenceBefore": "いろいろ迷いましたが、",
+        "sentenceAfter": "最初見たコートを買うことにしました。",
+        "en": "I hesitated a lot, but after all I decided to buy the coat I saw first.",
+        "choices": [
+          "やっぱり",
+          "ぜひ",
+          "そろそろ",
+          "めったに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-09",
+      "jlpt": 4,
+      "order": 9,
+      "word": "なるべく",
+      "reading": "なるべく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "as much as possible; if possible",
+      "acceptedMeanings": [
+        "as much as possible; if possible",
+        "as much as possible",
+        "as ~ as possible",
+        "if possible"
+      ],
+      "usageNote": "Pairs with requests or intentions (なるべく早く = as early as possible).",
+      "example": {
+        "jp": "明日はなるべく早く来てください。",
+        "reading": "あしたはなるべくはやくきてください。",
+        "en": "Please come as early as possible tomorrow."
+      },
+      "quiz": {
+        "sentenceBefore": "健康のために、",
+        "sentenceAfter": "エレベーターを使わず階段で上がります。",
+        "en": "For my health, I take the stairs instead of the elevator as much as possible.",
+        "choices": [
+          "ほとんど",
+          "めったに",
+          "すっかり",
+          "なるべく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-10",
+      "jlpt": 4,
+      "order": 10,
+      "word": "めったに",
+      "reading": "めったに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "rarely; seldom",
+      "acceptedMeanings": [
+        "rarely; seldom",
+        "rarely",
+        "seldom",
+        "hardly ever"
+      ],
+      "usageNote": "JLPT grammar rule: MUST pair with a NEGATIVE verb (めったに～ない).",
+      "example": {
+        "jp": "この辺りでは雪はめったに降りません。",
+        "reading": "このあたりではゆきはめったにふりません。",
+        "en": "It rarely snows around this area."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は真面目なので、授業を",
+        "sentenceAfter": "休みません。",
+        "en": "Because he is earnest, he rarely misses class.",
+        "choices": [
+          "きっと",
+          "すっかり",
+          "めったに",
+          "ぜひ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-11",
+      "jlpt": 4,
+      "order": 11,
+      "word": "ところで",
+      "reading": "ところで",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "by the way",
+      "acceptedMeanings": [
+        "by the way",
+        "incidentally"
+      ],
+      "usageNote": "Signals a complete change of conversation topic. Classic JLPT listening & reading marker.",
+      "example": {
+        "jp": "仕事は順調です。ところで、今度の連休はどこか行きますか。",
+        "reading": "しごとはじゅんちょうです。ところで、こんどのれんきゅうはどこかいきますか。",
+        "en": "Work is going smoothly. By the way, are you going anywhere for the upcoming holidays?"
+      },
+      "quiz": {
+        "sentenceBefore": "食事はおいしかったですね。",
+        "sentenceAfter": "、明日の集合時間は何時でしたか。",
+        "en": "The meal was delicious. By the way, what time are we meeting tomorrow?",
+        "choices": [
+          "ですから",
+          "ところで",
+          "ところが",
+          "それで"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-12",
+      "jlpt": 4,
+      "order": 12,
+      "word": "それで",
+      "reading": "それで",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "because of that; so; and then",
+      "acceptedMeanings": [
+        "because of that; so; and then",
+        "so",
+        "because of that",
+        "therefore",
+        "and then"
+      ],
+      "usageNote": "Shows a natural cause-and-effect link between two past facts. Unlike だから, it rarely pairs with commands or guesses.",
+      "example": {
+        "jp": "電車が遅れました。それで、会議に間に合わなかったんです。",
+        "reading": "でんしゃがおくれました。それで、かいぎにまにあわなかったんです。",
+        "en": "The train was delayed. Because of that, I couldn't make the meeting."
+      },
+      "quiz": {
+        "sentenceBefore": "昨日ひどい風邪を引きました。",
+        "sentenceAfter": "、今日は会社を休みました。",
+        "en": "I caught a bad cold yesterday. So I took off work today.",
+        "choices": [
+          "それで",
+          "ところで",
+          "ところが",
+          "それに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-13",
+      "jlpt": 4,
+      "order": 13,
+      "word": "それに",
+      "reading": "それに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "moreover; besides; in addition",
+      "acceptedMeanings": [
+        "moreover; besides; in addition",
+        "moreover",
+        "besides",
+        "in addition",
+        "furthermore"
+      ],
+      "usageNote": "Adds another reason or trait pointing in the SAME positive or negative direction.",
+      "example": {
+        "jp": "この店は料理がおいしいです。それに、値段も安いです。",
+        "reading": "このみせはりょうりがおいしいです。それに、ねだんもやすいです。",
+        "en": "This restaurant has delicious food. Moreover, the prices are cheap."
+      },
+      "quiz": {
+        "sentenceBefore": "あのアパートは駅から遠いです。",
+        "sentenceAfter": "、部屋も少し狭いです。",
+        "en": "That apartment is far from the station. Besides, the room is a bit cramped.",
+        "choices": [
+          "しかし",
+          "ところで",
+          "ところが",
+          "それに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-14",
+      "jlpt": 4,
+      "order": 14,
+      "word": "それでは",
+      "reading": "それでは",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "well then; in that case",
+      "acceptedMeanings": [
+        "well then; in that case",
+        "well then",
+        "in that case",
+        "then"
+      ],
+      "usageNote": "Used to conclude a discussion, transition to the next step, or politely wrap up a meeting (casual: じゃあ).",
+      "example": {
+        "jp": "準備ができましたね。それでは、会議を始めましょう。",
+        "reading": "じゅんびができましたね。それでは、かいぎをはじめましょう。",
+        "en": "Everyone is ready. Well then, let's start the meeting."
+      },
+      "quiz": {
+        "sentenceBefore": "時間になりました。",
+        "sentenceAfter": "、今日の授業を終わります。",
+        "en": "Time is up. Well then, let's conclude today's class.",
+        "choices": [
+          "ところで",
+          "ところが",
+          "それでは",
+          "それに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-15",
+      "jlpt": 4,
+      "order": 15,
+      "word": "たとえば",
+      "reading": "たとえば",
+      "category": "connector",
+      "partOfSpeech": "Adverb / Conjunction",
+      "primaryMeaning": "for example; for instance",
+      "acceptedMeanings": [
+        "for example; for instance",
+        "for example",
+        "for instance",
+        "such as"
+      ],
+      "usageNote": "Introduces concrete illustrations following a general statement.",
+      "example": {
+        "jp": "日本の伝統文化はいろいろあります。たとえば、茶道や華道です。",
+        "reading": "にほんのでんとうぶんかはいろいろあります。たとえば、さどうやかどうです。",
+        "en": "There are many traditional Japanese arts. For example, tea ceremony and flower arrangement."
+      },
+      "quiz": {
+        "sentenceBefore": "運動は体にいいです。",
+        "sentenceAfter": "、毎日三十分歩くだけでも効果があります。",
+        "en": "Exercise is good for the body. For example, even walking 30 minutes daily is effective.",
+        "choices": [
+          "それに",
+          "たとえば",
+          "ところで",
+          "それで"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-16",
+      "jlpt": 4,
+      "order": 16,
+      "word": "わくわく",
+      "reading": "わくわく",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Suru-verb / Adverb",
+      "primaryMeaning": "excited; thrilled (with anticipation)",
+      "acceptedMeanings": [
+        "excited; thrilled (with anticipation)",
+        "excited",
+        "thrilled",
+        "pumped",
+        "looking forward to"
+      ],
+      "usageNote": "Describes joyful anticipation or fluttering excitement before a fun event.",
+      "example": {
+        "jp": "明日から初めて海外旅行なので、わくわくしています。",
+        "reading": "あしたからはじめてかいがいりょこうなので、わくわくしています。",
+        "en": "Tomorrow is my first trip abroad, so I am super excited."
+      },
+      "quiz": {
+        "sentenceBefore": "新しい生活が始まると思うと、胸が",
+        "sentenceAfter": "します。",
+        "en": "Thinking about my new life beginning makes my heart flutter with excitement.",
+        "choices": [
+          "わくわく",
+          "どきどき",
+          "いらいら",
+          "ぐっすり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-17",
+      "jlpt": 4,
+      "order": 17,
+      "word": "どきどき",
+      "reading": "どきどき",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Suru-verb / Adverb",
+      "primaryMeaning": "heart pounding (nervousness or excitement)",
+      "acceptedMeanings": [
+        "heart pounding (nervousness or excitement)",
+        "heart pounding",
+        "nervous",
+        "pounding",
+        "thumping"
+      ],
+      "usageNote": "Sound of a fast heartbeat from nervousness, suspense, or romantic excitement.",
+      "example": {
+        "jp": "スピーチの前はとてもどきどきしました。",
+        "reading": "すぴーちのまえはとてもどきどきしました。",
+        "en": "My heart was pounding hard before the speech."
+      },
+      "quiz": {
+        "sentenceBefore": "試験の結果を見る瞬間は、いつも",
+        "sentenceAfter": "します。",
+        "en": "My heart always pounds the moment I check exam results.",
+        "choices": [
+          "ぐっすり",
+          "すらすら",
+          "にこにこ",
+          "どきどき"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-18",
+      "jlpt": 4,
+      "order": 18,
+      "word": "いらいら",
+      "reading": "いらいら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Suru-verb / Adverb",
+      "primaryMeaning": "irritated; frustrated; impatient",
+      "acceptedMeanings": [
+        "irritated; frustrated; impatient",
+        "irritated",
+        "frustrated",
+        "impatient",
+        "annoyed"
+      ],
+      "usageNote": "Describes growing annoyance when things do not move or go smoothly (traffic jams, slow Wi-Fi).",
+      "example": {
+        "jp": "渋滞で車が全然進まないので、いらいらしてきた。",
+        "reading": "じゅうたいでくるまがぜんぜんすすまないので、いらいらしてきた。",
+        "en": "The car isn't moving at all in traffic, so I'm getting frustrated."
+      },
+      "quiz": {
+        "sentenceBefore": "パソコンが急に動かなくなって、",
+        "sentenceAfter": "しました。",
+        "en": "My computer suddenly froze, and I got irritated.",
+        "choices": [
+          "にこにこ",
+          "ぐっすり",
+          "いらいら",
+          "わくわく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-19",
+      "jlpt": 4,
+      "order": 19,
+      "word": "ぐっすり",
+      "reading": "ぐっすり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb (Mimetic)",
+      "primaryMeaning": "soundly; deeply (sleeping)",
+      "acceptedMeanings": [
+        "soundly; deeply (sleeping)",
+        "soundly",
+        "deeply",
+        "fast asleep"
+      ],
+      "usageNote": "Collocates specifically with 寝る / 眠る (to sleep deeply without waking).",
+      "example": {
+        "jp": "たくさん歩いたせいか、昨夜はぐっすり眠れました。",
+        "reading": "たくさんあるいたせいか、さくやはぐっすりねむれました。",
+        "en": "Perhaps because I walked a lot, I slept soundly last night."
+      },
+      "quiz": {
+        "sentenceBefore": "疲れていたので、朝まで一度も起きずに",
+        "sentenceAfter": "寝ました。",
+        "en": "I was exhausted, so I slept soundly until morning without waking once.",
+        "choices": [
+          "うっかり",
+          "ぐっすり",
+          "いらいら",
+          "どきどき"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-20",
+      "jlpt": 4,
+      "order": 20,
+      "word": "うっかり",
+      "reading": "うっかり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "carelessly; inadvertently; by mistake",
+      "acceptedMeanings": [
+        "carelessly; inadvertently; by mistake",
+        "carelessly",
+        "inadvertently",
+        "accidentally",
+        "absentmindedly"
+      ],
+      "usageNote": "Describes a momentary lapse of attention (forgetting keys, slipping a secret).",
+      "example": {
+        "jp": "うっかり財布を家に忘れてきてしまった。",
+        "reading": "うっかりさいふをいえにわすれてきてしまった。",
+        "en": "I carelessly left my wallet at home."
+      },
+      "quiz": {
+        "sentenceBefore": "大切な約束を",
+        "sentenceAfter": "忘れてしまいました。",
+        "en": "I absentmindedly forgot an important promise.",
+        "choices": [
+          "うっかり",
+          "しっかり",
+          "ぐっすり",
+          "にこにこ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-21",
+      "jlpt": 4,
+      "order": 21,
+      "word": "にこにこ",
+      "reading": "にこにこ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "smiling warmly; beaming",
+      "acceptedMeanings": [
+        "smiling warmly; beaming",
+        "smiling",
+        "beaming",
+        "smiling warmly",
+        "cheerfully"
+      ],
+      "usageNote": "Silent, warm, friendly smile (contrast with げらげら = laughing loudly).",
+      "example": {
+        "jp": "赤ちゃんがいつもにこにこ笑っていて可愛い。",
+        "reading": "あかちゃんがいつもにこにこわらっていてかわいい。",
+        "en": "The baby is always smiling warmly and is adorable."
+      },
+      "quiz": {
+        "sentenceBefore": "店員さんが",
+        "sentenceAfter": "しながら挨拶してくれました。",
+        "en": "The shop clerk greeted me with a warm smile.",
+        "choices": [
+          "いらいら",
+          "うっかり",
+          "ぴかぴか",
+          "にこにこ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-22",
+      "jlpt": 4,
+      "order": 22,
+      "word": "ぴかぴか",
+      "reading": "ぴかぴか",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Na-adj",
+      "primaryMeaning": "shiny; sparkling; brand-new",
+      "acceptedMeanings": [
+        "shiny; sparkling; brand-new",
+        "shiny",
+        "sparkling",
+        "gleaming",
+        "brand new"
+      ],
+      "usageNote": "Describes something polished until gleaming or brand new (shoes, floor, first-grader's backpack).",
+      "example": {
+        "jp": "靴を磨いたら、ぴかぴかになりました。",
+        "reading": "くつをみがいたら、ぴかぴかになりました。",
+        "en": "After polishing my shoes, they became sparkling shiny."
+      },
+      "quiz": {
+        "sentenceBefore": "大掃除をして、廊下が",
+        "sentenceAfter": "になりました。",
+        "en": "We did a big cleaning, and the hallway became gleaming clean.",
+        "choices": [
+          "どきどき",
+          "ぼろぼろ",
+          "ぴかぴか",
+          "ぐっすり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-23",
+      "jlpt": 4,
+      "order": 23,
+      "word": "マンション",
+      "reading": "まんしょん",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "modern condominium; concrete apartment building",
+      "acceptedMeanings": [
+        "modern condominium; concrete apartment building",
+        "condominium",
+        "condo",
+        "apartment",
+        "apartment building"
+      ],
+      "usageNote": "Classic JLPT false friend! Does NOT mean a luxury estate \"mansion\" — it means a modern steel/concrete apartment or condo.",
+      "example": {
+        "jp": "駅前に二十階建ての新しいマンションが建った。",
+        "reading": "えきまえににじゅっかいだてのあたらしいまんしょんがたった。",
+        "en": "A new 20-story condominium was built in front of the station."
+      },
+      "quiz": {
+        "sentenceBefore": "両親は静かな住宅街の",
+        "sentenceAfter": "に住んでいます。",
+        "en": "My parents live in a condominium in a quiet residential neighborhood.",
+        "choices": [
+          "ボランティア",
+          "マンション",
+          "コンセント",
+          "アンケート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-24",
+      "jlpt": 4,
+      "order": 24,
+      "word": "コンセント",
+      "reading": "こんせんと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "electrical outlet; power socket",
+      "acceptedMeanings": [
+        "electrical outlet; power socket",
+        "outlet",
+        "electrical outlet",
+        "power socket",
+        "wall socket"
+      ],
+      "usageNote": "Wasei-eigo from \"concentric plug\". Does NOT mean English \"consent\"!",
+      "example": {
+        "jp": "スマホを充電したいのですが、コンセントはありますか。",
+        "reading": "すまほをじゅうでんしたいのですが、こんせんとはありますか。",
+        "en": "I want to charge my smartphone; is there a power outlet?"
+      },
+      "quiz": {
+        "sentenceBefore": "カフェの席に",
+        "sentenceAfter": "があったので、パソコンを充電できた。",
+        "en": "There was a power outlet at the cafe seat, so I could charge my laptop.",
+        "choices": [
+          "コンセント",
+          "マンション",
+          "アルバイト",
+          "スケジュール"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-25",
+      "jlpt": 4,
+      "order": 25,
+      "word": "アンケート",
+      "reading": "あんけーと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "questionnaire; survey",
+      "acceptedMeanings": [
+        "questionnaire; survey",
+        "survey",
+        "questionnaire",
+        "poll"
+      ],
+      "usageNote": "From French \"enquête\". Frequently appears in JLPT listening & reading notices.",
+      "example": {
+        "jp": "サービス向上のため、アンケートにご協力ください。",
+        "reading": "さーびすこうじょうのため、あんけーとにごきょうりょくください。",
+        "en": "Please cooperate with our survey to help improve our service."
+      },
+      "quiz": {
+        "sentenceBefore": "イベントの最後に、参加者へ",
+        "sentenceAfter": "を配りました。",
+        "en": "At the end of the event, we handed out a questionnaire to participants.",
+        "choices": [
+          "コンセント",
+          "スケジュール",
+          "アルバイト",
+          "アンケート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-26",
+      "jlpt": 4,
+      "order": 26,
+      "word": "スケジュール",
+      "reading": "すけじゅーる",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "schedule; itinerary",
+      "acceptedMeanings": [
+        "schedule; itinerary",
+        "schedule",
+        "itinerary",
+        "timetable"
+      ],
+      "usageNote": "Everyday business and travel word for timetable or plans.",
+      "example": {
+        "jp": "来週のスケジュールを確認しておきます。",
+        "reading": "らいしゅうのすけじゅーるをかくにんしておきます。",
+        "en": "I will check next week's schedule in advance."
+      },
+      "quiz": {
+        "sentenceBefore": "出張の",
+        "sentenceAfter": "が急に変わってしまいました。",
+        "en": "The business trip schedule suddenly changed.",
+        "choices": [
+          "コンセント",
+          "マンション",
+          "スケジュール",
+          "アンケート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-27",
+      "jlpt": 4,
+      "order": 27,
+      "word": "ボランティア",
+      "reading": "ぼらんてぃあ",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "volunteer; volunteering",
+      "acceptedMeanings": [
+        "volunteer; volunteering",
+        "volunteer",
+        "volunteering"
+      ],
+      "usageNote": "Frequently appears in JLPT N4/N3 passages about community events and disaster relief.",
+      "example": {
+        "jp": "地域の清掃ボランティアに参加しました。",
+        "reading": "ちいきのせいそうぼらんてぃあにさんかしました。",
+        "en": "I participated in a local cleanup volunteer activity."
+      },
+      "quiz": {
+        "sentenceBefore": "週末に外国人に日本語を教える",
+        "sentenceAfter": "をしています。",
+        "en": "On weekends I volunteer teaching Japanese to foreigners.",
+        "choices": [
+          "サラリーマン",
+          "ボランティア",
+          "スケジュール",
+          "アンケート"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-28",
+      "jlpt": 4,
+      "order": 28,
+      "word": "サラリーマン",
+      "reading": "さらりーまん",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "office worker; salaried employee",
+      "acceptedMeanings": [
+        "office worker; salaried employee",
+        "office worker",
+        "salaried employee",
+        "salaryman"
+      ],
+      "usageNote": "Wasei-eigo (\"salary man\") referring to salaried white-collar company employees.",
+      "example": {
+        "jp": "朝の通勤電車はサラリーマンでいっぱいです。",
+        "reading": "あさのつうきんでんしゃはさらりーまんでいっぱいです。",
+        "en": "Morning commuter trains are packed with office workers."
+      },
+      "quiz": {
+        "sentenceBefore": "父は三十年間ずっと",
+        "sentenceAfter": "として働いてきた。",
+        "en": "My father has worked as a salaried office worker for thirty years.",
+        "choices": [
+          "サラリーマン",
+          "ボランティア",
+          "アルバイト",
+          "マンション"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-29",
+      "jlpt": 4,
+      "order": 29,
+      "word": "ビニール",
+      "reading": "びにーる",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "plastic; vinyl (e.g., plastic bag)",
+      "acceptedMeanings": [
+        "plastic; vinyl (e.g., plastic bag)",
+        "plastic",
+        "vinyl",
+        "plastic bag"
+      ],
+      "usageNote": "In Japan, ビニール袋 means an everyday plastic shopping bag (not vinyl records).",
+      "example": {
+        "jp": "スーパーでビニール袋をもらいますか。",
+        "reading": "すーぱーでびにーるぶくろをもらいますか。",
+        "en": "Would you like a plastic bag at the supermarket?"
+      },
+      "quiz": {
+        "sentenceBefore": "濡れた傘を",
+        "sentenceAfter": "袋に入れてから店に入った。",
+        "en": "I put my wet umbrella into a plastic bag before entering the shop.",
+        "choices": [
+          "コンセント",
+          "アンケート",
+          "マンション",
+          "ビニール"
+        ]
+      }
+    },
+    {
+      "id": "kv-n4-30",
+      "jlpt": 4,
+      "order": 30,
+      "word": "レポート",
+      "reading": "れぽーと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "report; term paper",
+      "acceptedMeanings": [
+        "report; term paper",
+        "report",
+        "paper",
+        "essay",
+        "term paper"
+      ],
+      "usageNote": "Used heavily in university contexts (term paper / assignment) as well as business.",
+      "example": {
+        "jp": "金曜日までに歴史のレポートを出さなければなりません。",
+        "reading": "きんようびまでにれきしのれぽーとをださなければなりません。",
+        "en": "I have to submit my history term paper by Friday."
+      },
+      "quiz": {
+        "sentenceBefore": "図書館で資料を集めて、",
+        "sentenceAfter": "を書き上げた。",
+        "en": "I gathered materials at the library and finished writing my report.",
+        "choices": [
+          "ボランティア",
+          "コンセント",
+          "レポート",
+          "スケジュール"
+        ]
+      }
+    }
+  ]
+}

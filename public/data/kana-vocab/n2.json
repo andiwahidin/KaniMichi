@@ -1,0 +1,1010 @@
+{
+  "level": 2,
+  "pack": "n2",
+  "items": [
+    {
+      "id": "kv-n2-01",
+      "jlpt": 2,
+      "order": 1,
+      "word": "あいにく",
+      "reading": "あいにく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Na-adj",
+      "primaryMeaning": "unfortunately; regrettably (bad timing)",
+      "acceptedMeanings": [
+        "unfortunately; regrettably (bad timing)",
+        "unfortunately",
+        "regrettably",
+        "unluckily"
+      ],
+      "usageNote": "Used when circumstances or timing turn out inconveniently, especially when politely declining or giving bad news.",
+      "example": {
+        "jp": "せっかくお越しいただいたのに、あいにく店長は不在です。",
+        "reading": "せっかくおこしいただいたのに、あいにくてんちょうはふざいです。",
+        "en": "Though you came all this way, unfortunately the manager is away."
+      },
+      "quiz": {
+        "sentenceBefore": "楽しみにしていた遠足の日、",
+        "sentenceAfter": "の雨になってしまった。",
+        "en": "On the day of the eagerly awaited excursion, it unfortunately rained.",
+        "choices": [
+          "かえって",
+          "むしろ",
+          "おそらく",
+          "あいにく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-02",
+      "jlpt": 2,
+      "order": 2,
+      "word": "かえって",
+      "reading": "かえって",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "on the contrary; rather (opposite/ironic result)",
+      "acceptedMeanings": [
+        "on the contrary; rather (opposite/ironic result)",
+        "on the contrary",
+        "rather",
+        "instead",
+        "all the more"
+      ],
+      "usageNote": "Highlights an ironic outcome that is the exact opposite of what was intended.",
+      "example": {
+        "jp": "近道をしようとしたら、かえって時間がかかってしまった。",
+        "reading": "ちかみちをしようとしたら、かえってじかんがかかってしまった。",
+        "en": "I tried to take a shortcut, and on the contrary it ended up taking longer."
+      },
+      "quiz": {
+        "sentenceBefore": "親切のつもりで言ったことが、",
+        "sentenceAfter": "相手を傷つけてしまった。",
+        "en": "What I said intending to be kind instead ended up hurting the other person.",
+        "choices": [
+          "およそ",
+          "めったに",
+          "かえって",
+          "あいにく"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-03",
+      "jlpt": 2,
+      "order": 3,
+      "word": "むしろ",
+      "reading": "むしろ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "rather; instead; preferably",
+      "acceptedMeanings": [
+        "rather; instead; preferably",
+        "rather",
+        "instead",
+        "if anything",
+        "preferably"
+      ],
+      "usageNote": "Weighs two choices or descriptions and argues that B is a better fit than A.",
+      "example": {
+        "jp": "彼は怒っているというより、むしろ悲しんでいるように見えた。",
+        "reading": "かれはおこっているというより、むしろかなしんでいるようにみえた。",
+        "en": "Rather than being angry, he looked sad."
+      },
+      "quiz": {
+        "sentenceBefore": "高いレストランより、",
+        "sentenceAfter": "地元の小さな食堂のほうが好きだ。",
+        "en": "Rather than expensive restaurants, I prefer small local eateries.",
+        "choices": [
+          "いっそう",
+          "むしろ",
+          "あいにく",
+          "およそ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-04",
+      "jlpt": 2,
+      "order": 4,
+      "word": "おそらく",
+      "reading": "おそらく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "probably; most likely (formal)",
+      "acceptedMeanings": [
+        "probably; most likely (formal)",
+        "probably",
+        "most likely",
+        "presumably",
+        "in all likelihood"
+      ],
+      "usageNote": "Formal written counterpart to たぶん, expressing fairly high probability (~70-80%).",
+      "example": {
+        "jp": "この様子では、おそらく今夜から雪になるだろう。",
+        "reading": "このようすでは、おそらくこんやからゆきになるだろう。",
+        "en": "Judging from these conditions, it will most likely snow starting tonight."
+      },
+      "quiz": {
+        "sentenceBefore": "彼はまだ連絡がないので、",
+        "sentenceAfter": "会議に遅れるものと思われる。",
+        "en": "Since we haven't heard from him yet, he will probably be late for the meeting.",
+        "choices": [
+          "おそらく",
+          "あいにく",
+          "かえって",
+          "めったに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-05",
+      "jlpt": 2,
+      "order": 5,
+      "word": "いっそう",
+      "reading": "いっそう",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "even more; all the more; increasingly",
+      "acceptedMeanings": [
+        "even more; all the more; increasingly",
+        "even more",
+        "all the more",
+        "increasingly",
+        "still more"
+      ],
+      "usageNote": "Formal equivalent of もっと. Emphasizes intensifying an already existing state or effort.",
+      "example": {
+        "jp": "ライバルの出現により、競争はいっそう激しくなった。",
+        "reading": "らいばるのしゅつげんにより、きょうそうはいっそうはげしくなった。",
+        "en": "With the arrival of a rival, competition became even fiercer."
+      },
+      "quiz": {
+        "sentenceBefore": "皆様のご期待に応えられるよう、",
+        "sentenceAfter": "努力してまいります。",
+        "en": "We will strive even harder to meet everyone's expectations.",
+        "choices": [
+          "およそ",
+          "あいにく",
+          "かえって",
+          "いっそう"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-06",
+      "jlpt": 2,
+      "order": 6,
+      "word": "およそ",
+      "reading": "およそ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "approximately; roughly; altogether",
+      "acceptedMeanings": [
+        "approximately; roughly; altogether",
+        "approximately",
+        "roughly",
+        "about",
+        "altogether"
+      ],
+      "usageNote": "Formal counterpart to だいたい for rough estimates; with a negative, means \"not in the least\".",
+      "example": {
+        "jp": "この橋の完成には、およそ五年の歳月がかかった。",
+        "reading": "このはしのかんせいには、およそごねんのさいげつがかかった。",
+        "en": "Completing this bridge took approximately five years."
+      },
+      "quiz": {
+        "sentenceBefore": "会場には",
+        "sentenceAfter": "三千人の観客が詰めかけた。",
+        "en": "Approximately three thousand spectators packed the venue.",
+        "choices": [
+          "かえって",
+          "むしろ",
+          "およそ",
+          "いっそう"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-07",
+      "jlpt": 2,
+      "order": 7,
+      "word": "かならずしも",
+      "reading": "かならずしも",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not necessarily",
+      "acceptedMeanings": [
+        "not necessarily",
+        "not always"
+      ],
+      "usageNote": "JLPT N2 classic! MUST pair with a negative partial-negation ending like ～とは限らない / ～わけではない.",
+      "example": {
+        "jp": "値段が高いからといって、かならずしも質が良いとは限らない。",
+        "reading": "ねだんがたかいからといって、かならずしもしつがよいとはかぎらない。",
+        "en": "Just because the price is high does not necessarily mean the quality is good."
+      },
+      "quiz": {
+        "sentenceBefore": "最新の技術が",
+        "sentenceAfter": "すべての人に役立つわけではない。",
+        "en": "The latest technology does not necessarily benefit everyone.",
+        "choices": [
+          "いっそう",
+          "かならずしも",
+          "おそらく",
+          "およそ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-08",
+      "jlpt": 2,
+      "order": 8,
+      "word": "せめて",
+      "reading": "せめて",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "at least (modest minimum wish)",
+      "acceptedMeanings": [
+        "at least (modest minimum wish)",
+        "at least",
+        "at the very least"
+      ],
+      "usageNote": "Expresses the speaker's minimum acceptable wish when the ideal cannot be achieved (unlike 少なくとも which is objective).",
+      "example": {
+        "jp": "旅行に行けなくても、せめて週末くらいはゆっくり休みたい。",
+        "reading": "りょこうにいけなくても、せめてしゅうまつくらいはゆっくりやすみたい。",
+        "en": "Even if I can't travel, I want to at least rest well on the weekend."
+      },
+      "quiz": {
+        "sentenceBefore": "遅刻するなら、",
+        "sentenceAfter": "事前に一本連絡を入れてほしかった。",
+        "en": "If you were going to be late, I wish you had at least sent one message beforehand.",
+        "choices": [
+          "せめて",
+          "かえって",
+          "むしろ",
+          "およそ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-09",
+      "jlpt": 2,
+      "order": 9,
+      "word": "とっくに",
+      "reading": "とっくに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "long ago; already (well before now)",
+      "acceptedMeanings": [
+        "long ago; already (well before now)",
+        "long ago",
+        "already",
+        "ages ago"
+      ],
+      "usageNote": "Emphasizes that something ended or happened much earlier than the listener realizes.",
+      "example": {
+        "jp": "その映画なら、とっくに見終わりましたよ。",
+        "reading": "そのえいがなら、とっくにみおわりましたよ。",
+        "en": "If you mean that movie, I finished watching it long ago."
+      },
+      "quiz": {
+        "sentenceBefore": "駅に着いたときには、最終バスは",
+        "sentenceAfter": "出たあとだった。",
+        "en": "By the time I reached the station, the last bus had already left long ago.",
+        "choices": [
+          "せめて",
+          "ようやく",
+          "そろそろ",
+          "とっくに"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-10",
+      "jlpt": 2,
+      "order": 10,
+      "word": "なにも",
+      "reading": "なにも",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not necessarily (why go so far as to ~)",
+      "acceptedMeanings": [
+        "not necessarily (why go so far as to ~)",
+        "nothing",
+        "not necessarily",
+        "no need to"
+      ],
+      "usageNote": "In N2 usage (なにも～ことはない), expresses mild reproach: \"there's no need to go so far as to ~\".",
+      "example": {
+        "jp": "なにもそこまで怒ることはないでしょう。",
+        "reading": "なにもそこまでおこることはないでしょう。",
+        "en": "There is no need to get that angry, is there?"
+      },
+      "quiz": {
+        "sentenceBefore": "ちょっとしたミスなんだから、",
+        "sentenceAfter": "そんなに落ち込む必要はないよ。",
+        "en": "It's just a minor mistake, so there's no need to feel that down.",
+        "choices": [
+          "とっくに",
+          "およそ",
+          "なにも",
+          "せめて"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-11",
+      "jlpt": 2,
+      "order": 11,
+      "word": "もっとも",
+      "reading": "もっとも",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "although; mind you; having said that",
+      "acceptedMeanings": [
+        "although; mind you; having said that",
+        "although",
+        "though",
+        "mind you",
+        "however"
+      ],
+      "usageNote": "Adds a realistic qualification or mild reservation right after making a bold or positive statement.",
+      "example": {
+        "jp": "この仕事はやりがいがある。もっとも、給料はあまり高くないが。",
+        "reading": "このしごとはやりがいがある。もっとも、きゅうりょうはあまりたかくないが。",
+        "en": "This job is rewarding. Mind you, the salary isn't very high though."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は英語が堪能だ。",
+        "sentenceAfter": "、専門的なビジネス用語はまだ勉強中らしい。",
+        "en": "He is fluent in English. Having said that, he is apparently still studying specialized business terms.",
+        "choices": [
+          "しかも",
+          "もっとも",
+          "すなわち",
+          "したがって"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-12",
+      "jlpt": 2,
+      "order": 12,
+      "word": "すなわち",
+      "reading": "すなわち",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "namely; that is to say (formal)",
+      "acceptedMeanings": [
+        "namely; that is to say (formal)",
+        "namely",
+        "that is to say",
+        "in other words"
+      ],
+      "usageNote": "Formal, academic equivalent of つまり. Signals an exact definition or equivalence.",
+      "example": {
+        "jp": "日本の首都、すなわち東京は世界有数の大都市だ。",
+        "reading": "にほんのしゅと、すなわちとうきょうはせかいゆうすうのだいとしだ。",
+        "en": "Japan's capital, namely Tokyo, is one of the world's leading metropolises."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は私の母の父、",
+        "sentenceAfter": "祖父にあたる人物です。",
+        "en": "He is my mother's father—that is to say, my grandfather.",
+        "choices": [
+          "すなわち",
+          "もっとも",
+          "ところが",
+          "ただし"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-13",
+      "jlpt": 2,
+      "order": 13,
+      "word": "なお",
+      "reading": "なお",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "furthermore; please note that (addendum)",
+      "acceptedMeanings": [
+        "furthermore; please note that (addendum)",
+        "furthermore",
+        "please note",
+        "in addition",
+        "moreover"
+      ],
+      "usageNote": "Appears constantly in official announcements, emails, and JLPT reading notices to introduce an important postscript.",
+      "example": {
+        "jp": "説明会は午後二時から始まります。なお、途中入場はできません。",
+        "reading": "せつめいかいはごごにじからはじまります。なお、とちゅうにゅうじょうはできません。",
+        "en": "The briefing begins at 2 PM. Please note that late entry is not permitted."
+      },
+      "quiz": {
+        "sentenceBefore": "参加費は当日お支払いください。",
+        "sentenceAfter": "、領収書が必要な方は受付でお申し出ください。",
+        "en": "Please pay the fee on the day. In addition, those needing a receipt should ask at reception.",
+        "choices": [
+          "もっとも",
+          "すなわち",
+          "ところが",
+          "なお"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-14",
+      "jlpt": 2,
+      "order": 14,
+      "word": "すると",
+      "reading": "すると",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "thereupon; and then (unexpected result)",
+      "acceptedMeanings": [
+        "thereupon; and then (unexpected result)",
+        "thereupon",
+        "and then",
+        "just then",
+        "upon doing so"
+      ],
+      "usageNote": "Connects an action in sentence 1 to an immediate, often surprising observation or discovery in sentence 2.",
+      "example": {
+        "jp": "ドアをそっと開けた。すると、中から猫が飛び出してきた。",
+        "reading": "どあをそっとあけた。すると、なかからねこがとびだしてきた。",
+        "en": "I gently opened the door. Thereupon, a cat sprang out from inside."
+      },
+      "quiz": {
+        "sentenceBefore": "試しに電源を入れ直してみた。",
+        "sentenceAfter": "、画面が正常に表示された。",
+        "en": "I tried restarting the power. Immediately upon doing so, the screen displayed normally.",
+        "choices": [
+          "もっとも",
+          "すなわち",
+          "すると",
+          "なお"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-15",
+      "jlpt": 2,
+      "order": 15,
+      "word": "それにもかかわらず",
+      "reading": "それにもかかわらず",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "nevertheless; in spite of that",
+      "acceptedMeanings": [
+        "nevertheless; in spite of that",
+        "nevertheless",
+        "in spite of that",
+        "even so",
+        "nonetheless"
+      ],
+      "usageNote": "Formal conjunction expressing strong contrast with the preceding fact.",
+      "example": {
+        "jp": "事前に何度も警告が出されていた。それにもかかわらず、対策は遅れた。",
+        "reading": "じぜんになんどもけいこくがだされていた。それにもかかわらず、たいさくはおくれた。",
+        "en": "Warnings had been issued repeatedly in advance. Nevertheless, countermeasures were delayed."
+      },
+      "quiz": {
+        "sentenceBefore": "厳しい条件だった。",
+        "sentenceAfter": "、多くの応募者が集まった。",
+        "en": "The requirements were strict. Even so, many applicants gathered.",
+        "choices": [
+          "なお",
+          "それにもかかわらず",
+          "したがって",
+          "すなわち"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-16",
+      "jlpt": 2,
+      "order": 16,
+      "word": "あっさり",
+      "reading": "あっさり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "lightly (flavor); easily; readily; without fuss",
+      "acceptedMeanings": [
+        "lightly (flavor); easily; readily; without fuss",
+        "lightly",
+        "easily",
+        "readily",
+        "plainly",
+        "without fuss"
+      ],
+      "usageNote": "Two core N2 meanings: (1) light, non-greasy food flavor, or (2) giving up, agreeing, or winning cleanly without lingering.",
+      "example": {
+        "jp": "あんなに頑固だった彼が、今日はあっさり意見を認めた。",
+        "reading": "あんなにがんこだったかれが、きょうはあっさりいけんをみとめた。",
+        "en": "He was so stubborn before, yet today he readily accepted the idea."
+      },
+      "quiz": {
+        "sentenceBefore": "夏はこってりしたものより、",
+        "sentenceAfter": "した味付けの料理が食べたくなる。",
+        "en": "In summer, rather than rich food, I crave lightly seasoned dishes.",
+        "choices": [
+          "あっさり",
+          "ぐったり",
+          "こっそり",
+          "うっかり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-17",
+      "jlpt": 2,
+      "order": 17,
+      "word": "ぐったり",
+      "reading": "ぐったり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "exhausted; worn out; limp",
+      "acceptedMeanings": [
+        "exhausted; worn out; limp",
+        "exhausted",
+        "worn out",
+        "limp",
+        "dead tired"
+      ],
+      "usageNote": "Describes total physical or mental exhaustion where your body goes limp.",
+      "example": {
+        "jp": "一日中引っ越しの荷物を運んで、もうぐったりだ。",
+        "reading": "いちにちじゅうひっこしのにものをはこんで、もうぐったりだ。",
+        "en": "After carrying moving boxes all day, I am completely worn out."
+      },
+      "quiz": {
+        "sentenceBefore": "猛暑の中を歩き回り、家に帰るころには",
+        "sentenceAfter": "していた。",
+        "en": "After walking around in intense heat, I was dead tired by the time I got home.",
+        "choices": [
+          "あっさり",
+          "すっきり",
+          "うっとり",
+          "ぐったり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-18",
+      "jlpt": 2,
+      "order": 18,
+      "word": "ぼろぼろ",
+      "reading": "ぼろぼろ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Na-adj",
+      "primaryMeaning": "worn out; tattered; falling apart",
+      "acceptedMeanings": [
+        "worn out; tattered; falling apart",
+        "worn out",
+        "tattered",
+        "ragged",
+        "falling apart"
+      ],
+      "usageNote": "Used for tattered clothes/books, crumbling objects, or a body/heart completely battered.",
+      "example": {
+        "jp": "十年以上使った辞書は、表紙がぼろぼろになっている。",
+        "reading": "じゅうねんいじょうつかったじしょは、ひょうしがぼろぼろになっている。",
+        "en": "The dictionary I have used for over ten years has a tattered cover."
+      },
+      "quiz": {
+        "sentenceBefore": "毎日履いていたスニーカーが、ついに",
+        "sentenceAfter": "になってしまった。",
+        "en": "The sneakers I wore every day have finally become worn out.",
+        "choices": [
+          "すっきり",
+          "あっさり",
+          "ぼろぼろ",
+          "ぴかぴか"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-19",
+      "jlpt": 2,
+      "order": 19,
+      "word": "うっとり",
+      "reading": "うっとり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb / Suru-verb",
+      "primaryMeaning": "enchanted; mesmerized; entranced",
+      "acceptedMeanings": [
+        "enchanted; mesmerized; entranced",
+        "enchanted",
+        "mesmerized",
+        "entranced",
+        "captivated"
+      ],
+      "usageNote": "Describes being swept away in admiration by beautiful music, art, or scenery.",
+      "example": {
+        "jp": "彼女の美しいピアノの音色に、観客はうっとり聞き入った。",
+        "reading": "かのじょのうつくしいぴあののねいろに、かんきゃくはうっとりききいった。",
+        "en": "The audience listened entranced by the beautiful tone of her piano."
+      },
+      "quiz": {
+        "sentenceBefore": "夕日に染まる海の美しさに、思わず",
+        "sentenceAfter": "してしまった。",
+        "en": "I was involuntarily mesmerized by the beauty of the sunset-dyed sea.",
+        "choices": [
+          "いらいら",
+          "うっとり",
+          "ぐったり",
+          "がっかり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-20",
+      "jlpt": 2,
+      "order": 20,
+      "word": "ばったり",
+      "reading": "ばったり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "unexpectedly running into; abruptly stopping",
+      "acceptedMeanings": [
+        "unexpectedly running into; abruptly stopping",
+        "unexpectedly",
+        "by chance",
+        "abruptly"
+      ],
+      "usageNote": "Collocates heavily with 会う / 出会う (\"bump into someone unexpectedly on the street\").",
+      "example": {
+        "jp": "デパートで昔の同僚にばったり出会った。",
+        "reading": "でぱーとでむかしのどうりょうにばったりであった。",
+        "en": "I unexpectedly bumped into a former colleague at the department store."
+      },
+      "quiz": {
+        "sentenceBefore": "出張先の大阪で、大学時代の友人と",
+        "sentenceAfter": "再会した。",
+        "en": "On a business trip in Osaka, I ran right into a university friend by sheer chance.",
+        "choices": [
+          "ばったり",
+          "あっさり",
+          "ぐったり",
+          "ぴったり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-21",
+      "jlpt": 2,
+      "order": 21,
+      "word": "めっきり",
+      "reading": "めっきり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "noticeably; markedly (change in weather/age)",
+      "acceptedMeanings": [
+        "noticeably; markedly (change in weather/age)",
+        "noticeably",
+        "markedly",
+        "considerably",
+        "remarkably"
+      ],
+      "usageNote": "Expresses a striking, palpable shift—especially in seasonal temperature or someone's aging.",
+      "example": {
+        "jp": "十月に入り、朝晩はめっきり涼しくなってきた。",
+        "reading": "じゅうがつにはいり、あさばんはめっきりすずしくなってきた。",
+        "en": "Entering October, mornings and evenings have grown noticeably cooler."
+      },
+      "quiz": {
+        "sentenceBefore": "最近、白髪が",
+        "sentenceAfter": "増えた気がする。",
+        "en": "Lately I feel my gray hair has increased noticeably.",
+        "choices": [
+          "うっとり",
+          "あっさり",
+          "ばったり",
+          "めっきり"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-22",
+      "jlpt": 2,
+      "order": 22,
+      "word": "じっと",
+      "reading": "じっと",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "still; intently; patiently enduring",
+      "acceptedMeanings": [
+        "still; intently; patiently enduring",
+        "still",
+        "motionless",
+        "intently",
+        "patiently"
+      ],
+      "usageNote": "Describes staying completely motionless, staring intently, or enduring pain patiently.",
+      "example": {
+        "jp": "写真を撮るから、三秒間じっとしていてね。",
+        "reading": "しゃしんをとるから、さんびょうかんじっとしていてね。",
+        "en": "Hold completely still for three seconds while I take the photo."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は遠くの水平線を",
+        "sentenceAfter": "見つめていた。",
+        "en": "He was staring intently at the distant horizon.",
+        "choices": [
+          "ふっと",
+          "そっと",
+          "じっと",
+          "さっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-23",
+      "jlpt": 2,
+      "order": 23,
+      "word": "ふと",
+      "reading": "ふと",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "suddenly; casually; by chance (thought/glance)",
+      "acceptedMeanings": [
+        "suddenly; casually; by chance (thought/glance)",
+        "suddenly",
+        "casually",
+        "happened to",
+        "out of the blue"
+      ],
+      "usageNote": "Describes a gentle, spontaneous thought, memory, or glance popping up unexpectedly.",
+      "example": {
+        "jp": "窓の外をふと見ると、雪が舞っていた。",
+        "reading": "まどのそとをふとみると、ゆきがまっていた。",
+        "en": "Glancing casually out the window, I saw snow fluttering down."
+      },
+      "quiz": {
+        "sentenceBefore": "帰り道、",
+        "sentenceAfter": "母の言葉を思い出した。",
+        "en": "On the way home, my mother's words suddenly crossed my mind.",
+        "choices": [
+          "ざっと",
+          "ふと",
+          "じっと",
+          "ぐっと"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-24",
+      "jlpt": 2,
+      "order": 24,
+      "word": "ノウハウ",
+      "reading": "のうはう",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "know-how; practical expertise",
+      "acceptedMeanings": [
+        "know-how; practical expertise",
+        "know-how",
+        "expertise",
+        "practical knowledge"
+      ],
+      "usageNote": "Common business term referring to accumulated practical techniques and trade knowledge.",
+      "example": {
+        "jp": "長年の経験で培ったノウハウを若手社員に伝える。",
+        "reading": "ながねんのけいけんでつちかったのうはうをわかてしゃいんにつたえる。",
+        "en": "We pass down know-how cultivated through years of experience to younger staff."
+      },
+      "quiz": {
+        "sentenceBefore": "他社には真似できない独自の生産",
+        "sentenceAfter": "が強みだ。",
+        "en": "Our strength is unique production know-how that competitors cannot imitate.",
+        "choices": [
+          "ノウハウ",
+          "アプローチ",
+          "フィードバック",
+          "リソース"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-25",
+      "jlpt": 2,
+      "order": 25,
+      "word": "アプローチ",
+      "reading": "あぷろーち",
+      "category": "katakana",
+      "partOfSpeech": "Noun / Suru-verb",
+      "primaryMeaning": "approach; method of tackling / reaching out",
+      "acceptedMeanings": [
+        "approach; method of tackling / reaching out",
+        "approach",
+        "method",
+        "outreach"
+      ],
+      "usageNote": "Used both for problem-solving methods and reaching out to clients or markets.",
+      "example": {
+        "jp": "この課題には別の角度からのアプローチが必要だ。",
+        "reading": "このかだいにはべつのかくどからのあぷろーちがひつようだ。",
+        "en": "This issue requires an approach from a different angle."
+      },
+      "quiz": {
+        "sentenceBefore": "新しい顧客層へ積極的に",
+        "sentenceAfter": "していく方針だ。",
+        "en": "Our policy is to actively reach out to new customer segments.",
+        "choices": [
+          "ノウハウ",
+          "コンセプト",
+          "プロセス",
+          "アプローチ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-26",
+      "jlpt": 2,
+      "order": 26,
+      "word": "コンセプト",
+      "reading": "こんせぷと",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "concept; core theme; design philosophy",
+      "acceptedMeanings": [
+        "concept; core theme; design philosophy",
+        "concept",
+        "theme",
+        "guiding idea"
+      ],
+      "usageNote": "Standard term in product design, architecture, marketing, and cafes/shops.",
+      "example": {
+        "jp": "「自然との調和」がこのホテルの基本コンセプトです。",
+        "reading": "「しぜんとのちょうわ」がこのほてるのきほんこんせぷとです。",
+        "en": "\"Harmony with nature\" is the core concept of this hotel."
+      },
+      "quiz": {
+        "sentenceBefore": "新商品の",
+        "sentenceAfter": "がはっきりしていないと、消費者には伝わらない。",
+        "en": "Unless the new product's concept is clear, it won't resonate with consumers.",
+        "choices": [
+          "プロセス",
+          "リスク",
+          "コンセプト",
+          "アプローチ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-27",
+      "jlpt": 2,
+      "order": 27,
+      "word": "プロセス",
+      "reading": "ぷろせす",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "process; procedure; steps",
+      "acceptedMeanings": [
+        "process; procedure; steps",
+        "process",
+        "procedure",
+        "workflow"
+      ],
+      "usageNote": "Highlights the journey/steps leading to a result (as opposed to just the outcome 結果).",
+      "example": {
+        "jp": "結果だけでなく、そこに至るプロセスも評価されるべきだ。",
+        "reading": "けっかだけでなく、そこにいたるぷろせすもひょうかされるべきだ。",
+        "en": "Not only the result, but also the process leading up to it should be evaluated."
+      },
+      "quiz": {
+        "sentenceBefore": "意思決定の",
+        "sentenceAfter": "を透明化することが求められている。",
+        "en": "Making the decision-making process transparent is being demanded.",
+        "choices": [
+          "ニーズ",
+          "プロセス",
+          "コンセプト",
+          "ノウハウ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-28",
+      "jlpt": 2,
+      "order": 28,
+      "word": "ニーズ",
+      "reading": "にーず",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "needs; customer demand",
+      "acceptedMeanings": [
+        "needs; customer demand",
+        "needs",
+        "demand",
+        "market needs"
+      ],
+      "usageNote": "Always pluralized as ニーズ in Japanese (顧客のニーズに応える = meet customer needs).",
+      "example": {
+        "jp": "多様化する消費者のニーズに応える商品を開発した。",
+        "reading": "たようかするしょうひしゃのにーずにこたえるしょうひんをかいはつした。",
+        "en": "We developed a product meeting diversifying consumer needs."
+      },
+      "quiz": {
+        "sentenceBefore": "地域の",
+        "sentenceAfter": "を丁寧に聞き取ってサービスを改善した。",
+        "en": "We carefully listened to local needs and improved the service.",
+        "choices": [
+          "ニーズ",
+          "リスク",
+          "プロセス",
+          "ノウハウ"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-29",
+      "jlpt": 2,
+      "order": 29,
+      "word": "リスク",
+      "reading": "りすく",
+      "category": "katakana",
+      "partOfSpeech": "Noun",
+      "primaryMeaning": "risk; hazard",
+      "acceptedMeanings": [
+        "risk; hazard",
+        "risk",
+        "hazard",
+        "danger"
+      ],
+      "usageNote": "Frequent N2/N1 business & news collocations: リスクを減らす (reduce risk), リスクを負う (take a risk).",
+      "example": {
+        "jp": "新しい事業には常に一定のリスクが伴う。",
+        "reading": "あたらしいじぎょうにはつねにいっていのりすくがともなう。",
+        "en": "A new business venture always involves a certain degree of risk."
+      },
+      "quiz": {
+        "sentenceBefore": "投資先を分散させることで、損失の",
+        "sentenceAfter": "を抑える。",
+        "en": "By diversifying investments, we curb the risk of loss.",
+        "choices": [
+          "ニーズ",
+          "メリット",
+          "コンセプト",
+          "リスク"
+        ]
+      }
+    },
+    {
+      "id": "kv-n2-30",
+      "jlpt": 2,
+      "order": 30,
+      "word": "フィードバック",
+      "reading": "ふぃーどばっく",
+      "category": "katakana",
+      "partOfSpeech": "Noun / Suru-verb",
+      "primaryMeaning": "feedback; constructive response",
+      "acceptedMeanings": [
+        "feedback; constructive response",
+        "feedback",
+        "review",
+        "response"
+      ],
+      "usageNote": "Standard workplace & education term for returning evaluations or user impressions.",
+      "example": {
+        "jp": "利用者からのフィードバックを次のアップデートに活かした。",
+        "reading": "りようしゃからのふぃーどばっくをつぎのあっぷでーとにいかした。",
+        "en": "We applied user feedback to the next update."
+      },
+      "quiz": {
+        "sentenceBefore": "発表のあとで、上司から丁寧な",
+        "sentenceAfter": "をもらった。",
+        "en": "After the presentation, I received thoughtful feedback from my manager.",
+        "choices": [
+          "プロセス",
+          "ノウハウ",
+          "フィードバック",
+          "アプローチ"
+        ]
+      }
+    }
+  ]
+}

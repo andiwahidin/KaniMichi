@@ -16,16 +16,34 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { JLPT_LEVELS, loadGrammarDataset } from '../data/grammar';
-import { loadKanaVocabDataset } from '../data/kanaVocab';
-import { loadListeningDataset } from '../data/listening';
+import {
+  GrammarManifest,
+  JLPT_LEVELS,
+  loadGrammarLevels,
+  loadGrammarManifest,
+} from '../data/grammar';
+import {
+  KanaVocabManifest,
+  loadKanaVocabLevels,
+  loadKanaVocabManifest,
+} from '../data/kanaVocab';
+import {
+  ListeningManifest,
+  loadListeningLevels,
+  loadListeningManifest,
+} from '../data/listening';
 import {
   generateMockExamPaper,
   gradeMockExamPaper,
   JLPT_OFFICIAL_RULES,
   MOCK_EXAM_MODE_CONFIG,
 } from '../data/mockExam';
-import { loadReadingDataset, stripFuriganaMarkup } from '../data/reading';
+import {
+  loadReadingLevels,
+  loadReadingManifest,
+  ReadingManifest,
+  stripFuriganaMarkup,
+} from '../data/reading';
 import { GrammarDataset, JlptLevel } from '../types/grammar';
 import { KanaVocabDataset } from '../types/kanaVocab';
 import { ListeningDataset, ListeningTrack } from '../types/listening';
@@ -105,6 +123,18 @@ interface AllJlptBanks {
   listening: ListeningDataset;
 }
 
+interface AllJlptManifests {
+  grammar: GrammarManifest;
+  kanaVocab: KanaVocabManifest;
+  reading: ReadingManifest;
+  listening: ListeningManifest;
+}
+
+function getJlptFromItemId(id: string): JlptLevel | null {
+  const match = id.match(/-n([1-5])-/i);
+  return match ? (Number(match[1]) as JlptLevel) : null;
+}
+
 const PART_TABS: { id: MockExamPartId; label: string; shortLabel: string }[] = [
   { id: 'moji-goi', label: '1. Kanji & Kosakata', shortLabel: '1. Moji·Goi' },
   { id: 'bunpou', label: '2. Tata Bahasa', shortLabel: '2. Bunpō' },
@@ -115,7 +145,11 @@ const PART_TABS: { id: MockExamPartId; label: string; shortLabel: string }[] = [
 export const MockExamHub: React.FC = () => {
   const { dataset, state, setActiveView, recordMockExamResult } = useApp();
 
-  const [banks, setBanks] = useState<AllJlptBanks | null>(null);
+  const [manifests, setManifests] = useState<AllJlptManifests | null>(null);
+  const [banksByLevel, setBanksByLevel] = useState<
+    Partial<Record<JlptLevel, AllJlptBanks>>
+  >({});
+  const [loadingLevel, setLoadingLevel] = useState<JlptLevel | null>(5);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   // Overview state
@@ -156,17 +190,18 @@ export const MockExamHub: React.FC = () => {
   const [completedResult, setCompletedResult] = useState<MockExamResult | null>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'wrong' | MockExamPartId>('all');
 
+  // Load 4 tiny manifests on mount (~1.8 KB total) for instant 5-level Readiness overview
   useEffect(() => {
     let active = true;
     Promise.all([
-      loadGrammarDataset(),
-      loadKanaVocabDataset(),
-      loadReadingDataset(),
-      loadListeningDataset(),
+      loadGrammarManifest(),
+      loadKanaVocabManifest(),
+      loadReadingManifest(),
+      loadListeningManifest(),
     ])
       .then(([grammar, kanaVocab, reading, listening]) => {
         if (active) {
-          setBanks({ grammar, kanaVocab, reading, listening });
+          setManifests({ grammar, kanaVocab, reading, listening });
         }
       })
       .catch((err) => {
@@ -174,7 +209,7 @@ export const MockExamHub: React.FC = () => {
           setLoadError(
             err instanceof Error
               ? err.message
-              : 'Gagal memuat bank soal Mogi Shiken.'
+              : 'Gagal memuat indeks bank soal Mogi Shiken.'
           );
         }
       });
@@ -182,6 +217,43 @@ export const MockExamHub: React.FC = () => {
       active = false;
     };
   }, []);
+
+  // Load ONLY the selected JLPT level's 4 question banks on demand
+  useEffect(() => {
+    if (banksByLevel[selectedLevel]) {
+      setLoadingLevel(null);
+      return;
+    }
+    let active = true;
+    setLoadingLevel(selectedLevel);
+    Promise.all([
+      loadGrammarLevels([selectedLevel]),
+      loadKanaVocabLevels([selectedLevel]),
+      loadReadingLevels([selectedLevel]),
+      loadListeningLevels([selectedLevel]),
+    ])
+      .then(([grammar, kanaVocab, reading, listening]) => {
+        if (!active) return;
+        setBanksByLevel((prev) => ({
+          ...prev,
+          [selectedLevel]: { grammar, kanaVocab, reading, listening },
+        }));
+        setLoadingLevel(null);
+      })
+      .catch((err) => {
+        if (active) {
+          setLoadingLevel(null);
+          setLoadError(
+            err instanceof Error
+              ? err.message
+              : `Gagal memuat bank soal Mogi Shiken JLPT N${selectedLevel}.`
+          );
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, [selectedLevel, banksByLevel]);
 
   // Stop audio on unmount
   useEffect(() => {
@@ -279,44 +351,80 @@ export const MockExamHub: React.FC = () => {
       const kanjiVocabPct =
         kanjiVocabTotal > 0 ? Math.round((coreGuru / kanjiVocabTotal) * 100) : 0;
 
+      const lvlBank = banksByLevel[lvl];
+      const lvlKey = String(lvl);
+
       // Pillar 2: Non-Kanji Kana Vocab
-      const kanaList = banks?.kanaVocab.byJlpt[lvl] ?? [];
-      const kanaTotal = kanaList.length || 30;
+      const kanaList = lvlBank?.kanaVocab.byJlpt[lvl];
+      const kanaTotal =
+        kanaList?.length ?? (manifests?.kanaVocab.levels[lvlKey]?.count || 30);
       let kanaDone = 0;
-      for (const it of kanaList) {
-        if ((state.kanaVocabProgress?.[it.id]?.srsStage ?? 0) >= 5) kanaDone += 1;
-      }
-      const kanaPct = Math.round((kanaDone / kanaTotal) * 100);
-
-      // Pillar 3: Grammar
-      const gramList = banks?.grammar.byJlpt[lvl] ?? [];
-      const grammarTotal = gramList.length || 20;
-      let grammarDone = 0;
-      for (const pt of gramList) {
-        if ((state.grammarProgress?.[pt.id]?.srsStage ?? 0) >= 5) grammarDone += 1;
-      }
-      const grammarPct = Math.round((grammarDone / grammarTotal) * 100);
-
-      // Pillar 4: Dokkai Reading
-      const readList = banks?.reading.byJlpt[lvl] ?? [];
-      const dokkaiTotal = readList.length || 10;
-      let dokkaiDone = 0;
-      for (const p of readList) {
-        const prog = state.readingProgress?.[p.id];
-        if (prog && prog.bestScore >= Math.ceil(prog.totalQuestions * 0.6)) {
-          dokkaiDone += 1;
+      if (kanaList) {
+        for (const it of kanaList) {
+          if ((state.kanaVocabProgress?.[it.id]?.srsStage ?? 0) >= 5) kanaDone += 1;
+        }
+      } else {
+        for (const [id, prog] of Object.entries(state.kanaVocabProgress ?? {})) {
+          if (getJlptFromItemId(id) === lvl && prog.srsStage >= 5) kanaDone += 1;
         }
       }
-      const dokkaiPct = Math.round((dokkaiDone / dokkaiTotal) * 100);
+      const kanaPct = Math.round((kanaDone / Math.max(1, kanaTotal)) * 100);
+
+      // Pillar 3: Grammar
+      const gramList = lvlBank?.grammar.byJlpt[lvl];
+      const grammarTotal =
+        gramList?.length ?? (manifests?.grammar.levels[lvlKey]?.count || 20);
+      let grammarDone = 0;
+      if (gramList) {
+        for (const pt of gramList) {
+          if ((state.grammarProgress?.[pt.id]?.srsStage ?? 0) >= 5) grammarDone += 1;
+        }
+      } else {
+        for (const [id, prog] of Object.entries(state.grammarProgress ?? {})) {
+          if (getJlptFromItemId(id) === lvl && prog.srsStage >= 5) grammarDone += 1;
+        }
+      }
+      const grammarPct = Math.round((grammarDone / Math.max(1, grammarTotal)) * 100);
+
+      // Pillar 4: Dokkai Reading
+      const readList = lvlBank?.reading.byJlpt[lvl];
+      const dokkaiTotal =
+        readList?.length ?? (manifests?.reading.levels[lvlKey]?.count || 10);
+      let dokkaiDone = 0;
+      if (readList) {
+        for (const p of readList) {
+          const prog = state.readingProgress?.[p.id];
+          if (prog && prog.bestScore >= Math.ceil(prog.totalQuestions * 0.6)) {
+            dokkaiDone += 1;
+          }
+        }
+      } else {
+        for (const [id, prog] of Object.entries(state.readingProgress ?? {})) {
+          if (
+            getJlptFromItemId(id) === lvl &&
+            prog.bestScore >= Math.ceil(prog.totalQuestions * 0.6)
+          ) {
+            dokkaiDone += 1;
+          }
+        }
+      }
+      const dokkaiPct = Math.round((dokkaiDone / Math.max(1, dokkaiTotal)) * 100);
 
       // Pillar 5: Chōkai Listening
-      const listTracks = banks?.listening.byJlpt[lvl] ?? [];
-      const choukaiTotal = listTracks.length || 10;
+      const listTracks = lvlBank?.listening.byJlpt[lvl];
+      const choukaiTotal =
+        listTracks?.length ?? (manifests?.listening.levels[lvlKey]?.count || 10);
       let choukaiDone = 0;
-      for (const t of listTracks) {
-        if (state.listeningProgress?.[t.id]?.passed) choukaiDone += 1;
+      if (listTracks) {
+        for (const t of listTracks) {
+          if (state.listeningProgress?.[t.id]?.passed) choukaiDone += 1;
+        }
+      } else {
+        for (const [id, prog] of Object.entries(state.listeningProgress ?? {})) {
+          if (getJlptFromItemId(id) === lvl && prog.passed) choukaiDone += 1;
+        }
       }
-      const choukaiPct = Math.round((choukaiDone / choukaiTotal) * 100);
+      const choukaiPct = Math.round((choukaiDone / Math.max(1, choukaiTotal)) * 100);
 
       // Weighted composite readiness matching official JLPT score weightings:
       // Kanji/Vocab 25% + Non-Kanji 10% + Grammar 15% + Dokkai 25% + Chōkai 25%
@@ -368,11 +476,13 @@ export const MockExamHub: React.FC = () => {
     state.readingProgress,
     state.listeningProgress,
     state.mockExamHistory,
-    banks,
+    banksByLevel,
+    manifests,
   ]);
 
   const startMockExam = (lvl: JlptLevel, modeOverride?: MockExamLength) => {
-    if (!banks) return;
+    const levelBanks = banksByLevel[lvl];
+    if (!levelBanks) return;
     stopExamAudio();
     const chosenMode = modeOverride ?? examLength;
     const recent = recentIdsRef.current;
@@ -381,10 +491,10 @@ export const MockExamHub: React.FC = () => {
       lvl,
       {
         curriculum: dataset,
-        grammar: banks.grammar,
-        kanaVocab: banks.kanaVocab,
-        reading: banks.reading,
-        listening: banks.listening,
+        grammar: levelBanks.grammar,
+        kanaVocab: levelBanks.kanaVocab,
+        reading: levelBanks.reading,
+        listening: levelBanks.listening,
       },
       {
         lengthMode: chosenMode,
@@ -405,16 +515,16 @@ export const MockExamHub: React.FC = () => {
     for (const t of generated.choukaiTracks) recent.tracks.add(t.id);
 
     // Prevent sets from growing endlessly once a full cycle is exhausted
-    if (recent.passages.size >= (banks.reading.passages.length || 50)) {
+    if (recent.passages.size >= (manifests?.reading.totalCount || 50)) {
       recent.passages.clear();
     }
-    if (recent.tracks.size >= (banks.listening.tracks.length || 50)) {
+    if (recent.tracks.size >= (manifests?.listening.totalCount || 50)) {
       recent.tracks.clear();
     }
-    if (recent.grammar.size >= (banks.grammar.points.length || 100)) {
+    if (recent.grammar.size >= (manifests?.grammar.totalCount || 100)) {
       recent.grammar.clear();
     }
-    if (recent.kana.size >= (banks.kanaVocab.items.length || 150)) {
+    if (recent.kana.size >= (manifests?.kanaVocab.totalCount || 150)) {
       recent.kana.clear();
     }
 
@@ -522,7 +632,7 @@ export const MockExamHub: React.FC = () => {
     );
   }
 
-  if (!banks) {
+  if (!manifests) {
     return (
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
@@ -1623,7 +1733,7 @@ export const MockExamHub: React.FC = () => {
               Mogi Shiken JLPT {activeLvlMeta.code}
             </h2>
             <p className="text-xs sm:text-sm text-white/90">
-              Bank soal 50 wacana Dokkai, 50 audio Chōkai, 100 Grammar, 150 Kana JLPT &amp; ribuan Kanji/Kosakata — diacak otomatis anti-ulang setiap kali mulai.
+              Bank soal {manifests.reading.totalCount} wacana Dokkai, {manifests.listening.totalCount} audio Chōkai, {manifests.grammar.totalCount} Grammar, {manifests.kanaVocab.totalCount} Kana JLPT &amp; ribuan Kanji/Kosakata — diacak otomatis anti-ulang setiap kali mulai.
             </p>
           </div>
 
@@ -1719,13 +1829,17 @@ export const MockExamHub: React.FC = () => {
 
             <button
               type="button"
+              disabled={!banksByLevel[selectedLevel] || loadingLevel === selectedLevel}
               onClick={() => startMockExam(selectedLevel, examLength)}
-              className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-white text-sm sm:text-base font-semibold transition-opacity hover:opacity-90 cursor-pointer"
+              className="w-full min-h-[48px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-white text-sm sm:text-base font-semibold transition-opacity hover:opacity-90 disabled:opacity-60 cursor-pointer disabled:cursor-wait"
               style={{ backgroundColor: activeLvlMeta.accent }}
             >
               <Play className="w-4 h-4 fill-current" />
-              Mulai Mogi Shiken {activeLvlMeta.code} (
-              {examLength === 'full' ? 'Penuh' : 'Ringkas'})
+              {!banksByLevel[selectedLevel] || loadingLevel === selectedLevel
+                ? `Menyiapkan Paket Soal ${activeLvlMeta.code}...`
+                : `Mulai Mogi Shiken ${activeLvlMeta.code} (${
+                    examLength === 'full' ? 'Penuh' : 'Ringkas'
+                  })`}
             </button>
           </div>
         </section>

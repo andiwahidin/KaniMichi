@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "totalCount": 150,
+  "levels": {
+    "1": {
+      "count": 30,
+      "packs": [
+        "n1.json"
+      ]
+    },
+    "2": {
+      "count": 30,
+      "packs": [
+        "n2.json"
+      ]
+    },
+    "3": {
+      "count": 30,
+      "packs": [
+        "n3.json"
+      ]
+    },
+    "4": {
+      "count": 30,
+      "packs": [
+        "n4.json"
+      ]
+    },
+    "5": {
+      "count": 30,
+      "packs": [
+        "n5.json"
+      ]
+    }
+  }
+}

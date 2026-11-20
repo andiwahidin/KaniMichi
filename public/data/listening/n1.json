@@ -1,0 +1,646 @@
+{
+  "level": 1,
+  "pack": "n1",
+  "items": [
+    {
+      "id": "l-n1-1",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "季刊誌[きかんし]特集[とくしゅう]記事[きじ]の修正[しゅうせい]方針[ほうしん]",
+      "titleEn": "Editorial Revisions for a Quarterly Magazine Feature",
+      "situationEn": "A chief editor and a senior reporter decide how to revise a feature article before print deadline.",
+      "introJp": "出版社[しゅっぱんしゃ]で編集長[へんしゅうちょう]と記者[きしゃ]が話[はな]しています。記者[きしゃ]は原稿[げんこう]をどのように直[なお]すことにしましたか。",
+      "introEn": "An editor-in-chief and a reporter are speaking at a publishing house. How has the reporter agreed to revise the manuscript?",
+      "lines": [
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "次号[じごう]の特集[とくしゅう]「地方[ちほう]移住[いじゅう]のリアル」、読[よ]ませてもらったわ。取材[しゅざい]の丁寧[ていねい]さは伝[つた]わるんだけど、全体[ぜんたい]として移住[いじゅう]の良[よ]い面[めん]ばかりが強調[きょうちょう]されすぎている気[き]がするのよね。",
+          "en": "I read your feature for the next issue, \"The Reality of Regional Relocation.\" The care in your reporting comes through, yet overall I feel only the positive aspects of relocating are overemphasized."
+        },
+        {
+          "speaker": "Reporter",
+          "role": "male",
+          "jp": "なるほど。確[たし]かに、冬[ふゆ]の生活費[せいかつひ]や交通[こうつう]の不便[ふべん]さについては、紙面[しめん]の都合[つごう]でだいぶ削[けず]ってしまいました。",
+          "en": "I see. Admittedly, due to page space constraints, I cut quite a bit about winter living costs and transportation inconvenience."
+        },
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "読者[どくしゃ]が本当[ほんとう]に知[し]りたいのは、成功[せいこう]談[だん]だけじゃなくて壁[かべ]にぶつかった時[とき]の対処[たいしょ]法[ほう]なのよ。ただ、今[いま]から新[あら]たな取材[しゅざい]に回[まわ]る時間[じかん]はないでしょう？",
+          "en": "What readers truly want to know isn't just success stories, but how people cope when they hit obstacles. Still, there's no time to go out for new interviews now, is there?"
+        },
+        {
+          "speaker": "Reporter",
+          "role": "male",
+          "jp": "はい、締[し]め切[き]りが明後日[あさって]ですので。幸[さいわ]い、今回[こんかい]取材[しゅざい]した方々[かたがた]から失敗[しっぱい]談[だん]も十分[じゅうぶん]に聞[き]き取[と]ってあります。写真[しゃしん]を二[に]点[てん]ほど絞[しぼ]ってスペースを作[つく]り、そこを盛[も]り込[こ]み直[なお]します。",
+          "en": "Right, since the deadline is the day after tomorrow. Fortunately, I already gathered plenty of accounts of setbacks from the people I interviewed. I'll trim about two photos to free up space and weave those back in."
+        },
+        {
+          "speaker": "Editor-in-Chief",
+          "role": "female",
+          "jp": "それがベストね。バランスがぐっと良[よ]くなるわ。よろしく頼[たの]むわね。",
+          "en": "That's the best approach. The balance will improve dramatically. I'm counting on you."
+        }
+      ],
+      "questionJp": "記者[きしゃ]は原稿[げんこう]をどのように直[なお]すことにしましたか。",
+      "questionEn": "How did the reporter decide to revise the manuscript?",
+      "choices": [
+        "新[あら]たに別[べつ]の移住者[いじゅうしゃ]へ追加[ついか]取材[しゅざい]を行[おこな]う",
+        "特集[とくしゅう]のページ数[すう]を増[ふ]やして成功[せいこう]談[だん]を足[た]す",
+        "写真[しゃしん]を減[へ]らし、取材[しゅざい]済[ず]みの苦労[くろう]話[ばなし]や対処[たいしょ]法[ほう]を加[くわ]える",
+        "記事[きじ]のテーマを交通[こうつう]問題[もんだい]に変更[へんこう]して書[か]き直[なお]す"
+      ],
+      "choicesEn": [
+        "Conduct additional interviews with new relocators",
+        "Increase the feature's page count to add more success stories",
+        "Reduce the photos and insert already-collected accounts of setbacks and coping strategies",
+        "Change the article's theme to transportation issues and rewrite it"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Because the deadline is two days away, new interviews are ruled out. Instead, the reporter will trim two photos to create space (\"写真を二点ほど絞ってスペースを作り\") and reinsert the setbacks/coping accounts already collected during interviews.",
+      "keyPhrases": [
+        {
+          "jp": "紙面[しめん]の都合[つごう]",
+          "reading": "しめんのつごう",
+          "en": "page space constraints"
+        },
+        {
+          "jp": "盛[も]り込[こ]む",
+          "reading": "もりこむ",
+          "en": "to incorporate / weave into a text"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-2",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "目撃[もくげき]記憶[きおく]の変容[へんよう]",
+      "titleEn": "University Lecture: Distortion of Eyewitness Memory",
+      "situationEn": "A psychology professor lectures on why eyewitness testimonies can inadvertently become inaccurate.",
+      "introJp": "大学[だいがく]で教授[きょうじゅ]が心理学[しんりがく]の講義[こうぎ]をしています。教授[きょうじゅ]によると、目撃[もくげき]記憶[きおく]が不正確[ふせいかく]になる最大[さいだい]の要因[よういん]は何[なん]ですか。",
+      "introEn": "A professor is giving a psychology lecture at a university. According to the professor, what is the biggest factor making eyewitness memory inaccurate?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "私[わたし]たちは、記憶[きおく]をビデオカメラの録画[ろくが]のように捉[とら]えがちですが、認知[にんち]心理学[しんりがく]では全[まった]く異[こと]なる見方[みかた]をします。",
+          "en": "We tend to view memory like a video camera recording, yet cognitive psychology takes an entirely different view."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "人間[にんげん]の記憶[きおく]は、出来事[できごと]を思[おも]い出[だ]すたびにその都度[つど]再構成[さいこうせい]される性質[せいしつ]を持[も]っています。",
+          "en": "Human memory possesses the property of being reconstructed anew each time an event is recalled."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "もちろん時間[じかん]の経過[けいか]による忘却[ぼうきゃく]もありますが、それ以上[いじょう]に問題[もんだい]なのは、出来事[できごと]の後[あと]に触[ふ]れた誘導的[ゆうどうてき]な質問[しつもん]や他者[たしゃ]の証言[しょうげん]が、あたかも自分[じぶん]が見[み]た事実[じじつ]であるかのように記憶[きおく]に上書[うわが]きされてしまう現象[げんしょう]なのです。",
+          "en": "Of course, forgetting over time occurs too, but even more problematic is the phenomenon where leading questions or others' testimony encountered after the event overwrite one's memory as if it were a fact one personally witnessed."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "しかも本人[ほんにん]には嘘[うそ]をついている自覚[じかく]が一切[いっさい]ないため、確信[かくしん]度[ど]が高[たか]くても正確[せいかく]とは限[かぎ]らないのです。",
+          "en": "Moreover, because the person has zero awareness of lying, high confidence does not necessarily guarantee accuracy."
+        }
+      ],
+      "questionJp": "教授[きょうじゅ]によると、目撃[もくげき]記憶[きおく]が不正確[ふせいかく]になる最大[さいだい]の要因[よういん]は何[なん]ですか。",
+      "questionEn": "According to the professor, what is the biggest factor making eyewitness memory inaccurate?",
+      "choices": [
+        "時間[じかん]が経[た]つにつれて細部[さいぶ]を完全[かんぜん]に忘[わす]れてしまうこと",
+        "事後[じご]の情報[じょうほう]や質問[しつもん]が元[もと]の記憶[きおく]に上書[うわが]きされること",
+        "目撃者[もくげきしゃ]が意図的[いとてき]に話[はなし]を誇張[こちょう]して語[かた]ること",
+        "緊張[きんちょう]のあまり出来事[できごと]を十分[じゅうぶん]に観察[かんさつ]できないこと"
+      ],
+      "choicesEn": [
+        "Completely forgetting details as time passes",
+        "Post-event information and questions overwriting the original memory",
+        "Eyewitnesses intentionally exaggerating their stories",
+        "Being too nervous to observe the event properly"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Note the N1 comparative cue \"それ以上に問題なのは\" (even more problematic than forgetting over time is...). The professor identifies post-event leading questions and others' accounts overwriting the original memory without conscious intent.",
+      "keyPhrases": [
+        {
+          "jp": "それ以上[いじょう]に問題[もんだい]なのは",
+          "reading": "それいじょうにもんだいなのは",
+          "en": "even more problematic than that is..."
+        },
+        {
+          "jp": "あたかも〜かのように",
+          "reading": "あたかも〜かのように",
+          "en": "as if / just as though"
+        },
+        {
+          "jp": "上書[うわが]きされる",
+          "reading": "うわがきされる",
+          "en": "to be overwritten"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-3",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "地域[ちいき]活性化[かっせいか]と「関係[かんけい]人口[じんこう]」",
+      "titleEn": "Commentary: Regional Revitalization & Connected Populations",
+      "situationEn": "A policy commentator discusses a shift in how depopulating towns think about attracting outsiders.",
+      "introJp": "テレビで解説者[かいせつしゃ]が話[はな]しています。解説者[かいせつしゃ]は、自治体[じちたい]の取[と]り組[く]みについてどのような見解[けんかい]を示[しめ]していますか。",
+      "introEn": "A commentator is speaking on TV. What view does the commentator express regarding municipal initiatives?",
+      "lines": [
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "過疎化[かそか]に悩[なや]む自治体[じちたい]の間[あいだ]で、長[なが]らく「移住者[いじゅうしゃ]をいかに増[ふ]やすか」が至上[しじょう]命題[めいだい]とされてきました。",
+          "en": "Among municipalities troubled by depopulation, \"how to increase permanent relocators\" has long been treated as the supreme imperative."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "しかし、人口[じんこう]そのものが減少[げんしょう]する日本[にほん]において、定住[ていじゅう]者[しゃ]の奪[うば]い合[あ]いには自[おの]ずと限界[げんかい]があります。",
+          "en": "However, in a Japan where the population itself is shrinking, competing to take permanent residents from one another naturally has its limits."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "そこで近年[きんねん]注目[ちゅうもく]されるのが、観光客[かんこうきゃく]以上[いじょう]、移住者[いじゅうしゃ]未満[みまん]とも言[い]うべき「関係[かんけい]人口[じんこう]」、すなわち継続的[けいぞくてき]に地域[ちいき]と関[かか]わる人々[ひとびと]の存在[そんざい]です。",
+          "en": "What has therefore drawn attention in recent years is the \"connected population\"—people who are more than tourists yet less than permanent residents, namely those who stay continuously engaged with a region."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "住民票[じゅうみんひょう]の移動[いどう]にこだわらず、副業[ふくぎょう]や二拠点[にきょてん]生活[せいかつ]を通[つう]じて緩[ゆる]やかに地域[ちいき]を担[にな]ってもらう発想[はっそう]への転換[てんかん]が求[もと]められています。",
+          "en": "What is called for is a shift in mindset: without fixating on moving resident registrations, inviting people to loosely support communities through side work or dual-base living."
+        }
+      ],
+      "questionJp": "解説者[かいせつしゃ]は、自治体[じちたい]の取[と]り組[く]みについてどのような見解[けんかい]を示[しめ]していますか。",
+      "questionEn": "What view does the commentator express about municipal efforts?",
+      "choices": [
+        "補助金[ほじょきん]を増[ふ]やして定住[ていじゅう]移住者[いじゅうしゃ]の誘致[ゆうち]に全[すべ]ての予算[よさん]を投[とう]じるべきだ",
+        "定住[ていじゅう]に限定[げんてい]せず、継続的[けいぞくてき]に地域[ちいき]と関[かか]わる人々[ひとびと]を受[う]け入[い]れる視点[してん]が必要[ひつよう]だ",
+        "短期[たんき]の観光客[かんこうきゃく]を増[ふ]やすことだけが過疎化[かそか]対策[たいさく]の唯一[ゆいいつ]の解決[かいけつ]策[さく]だ",
+        "二拠点[にきょてん]生活[せいかつ]は地域[ちいき]住民[じゅうみん]との摩擦[まさつ]を生[う]むため慎重[しんちょう]になるべきだ"
+      ],
+      "choicesEn": [
+        "They should increase subsidies and pour all budgets into recruiting permanent residents",
+        "They need a perspective that embraces people engaged continuously with the region without limiting to permanent residence",
+        "Increasing short-term tourists is the sole solution to depopulation",
+        "They should be cautious about dual-base living because it causes friction with locals"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The commentator argues that zero-sum competition for permanent residents has limits and calls for a mindset shift (\"発想への転換が求められています\") toward welcoming \"connected populations\" (関係人口) without insisting on permanent residency.",
+      "keyPhrases": [
+        {
+          "jp": "自[おの]ずと限界[げんかい]がある",
+          "reading": "おのずとげんかいがある",
+          "en": "naturally has a limit"
+        },
+        {
+          "jp": "〜にこだわらず",
+          "reading": "にこだわらず",
+          "en": "without fixating on / regardless of"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-4",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（ビジネスでの遠慮[えんりょ]・確認[かくにん]）",
+      "titleEn": "Quick Response: Navigating N1 Diplomatic Workplace Idioms",
+      "situationEn": "A senior colleague raises a subtle warning about your proposed schedule using an N1 idiom.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Senior Colleague",
+          "role": "male",
+          "jp": "この日程[にってい]だと、現場[げんば]にかなりの無理[むり]を強[し]いることになりかねないんじゃないかな。",
+          "en": "With this schedule, couldn't it very well end up forcing quite an unreasonable burden on the operations team?"
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "おっしゃる通[とお]りです。現場[げんば]の負担[ふたん]を見直[みなお]して調整[ちょうせい]します。",
+        "そうですね、現場[げんば]には無理[むり]がかからないということですね。",
+        "ご指摘[してき]ありがとうございます。では、このまま進[すす]めさせていただきます。"
+      ],
+      "choicesEn": [
+        "You are quite right. I will review the burden on the team and adjust it.",
+        "Indeed, so that means there won't be any burden on the team.",
+        "Thank you for pointing that out. Then I will proceed as is."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "The N1 grammar \"〜かねない\" means \"could easily lead to (an undesirable outcome)\". Here the colleague is warning that the schedule risks overburdening the team. Option 1 acknowledges the risk and commits to adjusting the schedule; Options 2 and 3 misread the negative warning.",
+      "keyPhrases": [
+        {
+          "jp": "〜を強[し]いる",
+          "reading": "をしいる",
+          "en": "to force / impose upon"
+        },
+        {
+          "jp": "〜になりかねない",
+          "reading": "になりかねない",
+          "en": "could easily end up / runs the risk of"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-5",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "川沿[かわぞ]い旧[きゅう]倉庫[そうこ]の再開発[さいかいはつ]案[あん]",
+      "titleEn": "Integrated Comprehension: Evaluating 4 Redevelopment Proposals",
+      "situationEn": "A municipal committee chair, an urban planner, and a citizen representative evaluate four proposals for repurposing a historic riverside warehouse.",
+      "introJp": "まず話[はなし]を聞[き]いてください。それから、質問[しつもん]を聞[き]いて、一[いち]から四[よん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "First listen to the discussion. Then listen to the question and choose the single best answer from 1 to 4.",
+      "lines": [
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "川沿[かわぞ]いの旧[きゅう]れんが倉庫[そうこ]の再開発[さいかいはつ]について、四[よっ]つの案[あん]から最終[さいしゅう]候補[こうほ]を絞[しぼ]ります。まずA案[あん]は、建物[たてもの]を取[と]り壊[こわ]して高層[こうそう]マンションを建[た]てる案[あん]です。",
+          "en": "For the redevelopment of the old riverside brick warehouse, we will narrow down four proposals to a final pick. First, Plan A demolishes the building to construct a high-rise condominium."
+        },
+        {
+          "speaker": "Citizen Rep",
+          "role": "female",
+          "jp": "A案[あん]は税収[ぜいしゅう]面[めん]では魅力[みりょく]ですが、市民[しみん]アンケートでは歴史的[れきしてき]な外観[がいかん]を残[のこ]してほしいという声[こえ]が八割[はちわり]を超[こ]えています。解体[かいたい]は合意[ごうい]を得[え]にくいと思[おも]います。",
+          "en": "Plan A is attractive in terms of tax revenue, but over 80% of respondents in the citizen survey asked to preserve the historic exterior. Demolition would be hard to gain consensus for."
+        },
+        {
+          "speaker": "Planner",
+          "role": "male2",
+          "jp": "では外観[がいかん]を保存[ほぞん]するB案[あん]の美術館[びじゅつかん]はどうでしょう。文化[ぶんか]価値[かち]は高[たか]いのですが、維持[いじ]費[ひ]のほとんどを市[し]の税金[ぜいきん]で賄[まかな]う必要[ひつよう]があり、財政[ざいせい]への負担[ふたん]が懸念[けねん]されます。",
+          "en": "Then how about Plan B, an art museum preserving the exterior? Its cultural value is high, but almost all maintenance costs would have to be covered by city taxes, raising concerns about fiscal strain."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "財政[ざいせい]の自立[じりつ]性[せい]も外[はず]せない条件[じょうけん]ですね。C案[あん]は外観[がいかん]を活[い]かした商業[しょうぎょう]施設[しせつ]と地域[ちいき]交流[こうりゅう]スペースの複合[ふくごう]型[がた]で、テナント収入[しゅうにゅう]で維持[いじ]費[ひ]を賄[まかな]えます。",
+          "en": "Fiscal self-sufficiency is an indispensable criterion too. Plan C is a hybrid of commercial shops and a community exchange space utilizing the exterior, covering maintenance costs through tenant revenue."
+        },
+        {
+          "speaker": "Planner",
+          "role": "male2",
+          "jp": "D案[あん]も外観[がいかん]保存[ほぞん]で、企業[きぎょう]専用[せんよう]の会員制[かいいんせい]オフィスにする案[あん]です。収益[しゅうえき]は最[もっと]も安定[あんてい]しますが、一般[いっぱん]市民[しみん]は立[た]ち入[い]れなくなってしまいます。",
+          "en": "Plan D also preserves the exterior, turning it into a corporate members-only office. Revenue is the most stable, but general citizens would no longer be able to enter."
+        },
+        {
+          "speaker": "Citizen Rep",
+          "role": "female",
+          "jp": "せっかくの川沿[かわぞ]いのランドマークですから、市民[しみん]が日常的[にちじょうてき]に立[た]ち寄[よ]れる開[ひら]かれた場[ば]であってほしいですね。",
+          "en": "Since it's a prized riverside landmark, we want it to be an open space that citizens can drop by in daily life."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "外観[がいかん]保存[ほぞん]、財政[ざいせい]の持続[じぞく]性[せい]、そして市民[しみん]への開放[かいほう]性[せい]。この三点[さんてん]を満[み]たす案[あん]を軸[じく]に進[すす]めることで一致[いっち]しましたね。",
+          "en": "Preserving the exterior, fiscal sustainability, and openness to citizens—we are agreed on moving forward centered on the plan that fulfills all three."
+        }
+      ],
+      "questionJp": "委員会[いいんかい]はどの案[あん]を軸[じく]に進[すす]めることにしましたか。",
+      "questionEn": "Which proposal did the committee agree to proceed with?",
+      "choices": [
+        "A案[あん]：高層[こうそう]マンションへの建[た]て替[か]え",
+        "B案[あん]：外観[がいかん]を保存[ほぞん]した市立[しりつ]美術館[びじゅつかん]",
+        "C案[あん]：商業[しょうぎょう]施設[しせつ]と地域[ちいき]交流[こうりゅう]スペースの複合[ふくごう]施設[しせつ]",
+        "D案[あん]：企業[きぎょう]専用[せんよう]の会員制[かいいんせい]オフィス"
+      ],
+      "choicesEn": [
+        "Plan A: Rebuilding as a high-rise condominium",
+        "Plan B: Municipal art museum preserving the exterior",
+        "Plan C: Hybrid commercial and community exchange facility",
+        "Plan D: Corporate members-only office"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The committee aligns on three criteria: (1) preserve historic exterior (eliminates Plan A), (2) fiscal sustainability without tax drain (eliminates Plan B), and (3) open public access for citizens (eliminates Plan D). Only Plan C satisfies all three.",
+      "keyPhrases": [
+        {
+          "jp": "合意[ごうい]を得[え]にくい",
+          "reading": "ごういをえにくい",
+          "en": "hard to obtain consensus"
+        },
+        {
+          "jp": "賄[まかな]う",
+          "reading": "まかなう",
+          "en": "to cover (costs) / finance"
+        },
+        {
+          "jp": "〜を軸[じく]に進[すす]める",
+          "reading": "をじくにすすめる",
+          "en": "to proceed centered around ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n1-6",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "博物館[はくぶつかん]特別展[とくべつてん]の動線[どうせん]見直[みなお]し",
+      "titleEn": "Redesigning Crowd Flow for a Museum Special Exhibition",
+      "situationEn": "A museum director and exhibition curator address severe bottlenecks inside a special exhibit.",
+      "introJp": "博物館[はくぶつかん]で館長[かんちょう]と学芸員[がくげいいん]が話[はな]しています。学芸員[がくげいいん]はまずどのような対策[たいさく]を取[と]ることにしましたか。",
+      "introEn": "A museum director and a curator are talking. What measure did the curator agree to implement first?",
+      "lines": [
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "今回[こんかい]の特別展[とくべつてん]、連日[れんじつ]大盛況[だいせいきょう]なのは喜[よろこ]ばしいんだが、第二[だいに]展示室[てんじしつ]の前[まえ]でひどい滞留[たいりゅう]が起[お]きているらしいね。",
+          "en": "It's wonderful that this special exhibition is packed daily, yet I hear severe congestion is occurring in front of Gallery 2."
+        },
+        {
+          "speaker": "Curator",
+          "role": "female",
+          "jp": "ええ、目玉[めだま]の屏風[びょうぶ]の解説[かいせつ]パネルが細[こま]かくて、そこで立[た]ち止[ど]まる来館者[らいかんしゃ]が集中[しゅうちゅう]してしまうんです。入場[にゅうじょう]制限[せいげん]を今[いま]より厳[きび]しくすべきでしょうか。",
+          "en": "Yes, the commentary panel for the centerpiece folding screen is very detailed, so visitors stop and cluster right there. Should we tighten admission caps even further?"
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "すでに日時[にちじ]指定[してい]券[けん]を売[う]っているから、枠[わく]を削[けず]るのは現実的[げんじつてき]じゃないな。屏風[びょうぶ]自体[じたい]の移動[いどう]も空調[くうちょう]の関係[かんけい]で無理[むり]だろう？",
+          "en": "We've already sold timed-entry tickets, so cutting slots isn't realistic. And moving the screen itself is impossible due to climate control, right?"
+        },
+        {
+          "speaker": "Curator",
+          "role": "female",
+          "jp": "はい。でしたら、詳細[しょうさい]な解説[かいせつ]パネルを展示[てんじ]ケースの脇[わき]から外[はず]し、一[ひと]つ手前[てまえ]の広[ひろ]いホールへ移設[いせつ]しましょう。そこなら並[なら]びながら事前[じぜん]に読[よ]めますし、作品[さくひん]の前[まえ]の流[なが]れがスムーズになるはずです。",
+          "en": "Right. Then let's remove the detailed commentary panel from beside the display case and relocate it to the spacious hall just before it. Visitors can read it beforehand while waiting, and flow in front of the artwork should smooth out."
+        },
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "なるほど、それなら明日[あした]の休館日[きゅうかんび]のうちに対応[たいおう]できるね。すぐ手配[てはい]してくれ。",
+          "en": "Good thinking—we can handle that during tomorrow's closed day. Arrange it right away."
+        }
+      ],
+      "questionJp": "学芸員[がくげいいん]はどのような対策[たいさく]を取[と]ることにしましたか。",
+      "questionEn": "What solution did the curator decide to implement?",
+      "choices": [
+        "日時[にちじ]指定[してい]券[けん]の販売[はんばい]枚数[まいすう]を半分[はんぶん]に減[へ]らす",
+        "目玉[めだま]の屏風[びょうぶ]を広[ひろ]いホールへ移動[いどう]させる",
+        "詳[くわ]しい解説[かいせつ]パネルを手前[てまえ]の広[ひろ]いホールへ移[うつ]す",
+        "解説[かいせつ]パネルを全[すべ]て撤去[てっきょ]して音声[おんせい]ガイドのみにする"
+      ],
+      "choicesEn": [
+        "Cut timed-entry ticket sales in half",
+        "Move the centerpiece folding screen to the wide hall",
+        "Relocate the detailed explanation panel to the spacious preceding hall",
+        "Remove all panels and switch solely to audio guides"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Tightening ticket caps and moving the fragile screen are both ruled out. Instead, the curator will relocate the detailed commentary panel to the wide hall just ahead of Gallery 2.",
+      "keyPhrases": [
+        {
+          "jp": "滞留[たいりゅう]",
+          "reading": "たいりゅう",
+          "en": "bottleneck / stagnation of crowd flow"
+        },
+        {
+          "jp": "移設[いせつ]する",
+          "reading": "いせつする",
+          "en": "to relocate / move (a fixture)"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-7",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "「選択[せんたく]のパラドックス」と購買[こうばい]行動[こうどう]",
+      "titleEn": "Lecture: The Paradox of Choice in Consumer Behavior",
+      "situationEn": "A marketing professor discusses an experiment comparing 24 jam varieties versus 6 varieties.",
+      "introJp": "大学[だいがく]の講義[こうぎ]で教授[きょうじゅ]が話[はな]しています。実験[じっけん]から明[あき]らかになった消費者[しょうひしゃ]の心理[しんり]はどれですか。",
+      "introEn": "A professor is lecturing at a university. What consumer psychology did the experiment reveal?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "スーパーの試食[ししょく]コーナーで、二十四[にじゅうよん]種類[しゅるい]のジャムを並[なら]べた日[ひ]と、六[ろく]種類[しゅるい]だけ並[なら]べた日[ひ]を比較[ひかく]した有名[ゆうめい]な実験[じっけん]があります。",
+          "en": "There is a famous experiment at a supermarket tasting booth comparing a day displaying 24 varieties of jam with a day displaying only 6 varieties."
+        },
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "足[あし]を止[と]めた客[きゃく]の数[かず]は二十四[にじゅうよん]種類[しゅるい]のほうが多[おお]かったのですが、実際[じっさい]に購入[こうにゅう]に至[いた]った割合[わりあい]は、六[ろく]種類[しゅるい]の日[ひ]のほうが十倍[じゅうばい]近[ちか]く高[たか]かったのです。",
+          "en": "More shoppers stopped when 24 varieties were shown, yet the proportion who actually bought jam was nearly ten times higher on the 6-variety day."
+        },
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "選択肢[せんたくし]が過剰[かじょう]にあると、消費[しょうひ]者[しゃ]は「もっと良[よ]い品[しな]を逃[のが]すのではないか」という後悔[こうかい]への恐[おそ]れから判断[はんだん]自体[じたい]を先送[さきおく]りにし、結局[けっきょく]買[か]わずに立[た]ち去[さ]ってしまうのです。",
+          "en": "When options are excessive, consumers defer the decision itself out of fear of regretting missing a better item, and ultimately walk away without buying."
+        }
+      ],
+      "questionJp": "選択肢[せんたくし]が多[おお]すぎるとき、消費者[しょうひしゃ]が購入[こうにゅう]をやめてしまう理由[りゆう]は何[なん]ですか。",
+      "questionEn": "Why do consumers walk away without buying when there are too many choices?",
+      "choices": [
+        "商品[しょうひん]の品質[ひんしつ]が低[ひく]いと疑[うたが]うから",
+        "選[えら]び誤[あやま]って後悔[こうかい]する不安[ふあん]から決断[けつだん]を先延[さきの]ばしにしてしまうから",
+        "試食[ししょく]だけでお腹[なか]がいっぱいになるから",
+        "値段[ねだん]が高[たか]すぎて予算[よさん]に合[あ]わないから"
+      ],
+      "choicesEn": [
+        "Because they suspect the product quality is low",
+        "Because fear of choosing poorly and regretting it leads them to postpone deciding",
+        "Because they get full just from sampling",
+        "Because the prices exceed their budget"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The professor concludes that excessive choices trigger fear of regret (\"後悔への恐れ\"), causing shoppers to defer deciding and leave empty-handed.",
+      "keyPhrases": [
+        {
+          "jp": "購入[こうにゅう]に至[いた]る",
+          "reading": "こうにゅうにいたる",
+          "en": "to end up purchasing"
+        },
+        {
+          "jp": "先送[さきおく]りにする",
+          "reading": "さきおくりにする",
+          "en": "to postpone / defer"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-8",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "科学[かがく]報道[ほうどう]における「不確実[ふかくじつ]性[せい]」の伝[つた]え方[かた]",
+      "titleEn": "Commentary: Communicating Uncertainty in Science Journalism",
+      "situationEn": "A media critic discusses how news outlets should report preliminary scientific findings.",
+      "introJp": "シンポジウムで評論家[ひょうろんか]が話[はな]しています。評論家[ひょうろんか]は科学[かがく]ニュースの報道[ほうどう]について何[なに]を提言[ていげん]していますか。",
+      "introEn": "A critic is speaking at a symposium. What does the critic recommend regarding science news reporting?",
+      "lines": [
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "最新[さいしん]の医学[いがく]論文[ろんぶん]を紹介[しょうかい]するニュースで、「これで病[やまい]が防[ふせ]げる」といった断定的[だんていてき]な見出[みだ]しを目[め]にすることがよくあります。",
+          "en": "In news introducing the latest medical papers, we often see definitive headlines like \"This prevents disease.\""
+        },
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "しかし科学[かがく]の知見[ちけん]は本来[ほんらい]、一定[いってい]の前提[ぜんてい]条件[じょうけん]のもとで暫定的[ざんていてき]に示[しめ]されるものであり、後[あと]の検証[けんしょう]で修正[しゅうせい]されることも珍[めずら]しくありません。",
+          "en": "Yet scientific findings are inherently provisional under specific assumptions, and it is not uncommon for them to be revised by later verification."
+        },
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "断言[だんげん]すれば視聴者[しちょうしゃ]の注目[ちゅうもく]は集[あつ]まりますが、結果[けっか]が覆[くつがえ]った途端[とたん]、「科学[かがく]は信用[しんよう]できない」という不信感[ふしんかん]を招[まね]きます。報道[ほうどう]側[がわ]には、まだ分[わ]かっていない限界[げんかい]や不確実[ふかくじつ]性[せい]も含[ふく]めて誠実[せいじつ]に伝[つた]える姿勢[しせい]が求[もと]められます。",
+          "en": "Making absolute claims grabs viewers' attention, yet the moment results are overturned, it breeds distrust that \"science can't be trusted.\" Journalists need the integrity to convey what remains unknown—the limits and uncertainties as well."
+        }
+      ],
+      "questionJp": "評論家[ひょうろんか]は科学[かがく]ニュースの報道[ほうどう]について何[なに]を提言[ていげん]していますか。",
+      "questionEn": "What does the critic recommend for science journalism?",
+      "choices": [
+        "確実[かくじつ]に証明[しょうめい]されるまで一切[いっさい]の報道[ほうどう]を控[ひか]えるべきだ",
+        "視聴率[しちょうりつ]を伸[の]ばすため、結論[けつろん]をさらに簡潔[かんけつ]に断言[だんげん]すべきだ",
+        "研究[けんきゅう]の前提[ぜんてい]や不確実[ふかくじつ]な限界[げんかい]も含[ふく]めて丁寧[ていねい]に伝[つた]えるべきだ",
+        "専門[せんもん]用語[ようご]をそのまま用[もち]いて一般[いっぱん]向[む]けの解説[かいせつ]を省[はぶ]くべきだ"
+      ],
+      "choicesEn": [
+        "Refrain from reporting anything until 100% proven",
+        "Make even punchier definitive claims to raise ratings",
+        "Convey research assumptions and uncertain limits honestly alongside findings",
+        "Use raw jargon and omit explanations for the general public"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The critic warns that sensational certainty backfires into public distrust when findings update, and urges media to faithfully report limits and uncertainty (\"限界や不確実性も含めて誠実に伝える\").",
+      "keyPhrases": [
+        {
+          "jp": "暫定的[ざんていてき]",
+          "reading": "ざんていてき",
+          "en": "provisional / tentative"
+        },
+        {
+          "jp": "覆[くつがえ]る",
+          "reading": "くつがえる",
+          "en": "to be overturned"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-9",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（N1慣用[かんよう]・丁寧[ていねい]な辞退[じたい]）",
+      "titleEn": "Quick Response: N1 Modesty & Appreciation Idiom",
+      "situationEn": "A senior partner praises your team's effort on a tough negotiation using formal phrasing.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Director",
+          "role": "female",
+          "jp": "このたびの契約[けいやく]成立[せいりつ]は、ひとえに君[きみ]の粘[ねば]り強[づよ]い交渉[こうしょう]の賜物[たまもの]だよ。",
+          "en": "Closing this contract is solely the fruit of your tenacious negotiation."
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "もったいないお言葉[ことば]です。チーム全員[ぜんいん]の協力[きょうりょく]があってこそです。",
+        "いいえ、私[わたし]一[ひと]りの力[ちから]で当然[とうぜん]の結果[けっか]を出[だ]しました。",
+        "恐縮[きょうしゅく]ですが、交渉[こうしょう]はまだ始[はじ]まっておりません。"
+      ],
+      "choicesEn": [
+        "Those are far too kind words. It was only possible thanks to the whole team's cooperation.",
+        "No, it was an expected result achieved by my efforts alone.",
+        "I'm sorry, but negotiations haven't begun yet."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"〜の賜物だ\" means \"the fruit/result of...\". The ideal N1 humble response to high praise from a superior is \"もったいないお言葉です\" (You're too kind / I don't deserve such praise) while crediting the team (\"〜があってこそ\").",
+      "keyPhrases": [
+        {
+          "jp": "ひとえに〜の賜物[たまもの]",
+          "reading": "ひとえに〜のたまもの",
+          "en": "entirely the fruit/result of ..."
+        },
+        {
+          "jp": "もったいないお言葉[ことば]",
+          "reading": "もったいないおことば",
+          "en": "far too generous words (humble)"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-10",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "社内[しゃない]託児所[たくじしょ]・育児[いくじ]支援[しえん]策[さく]の選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Selecting a Corporate Childcare Policy",
+      "situationEn": "Three executives debate four employee childcare-support proposals to roll out across branches nationwide.",
+      "introJp": "会社[かいしゃ]の役員[やくいん]会議[かいぎ]で三[さん]人[にん]が話[はな]しています。会社[かいしゃ]はどの案[あん]を採用[さいよう]することにしましたか。",
+      "introEn": "Three executives are speaking at a board meeting. Which proposal did the company decide to adopt?",
+      "lines": [
+        {
+          "speaker": "VP",
+          "role": "male",
+          "jp": "育児[いくじ]と仕事[しごと]の両立[りょうりつ]支援[しえん]策[さく]、四[よっ]つの案[あん]から来期[らいき]の柱[はしら]を決[き]めます。一[いち]案[あん]は本社[ほんしゃ]ビル内[ない]に自社[じしゃ]託児所[たくじしょ]を設[もう]ける案[あん]です。",
+          "en": "For our work-and-childcare balance initiative, we'll select our flagship plan from four proposals. Plan 1 builds an in-house daycare inside HQ."
+        },
+        {
+          "speaker": "HR Director",
+          "role": "female",
+          "jp": "自社[じしゃ]託児所[たくじしょ]は象徴的[しょうちょうてき]ですが、全国[ぜんこく]の支社[ししゃ]に勤[つと]める社員[しゃいん]が恩恵[おんけい]を受[う]けられず、不公平感[ふこうへいかん]が出[で]ます。全拠点[ぜんきょてん]の社員[しゃいん]が公平[こうへい]に使[つか]える仕組[しく]みが大前提[だいぜんてい]ですよね。",
+          "en": "An HQ daycare is symbolic, yet employees at nationwide branches couldn't benefit, creating unfairness. A system usable fairly across all offices is our core premise."
+        },
+        {
+          "speaker": "CFO",
+          "role": "male2",
+          "jp": "同感[どうかん]です。二[に]案[あん]の「一律[いちりつ]の育児[いくじ]手当[てあて]増額[ぞうがく]」は全拠点[ぜんきょてん]対象[たいしょう]ですが、突発的[とっぱつてき]な子どもの発熱[はつねつ]時[じ]に預[あず]け先[さき]が見[み]つからないという現場[げんば]最大[さいだい]の悩[なや]みを直接[ちょくせつ]解決[かいけつ]しません。",
+          "en": "Agreed. Plan 2—raising the flat childcare allowance—covers all offices, but doesn't directly solve staff's biggest pain point: finding backup care when a child suddenly gets a fever."
+        },
+        {
+          "speaker": "HR Director",
+          "role": "female",
+          "jp": "その点[てん]、三[さん]案[あん]の「全国[ぜんこく]提携[ていけい]ベビーシッターおよび病児[びょうじ]保育[ほいく]の利用[りよう]料[りょう]補助[ほじょ]」なら、どの地域[ちいき]でも使[つか]えて急[きゅう]な体調[たいちょう]不良[ふりょう]にも対応[たいおう]でき、初期[しょき]投資[とうし]も抑[おさ]えられます。",
+          "en": "On that point, Plan 3—subsidizing nationwide partner babysitters and sick-child care—works in every region, handles sudden illnesses, and keeps upfront capital low."
+        },
+        {
+          "speaker": "VP",
+          "role": "male",
+          "jp": "四[よん]案[あん]の「育児[いくじ]中[ちゅう]の完全[かんぜん]週休[しゅうきゅう]三日[みっか]制[せい]」はどうでしょう。魅力的[みりょくてき]ですが、給与[きゅうよ]水準[すいじゅん]や評価[ひょうか]制度[せいど]の抜本[ばっぽん]改定[かいてい]が必要[ひつよう]で、来期[らいき]からの導入[どうにゅう]には間[ま]に合[あ]いません。",
+          "en": "What about Plan 4, a four-day workweek for parents? Appealing, yet it requires overhauling pay scales and evaluation systems, so it won't be ready by next term."
+        },
+        {
+          "speaker": "CFO",
+          "role": "male2",
+          "jp": "では、公平性[こうへいせい]・緊急[きんきゅう]時[じ]の実効性[じっこうせい]・来期[らいき]すぐ始[はじ]められる現実性[げんじつせい]、三拍子[さんびょうし]揃[そろ]った案[あん]で決[き]まりですね。",
+          "en": "Then it's settled on the plan that hits all three marks: fairness, emergency practicality, and immediate feasibility next term."
+        }
+      ],
+      "questionJp": "会社[かいしゃ]はどの案[あん]を採用[さいよう]することにしましたか。",
+      "questionEn": "Which proposal did the company decide to adopt?",
+      "choices": [
+        "一[いち]案[あん]：本社[ほんしゃ]ビル内[ない]への自社[じしゃ]託児所[たくじしょ]設置[せっち]",
+        "二[に]案[あん]：一律[いちりつ]の育児[いくじ]手当[てあて]の増額[ぞうがく]",
+        "三[さん]案[あん]：全国[ぜんこく]提携[ていけい]シッター・病児[びょうじ]保育[ほいく]の利用[りよう]補助[ほじょ]",
+        "四[よん]案[あん]：育児[いくじ]中[ちゅう]社員[しゃいん]の完全[かんぜん]週休[しゅうきゅう]三日[みっか]制[せい]"
+      ],
+      "choicesEn": [
+        "Plan 1: In-house daycare at HQ",
+        "Plan 2: Raising flat childcare allowances",
+        "Plan 3: Subsidizing nationwide partner sitters & sick-child care",
+        "Plan 4: Four-day workweek for parenting employees"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Plan 1 fails nationwide fairness; Plan 2 fails urgent sick-child care needs; Plan 4 misses the next-term rollout deadline. Only Plan 3 satisfies fairness, practical emergency support, and immediate implementation.",
+      "keyPhrases": [
+        {
+          "jp": "大前提[だいぜんてい]",
+          "reading": "だいぜんてい",
+          "en": "fundamental premise"
+        },
+        {
+          "jp": "三拍子[さんびょうし]揃[そろ]う",
+          "reading": "さんびょうしそろう",
+          "en": "to have all three essential qualities"
+        }
+      ]
+    }
+  ]
+}

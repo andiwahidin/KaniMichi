@@ -1,0 +1,623 @@
+{
+  "level": 2,
+  "pack": "n2",
+  "items": [
+    {
+      "id": "l-n2-1",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "新商品[しんしょうひん]デモの前[まえ]の修正[しゅうせい]",
+      "titleEn": "Revisions Before a Client Prototype Demo",
+      "situationEn": "A product lead and a designer review what must be fixed before presenting a prototype next Monday.",
+      "introJp": "会社[かいしゃ]で女[おんな]の人[ひと]と男[おとこ]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]は月曜日[げつようび]までに何[なに]をしなければなりませんか。",
+      "introEn": "A woman and a man are talking at work. What must the man do by Monday?",
+      "lines": [
+        {
+          "speaker": "Product Lead",
+          "role": "female",
+          "jp": "来週[らいしゅう]月曜[げつよう]のデモに向[む]けて、試作品[しさくひん]のチェック結果[けっか]を共有[きょうゆう]しますね。デザインは好評[こうひょう]だったんですが、画面[がめん]の切[き]り替[か]えが少[すこ]し遅[おそ]いという指摘[してき]がありました。",
+          "en": "Ahead of next Monday's demo, let me share the prototype review results. The design was well-received, but it was pointed out that screen transitions are a bit slow."
+        },
+        {
+          "speaker": "Designer",
+          "role": "male",
+          "jp": "承知[しょうち]しました。アニメーションを軽[かる]くすれば改善[かいぜん]できます。それと、色[いろ]のバリエーションも三[みっ]つ追加[ついか]しておきましょうか。",
+          "en": "Understood. We can fix that by making the animations lighter. Also, shall I add three more color variations?"
+        },
+        {
+          "speaker": "Product Lead",
+          "role": "female",
+          "jp": "色[いろ]の追加[ついか]は今月[こんげつ]末[まつ]の正式[せいしき]版[ばん]で構[かま]いません。ただ、デモの最初[さいしょ]に見[み]せる操作[そうさ]手順[てじゅん]のスライドだけ、最新[さいしん]の画面[がめん]に差[さ]し替[か]えておいてもらえますか。",
+          "en": "Adding colors can wait for the official release at the end of the month. However, could you replace just the operation-steps slides shown at the start of the demo with the latest screens?"
+        },
+        {
+          "speaker": "Designer",
+          "role": "male",
+          "jp": "わかりました。では、処理[しょり]速度[そくど]の改善[かいぜん]とスライドの更新[こうしん]を優先[ゆうせん]します。",
+          "en": "Got it. Then I'll prioritize improving the speed and updating the slides."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は月曜日[げつようび]までに何[なに]をしなければなりませんか。",
+      "questionEn": "What must the man complete by Monday?",
+      "choices": [
+        "デザイン全体[ぜんたい]の作[つく]り直[なお]しと色[いろ]の追加[ついか]",
+        "画面[がめん]切[き]り替[か]えの改善[かいぜん]とスライドの差[さ]し替[か]え",
+        "色[いろ]の追加[ついか]とスライドの差[さ]し替[か]え",
+        "操作[そうさ]手順[てじゅん]のスライドの差[さ]し替[か]えだけ"
+      ],
+      "choicesEn": [
+        "Redesigning the whole layout and adding colors",
+        "Improving screen transitions and replacing the slides",
+        "Adding colors and replacing the slides",
+        "Only replacing the operation-steps slides"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Color variations are deferred to the end of the month (\"今月末の正式版で構いません\"). By Monday, he must do two things: speed up screen transitions (lightening animations) AND update the slides with the latest screenshots.",
+      "keyPhrases": [
+        {
+          "jp": "〜で構[かま]いません",
+          "reading": "でかまいません",
+          "en": "... is fine / doesn't need to be done sooner"
+        },
+        {
+          "jp": "差[さ]し替[か]える",
+          "reading": "さしかえる",
+          "en": "to swap out / replace"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-2",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "テレワーク新人[しんじん]研修[けんしゅう]の課題[かだい]",
+      "titleEn": "Challenges in Remote Onboarding",
+      "situationEn": "An HR consultant speaks at a seminar about why new hires struggle during remote onboarding.",
+      "introJp": "セミナーで講師[こうし]が話[はな]しています。講師[こうし]は、テレワークで新入[しんにゅう]社員[しゃいん]が困[こま]る一番[いちばん]の原因[げんいん]は何[なん]だと言[い]っていますか。",
+      "introEn": "A speaker is talking at a seminar. What does the speaker say is the primary reason new employees struggle in remote work?",
+      "lines": [
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "テレワークの導入[どうにゅう]が進[すす]み、新入[しんにゅう]社員[しゃいん]の研修[けんしゅう]もオンラインで行[おこな]う企業[きぎょう]が増[ふ]えました。",
+          "en": "As telework adoption advances, more companies are conducting new-hire training online as well."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "よく「パソコンの操作[そうさ]や通信[つうしん]環境[かんきょう]が問題[もんだい]だ」と考[かんが]えられがちですが、実際[じっさい]の調査[ちょうさ]では違[ちが]う結果[けっか]が出[で]ています。",
+          "en": "People often tend to think PC operation or internet environments are the issue, but actual surveys show a different result."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "オフィスにいれば「ちょっと聞[き]いてもいいですか」と気軽[きがる]に声[こえ]をかけられますが、オンラインだと相手[あいて]の忙[いそが]しさがわからず、小[ちい]さな疑問[ぎもん]を聞[き]くのをためらってしまうのです。",
+          "en": "In an office, you can casually ask \"Do you have a moment?\", whereas online you can't see how busy the other person is, so new hires hesitate to ask small questions."
+        },
+        {
+          "speaker": "Consultant",
+          "role": "male",
+          "jp": "その結果[けっか]、不安[ふあん]が積[つ]もり、仕事[しごと]の進[すす]み具合[ぐあい]にも影響[えいきょう]が出[で]てしまいます。",
+          "en": "As a result, anxiety builds up and even affects work progress."
+        }
+      ],
+      "questionJp": "講師[こうし]は、テレワークで新入[しんにゅう]社員[しゃいん]が困[こま]る一番[いちばん]の原因[げんいん]は何[なん]だと言[い]っていますか。",
+      "questionEn": "What does the speaker say is the biggest cause of difficulty for remote new hires?",
+      "choices": [
+        "自宅[じたく]の通信[つうしん]環境[かんきょう]が安定[あんてい]していないこと",
+        "オンライン研修[けんしゅう]の教材[きょうざい]がわかりにくいこと",
+        "相手[あいて]の様子[ようす]が見[み]えず、気軽[きがる]に質問[しつもん]しにくいこと",
+        "出社[しゅっしゃ]する日[ひ]と在宅[ざいたく]の日[ひ]の切[き]り替[か]えが難[むずか]しいこと"
+      ],
+      "choicesEn": [
+        "Unstable home internet connections",
+        "Unclear online training materials",
+        "Not being able to see others' availability, making casual questions hard to ask",
+        "Difficulty switching between office days and home days"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The speaker dismisses PC/network issues (\"考えられがちですが、実際の調査では違う結果\") and pinpoints the core cause: being unable to gauge whether coworkers are busy, causing new hires to hesitate before asking small questions.",
+      "keyPhrases": [
+        {
+          "jp": "〜がちだ",
+          "reading": "がちだ",
+          "en": "tend to / prone to"
+        },
+        {
+          "jp": "ためらう",
+          "reading": "ためらう",
+          "en": "to hesitate"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-3",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "伝統[でんとう]工芸[こうげい]の新[あたら]しい挑戦[ちょうせん]",
+      "titleEn": "Radio Interview: Modernizing Traditional Lacquerware",
+      "situationEn": "A radio host interviews a lacquerware artisan about how he is attracting younger customers.",
+      "introJp": "ラジオで司会者[しかいしゃ]と漆器[しっき]の職人[しょくにん]が話[はな]しています。職人[しょくにん]は伝統[でんとう]を守[まも]るために何[なに]が大切[たいせつ]だと言[い]っていますか。",
+      "introEn": "A radio host and a lacquerware artisan are speaking. What does the artisan say is important for preserving tradition?",
+      "lines": [
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "森田[もりた]さんの工房[こうぼう]では、最近[さいきん]食洗機[しょくせんき]で洗[あら]える漆器[しっき]を作[つく]って話題[わだい]ですね。昔[むかし]ながらのやり方[かた]を変[か]えることに迷[まよ]いはありませんでしたか。",
+          "en": "Morita-san, your workshop has been in the news recently for making dishwasher-safe lacquerware. Did you hesitate about changing traditional methods?"
+        },
+        {
+          "speaker": "Artisan",
+          "role": "male",
+          "jp": "もちろん、最初[さいしょ]は「伝統[でんとう]を壊[こわ]すのではないか」という意見[いけん]もありました。でも、どんなに立派[りっぱ]な器[うつわ]でも、棚[たな]の奥[おく]にしまわれたままでは意味[いみ]がないと思[おも]うんです。",
+          "en": "Of course, at first there were opinions asking if we were destroying tradition. Yet no matter how splendid a vessel is, I think it's meaningless if it stays locked away at the back of a cupboard."
+        },
+        {
+          "speaker": "Artisan",
+          "role": "male",
+          "jp": "現代[げんだい]の暮[く]らしに合[あ]わせて毎日[まいにち]使[つか]ってもらうことこそが、結果的[けっかてき]に技[わざ]を次[つぎ]の世代[せだい]へつなぐ道[みち]だと信[しん]じています。",
+          "en": "I believe that adapting to modern life so people actually use it every day is ultimately the way to pass the craft on to the next generation."
+        }
+      ],
+      "questionJp": "職人[しょくにん]は伝統[でんとう]を守[まも]るために何[なに]が大切[たいせつ]だと言[い]っていますか。",
+      "questionEn": "What does the artisan say is essential to preserve tradition?",
+      "choices": [
+        "昔[むかし]の製法[せいほう]を一[ひと]つも変[か]えずに続[つづ]けること",
+        "高級品[こうきゅうひん]として美術館[びじゅつかん]に展示[てんじ]すること",
+        "現代[げんだい]の生活[せいかつ]に合[あ]わせ、日常的[にちじょうてき]に使[つか]ってもらうこと",
+        "若[わか]い職人[しょくにん]の給料[きゅうりょう]を今[いま]より高[たか]くすること"
+      ],
+      "choicesEn": [
+        "Continuing ancient methods without changing a single thing",
+        "Exhibiting pieces in museums as luxury art",
+        "Adapting to modern lifestyles so people use them daily",
+        "Raising young artisans' salaries"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Using the strong N2 emphasis marker \"〜ことこそが\" (precisely doing X is...), the artisan argues that adapting lacquerware for everyday modern use is what truly passes the craft to future generations.",
+      "keyPhrases": [
+        {
+          "jp": "〜ことこそが",
+          "reading": "ことこそが",
+          "en": "it is precisely doing ... that"
+        },
+        {
+          "jp": "次[つぎ]の世代[せだい]へつなぐ",
+          "reading": "つぎのせだいへつなぐ",
+          "en": "to pass on to the next generation"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-4",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（丁寧[ていねい]な依頼[いらい]への返答[へんとう]）",
+      "titleEn": "Quick Response: Politely Declining an Invitation",
+      "situationEn": "A business partner invites you to a reception, and you need to respond naturally in polite Japanese.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Business Partner",
+          "role": "female",
+          "jp": "もしよろしければ、今度[こんど]の金曜[きんよう]の懇親会[こんしんかい]にぜひご参加[さんか]いただきたいんですが。",
+          "en": "If you wouldn't mind, we would very much love for you to attend this coming Friday's reception."
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "せっかくのお誘[さそ]いですが、あいにく先約[せんやく]がありまして。",
+        "参加[さんか]したいのに、行[い]かないことにします。",
+        "お誘[さそ]いいただいて、ご迷惑[めいわく]をおかけします。"
+      ],
+      "choicesEn": [
+        "Thank you for the kind invitation, but unfortunately I have a prior engagement.",
+        "Even though I want to attend, I've decided not to go.",
+        "Thank you for inviting me; I'm causing you trouble."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"せっかくのお誘いですが、あいにく先約がありまして\" is the standard polite business formula for declining an invitation gracefully. Option 2 is blunt/unnatural, and Option 3 misuses \"ご迷惑をおかけします\".",
+      "keyPhrases": [
+        {
+          "jp": "せっかくのお誘[さそ]いですが",
+          "reading": "せっかくのおさそいですが",
+          "en": "thank you for your kind invitation, but..."
+        },
+        {
+          "jp": "あいにく先約[せんやく]がありまして",
+          "reading": "あいにくせんやくがありまして",
+          "en": "unfortunately I have a prior commitment"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-5",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "国際[こくさい]シンポジウムの会場[かいじょう]選[えら]び",
+      "titleEn": "Integrated Comprehension: Choosing a Symposium Venue",
+      "situationEn": "Two organizing committee members compare four possible halls for an international symposium of 180 attendees.",
+      "introJp": "まず話[はなし]を聞[き]いてください。それから、質問[しつもん]を聞[き]いて、一[いち]から四[よん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "First listen to the conversation. Then listen to the question and choose the single best answer from 1 to 4.",
+      "lines": [
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "来月[らいげつ]の国際[こくさい]シンポジウム、参加者[さんかしゃ]が百八十人[ひゃくはちじゅうにん]ほどになる見込[みこ]みです。候補[こうほ]の会場[かいじょう]が四[よっ]つあります。",
+          "en": "For next month's international symposium, we expect around 180 participants. We have four candidate venues."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "まず一番[いちばん]の中央[ちゅうおう]ホールは二百人[にひゃくにん]入[はい]って駅[えき]直結[ちょっけつ]ですが、同時通訳[どうじつうやく]の設備[せつび]がありません。海外[かいがい]からの講演者[こうえんしゃ]もいるので、通訳[つうやく]設備[せつび]は必須[ひっす]ですよね。",
+          "en": "First, #1 Central Hall holds 200 and connects directly to the station, but it lacks simultaneous interpretation equipment. Since we have overseas speakers, interpretation equipment is essential, right?"
+        },
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "そうですね。二番[にばん]の港[みなと]会議場[かいぎじょう]は通訳[つうやく]設備[せつび]も最新[さいしん]で二百五十人[にひゃくごじゅうにん]入[はい]りますが、予算[よさん]を大幅[おおはば]に超[こ]えてしまいます。",
+          "en": "Right. #2 Harbor Convention Hall has the latest interpretation gear and seats 250, but it drastically exceeds our budget."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "うーん、予算[よさん]オーバーは無理[むり]ですね。三番[さんばん]の大学[だいがく]講堂[こうどう]はどうでしょう。通訳[つうやく]設備[せつび]もあって予算内[よさんない]ですし、二百人[にひゃくにん]収容[しゅうよう]できます。ただ、駅[えき]からバスで十五分[じゅうごふん]かかります。",
+          "en": "Hmm, going over budget is impossible. How about #3 University Auditorium? It has interpretation equipment, fits the budget, and holds 200. It just takes 15 minutes by bus from the station."
+        },
+        {
+          "speaker": "Committee A",
+          "role": "female",
+          "jp": "四番[よんばん]の市民[しみん]プラザも通訳[つうやく]設備[せつび]があって予算内[よさんない]、しかも駅[えき]から歩[ある]いて五分[ごふん]なんですが、定員[ていいん]が百五十人[ひゃくごじゅうにん]なんです。",
+          "en": "#4 Civic Plaza also has interpretation gear, fits the budget, and is a 5-minute walk from the station, but its capacity is 150 people."
+        },
+        {
+          "speaker": "Committee B",
+          "role": "male",
+          "jp": "百八十人[ひゃくはちじゅうにん]入[はい]らないのは困[こま]りますね。少[すこ]し遠[とお]くても、全員[ぜんいん]座[すわ]れて設備[せつび]も予算[よさん]もクリアしている所[ところ]に決[き]めましょう。",
+          "en": "Not fitting 180 people won't work. Even if it's a bit farther, let's pick the one where everyone can sit and both equipment and budget are satisfied."
+        }
+      ],
+      "questionJp": "二人[ふたり]はどの会場[かいじょう]に決[き]めましたか。",
+      "questionEn": "Which venue did the two decide on?",
+      "choices": [
+        "中央[ちゅうおう]ホール",
+        "港[みなと]会議場[かいぎじょう]",
+        "大学[だいがく]講堂[こうどう]",
+        "市民[しみん]プラザ"
+      ],
+      "choicesEn": [
+        "Central Hall",
+        "Harbor Convention Hall",
+        "University Auditorium",
+        "Civic Plaza"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Eliminate each option against the three hard requirements (180+ seats, simultaneous interpretation, within budget): #1 lacks interpretation; #2 exceeds budget; #4 only seats 150. Only #3 University Auditorium (大学講堂) meets all three criteria despite the 15-minute bus ride.",
+      "keyPhrases": [
+        {
+          "jp": "必須[ひっす]",
+          "reading": "ひっす",
+          "en": "indispensable / mandatory"
+        },
+        {
+          "jp": "予算[よさん]を大幅[おおはば]に超[こ]える",
+          "reading": "よさんをおおはばにこえる",
+          "en": "greatly exceed the budget"
+        },
+        {
+          "jp": "収容[しゅうよう]できる",
+          "reading": "しゅうようできる",
+          "en": "can accommodate / seat"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-6",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "社内[しゃない]アンケート結果[けっか]の報告[ほうこく]資料[しりょう]",
+      "titleEn": "Preparing an Internal Survey Report",
+      "situationEn": "A section chief instructs an employee on finalizing an employee survey report.",
+      "introJp": "会社[かいしゃ]で上司[じょうし]と部下[ぶか]が話[はな]しています。部下[ぶか]はこれからまず何[なに]を直[なお]しますか。",
+      "introEn": "A boss and subordinate are speaking at work. What will the subordinate revise first?",
+      "lines": [
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "社内[しゃない]アンケートの集計[しゅうけい]、ご苦労[くろう]様[さま]。数字[すうじ]もきれいに入[はい]っているね。",
+          "en": "Good work tallying the internal survey. The numbers are entered cleanly."
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "female",
+          "jp": "ありがとうございます。ただ、自由[じゆう]記述[きじゅつ]のコメントが二百件[にひゃっけん]以上[いじょう]あって、全部[ぜんぶ]載[の]せたらページが増[ふ]えすぎてしまいました。",
+          "en": "Thank you. However, there were over 200 free-response comments, so including all of them made the page count way too long."
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "役員[やくいん]会議[かいぎ]では時間[じかん]が限[かぎ]られているからね。コメントは傾向[けいこう]ごとに三[みっ]つか四[よっ]つのテーマに分類[ぶんるい]して、代表的[だいひょうてき]な意見[いけん]だけ抜粋[ばっすい]しよう。",
+          "en": "Time is limited in the executive meeting. Let's group the comments by trend into three or four themes and excerpt only representative opinions."
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "female",
+          "jp": "承知[しょうち]しました。グラフの色[いろ]も変[か]えたほうがいいですか。",
+          "en": "Understood. Should I change the chart colors too?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "グラフはそのままで見[み]やすいから大丈夫[だいじょうぶ]。コメントの整理[せいり]だけよろしく。",
+          "en": "The charts are easy to read as is, so they're fine. Just organize the comments, please."
+        }
+      ],
+      "questionJp": "部下[ぶか]は資料[しりょう]のどこを直[なお]しますか。",
+      "questionEn": "Which part of the report will the subordinate revise?",
+      "choices": [
+        "集計[しゅうけい]した数字[すうじ]をやり直[なお]す",
+        "グラフの色[いろ]を見[み]やすく変[か]える",
+        "自由[じゆう]記述[きじゅつ]のコメントをテーマ別[べつ]に分類[ぶんるい]して抜粋[ばっすい]する",
+        "役員[やくいん]会議[かいぎ]の発表[はっぴょう]時間[じかん]を延[の]ばしてもらう"
+      ],
+      "choicesEn": [
+        "Redo the tallied numbers",
+        "Change the chart colors to be clearer",
+        "Categorize the free-response comments by theme and excerpt representative ones",
+        "Ask to extend the executive meeting presentation time"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Numbers and charts are approved as-is; the manager asks only to categorize the 200+ free comments into 3–4 themes and excerpt key examples.",
+      "keyPhrases": [
+        {
+          "jp": "抜粋[ばっすい]する",
+          "reading": "ばっすいする",
+          "en": "to excerpt / extract"
+        },
+        {
+          "jp": "分類[ぶんるい]する",
+          "reading": "ぶんるいする",
+          "en": "to classify / categorize"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-7",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "老舗[しにせ]旅館[りょかん]の予約[よやく]システム刷新[さっしん]",
+      "titleEn": "Why an Old Ryokan Upgraded Its Booking System",
+      "situationEn": "A journalist interviews a ryokan owner about introducing online booking.",
+      "introJp": "記者[きしゃ]と旅館[りょかん]の女将[おかみ]が話[はな]しています。女将[おかみ]がオンライン予約[よやく]を導入[どうにゅう]した一番[いちばん]の狙[ねら]いは何[なん]ですか。",
+      "introEn": "A reporter and a ryokan proprietress are talking. What was her primary aim in introducing online reservations?",
+      "lines": [
+        {
+          "speaker": "Reporter",
+          "role": "male",
+          "jp": "長年[ながねん]、電話[でんわ]予約[よやく]だけにこだわってこられましたが、今回[こんかい]オンライン予約[よやく]を導入[どうにゅう]されたのは、やはり海外[かいがい]客[きゃく]を増[ふ]やすためでしょうか。",
+          "en": "For many years you insisted on phone-only bookings; was introducing online booking this time mainly to attract more overseas guests?"
+        },
+        {
+          "speaker": "Owner",
+          "role": "female",
+          "jp": "もちろん海外[かいがい]の方[かた]にも便利[べんり]になりましたが、一番[いちばん]の理由[りゆう]は別[べつ]にあるんです。",
+          "en": "Of course it became more convenient for overseas guests too, but the biggest reason is something else."
+        },
+        {
+          "speaker": "Owner",
+          "role": "female",
+          "jp": "これまで夕食[ゆうしょく]の支度[したく]で一番[いちばん]忙[いそが]しい夕方[ゆうがた]に予約[よやく]電話[でんわ]が集中[しゅうちゅう]して、今[いま]お泊[と]まりのお客様[きゃくさま]への対応[たいおう]が手薄[てうす]になりがちだったんです。電話[でんわ]対応[たいおう]を減[へ]らして、目[め]の前[まえ]のお客様[きゃくさま]をもっと丁寧[ていねい]におもてなししたかったんですよ。",
+          "en": "Previously booking calls piled up in the evening—our busiest time preparing dinner—making our attention to currently staying guests thin. I wanted to cut phone workload so we could care more attentively for the guests right in front of us."
+        }
+      ],
+      "questionJp": "女将[おかみ]がオンライン予約[よやく]を導入[どうにゅう]した一番[いちばん]の狙[ねら]いは何[なん]ですか。",
+      "questionEn": "What was the proprietress's primary goal in adding online booking?",
+      "choices": [
+        "海外[かいがい]からの観光客[かんこうきゃく]だけを急増[きゅうぞう]させること",
+        "フロントの従業員[じゅうぎょういん]を半分[はんぶん]に減[へ]らすこと",
+        "電話[でんわ]対応[たいおう]を減[へ]らし、宿泊中[しゅくはくちゅう]の客[きゃく]への接客[せっきゃく]を充実[じゅうじつ]させること",
+        "宿泊[しゅくはく]料金[りょうきん]を季節[きせつ]ごとに自動[じどう]で値上[ねあ]げすること"
+      ],
+      "choicesEn": [
+        "To rapidly increase only overseas tourists",
+        "To cut front-desk staff in half",
+        "To reduce phone calls so staff can better serve currently staying guests",
+        "To automatically raise room rates by season"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Watch the classic N2 pivot (\"一番の理由は別にあるんです\"). Her core aim was reducing evening phone load so staff could provide richer hospitality to guests currently staying.",
+      "keyPhrases": [
+        {
+          "jp": "手薄[てうす]になる",
+          "reading": "てうすになる",
+          "en": "to become understaffed / thin in coverage"
+        },
+        {
+          "jp": "おもてなし",
+          "reading": "おもてなし",
+          "en": "attentive hospitality"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-8",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "「早朝[そうちょう]読書[どくしょ]会[かい]」の広[ひろ]がり",
+      "titleEn": "Trend Report: Early-Morning Book Clubs",
+      "situationEn": "A radio host describes why morning book clubs before work are gaining popularity.",
+      "introJp": "ラジオで司会者[しかいしゃ]が話[はな]しています。早朝[そうちょう]読書[どくしょ]会[かい]が社会人[しゃかいじん]に支持[しじ]されている理由[りゆう]として、司会者[しかいしゃ]は何[なに]を強調[きょうちょう]していますか。",
+      "introEn": "A radio host is speaking. What does the host emphasize as the reason early-morning book clubs appeal to working adults?",
+      "lines": [
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "出勤[しゅっきん]前[まえ]の朝[あさ]七時[しちじ]からカフェに集[あつ]まり、読[よ]んだ本[ほん]を紹介[しょうかい]し合[あ]う「朝活[あさかつ]読書[どくしょ]会[かい]」が都市部[としぶ]で人気[にんき]です。",
+          "en": "Morning book clubs where people gather at a café at 7:00 AM before work to share books they've read are popular in cities."
+        },
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "知識[ちしき]を効率[こうりつ]よく得[え]られることもありますが、参加者[さんかしゃ]の声[こえ]で最[もっと]も多[おお]いのは「異業種[いぎょうしゅ]の人[ひと]の視点[してん]に触[ふ]れられる刺激[しげき]」です。",
+          "en": "Gaining knowledge efficiently is one part, but the most common comment from participants is the stimulation of encountering perspectives from people in different industries."
+        },
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "同[おな]じ一冊[いっさつ]を読[よ]んでも、立場[たちば]が違[ちが]えば感[かん]じる箇所[かしょ]は全[まった]く異[こと]なります。普段[ふだん]の職場[しょくば]では得[え]られない発想[はっそう]に出会[であ]えることが、早起[はやお]きしてでも通[かよ]いたくなる魅力[みりょく]のようです。",
+          "en": "Even reading the same book, people in different roles notice totally different passages. Encountering ideas unavailable in one's usual workplace seems to be the appeal that makes them wake up early to attend."
+        }
+      ],
+      "questionJp": "司会者[しかいしゃ]が最[もっと]も強調[きょうちょう]している魅力[みりょく]はどれですか。",
+      "questionEn": "What appeal does the host emphasize most?",
+      "choices": [
+        "朝[あさ]のカフェはコーヒー代[だい]が割引[わりびき]になること",
+        "異業種[いぎょうしゅ]の人[ひと]と意見[いけん]を交[か]わし、普段[ふだん]得[え]られない視点[してん]に触[ふ]れられること",
+        "一か月[いっかげつ]に十冊[じゅっさつ]以上[いじょう]の本[ほん]を速読[そくどく]できるようになること",
+        "上司[じょうし]や同僚[どうりょう]との人間[にんげん]関係[かんけい]が良[よ]くなること"
+      ],
+      "choicesEn": [
+        "Morning café coffee discounts",
+        "Exchanging views with people from other industries and gaining fresh perspectives",
+        "Learning to speed-read 10+ books a month",
+        "Improving relationships with one's own boss and coworkers"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The host explicitly states \"参加者の声で最も多いのは「異業種の人の視点に触れられる刺激」\" (gaining stimulating perspectives from different industries).",
+      "keyPhrases": [
+        {
+          "jp": "異業種[いぎょうしゅ]",
+          "reading": "いぎょうしゅ",
+          "en": "different industry / outside one's field"
+        },
+        {
+          "jp": "〜てでも",
+          "reading": "てでも",
+          "en": "even if it means doing ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n2-9",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "即時応答[そくじおうとう]（書類[しょるい]の不備[ふび]を謝罪[しゃざい]）",
+      "titleEn": "Quick Response: Handling a Missing Attachment at Work",
+      "situationEn": "A colleague alerts you that you forgot to attach a file to your email.",
+      "introJp": "文[ぶん]を聞[き]いて、一[いち]から三[さん]の中[なか]から、いちばんいいものを一[ひと]つ選[えら]んでください。",
+      "introEn": "Listen to the utterance and choose the single best response from 1 to 3.",
+      "lines": [
+        {
+          "speaker": "Colleague",
+          "role": "male",
+          "jp": "さっきのメール、資料[しりょう]が添付[てんぷ]されていないみたいなんだけど。",
+          "en": "It looks like the file wasn't attached to the email you just sent."
+        }
+      ],
+      "questionJp": "いちばんいい返事[へんじ]はどれですか。",
+      "questionEn": "Which is the best reply?",
+      "choices": [
+        "あ、すみません、うっかりしていました。すぐ送[おく]り直[なお]します。",
+        "はい、添付[てんぷ]しておきましたから見[み]てください。",
+        "おかしいですね、送[おく]らなくても大丈夫[だいじょうぶ]ですよ。"
+      ],
+      "choicesEn": [
+        "Oh, sorry, I slipped up! I'll resend it right away.",
+        "Yes, I attached it so please look.",
+        "How strange, you don't need to send it."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"うっかりしていました\" (I carelessly forgot / slipped up) followed by \"すぐ送り直します\" (I'll resend it right away) is the natural, accountable workplace reply.",
+      "keyPhrases": [
+        {
+          "jp": "うっかりしていた",
+          "reading": "うっかりしていた",
+          "en": "I carelessly forgot / slipped up"
+        },
+        {
+          "jp": "送[おく]り直[なお]す",
+          "reading": "おくりなおす",
+          "en": "to resend"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-10",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "語学[ごがく]研修[けんしゅう]コースの選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Picking an Overseas Training Course",
+      "situationEn": "An HR officer explains four English-training programs to an employee who then picks one.",
+      "introJp": "会社[かいしゃ]で人事部[じんじぶ]の人[ひと]と女[おんな]の社員[しゃいん]が話[はな]しています。女[おんな]の社員[しゃいん]はどのコースを選[えら]びましたか。",
+      "introEn": "An HR representative and a female employee are speaking. Which course did the employee choose?",
+      "lines": [
+        {
+          "speaker": "HR",
+          "role": "male",
+          "jp": "今年度[こんねんど]の社内[しゃない]英語[えいご]研修[けんしゅう]は四[よっ]つのコースがあります。まずAコースは毎週[まいしゅう]月曜[げつよう]夜[よる]の対面[たいめん]授業[じゅぎょう]で、ビジネスメールの書き方[かた]が中心[ちゅうしん]です。",
+          "en": "This year's corporate English training has four courses. First, Course A is Monday evening in-person classes focusing on writing business emails."
+        },
+        {
+          "speaker": "HR",
+          "role": "male",
+          "jp": "Bコースはオンラインの個人[こじん]レッスンで、会議[かいぎ]での発言[はつげん]やプレゼンを徹底的[てっていてき]に練習[れんしゅう]します。時間[じかん]も自由[じゆう]に予約[よやく]できます。",
+          "en": "Course B is online private lessons thoroughly practicing speaking in meetings and presentations. You can also book times freely."
+        },
+        {
+          "speaker": "HR",
+          "role": "male",
+          "jp": "Cコースは土曜[どよう]の午前中[ごぜんちゅう]に開[ひら]くグループ討論[とうろん]クラスで、実践的[じっせんてき]な会話[かいわ]力[りょく]を鍛[きた]えます。Dコースは動画[どうが]教材[きょうざい]で資格[しかく]試験[しけん]のスコアを伸[の]ばす自習[じしゅう]コースです。",
+          "en": "Course C is a Saturday morning group discussion class building practical conversation skills. Course D is a self-study video course to raise test scores."
+        },
+        {
+          "speaker": "Employee",
+          "role": "female",
+          "jp": "私[わたし]、来期[らいき]から海外[かいがい]拠点[きょてん]とのオンライン会議[かいぎ]が増[ふ]えるので、スピーキング力[りょく]を鍛[きた]えたいんです。ただ、土曜[どよう]は子[こ]どもの習[なら]い事[ごと]の送迎[そうげい]があって難[むずか]しいんですよね。",
+          "en": "Starting next term I'll have more online meetings with overseas offices, so I want to train my speaking. However, Saturdays are tough because I drive my child to lessons."
+        },
+        {
+          "speaker": "HR",
+          "role": "male",
+          "jp": "それなら、平日[へいじつ]でもスキマ時間[じかん]に予約[よやく]できて、会議[かいぎ]対応[たいおう]に特化[とっか]したコースがぴったりですね。",
+          "en": "In that case, the course you can book during spare weekday slots that specializes in handling meetings fits you perfectly."
+        },
+        {
+          "speaker": "Employee",
+          "role": "female",
+          "jp": "はい、それに申[もう]し込[こ]みます！",
+          "en": "Yes, I'll sign up for that one!"
+        }
+      ],
+      "questionJp": "女[おんな]の社員[しゃいん]はどのコースを選[えら]びましたか。",
+      "questionEn": "Which course did the female employee choose?",
+      "choices": [
+        "Aコース（ビジネスメール対面[たいめん]）",
+        "Bコース（オンライン個人[こじん]・会議[かいぎ]プレゼン）",
+        "Cコース（土曜[どよう]グループ討論[とうろん]）",
+        "Dコース（動画[どうが]資格[しかく]自習[じしゅう]）"
+      ],
+      "choicesEn": [
+        "Course A (In-person business email)",
+        "Course B (Online private lessons for meetings & presentations)",
+        "Course C (Saturday group discussion)",
+        "Course D (Self-study video for test scores)"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "She needs speaking skills for meetings (eliminating A email writing and D test self-study) and cannot attend Saturdays (eliminating C). Only Course B matches both criteria.",
+      "keyPhrases": [
+        {
+          "jp": "特化[とっか]した",
+          "reading": "とっかした",
+          "en": "specialized in"
+        },
+        {
+          "jp": "スキマ時間[じかん]",
+          "reading": "すきまじかん",
+          "en": "spare gaps of time"
+        }
+      ]
+    }
+  ]
+}

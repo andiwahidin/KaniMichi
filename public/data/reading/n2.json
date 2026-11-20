@@ -1,0 +1,679 @@
+{
+  "level": 2,
+  "pack": "n2",
+  "items": [
+    {
+      "id": "rd-n2-01",
+      "jlpt": 2,
+      "order": 1,
+      "passageType": "essay",
+      "titleJp": "「わかりやすさ」の落[お]とし穴[あな]",
+      "titleEn": "The Pitfall of Over-Simplification",
+      "recommendedMinutes": 5,
+      "contextEn": "N2-style essay examining media summaries and critical thinking.",
+      "paragraphs": [
+        "情報[じょうほう]があふれる現代[げんだい]において、複雑[ふくざつ]なニュースを数行[すうぎょう]に要約[ようやく]してくれるサービスや動画[どうが]が人気[にんき]を集[あつ]めている。限[かぎ]られた時間[じかん]で世[よ]の中[なか]の動[うご]きをつかむ上[うえ]で、こうした「わかりやすさ」が役立[やくだ]つ場面[ばめん]は確[たし]かに多[おお]い。",
+        "一方で、本来[ほんらい]さまざまな背景[はいけい]や対立[たいりつ]する意見[いけん]を含[ふく]む問題[もんだい]を、無理[むり]やり「善[ぜん]か悪[あく]か」の単純[たんじゅん]な図式[ずしき]に押[お]し込[こ]めてしまう危険[きけん]性[せい]も見逃[みのが]せない。要約[ようやく]する側[がわ]の視点[してん]によって、重要[じゅうよう]な前提[ぜんてい]や例外[れいがい]が削[けず]り落[お]とされてしまうからである。",
+        "だからこそ、受[う]け手[て]である私[わたし]たちは、手軽[てがる]なまとめだけで「理解[りかい]した気[き]」にならず、ときに手間[てま]のかかる一次[いちじ]資料[しりょう]や異[こと]なる立場[たちば]の意見[いけん]にも目[め]を通[とお]す姿勢[しせい]が求[もと]められている。"
+      ],
+      "translationEn": [
+        "In today's information-saturated era, services and videos that summarize complex news into a few lines are gaining popularity. There are certainly many situations where such \"ease of understanding\" helps grasp current events in limited time.",
+        "On the other hand, we cannot overlook the danger of forcing issues that inherently contain diverse backgrounds and opposing views into a simplistic \"good vs. evil\" framework. Depending on the summarizer's viewpoint, crucial premises and exceptions get stripped away.",
+        "Precisely for this reason, we as recipients are called upon not to feel \"as if we've understood\" from convenient summaries alone, but to maintain the stance of occasionally reviewing primary sources and differing perspectives even when it takes effort."
+      ],
+      "keyVocab": [
+        {
+          "word": "落とし穴",
+          "reading": "おとしあな",
+          "en": "pitfall; trap"
+        },
+        {
+          "word": "単純な図式",
+          "reading": "たんじゅんなずしき",
+          "en": "oversimplified framework"
+        },
+        {
+          "word": "一次資料",
+          "reading": "いちじしりょう",
+          "en": "primary sources"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-01-q1",
+          "promptJp": "筆者[ひっしゃ]は「わかりやすさ」のどんな点[てん]を危険[きけん]視[し]しているか。",
+          "promptEn": "What aspect of \"ease of understanding\" does the author view as dangerous?",
+          "choices": [
+            "動画[どうが]の視聴[しちょう]時間[じかん]が長[なが]くなりすぎること。",
+            "複雑[ふくざつ]な問題[もんだい]の重要[じゅうよう]な前提[ぜんてい]や例外[れいがい]が省[はぶ]かれ、単純[たんじゅん]化[か]されてしまうこと。",
+            "専門家[せんもんか]しか要約[ようやく]を作[つく]れなくなっていること。",
+            "紙[かみ]の新聞[しんぶん]の価格[かかく]が上[あ]がっていること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that summarizing strips away key premises and exceptions, forcing complex issues into simplistic good-vs-evil frames."
+        },
+        {
+          "id": "rd-n2-01-q2",
+          "promptJp": "情報[じょうほう]の受[う]け手[て]に求[もと]められている姿勢[しせい]として、筆者[ひっしゃ]が述[の]べていることは何[なに]か。",
+          "promptEn": "What attitude does the author say is required of information consumers?",
+          "choices": [
+            "要約[ようやく]サービスを一切[いっさい]利用[りよう]しないこと。",
+            "自分[じぶん]と同[おな]じ意見[いけん]の記事[きじ]だけを丁[てい]寧[ねい]に読[よ]むこと。",
+            "まとめだけで満足[まんぞく]せず、一次[いちじ]資料[しりょう]や異[こと]なる視点[してん]にも当[あ]たること。",
+            "毎日[まいにち]すべてのニュースを暗記[あんき]すること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 directly calls on readers not to settle for summaries alone, but to check primary sources and differing viewpoints."
+        },
+        {
+          "id": "rd-n2-01-q3",
+          "promptJp": "筆者[ひっしゃ]の要約[ようやく]サービスに対[たい]する評価[ひょうか]として最[もっと]も適切[てきせつ]なのはどれか。",
+          "promptEn": "Which best describes the author's overall assessment of summary services?",
+          "choices": [
+            "全面的[ぜんめんてき]に否定[ひてい]しており、廃止[はいし]すべきだと考[かんが]えている。",
+            "一定[いってい]の役立[やくだ]ちは認[みと]めつつも、それだけに頼[たよ]る危[あや]うさを指摘[してき]している。",
+            "これからは要約[ようやく]だけで十分[じゅうぶん]だと主張[しゅちょう]している。",
+            "高齢者[こうれいしゃ]にだけ向[む]いていると考[かんが]えている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 acknowledges their practical utility (\"役立つ場面は確かに多い\") while Paragraphs 2–3 caution against relying solely on them."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-02",
+      "jlpt": 2,
+      "order": 2,
+      "passageType": "comparison",
+      "titleJp": "キャッシュレス決済[けっさい]をめぐる二[ふた]つの意見[いけん]",
+      "titleEn": "Comparing Two Views on Cashless Payments",
+      "recommendedMinutes": 5,
+      "contextEn": "JLPT N2 Integrated Reading (Tōgō Rikai) — comparing Text A and Text B.",
+      "labelA": "文章[ぶんしょう] A",
+      "labelB": "文章[ぶんしょう] B",
+      "paragraphs": [
+        "キャッシュレス決済[けっさい]の普及[ふきゅう]は、買[か]い物[もの]の効率[こうりつ]を飛躍[ひやく]的[てき]に高[たか]めた。小銭[こぜに]を数[かぞ]える手間[てま]が省[はぶ]けるばかりか、利用[りよう]履歴[りれき]が自動でアプリに残[のこ]るため、家計[かけい]管理[かんり]もしやすい。店舗[てんぽ]側[がわ]にとっても現金[げんきん]管理[かんり]の負担[ふたん]が減[へ]る利点[りてん]は大[おお]きい。"
+      ],
+      "paragraphsB": [
+        "確[たし]かにスマホ決済[けっさい]は便利[べんり]だが、現金[げんきん]を手放[てばな]す不安[ふあん]も残[のこ]る。通信[つうしん]障害[しょうがい]や災害[さいがい]による停電[ていでん]が起[お]きれば、一時[いちじ]的[てき]に支払[しはら]いができなくなる恐[おそ]れがあるからだ。また、目[め]に見[み]えるお金[かね]が減[へ]らないため、つい使[つか]いすぎてしまうという声[こえ]も少[すく]なくない。"
+      ],
+      "translationEn": [
+        "[Text A] The spread of cashless payments has dramatically increased shopping efficiency. Not only does it save the trouble of counting coins, but transaction logs are automatically recorded in apps, making household budgeting easier too. For stores as well, the benefit of reducing cash-handling burdens is substantial."
+      ],
+      "translationBEn": [
+        "[Text B] Smartphone payments are certainly convenient, yet unease remains about giving up cash. If communication outages or disaster-induced blackouts occur, there is a risk payments may temporarily become impossible. Moreover, not a few people say they end up overspending because they do not see physical money decreasing."
+      ],
+      "keyVocab": [
+        {
+          "word": "飛躍的に",
+          "reading": "ひやくてきに",
+          "en": "dramatically; by leaps and bounds"
+        },
+        {
+          "word": "利用履歴",
+          "reading": "りようりれき",
+          "en": "usage / transaction history"
+        },
+        {
+          "word": "通信障害",
+          "reading": "つうしんしょうがい",
+          "en": "network / communication outage"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-02-q1",
+          "promptJp": "文章[ぶんしょう]Aと文章[ぶんしょう]Bの両方[りょうほう]で触[ふ]れられている話題[わだい]はどれか。",
+          "promptEn": "Which topic is touched upon in BOTH Text A and Text B?",
+          "choices": [
+            "災害[さいがい]時[じ]の停電[ていでん]対策[たいさく]",
+            "店舗[てんぽ]側[がわ]の現金[げんきん]管理[かんり]コスト",
+            "キャッシュレス決済[けっさい]の利便[りべん]性[せい]と支出[ししゅつ]管理[かんり]への影響[えいきょう]",
+            "高齢者[こうれいしゃ]への操作[そうさ]指導[しどう]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Both acknowledge convenience (効率 / 便利) and address spending control from opposite angles (A: easier budgeting via logs; B: risk of overspending)."
+        },
+        {
+          "id": "rd-n2-02-q2",
+          "promptJp": "お金[かね]の管理[かんり]について、AとBの立場[たちば]の違[ちが]いとして正[ただ]しいのはどれか。",
+          "promptEn": "How do Text A and Text B differ regarding money management?",
+          "choices": [
+            "AもBも、キャッシュレスのほうが節約[せつやく]できると述[の]べている。",
+            "Aは履歴[りれき]が残[のこ]り管理[かんり]しやすいと評価[ひょうか]し、Bは使[つか]いすぎる恐[おそ]れを指摘[してき]している。",
+            "Aは現金[げんきん]派[は]を批判[ひはん]し、Bは店舗[てんぽ]の手数料[てすうりょう]を問題[もんだい]視[し]している。",
+            "Aは災害[さいがい]に強[つよ]いと言い、Bはアプリが使いにくいと言っている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Text A praises automatic logs for household budgeting, whereas Text B warns that invisible spending leads people to overspend."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-03",
+      "jlpt": 2,
+      "order": 3,
+      "passageType": "notice",
+      "titleJp": "社内[しゃない]研修[けんしゅう]補助金[ほじょきん]制度[せいど]のご案内[あんない]",
+      "titleEn": "Corporate Training Subsidy Policy",
+      "recommendedMinutes": 5,
+      "contextEn": "Internal HR circular on employee skill-development subsidies.",
+      "paragraphs": [
+        "社員[しゃいん]のスキルアップを支援[しえん]するため、外部[がいぶ]講座[こうざ]および資格[しかく]試験[しけん]の受験[じゅけん]料[りょう]を補助[ほじょ]する制度[せいど]を改定[かいてい]しました。",
+        "【対象[たいしょう]】入社[にゅうしゃ]一年[いちねん]以上[いじょう]の正社員[せいしゃいん]・契約[けいやく]社員[しゃいん]\n【補助[ほじょ]額[がく]】①業務[ぎょうむ]関連[かんれん]の外部[がいぶ]講座[こうざ]：受講[じゅこう]料[りょう]の50%（年間[ねんかん]上限[じょうげん]5万円[まんえん]） ②会社[かいしゃ]指定[してい]の資格[しかく]試験[しけん]：合格[ごうかく]時[じ]に限[かぎ]り受験[じゅけん]料[りょう]の全額[ぜんがく]を支給[しきゅう]。",
+        "【手続[てつづ]き】外部[がいぶ]講座[こうざ]は受講[じゅこう]開始[かいし]の二週間[にしゅうかん]前[まえ]までに上司[じょうし]の承認[しょうにん]を得[え]て人事部[じんじぶ]へ申請[しんせい]してください。事後[じご]申請[しんせい]は原則[げんそく]認められません。資格[しかく]試験[しけん]は合格[ごうかく]通知[つうち]書[しょ]と領収書[りょうしゅうしょ]を添[そ]えて、結果[けっか]発表[はっぴょう]から一か月[いっかげつ]以内[いない]に提出[ていしゅつ]してください。"
+      ],
+      "translationEn": [
+        "To support employee skill development, we have revised our subsidy policy for external courses and qualification exam fees.",
+        "[Eligibility] Full-time and contract employees with 1+ year of service. [Subsidy] (1) Work-related external courses: 50% of tuition (annual cap 50,000 yen). (2) Company-designated certification exams: 100% of exam fee reimbursed ONLY upon passing.",
+        "[Procedures] For external courses, obtain your manager's approval and apply to HR at least 2 weeks before the course starts; retroactive applications are generally not accepted. For certification exams, submit the passing certificate and receipt within 1 month of result announcement."
+      ],
+      "keyVocab": [
+        {
+          "word": "上限",
+          "reading": "じょうげん",
+          "en": "upper limit; cap"
+        },
+        {
+          "word": "承認を得る",
+          "reading": "しょうにんをえる",
+          "en": "to obtain approval"
+        },
+        {
+          "word": "事後申請",
+          "reading": "じごしんせい",
+          "en": "retroactive / after-the-fact application"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-03-q1",
+          "promptJp": "入社[にゅうしゃ]三年目[さんねんめ]の社員[しゃいん]が、受講[じゅこう]料[りょう]12万円[まんえん]の業務[ぎょうむ]関連[かんれん]講座[こうざ]を受[う]ける場合[ばあい]、補助金[ほじょきん]はいくら受[う]け取[と]れるか（今年度[こんねんど]初[はつ]利用[りよう]）。",
+          "promptEn": "If a 3rd-year employee takes a 120,000-yen work-related course (first use this fiscal year), how much subsidy can they receive?",
+          "choices": [
+            "3万円[まんえん]",
+            "5万円[まんえん]",
+            "6万円[まんえん]",
+            "12万円[まんえん]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "50% of 120,000 yen is 60,000 yen, but the annual cap is 50,000 yen (年間上限5万円) — classic JLPT trap!"
+        },
+        {
+          "id": "rd-n2-03-q2",
+          "promptJp": "この制度[せいど]について、正[ただ]しい記述[きじゅつ]はどれか。",
+          "promptEn": "Which statement accurately reflects this policy?",
+          "choices": [
+            "会社[かいしゃ]指定[してい]の資格[しかく]試験[しけん]は、不合格[ふごうかく]でも半額[はんがく]支給[しきゅう]される。",
+            "外部[がいぶ]講座[こうざ]は修了[しゅうりょう]後[ご]に領収書[りょうしゅうしょ]を出[だ]せば申請[しんせい]できる。",
+            "契約[けいやく]社員[しゃいん]でも、入社[にゅうしゃ]一年[いちねん]以上[いじょう]であれば対象[たいしょう]になる。",
+            "資格[しかく]試験[しけん]の申請[しんせい]は、試験[しけん]の二週間[にしゅうかん]前[まえ]までに行[おこな]う。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Contract employees with 1+ year of service are explicitly eligible. (1) is false (only upon passing), (2) is false (no retroactive applications), (4) mixes up course vs exam deadlines."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-04",
+      "jlpt": 2,
+      "order": 4,
+      "passageType": "essay",
+      "titleJp": "「聴[き]く力[ちから]」と沈黙[ちんもく]の意味[いみ]",
+      "titleEn": "Listening Skills and the Meaning of Silence",
+      "recommendedMinutes": 4,
+      "contextEn": "Essay on interpersonal communication and silence.",
+      "paragraphs": [
+        "会話[かいわ]が途切[とぎ]れて沈黙[ちんもく]が訪[おとず]れると、気[き]まずさを感[かん]じて慌[あわ]てて何[なに]か話題[わだい]を振[ふ]ろうとする人[ひと]は多[おお]い。しかし、本当に「聞き上手[じょうず]」な人[ひと]は、この沈黙[ちんもく]を恐[おそ]れないという。",
+        "悩[なや]みを打[う]ち明[あ]けている相手[あいて]が言葉[ことば]に詰[つ]まったとき、その数秒[すうびょう]の間[ま]は、相手[あいて]が自分[じぶん]の気持[きも]ちを整理[せいり]している大切[たいせつ]な時間[じかん]である場合[ばあい]が多[おお]い。そこへ聞き手[ききて]が先回[さきまわ]りしてアドバイスを挟[はさ]むと、せっかく浮[う]かびかけていた本音[ほんね]を遮[さえぎ]ってしまうことになりかねない。",
+        "相手[あいて]の沈黙[ちんもく]を「気[き]まずい空白[くうはく]」ではなく「思考[しこう]の余白[よはく]」として受[う]け止[と]め、黙[だま]って待[ま]つ勇気[ゆうき]こそが、信頼[しんらい]関係[かんけい]を深[ふか]める鍵[かぎ]となる。"
+      ],
+      "translationEn": [
+        "When a conversation pauses and silence falls, many people feel awkward and rush to bring up some topic. Yet truly good listeners are said not to fear this silence.",
+        "When someone confiding a worry hesitates for words, those few seconds are often crucial time for them to organize their own feelings. If the listener jumps ahead and inserts advice, they risk cutting off genuine feelings that were just about to surface.",
+        "Accepting the other person's silence not as an \"awkward void\" but as \"space for thinking,\" and having the courage to wait quietly, is the very key to deepening trust."
+      ],
+      "keyVocab": [
+        {
+          "word": "途切れる",
+          "reading": "とぎれる",
+          "en": "to pause; break off"
+        },
+        {
+          "word": "先回りする",
+          "reading": "さきまわりする",
+          "en": "to jump ahead; anticipate prematurely"
+        },
+        {
+          "word": "遮る",
+          "reading": "さえぎる",
+          "en": "to interrupt; block"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-04-q1",
+          "promptJp": "相手[あいて]が言葉[ことば]に詰[つ]まったとき、すぐアドバイスをするとどうなりかねないか。",
+          "promptEn": "What risk arises if you immediately offer advice when someone pauses?",
+          "choices": [
+            "相手[あいて]が問題[もんだい]をすぐ解決[かいけつ]できる。",
+            "相手[あいて]が言いかけた本音[ほんね]を遮[さえぎ]ってしまう恐[おそ]れがある。",
+            "会話[かいわ]が長引[ながび]いて時間[じかん]が足[た]りなくなる。",
+            "相手[あいて]が自分[じぶん]で考[かんが]えすぎるようになる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that jumping in with advice risks cutting off the speaker's emerging true feelings (本音を遮ってしまうことになりかねない)."
+        },
+        {
+          "id": "rd-n2-04-q2",
+          "promptJp": "筆者[ひっしゃ]が「思考[しこう]の余白[よはく]」と呼[よ]んでいるものは何[なに]か。",
+          "promptEn": "What does the author call \"space for thinking\" (思考の余白)?",
+          "choices": [
+            "会話[かいわ]の途中[とちゅう]で相手[あいて]が気持[きも]ちを整理[せいり]するための沈黙[ちんもく]の時間[じかん]",
+            "相談[そうだん]の前[まえ]にメモを書[か]く時間[じかん]",
+            "アドバイスを考[かんが]えるための休憩[きゅうけい]",
+            "一人[ひとり]で読書[どくしょ]をする休日[きゅうじつ]"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Paragraph 3 contrasts \"awkward void\" with \"space for thinking\" to redefine the speaker's silent pauses."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-05",
+      "jlpt": 2,
+      "order": 5,
+      "passageType": "short",
+      "titleJp": "地方[ちほう]の古民家[こみんか]再生[さいせい]",
+      "titleEn": "Revitalizing Rural Traditional Houses",
+      "recommendedMinutes": 4,
+      "contextEn": "News feature on rural revitalization through renovated old houses.",
+      "paragraphs": [
+        "全国[ぜんこく]の地方[ちほう]都市[とし]で空[あ]き家[や]の増加[ぞうか]が深刻[しんこく]化[か]する中[なか]、築[ちく]百年[ひゃくねん]を超[こ]える古民家[こみんか]を宿泊[しゅくはく]施設[しせつ]やカフェとして再生[さいせい]させる取[と]り組[く]みが注目[ちゅうもく]されている。",
+        "単[たん]に建物[たてもの]を修復[しゅうふく]するだけでなく、地域[ちいき]の食材[しょくざい]を使[つか]った料理[りょうり]や伝統[でんとう]工芸[こうげい]の体験[たいけん]と組[く]み合[あ]わせることで、都会[とかい]の観光客[かんこうきゃく]にとって唯一[ゆいいつ]無二[むに]の魅力[みりょく]が生[う]まれているのだ。",
+        "こうした動[うご]きは、老朽[ろうきゅう]化[か]した家屋[かおく]という「負[ふ]の遺産[いさん]」を、地域[ちいき]経済[けいざい]を支[ささ]える新[あら]たな資源[しげん]へと転換[てんかん]させる好例[こうれい]と言[い]えるだろう。"
+      ],
+      "translationEn": [
+        "Amid worsening increases in vacant houses across regional cities nationwide, initiatives to revitalize traditional houses over a century old into lodging facilities and cafes are drawing attention.",
+        "By not merely restoring the buildings, but combining them with cuisine using local ingredients and traditional craft workshops, a one-of-a-kind appeal for urban tourists is being created.",
+        "Such efforts can be called a prime example of transforming aging structures—once seen as a \"negative legacy\"—into new resources supporting local economies."
+      ],
+      "keyVocab": [
+        {
+          "word": "古民家",
+          "reading": "こみんか",
+          "en": "traditional old Japanese house"
+        },
+        {
+          "word": "唯一無二",
+          "reading": "ゆいいつむに",
+          "en": "one-of-a-kind; unique"
+        },
+        {
+          "word": "負の遺産",
+          "reading": "ふのいさん",
+          "en": "negative legacy; liability"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-05-q1",
+          "promptJp": "古民家[こみんか]再生[さいせい]が観光客[かんこうきゃく]をひきつけている理由[りゆう]は何か。",
+          "promptEn": "Why is the revitalization of old houses attracting tourists?",
+          "choices": [
+            "都会[とかい]のホテルより宿泊[しゅくはく]費[ひ]が極端[きょくたん]に安[やす]いから。",
+            "建物[たてもの]の修復[しゅうふく]に加[くわ]え、地元[じもと]の食[しょく]や伝統[でんとう]体験[たいけん]を組[く]み合[あ]わせているから。",
+            "古[ふる]い家[いえ]をすべて取[と]り壊[こわ]して最新[さいしん]のビルを建[た]てたから。",
+            "交通[こうつう]費[ひ]が無料[むりょう]になるキャンペーンを行[おこな]っているから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains the unique appeal comes from combining architectural restoration with local food and traditional craft experiences."
+        },
+        {
+          "id": "rd-n2-05-q2",
+          "promptJp": "文中[ぶんちゅう]の「負[ふ]の遺産[いさん]」が指[さ]しているものは何[なに]か。",
+          "promptEn": "What does \"negative legacy\" (負の遺産) refer to in the text?",
+          "choices": [
+            "地方[ちほう]の伝統[でんとう]工芸[こうげい]",
+            "老朽[ろうきゅう]化[か]した空[あ]き家[や]・家屋[かおく]",
+            "都会[とかい]からの観光客[かんこうきゃく]",
+            "地域[ちいき]の新鮮[しんせん]な食材[しょくざい]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 explicitly equates it with \"老朽化した家屋\" (aging houses/vacant buildings)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-06",
+      "jlpt": 2,
+      "order": 6,
+      "passageType": "essay",
+      "titleJp": "「失敗[しっぱい]の共有[きょうゆう]」が組織[そしき]を強[つよ]くする",
+      "titleEn": "Why Sharing Failures Strengthens Organizations",
+      "recommendedMinutes": 5,
+      "contextEn": "Business management essay from a leadership journal.",
+      "paragraphs": [
+        "多[おお]くの職場[しょくば]では、成功[せいこう]事例[じれい]ばかりが華々[はなばな]しく発表[はっぴょう]され、失敗[しっぱい]は目立[めだ]たないように処理[しょり]されがちである。しかし、それでは同[おな]じ過[あやま]ちが別[べつ]の部署[ぶしょ]で繰[く]り返[かえ]されてしまう。",
+        "失敗[しっぱい]を隠[かく]さず共有[きょうゆう]するには、単[たん]に「報告[ほうこく]せよ」と指示[しじ]するだけでは不十分[ふじゅうぶん]だ。失敗[しっぱい]した個人[こじん]を責[せ]める風土[ふうど]が残[のこ]っている限[かぎ]り、社員[しゃいん]は自己[じこ]防衛[ぼうえい]のために不都合[ふつごう]な事実[じじつ]を伏[ふ]せようとするからである。",
+        "重要[じゅうよう]なのは、「誰[だれ]が悪[わる]いか」ではなく「どの仕組[しく]みに欠陥[けっかん]があったか」を問[と]う姿勢[しせい]だ。失敗[しっぱい]を次[つぎ]の改善[かいぜん]につなげる財産[ざいさん]として扱[あつか]う文化[ぶんか]こそが、変化[へんか]の激[はげ]しい時代[じだい]を生き抜[いきぬ]く組織[そしき]の土台[どだい]となる。"
+      ],
+      "translationEn": [
+        "In many workplaces, only success stories are celebrated brightly, while failures tend to be quietly swept away. Yet doing so causes the exact same mistakes to be repeated in other departments.",
+        "To share failures openly, merely ordering staff to \"report them\" is insufficient. As long as a culture of blaming the individual who erred remains, employees will conceal inconvenient facts for self-protection.",
+        "What matters is asking not \"who is at fault\" but \"which system had a flaw.\" A culture that treats failure as an asset driving future improvement is precisely what forms the foundation of an organization that survives an era of rapid change."
+      ],
+      "keyVocab": [
+        {
+          "word": "風土[ふうど]",
+          "reading": "ふうど",
+          "en": "climate / organizational culture"
+        },
+        {
+          "word": "伏[ふ]せる",
+          "reading": "ふせる",
+          "en": "to conceal / withhold"
+        },
+        {
+          "word": "欠陥[けっかん]",
+          "reading": "けっかん",
+          "en": "defect / flaw"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-06-q1",
+          "promptJp": "筆者[ひっしゃ]によると、社員[しゃいん]が失敗[しっぱい]を報告[ほうこく]しようとしない最大[さいだい]の理由[りゆう]は何[なん]か。",
+          "promptEn": "According to the author, what is the primary reason employees avoid reporting failures?",
+          "choices": [
+            "成功[せいこう]事例[じれい]の発表[はっぴょう]準備[じゅんび]で忙[いそが]しいから",
+            "失敗[しっぱい]した個人[こじん]が責[せ]められる雰囲気[ふんいき]があり、自分[じぶん]を守[まも]ろうとするから",
+            "報告[ほうこく]書[しょ]の書式[しょしき]が複雑[ふくざつ]すぎるから",
+            "他[ほか]の部署[ぶしょ]に仕事[しごと]の内容[ないよう]を知[し]られたくないから"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that as long as a culture of blaming individuals persists, employees hide unfavorable facts out of self-defense (\"自己防衛のために不都合な事実を伏せようとする\")."
+        },
+        {
+          "id": "rd-n2-06-q2",
+          "promptJp": "筆者[ひっしゃ]が組織[そしき]に求[もと]めている姿勢[しせい]はどれか。",
+          "promptEn": "What attitude does the author call for in organizations?",
+          "choices": [
+            "責任者[せきにんしゃ]を厳[きび]しく処分[しょぶん]して再発[さいはつ]を防[ふせ]ぐ",
+            "失敗[しっぱい]の記録[きろく]は社外[しゃがい]に漏[も]れないよう即座[そくざ]に削除[さくじょ]する",
+            "個人[こじん]ではなく仕組[しく]みの課題[かだい]を分析[ぶんせき]し、失敗[しっぱい]を改善[かいぜん]の糧[かて]にする",
+            "挑戦[ちょうせん]を減[へ]らして失敗[しっぱい]そのものをゼロにする"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 emphasizes questioning flawed systems rather than blaming individuals and treating failure as an asset for improvement."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-07",
+      "jlpt": 2,
+      "order": 7,
+      "passageType": "email",
+      "titleJp": "展示会[てんじかい]ブース設営[せつえい]の変更[へんこう]依頼[いらい]",
+      "titleEn": "Request to Modify Trade Show Booth Setup",
+      "recommendedMinutes": 4,
+      "contextEn": "Formal business email regarding a trade exhibition.",
+      "paragraphs": [
+        "イベント企画[きかく]株式会社[かぶしきがいしゃ] 担当[たんとう] 渡辺[わたなべ]様[さま]。お世話[せわ]になっております。北川[きたがわ]電機[でんき]の松本[まつもと]です。",
+        "来月[らいげつ]開催[かいさい]の「次世代[じせだい]テクノロジー展[てん]」における弊社[へいしゃ]ブースの設営[せつえい]につきまして、一点[いってん]ご相談[そうだん]がございます。当初[とうしょ]、大型[おおがた]モニターを一台[いちだい]設置[せっち]する予定[よてい]でしたが、体験[たいけん]コーナーを広[ひろ]げる必要[ひつよう]が生[しょう]じたため、中型[ちゅうがた]モニター二台[にだい]を壁掛[かべか]けに変更[へんこう]したいと考[かんが]えております。",
+        "すでに図面[ずめん]を確定[かくてい]いただいた後[あと]の変更[へんこう]となり大変[たいへん]恐縮[きょうしゅく]ですが、追加[ついか]費用[ひよう]の有無[うむ]と対応[たいおう]の可否[かひ]につきまして、今週[こんしゅう]水曜日[すいようび]までにお知らせいただけますでしょうか。なお、電源[でんげん]容量[ようりょう]は現在[げんざい]の申請[しんせい]範囲[はんい]内[ない]で収[おさ]まる見込[みこ]みです。"
+      ],
+      "translationEn": [
+        "Dear Watanabe-sama, Event Planning Co., Ltd. Thank you for your support. This is Matsumoto from Kitagawa Electronics.",
+        "I have one matter to discuss regarding our booth setup at next month's \"Next-Gen Technology Expo.\" Originally we planned to install one large monitor, but since the need arose to expand the hands-on demo area, we would like to switch to two wall-mounted medium monitors.",
+        "We sincerely apologize for requesting a change after the layout drawings were already finalized, but could you let us know by this Wednesday whether this is feasible and whether there are additional costs? Note that power consumption is expected to remain within our current application limit."
+      ],
+      "keyVocab": [
+        {
+          "word": "設営[せつえい]",
+          "reading": "せつえい",
+          "en": "setup / construction (of a venue/booth)"
+        },
+        {
+          "word": "可否[かひ]",
+          "reading": "かひ",
+          "en": "feasibility / whether yes or no"
+        },
+        {
+          "word": "収[おさ]まる見込[みこ]み",
+          "reading": "おさまるみこみ",
+          "en": "expected to fit within"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-07-q1",
+          "promptJp": "松本[まつもと]さんがモニターの配置[はいち]を変更[へんこう]したい理由[りゆう]は何[なん]か。",
+          "promptEn": "Why does Matsumoto want to change the monitor setup?",
+          "choices": [
+            "大型[おおがた]モニターが故障[こしょう]したから",
+            "電源[でんげん]容量[ようりょう]が足[た]りなくなったから",
+            "体験[たいけん]コーナーのスペースを広[ひろ]げたいから",
+            "設営[せつえい]費用[ひよう]を大幅[おおはば]に削減[さくげん]したいから"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 states \"体験コーナーを広げる必要が生じたため\" (because the need arose to expand the hands-on corner)."
+        },
+        {
+          "id": "rd-n2-07-q2",
+          "promptJp": "このメールの内容[ないよう]と一致[いっち]するものはどれか。",
+          "promptEn": "Which statement matches the contents of this email?",
+          "choices": [
+            "ブースの図面[ずめん]はまだ一度[いちど]も確定[かくてい]していない",
+            "電源[でんげん]容量[ようりょう]の追加[ついか]申請[しんせい]が新[あら]たに必要[ひつよう]になる",
+            "松本[まつもと]さんは今週[こんしゅう]水曜日[すいようび]までに可否[かひ]と追加[ついか]費用[ひよう]の回答[かいとう]を求[もと]めている",
+            "展示会[てんじかい]の開催[かいさい]日程[にってい]が来月[らいげつ]から翌月[よくげつ]に延期[えんき]された"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Matsumoto asks for a reply by Wednesday regarding feasibility and extra costs, notes the drawings were already finalized, and expects power usage to stay within current limits."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-08",
+      "jlpt": 2,
+      "order": 8,
+      "passageType": "short",
+      "titleJp": "「ながらスマホ」と注意力[ちゅういりょく]の錯覚[さっかく]",
+      "titleEn": "Multitasking on Smartphones & the Illusion of Attention",
+      "recommendedMinutes": 4,
+      "contextEn": "Science & psychology brief on cognitive load.",
+      "paragraphs": [
+        "動画[どうが]を見[み]ながら勉強[べんきょう]したり、歩[ある]きながらメッセージを送[おく]ったりする「マルチタスク」を得意[とくい]だと自負[じふ]する人[ひと]は少[すく]なくない。しかし脳科学[のうかがく]の研究[けんきゅう]によれば、人間[にんげん]の脳[のう]は実際[じっさい]には複数[ふくすう]の知的[ちてき]作業[さぎょう]を同時[どうじ]に処理[しょり]しているわけではない。",
+        "起[お]きているのは、ごく短[みじか]い間隔[かんかく]で注意[ちゅうい]を素早[すばや]く切[き]り替[か]える作業[さぎょう]に過[す]ぎない。しかも、この切[き]り替[か]えのたびに脳[のう]は余計[よけい]なエネルギーを消費[しょうひ]するため、一見[いっけん]効率的[こうりつてき]に見[み]えても、結果的[けっかてき]にはミスが増[ふ]え、作業[さぎょう]時間[じかん]も長引[ながび]きやすいのである。"
+      ],
+      "translationEn": [
+        "Quite a few people pride themselves on being good at \"multitasking,\" such as studying while watching videos or texting while walking. Yet according to neuroscience research, the human brain is not actually processing multiple cognitive tasks simultaneously.",
+        "What is happening is nothing more than rapidly switching attention at very short intervals. Moreover, because the brain consumes extra energy with every switch, even though it looks efficient at first glance, mistakes ultimately increase and total task time tends to drag on."
+      ],
+      "keyVocab": [
+        {
+          "word": "自負[じふ]する",
+          "reading": "じふする",
+          "en": "to pride oneself on"
+        },
+        {
+          "word": "〜に過[す]ぎない",
+          "reading": "にすぎない",
+          "en": "is nothing more than ..."
+        },
+        {
+          "word": "長引[ながび]く",
+          "reading": "ながびく",
+          "en": "to drag on / take longer"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-08-q1",
+          "promptJp": "脳科学[のうかがく]の視点[してん]から見[み]た「マルチタスク」の実態[じったい]はどれか。",
+          "promptEn": "What is the reality of \"multitasking\" from a neuroscience perspective?",
+          "choices": [
+            "複数[ふくすう]の知的[ちてき]作業[さぎょう]を完全[かんぜん]に同時[どうじ]進行[しんこう]できる能力[のうりょく]",
+            "注意[ちゅうい]を短時間[たんじかん]で頻繁[ひんぱん]に切[き]り替[か]えている状態[じょうたい]",
+            "訓練[くんれん]すれば脳[のう]のエネルギー消費[しょうひ]を半分[はんぶん]にできる技術[ぎじゅつ]",
+            "若[わか]い世代[せだい]にだけ備[そな]わった新[あたら]しい集中[しゅうちゅう]法[ほう]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The text states the brain is not doing simultaneous processing; it is merely switching attention rapidly (\"ごく短い間隔で注意を素早く切り替える作業に過ぎない\"), burning extra energy and increasing errors."
+        },
+        {
+          "id": "rd-n2-08-q2",
+          "promptJp": "「一見[いっけん]効率的[こうりつてき]に見[み]えても」の後[あと]に続[つづ]く筆者[ひっしゃ]の結論[けつろん]はどれか。",
+          "promptEn": "What conclusion follows \"even though it looks efficient at first glance\"?",
+          "choices": [
+            "動画[どうが]を見[み]ながらのほうが記憶力[きおくりょく]が高[たか]まる",
+            "ミスが増[ふ]えやすく、全体[ぜんたい]の作業[さぎょう]時間[じかん]もかえって長[なが]くなりがちだ",
+            "切[き]り替[か]えを続[つづ]けるほど脳[のう]の疲労[ひろう]が軽[かる]くなる",
+            "短[みじか]いメッセージなら安全[あんぜん]に同時[どうじ]処理[しょり]できる"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence concludes that switching costs extra energy, leading to more mistakes and longer completion times."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-09",
+      "jlpt": 2,
+      "order": 9,
+      "passageType": "notice",
+      "titleJp": "社員[しゃいん]資格[しかく]取得[しゅとく]支援[しえん]制度[せいど]の改定[かいてい]",
+      "titleEn": "Revision of Employee Certification Support Program",
+      "recommendedMinutes": 4,
+      "contextEn": "Internal HR bulletin announcing updated rules for exam fee reimbursement.",
+      "paragraphs": [
+        "来月[らいげつ]一日[ついたち]より、社員[しゃいん]のスキルアップを応援[おうえん]する資格[しかく]取得[しゅとく]支援[しえん]制度[せいど]を一部[いちぶ]改定[かいてい]します。",
+        "これまで受験料[じゅけんりょう]の補助[ほじょ]は「合格[ごうかく]した場合[ばあい]のみ全額[ぜんがく]支給[しきゅう]」としていましたが、改定[かいてい]後[ご]は、事前[じぜん]申請[しんせい]をして受験[じゅけん]すれば、合否[ごうひ]にかかわらず受験料[じゅけんりょう]の半額[はんがく]を補助[ほじょ]し、合格[ごうかく]時[じ]に残[のこ]りの半額[はんがく]と報奨金[ほうしょうきん]を支給[しきゅう]します。",
+        "ただし、同一[どういつ]資格[しかく]に対する補助[ほじょ]は年度内[ねんどない]二回[にかい]までとします。また、教材[きょうざい]費[ひ]については従来[じゅうらい]どおり年間[ねんかん]二万円[にまんえん]を上限[じょうげん]に実費[じっぴ]精算[せいさん]が可能です（領収書[りょうしゅうしょ]必須[ひっす]）。"
+      ],
+      "translationEn": [
+        "Effective the 1st of next month, we are partially revising the Certification Support Program that encourages employee upskilling.",
+        "Previously, exam fee subsidies were \"full reimbursement only upon passing,\" but after the revision, if you apply in advance and sit the exam, half the fee is subsidized regardless of pass/fail, and upon passing the remaining half plus a bonus will be paid.",
+        "However, subsidies for the same certification are capped at twice per fiscal year. As before, study materials can be reimbursed at actual cost up to 20,000 yen per year (receipts required)."
+      ],
+      "keyVocab": [
+        {
+          "word": "合否[ごうひ]にかかわらず",
+          "reading": "ごうひにかかわらず",
+          "en": "regardless of pass or fail"
+        },
+        {
+          "word": "報奨金[ほうしょうきん]",
+          "reading": "ほうしょうきん",
+          "en": "incentive bonus / reward money"
+        },
+        {
+          "word": "実費[じっぴ]精算[せいさん]",
+          "reading": "じっぴせいさん",
+          "en": "reimbursement of actual expenses"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-09-q1",
+          "promptJp": "改定[かいてい]後[ご]、事前[じぜん]申請[しんせい]をして受験[じゅけん]したが不合格[ふごうかく]だった場合[ばあい]、どうなるか。",
+          "promptEn": "After the revision, what happens if an employee applies in advance, takes the exam, and fails?",
+          "choices": [
+            "受験料[じゅけんりょう]は一切[いっさい]補助[ほじょ]されない",
+            "受験料[じゅけんりょう]の半額[はんがく]が補助[ほじょ]される",
+            "受験料[じゅけんりょう]の全額[ぜんがく]と報奨金[ほうしょうきん]が支給[しきゅう]される",
+            "教材[きょうざい]費[ひ]の精算[せいさん]もできなくなる"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Under the revised policy, half the exam fee is subsidized regardless of pass/fail (\"合否にかかわらず受験料の半額を補助し\") provided an advance application was submitted."
+        },
+        {
+          "id": "rd-n2-09-q2",
+          "promptJp": "この改定[かいてい]内容[ないよう]について正[ただ]しいのはどれか。",
+          "promptEn": "Which statement about the revised program is accurate?",
+          "choices": [
+            "同[おな]じ資格[しかく]なら年度内[ねんどない]に何回[なんかい]でも補助[ほじょ]を受[う]けられる",
+            "領収書[りょうしゅうしょ]がなくても教材[きょうざい]費[ひ]を年間[ねんかん]二万円[にまんえん]もらえる",
+            "合格[ごうかく]すれば最終的[さいしゅうてき]に受験料[じゅけんりょう]全額[ぜんがく]に加えて報奨金[ほうしょうきん]も出[で]る",
+            "事前[じぜん]申請[しんせい]を忘[わす]れても合格[ごうかく]すれば半額[はんがく]補助[ほじょ]される"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Passing yields the first half plus the remaining half (= full exam fee) plus a bonus. Same exam is capped at 2 times/year, receipts are mandatory for materials, and advance application is required."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-10",
+      "jlpt": 2,
+      "order": 10,
+      "passageType": "comparison",
+      "titleJp": "飲食店[いんしょくてん]のキャッシュレス専用[せんよう]化[か]（比較[ひかく]）",
+      "titleEn": "Cashless-Only Restaurants (A/B Comparison)",
+      "recommendedMinutes": 5,
+      "contextEn": "Two columnists debate restaurants that stop accepting cash.",
+      "labelA": "文章[ぶんしょう]A",
+      "labelB": "文章[ぶんしょう]B",
+      "paragraphs": [
+        "最近[さいきん]、現金[げんきん]を使[つか]えない完全[かんぜん]キャッシュレスのカフェや飲食店[いんしょくてん]が増[ふ]えている。会計[かいけい]の待[ま]ち時間[じかん]が短縮[たんしゅく]されるうえ、閉店[へいてん]後[ご]のレジ締[じ]め作業[さぎょう]がなくなり、人手[ひとで]不足[ぶそく]に悩[なや]む店舗[てんぽ]にとって大[おお]きな負担[ふたん]軽減[けいげん]になる。",
+        "また、お金[かね]を触[さわ]らずに済[す]むため衛生面[えいせいめん]でも優[すぐ]れており、今後[こんご]ますます広[ひろ]がっていくべき仕組[しく]みだと言[い]える。"
+      ],
+      "paragraphsB": [
+        "完全[かんぜん]キャッシュレス化[か]が店舗[てんぽ]側[がわ]の効率化[こうりつか]につながることは否定[ひてい]しない。だが、カードやスマートフォン決済[けっさい]を持[も]たない高齢者[こうれいしゃ]や子[こ]どもが実質的[じっしつてき]に利用[りよう]できなくなる点[てん]を見過[みす]ごしてはならない。",
+        "さらに、災害[さいがい]時[じ]の停電[ていでん]や通信[つうしん]障害[しょうがい]が起[お]きた際[さい]、現金[げんきん]決済[けっさい]を残[のこ]しておかないと営業[えいぎょう]自体[じたい]が止[と]まってしまうリスクもある。効率[こうりつ]だけで現金[げんきん]を完全[かんぜん]に切[き]り捨[す]てるのには慎重[しんちょう]であるべきだ。"
+      ],
+      "translationEn": [
+        "Recently, fully cashless cafés and restaurants that do not accept cash are increasing. Not only is checkout wait time shortened, but closing-time register counting disappears—a huge relief for shops struggling with labor shortages.",
+        "Moreover, not having to handle money is superior in terms of hygiene, so it is a system that should spread even more going forward."
+      ],
+      "translationBEn": [
+        "I do not deny that going fully cashless leads to operational efficiency for stores. However, we must not overlook the fact that elderly people and children who lack cards or smartphone payments are effectively shut out.",
+        "Furthermore, during power outages or network failures in disasters, failing to retain cash payment risks halting operations altogether. We should be cautious about completely discarding cash for efficiency alone."
+      ],
+      "keyVocab": [
+        {
+          "word": "レジ締[じ]め",
+          "reading": "れじじめ",
+          "en": "closing out / reconciling the cash register"
+        },
+        {
+          "word": "見過[みす]ごす",
+          "reading": "みすごす",
+          "en": "to overlook"
+        },
+        {
+          "word": "切[き]り捨[す]てる",
+          "reading": "きりすてる",
+          "en": "to discard / cut off"
+        }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-10-q1",
+          "promptJp": "AとBの両方[りょうほう]が認[みと]めている点はどれか。",
+          "promptEn": "Which point do both Writer A and Writer B acknowledge?",
+          "choices": [
+            "キャッシュレス化[か]は店舗[てんぽ]側[がわ]の業務[ぎょうむ]効率[こうりつ]を高[たか]める",
+            "災害[さいがい]時[じ]でもスマホ決済[けっさい]のほうが安全[あんぜん]だ",
+            "高齢者[こうれいしゃ]もすでに全員[ぜんいん]キャッシュレスを使[つか]いこなしている",
+            "衛生面[えいせいめん]から現金[げんきん]は法律[ほうりつ]で禁止[きんし]すべきだ"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Writer A praises labor-saving efficiency, and Writer B opens by conceding \"完全キャッシュレス化が店舗側の効率化につながることは否定しない\" (I don't deny it improves store efficiency)."
+        },
+        {
+          "id": "rd-n2-10-q2",
+          "promptJp": "Bが完全[かんぜん]キャッシュレス化[か]に慎重[しんちょう]な理由[りゆう]として挙[あ]げているのはどれか。",
+          "promptEn": "What reasons does Writer B give for being cautious about going completely cashless?",
+          "choices": [
+            "手数料[てすうりょう]が高[たか]くて飲食店[いんしょくてん]の利益[りえき]が減[へ]ること",
+            "決済[けっさい]手段[しゅだん]を持[も]たない人[ひと]の排除[はいじょ]と、停電[ていでん]・通信[つうしん]障害[しょうがい]時[じ]の危険[きけん]",
+            "客[きゃく]の会計[かいけい]時間[じかん]が現金[げんきん]より長[なが]くなること",
+            "従業員[じゅうぎょういん]の衛生[えいせい]意識[いしき]が低下[ていか]すること"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Writer B raises two concerns: excluding elderly/children without digital payment methods, and operational stoppage during power/network outages."
+        }
+      ]
+    }
+  ]
+}
