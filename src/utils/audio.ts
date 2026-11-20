@@ -1,5 +1,190 @@
+import type { CurriculumItem } from '../types/curriculum';
 import type { SpeakerRole } from '../types/listening';
 import { stripFuriganaMarkup } from '../data/reading';
+
+/**
+ * Strip dictionary annotation markers (such as `^` kan'yō-on prefixes) so TTS
+ * and reading comparisons always receive clean hiragana/katakana.
+ */
+export function sanitizeKanaReading(reading: string): string {
+  return reading.replace(/[\^.\-・\s]/g, '').trim();
+}
+
+function normalizeKanaForMatch(text: string): string {
+  return sanitizeKanaReading(text).replace(/[\u30a1-\u30f6]/g, (ch) =>
+    String.fromCharCode(ch.charCodeAt(0) - 0x60)
+  );
+}
+
+const PURE_KANA_RE = /^[\u3040-\u30ffー]+$/;
+const HAS_KANJI_RE = /[\u4e00-\u9faf々ヶ〇]/;
+
+export interface VerifiedItemPronunciation {
+  /** Primary canonical kana reading displayed and tested in the session */
+  testedReading: string;
+  /** All sanitized kana readings accepted by the validator for the tested mode */
+  acceptedReadings: string[];
+  /** Exact verified kana string passed to Web Speech API */
+  ttsText: string;
+  /** Label describing which reading mode is active */
+  readingTypeLabel: "Kosakata" | "On'yomi" | "Kun'yomi";
+  /** True only when ttsText is pure kana and strictly matches acceptedReadings */
+  isVerified: boolean;
+  /** Diagnostic reason if verification flagged an anomaly */
+  mismatchReason: string | null;
+}
+
+export interface TtsVerificationResult {
+  matched: boolean;
+  safeTtsText: string | null;
+  testedReading: string | null;
+  reason: string | null;
+}
+
+/**
+ * Single source of truth for resolving and verifying a CurriculumItem's
+ * pronunciation data (tested reading, accepted readings, and TTS kana mapping).
+ */
+export function resolveVerifiedItemPronunciation(
+  item: CurriculumItem
+): VerifiedItemPronunciation | null {
+  if (item.type === 'radical') return null;
+
+  let rawList: string[] = [];
+  let readingTypeLabel: VerifiedItemPronunciation['readingTypeLabel'] = 'Kosakata';
+
+  if (item.type === 'vocabulary') {
+    rawList = item.readings ?? [];
+    readingTypeLabel = 'Kosakata';
+  } else {
+    const isKun = item.primaryReadingType === 'kunyomi';
+    const primaryList = isKun ? item.kunyomi ?? [] : item.onyomi ?? [];
+    const fallbackList = isKun ? item.onyomi ?? [] : item.kunyomi ?? [];
+    if (primaryList.length > 0) {
+      rawList = primaryList;
+      readingTypeLabel = isKun ? "Kun'yomi" : "On'yomi";
+    } else {
+      rawList = fallbackList;
+      readingTypeLabel = isKun ? "On'yomi" : "Kun'yomi";
+    }
+  }
+
+  const acceptedReadings = Array.from(
+    new Set(rawList.map(sanitizeKanaReading).filter(Boolean))
+  );
+
+  if (acceptedReadings.length === 0) {
+    return null;
+  }
+
+  const testedReading = acceptedReadings[0];
+  const normalizedTested = normalizeKanaForMatch(testedReading);
+  const normalizedAccepted = acceptedReadings.map(normalizeKanaForMatch);
+
+  let mismatchReason: string | null = null;
+  if (HAS_KANJI_RE.test(testedReading)) {
+    mismatchReason = `Tested reading "${testedReading}" contains kanji characters.`;
+  } else if (!PURE_KANA_RE.test(testedReading)) {
+    mismatchReason = `Tested reading "${testedReading}" contains non-kana characters.`;
+  } else if (!normalizedAccepted.includes(normalizedTested)) {
+    mismatchReason = `Tested reading "${testedReading}" is not present in accepted readings.`;
+  }
+
+  return {
+    testedReading,
+    acceptedReadings,
+    ttsText: testedReading,
+    readingTypeLabel,
+    isVerified: mismatchReason === null,
+    mismatchReason,
+  };
+}
+
+/**
+ * Verification step that confirms a candidate TTS string matches the specific
+ * reading being tested for `item` (and contains no ambiguous kanji). If a
+ * mismatch is detected, it automatically resolves to the verified kana reading.
+ */
+export function verifyTtsReadingMatch(
+  candidateTtsText: string | null | undefined,
+  item: CurriculumItem
+): TtsVerificationResult {
+  const verified = resolveVerifiedItemPronunciation(item);
+  if (!verified) {
+    return {
+      matched: false,
+      safeTtsText: null,
+      testedReading: null,
+      reason: `No speakable pronunciation available for ${item.type} "${item.characters}".`,
+    };
+  }
+
+  const cleanedCandidate = candidateTtsText
+    ? sanitizeKanaReading(candidateTtsText)
+    : '';
+  const normCandidate = normalizeKanaForMatch(cleanedCandidate);
+  const normAccepted = verified.acceptedReadings.map(normalizeKanaForMatch);
+
+  const hasKanji = HAS_KANJI_RE.test(cleanedCandidate);
+  const isPureKana = PURE_KANA_RE.test(cleanedCandidate);
+  const inAccepted = normAccepted.includes(normCandidate);
+
+  if (cleanedCandidate && !hasKanji && isPureKana && inAccepted) {
+    return {
+      matched: true,
+      safeTtsText: cleanedCandidate,
+      testedReading: verified.testedReading,
+      reason: null,
+    };
+  }
+
+  const reason = !cleanedCandidate
+    ? `Empty TTS text for "${item.characters}"; fell back to "${verified.ttsText}".`
+    : hasKanji
+    ? `Blocked ambiguous kanji TTS "${cleanedCandidate}" for "${item.characters}"; remapped to "${verified.ttsText}".`
+    : `TTS "${cleanedCandidate}" does not match tested reading "${verified.testedReading}" (${verified.readingTypeLabel}); remapped to "${verified.ttsText}".`;
+
+  return {
+    matched: false,
+    safeTtsText: verified.ttsText,
+    testedReading: verified.testedReading,
+    reason,
+  };
+}
+
+/**
+ * Return the unambiguous Japanese kana text to pronounce via Web Speech API for
+ * a CurriculumItem. Always prefers the verified canonical kana reading (never bare kanji).
+ */
+export function getItemSpeechText(item: CurriculumItem): string | null {
+  return resolveVerifiedItemPronunciation(item)?.ttsText ?? null;
+}
+
+/**
+ * Verify that the TTS payload matches the exact tested reading for `item`,
+ * auto-remediating any mismatch, and speak the verified Japanese kana.
+ */
+export function speakVerifiedItem(
+  item: CurriculumItem,
+  rate = 0.92,
+  role: SpeakerRole = 'narrator',
+  onEnd?: () => void,
+  candidateOverride?: string | null
+): TtsVerificationResult {
+  const verification = verifyTtsReadingMatch(
+    candidateOverride ?? getItemSpeechText(item),
+    item
+  );
+  if (!verification.matched && verification.reason && import.meta.env.DEV) {
+    console.warn(`[KaniMichi TTS Verification] ${verification.reason}`);
+  }
+  if (verification.safeTtsText) {
+    speakJapanese(verification.safeTtsText, rate, role, onEnd);
+  } else {
+    onEnd?.();
+  }
+  return verification;
+}
 
 function pickJapaneseVoices(): SpeechSynthesisVoice[] {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return [];

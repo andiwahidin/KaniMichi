@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Volume2, X, Plus, RotateCcw, ArrowRight, PenTool, Mic } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { speakJapanese } from '../utils/audio';
+import { getItemSpeechText, speakJapanese } from '../utils/audio';
 import { resolvePitchAccent } from '../utils/pitchResolver';
 import { PronunciationCard, type HomophoneRef } from './PronunciationCard';
 import {
@@ -110,14 +110,7 @@ export const ItemDetailModal: React.FC = () => {
   const stageLabel =
     progress.srsStage === null ? 'Terkunci' : SRS_STAGE_NAMES[progress.srsStage];
 
-  const primaryAudioText =
-    item.type === 'vocabulary'
-      ? item.readings?.[0] ?? item.characters
-      : item.type === 'kanji'
-      ? (item.primaryReadingType === 'kunyomi'
-          ? item.kunyomi?.[0]
-          : item.onyomi?.[0]) ?? item.characters
-      : null;
+  const primaryAudioText = getItemSpeechText(item);
 
   const handleAddSynonym = (e: React.FormEvent) => {
     e.preventDefault();
@@ -390,7 +383,7 @@ export const ItemDetailModal: React.FC = () => {
                     </div>
                     <button
                       type="button"
-                      onClick={() => speakJapanese(sent.jp, 0.88)}
+                      onClick={() => speakJapanese(sent.reading || sent.jp, 0.88)}
                       title="Putar kalimat"
                       className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] hover:bg-white dark:hover:bg-slate-700 transition-colors shrink-0 cursor-pointer"
                     >

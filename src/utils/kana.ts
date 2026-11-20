@@ -229,10 +229,18 @@ export function validateMeaningAnswer(
   return { status: 'incorrect' };
 }
 
-/** Validate user's reading answer with WaniKani-style Onyomi/Kunyomi shake detection */
+function normalizeDictionaryReading(r: string): string {
+  return katakanaToHiragana(r.replace(/[\^.\-・\s]/g, '').trim());
+}
+
+/**
+ * Validate user's reading answer with WaniKani-style Onyomi/Kunyomi &
+ * Kanji-vs-Vocabulary non-penalizing shake detection.
+ */
 export function validateReadingAnswer(
   rawInput: string,
-  item: CurriculumItem
+  item: CurriculumItem,
+  relatedKanji?: CurriculumItem | null
 ): ValidationResult {
   const finalized = katakanaToHiragana(romajiToHiragana(rawInput.trim(), true));
 
@@ -249,16 +257,39 @@ export function validateReadingAnswer(
   }
 
   if (item.type === 'vocabulary') {
-    const validReadings = (item.readings ?? []).map(katakanaToHiragana);
+    const validReadings = (item.readings ?? []).map(normalizeDictionaryReading);
     if (validReadings.includes(finalized)) {
       return { status: 'correct', finalizedInput: finalized };
     }
+
+    // If this is a single-kanji vocabulary word and the user typed the Kanji's
+    // On'yomi or another Kun'yomi reading instead of the vocabulary word reading,
+    // shake cleanly WITHOUT penalty and explain the difference!
+    if (relatedKanji && relatedKanji.type === 'kanji') {
+      const kanjiOn = (relatedKanji.onyomi ?? []).map(normalizeDictionaryReading);
+      const kanjiKun = (relatedKanji.kunyomi ?? []).map(normalizeDictionaryReading);
+      if (kanjiOn.includes(finalized)) {
+        return {
+          status: 'shake',
+          message: `「${finalized}」 adalah bacaan On'yomi Kanji 「${item.characters}」 (untuk kata majemuk), bukan bacaan Kosakata mandiri (${item.primaryMeaning}). Coba lagi tanpa penalti!`,
+          finalizedInput: finalized,
+        };
+      }
+      if (kanjiKun.includes(finalized)) {
+        return {
+          status: 'shake',
+          message: `「${finalized}」 adalah bacaan Kun'yomi lain untuk Kanji 「${item.characters}」, bukan bacaan Kosakata "${item.primaryMeaning}". Coba lagi tanpa penalti!`,
+          finalizedInput: finalized,
+        };
+      }
+    }
+
     return { status: 'incorrect', finalizedInput: finalized };
   }
 
   if (item.type === 'kanji') {
-    const onReadings = (item.onyomi ?? []).map(katakanaToHiragana);
-    const kunReadings = (item.kunyomi ?? []).map(katakanaToHiragana);
+    const onReadings = (item.onyomi ?? []).map(normalizeDictionaryReading);
+    const kunReadings = (item.kunyomi ?? []).map(normalizeDictionaryReading);
     const primaryType = item.primaryReadingType ?? 'onyomi';
 
     const primaryList = primaryType === 'onyomi' ? onReadings : kunReadings;
@@ -274,7 +305,7 @@ export function validateReadingAnswer(
       const givenLabel = primaryType === 'onyomi' ? "Kun'yomi" : "On'yomi";
       return {
         status: 'shake',
-        message: `Itu bacaan ${givenLabel}. Kami mencari bacaan ${askedLabel} untuk kanji ini!`,
+        message: `「${finalized}」 adalah bacaan ${givenLabel}. Soal Kanji ini meminta bacaan ${askedLabel} — coba lagi tanpa penalti!`,
         finalizedInput: finalized,
       };
     }

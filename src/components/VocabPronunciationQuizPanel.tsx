@@ -8,7 +8,7 @@ import {
   Volume2,
   XCircle,
 } from 'lucide-react';
-import { speakJapanese, stopSpeech } from '../utils/audio';
+import { sanitizeKanaReading, speakJapanese, stopSpeech } from '../utils/audio';
 import { katakanaToHiragana, romajiToHiragana } from '../utils/kana';
 import {
   classifyPitchPattern,
@@ -191,7 +191,20 @@ export const VocabPronunciationQuizPanel: React.FC<
       cancelToneRef.current();
       cancelToneRef.current = null;
     }
-    const phrase = resolved.particle ? `${kanji}${resolved.particle}` : kanji;
+    // Verify TTS base text is sanitized pure kana matching the tested reading
+    const sanitizedKana = sanitizeKanaReading(kana);
+    const normalizedAccepted = (acceptedReadings ?? []).map((r) =>
+      katakanaToHiragana(sanitizeKanaReading(r))
+    );
+    const verifiedBase =
+      sanitizedKana &&
+      (normalizedAccepted.length === 0 ||
+        normalizedAccepted.includes(katakanaToHiragana(sanitizedKana)))
+        ? sanitizedKana
+        : sanitizeKanaReading(acceptedReadings?.[0] ?? '') || sanitizedKana || kanji;
+    const phrase = resolved.particle
+      ? `${verifiedBase}${resolved.particle}`
+      : verifiedBase;
     speakJapanese(phrase, rate);
   };
 

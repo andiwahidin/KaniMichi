@@ -709,7 +709,7 @@ export const PronunciationHub: React.FC = () => {
     const speechText =
       question.pair.category === 'pitch'
         ? `${word.kanji}${word.particle ?? 'が'}`
-        : word.kanji;
+        : word.kana || word.kanji;
 
     if (mode === 'tone-only') {
       playWordPitchTone(
@@ -1393,10 +1393,11 @@ export const PronunciationHub: React.FC = () => {
                           aria-label={`Dengarkan ${entry.kanji}`}
                           onClick={(e) => {
                             e.stopPropagation();
+                            const baseSpeak = entry.kana || entry.kanji;
                             speakJapanese(
                               entry.particle
-                                ? `${entry.kanji}${entry.particle}`
-                                : entry.kanji,
+                                ? `${baseSpeak}${entry.particle}`
+                                : baseSpeak,
                               0.92
                             );
                           }}
@@ -1975,7 +1976,7 @@ export const PronunciationHub: React.FC = () => {
                         </div>
                         <button
                           type="button"
-                          onClick={() => speakJapanese(ex.kanji, 0.85)}
+                          onClick={() => speakJapanese(ex.kana || ex.kanji, 0.85)}
                           aria-label={`Putar ${ex.kanji}`}
                           className="p-2 min-w-[36px] min-h-[36px] rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-[#0284C7] hover:border-[#0284C7] shrink-0 flex items-center justify-center cursor-pointer"
                         >

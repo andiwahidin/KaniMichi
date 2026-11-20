@@ -608,7 +608,7 @@ export const ReadingHub: React.FC = () => {
                         </span>
                         <button
                           type="button"
-                          onClick={() => speakJapanese(v.word, 0.9)}
+                          onClick={() => speakJapanese(v.reading || v.word, 0.9)}
                           aria-label={`Audio ${v.word}`}
                           className="text-slate-400 hover:text-[#0284C7] cursor-pointer"
                         >

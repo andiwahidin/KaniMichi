@@ -225,23 +225,36 @@ export function generateMockExamPaper(
 
   const readingQs: MockExamChoiceQuestion[] = pickedForReading.map((item, i) => {
     const correctReading = item.readings![0];
-    // Prefer distractors with similar length so choices look realistic
-    const similarLen = allReadingsPool.filter(
-      (r) =>
-        r !== correctReading &&
-        Math.abs(r.length - correctReading.length) <= 1
+    // Never offer an alternate valid reading of the same word or single kanji as a distractor
+    const forbiddenReadings = new Set<string>(item.readings ?? []);
+    if (item.characters.length === 1) {
+      const matchingKanji = datasets.curriculum.kanjiByChar[item.characters];
+      if (matchingKanji) {
+        (matchingKanji.onyomi ?? []).forEach((r) => forbiddenReadings.add(r));
+        (matchingKanji.kunyomi ?? []).forEach((r) => forbiddenReadings.add(r));
+      }
+    }
+    const safeReadingsPool = allReadingsPool.filter(
+      (r) => !forbiddenReadings.has(r)
     );
-    const pool = similarLen.length >= 6 ? similarLen : allReadingsPool;
+    // Prefer distractors with similar length so choices look realistic
+    const similarLen = safeReadingsPool.filter(
+      (r) => Math.abs(r.length - correctReading.length) <= 1
+    );
+    const pool = similarLen.length >= 6 ? similarLen : safeReadingsPool;
     const { choices, answerIndex } = buildChoiceSet(correctReading, pool, 4);
+    const isSingleKanji = item.characters.length === 1;
     return {
       id: `mg-read-${i + 1}`,
       part: 'moji-goi',
       sublabel: 'Kanji Reading (漢字読み)',
       promptJp: `「${item.characters}」の正[ただ]しい読[よ]み方[かた]を選[えら]んでください。`,
-      promptSub: 'Choose the correct Hiragana reading for the kanji word.',
+      promptSub: isSingleKanji
+        ? `Choose the Hiragana reading for the vocabulary word "${item.primaryMeaning}" (${item.partOfSpeech ?? 'Vocabulary'}).`
+        : 'Choose the correct Hiragana reading for the kanji word.',
       choices,
       answerIndex,
-      explanationEn: `${item.characters} is read "${correctReading}" and means "${item.primaryMeaning}".`,
+      explanationEn: `${item.characters} is read "${item.readings!.join(' / ')}" and means "${item.primaryMeaning}".`,
       sourceId: item.id,
     };
   });
@@ -255,9 +268,18 @@ export function generateMockExamPaper(
   );
 
   const meaningQs: MockExamChoiceQuestion[] = pickedForMeaning.map((item, i) => {
+    // Exclude any synonym belonging to this item so two correct meanings never compete
+    const forbiddenMeanings = new Set<string>(
+      [item.primaryMeaning, ...item.acceptedMeanings].map((m) =>
+        m.trim().toLowerCase()
+      )
+    );
+    const safeMeaningsPool = allMeaningsPool.filter(
+      (m) => !forbiddenMeanings.has(m.trim().toLowerCase())
+    );
     const { choices, answerIndex } = buildChoiceSet(
       item.primaryMeaning,
-      allMeaningsPool,
+      safeMeaningsPool,
       4
     );
     return {

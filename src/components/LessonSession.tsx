@@ -14,7 +14,13 @@ import {
 import { useApp } from '../context/AppContext';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem } from '../types/curriculum';
-import { speakJapanese, stopSpeech } from '../utils/audio';
+import {
+  resolveVerifiedItemPronunciation,
+  speakJapanese,
+  speakVerifiedItem,
+  stopSpeech,
+  type VerifiedItemPronunciation,
+} from '../utils/audio';
 import {
   romajiToHiragana,
   validateMeaningAnswer,
@@ -27,6 +33,8 @@ import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 interface QuizQuestion {
   item: CurriculumItem;
   kind: 'meaning' | 'reading' | 'listening' | 'pronunciation';
+  /** Verified canonical pronunciation & TTS mapping for this exact question */
+  pronunciation: VerifiedItemPronunciation | null;
 }
 
 function shuffle<T>(arr: T[]): T[] {
@@ -91,7 +99,7 @@ export const LessonSession: React.FC = () => {
     }
   }, [phase, quizQueue.length, answerState, currentQuestion?.kind]);
 
-  // Auto-play Japanese audio when entering a Listening (Dictation) question
+  // Auto-play verified Japanese audio when entering a Listening (Dictation) question
   useEffect(() => {
     if (
       phase !== 'quiz' ||
@@ -100,14 +108,20 @@ export const LessonSession: React.FC = () => {
     ) {
       return;
     }
-    const audioText =
-      currentQuestion.item.characters || currentQuestion.item.readings?.[0];
-    if (!audioText) return;
+    const targetItem = currentQuestion.item;
+    const candidateTts = currentQuestion.pronunciation?.ttsText;
     const t = window.setTimeout(() => {
-      speakJapanese(audioText, 0.9);
+      speakVerifiedItem(targetItem, 0.9, 'narrator', undefined, candidateTts);
     }, 180);
     return () => window.clearTimeout(t);
-  }, [phase, answerState, currentQuestion?.item.id, currentQuestion?.kind, completedQuizCount]);
+  }, [
+    phase,
+    answerState,
+    currentQuestion?.item.id,
+    currentQuestion?.kind,
+    currentQuestion?.pronunciation?.ttsText,
+    completedQuizCount,
+  ]);
 
   // Allow Enter to advance after answering pronunciation question & J to replay listening audio
   useEffect(() => {
@@ -126,9 +140,13 @@ export const LessonSession: React.FC = () => {
         document.activeElement !== inputRef.current
       ) {
         e.preventDefault();
-        const txt =
-          currentQuestion.item.characters || currentQuestion.item.readings?.[0];
-        if (txt) speakJapanese(txt, 0.9);
+        speakVerifiedItem(
+          currentQuestion.item,
+          0.9,
+          'narrator',
+          undefined,
+          currentQuestion.pronunciation?.ttsText
+        );
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -154,13 +172,7 @@ export const LessonSession: React.FC = () => {
         }
       } else if (e.key === 'j' || e.key === 'J') {
         if (currentSlideItem && currentSlideItem.type !== 'radical') {
-          const text =
-            currentSlideItem.type === 'vocabulary'
-              ? currentSlideItem.readings?.[0]
-              : currentSlideItem.primaryReadingType === 'kunyomi'
-              ? currentSlideItem.kunyomi?.[0]
-              : currentSlideItem.onyomi?.[0];
-          if (text) speakJapanese(text);
+          speakVerifiedItem(currentSlideItem);
         }
       }
     };
@@ -171,16 +183,17 @@ export const LessonSession: React.FC = () => {
   const startQuiz = () => {
     const questions: QuizQuestion[] = [];
     for (const item of batch) {
-      questions.push({ item, kind: 'meaning' });
+      const pronunciation = resolveVerifiedItemPronunciation(item);
+      questions.push({ item, kind: 'meaning', pronunciation });
       if (item.type !== 'radical') {
-        questions.push({ item, kind: 'reading' });
+        questions.push({ item, kind: 'reading', pronunciation });
       }
-      if (item.type === 'vocabulary' && item.readings?.[0]) {
+      if (item.type === 'vocabulary' && pronunciation?.isVerified) {
         if (includeListening) {
-          questions.push({ item, kind: 'listening' });
+          questions.push({ item, kind: 'listening', pronunciation });
         }
         if (includePronunciation) {
-          questions.push({ item, kind: 'pronunciation' });
+          questions.push({ item, kind: 'pronunciation', pronunciation });
         }
       }
     }
@@ -296,6 +309,11 @@ export const LessonSession: React.FC = () => {
     if (currentQuestion.kind === 'pronunciation') return;
 
     const userSynonyms = state.progress[currentQuestion.item.id]?.userSynonyms ?? [];
+    const relatedKanji =
+      currentQuestion.item.type === 'vocabulary' &&
+      currentQuestion.item.characters.length === 1
+        ? dataset.kanjiByChar[currentQuestion.item.characters]
+        : null;
     let result;
     if (currentQuestion.kind === 'meaning') {
       result = validateMeaningAnswer(inputValue, currentQuestion.item, userSynonyms);
@@ -305,7 +323,11 @@ export const LessonSession: React.FC = () => {
     ) {
       result = { status: 'correct' as const, finalizedInput: inputValue.trim() };
     } else {
-      result = validateReadingAnswer(inputValue, currentQuestion.item);
+      result = validateReadingAnswer(
+        inputValue,
+        currentQuestion.item,
+        currentQuestion.kind === 'reading' ? relatedKanji : null
+      );
     }
 
     if (result.finalizedInput !== undefined) {
@@ -334,13 +356,13 @@ export const LessonSession: React.FC = () => {
         (currentQuestion.kind === 'reading' || currentQuestion.kind === 'listening') &&
         state.settings.autoplayAudio
       ) {
-        const audioTxt =
-          currentQuestion.item.type === 'vocabulary'
-            ? currentQuestion.item.characters
-            : currentQuestion.item.primaryReadingType === 'kunyomi'
-            ? currentQuestion.item.kunyomi?.[0]
-            : currentQuestion.item.onyomi?.[0];
-        if (audioTxt) speakJapanese(audioTxt);
+        speakVerifiedItem(
+          currentQuestion.item,
+          0.92,
+          'narrator',
+          undefined,
+          currentQuestion.pronunciation?.ttsText
+        );
       }
     } else {
       setAnswerState('incorrect');
@@ -494,8 +516,18 @@ export const LessonSession: React.FC = () => {
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-xs font-medium text-white/85 mb-2">
-              Level {qItem.level} · {getItemTypeLabel(qItem.type)}
+            <div className="text-xs font-medium text-white/85 mb-2 flex items-center justify-center flex-wrap gap-1.5">
+              <span>Level {qItem.level}</span>
+              <span aria-hidden="true">·</span>
+              <span className="font-bold uppercase tracking-wide">
+                {getItemTypeLabel(qItem.type)}
+              </span>
+              {qItem.type === 'vocabulary' && qItem.partOfSpeech && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>{qItem.partOfSpeech}</span>
+                </>
+              )}
             </div>
             {currentQuestion.kind === 'listening' && answerState === 'idle' ? (
               <div className="space-y-3 py-1">
@@ -509,7 +541,13 @@ export const LessonSession: React.FC = () => {
                   <button
                     type="button"
                     onClick={() =>
-                      speakJapanese(qItem.characters || qItem.readings?.[0] || '', 0.9)
+                      speakVerifiedItem(
+                        qItem,
+                        0.9,
+                        'narrator',
+                        undefined,
+                        currentQuestion.pronunciation?.ttsText
+                      )
                     }
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 text-xs sm:text-sm font-bold hover:bg-white/90 transition-colors cursor-pointer"
                   >
@@ -519,7 +557,13 @@ export const LessonSession: React.FC = () => {
                   <button
                     type="button"
                     onClick={() =>
-                      speakJapanese(qItem.characters || qItem.readings?.[0] || '', 0.64)
+                      speakVerifiedItem(
+                        qItem,
+                        0.64,
+                        'narrator',
+                        undefined,
+                        currentQuestion.pronunciation?.ttsText
+                      )
                     }
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
                   >
@@ -532,10 +576,18 @@ export const LessonSession: React.FC = () => {
                 <div className="font-jp text-5xl sm:text-7xl font-bold tracking-tight select-all break-words">
                   {qItem.characters}
                 </div>
+                {currentQuestion.kind === 'reading' &&
+                  qItem.type === 'vocabulary' &&
+                  qItem.characters.length === 1 && (
+                    <div className="text-xs sm:text-sm text-white/90 font-medium">
+                      Kata Mandiri · Arti: &ldquo;{qItem.primaryMeaning}&rdquo;
+                      {qItem.partOfSpeech ? ` (${qItem.partOfSpeech})` : ''}
+                    </div>
+                  )}
                 {(currentQuestion.kind === 'pronunciation' ||
                   (currentQuestion.kind === 'listening' && answerState !== 'idle')) && (
                   <div className="text-sm sm:text-base text-white/90 font-jp">
-                    {qItem.readings?.[0]} ·{' '}
+                    {currentQuestion.pronunciation?.testedReading ?? qItem.readings?.[0]} ·{' '}
                     <span className="font-sans">{qItem.primaryMeaning}</span>
                   </div>
                 )}
@@ -548,7 +600,12 @@ export const LessonSession: React.FC = () => {
         <div className="bg-slate-900 text-white py-3 px-4 text-center text-sm font-semibold">
           {currentQuestion.kind === 'meaning' ? (
             <span>
-              {getItemTypeLabel(qItem.type)} — <strong>Arti</strong> (Bahasa Inggris)
+              {getItemTypeLabel(qItem.type)} —{' '}
+              <strong>
+                {qItem.type === 'radical'
+                  ? 'Nama Radikal (Bahasa Inggris)'
+                  : 'Arti (Bahasa Inggris)'}
+              </strong>
             </span>
           ) : currentQuestion.kind === 'listening' ? (
             <span className="inline-flex items-center gap-1.5">
@@ -569,9 +626,9 @@ export const LessonSession: React.FC = () => {
                 Bacaan{' '}
                 {qItem.type === 'kanji'
                   ? qItem.primaryReadingType === 'kunyomi'
-                    ? "(Kun'yomi)"
-                    : "(On'yomi)"
-                  : '(Hiragana)'}
+                    ? "Kanji (Kun'yomi)"
+                    : "Kanji (On'yomi)"
+                  : 'Kosakata (Hiragana)'}
               </strong>
             </span>
           )}
@@ -579,13 +636,14 @@ export const LessonSession: React.FC = () => {
 
         {/* Input & Feedback */}
         <div className="max-w-2xl w-full mx-auto px-4 py-8 flex-1 space-y-5">
-          {currentQuestion.kind === 'pronunciation' && qItem.readings?.[0] ? (
+          {currentQuestion.kind === 'pronunciation' &&
+          currentQuestion.pronunciation?.testedReading ? (
             <div className="space-y-4">
               <VocabPronunciationQuizPanel
                 questionKey={`lesson-${qItem.id}-${completedQuizCount}`}
                 kanji={qItem.characters}
-                kana={qItem.readings[0]}
-                acceptedReadings={qItem.readings}
+                kana={currentQuestion.pronunciation.testedReading}
+                acceptedReadings={currentQuestion.pronunciation.acceptedReadings}
                 partOfSpeech={qItem.partOfSpeech}
                 answered={answerState !== 'idle'}
                 onAnswer={handlePronunciationAnswer}
@@ -728,15 +786,15 @@ export const LessonSession: React.FC = () => {
                 {qItem.type !== 'radical' && (
                   <button
                     type="button"
-                    onClick={() => {
-                      const txt =
-                        qItem.type === 'vocabulary'
-                          ? qItem.readings?.[0]
-                          : qItem.primaryReadingType === 'kunyomi'
-                          ? qItem.kunyomi?.[0]
-                          : qItem.onyomi?.[0];
-                      if (txt) speakJapanese(txt);
-                    }}
+                    onClick={() =>
+                      speakVerifiedItem(
+                        qItem,
+                        0.92,
+                        'narrator',
+                        undefined,
+                        currentQuestion.pronunciation?.ttsText
+                      )
+                    }
                     className="inline-flex items-center gap-1 text-xs font-medium text-[#0284C7] hover:underline cursor-pointer"
                   >
                     <Volume2 className="w-3.5 h-3.5" />
@@ -781,14 +839,8 @@ export const LessonSession: React.FC = () => {
   const dependents = (dataset.dependentsById[currentSlideItem.id] ?? []).slice(0, 12);
   const isLastSlide = slideIdx === batch.length - 1;
 
-  const primaryAudio =
-    currentSlideItem.type === 'vocabulary'
-      ? currentSlideItem.readings?.[0]
-      : currentSlideItem.type === 'kanji'
-      ? currentSlideItem.primaryReadingType === 'kunyomi'
-        ? currentSlideItem.kunyomi?.[0]
-        : currentSlideItem.onyomi?.[0]
-      : null;
+  const slidePronunciation = resolveVerifiedItemPronunciation(currentSlideItem);
+  const primaryAudio = slidePronunciation?.ttsText ?? null;
 
   return (
     <div className="min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] w-full max-w-full overflow-x-clip flex flex-col">
@@ -828,7 +880,15 @@ export const LessonSession: React.FC = () => {
             <div className="pt-1">
               <button
                 type="button"
-                onClick={() => speakJapanese(primaryAudio)}
+                onClick={() =>
+                  speakVerifiedItem(
+                    currentSlideItem,
+                    0.92,
+                    'narrator',
+                    undefined,
+                    primaryAudio
+                  )
+                }
                 className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-xs font-medium transition-colors cursor-pointer max-w-full"
               >
                 <Volume2 className="w-3.5 h-3.5 shrink-0" />
@@ -1010,7 +1070,15 @@ export const LessonSession: React.FC = () => {
                     {primaryAudio && (
                       <button
                         type="button"
-                        onClick={() => speakJapanese(primaryAudio)}
+                        onClick={() =>
+                          speakVerifiedItem(
+                            currentSlideItem,
+                            0.92,
+                            'narrator',
+                            undefined,
+                            primaryAudio
+                          )
+                        }
                         className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#7C3AED] text-white text-xs font-semibold hover:bg-[#6D28D9] cursor-pointer shrink-0"
                       >
                         <Volume2 className="w-4 h-4" />
@@ -1018,13 +1086,13 @@ export const LessonSession: React.FC = () => {
                       </button>
                     )}
                   </div>
-                  {currentSlideItem.readings?.[0] && (
+                  {slidePronunciation?.testedReading && (
                     <PronunciationCard
                       compact
                       target={{
                         id: currentSlideItem.id,
                         kanji: currentSlideItem.characters,
-                        kana: currentSlideItem.readings[0],
+                        kana: slidePronunciation.testedReading,
                         meaning: currentSlideItem.primaryMeaning,
                         partOfSpeech: currentSlideItem.partOfSpeech,
                         sourceLabel: `Kurikulum Level ${currentSlideItem.level}`,
@@ -1072,7 +1140,7 @@ export const LessonSession: React.FC = () => {
                       </div>
                       <button
                         type="button"
-                        onClick={() => speakJapanese(s.jp, 0.88)}
+                        onClick={() => speakJapanese(s.reading || s.jp, 0.88)}
                         className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] cursor-pointer"
                         title="Putar kalimat"
                       >

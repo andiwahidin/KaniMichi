@@ -36,7 +36,7 @@ import {
   WritingMode,
   WritingScript,
 } from '../types/writing';
-import { speakJapanese, stopSpeech } from '../utils/audio';
+import { sanitizeKanaReading, speakJapanese, stopSpeech } from '../utils/audio';
 import { evaluateFreehandDrawing } from '../utils/strokeGeometry';
 import { WritingCanvas } from './WritingCanvas';
 
@@ -302,11 +302,11 @@ export const WritingHub: React.FC = () => {
       recordWritingPractice(activeEntry.char, finalScore, passedRecall);
 
       // Speak the character upon mastery completion for audio-motor reinforcement
-      const speakTarget =
+      const rawSpeak =
         activeEntry.script === 'kanji'
           ? activeEntry.kunyomi?.[0] || activeEntry.onyomi?.[0] || activeEntry.char
           : activeEntry.char;
-      speakJapanese(speakTarget, 0.9);
+      speakJapanese(sanitizeKanaReading(rawSpeak), 0.9);
     } else {
       setFeedback({
         tone: 'success',
@@ -1196,7 +1196,13 @@ export const WritingHub: React.FC = () => {
                 </div>
                 <button
                   type="button"
-                  onClick={() => speakJapanese(activeEntry.example!.word, 0.9)}
+                  onClick={() => {
+                    const ex = activeEntry.example!;
+                    const target = /[\u3040-\u30ff]/.test(ex.reading)
+                      ? ex.reading
+                      : ex.word;
+                    speakJapanese(target, 0.9);
+                  }}
                   aria-label="Putar contoh kata"
                   className="min-h-[38px] min-w-[38px] inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
                 >

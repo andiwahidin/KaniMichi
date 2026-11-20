@@ -17,7 +17,11 @@ import {
 import { ReviewOutcome, useApp } from '../context/AppContext';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem, ExtraStudyMode } from '../types/curriculum';
-import { speakJapanese, stopSpeech } from '../utils/audio';
+import {
+  resolveVerifiedItemPronunciation,
+  speakVerifiedItem,
+  stopSpeech,
+} from '../utils/audio';
 import {
   romajiToHiragana,
   validateMeaningAnswer,
@@ -180,11 +184,9 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     ) {
       return;
     }
-    const audioTxt =
-      currentQuestion.item.characters || currentQuestion.item.readings?.[0];
-    if (!audioTxt) return;
+    const targetItem = currentQuestion.item;
     const t = window.setTimeout(() => {
-      speakJapanese(audioTxt, 0.9);
+      speakVerifiedItem(targetItem, 0.9);
     }, 180);
     return () => window.clearTimeout(t);
   }, [sessionFinished, answerState, currentQuestion?.item.id, currentQuestion?.kind, answeredTotalCount]);
@@ -199,16 +201,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
           setShowInfo((v) => !v);
         } else if (e.key === 'j' || e.key === 'J') {
           e.preventDefault();
-          const item = currentQuestion.item;
-          const txt =
-            item.type === 'vocabulary'
-              ? item.characters || item.readings?.[0]
-              : item.type === 'kanji'
-              ? item.primaryReadingType === 'kunyomi'
-                ? item.kunyomi?.[0]
-                : item.onyomi?.[0]
-              : null;
-          if (txt) speakJapanese(txt);
+          speakVerifiedItem(currentQuestion.item);
         } else if (
           currentQuestion.kind === 'pronunciation' &&
           e.key === 'Enter'
@@ -222,9 +215,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
         document.activeElement !== inputRef.current
       ) {
         e.preventDefault();
-        const txt =
-          currentQuestion.item.characters || currentQuestion.item.readings?.[0];
-        if (txt) speakJapanese(txt, 0.9);
+        speakVerifiedItem(currentQuestion.item, 0.9);
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -431,6 +422,10 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
 
     const item = currentQuestion.item;
     const userSynonyms = state.progress[item.id]?.userSynonyms ?? [];
+    const relatedKanji =
+      item.type === 'vocabulary' && item.characters.length === 1
+        ? dataset.kanjiByChar[item.characters]
+        : null;
     let result;
     if (currentQuestion.kind === 'meaning') {
       result = validateMeaningAnswer(inputValue, item, userSynonyms);
@@ -440,7 +435,11 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
     ) {
       result = { status: 'correct' as const, finalizedInput: inputValue.trim() };
     } else {
-      result = validateReadingAnswer(inputValue, item);
+      result = validateReadingAnswer(
+        inputValue,
+        item,
+        currentQuestion.kind === 'reading' ? relatedKanji : null
+      );
     }
 
     if (result.finalizedInput !== undefined) {
@@ -459,13 +458,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
         (currentQuestion.kind === 'reading' || currentQuestion.kind === 'listening') &&
         state.settings.autoplayAudio
       ) {
-        const audioTxt =
-          item.type === 'vocabulary'
-            ? item.characters
-            : item.primaryReadingType === 'kunyomi'
-            ? item.kunyomi?.[0]
-            : item.onyomi?.[0];
-        if (audioTxt) speakJapanese(audioTxt);
+        speakVerifiedItem(item);
       }
       recordOutcomeForCurrent(
         true,
@@ -812,8 +805,18 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <div className="text-xs font-medium text-white/85 mb-2">
-            Level {item.level} · {getItemTypeLabel(item.type)}
+          <div className="text-xs font-medium text-white/85 mb-2 flex items-center justify-center flex-wrap gap-1.5">
+            <span>Level {item.level}</span>
+            <span aria-hidden="true">·</span>
+            <span className="font-bold uppercase tracking-wide">
+              {getItemTypeLabel(item.type)}
+            </span>
+            {item.type === 'vocabulary' && item.partOfSpeech && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{item.partOfSpeech}</span>
+              </>
+            )}
           </div>
           {currentQuestion.kind === 'listening' && answerState === 'idle' ? (
             <div className="space-y-3 py-1">
@@ -826,9 +829,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               <div className="flex items-center justify-center gap-2.5 pt-1">
                 <button
                   type="button"
-                  onClick={() =>
-                    speakJapanese(item.characters || item.readings?.[0] || '', 0.9)
-                  }
+                  onClick={() => speakVerifiedItem(item, 0.9)}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-900 text-xs sm:text-sm font-bold hover:bg-white/90 transition-colors cursor-pointer"
                 >
                   <Volume2 className="w-4 h-4" />
@@ -836,9 +837,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                 </button>
                 <button
                   type="button"
-                  onClick={() =>
-                    speakJapanese(item.characters || item.readings?.[0] || '', 0.64)
-                  }
+                  onClick={() => speakVerifiedItem(item, 0.64)}
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
                 >
                   Pelan (0.64x)
@@ -850,6 +849,14 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               <div className="font-jp text-5xl sm:text-8xl font-bold tracking-tight leading-none select-all break-words">
                 {item.characters}
               </div>
+              {currentQuestion.kind === 'reading' &&
+                item.type === 'vocabulary' &&
+                item.characters.length === 1 && (
+                  <div className="text-xs sm:text-sm text-white/90 font-medium">
+                    Kata Mandiri · Arti: &ldquo;{item.primaryMeaning}&rdquo;
+                    {item.partOfSpeech ? ` (${item.partOfSpeech})` : ''}
+                  </div>
+                )}
               {(currentQuestion.kind === 'pronunciation' ||
                 (currentQuestion.kind === 'listening' && answerState !== 'idle')) && (
                 <div className="text-sm sm:text-base text-white/90 font-jp">
@@ -878,7 +885,12 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
       <div className="bg-slate-900 text-white py-3 px-4 text-center text-sm font-medium border-t border-white/10">
         {currentQuestion.kind === 'meaning' ? (
           <span>
-            {getItemTypeLabel(item.type)} — <strong className="font-bold">Arti (Bahasa Inggris)</strong>
+            {getItemTypeLabel(item.type)} —{' '}
+            <strong className="font-bold">
+              {item.type === 'radical'
+                ? 'Nama Radikal (Bahasa Inggris)'
+                : 'Arti (Bahasa Inggris)'}
+            </strong>
           </span>
         ) : currentQuestion.kind === 'listening' ? (
           <span className="inline-flex items-center gap-1.5">
@@ -899,9 +911,9 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               Bacaan{' '}
               {item.type === 'kanji'
                 ? item.primaryReadingType === 'kunyomi'
-                  ? "(Kun'yomi)"
-                  : "(On'yomi)"
-                : '(Hiragana)'}
+                  ? "Kanji (Kun'yomi)"
+                  : "Kanji (On'yomi)"
+                : 'Kosakata (Hiragana)'}
             </strong>
           </span>
         )}
@@ -909,39 +921,45 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
 
       {/* Answer Input Area */}
       <div className="max-w-2xl w-full mx-auto px-4 py-8 flex-1 space-y-5">
-        {currentQuestion.kind === 'pronunciation' && item.readings?.[0] ? (
-          <div className="space-y-4">
-            <VocabPronunciationQuizPanel
-              questionKey={`review-${item.id}-${answeredTotalCount}`}
-              kanji={item.characters}
-              kana={item.readings[0]}
-              acceptedReadings={item.readings}
-              partOfSpeech={item.partOfSpeech}
-              answered={answerState !== 'idle'}
-              onAnswer={handlePronunciationAnswer}
-            />
-            {answerState !== 'idle' && (
-              <div className="flex items-center justify-between gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowInfo((v) => !v)}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
-                >
-                  <Info className="w-3.5 h-3.5" />
-                  Info Item (F)
-                </button>
-                <button
-                  type="button"
-                  onClick={advanceToNext}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold cursor-pointer"
-                >
-                  Lanjut (Enter)
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
+        {currentQuestion.kind === 'pronunciation' &&
+        (() => {
+          const verifiedPron = resolveVerifiedItemPronunciation(item);
+          if (!verifiedPron?.testedReading) return null;
+          return (
+            <div className="space-y-4">
+              <VocabPronunciationQuizPanel
+                questionKey={`review-${item.id}-${answeredTotalCount}`}
+                kanji={item.characters}
+                kana={verifiedPron.testedReading}
+                acceptedReadings={verifiedPron.acceptedReadings}
+                partOfSpeech={item.partOfSpeech}
+                answered={answerState !== 'idle'}
+                onAnswer={handlePronunciationAnswer}
+              />
+              {answerState !== 'idle' && (
+                <div className="flex items-center justify-between gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowInfo((v) => !v)}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
+                  >
+                    <Info className="w-3.5 h-3.5" />
+                    Info Item (F)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={advanceToNext}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold cursor-pointer"
+                  >
+                    Lanjut (Enter)
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })()}
+        {currentQuestion.kind !== 'pronunciation' && (
           <form onSubmit={handleSubmit} className="space-y-3">
             <div className={`relative ${shake ? 'animate-shake' : ''}`}>
               <input
@@ -1009,15 +1027,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                     {item.type !== 'radical' && (
                       <button
                         type="button"
-                        onClick={() => {
-                          const txt =
-                            item.type === 'vocabulary'
-                              ? item.characters || item.readings?.[0]
-                              : item.primaryReadingType === 'kunyomi'
-                              ? item.kunyomi?.[0]
-                              : item.onyomi?.[0];
-                          if (txt) speakJapanese(txt);
-                        }}
+                        onClick={() => speakVerifiedItem(item)}
                         className="inline-flex items-center gap-1 font-semibold text-slate-700 dark:text-slate-300 hover:text-[#0284C7] cursor-pointer"
                       >
                         <Volume2 className="w-3.5 h-3.5" />

@@ -81,11 +81,12 @@ export const PronunciationCard: React.FC<PronunciationCardProps> = ({
 
   const handlePlayVoice = (rate = 0.94) => {
     stopTone();
-    // Using Kanji + natural particle helps browser ja-JP TTS follow standard Tokyo pitch
+    // Speak canonical kana reading (+ particle) so browser TTS never guesses a conflicting kanji reading
+    const baseKana = target.kana || target.kanji;
     const phrase =
-      resolved.particle && target.kanji
-        ? `${target.kanji}${resolved.particle}`
-        : target.kanji || target.kana;
+      resolved.particle && baseKana
+        ? `${baseKana}${resolved.particle}`
+        : baseKana;
     speakJapanese(phrase, rate);
   };
 

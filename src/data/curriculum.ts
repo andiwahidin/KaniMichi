@@ -126,6 +126,27 @@ const CURATED_OVERLAYS: Record<string, CuratedOverlay> = {
       { jp: '一から始めましょう。', reading: 'いちからはじめましょう。', en: 'Let\'s start from one (from the very beginning).' },
     ],
   },
+  'vocabulary:人': {
+    meaningMnemonic: 'The standalone noun 人 means "Person". When used on its own as a word (not attached to another kanji), it uses its Kun\'yomi reading ひと.',
+    readingMnemonic: 'Standalone word 人 is read ひと (hito). In compounds like 日本人 (にほんじん) or 三人 (さんにん), it uses the Kanji On\'yomi じん / にん instead.',
+    contextSentences: [
+      { jp: 'あの人はとても親切です。', reading: 'あのひとはとてもしんせつです。', en: 'That person is very kind.' },
+    ],
+  },
+  'vocabulary:大': {
+    meaningMnemonic: 'The kanji 大 used as a prefix or standalone size word means "Large" or "Big".',
+    readingMnemonic: 'Accepted readings: おお (prefix, e.g. 大雨 おおあめ) and だい (standalone size/prefix, e.g. 大・中・小). Both おお and だい are accepted!',
+    contextSentences: [
+      { jp: 'コーヒーの大を一つください。', reading: 'こーひーのだいをひとつください。', en: 'One large coffee, please.' },
+    ],
+  },
+  'vocabulary:九': {
+    meaningMnemonic: 'The numeral 九 means "Nine".',
+    readingMnemonic: 'Accepted readings: きゅう and く (both are standard for the number 9).',
+    contextSentences: [
+      { jp: '九時に会いましょう。', reading: 'くじにあいましょう。', en: 'Let\'s meet at nine o\'clock.' },
+    ],
+  },
   'vocabulary:人口': {
     meaningMnemonic: 'Combines Person (人) and Mouth (口). Counting how many people\'s mouths live in an area gives you the Population!',
     readingMnemonic: 'Standard On\'yomi compound: じん (人) + こう (口) = じんこう.',
@@ -159,6 +180,7 @@ export interface CurriculumDataset {
   byId: Record<string, CurriculumItem>;
   byLevel: Record<number, CurriculumItem[]>;
   byType: Record<ItemType, CurriculumItem[]>;
+  kanjiByChar: Record<string, CurriculumItem>;
   dependentsById: Record<string, CurriculumItem[]>;
   counts: {
     radicals: number;
@@ -192,11 +214,15 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
     kanji: [],
     vocabulary: [],
   };
+  const kanjiByChar: Record<string, CurriculumItem> = {};
   const dependentsById: Record<string, CurriculumItem[]> = {};
 
   for (let l = 1; l <= MAX_LEVEL; l++) {
     byLevel[l] = [];
   }
+
+  const sanitizeReadings = (arr: string[]): string[] =>
+    Array.from(new Set(arr.map((r) => r.replace(/^\^/, '').trim()).filter(Boolean)));
 
   // First pass: instantiate all items
   for (const tuple of raw.items) {
@@ -228,8 +254,8 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         characters,
         primaryMeaning,
         acceptedMeanings,
-        onyomi,
-        kunyomi,
+        onyomi: sanitizeReadings(onyomi),
+        kunyomi: sanitizeReadings(kunyomi),
         primaryReadingType: primaryTypeNum === 1 ? 'kunyomi' : 'onyomi',
         componentIds,
         strokes: strokes || undefined,
@@ -246,7 +272,7 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         characters,
         primaryMeaning,
         acceptedMeanings,
-        readings,
+        readings: sanitizeReadings(readings),
         partOfSpeech,
         componentIds,
         meaningMnemonic: overlay?.meaningMnemonic ?? '',
@@ -259,6 +285,7 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
     byId[id] = item;
     if (byLevel[level]) byLevel[level].push(item);
     byType[type].push(item);
+    if (type === 'kanji') kanjiByChar[characters] = item;
   }
 
   // Second pass: populate reverse dependency map & crisp structural mnemonics
@@ -317,6 +344,7 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
     byId,
     byLevel,
     byType,
+    kanjiByChar,
     dependentsById,
     counts: raw.counts,
   };
