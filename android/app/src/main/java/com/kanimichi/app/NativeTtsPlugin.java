@@ -4,8 +4,12 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.media.AudioAttributes;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
@@ -16,24 +20,29 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Native Android Text-to-Speech Capacitor plugin for KaniMichi.
  *
- * Key Android/Samsung compatibility features:
- * - Automatically probes ALL installed TTS engines (e.g., Samsung TTS com.samsung.SMT
- *   and Google Speech Services com.google.android.tts) if the system default engine does
- *   not have Japanese (ja-JP) installed.
- * - Explicitly routes speech to AudioAttributes.USAGE_MEDIA + CONTENT_TYPE_SPEECH so
- *   Samsung One UI plays audio reliably through the Media volume channel even in Vibrate mode.
- * - Avoids Samsung-incompatible Bundle params (like KEY_FEATURE_NETWORK_SYNTHESIS) and
- *   falls back cleanly from Voice selection to Locale.JAPAN if an OEM engine rejects setVoice().
+ * Designed specifically for reliable offline Japanese playback across Samsung One UI
+ * (com.samsung.SMT), Google Speech Services (com.google.android.tts), and other OEMs:
+ * - Always creates/binds TextToSpeech on Android's Main Looper (required by Samsung SMT)
+ *   without holding locks across binder callbacks, and protects every init/switch with a
+ *   timeout so UI buttons never hang.
+ * - Distinguishes offline installed Japanese voices (!isNetworkConnectionRequired) from
+ *   network-only voices (which fail offline with ERROR_NETWORK = -4), and automatically
+ *   probes other installed engines (such as Samsung TTS) when the default engine only has
+ *   network voices.
+ * - Automatically retries on an alternate TTS engine if runtime playback hits ERROR_NETWORK (-4).
  */
 @CapacitorPlugin(name = "NativeTts")
 public class NativeTtsPlugin extends Plugin {
@@ -42,25 +51,57 @@ public class NativeTtsPlugin extends Plugin {
     private static final String PREF_ENGINE = "preferred_engine";
     private static final String SAMSUNG_TTS = "com.samsung.SMT";
     private static final String GOOGLE_TTS = "com.google.android.tts";
+    private static final long INIT_TIMEOUT_MS = 5000L;
+
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+    private final AtomicInteger initGeneration = new AtomicInteger(0);
 
     private TextToSpeech tts;
     private volatile boolean isInitialized = false;
     private volatile boolean isInitializing = false;
-    private volatile boolean initFailed = false;
     private volatile String activeEnginePackage = null;
     private volatile String selectedVoiceName = null;
+    private volatile int offlineJapaneseVoiceCount = 0;
+    private volatile int onlineJapaneseVoiceCount = 0;
     private volatile String lastError = null;
+
     private volatile PluginCall pendingSpeakCall = null;
+    private volatile boolean pendingSpeakAlreadyRetried = false;
     private volatile PluginCall pendingSwitchCall = null;
+    private Runnable initTimeoutRunnable = null;
 
     private final List<String> fallbackEngineQueue = new ArrayList<>();
-    private final List<TextToSpeech.EngineInfo> knownEngines = new ArrayList<>();
-    private final ConcurrentHashMap<String, PluginCall> activeCalls = new ConcurrentHashMap<>();
+    private final LinkedHashMap<String, String> knownEngines = new LinkedHashMap<>();
+    private final ConcurrentHashMap<String, PendingUtterance> activeUtterances =
+        new ConcurrentHashMap<>();
+
+    private static class PendingUtterance {
+        final PluginCall call;
+        final String text;
+        final float rate;
+        final float pitch;
+        final boolean alreadyRetriedEngine;
+
+        PendingUtterance(
+            PluginCall call,
+            String text,
+            float rate,
+            float pitch,
+            boolean alreadyRetriedEngine
+        ) {
+            this.call = call;
+            this.text = text;
+            this.rate = rate;
+            this.pitch = pitch;
+            this.alreadyRetriedEngine = alreadyRetriedEngine;
+        }
+    }
 
     @Override
     public void load() {
+        discoverInstalledEnginesViaPackageManager();
         String saved = getSavedPreferredEngine();
-        startInitialization(saved, true);
+        startInitializationOnMainThread(saved, true);
     }
 
     private String getSavedPreferredEngine() {
@@ -82,8 +123,55 @@ public class NativeTtsPlugin extends Plugin {
         }
     }
 
-    private synchronized void shutdownCurrentTts() {
-        clearAllActiveCalls();
+    private void discoverInstalledEnginesViaPackageManager() {
+        Context ctx = getContext();
+        if (ctx == null) return;
+        try {
+            PackageManager pm = ctx.getPackageManager();
+            Intent intent = new Intent(TextToSpeech.Engine.INTENT_ACTION_TTS_SERVICE);
+            List<ResolveInfo> services = pm.queryIntentServices(intent, 0);
+            if (services != null) {
+                for (ResolveInfo ri : services) {
+                    if (ri == null || ri.serviceInfo == null) continue;
+                    String pkg = ri.serviceInfo.packageName;
+                    if (pkg == null || pkg.isEmpty()) continue;
+                    CharSequence labelCs = ri.loadLabel(pm);
+                    String label =
+                        labelCs != null && labelCs.length() > 0 ? labelCs.toString() : pkg;
+                    knownEngines.put(pkg, label);
+                }
+            }
+        } catch (Exception ignored) {
+            // Ignore restricted PM queries
+        }
+    }
+
+    private void mergeEnginesFromTts(TextToSpeech engine) {
+        if (engine == null) return;
+        try {
+            List<TextToSpeech.EngineInfo> engines = engine.getEngines();
+            if (engines != null) {
+                for (TextToSpeech.EngineInfo info : engines) {
+                    if (info == null || info.name == null || info.name.isEmpty()) continue;
+                    String label =
+                        (info.label != null && !info.label.isEmpty()) ? info.label : info.name;
+                    knownEngines.put(info.name, label);
+                }
+            }
+        } catch (Exception ignored) {
+            // Ignore
+        }
+    }
+
+    private void cancelInitTimeout() {
+        if (initTimeoutRunnable != null) {
+            mainHandler.removeCallbacks(initTimeoutRunnable);
+            initTimeoutRunnable = null;
+        }
+    }
+
+    private void shutdownCurrentTtsOnMain() {
+        clearAllActiveUtterances();
         if (tts != null) {
             try {
                 tts.stop();
@@ -95,71 +183,96 @@ public class NativeTtsPlugin extends Plugin {
         }
         isInitialized = false;
         selectedVoiceName = null;
+        offlineJapaneseVoiceCount = 0;
+        onlineJapaneseVoiceCount = 0;
     }
 
-    private synchronized void startInitialization(String targetEngine, boolean allowAutoProbe) {
-        Context ctx = getContext();
-        if (ctx == null) return;
+    private void startInitializationOnMainThread(
+        final String targetEngine,
+        final boolean allowAutoProbe
+    ) {
+        final int gen = initGeneration.incrementAndGet();
+        mainHandler.post(() -> {
+            if (gen != initGeneration.get()) return;
+            Context ctx = getContext();
+            if (ctx == null) return;
 
-        shutdownCurrentTts();
-        isInitializing = true;
-        initFailed = false;
-        lastError = null;
-        activeEnginePackage = targetEngine;
+            cancelInitTimeout();
+            shutdownCurrentTtsOnMain();
+            discoverInstalledEnginesViaPackageManager();
 
-        final Context appCtx = ctx.getApplicationContext();
-        final TextToSpeech.OnInitListener listener = status ->
-            handleTtsInitResult(status, targetEngine, allowAutoProbe);
+            isInitializing = true;
+            lastError = null;
+            activeEnginePackage = targetEngine;
 
-        try {
-            if (targetEngine != null && !targetEngine.isEmpty()) {
-                tts = new TextToSpeech(appCtx, listener, targetEngine);
-            } else {
-                tts = new TextToSpeech(appCtx, listener);
+            // Watchdog timeout so Samsung/OEM bind delays never freeze the Settings UI
+            initTimeoutRunnable = () -> {
+                if (gen != initGeneration.get() || !isInitializing) return;
+                isInitializing = false;
+                isInitialized = false;
+                lastError =
+                    "Waktu tunggu koneksi mesin suara habis (" +
+                    (targetEngine != null ? targetEngine : "default") +
+                    ").";
+                if (allowAutoProbe && tryNextFallbackEngine()) {
+                    return;
+                }
+                resolvePendingSwitch(false);
+                flushPendingSpeakCall(false, lastError);
+            };
+            mainHandler.postDelayed(initTimeoutRunnable, INIT_TIMEOUT_MS);
+
+            final Context appCtx = ctx.getApplicationContext();
+            final TextToSpeech.OnInitListener listener = status ->
+                mainHandler.post(() -> handleTtsInitResult(gen, status, targetEngine, allowAutoProbe));
+
+            try {
+                if (targetEngine != null && !targetEngine.isEmpty()) {
+                    tts = new TextToSpeech(appCtx, listener, targetEngine);
+                } else {
+                    tts = new TextToSpeech(appCtx, listener);
+                }
+            } catch (Exception e) {
+                cancelInitTimeout();
+                isInitializing = false;
+                isInitialized = false;
+                lastError = "Gagal membuka mesin TTS: " + e.getMessage();
+                if (allowAutoProbe && tryNextFallbackEngine()) {
+                    return;
+                }
+                resolvePendingSwitch(false);
+                flushPendingSpeakCall(false, lastError);
             }
-        } catch (Exception e) {
-            isInitializing = false;
-            initFailed = true;
-            lastError = "Gagal membuat engine TTS: " + e.getMessage();
-            resolvePendingSwitch(false);
-            flushPendingSpeakCall(false, lastError);
-        }
+        });
     }
 
-    private synchronized void handleTtsInitResult(
+    private void handleTtsInitResult(
+        int gen,
         int status,
         String requestedEngine,
         boolean allowAutoProbe
     ) {
+        if (gen != initGeneration.get()) {
+            return;
+        }
+        cancelInitTimeout();
         isInitializing = false;
 
         if (status != TextToSpeech.SUCCESS || tts == null) {
             isInitialized = false;
             lastError =
-                "Engine TTS gagal inisialisasi (" +
+                "Mesin suara tidak merespons (" +
                 (requestedEngine != null ? requestedEngine : "default") +
-                ", status=" +
-                status +
-                ")";
+                ").";
             if (allowAutoProbe && tryNextFallbackEngine()) {
                 return;
             }
-            initFailed = true;
             resolvePendingSwitch(false);
             flushPendingSpeakCall(false, lastError);
             return;
         }
 
-        // Capture full list of installed TTS engines on this device
-        try {
-            List<TextToSpeech.EngineInfo> engines = tts.getEngines();
-            if (engines != null && !engines.isEmpty()) {
-                knownEngines.clear();
-                knownEngines.addAll(engines);
-            }
-        } catch (Exception ignored) {
-            // Ignore
-        }
+        mergeEnginesFromTts(tts);
 
         String boundEngine = requestedEngine;
         if (boundEngine == null || boundEngine.isEmpty()) {
@@ -171,15 +284,13 @@ public class NativeTtsPlugin extends Plugin {
         }
         activeEnginePackage = boundEngine;
         isInitialized = true;
-        initFailed = false;
 
-        // Route TTS explicitly to Media stream so Samsung One UI plays even in Vibrate mode
         applyMediaAudioAttributes();
+        inspectJapaneseVoiceCounts(tts);
 
-        // Check whether this engine actually has Japanese available
-        boolean hasJa = checkJapaneseAvailable(tts);
-        if (!hasJa && allowAutoProbe) {
-            // Build fallback probe queue once from all installed engines
+        // Distinguish true OFFLINE Japanese readiness from online-only voices (which fail with -4 offline)
+        boolean hasOfflineJa = hasOfflineJapaneseSupport(tts, boundEngine);
+        if (!hasOfflineJa && allowAutoProbe) {
             if (fallbackEngineQueue.isEmpty()) {
                 buildFallbackProbeQueue(boundEngine);
             }
@@ -188,20 +299,21 @@ public class NativeTtsPlugin extends Plugin {
             }
         }
 
-        // Configure Japanese language / voice and utterance callbacks
         configureBestJapaneseVoice();
         attachUtteranceListener();
 
-        if (hasJa && activeEnginePackage != null && !activeEnginePackage.isEmpty()) {
+        if (hasOfflineJa && activeEnginePackage != null && !activeEnginePackage.isEmpty()) {
             savePreferredEngine(activeEnginePackage);
         }
 
         resolvePendingSwitch(true);
 
         PluginCall queued = pendingSpeakCall;
+        boolean retried = pendingSpeakAlreadyRetried;
         pendingSpeakCall = null;
+        pendingSpeakAlreadyRetried = false;
         if (queued != null) {
-            executeSpeak(queued);
+            executeSpeak(queued, retried);
         }
     }
 
@@ -209,20 +321,15 @@ public class NativeTtsPlugin extends Plugin {
         fallbackEngineQueue.clear();
         LinkedHashSet<String> candidates = new LinkedHashSet<>();
 
-        // Prefer Samsung TTS and Google TTS first when present on device
-        for (TextToSpeech.EngineInfo info : knownEngines) {
-            if (info != null && SAMSUNG_TTS.equals(info.name)) {
-                candidates.add(info.name);
-            }
+        if (knownEngines.containsKey(SAMSUNG_TTS)) {
+            candidates.add(SAMSUNG_TTS);
         }
-        for (TextToSpeech.EngineInfo info : knownEngines) {
-            if (info != null && GOOGLE_TTS.equals(info.name)) {
-                candidates.add(info.name);
-            }
+        if (knownEngines.containsKey(GOOGLE_TTS)) {
+            candidates.add(GOOGLE_TTS);
         }
-        for (TextToSpeech.EngineInfo info : knownEngines) {
-            if (info != null && info.name != null && !info.name.isEmpty()) {
-                candidates.add(info.name);
+        for (String pkg : knownEngines.keySet()) {
+            if (pkg != null && !pkg.isEmpty()) {
+                candidates.add(pkg);
             }
         }
         if (alreadyTriedEngine != null) {
@@ -236,8 +343,24 @@ public class NativeTtsPlugin extends Plugin {
             return false;
         }
         String nextEngine = fallbackEngineQueue.remove(0);
-        startInitialization(nextEngine, true);
+        startInitializationOnMainThread(nextEngine, true);
         return true;
+    }
+
+    private String findAlternateEngine(String currentEngine) {
+        discoverInstalledEnginesViaPackageManager();
+        if (knownEngines.containsKey(SAMSUNG_TTS) && !SAMSUNG_TTS.equals(currentEngine)) {
+            return SAMSUNG_TTS;
+        }
+        if (knownEngines.containsKey(GOOGLE_TTS) && !GOOGLE_TTS.equals(currentEngine)) {
+            return GOOGLE_TTS;
+        }
+        for (String pkg : knownEngines.keySet()) {
+            if (pkg != null && !pkg.isEmpty() && !pkg.equals(currentEngine)) {
+                return pkg;
+            }
+        }
+        return null;
     }
 
     private void applyMediaAudioAttributes() {
@@ -249,7 +372,27 @@ public class NativeTtsPlugin extends Plugin {
                 .build();
             tts.setAudioAttributes(attrs);
         } catch (Exception ignored) {
-            // Ignore on OEMs that restrict setAudioAttributes
+            // Ignore on restricted OEMs
+        }
+    }
+
+    private String mapTtsErrorCode(int errorCode) {
+        switch (errorCode) {
+            case TextToSpeech.ERROR_NETWORK:
+            case TextToSpeech.ERROR_NETWORK_TIMEOUT:
+                return "Suara Bahasa Jepang pada mesin ini hanya tersedia online (error jaringan " +
+                errorCode +
+                "). Pilih mesin Samsung TTS atau unduh data suara Jepang offline di Pengaturan TTS Android.";
+            case TextToSpeech.ERROR_NOT_INSTALLED_YET:
+                return "Paket data suara Bahasa Jepang pada mesin ini belum terpasang.";
+            case TextToSpeech.ERROR_SYNTHESIS:
+                return "Mesin suara gagal memproses teks Bahasa Jepang (error " + errorCode + ").";
+            case TextToSpeech.ERROR_OUTPUT:
+                return "Gagal mengirim audio ke speaker perangkat (error " + errorCode + ").";
+            case TextToSpeech.ERROR_SERVICE:
+                return "Layanan TTS Android tidak tersedia (error " + errorCode + ").";
+            default:
+                return "Gagal memutar audio TTS (kode " + errorCode + ").";
         }
     }
 
@@ -264,28 +407,62 @@ public class NativeTtsPlugin extends Plugin {
 
                 @Override
                 public void onDone(String utteranceId) {
-                    resolveActiveCall(utteranceId, true, null);
+                    resolveActiveUtterance(utteranceId, true, null);
                 }
 
                 @Override
                 @Deprecated
                 public void onError(String utteranceId) {
-                    lastError = "Playback error pada engine TTS.";
-                    resolveActiveCall(utteranceId, false, lastError);
+                    handleUtteranceError(utteranceId, TextToSpeech.ERROR);
                 }
 
                 @Override
                 public void onError(String utteranceId, int errorCode) {
-                    lastError = "TTS error code: " + errorCode;
-                    resolveActiveCall(utteranceId, false, lastError);
+                    handleUtteranceError(utteranceId, errorCode);
                 }
 
                 @Override
                 public void onStop(String utteranceId, boolean interrupted) {
-                    resolveActiveCall(utteranceId, true, null);
+                    resolveActiveUtterance(utteranceId, true, null);
                 }
             }
         );
+    }
+
+    private void handleUtteranceError(String utteranceId, int errorCode) {
+        PendingUtterance pending = utteranceId != null ? activeUtterances.remove(utteranceId) : null;
+        String friendlyMsg = mapTtsErrorCode(errorCode);
+        lastError = friendlyMsg;
+
+        if (pending == null) return;
+
+        // If playback failed because of network-only voice (-4/-5) or missing data (-9),
+        // automatically retry ONCE on an alternate installed engine (e.g. Google -> Samsung TTS)
+        boolean isRetryableOfflineError =
+            errorCode == TextToSpeech.ERROR_NETWORK ||
+            errorCode == TextToSpeech.ERROR_NETWORK_TIMEOUT ||
+            errorCode == TextToSpeech.ERROR_NOT_INSTALLED_YET;
+
+        if (isRetryableOfflineError && !pending.alreadyRetriedEngine) {
+            String altEngine = findAlternateEngine(activeEnginePackage);
+            if (altEngine != null) {
+                mainHandler.post(() -> {
+                    pendingSpeakCall = pending.call;
+                    pendingSpeakAlreadyRetried = true;
+                    fallbackEngineQueue.clear();
+                    startInitializationOnMainThread(altEngine, false);
+                });
+                return;
+            }
+        }
+
+        JSObject res = new JSObject();
+        res.put("spoken", false);
+        res.put("engine", activeEnginePackage);
+        res.put("voice", selectedVoiceName);
+        res.put("errorCode", errorCode);
+        res.put("reason", friendlyMsg);
+        pending.call.resolve(res);
     }
 
     private boolean isJapaneseLocale(Locale loc) {
@@ -322,7 +499,32 @@ public class NativeTtsPlugin extends Plugin {
         return true;
     }
 
-    private boolean checkJapaneseAvailable(TextToSpeech engine) {
+    private void inspectJapaneseVoiceCounts(TextToSpeech engine) {
+        int offline = 0;
+        int online = 0;
+        if (engine != null) {
+            try {
+                Set<Voice> voices = engine.getVoices();
+                if (voices != null) {
+                    for (Voice v : voices) {
+                        if (v == null || !isJapaneseLocale(v.getLocale())) continue;
+                        if (!isVoiceInstalled(v)) continue;
+                        if (v.isNetworkConnectionRequired()) {
+                            online++;
+                        } else {
+                            offline++;
+                        }
+                    }
+                }
+            } catch (Exception ignored) {
+                // Ignore
+            }
+        }
+        offlineJapaneseVoiceCount = offline;
+        onlineJapaneseVoiceCount = online;
+    }
+
+    private boolean isJapaneseLangAvailable(TextToSpeech engine) {
         if (engine == null) return false;
         try {
             int avail = engine.isLanguageAvailable(Locale.JAPAN);
@@ -342,9 +544,22 @@ public class NativeTtsPlugin extends Plugin {
                 return true;
             }
         } catch (Exception ignored) {
-            // Fall through to voice inspection
+            // Ignore
         }
-        return findBestJapaneseVoice(engine, false) != null;
+        return false;
+    }
+
+    private boolean hasOfflineJapaneseSupport(TextToSpeech engine, String enginePkg) {
+        if (engine == null) return false;
+        inspectJapaneseVoiceCounts(engine);
+        if (offlineJapaneseVoiceCount > 0) {
+            return true;
+        }
+        // Samsung TTS sometimes does not populate getVoices() even when Japanese is installed offline
+        if (onlineJapaneseVoiceCount == 0 && SAMSUNG_TTS.equals(enginePkg)) {
+            return isJapaneseLangAvailable(engine);
+        }
+        return false;
     }
 
     private Voice findBestJapaneseVoice(TextToSpeech engine, boolean offlineOnly) {
@@ -382,42 +597,39 @@ public class NativeTtsPlugin extends Plugin {
         }
     }
 
-    private boolean configureBestJapaneseVoice() {
-        if (tts == null || !isInitialized) return false;
+    private void configureBestJapaneseVoice() {
+        if (tts == null || !isInitialized) return;
         selectedVoiceName = null;
 
-        // Always set Japanese locale first (required by Samsung SMT before speak/setVoice)
         try {
             int langRes = tts.setLanguage(Locale.JAPAN);
-            if (langRes == TextToSpeech.LANG_MISSING_DATA || langRes == TextToSpeech.LANG_NOT_SUPPORTED) {
+            if (
+                langRes == TextToSpeech.LANG_MISSING_DATA ||
+                langRes == TextToSpeech.LANG_NOT_SUPPORTED
+            ) {
                 tts.setLanguage(Locale.JAPANESE);
             }
         } catch (Exception ignored) {
             // Ignore
         }
 
-        // Prefer an installed offline Japanese voice if the engine exposes voices
+        // Strongly prefer offline voice first!
         try {
             Voice offlineVoice = findBestJapaneseVoice(tts, true);
-            if (offlineVoice != null) {
-                if (tts.setVoice(offlineVoice) == TextToSpeech.SUCCESS) {
-                    selectedVoiceName = offlineVoice.getName();
-                    return true;
-                }
+            if (offlineVoice != null && tts.setVoice(offlineVoice) == TextToSpeech.SUCCESS) {
+                selectedVoiceName = offlineVoice.getName();
+                return;
             }
             Voice anyVoice = findBestJapaneseVoice(tts, false);
-            if (anyVoice != null) {
-                if (tts.setVoice(anyVoice) == TextToSpeech.SUCCESS) {
-                    selectedVoiceName = anyVoice.getName();
-                    return !anyVoice.isNetworkConnectionRequired();
-                }
+            if (anyVoice != null && tts.setVoice(anyVoice) == TextToSpeech.SUCCESS) {
+                selectedVoiceName = anyVoice.getName();
+                return;
             }
         } catch (Exception ignored) {
-            // Fall back cleanly to Locale.JAPAN
+            // Fall back to Locale.JAPAN
         }
 
         selectedVoiceName = "ja-JP";
-        return checkJapaneseAvailable(tts);
     }
 
     private void resolvePendingSwitch(boolean ok) {
@@ -444,10 +656,10 @@ public class NativeTtsPlugin extends Plugin {
         }
     }
 
-    private void resolveActiveCall(String utteranceId, boolean spoken, String reason) {
+    private void resolveActiveUtterance(String utteranceId, boolean spoken, String reason) {
         if (utteranceId == null) return;
-        PluginCall call = activeCalls.remove(utteranceId);
-        if (call != null) {
+        PendingUtterance pending = activeUtterances.remove(utteranceId);
+        if (pending != null) {
             JSObject res = new JSObject();
             res.put("spoken", spoken);
             res.put("engine", activeEnginePackage);
@@ -455,17 +667,17 @@ public class NativeTtsPlugin extends Plugin {
             if (reason != null) {
                 res.put("reason", reason);
             }
-            call.resolve(res);
+            pending.call.resolve(res);
         }
     }
 
-    private void clearAllActiveCalls() {
-        for (String id : activeCalls.keySet()) {
-            resolveActiveCall(id, true, "stopped");
+    private void clearAllActiveUtterances() {
+        for (String id : activeUtterances.keySet()) {
+            resolveActiveUtterance(id, true, "stopped");
         }
     }
 
-    private void executeSpeak(PluginCall call) {
+    private void executeSpeak(PluginCall call, boolean alreadyRetriedEngine) {
         String text = call.getString("text", "");
         if (text == null || text.trim().isEmpty()) {
             JSObject res = new JSObject();
@@ -482,35 +694,36 @@ public class NativeTtsPlugin extends Plugin {
             return;
         }
 
-        float rate = call.getFloat("rate", 0.92f);
-        float pitch = call.getFloat("pitch", 1.0f);
-        rate = Math.max(0.5f, Math.min(2.0f, rate));
-        pitch = Math.max(0.5f, Math.min(2.0f, pitch));
+        Float rawRate = call.getFloat("rate", 0.92f);
+        Float rawPitch = call.getFloat("pitch", 1.0f);
+        float rate = Math.max(0.5f, Math.min(2.0f, rawRate != null ? rawRate : 0.92f));
+        float pitch = Math.max(0.5f, Math.min(2.0f, rawPitch != null ? rawPitch : 1.0f));
 
         try {
-            clearAllActiveCalls();
+            clearAllActiveUtterances();
             applyMediaAudioAttributes();
             configureBestJapaneseVoice();
             tts.setSpeechRate(rate);
             tts.setPitch(pitch);
 
             String utteranceId = "km_" + UUID.randomUUID().toString();
-            activeCalls.put(utteranceId, call);
+            activeUtterances.put(
+                utteranceId,
+                new PendingUtterance(call, text.trim(), rate, pitch, alreadyRetriedEngine)
+            );
 
-            // Clean Bundle with ONLY UTTERANCE_ID (Samsung SMT rejects KEY_FEATURE_NETWORK_SYNTHESIS)
             Bundle params = new Bundle();
             params.putString(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, utteranceId);
 
             int result = tts.speak(text.trim(), TextToSpeech.QUEUE_FLUSH, params, utteranceId);
             if (result != TextToSpeech.SUCCESS) {
-                // Fallback retry using plain Locale.JAPAN without explicit Voice object
                 tts.setLanguage(Locale.JAPAN);
                 result = tts.speak(text.trim(), TextToSpeech.QUEUE_FLUSH, params, utteranceId);
             }
 
             if (result != TextToSpeech.SUCCESS) {
-                lastError = "TextToSpeech.speak gagal pada engine " + activeEnginePackage;
-                resolveActiveCall(utteranceId, false, lastError);
+                lastError = "TextToSpeech.speak gagal pada mesin " + activeEnginePackage;
+                resolveActiveUtterance(utteranceId, false, lastError);
             } else {
                 lastError = null;
             }
@@ -525,35 +738,40 @@ public class NativeTtsPlugin extends Plugin {
     }
 
     private JSObject buildStatusPayload() {
+        discoverInstalledEnginesViaPackageManager();
+        if (tts != null && isInitialized) {
+            mergeEnginesFromTts(tts);
+            inspectJapaneseVoiceCounts(tts);
+        }
+
         JSObject res = new JSObject();
         res.put("ready", isInitialized);
         res.put("engine", activeEnginePackage != null ? activeEnginePackage : "");
 
         String activeLabel = activeEnginePackage != null ? activeEnginePackage : "";
         JSArray engineList = new JSArray();
-        for (TextToSpeech.EngineInfo info : knownEngines) {
-            if (info == null || info.name == null) continue;
+        for (Map.Entry<String, String> entry : knownEngines.entrySet()) {
             JSObject item = new JSObject();
-            item.put("name", info.name);
-            item.put("label", info.label != null ? info.label : info.name);
+            item.put("name", entry.getKey());
+            item.put("label", entry.getValue());
             engineList.put(item);
-            if (info.name.equals(activeEnginePackage) && info.label != null) {
-                activeLabel = info.label;
+            if (entry.getKey().equals(activeEnginePackage)) {
+                activeLabel = entry.getValue();
             }
         }
         res.put("engineLabel", activeLabel);
         res.put("engines", engineList);
 
-        boolean hasOfflineJa = false;
-        boolean hasAnyJa = false;
-        if (isInitialized && tts != null) {
-            hasAnyJa = checkJapaneseAvailable(tts);
-            Voice offlineVoice = findBestJapaneseVoice(tts, true);
-            hasOfflineJa = offlineVoice != null || (hasAnyJa && SAMSUNG_TTS.equals(activeEnginePackage));
-        }
+        boolean hasOfflineJa = isInitialized && tts != null && hasOfflineJapaneseSupport(tts, activeEnginePackage);
+        boolean hasAnyJa =
+            hasOfflineJa ||
+            onlineJapaneseVoiceCount > 0 ||
+            (isInitialized && tts != null && isJapaneseLangAvailable(tts));
 
         res.put("hasJapaneseVoice", hasAnyJa);
         res.put("hasOfflineJapaneseVoice", hasOfflineJa);
+        res.put("offlineVoiceCount", offlineJapaneseVoiceCount);
+        res.put("onlineVoiceCount", onlineJapaneseVoiceCount);
         res.put("selectedVoiceName", selectedVoiceName != null ? selectedVoiceName : "");
         if (lastError != null) {
             res.put("lastError", lastError);
@@ -564,7 +782,7 @@ public class NativeTtsPlugin extends Plugin {
     @PluginMethod
     public void speak(PluginCall call) {
         if (isInitialized && tts != null) {
-            executeSpeak(call);
+            mainHandler.post(() -> executeSpeak(call, false));
             return;
         }
         if (pendingSpeakCall != null) {
@@ -573,29 +791,31 @@ public class NativeTtsPlugin extends Plugin {
         pendingSpeakCall = call;
         if (!isInitializing) {
             fallbackEngineQueue.clear();
-            startInitialization(getSavedPreferredEngine(), true);
+            startInitializationOnMainThread(getSavedPreferredEngine(), true);
         }
     }
 
     @PluginMethod
     public void stop(PluginCall call) {
         flushPendingSpeakCall(false, "stopped");
-        clearAllActiveCalls();
-        if (tts != null && isInitialized) {
-            try {
-                tts.stop();
-            } catch (Exception ignored) {
-                // Ignore
+        clearAllActiveUtterances();
+        mainHandler.post(() -> {
+            if (tts != null && isInitialized) {
+                try {
+                    tts.stop();
+                } catch (Exception ignored) {
+                    // Ignore
+                }
             }
-        }
-        call.resolve();
+            call.resolve();
+        });
     }
 
     @PluginMethod
     public void getStatus(PluginCall call) {
         if (!isInitialized && !isInitializing) {
             fallbackEngineQueue.clear();
-            startInitialization(getSavedPreferredEngine(), true);
+            startInitializationOnMainThread(getSavedPreferredEngine(), true);
         }
         call.resolve(buildStatusPayload());
     }
@@ -603,18 +823,21 @@ public class NativeTtsPlugin extends Plugin {
     @PluginMethod
     public void setEngine(PluginCall call) {
         String enginePkg = call.getString("engine", "");
+        if (pendingSwitchCall != null) {
+            resolvePendingSwitch(false);
+        }
         if (enginePkg == null || enginePkg.trim().isEmpty()) {
             savePreferredEngine(null);
             fallbackEngineQueue.clear();
             pendingSwitchCall = call;
-            startInitialization(null, true);
+            startInitializationOnMainThread(null, true);
             return;
         }
         String cleanPkg = enginePkg.trim();
         savePreferredEngine(cleanPkg);
         fallbackEngineQueue.clear();
         pendingSwitchCall = call;
-        startInitialization(cleanPkg, false);
+        startInitializationOnMainThread(cleanPkg, false);
     }
 
     @PluginMethod
@@ -623,17 +846,23 @@ public class NativeTtsPlugin extends Plugin {
             call.reject("Activity unavailable");
             return;
         }
+        String mode = call.getString("mode", "settings");
         getActivity().runOnUiThread(() -> {
+            Intent primary = "install".equals(mode)
+                ? new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA)
+                : new Intent("com.android.settings.TTS_SETTINGS");
+            Intent fallback = "install".equals(mode)
+                ? new Intent("com.android.settings.TTS_SETTINGS")
+                : new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+
             try {
-                Intent settingsIntent = new Intent("com.android.settings.TTS_SETTINGS");
-                settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getActivity().startActivity(settingsIntent);
+                primary.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getActivity().startActivity(primary);
                 call.resolve();
             } catch (ActivityNotFoundException e) {
                 try {
-                    Intent installIntent = new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-                    installIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    getActivity().startActivity(installIntent);
+                    fallback.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    getActivity().startActivity(fallback);
                     call.resolve();
                 } catch (Exception ex) {
                     call.reject("Unable to open Android TTS settings: " + ex.getMessage());
@@ -644,7 +873,8 @@ public class NativeTtsPlugin extends Plugin {
 
     @Override
     protected void handleOnDestroy() {
-        shutdownCurrentTts();
+        cancelInitTimeout();
+        mainHandler.post(this::shutdownCurrentTtsOnMain);
         super.handleOnDestroy();
     }
 }

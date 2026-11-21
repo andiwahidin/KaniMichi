@@ -12,6 +12,8 @@ export interface NativeAndroidTtsStatus {
   ready: boolean;
   hasJapaneseVoice: boolean;
   hasOfflineJapaneseVoice: boolean;
+  offlineVoiceCount?: number;
+  onlineVoiceCount?: number;
   engine?: string;
   engineLabel?: string;
   engines?: NativeAndroidTtsEngineInfo[];
@@ -25,11 +27,17 @@ interface NativeTtsPluginInterface {
     lang?: string;
     rate?: number;
     pitch?: number;
-  }): Promise<{ spoken: boolean; engine?: string; voice?: string; reason?: string }>;
+  }): Promise<{
+    spoken: boolean;
+    engine?: string;
+    voice?: string;
+    errorCode?: number;
+    reason?: string;
+  }>;
   stop(): Promise<void>;
   getStatus(): Promise<NativeAndroidTtsStatus>;
   setEngine(options: { engine: string }): Promise<NativeAndroidTtsStatus & { switched?: boolean }>;
-  openInstallVoiceData(): Promise<void>;
+  openInstallVoiceData(options?: { mode?: 'settings' | 'install' }): Promise<void>;
 }
 
 const NativeTts = registerPlugin<NativeTtsPluginInterface>('NativeTts');
@@ -60,7 +68,13 @@ export async function setNativeAndroidTtsEngine(
 
 export async function testNativeAndroidTts(
   text = 'こんにちは'
-): Promise<{ spoken: boolean; engine?: string; voice?: string; reason?: string } | null> {
+): Promise<{
+  spoken: boolean;
+  engine?: string;
+  voice?: string;
+  errorCode?: number;
+  reason?: string;
+} | null> {
   if (!isNativeAndroidTts()) return null;
   try {
     return await NativeTts.speak({ text, lang: 'ja-JP', rate: 0.92, pitch: 1.0 });
@@ -72,10 +86,12 @@ export async function testNativeAndroidTts(
   }
 }
 
-export async function openNativeAndroidTtsInstall(): Promise<void> {
+export async function openNativeAndroidTtsInstall(
+  mode: 'settings' | 'install' = 'settings'
+): Promise<void> {
   if (!isNativeAndroidTts()) return;
   try {
-    await NativeTts.openInstallVoiceData();
+    await NativeTts.openInstallVoiceData({ mode });
   } catch {
     // Ignore if activity unavailable
   }

@@ -74,16 +74,28 @@ export const SettingsModal: React.FC = () => {
 
   const handleSwitchAndroidTtsEngine = async (enginePkg: string) => {
     setTtsBusy(true);
-    setTtsTestMessage('Mengganti mesin suara...');
+    setTtsTestMessage('Menghubungkan ke mesin suara...');
     const updated = await setNativeAndroidTtsEngine(enginePkg);
     setTtsBusy(false);
     if (updated) {
       setAndroidTtsStatus(updated);
-      setTtsTestMessage(
-        updated.hasJapaneseVoice
-          ? `Aktif: ${updated.engineLabel || updated.engine} (Bahasa Jepang tersedia)`
-          : `Aktif: ${updated.engineLabel || updated.engine} — data Bahasa Jepang belum terdeteksi di mesin ini.`
-      );
+      if (updated.hasOfflineJapaneseVoice) {
+        setTtsTestMessage(
+          `Aktif: ${updated.engineLabel || updated.engine} — suara offline Bahasa Jepang siap.`
+        );
+      } else if (updated.hasJapaneseVoice) {
+        setTtsTestMessage(
+          `Aktif: ${updated.engineLabel || updated.engine} — saat ini hanya suara online. Unduh data suara Jepang offline agar berbunyi tanpa internet.`
+        );
+      } else {
+        setTtsTestMessage(
+          `Aktif: ${updated.engineLabel || updated.engine} — ${
+            updated.lastError || 'data Bahasa Jepang belum terdeteksi di mesin ini.'
+          }`
+        );
+      }
+    } else {
+      setTtsTestMessage('Gagal mengganti mesin suara. Coba ubah lewat Pengaturan TTS Android.');
     }
   };
 
@@ -100,7 +112,8 @@ export const SettingsModal: React.FC = () => {
       );
     } else {
       setTtsTestMessage(
-        `Gagal memutar audio${res?.reason ? `: ${res.reason}` : ''}. Coba ganti mesin TTS di atas atau cek Pengaturan TTS Android.`
+        res?.reason ||
+          'Gagal memutar audio. Pilih Samsung TTS di atas atau unduh suara Jepang offline di Pengaturan TTS Android.'
       );
     }
   };
@@ -364,13 +377,17 @@ export const SettingsModal: React.FC = () => {
                     <span className="font-semibold text-slate-700 dark:text-slate-200">
                       {androidTtsStatus?.engineLabel || androidTtsStatus?.engine || 'Memeriksa...'}
                     </span>
-                    {androidTtsStatus?.hasJapaneseVoice ? (
+                    {androidTtsStatus?.hasOfflineJapaneseVoice ? (
                       <span className="ml-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
-                        (Bahasa Jepang Siap)
+                        (Suara Offline Jepang Siap)
+                      </span>
+                    ) : androidTtsStatus?.hasJapaneseVoice ? (
+                      <span className="ml-1.5 text-amber-600 dark:text-amber-400 font-semibold">
+                        (Hanya Suara Online — Butuh Data Offline)
                       </span>
                     ) : androidTtsStatus ? (
                       <span className="ml-1.5 text-amber-600 dark:text-amber-400 font-semibold">
-                        (Bahasa Jepang Belum Terdeteksi)
+                        (Data Jepang Belum Terdeteksi)
                       </span>
                     ) : null}
                   </p>
@@ -415,10 +432,17 @@ export const SettingsModal: React.FC = () => {
                   </button>
                   <button
                     type="button"
-                    onClick={() => void openNativeAndroidTtsInstall()}
+                    onClick={() => void openNativeAndroidTtsInstall('settings')}
                     className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                   >
                     Pengaturan TTS Android
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void openNativeAndroidTtsInstall('install')}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                  >
+                    Unduh Data Suara
                   </button>
                 </div>
 
