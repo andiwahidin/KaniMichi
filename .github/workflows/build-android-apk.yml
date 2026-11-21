@@ -67,12 +67,23 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          VERSION_CODE=$((100 + ${{ github.run_number }}))
+          VERSION_NAME="1.1.${{ github.run_number }}"
+          echo "Building KaniMichi APK versionCode=$VERSION_CODE versionName=$VERSION_NAME"
+          ./gradlew assembleDebug \
+            -PAPP_VERSION_CODE="$VERSION_CODE" \
+            -PAPP_VERSION_NAME="$VERSION_NAME" \
+            --no-daemon
 
-      - name: Prepare downloadable APK artifact
+      - name: Verify APK signature & prepare downloadable artifact
         run: |
+          APK_SRC="android/app/build/outputs/apk/debug/app-debug.apk"
+          APKSIGNER="${ANDROID_HOME}/build-tools/36.0.0/apksigner"
+          if [ -x "$APKSIGNER" ]; then
+            "$APKSIGNER" verify --print-certs "$APK_SRC"
+          fi
           mkdir -p apk-output
-          cp android/app/build/outputs/apk/debug/app-debug.apk apk-output/KaniMichi-Android-Phone-Tablet.apk
+          cp "$APK_SRC" apk-output/KaniMichi-Android-Phone-Tablet.apk
 
       - name: Upload KaniMichi Android APK
         uses: actions/upload-artifact@v6

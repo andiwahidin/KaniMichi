@@ -3,20 +3,32 @@ import type { CurriculumItem } from '../types/curriculum';
 import type { SpeakerRole } from '../types/listening';
 import { stripFuriganaMarkup } from '../data/reading';
 
+export interface NativeAndroidTtsEngineInfo {
+  name: string;
+  label: string;
+}
+
+export interface NativeAndroidTtsStatus {
+  ready: boolean;
+  hasJapaneseVoice: boolean;
+  hasOfflineJapaneseVoice: boolean;
+  engine?: string;
+  engineLabel?: string;
+  engines?: NativeAndroidTtsEngineInfo[];
+  selectedVoiceName?: string;
+  lastError?: string;
+}
+
 interface NativeTtsPluginInterface {
   speak(options: {
     text: string;
     lang?: string;
     rate?: number;
     pitch?: number;
-  }): Promise<{ spoken: boolean; reason?: string }>;
+  }): Promise<{ spoken: boolean; engine?: string; voice?: string; reason?: string }>;
   stop(): Promise<void>;
-  getStatus(): Promise<{
-    ready: boolean;
-    hasJapaneseVoice: boolean;
-    hasOfflineJapaneseVoice: boolean;
-    engine?: string;
-  }>;
+  getStatus(): Promise<NativeAndroidTtsStatus>;
+  setEngine(options: { engine: string }): Promise<NativeAndroidTtsStatus & { switched?: boolean }>;
   openInstallVoiceData(): Promise<void>;
 }
 
@@ -26,17 +38,37 @@ export function isNativeAndroidTts(): boolean {
   return Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android';
 }
 
-export async function getNativeAndroidTtsStatus(): Promise<{
-  ready: boolean;
-  hasJapaneseVoice: boolean;
-  hasOfflineJapaneseVoice: boolean;
-  engine?: string;
-} | null> {
+export async function getNativeAndroidTtsStatus(): Promise<NativeAndroidTtsStatus | null> {
   if (!isNativeAndroidTts()) return null;
   try {
     return await NativeTts.getStatus();
   } catch {
     return null;
+  }
+}
+
+export async function setNativeAndroidTtsEngine(
+  engine: string
+): Promise<NativeAndroidTtsStatus | null> {
+  if (!isNativeAndroidTts()) return null;
+  try {
+    return await NativeTts.setEngine({ engine });
+  } catch {
+    return null;
+  }
+}
+
+export async function testNativeAndroidTts(
+  text = 'こんにちは'
+): Promise<{ spoken: boolean; engine?: string; voice?: string; reason?: string } | null> {
+  if (!isNativeAndroidTts()) return null;
+  try {
+    return await NativeTts.speak({ text, lang: 'ja-JP', rate: 0.92, pitch: 1.0 });
+  } catch (err) {
+    return {
+      spoken: false,
+      reason: err instanceof Error ? err.message : 'Gagal memutar suara TTS.',
+    };
   }
 }
 

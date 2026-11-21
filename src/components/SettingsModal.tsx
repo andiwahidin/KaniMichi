@@ -20,8 +20,10 @@ import { useApp } from '../context/AppContext';
 import {
   getNativeAndroidTtsStatus,
   isNativeAndroidTts,
+  NativeAndroidTtsStatus,
   openNativeAndroidTtsInstall,
-  speakJapanese,
+  setNativeAndroidTtsEngine,
+  testNativeAndroidTts,
 } from '../utils/audio';
 
 export const SettingsModal: React.FC = () => {
@@ -53,16 +55,15 @@ export const SettingsModal: React.FC = () => {
   const [targetLevel, setTargetLevel] = useState<number>(state.currentLevel);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState<'fresh' | 'starter' | null>(null);
-  const [androidTtsStatus, setAndroidTtsStatus] = useState<{
-    ready: boolean;
-    hasJapaneseVoice: boolean;
-    hasOfflineJapaneseVoice: boolean;
-  } | null>(null);
+  const [androidTtsStatus, setAndroidTtsStatus] = useState<NativeAndroidTtsStatus | null>(null);
+  const [ttsBusy, setTtsBusy] = useState(false);
+  const [ttsTestMessage, setTtsTestMessage] = useState<string | null>(null);
   const isAndroidNative = isNativeAndroidTts();
 
   useEffect(() => {
     if (!settingsOpen || !isAndroidNative) return;
     let active = true;
+    setTtsTestMessage(null);
     getNativeAndroidTtsStatus().then((status) => {
       if (active) setAndroidTtsStatus(status);
     });
@@ -70,6 +71,39 @@ export const SettingsModal: React.FC = () => {
       active = false;
     };
   }, [settingsOpen, isAndroidNative]);
+
+  const handleSwitchAndroidTtsEngine = async (enginePkg: string) => {
+    setTtsBusy(true);
+    setTtsTestMessage('Mengganti mesin suara...');
+    const updated = await setNativeAndroidTtsEngine(enginePkg);
+    setTtsBusy(false);
+    if (updated) {
+      setAndroidTtsStatus(updated);
+      setTtsTestMessage(
+        updated.hasJapaneseVoice
+          ? `Aktif: ${updated.engineLabel || updated.engine} (Bahasa Jepang tersedia)`
+          : `Aktif: ${updated.engineLabel || updated.engine} — data Bahasa Jepang belum terdeteksi di mesin ini.`
+      );
+    }
+  };
+
+  const handleTestAndroidTts = async () => {
+    setTtsBusy(true);
+    setTtsTestMessage('Memutar suara tes...');
+    const res = await testNativeAndroidTts('こんにちは');
+    const refreshed = await getNativeAndroidTtsStatus();
+    if (refreshed) setAndroidTtsStatus(refreshed);
+    setTtsBusy(false);
+    if (res?.spoken) {
+      setTtsTestMessage(
+        `Berhasil diputar lewat ${res.engine || refreshed?.engineLabel || 'TTS Android'} (pastikan volume Media aktif).`
+      );
+    } else {
+      setTtsTestMessage(
+        `Gagal memutar audio${res?.reason ? `: ${res.reason}` : ''}. Coba ganti mesin TTS di atas atau cek Pengaturan TTS Android.`
+      );
+    }
+  };
 
   if (!settingsOpen) return null;
 
@@ -319,25 +353,63 @@ export const SettingsModal: React.FC = () => {
             </div>
 
             {isAndroidNative && (
-              <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-2.5">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <div className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                      <Volume2 className="w-4 h-4 text-[#0284C7]" />
-                      <span>Audio Offline Bahasa Jepang (Android)</span>
-                    </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                      {androidTtsStatus?.hasOfflineJapaneseVoice
-                        ? 'Paket suara offline Bahasa Jepang terdeteksi dan siap digunakan tanpa internet.'
-                        : 'Jika suara belum keluar saat offline, unduh paket data suara Bahasa Jepang (Jepang) di pengaturan TTS Android.'}
-                    </p>
+              <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                <div>
+                  <div className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <Volume2 className="w-4 h-4 text-[#0284C7]" />
+                    <span>Audio Offline Bahasa Jepang (Android)</span>
                   </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Mesin aktif:{' '}
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">
+                      {androidTtsStatus?.engineLabel || androidTtsStatus?.engine || 'Memeriksa...'}
+                    </span>
+                    {androidTtsStatus?.hasJapaneseVoice ? (
+                      <span className="ml-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
+                        (Bahasa Jepang Siap)
+                      </span>
+                    ) : androidTtsStatus ? (
+                      <span className="ml-1.5 text-amber-600 dark:text-amber-400 font-semibold">
+                        (Bahasa Jepang Belum Terdeteksi)
+                      </span>
+                    ) : null}
+                  </p>
                 </div>
+
+                {androidTtsStatus?.engines && androidTtsStatus.engines.length > 0 && (
+                  <div className="space-y-1.5">
+                    <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      Pilih Mesin Suara Terpasang (Samsung / Google)
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {androidTtsStatus.engines.map((eng) => {
+                        const isSelected = eng.name === androidTtsStatus.engine;
+                        return (
+                          <button
+                            key={eng.name}
+                            type="button"
+                            disabled={ttsBusy}
+                            onClick={() => void handleSwitchAndroidTtsEngine(eng.name)}
+                            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-colors cursor-pointer disabled:opacity-60 ${
+                              isSelected
+                                ? 'bg-[#0284C7] text-white border-[#0284C7]'
+                                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
+                            }`}
+                          >
+                            {eng.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-2">
                   <button
                     type="button"
-                    onClick={() => speakJapanese('こんにちは', 0.92)}
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0284C7] hover:bg-[#0369A1] text-white transition-colors cursor-pointer"
+                    disabled={ttsBusy}
+                    onClick={() => void handleTestAndroidTts()}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0284C7] hover:bg-[#0369A1] text-white transition-colors cursor-pointer disabled:opacity-60"
                   >
                     Tes Suara Jepang
                   </button>
@@ -346,9 +418,15 @@ export const SettingsModal: React.FC = () => {
                     onClick={() => void openNativeAndroidTtsInstall()}
                     className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                   >
-                    Unduh / Atur Suara Offline
+                    Pengaturan TTS Android
                   </button>
                 </div>
+
+                {ttsTestMessage && (
+                  <p className="text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-md px-2.5 py-1.5">
+                    {ttsTestMessage}
+                  </p>
+                )}
               </div>
             )}
 
