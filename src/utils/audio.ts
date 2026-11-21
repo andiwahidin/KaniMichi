@@ -1,4 +1,4 @@
-import { Capacitor, registerPlugin } from '@capacitor/core';
+import { Capacitor, registerPlugin, type PluginListenerHandle } from '@capacitor/core';
 import type { CurriculumItem } from '../types/curriculum';
 import type { SpeakerRole } from '../types/listening';
 import { stripFuriganaMarkup } from '../data/reading';
@@ -40,10 +40,166 @@ interface NativeTtsPluginInterface {
   openInstallVoiceData(options?: { mode?: 'settings' | 'install' }): Promise<void>;
 }
 
+export interface OfflineAudioPlayResult {
+  played: boolean;
+  source?: 'cache' | 'downloaded';
+  bytes?: number;
+  reason?: string;
+}
+
+export interface OfflineAudioStorageStats {
+  totalFiles: number;
+  totalBytes: number;
+  isOnline: boolean;
+}
+
+export interface OfflineAudioCountResult {
+  totalCount: number;
+  cachedCount: number;
+  cachedBytes: number;
+}
+
+export interface OfflineAudioBatchProgress {
+  packId: string;
+  completed: number;
+  total: number;
+  downloadedNew: number;
+  skippedExisting: number;
+  failed: number;
+  bytesAdded: number;
+  currentText: string;
+}
+
+export interface OfflineAudioBatchResult extends Omit<OfflineAudioBatchProgress, 'currentText'> {
+  cancelled: boolean;
+}
+
+interface OfflineAudioPluginInterface {
+  play(options: {
+    text: string;
+    rate?: number;
+    pitch?: number;
+    allowNetwork?: boolean;
+  }): Promise<OfflineAudioPlayResult>;
+  stop(): Promise<void>;
+  getStorageStats(): Promise<OfflineAudioStorageStats>;
+  countCached(options: { texts: string[] }): Promise<OfflineAudioCountResult>;
+  downloadBatch(options: { packId: string; texts: string[] }): Promise<OfflineAudioBatchResult>;
+  cancelDownload(): Promise<void>;
+  clearTexts(options: { texts: string[] }): Promise<{ deletedFiles: number; deletedBytes: number }>;
+  clearAll(): Promise<{ deletedFiles: number; deletedBytes: number }>;
+  addListener(
+    eventName: 'downloadProgress',
+    listenerFunc: (progress: OfflineAudioBatchProgress) => void
+  ): Promise<PluginListenerHandle>;
+}
+
 const NativeTts = registerPlugin<NativeTtsPluginInterface>('NativeTts');
+const OfflineAudio = registerPlugin<OfflineAudioPluginInterface>('OfflineAudio');
 
 export function isNativeAndroidTts(): boolean {
   return Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android';
+}
+
+export function isOfflineAudioPackSupported(): boolean {
+  return isNativeAndroidTts();
+}
+
+export async function getOfflineAudioStorageStats(): Promise<OfflineAudioStorageStats | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.getStorageStats();
+  } catch {
+    return null;
+  }
+}
+
+export async function countOfflineCachedTexts(
+  texts: string[]
+): Promise<OfflineAudioCountResult | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.countCached({ texts });
+  } catch {
+    return null;
+  }
+}
+
+export async function downloadOfflineAudioBatch(
+  packId: string,
+  texts: string[]
+): Promise<OfflineAudioBatchResult | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.downloadBatch({ packId, texts });
+  } catch {
+    return null;
+  }
+}
+
+export async function cancelOfflineAudioDownload(): Promise<void> {
+  if (!isOfflineAudioPackSupported()) return;
+  try {
+    await OfflineAudio.cancelDownload();
+  } catch {
+    // Ignore
+  }
+}
+
+export async function clearOfflineAudioTexts(
+  texts: string[]
+): Promise<{ deletedFiles: number; deletedBytes: number } | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.clearTexts({ texts });
+  } catch {
+    return null;
+  }
+}
+
+export async function clearAllOfflineAudio(): Promise<{
+  deletedFiles: number;
+  deletedBytes: number;
+} | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.clearAll();
+  } catch {
+    return null;
+  }
+}
+
+export async function subscribeOfflineAudioProgress(
+  listener: (progress: OfflineAudioBatchProgress) => void
+): Promise<() => void> {
+  if (!isOfflineAudioPackSupported()) return () => {};
+  try {
+    const handle = await OfflineAudio.addListener('downloadProgress', listener);
+    return () => {
+      void handle.remove();
+    };
+  } catch {
+    return () => {};
+  }
+}
+
+export async function testOfflineAudio(
+  text = 'こんにちは'
+): Promise<OfflineAudioPlayResult | null> {
+  if (!isOfflineAudioPackSupported()) return null;
+  try {
+    return await OfflineAudio.play({
+      text: stripFuriganaMarkup(text).trim(),
+      rate: 0.94,
+      pitch: 1.0,
+      allowNetwork: true,
+    });
+  } catch (err) {
+    return {
+      played: false,
+      reason: err instanceof Error ? err.message : 'Gagal memutar audio offline.',
+    };
+  }
 }
 
 export async function getNativeAndroidTtsStatus(): Promise<NativeAndroidTtsStatus | null> {
@@ -377,6 +533,9 @@ export function stopSpeech(): void {
   clearSpeechMonitors();
   setExternalAudioPlaying('tts', false);
   if (isNativeAndroidTts()) {
+    void OfflineAudio.stop().catch(() => {
+      // Ignore native stop errors
+    });
     void NativeTts.stop().catch(() => {
       // Ignore native stop errors
     });
@@ -390,10 +549,29 @@ export function stopSpeech(): void {
   }
 }
 
+function getMediaPitchForRole(role: SpeakerRole): number {
+  switch (role) {
+    case 'female':
+      return 1.06;
+    case 'male':
+      return 0.9;
+    case 'female2':
+      return 1.12;
+    case 'male2':
+      return 0.85;
+    case 'narrator':
+    default:
+      return 1.0;
+  }
+}
+
 /**
- * Speak a single Japanese utterance using native Android TextToSpeech (offline-first)
- * inside the APK, or Web Speech API (ja-JP) on web browsers.
- * Tracks live playback state reliably so auto-advance always waits until audio finishes.
+ * Speak a single Japanese utterance.
+ * Inside the Android APK:
+ *   1. Plays downloaded local MP3 immediately via hardware MediaPlayer (100% offline, immune to Android TTS bugs).
+ *   2. If not downloaded yet and online, automatically downloads & caches the MP3 permanently on device then plays it.
+ *   3. Falls back to native Android TextToSpeech only when offline and not yet downloaded.
+ * On web browsers: uses Web Speech API (ja-JP).
  */
 export function speakJapanese(
   text: string,
@@ -414,7 +592,8 @@ export function speakJapanese(
     setExternalAudioPlaying('tts', true);
 
     const safeRate = Math.max(0.5, Math.min(2, rate));
-    const { pitch } = getVoiceAndPitch(role, []);
+    const mediaPitch = getMediaPitchForRole(role);
+    const { pitch: ttsPitch } = getVoiceAndPitch(role, []);
     let settled = false;
     const finish = () => {
       if (settled) return;
@@ -426,15 +605,36 @@ export function speakJapanese(
       onEnd?.();
     };
 
-    const estimatedMs = Math.max(1200, Math.round((clean.length * 220) / safeRate) + 1000);
+    const estimatedMs = Math.max(1500, Math.round((clean.length * 240) / safeRate) + 1800);
     speechWatchdogTimer = window.setTimeout(
       finish,
-      Math.min(35000, Math.max(7000, estimatedMs * 2))
+      Math.min(45000, Math.max(9000, estimatedMs * 2))
     );
 
-    NativeTts.speak({ text: clean, lang: 'ja-JP', rate: safeRate, pitch })
-      .then(() => finish())
-      .catch(() => finish());
+    OfflineAudio.play({ text: clean, rate: safeRate, pitch: mediaPitch, allowNetwork: true })
+      .then((res) => {
+        if (myToken !== speechToken) {
+          finish();
+          return;
+        }
+        if (res.played || res.reason === 'interrupted') {
+          finish();
+          return;
+        }
+        // Only fall back to Android system TTS if offline & clip is not downloaded yet
+        return NativeTts.speak({ text: clean, lang: 'ja-JP', rate: safeRate, pitch: ttsPitch })
+          .then(() => finish())
+          .catch(() => finish());
+      })
+      .catch(() => {
+        if (myToken !== speechToken) {
+          finish();
+          return;
+        }
+        void NativeTts.speak({ text: clean, lang: 'ja-JP', rate: safeRate, pitch: ttsPitch })
+          .then(() => finish())
+          .catch(() => finish());
+      });
     return;
   }
 
@@ -615,7 +815,8 @@ export function playDialogueSequence(
       const cue = cues[idx];
       options.onCueStart?.(cue.id, idx);
       const clean = stripFuriganaMarkup(cue.text).trim();
-      const { pitch } = getVoiceAndPitch(cue.role, []);
+      const mediaPitch = getMediaPitchForRole(cue.role);
+      const { pitch: ttsPitch } = getVoiceAndPitch(cue.role, []);
 
       const nextStep = () => {
         if (cancelled) return;
@@ -631,9 +832,23 @@ export function playDialogueSequence(
         return;
       }
 
-      NativeTts.speak({ text: clean, lang: 'ja-JP', rate, pitch })
-        .then(() => nextStep())
-        .catch(() => nextStep());
+      OfflineAudio.play({ text: clean, rate, pitch: mediaPitch, allowNetwork: true })
+        .then((res) => {
+          if (cancelled) return;
+          if (res.played || res.reason === 'interrupted') {
+            nextStep();
+            return;
+          }
+          return NativeTts.speak({ text: clean, lang: 'ja-JP', rate, pitch: ttsPitch })
+            .then(() => nextStep())
+            .catch(() => nextStep());
+        })
+        .catch(() => {
+          if (cancelled) return;
+          void NativeTts.speak({ text: clean, lang: 'ja-JP', rate, pitch: ttsPitch })
+            .then(() => nextStep())
+            .catch(() => nextStep());
+        });
     };
 
     speakAtNative(0);

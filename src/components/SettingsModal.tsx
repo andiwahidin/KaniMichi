@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   X,
   Download,
@@ -13,18 +13,10 @@ import {
   LogOut,
   ShieldCheck,
   User as UserIcon,
-  Volume2,
 } from 'lucide-react';
 import { MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
-import {
-  getNativeAndroidTtsStatus,
-  isNativeAndroidTts,
-  NativeAndroidTtsStatus,
-  openNativeAndroidTtsInstall,
-  setNativeAndroidTtsEngine,
-  testNativeAndroidTts,
-} from '../utils/audio';
+import { OfflineDownloadManager } from './OfflineDownloadManager';
 
 export const SettingsModal: React.FC = () => {
   const {
@@ -55,68 +47,6 @@ export const SettingsModal: React.FC = () => {
   const [targetLevel, setTargetLevel] = useState<number>(state.currentLevel);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState<'fresh' | 'starter' | null>(null);
-  const [androidTtsStatus, setAndroidTtsStatus] = useState<NativeAndroidTtsStatus | null>(null);
-  const [ttsBusy, setTtsBusy] = useState(false);
-  const [ttsTestMessage, setTtsTestMessage] = useState<string | null>(null);
-  const isAndroidNative = isNativeAndroidTts();
-
-  useEffect(() => {
-    if (!settingsOpen || !isAndroidNative) return;
-    let active = true;
-    setTtsTestMessage(null);
-    getNativeAndroidTtsStatus().then((status) => {
-      if (active) setAndroidTtsStatus(status);
-    });
-    return () => {
-      active = false;
-    };
-  }, [settingsOpen, isAndroidNative]);
-
-  const handleSwitchAndroidTtsEngine = async (enginePkg: string) => {
-    setTtsBusy(true);
-    setTtsTestMessage('Menghubungkan ke mesin suara...');
-    const updated = await setNativeAndroidTtsEngine(enginePkg);
-    setTtsBusy(false);
-    if (updated) {
-      setAndroidTtsStatus(updated);
-      if (updated.hasOfflineJapaneseVoice) {
-        setTtsTestMessage(
-          `Aktif: ${updated.engineLabel || updated.engine} — suara offline Bahasa Jepang siap.`
-        );
-      } else if (updated.hasJapaneseVoice) {
-        setTtsTestMessage(
-          `Aktif: ${updated.engineLabel || updated.engine} — saat ini hanya suara online. Unduh data suara Jepang offline agar berbunyi tanpa internet.`
-        );
-      } else {
-        setTtsTestMessage(
-          `Aktif: ${updated.engineLabel || updated.engine} — ${
-            updated.lastError || 'data Bahasa Jepang belum terdeteksi di mesin ini.'
-          }`
-        );
-      }
-    } else {
-      setTtsTestMessage('Gagal mengganti mesin suara. Coba ubah lewat Pengaturan TTS Android.');
-    }
-  };
-
-  const handleTestAndroidTts = async () => {
-    setTtsBusy(true);
-    setTtsTestMessage('Memutar suara tes...');
-    const res = await testNativeAndroidTts('こんにちは');
-    const refreshed = await getNativeAndroidTtsStatus();
-    if (refreshed) setAndroidTtsStatus(refreshed);
-    setTtsBusy(false);
-    if (res?.spoken) {
-      setTtsTestMessage(
-        `Berhasil diputar lewat ${res.engine || refreshed?.engineLabel || 'TTS Android'} (pastikan volume Media aktif).`
-      );
-    } else {
-      setTtsTestMessage(
-        res?.reason ||
-          'Gagal memutar audio. Pilih Samsung TTS di atas atau unduh suara Jepang offline di Pengaturan TTS Android.'
-      );
-    }
-  };
 
   if (!settingsOpen) return null;
 
@@ -365,94 +295,7 @@ export const SettingsModal: React.FC = () => {
               </button>
             </div>
 
-            {isAndroidNative && (
-              <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
-                <div>
-                  <div className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                    <Volume2 className="w-4 h-4 text-[#0284C7]" />
-                    <span>Audio Offline Bahasa Jepang (Android)</span>
-                  </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    Mesin aktif:{' '}
-                    <span className="font-semibold text-slate-700 dark:text-slate-200">
-                      {androidTtsStatus?.engineLabel || androidTtsStatus?.engine || 'Memeriksa...'}
-                    </span>
-                    {androidTtsStatus?.hasOfflineJapaneseVoice ? (
-                      <span className="ml-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
-                        (Suara Offline Jepang Siap)
-                      </span>
-                    ) : androidTtsStatus?.hasJapaneseVoice ? (
-                      <span className="ml-1.5 text-amber-600 dark:text-amber-400 font-semibold">
-                        (Hanya Suara Online — Butuh Data Offline)
-                      </span>
-                    ) : androidTtsStatus ? (
-                      <span className="ml-1.5 text-amber-600 dark:text-amber-400 font-semibold">
-                        (Data Jepang Belum Terdeteksi)
-                      </span>
-                    ) : null}
-                  </p>
-                </div>
-
-                {androidTtsStatus?.engines && androidTtsStatus.engines.length > 0 && (
-                  <div className="space-y-1.5">
-                    <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      Pilih Mesin Suara Terpasang (Samsung / Google)
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {androidTtsStatus.engines.map((eng) => {
-                        const isSelected = eng.name === androidTtsStatus.engine;
-                        return (
-                          <button
-                            key={eng.name}
-                            type="button"
-                            disabled={ttsBusy}
-                            onClick={() => void handleSwitchAndroidTtsEngine(eng.name)}
-                            className={`px-2.5 py-1.5 rounded-lg text-xs font-medium border transition-colors cursor-pointer disabled:opacity-60 ${
-                              isSelected
-                                ? 'bg-[#0284C7] text-white border-[#0284C7]'
-                                : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
-                            }`}
-                          >
-                            {eng.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-2">
-                  <button
-                    type="button"
-                    disabled={ttsBusy}
-                    onClick={() => void handleTestAndroidTts()}
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0284C7] hover:bg-[#0369A1] text-white transition-colors cursor-pointer disabled:opacity-60"
-                  >
-                    Tes Suara Jepang
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => void openNativeAndroidTtsInstall('settings')}
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
-                  >
-                    Pengaturan TTS Android
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => void openNativeAndroidTtsInstall('install')}
-                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
-                  >
-                    Unduh Data Suara
-                  </button>
-                </div>
-
-                {ttsTestMessage && (
-                  <p className="text-xs text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-md px-2.5 py-1.5">
-                    {ttsTestMessage}
-                  </p>
-                )}
-              </div>
-            )}
+            <OfflineDownloadManager />
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4">
               <div>
