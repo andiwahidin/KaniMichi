@@ -1,11 +1,16 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
+import { Capacitor } from '@capacitor/core';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Browser } from '@capacitor/browser';
 import {
   fetchAnnouncements,
   fetchCloudSrsState,
   fetchCurriculumOverrides,
   fetchOrCreateUserProfile,
+  handleNativeOAuthCallbackUrl,
   isSupabaseConfigured,
+  NATIVE_OAUTH_REDIRECT_URL,
   saveCloudSrsState,
   supabase,
   updateOwnDisplayName,
@@ -496,7 +501,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     } = supabase.auth.onAuthStateChange((_event, session) => {
       const nextUser = session?.user ?? null;
       setCloudUser(nextUser);
-      if (!nextUser) {
+      if (nextUser) {
+        setAuthModalOpen(false);
+        setCloudError(null);
+      } else {
         cloudHydratedUserRef.current = null;
         setUserProfile(null);
         setSchemaNeedsUpdate(false);
@@ -505,9 +513,44 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       }
     });
 
+    // Listen for Android deep-link return from Google OAuth (com.kanimichi.app://login-callback)
+    let removeUrlListener: (() => Promise<void>) | null = null;
+    if (Capacitor.isNativePlatform()) {
+      const processUrl = async (url?: string | null) => {
+        if (!url || !url.startsWith('com.kanimichi.app://')) return;
+        const result = await handleNativeOAuthCallbackUrl(url);
+        if (!active) return;
+        if (result.ok) {
+          setAuthModalOpen(false);
+          setCloudError(null);
+        } else if (result.error) {
+          setCloudError(result.error);
+        }
+      };
+
+      CapacitorApp.getLaunchUrl()
+        .then((launch) => processUrl(launch?.url))
+        .catch(() => {
+          // Ignore launch URL lookup error
+        });
+
+      CapacitorApp.addListener('appUrlOpen', ({ url }) => {
+        void processUrl(url);
+      }).then((handle) => {
+        if (!active) {
+          void handle.remove();
+        } else {
+          removeUrlListener = () => handle.remove();
+        }
+      });
+    }
+
     return () => {
       active = false;
       subscription.unsubscribe();
+      if (removeUrlListener) {
+        void removeUrlListener();
+      }
     };
   }, []);
 
@@ -1686,6 +1729,41 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     if (!supabase) {
       return { ok: false, message: 'Supabase belum dikonfigurasi pada environment.' };
     }
+
+    if (Capacitor.isNativePlatform()) {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: NATIVE_OAUTH_REDIRECT_URL,
+          skipBrowserRedirect: true,
+          queryParams: {
+            prompt: 'select_account',
+          },
+        },
+      });
+      if (error || !data?.url) {
+        return {
+          ok: false,
+          message: mapAuthError(error?.message || 'Gagal membuat tautan login Google.'),
+        };
+      }
+      try {
+        await Browser.open({ url: data.url, presentationStyle: 'popover' });
+        return {
+          ok: true,
+          message: 'Selesaikan login Google — Anda akan otomatis kembali ke KaniMichi.',
+        };
+      } catch (err) {
+        return {
+          ok: false,
+          message:
+            err instanceof Error
+              ? err.message
+              : 'Gagal membuka jendela login Google di perangkat.',
+        };
+      }
+    }
+
     const redirectTo = `${window.location.origin}${window.location.pathname}`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',

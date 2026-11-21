@@ -78,3 +78,10 @@ npm run android:apk
 ```
 File APK hasil build tersedia di `android/app/build/outputs/apk/debug/app-debug.apk` (atau buka folder `android/` langsung di **Android Studio** untuk membuat versi signed Release `.apk` / `.aab`).
 
+### Pengaturan Login Google di APK Android (Wajib 1x di Supabase)
+Agar login Google kembali otomatis ke dalam aplikasi Android (tidak berhenti di browser):
+1. Buka **Supabase Dashboard → Authentication → URL Configuration → Redirect URLs**.
+2. Klik **Add URL** dan tambahkan: `com.kanimichi.app://login-callback`
+3. Simpan perubahan.
+
+

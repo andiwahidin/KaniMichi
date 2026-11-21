@@ -1,6 +1,53 @@
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import type { CurriculumItem } from '../types/curriculum';
 import type { SpeakerRole } from '../types/listening';
 import { stripFuriganaMarkup } from '../data/reading';
+
+interface NativeTtsPluginInterface {
+  speak(options: {
+    text: string;
+    lang?: string;
+    rate?: number;
+    pitch?: number;
+  }): Promise<{ spoken: boolean; reason?: string }>;
+  stop(): Promise<void>;
+  getStatus(): Promise<{
+    ready: boolean;
+    hasJapaneseVoice: boolean;
+    hasOfflineJapaneseVoice: boolean;
+    engine?: string;
+  }>;
+  openInstallVoiceData(): Promise<void>;
+}
+
+const NativeTts = registerPlugin<NativeTtsPluginInterface>('NativeTts');
+
+export function isNativeAndroidTts(): boolean {
+  return Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android';
+}
+
+export async function getNativeAndroidTtsStatus(): Promise<{
+  ready: boolean;
+  hasJapaneseVoice: boolean;
+  hasOfflineJapaneseVoice: boolean;
+  engine?: string;
+} | null> {
+  if (!isNativeAndroidTts()) return null;
+  try {
+    return await NativeTts.getStatus();
+  } catch {
+    return null;
+  }
+}
+
+export async function openNativeAndroidTtsInstall(): Promise<void> {
+  if (!isNativeAndroidTts()) return;
+  try {
+    await NativeTts.openInstallVoiceData();
+  } catch {
+    // Ignore if activity unavailable
+  }
+}
 
 /**
  * Strip dictionary annotation markers (such as `^` kan'yō-on prefixes) so TTS
@@ -281,6 +328,12 @@ export function stopSpeech(): void {
   activeUtterance = null;
   clearSpeechMonitors();
   setExternalAudioPlaying('tts', false);
+  if (isNativeAndroidTts()) {
+    void NativeTts.stop().catch(() => {
+      // Ignore native stop errors
+    });
+    return;
+  }
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   try {
     window.speechSynthesis.cancel();
@@ -290,9 +343,9 @@ export function stopSpeech(): void {
 }
 
 /**
- * Speak a single Japanese utterance using Web Speech API (ja-JP).
- * Tracks live playback state reliably across desktop and mobile browsers (Android Chrome/Opera/Safari)
- * so auto-advance always waits until audio has genuinely finished playing.
+ * Speak a single Japanese utterance using native Android TextToSpeech (offline-first)
+ * inside the APK, or Web Speech API (ja-JP) on web browsers.
+ * Tracks live playback state reliably so auto-advance always waits until audio finishes.
  */
 export function speakJapanese(
   text: string,
@@ -301,11 +354,43 @@ export function speakJapanese(
   onEnd?: () => void
 ): void {
   const clean = stripFuriganaMarkup(text).trim();
-  if (
-    !clean ||
-    typeof window === 'undefined' ||
-    !('speechSynthesis' in window)
-  ) {
+  if (!clean) {
+    onEnd?.();
+    return;
+  }
+
+  if (isNativeAndroidTts()) {
+    speechToken += 1;
+    const myToken = speechToken;
+    clearSpeechMonitors();
+    setExternalAudioPlaying('tts', true);
+
+    const safeRate = Math.max(0.5, Math.min(2, rate));
+    const { pitch } = getVoiceAndPitch(role, []);
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      if (myToken === speechToken) {
+        clearSpeechMonitors();
+        setExternalAudioPlaying('tts', false);
+      }
+      onEnd?.();
+    };
+
+    const estimatedMs = Math.max(1200, Math.round((clean.length * 220) / safeRate) + 1000);
+    speechWatchdogTimer = window.setTimeout(
+      finish,
+      Math.min(35000, Math.max(7000, estimatedMs * 2))
+    );
+
+    NativeTts.speak({ text: clean, lang: 'ja-JP', rate: safeRate, pitch })
+      .then(() => finish())
+      .catch(() => finish());
+    return;
+  }
+
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     onEnd?.();
     return;
   }
@@ -448,7 +533,66 @@ export function playDialogueSequence(
     onError?: () => void;
   } = {}
 ): () => void {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window) || cues.length === 0) {
+  if (cues.length === 0) {
+    options.onComplete?.();
+    return () => {};
+  }
+
+  if (isNativeAndroidTts()) {
+    let cancelled = false;
+    let timerId: number | null = null;
+    const rate = Math.max(0.5, Math.min(2, options.rate ?? 0.94));
+
+    const cancel = () => {
+      cancelled = true;
+      if (timerId !== null) {
+        window.clearTimeout(timerId);
+        timerId = null;
+      }
+      setExternalAudioPlaying('dialogue', false);
+      stopSpeech();
+    };
+
+    stopSpeech();
+    setExternalAudioPlaying('dialogue', true);
+
+    const speakAtNative = (idx: number) => {
+      if (cancelled) return;
+      if (idx >= cues.length) {
+        setExternalAudioPlaying('dialogue', false);
+        options.onComplete?.();
+        return;
+      }
+
+      const cue = cues[idx];
+      options.onCueStart?.(cue.id, idx);
+      const clean = stripFuriganaMarkup(cue.text).trim();
+      const { pitch } = getVoiceAndPitch(cue.role, []);
+
+      const nextStep = () => {
+        if (cancelled) return;
+        const pause = cue.pauseAfterMs ?? 380;
+        timerId = window.setTimeout(() => {
+          timerId = null;
+          speakAtNative(idx + 1);
+        }, pause);
+      };
+
+      if (!clean) {
+        nextStep();
+        return;
+      }
+
+      NativeTts.speak({ text: clean, lang: 'ja-JP', rate, pitch })
+        .then(() => nextStep())
+        .catch(() => nextStep());
+    };
+
+    speakAtNative(0);
+    return cancel;
+  }
+
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
     options.onComplete?.();
     return () => {};
   }
@@ -529,5 +673,8 @@ export function playDialogueSequence(
 }
 
 export function isSpeechSupported(): boolean {
-  return typeof window !== 'undefined' && 'speechSynthesis' in window;
+  return (
+    isNativeAndroidTts() ||
+    (typeof window !== 'undefined' && 'speechSynthesis' in window)
+  );
 }

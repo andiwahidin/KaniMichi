@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   X,
   Download,
@@ -13,9 +13,16 @@ import {
   LogOut,
   ShieldCheck,
   User as UserIcon,
+  Volume2,
 } from 'lucide-react';
 import { MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
+import {
+  getNativeAndroidTtsStatus,
+  isNativeAndroidTts,
+  openNativeAndroidTtsInstall,
+  speakJapanese,
+} from '../utils/audio';
 
 export const SettingsModal: React.FC = () => {
   const {
@@ -46,6 +53,23 @@ export const SettingsModal: React.FC = () => {
   const [targetLevel, setTargetLevel] = useState<number>(state.currentLevel);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [confirmReset, setConfirmReset] = useState<'fresh' | 'starter' | null>(null);
+  const [androidTtsStatus, setAndroidTtsStatus] = useState<{
+    ready: boolean;
+    hasJapaneseVoice: boolean;
+    hasOfflineJapaneseVoice: boolean;
+  } | null>(null);
+  const isAndroidNative = isNativeAndroidTts();
+
+  useEffect(() => {
+    if (!settingsOpen || !isAndroidNative) return;
+    let active = true;
+    getNativeAndroidTtsStatus().then((status) => {
+      if (active) setAndroidTtsStatus(status);
+    });
+    return () => {
+      active = false;
+    };
+  }, [settingsOpen, isAndroidNative]);
 
   if (!settingsOpen) return null;
 
@@ -293,6 +317,40 @@ export const SettingsModal: React.FC = () => {
                 {state.settings.autoplayAudio ? 'Aktif' : 'Nonaktif'}
               </button>
             </div>
+
+            {isAndroidNative && (
+              <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-2.5">
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <div className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                      <Volume2 className="w-4 h-4 text-[#0284C7]" />
+                      <span>Audio Offline Bahasa Jepang (Android)</span>
+                    </div>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                      {androidTtsStatus?.hasOfflineJapaneseVoice
+                        ? 'Paket suara offline Bahasa Jepang terdeteksi dan siap digunakan tanpa internet.'
+                        : 'Jika suara belum keluar saat offline, unduh paket data suara Bahasa Jepang (Jepang) di pengaturan TTS Android.'}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={() => speakJapanese('こんにちは', 0.92)}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0284C7] hover:bg-[#0369A1] text-white transition-colors cursor-pointer"
+                  >
+                    Tes Suara Jepang
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void openNativeAndroidTtsInstall()}
+                    className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                  >
+                    Unduh / Atur Suara Offline
+                  </button>
+                </div>
+              </div>
+            )}
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4">
               <div>

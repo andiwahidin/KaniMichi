@@ -1,4 +1,6 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { Capacitor } from '@capacitor/core';
+import { Browser } from '@capacitor/browser';
 import {
   AdminUserRecord,
   Announcement,
@@ -91,6 +93,7 @@ function initSupabaseClient(): SupabaseClient | null {
   try {
     return createClient(supabaseUrl, supabasePublicKey, {
       auth: {
+        flowType: 'pkce',
         persistSession: true,
         autoRefreshToken: true,
         detectSessionInUrl: true,
@@ -106,6 +109,70 @@ function initSupabaseClient(): SupabaseClient | null {
 }
 
 export const supabase: SupabaseClient | null = initSupabaseClient();
+
+export const NATIVE_OAUTH_REDIRECT_URL = 'com.kanimichi.app://login-callback';
+
+/**
+ * Process a deep-link OAuth redirect URL (com.kanimichi.app://login-callback?code=...
+ * or #access_token=...) inside the native Android APK and close Chrome Custom Tabs.
+ */
+export async function handleNativeOAuthCallbackUrl(
+  rawUrl: string
+): Promise<{ ok: boolean; error?: string }> {
+  if (!supabase || !rawUrl || !rawUrl.startsWith('com.kanimichi.app://')) {
+    return { ok: false };
+  }
+
+  try {
+    if (Capacitor.isNativePlatform()) {
+      await Browser.close().catch(() => {
+        // Browser may already be closed
+      });
+    }
+
+    const parsed = new URL(rawUrl);
+    const queryParams = parsed.searchParams;
+    const hashParams = new URLSearchParams(parsed.hash.replace(/^#/, ''));
+
+    const errDesc =
+      queryParams.get('error_description') ||
+      hashParams.get('error_description') ||
+      queryParams.get('error') ||
+      hashParams.get('error');
+    if (errDesc) {
+      return { ok: false, error: decodeURIComponent(errDesc.replace(/\+/g, ' ')) };
+    }
+
+    const code = queryParams.get('code');
+    if (code) {
+      const { error } = await supabase.auth.exchangeCodeForSession(code);
+      if (error) {
+        return { ok: false, error: error.message };
+      }
+      return { ok: true };
+    }
+
+    const accessToken = hashParams.get('access_token') || queryParams.get('access_token');
+    const refreshToken = hashParams.get('refresh_token') || queryParams.get('refresh_token');
+    if (accessToken && refreshToken) {
+      const { error } = await supabase.auth.setSession({
+        access_token: accessToken,
+        refresh_token: refreshToken,
+      });
+      if (error) {
+        return { ok: false, error: error.message };
+      }
+      return { ok: true };
+    }
+
+    return { ok: false, error: 'Token login Google tidak ditemukan pada tautan balikan.' };
+  } catch (err) {
+    return {
+      ok: false,
+      error: err instanceof Error ? err.message : 'Gagal memproses callback login Google.',
+    };
+  }
+}
 
 function isMissingTableError(err: { code?: string; message?: string } | null): boolean {
   if (!err) return false;
