@@ -58,3 +58,23 @@ Aplikasi ini sudah dilengkapi workflow otomatis `.github/workflows/deploy.yml` s
    - Setelah selesai (~1 menit), alamat website kamu akan tampil langsung di tab Actions & menu Settings → Pages (`https://<username>.github.io/<nama-repo>/`).
 5. **Tambahkan URL Website ke Supabase Auth (Opsional untuk verifikasi email)**:
    - Di Supabase → **Authentication → URL Configuration**, isi **Site URL** dengan alamat GitHub Pages kamu.
+
+---
+
+## Aplikasi Android (.apk) untuk Handphone & Tablet (100% Offline)
+
+KaniMichi sudah dilengkapi proyek native **Capacitor Android** (`android/`) yang mendukung **HP, Tablet 7–10 inci (portrait & landscape), layar belah (split-screen)**, tombol Back Android, serta **100% materi offline** langsung tertanam di dalam file `.apk`.
+
+### Cara 1: Unduh APK Otomatis lewat GitHub Actions (Tanpa Install Android Studio)
+1. Push repositori ini ke GitHub (atau klik tab **Actions** di repositori GitHub kamu).
+2. Pilih workflow **Build KaniMichi Android APK (HP & Tablet)** → klik **Run workflow**.
+3. Tunggu sekitar 3–5 menit hingga selesai, lalu unduh file **`KaniMichi-Android-APK`** di bagian **Artifacts**.
+4. Ekstrak dan instal **`KaniMichi-Android-Phone-Tablet.apk`** di HP atau Tablet Android kamu.
+
+### Cara 2: Build APK di Komputer Sendiri (Memerlukan JDK 21 & Android SDK)
+```bash
+npm install
+npm run android:apk
+```
+File APK hasil build tersedia di `android/app/build/outputs/apk/debug/app-debug.apk` (atau buka folder `android/` langsung di **Android Studio** untuk membuat versi signed Release `.apk` / `.aab`).
+

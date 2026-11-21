@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { ActiveView } from '../types/curriculum';
+import { PWAInstallButton } from './PWAInstallButton';
 
 const BASE_NAV_ITEMS: { id: ActiveView; label: string }[] = [
   { id: 'dashboard', label: 'Beranda' },
@@ -45,7 +46,7 @@ export const TopBar: React.FC = () => {
       : 'Jelajahi Level';
 
   return (
-    <header className="sticky top-0 z-30 bg-white/95 dark:bg-[#161A22]/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+    <header className="sticky top-0 z-30 safe-top bg-white/95 dark:bg-[#161A22]/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-6 lg:gap-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <button
@@ -137,8 +138,10 @@ export const TopBar: React.FC = () => {
           )}
         </nav>
 
-        {/* Zone 3: Single Primary Action + Mobile Menu Trigger */}
+        {/* Zone 3: Install App + Single Primary Action + Mobile Menu Trigger */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <PWAInstallButton variant="topbar" />
+
           <button
             type="button"
             onClick={handlePrimaryAction}
@@ -157,6 +160,65 @@ export const TopBar: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Tablet Portrait Quick-Nav Strip (768px–1023px) */}
+      <nav
+        aria-label="Navigasi tablet"
+        className="hidden md:flex lg:hidden items-center gap-1.5 px-6 py-2 border-t border-slate-100 dark:border-slate-800/80 overflow-x-auto no-scrollbar bg-slate-50/70 dark:bg-[#12161D]/80"
+      >
+        {BASE_NAV_ITEMS.map((item) => {
+          const isActive =
+            activeView === item.id ||
+            (item.id === 'vocabulary' && activeView === 'kana-vocab');
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => setActiveView(item.id)}
+              className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+                isActive
+                  ? 'bg-[#0284C7] text-white'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+              }`}
+            >
+              {item.label}
+            </button>
+          );
+        })}
+        <button
+          type="button"
+          onClick={() => setActiveView('reading')}
+          className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+            activeView === 'reading'
+              ? 'bg-[#0284C7] text-white'
+              : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+          }`}
+        >
+          Dokkai
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveView('listening')}
+          className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+            activeView === 'listening'
+              ? 'bg-[#0284C7] text-white'
+              : 'text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+          }`}
+        >
+          Chōkai
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveView('mock-exam')}
+          className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+            activeView === 'mock-exam'
+              ? 'bg-[#0284C7] text-white'
+              : 'text-[#0284C7] dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-slate-800'
+          }`}
+        >
+          Mogi Shiken
+        </button>
+      </nav>
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
@@ -244,6 +306,11 @@ export const TopBar: React.FC = () => {
             </button>
 
             <div className="my-1.5 border-t border-slate-100 dark:border-slate-800" />
+
+            <PWAInstallButton
+              variant="drawer"
+              onAfterAction={() => setMobileMenuOpen(false)}
+            />
 
             {cloudUser ? (
               <>

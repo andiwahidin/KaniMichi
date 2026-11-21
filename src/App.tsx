@@ -1,10 +1,13 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { Capacitor } from '@capacitor/core';
+import { App as CapacitorApp } from '@capacitor/app';
 import { AppProvider, useApp } from './context/AppContext';
 import { TopBar } from './components/TopBar';
 import { Dashboard } from './components/Dashboard';
 import { ItemDetailModal } from './components/ItemDetailModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AuthModal } from './components/AuthModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
 
 const CurriculumBrowser = lazy(() =>
   import('./components/CurriculumBrowser').then((m) => ({
@@ -81,9 +84,61 @@ const ModuleLoadingFallback: React.FC = () => (
 );
 
 const AppShell: React.FC = () => {
-  const { activeView, extraStudyMode, setActiveView } = useApp();
+  const {
+    activeView,
+    extraStudyMode,
+    setActiveView,
+    selectedItemId,
+    closeItemDetail,
+    settingsOpen,
+    setSettingsOpen,
+    authModalOpen,
+    closeAuthModal,
+  } = useApp();
   const isFullStudySession =
     activeView === 'lesson' || activeView === 'review' || activeView === 'extra-study';
+
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+    let disposed = false;
+    let removeListener: (() => Promise<void>) | null = null;
+
+    CapacitorApp.addListener('backButton', () => {
+      if (selectedItemId) {
+        closeItemDetail();
+      } else if (settingsOpen) {
+        setSettingsOpen(false);
+      } else if (authModalOpen) {
+        closeAuthModal();
+      } else if (activeView !== 'dashboard') {
+        setActiveView('dashboard');
+      } else {
+        void CapacitorApp.exitApp();
+      }
+    }).then((handle) => {
+      if (disposed) {
+        void handle.remove();
+      } else {
+        removeListener = () => handle.remove();
+      }
+    });
+
+    return () => {
+      disposed = true;
+      if (removeListener) {
+        void removeListener();
+      }
+    };
+  }, [
+    activeView,
+    authModalOpen,
+    closeAuthModal,
+    closeItemDetail,
+    selectedItemId,
+    setActiveView,
+    setSettingsOpen,
+    settingsOpen,
+  ]);
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-clip flex flex-col bg-[#F8F9FA] dark:bg-[#0F1115] text-slate-900 dark:text-slate-100">
@@ -205,6 +260,7 @@ const AppShell: React.FC = () => {
       <ItemDetailModal />
       <SettingsModal />
       <AuthModal />
+      <OfflineIndicator />
     </div>
   );
 };

@@ -1,0 +1,78 @@
+name: Build KaniMichi Android APK (HP & Tablet)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-apk
+  cancel-in-progress: true
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Setup Android SDK (API 36)
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android Platform 36 & Build Tools
+        run: |
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Install npm dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci --legacy-peer-deps
+          else
+            npm install --legacy-peer-deps
+          fi
+
+      - name: Build KaniMichi offline web bundle
+        env:
+          VITE_BASE_PATH: ./
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: npm run build
+
+      - name: Sync web assets & offline JSON banks into Android project
+        run: npx cap sync android
+
+      - name: Compile Android APK (Phone & Tablet)
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Prepare downloadable APK artifact
+        run: |
+          mkdir -p apk-output
+          cp android/app/build/outputs/apk/debug/app-debug.apk apk-output/KaniMichi-Android-Phone-Tablet.apk
+
+      - name: Upload KaniMichi Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: KaniMichi-Android-APK
+          path: apk-output/KaniMichi-Android-Phone-Tablet.apk
+          retention-days: 90

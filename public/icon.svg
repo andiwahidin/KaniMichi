@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0EA5E9" />
+      <stop offset="55%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="100%" stop-color="#E11D48" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background for browser favicon & standard icons -->
+  <rect x="0" y="0" width="512" height="512" rx="108" fill="url(#bg)" />
+  <!-- Subtle rising sun behind torii -->
+  <circle cx="256" cy="236" r="118" fill="url(#sun)" opacity="0.92" />
+  <!-- Japanese Torii Gate + Michi (Path) Emblem -->
+  <!-- Top curved lintel (Kasagi) -->
+  <path d="M96 164 C168 184, 344 184, 416 164 L404 198 C338 214, 174 214, 108 198 Z" fill="#FFFFFF" />
+  <!-- Secondary crossbar (Nuki) -->
+  <rect x="128" y="232" width="256" height="28" rx="10" fill="#FFFFFF" />
+  <!-- Center tablet (Gakuzuka) -->
+  <rect x="240" y="196" width="32" height="52" rx="6" fill="#FFFFFF" />
+  <!-- Left & Right Pillars (Hashira) -->
+  <rect x="160" y="196" width="32" height="202" rx="12" fill="#FFFFFF" />
+  <rect x="320" y="196" width="32" height="202" rx="12" fill="#FFFFFF" />
+  <!-- Ascending Michi (Pathway) leading through the gate -->
+  <path d="M232 292 L280 292 L318 424 L194 424 Z" fill="#E0F2FE" opacity="0.96" />
+  <path d="M249 316 L263 316 L269 354 L243 354 Z" fill="#0284C7" />
+  <path d="M245 374 L267 374 L274 412 L238 412 Z" fill="#0284C7" />
+</svg>
