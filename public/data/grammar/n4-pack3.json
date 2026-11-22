@@ -1,0 +1,316 @@
+{
+  "level": 4,
+  "pack": "n4-pack3",
+  "items": [
+    {
+      "id": "g-n4-31",
+      "jlpt": 4,
+      "order": 31,
+      "pattern": "～ように (agar / supaya)",
+      "reading": "～ように",
+      "meaning": "so that ...; in order that ...",
+      "structure": "Verb (Potential / ない-form / Non-volitional) + ように",
+      "explanation": "Expresses a goal or desired outcome that is not directly under the speaker's volitional control (such as potential verbs, negative verbs like 'so I don't forget', or states).",
+      "confusableWith": "Use ～ために with volitional actions by the same subject, and ～ように with potential or negative verbs (忘れないように).",
+      "examples": [
+        {
+          "jp": "忘れないように、メモを書きました。",
+          "reading": "わすれないように、めもをかきました。",
+          "en": "I wrote a memo so that I wouldn't forget."
+        },
+        {
+          "jp": "後ろの人にも聞こえるように、大きい声で話します。",
+          "reading": "うしろのひとにもきこえるように、おおきいこえではなします。",
+          "en": "I will speak loudly so that even people in the back can hear."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "風邪をひかない",
+        "sentenceAfter": "、暖かい服を着てください。",
+        "en": "Please wear warm clothes so that you don't catch a cold.",
+        "answer": "ように",
+        "acceptedAnswers": ["ように"],
+        "choices": ["ように", "ために", "そうに", "みたいに"]
+      }
+    },
+    {
+      "id": "g-n4-32",
+      "jlpt": 4,
+      "order": 32,
+      "pattern": "～ないで (tanpa melakukan)",
+      "reading": "～ないで",
+      "meaning": "without doing ...; instead of doing ...",
+      "structure": "Verb (ない-form) + で、Clause B",
+      "explanation": "Indicates doing Action B without doing Action A, or choosing Action B instead of Action A.",
+      "confusableWith": "Compare with ～なくて (which expresses cause/reason: 'because I didn't...'), whereas ～ないで expresses manner ('without doing...').",
+      "examples": [
+        {
+          "jp": "今朝は朝ごはんを食べないで、家を出ました。",
+          "reading": "けさはあさごはんをたべないで、いえをでました。",
+          "en": "This morning I left home without eating breakfast."
+        },
+        {
+          "jp": "辞書を使わないで、この本を読んでみました。",
+          "reading": "じしょをつかわないで、このほんをよんでみました。",
+          "en": "I tried reading this book without using a dictionary."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "傘を持た",
+        "sentenceAfter": "出かけたら、雨が降ってきました。",
+        "en": "When I went out without taking an umbrella, it started raining.",
+        "answer": "ないで",
+        "acceptedAnswers": ["ないで"],
+        "choices": ["ないで", "なくて", "ないのに", "ないから"]
+      }
+    },
+    {
+      "id": "g-n4-33",
+      "jlpt": 4,
+      "order": 33,
+      "pattern": "～と (kondisional alami / setiap kali)",
+      "reading": "～と",
+      "meaning": "whenever ...; if ... (natural/automatic result)",
+      "structure": "Verb (Dictionary / ない-form) + と、Result",
+      "explanation": "Expresses an inevitable, habitual, or automatic consequence (natural phenomena, machine operation, directions, or personal habits). Cannot be followed by commands, invitations, or volition.",
+      "confusableWith": "Unlike ～たら, you cannot follow ～と with ～てください or ～ましょう.",
+      "examples": [
+        {
+          "jp": "このボタンを押すと、お湯が出ます。",
+          "reading": "このぼたんをおすと、おゆがでます。",
+          "en": "If you press this button, hot water comes out."
+        },
+        {
+          "jp": "春になると、公園の桜が咲きます。",
+          "reading": "はるになると、こうえんのさくらがさきます。",
+          "en": "Whenever spring comes, the cherry blossoms in the park bloom."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "この道をまっすぐ行く",
+        "sentenceAfter": "、右側に郵便局があります。",
+        "en": "If you go straight along this road, there is a post office on the right.",
+        "answer": "と",
+        "acceptedAnswers": ["と"],
+        "choices": ["と", "のに", "ても", "ながら"]
+      }
+    },
+    {
+      "id": "g-n4-34",
+      "jlpt": 4,
+      "order": 34,
+      "pattern": "～間 / ～間に (あいだ / あいだに)",
+      "reading": "～あいだ / ～あいだに",
+      "meaning": "while / during the whole time (間) vs. while / at some point during (間に)",
+      "structure": "Verb (ている) / Noun + の + 間(に)",
+      "explanation": "間 (without に) describes an action that continues for the ENTIRE duration of another state. 間に (with に) describes a single event that happens at SOME point during that timeframe.",
+      "confusableWith": "A classic JLPT N4 trap: continuous action = 間; brief/completed event = 間に.",
+      "examples": [
+        {
+          "jp": "赤ちゃんが寝ている間に、晩ごはんを作ります。",
+          "reading": "あかちゃんがねているあいだに、ばんごはんをつくります。",
+          "en": "While the baby is sleeping, I'll make dinner (finish it during that window)."
+        },
+        {
+          "jp": "夏休みの間、毎日アルバイトをしていました。",
+          "reading": "なつやすみのあいだ、まいにちあるばいとをしていました。",
+          "en": "Throughout the entire summer vacation, I worked part-time every day."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "電車に乗っている",
+        "sentenceAfter": "、財布を落としてしまいました。",
+        "en": "While I was on the train, I accidentally dropped my wallet.",
+        "answer": "間に",
+        "acceptedAnswers": ["間に", "あいだに"],
+        "choices": ["間に", "間", "後で", "前に"]
+      }
+    },
+    {
+      "id": "g-n4-35",
+      "jlpt": 4,
+      "order": 35,
+      "pattern": "～まま (tetap dalam keadaan)",
+      "reading": "～まま",
+      "meaning": "leaving ... as it is; remaining in the state of ...",
+      "structure": "Verb (た-form / ない-form) / Noun + の + まま",
+      "explanation": "Indicates that an action occurs while a previous state remains unchanged, often contrary to normal expectation (e.g., falling asleep with the light still on).",
+      "confusableWith": "Usually takes the た-form (つけたまま = leaving it turned on), not the dictionary form.",
+      "examples": [
+        {
+          "jp": "靴をはいたまま、部屋に入らないでください。",
+          "reading": "くつをはいたまま、へやにはいらないでください。",
+          "en": "Please do not enter the room with your shoes still on."
+        },
+        {
+          "jp": "電気をつけたまま寝てしまいました。",
+          "reading": "でんきをつけたままねてしまいました。",
+          "en": "I accidentally fell asleep with the light left on."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "窓を",
+        "sentenceAfter": "まま出かけたので、部屋が雨で濡れました。",
+        "en": "Because I went out leaving the window open, the room got wet from the rain.",
+        "answer": "開けた",
+        "acceptedAnswers": ["開けた", "あけた"],
+        "choices": ["開けた", "開ける", "開けて", "開けない"]
+      }
+    },
+    {
+      "id": "g-n4-36",
+      "jlpt": 4,
+      "order": 36,
+      "pattern": "～はずがない (tidak mungkin)",
+      "reading": "～はずがない",
+      "meaning": "cannot possibly be ...; there is no way that ...",
+      "structure": "Verb (Plain) / い-Adj / な-Adj+な / Noun+の + はずがない",
+      "explanation": "Expresses strong logical certainty that something is impossible based on what the speaker already knows.",
+      "confusableWith": "Direct opposite of ～はずだ ('should be / is expected to be').",
+      "examples": [
+        {
+          "jp": "田中さんは毎日真面目に勉強しているから、試験に落ちるはずがない。",
+          "reading": "たなかさんはまいにちまじめにべんきょうしているから、しけんにおちるはずがない。",
+          "en": "Tanaka studies diligently every day, so there's no way he'll fail the exam."
+        },
+        {
+          "jp": "鍵をちゃんと閉めたから、ドアが開いているはずがありません。",
+          "reading": "かぎをちゃんとしめたから、どあがあいているはずがありません。",
+          "en": "I locked it properly, so the door couldn't possibly be open."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼は辛い食べ物が嫌いだから、そのカレーを食べられる",
+        "sentenceAfter": "。",
+        "en": "He hates spicy food, so there's no way he can eat that curry.",
+        "answer": "はずがない",
+        "acceptedAnswers": ["はずがない", "はずがありません"],
+        "choices": ["はずがない", "かもしれない", "そうだ", "つもりだ"]
+      }
+    },
+    {
+      "id": "g-n4-37",
+      "jlpt": 4,
+      "order": 37,
+      "pattern": "～てよかった (syukurlah telah...)",
+      "reading": "～てよかった",
+      "meaning": "I'm glad that ...; it was a good thing that ...",
+      "structure": "Verb (て-form / なくて) + よかった",
+      "explanation": "Expresses relief or satisfaction about an action taken (or avoided with ～なくてよかった) after seeing a positive outcome.",
+      "confusableWith": "Negative form uses ～なくてよかった ('I'm glad I didn't...'), not ～ないでよかった.",
+      "examples": [
+        {
+          "jp": "傘を持ってきてよかったです。",
+          "reading": "かさをもってきてよかったです。",
+          "en": "I'm glad I brought an umbrella."
+        },
+        {
+          "jp": "電車に遅れなくてよかったです。",
+          "reading": "でんしゃにおくれなくてよかったです。",
+          "en": "I'm glad I wasn't late for the train."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "早く病院へ",
+        "sentenceAfter": "よかったです。すぐ元気になりました。",
+        "en": "I'm glad I went to the hospital early. I recovered quickly.",
+        "answer": "行って",
+        "acceptedAnswers": ["行って", "いって"],
+        "choices": ["行って", "行く", "行った", "行けば"]
+      }
+    },
+    {
+      "id": "g-n4-38",
+      "jlpt": 4,
+      "order": 38,
+      "pattern": "～(よ)うと思う (bermaksud / berencana)",
+      "reading": "～おうとおもう / ～ようとおもう",
+      "meaning": "I think I will ...; I intend to ...",
+      "structure": "Verb (Volitional ～おう/よう) + と思う / と思っている",
+      "explanation": "Expresses a personal intention or plan. と思う shows a decision made on the spot, whereas と思っている shows a plan you have been considering for a while.",
+      "confusableWith": "To describe someone else's plan, always use と思っている (not と思う).",
+      "examples": [
+        {
+          "jp": "来年の夏、日本へ留学しようと思っています。",
+          "reading": "らいねんのなつ、にほんへりゅうがくしようとおもっています。",
+          "en": "I am planning to study abroad in Japan next summer."
+        },
+        {
+          "jp": "今日は疲れたので、早く寝ようと思います。",
+          "reading": "きょうはつかれたので、はやくねようとおもいます。",
+          "en": "I'm tired today, so I think I'll go to bed early."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "週末に新しい靴を",
+        "sentenceAfter": "と思っています。",
+        "en": "I'm thinking of buying new shoes this weekend.",
+        "answer": "買おう",
+        "acceptedAnswers": ["買おう", "かおう"],
+        "choices": ["買おう", "買う", "買って", "買いたい"]
+      }
+    },
+    {
+      "id": "g-n4-39",
+      "jlpt": 4,
+      "order": 39,
+      "pattern": "～なさい (perintah halus / instruksi)",
+      "reading": "～なさい",
+      "meaning": "please do ... (firm polite command / exam instruction)",
+      "structure": "Verb (ます-stem) + なさい",
+      "explanation": "A gentle yet firm command commonly used by parents to children, teachers to students, and in written test instructions. Softer than the imperative form but more authoritative than ～てください.",
+      "confusableWith": "Do not use ～なさい to superiors or strangers; use ～てください or Keigo instead.",
+      "examples": [
+        {
+          "jp": "次の文章を読んで、質問に答えなさい。",
+          "reading": "つぎのぶんしょうをよんで、しつもんにこたえなさい。",
+          "en": "Read the following passage and answer the questions."
+        },
+        {
+          "jp": "もう遅いから、早く寝なさい。",
+          "reading": "もうおそいから、はやくねなさい。",
+          "en": "It's already late, so go to bed soon."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "外から帰ったら、まず手を",
+        "sentenceAfter": "なさい。",
+        "en": "When you come home from outside, wash your hands first.",
+        "answer": "洗い",
+        "acceptedAnswers": ["洗い", "あらい"],
+        "choices": ["洗い", "洗う", "洗って", "洗った"]
+      }
+    },
+    {
+      "id": "g-n4-40",
+      "jlpt": 4,
+      "order": 40,
+      "pattern": "お～になる / お～する (Keigo dasar)",
+      "reading": "お～になる / お～する",
+      "meaning": "respectful (Sonkeigo: お～になる) vs. humble (Kenjōgo: お～する)",
+      "structure": "お + Verb (ます-stem) + になる (for others) / する (for self)",
+      "explanation": "Core JLPT N4 polite speech patterns: use お + stem + になる to elevate the listener/superior's action, and お + stem + する/します to humble your own action done for someone else.",
+      "confusableWith": "Never use お～になる for your own action, and never use お～する for your boss's or customer's action.",
+      "examples": [
+        {
+          "jp": "社長はもうお帰りになりました。",
+          "reading": "しゃちょうはもうおかえりになりました。",
+          "en": "The company president has already gone home."
+        },
+        {
+          "jp": "重いですね。私がお持ちします。",
+          "reading": "おもいですね。わたしがおもちします。",
+          "en": "That looks heavy. Let me carry it for you."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "先生、この本をもうお読み",
+        "sentenceAfter": "か。",
+        "en": "Professor, have you already read this book?",
+        "answer": "になりました",
+        "acceptedAnswers": ["になりました"],
+        "choices": ["になりました", "しました", "いたしました", "になります"]
+      }
+    }
+  ]
+}

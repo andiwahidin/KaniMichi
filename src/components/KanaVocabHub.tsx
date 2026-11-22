@@ -676,7 +676,7 @@ export const KanaVocabHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 200 Kosakata Non-Kanji JLPT N5–N1...
+            Memuat 250 Kosakata Non-Kanji JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan adverbia kana, kata penghubung, onomatope, dan serapan katakana.

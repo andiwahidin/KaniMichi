@@ -93,7 +93,7 @@ export default defineConfig(({command}) => {
               options: {
                 cacheName: 'kanimichi-offline-data',
                 expiration: {
-                  maxEntries: 60,
+                  maxEntries: 120,
                   maxAgeSeconds: 60 * 60 * 24 * 90,
                 },
                 cacheableResponse: { statuses: [0, 200] },

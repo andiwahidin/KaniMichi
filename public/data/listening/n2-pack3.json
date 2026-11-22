@@ -1,0 +1,306 @@
+{
+  "level": 2,
+  "pack": "n2-pack3",
+  "items": [
+    {
+      "id": "l-n2-16",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "オンライン発表会[はっぴょうかい]の直前[ちょくぜん]チェック",
+      "titleEn": "Last-Minute Technical Check for a Product Webinar",
+      "situationEn": "Two marketing colleagues run a dress rehearsal two hours before a live product webinar.",
+      "introJp": "会社[かいしゃ]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が午後[ごご]のオンライン発表会[はっぴょうかい]について話[はな]しています。女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "introEn": "Two coworkers are preparing for this afternoon's online product webinar. What will the woman do first?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "さっきのリハーサル、音声[おんせい]と照明[しょうめい]はバッチリだったね。ただ、製品[せいひん]紹介[しょうかい]の3枚[さんまい]目[め]のスライド、価格[かかく]表[ひょう]の数字[すうじ]が先月[せんげつ]の旧[きゅう]案[あん]のままになってたよ。",
+          "en": "In the rehearsal just now, audio and lighting were spot-on. However, on slide 3 of the product intro, the pricing table still had last month's old draft numbers."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "うわ、本当[ほんとう]だ！危[あぶ]ない、気づ[きづ]いてくれて助[たす]かりました。すぐ差[さ]し替[か]えます。参加者[さんかしゃ]へのリマインドメールはもう送[おく]りましたか。",
+          "en": "Whoa, you're right! Close call—thanks for catching that. I'll swap it out right away. Did we send the reminder email to attendees yet?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "リマインドメールはさっき自動[じどう]配信[はいしん]が済[す]んだよ。スライドを直[なお]したら、本番[ほんばん]用[よう]の配信[はいしん]パソコンにも最新[さいしん]版[ばん]をコピーしておいて。アンケート画面[がめん]のテストはぼくがやっておくから。",
+          "en": "The automated reminder email already went out. Once you fix the slide, copy the latest file onto the broadcast PC too. I'll handle testing the survey screen."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "承知[しょうち]しました。では価格[かかく]表[ひょう]の修正[しゅうせい]から取[と]りかかります。",
+          "en": "Understood. I'll start with correcting the pricing table."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the woman do first?",
+      "choices": [
+        "参加者[さんかしゃ]にリマインドメールを送[おく]る",
+        "価格[かかく]表[ひょう]のスライドを最新[さいしん]の数字[すうじ]に修正[しゅうせい]する",
+        "アンケート画面[がめん]の動作[どうさ]テストを行[おこな]う",
+        "音声[おんせい]と照明[しょうめい]の設定[せってい]をやり直[なお]す"
+      ],
+      "choicesEn": [
+        "Send a reminder email to participants",
+        "Update the pricing slide with the latest figures",
+        "Test the survey screen functionality",
+        "Redo the audio and lighting setup"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Audio/lighting are fine, reminder emails went out, and the man tests the survey screen; the woman explicitly says she will start by fixing the pricing table slide.",
+      "keyPhrases": [
+        {
+          "jp": "差[さ]し替[か]える",
+          "reading": "さしかえる",
+          "en": "to replace / swap out"
+        },
+        {
+          "jp": "取[と]りかかる",
+          "reading": "とりかかる",
+          "en": "to set about / begin working on"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-17",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "AIオンデマンドバスの導入[どうにゅう]理由[りゆう]",
+      "titleEn": "Why a Regional Transit Agency Adopted AI On-Demand Buses",
+      "situationEn": "A municipal transport officer explains why the city replaced several fixed bus routes with on-demand minibuses.",
+      "introJp": "テレビのニュースで市[し]の交通[こうつう]課[か]の担当者[たんとうしゃ]が話[はな]しています。市[し]がAIオンデマンドバスを導入[どうにゅう]した最大[さいだい]の理由[りゆう]は何[なに]ですか。",
+      "introEn": "A municipal transit official is speaking on TV news. What is the primary reason the city introduced AI on-demand buses?",
+      "lines": [
+        {
+          "speaker": "Official",
+          "role": "male",
+          "jp": "これまで郊外[こうがい]エリアでは、決[き]まった時刻表[じこくひょう]どおりに大型[おおがた]バスを走[はし]らせていましたが、乗客[じょうきゃく]がゼロのまま走行[そうこう]する便[びん]が増[ふ]え、赤字[あかじ]が深刻化[しんこくか]していました。",
+          "en": "Until now, we ran full-size buses on fixed timetables in suburban areas, but empty runs increased and deficits grew severe."
+        },
+        {
+          "speaker": "Official",
+          "role": "male",
+          "jp": "かといって路線[ろせん]を完全[かんぜん]に廃止[はいし]すれば、車[くるま]を持[も]たない高齢者[こうれいしゃ]が病院[びょういん]やスーパーへ行[い]けなくなってしまいます。そこで、予約[よやく]があったときだけAIが最適[さいてき]ルートを計算[けいさん]して迎[むか]えに行[い]く小型[こがた]バスを試験[しけん]導入[どうにゅう]しました。",
+          "en": "Yet completely abolishing routes would leave elderly residents without cars unable to reach hospitals or supermarkets. So we piloted small buses where AI calculates optimal pickup routes only when booked."
+        },
+        {
+          "speaker": "Official",
+          "role": "male",
+          "jp": "結果[けっか]、運行[うんこう]コストを抑[おさ]えながら、住民[じゅうみん]の移動[いどう]手段[しゅだん]をしっかり守[まも]ることができています。",
+          "en": "As a result, we have kept operating costs down while firmly protecting residents' mobility."
+        }
+      ],
+      "questionJp": "市[し]がAIオンデマンドバスを導入[どうにゅう]した最大[さいだい]の理由[りゆう]は何[なに]ですか。",
+      "questionEn": "What is the main reason the city introduced AI on-demand buses?",
+      "choices": [
+        "観光客[かんこうきゃく]向[む]けに最新[さいしん]の自動運転[じどううんてん]技術[ぎじゅつ]をアピールするため",
+        "無駄[むだ]な運行[うんこう]コストを減[へ]らしつつ、高齢者[こうれいしゃ]などの移動[いどう]手段[しゅだん]を維持[いじ]するため",
+        "市[し]内[ない]のすべての大型[おおがた]バスを廃止[はいし]して道路[どうろ]渋滞[じゅうたい]を解消[かいしょう]するため",
+        "運賃[うんちん]を値上[ねあ]げして市[し]の税収[ぜいしゅう]を増[ふ]やすため"
+      ],
+      "choicesEn": [
+        "To showcase self-driving technology to tourists",
+        "To cut wasteful operating costs while preserving mobility for elderly residents",
+        "To abolish all large buses citywide to solve traffic jams",
+        "To raise fares and increase municipal tax revenue"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The official explains the goal was balancing both needs: eliminating costly empty runs while preserving access to hospitals and shops for non-driving seniors.",
+      "keyPhrases": [
+        {
+          "jp": "かといって",
+          "reading": "かといって",
+          "en": "that being said; on the other hand"
+        },
+        {
+          "jp": "コストを抑[おさ]える",
+          "reading": "こすとをおさえる",
+          "en": "to keep costs down"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-18",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "都市[とし]のポケットパークと地域[ちいき]のつなぎ目[め]",
+      "titleEn": "Urban Pocket Parks and Neighborhood Vitality",
+      "situationEn": "An urban planner talks in a seminar about transforming tiny vacant urban lots into pocket parks.",
+      "introJp": "セミナーで都市[とし]計画[けいかく]の専門家[せんもんか]が話[はな]しています。専門家[せんもんか]がポケットパークを評価[ひょうか]している点[てん]は何[なに]ですか。",
+      "introEn": "An urban planner is speaking at a seminar. What aspect of pocket parks does the speaker value most?",
+      "lines": [
+        {
+          "speaker": "Planner",
+          "role": "female",
+          "jp": "大都市[だいとし]では、新[あたら]しく大規模[だいきぼ]な公園[こうえん]を作[つく]る土地[とち]も予算[よさん]も限[かぎ]られています。そこで注目[ちゅうもく]されているのが、ビルの間[あいだ]のわずかな空[あ]き地[ち]にベンチと木陰[こかげ]を設[もう]ける「ポケットパーク」です。",
+          "en": "In large cities, land and budgets for major new parks are limited. That's why 'pocket parks'—adding benches and shade trees to tiny vacant lots between buildings—are drawing attention."
+        },
+        {
+          "speaker": "Planner",
+          "role": "female",
+          "jp": "一見[いっけん]すると小さ[ちいさ]くて目立[めだ]たない空間[くうかん]ですが、夏[なつ]の路面[ろめん]温度[おんど]を下[さ]げる効果[こうか]だけでなく、買[か]い物[もの]帰[がえ]りの高齢者[こうれいしゃ]や昼休[ひるやす]みの会社員[かいしゃいん]が自然[しぜん]と顔[かお]を合[あ]わせる居場所[いばしょ]になります。",
+          "en": "At first glance they seem small and unremarkable, yet beyond lowering summer pavement temperatures, they become everyday spots where seniors returning from shopping and office workers on lunch breaks naturally cross paths."
+        },
+        {
+          "speaker": "Planner",
+          "role": "female",
+          "jp": "立派[りっぱ]な観光[かんこう]施設[しせつ]を一つ[ひとつ]造[つく]るより、日常[にちじょう]の動線[どうせん]上[じょう]に小さな[ちいさな]休[やす]み場所[ばしょ]を点在[てんざい]させるほうが、街[まち]全体[ぜんたい]の暮[く]らしやすさを底上[そこあ]げするのです。",
+          "en": "Rather than building one grand landmark, scattering small resting places along everyday walking routes elevates the livability of the entire neighborhood."
+        }
+      ],
+      "questionJp": "専門家[せんもんか]がポケットパークについて最も[もっとも]強調[きょうちょう]していることは何[なに]ですか。",
+      "questionEn": "What does the urban planner emphasize most about pocket parks?",
+      "choices": [
+        "大規模[だいきぼ]な観光[かんこう]スポットとして海外[かいがい]からの集客[しゅうきゃく]が期待[きたい]できること",
+        "限[かぎ]られた空[あ]き地[ち]を活[い]かして日常[にちじょう]の憩[いこ]いと街[まち]の暮[く]らしやすさを高[たか]められること",
+        "ビル建設[けんせつ]を制限[せいげん]して大規模[だいきぼ]公園[こうえん]へ置[お]き換[か]えるべきであること",
+        "維持[いじ]費[ひ]がまったくかからないため民間[みんかん]企業[きぎょう]に任[まか]せるべきであること"
+      ],
+      "choicesEn": [
+        "They attract international tourists as major landmarks",
+        "They leverage small vacant lots to foster daily interaction and boost overall livability",
+        "Building construction should be restricted in favor of huge parks",
+        "They cost nothing to maintain and should be handed to private firms"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The planner stresses that scattering small green resting spaces along daily walking routes both cools streets and fosters community interaction, raising overall livability.",
+      "keyPhrases": [
+        {
+          "jp": "点在[てんざい]させる",
+          "reading": "てんざいさせる",
+          "en": "to scatter / dot around"
+        },
+        {
+          "jp": "底上[そこあ]げする",
+          "reading": "そこあげする",
+          "en": "to raise the baseline level of"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-19",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "取引先[とりひきさき]からの会食[かいしょく]の誘[さそ]いを丁重[ていちょう]に断[ことわ]る",
+      "titleEn": "Quick Response: Gracefully Declining a Client's Dinner Invitation",
+      "situationEn": "A client invites you to dinner after a meeting, but you already have another prior commitment.",
+      "introJp": "商談[しょうだん]の後[あと]、取引先[とりひきさき]の担当者[たんとうしゃ]から食事[しょくじ]に誘[さそ]われました。別[べつ]の予定[よてい]があって断[ことわ]るとき、何[なん]と言[い]いますか。",
+      "introEn": "After a business meeting, a client invites you to dinner, but you have a prior engagement. How should you reply?",
+      "lines": [
+        {
+          "speaker": "Client",
+          "role": "male",
+          "jp": "このあと、よかったら近[ちか]くで軽[かる]くお食事[しょくじ]でもいかがですか。",
+          "en": "If you're free afterward, how about grabbing a light dinner nearby?"
+        }
+      ],
+      "questionJp": "別[べつ]の予定[よてい]があるとき、何[なん]と言[い]いますか。",
+      "questionEn": "How should you tactfully decline?",
+      "choices": [
+        "せっかくのお誘[さそ]いなのですが、あいにく今晩[こんばん]は先約[せんやく]がございまして……。また次回[じかい]、ぜひお願[ねが]いいたします。",
+        "すみません、疲[つか]れているので今日[きょう]は帰[かえ]らせていただきます。",
+        "お誘[さそ]いありがとうございます。でも食事[しょくじ]は好[す]きではないので遠慮[えんりょ]します。"
+      ],
+      "choicesEn": [
+        "Thank you so much for the kind invitation, but unfortunately I have a prior commitment tonight... I would love to join you next time.",
+        "Sorry, I'm tired so I'm going home today.",
+        "Thank you for inviting me. However, I don't like dining out so I'll pass."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"せっかくのお誘いなのですが、あいにく先約がございまして\" is the classic courteous Japanese business refusal, pairing gratitude with openness to a future meeting.",
+      "keyPhrases": [
+        {
+          "jp": "せっかくのお誘[さそ]い",
+          "reading": "せっかくのおさそい",
+          "en": "kind/thoughtful invitation"
+        },
+        {
+          "jp": "あいにく先約[せんやく]がございまして",
+          "reading": "あいにくせんやくがございまして",
+          "en": "unfortunately I have a prior engagement"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-20",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "社内[しゃない]カフェコーナーの業者[ぎょうしゃ]選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Selecting an Office Coffee Vendor",
+      "situationEn": "Two general affairs staff evaluate four vendors for the office break room's coffee subscription.",
+      "introJp": "会社[かいしゃ]で総務部[そうむぶ]の二人[ふたり]が、休憩室[きゅうけいしつ]のコーヒー業者[ぎょうしゃ]を四[よっ]つの候補[こうほ]から選[えら]んでいます。どの業者[ぎょうしゃ]に決[き]まりましたか。",
+      "introEn": "Two general affairs staff members are choosing an office coffee vendor from four candidates. Which vendor did they choose?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "休憩室[きゅうけいしつ]のコーヒーサーバー、四社[よんしゃ]から見積[みつ]もりが届[とど]いたよ。まずＡ社[しゃ]は月額[げつがく]が最安[さいやす]だけど、ドリップマシンを毎日[まいにち]社員[しゃいん]が分解[ぶんかい]洗浄[せんじょう]しないといけないんだって。",
+          "en": "We got quotes from four vendors for the break-room coffee server. First, Company A has the lowest monthly cost, but employees have to disassemble and wash the drip machine every day."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "毎日[まいにち]の掃除[そうじ]を誰[だれ]がやるかで絶対[ぜったい]もめるから、メンテナンス込[こ]みが条件[じょうけん]だよね。Ｂ社[しゃ]はどう？",
+          "en": "We'd definitely clash over who cleans it daily, so included maintenance is a must. How about Company B?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "Ｂ社[しゃ]は週[しゅう]二回[にかい]スタッフが洗浄[せんじょう]に来[き]てくれて味[あじ]も評判[ひょうばん]なんだけど、コーヒー専用[せんよう]で紅茶[こうちゃ]やお茶[ちゃ]のメニューがないんだ。社員[しゃいん]アンケートで「コーヒー以外[いがい]も飲[の]みたい」って要望[ようぼう]が4割[よんわり]あったよね。",
+          "en": "Company B sends staff twice a week to clean and has great taste reviews, but it's coffee-only with no tea options. In our staff survey, 40% requested non-coffee drinks too."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "そうだったね。じゃあＣ社[しゃ]とＤ社[しゃ]は？",
+          "en": "Right. Then what about Company C and Company D?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "Ｃ社[しゃ]はコーヒーも紅茶[こうちゃ]も緑茶[りょくちゃ]も選[えら]べて、メンテナンスも完全[かんぜん]お任[まか]せ。月額[げつがく]も予算[よさん]内[ない]だよ。ただ、設置[せっち]まで三週間[さんしゅうかん]かかる。Ｄ社[しゃ]は来週[らいしゅう]すぐ設置[せっち]できて種類[しゅるい]も豊富[ほうふ]だけど、二年[にねん]縛[しば]りの契約[けいやく]で途中[とちゅう]解約[かいやく]すると違約金[いやくきん]が高[たか]いんだ。",
+          "en": "Company C offers coffee, black tea, and green tea, includes full maintenance, and fits our budget—though installation takes three weeks. Company D can install next week with plenty of variety, yet it requires a two-year lock-in with steep cancellation penalties."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "うち、来年[らいねん]オフィス移転[いてん]の可能性[かのうせい]があるから二年[にねん]縛[しば]りはリスクが高[たか]いよ。三週間[さんしゅうかん]くらいなら全然[ぜんぜん]待[ま]てるし、メンテナンスもメニューも揃[そろ]っているところにしよう。",
+          "en": "We might relocate offices next year, so a two-year lock-in is too risky. Waiting three weeks is totally fine—let's go with the one that covers both maintenance and drink variety."
+        }
+      ],
+      "questionJp": "どの業者[ぎょうしゃ]に決[き]まりましたか。",
+      "questionEn": "Which vendor did they select?",
+      "choices": [
+        "Ａ社[しゃ]",
+        "Ｂ社[しゃ]",
+        "Ｃ社[しゃ]",
+        "Ｄ社[しゃ]"
+      ],
+      "choicesEn": [
+        "Company A",
+        "Company B",
+        "Company C",
+        "Company D"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Company A lacks maintenance; Company B lacks tea options; Company D has a risky 2-year lock-in before a possible office move. Company C meets budget, maintenance, and variety needs with only a 3-week wait.",
+      "keyPhrases": [
+        {
+          "jp": "二年[にねん]縛[しば]り",
+          "reading": "にねんしばり",
+          "en": "two-year contract lock-in"
+        },
+        {
+          "jp": "違約金[いやくきん]",
+          "reading": "いやくきん",
+          "en": "cancellation penalty / breach fee"
+        }
+      ]
+    }
+  ]
+}

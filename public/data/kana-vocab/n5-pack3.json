@@ -1,0 +1,236 @@
+{
+  "level": 5,
+  "pack": "n5-pack3",
+  "items": [
+    {
+      "id": "kv-n5-41",
+      "jlpt": 5,
+      "order": 41,
+      "word": "よく",
+      "reading": "よく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "often; frequently; well",
+      "acceptedMeanings": ["often", "frequently", "well", "thoroughly"],
+      "usageNote": "Means 'often' with habitual verbs (よく行きます) and 'well / thoroughly' with understanding or sleep (よくわかります).",
+      "example": {
+        "jp": "週末はよく友達と映画を見ます。",
+        "reading": "しゅうまつはよくともだちとえいがをみます。",
+        "en": "On weekends I often watch movies with friends."
+      },
+      "quiz": {
+        "sentenceBefore": "この公園へは",
+        "sentenceAfter": "散歩に来ます。",
+        "en": "I often come to this park for a walk.",
+        "choices": ["よく", "まだ", "もう", "すぐ"]
+      }
+    },
+    {
+      "id": "kv-n5-42",
+      "jlpt": 5,
+      "order": 42,
+      "word": "すこし",
+      "reading": "すこし",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "a little; slightly",
+      "acceptedMeanings": ["a little", "slightly", "a small amount", "a bit"],
+      "usageNote": "Slightly more polite/neutral than ちょっと when expressing a small quantity or degree.",
+      "example": {
+        "jp": "日本語がすこし話せます。",
+        "reading": "にほんごがすこしはなせます。",
+        "en": "I can speak a little Japanese."
+      },
+      "quiz": {
+        "sentenceBefore": "今日は風が強くて、",
+        "sentenceAfter": "寒いですね。",
+        "en": "The wind is strong today, so it's a little cold, isn't it?",
+        "choices": ["すこし", "いつも", "たくさん", "ぜんぜん"]
+      }
+    },
+    {
+      "id": "kv-n5-43",
+      "jlpt": 5,
+      "order": 43,
+      "word": "もっと",
+      "reading": "もっと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "more; even more",
+      "acceptedMeanings": ["more", "even more", "further"],
+      "usageNote": "Used before adjectives and verbs to ask for or express a higher degree (もっとゆっくり = more slowly).",
+      "example": {
+        "jp": "すみません、もっとゆっくり話してください。",
+        "reading": "すみません、もっとゆっくりはなしてください。",
+        "en": "Excuse me, please speak more slowly."
+      },
+      "quiz": {
+        "sentenceBefore": "来年は今年より",
+        "sentenceAfter": "日本語が上手になりたいです。",
+        "en": "Next year I want to become even better at Japanese than this year.",
+        "choices": ["もっと", "まだ", "もうすぐ", "たぶん"]
+      }
+    },
+    {
+      "id": "kv-n5-44",
+      "jlpt": 5,
+      "order": 44,
+      "word": "いっしょに",
+      "reading": "いっしょに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "together",
+      "acceptedMeanings": ["together", "with", "at the same time"],
+      "usageNote": "Usually pairs with the particle と (友達といっしょに = together with a friend).",
+      "example": {
+        "jp": "昼ごはんをいっしょに食べませんか。",
+        "reading": "ひるごはんをいっしょにたべませんか。",
+        "en": "Won't you eat lunch together with me?"
+      },
+      "quiz": {
+        "sentenceBefore": "明日、姉と",
+        "sentenceAfter": "買い物に行きます。",
+        "en": "Tomorrow I am going shopping together with my older sister.",
+        "choices": ["いっしょに", "まっすぐ", "ゆっくり", "ちょうど"]
+      }
+    },
+    {
+      "id": "kv-n5-45",
+      "jlpt": 5,
+      "order": 45,
+      "word": "また",
+      "reading": "また",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Conjunction",
+      "primaryMeaning": "again; also; see you again",
+      "acceptedMeanings": ["again", "also", "once more"],
+      "usageNote": "Used both for repeating an action (また来ます) and farewells (また明日 = see you tomorrow).",
+      "example": {
+        "jp": "このお店はおいしかったので、また来たいです。",
+        "reading": "このおみせはおいしかったので、またきたいです。",
+        "en": "This shop was delicious, so I want to come again."
+      },
+      "quiz": {
+        "sentenceBefore": "今日は楽しかったです。",
+        "sentenceAfter": "来週会いましょう。",
+        "en": "Today was fun. Let's meet again next week.",
+        "choices": ["また", "まだ", "まず", "あまり"]
+      }
+    },
+    {
+      "id": "kv-n5-46",
+      "jlpt": 5,
+      "order": 46,
+      "word": "それとも",
+      "reading": "それとも",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "or; or else (between two choices)",
+      "acceptedMeanings": ["or", "or else"],
+      "usageNote": "Used in questions to present two alternatives (Aにしますか、それともBにしますか).",
+      "example": {
+        "jp": "コーヒーにしますか、それとも紅茶にしますか。",
+        "reading": "こーひーにしますか、それともこうちゃにしますか。",
+        "en": "Will you have coffee, or will you have black tea?"
+      },
+      "quiz": {
+        "sentenceBefore": "電車で行きますか、",
+        "sentenceAfter": "バスで行きますか。",
+        "en": "Will you go by train, or will you go by bus?",
+        "choices": ["それとも", "だから", "しかし", "そして"]
+      }
+    },
+    {
+      "id": "kv-n5-47",
+      "jlpt": 5,
+      "order": 47,
+      "word": "きらきら",
+      "reading": "きらきら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "sparkling; glittering; twinkling",
+      "acceptedMeanings": ["sparkling", "glittering", "twinkling", "shining"],
+      "usageNote": "Describes stars, sunlit water, jewelry, or excited eyes sparkling brightly.",
+      "example": {
+        "jp": "夜空の星がきらきら光っています。",
+        "reading": "よぞらのほしがきらきらひかっています。",
+        "en": "The stars in the night sky are twinkling brightly."
+      },
+      "quiz": {
+        "sentenceBefore": "太陽の光で海が",
+        "sentenceAfter": "輝いています。",
+        "en": "The sea is sparkling brilliantly in the sunlight.",
+        "choices": ["きらきら", "ふわふわ", "ゆっくり", "びっくり"]
+      }
+    },
+    {
+      "id": "kv-n5-48",
+      "jlpt": 5,
+      "order": 48,
+      "word": "ぽかぽか",
+      "reading": "ぽかぽか",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "pleasantly warm; toasty",
+      "acceptedMeanings": ["pleasantly warm", "toasty", "warm and cozy"],
+      "usageNote": "Describes gentle spring sunshine, a warm bath, or a cozy room.",
+      "example": {
+        "jp": "春の天気はぽかぽかして気持ちがいいです。",
+        "reading": "はるのてんきはぽかぽかしてきもちがいいです。",
+        "en": "Spring weather is pleasantly warm and feels great."
+      },
+      "quiz": {
+        "sentenceBefore": "温かいスープを飲んで、体が",
+        "sentenceAfter": "になりました。",
+        "en": "After drinking hot soup, my body became pleasantly warm.",
+        "choices": ["ぽかぽか", "ぴったり", "はっきり", "しっかり"]
+      }
+    },
+    {
+      "id": "kv-n5-49",
+      "jlpt": 5,
+      "order": 49,
+      "word": "タクシー",
+      "reading": "たくしー",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "taxi; cab",
+      "acceptedMeanings": ["taxi", "cab"],
+      "usageNote": "Common JLPT N5 transport loanword; pairs with に乗る (ride) or を呼ぶ (call).",
+      "example": {
+        "jp": "荷物が多いので、駅からタクシーで帰りました。",
+        "reading": "にもつがおおいので、えきからたくしーでかえりました。",
+        "en": "Because I had a lot of luggage, I went home from the station by taxi."
+      },
+      "quiz": {
+        "sentenceBefore": "終電が終わってしまったので、",
+        "sentenceAfter": "を呼んで帰ります。",
+        "en": "Since the last train is gone, I will call a taxi to go home.",
+        "choices": ["タクシー", "エレベーター", "アパート", "エアコン"]
+      }
+    },
+    {
+      "id": "kv-n5-50",
+      "jlpt": 5,
+      "order": 50,
+      "word": "カメラ",
+      "reading": "かめら",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "camera",
+      "acceptedMeanings": ["camera"],
+      "usageNote": "Frequently tested with 写真を撮る (take a photo) in JLPT N5 listening and reading.",
+      "example": {
+        "jp": "新しいカメラで山の写真を撮りました。",
+        "reading": "あたらしいかめらでやまのしゃしんをとりました。",
+        "en": "I took photos of the mountains with my new camera."
+      },
+      "quiz": {
+        "sentenceBefore": "旅行に",
+        "sentenceAfter": "を持って行くのを忘れました。",
+        "en": "I forgot to bring my camera on the trip.",
+        "choices": ["カメラ", "ホテル", "スーパー", "コンビニ"]
+      }
+    }
+  ]
+}

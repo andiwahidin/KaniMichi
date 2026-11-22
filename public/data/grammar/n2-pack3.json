@@ -1,0 +1,316 @@
+{
+  "level": 2,
+  "pack": "n2-pack3",
+  "items": [
+    {
+      "id": "g-n2-31",
+      "jlpt": 2,
+      "order": 31,
+      "pattern": "～以上(は) (karena sudah / selama)",
+      "reading": "～いじょう(は)",
+      "meaning": "now that ...; since ... (it is only natural/necessary to ...)",
+      "structure": "Verb (Plain) / な-Adj+である / Noun+である + 以上(は)",
+      "explanation": "States an established fact or commitment, followed by a strong logical obligation, determination, or expectation (often ending in べきだ, つもりだ, なければならない, or ～たい).",
+      "confusableWith": "Unlike normal から, ～以上(は) emphasizes duty, responsibility, or firm resolve resulting from the premise.",
+      "examples": [
+        {
+          "jp": "引き受けた以上は、最後まで責任を持ってやり遂げたい。",
+          "reading": "ひきうけたいじょうは、さいごまでせきにんをもってやりとげたい。",
+          "en": "Now that I've accepted the task, I want to see it through responsibly to the end."
+        },
+        {
+          "jp": "約束した以上、必ず守るべきだ。",
+          "reading": "やくそくしたいじょう、かならずまもるべきだ。",
+          "en": "Since you made a promise, you must definitely keep it."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "プロとしてお金をもらう",
+        "sentenceAfter": "、手を抜くわけにはいかない。",
+        "en": "Since we get paid as professionals, we cannot afford to cut corners.",
+        "answer": "以上は",
+        "acceptedAnswers": ["以上は", "以上", "いじょうは", "いじょう"],
+        "choices": ["以上は", "一方で", "どころか", "ものの"]
+      }
+    },
+    {
+      "id": "g-n2-32",
+      "jlpt": 2,
+      "order": 32,
+      "pattern": "～上(に) (ditambah lagi / selain itu)",
+      "reading": "～うえ(に)",
+      "meaning": "moreover; on top of that; in addition to ...",
+      "structure": "Plain form (な-Adj+な / Noun+の) + 上(に)",
+      "explanation": "Stacks an additional fact of the same positive or negative evaluation on top of the first one.",
+      "confusableWith": "Do not confuse with ～上で ('after doing / upon doing'), which always takes the past た-form or a verbal noun.",
+      "examples": [
+        {
+          "jp": "このアパートは駅から近い上に、家賃も安い。",
+          "reading": "このあぱーとはえきからちかいうえに、やちんもやすい。",
+          "en": "This apartment is close to the station, and on top of that, the rent is cheap."
+        },
+        {
+          "jp": "財布を落とした上に、雨にまで降られてしまった。",
+          "reading": "さいふをおとしたうえに、あめにまでふられてしまった。",
+          "en": "On top of dropping my wallet, I even got caught in the rain."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼は仕事が早い",
+        "sentenceAfter": "、とても丁寧なので信頼されている。",
+        "en": "He works fast, and moreover he is very thorough, so he is trusted.",
+        "answer": "上に",
+        "acceptedAnswers": ["上に", "うえに"],
+        "choices": ["上に", "上で", "わりに", "くせに"]
+      }
+    },
+    {
+      "id": "g-n2-33",
+      "jlpt": 2,
+      "order": 33,
+      "pattern": "～上で (setelah / dalam hal)",
+      "reading": "～うえで",
+      "meaning": "after doing ... (as preparation); in terms of / when doing ...",
+      "structure": "Verb (た-form) + 上で (after) / Verb (Dict) or Noun+の + 上で (in terms of)",
+      "explanation": "With a past た-form, means 'only after completing X, do Y'. With a dictionary form or noun, means 'in the context of / when carrying out X'.",
+      "confusableWith": "Always distinguish た + 上で (prerequisite step) from 上に (addition 'moreover').",
+      "examples": [
+        {
+          "jp": "家族とよく相談した上で、転職を決めました。",
+          "reading": "かぞくとよくそうだんしたうえで、てんしょくをきめました。",
+          "en": "After consulting thoroughly with my family, I decided to change jobs."
+        },
+        {
+          "jp": "健康を維持する上で、睡眠は欠かせない。",
+          "reading": "けんこうをいじするうえで、すいみんはかかせない。",
+          "en": "In maintaining one's health, sleep is indispensable."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "契約書の内容をよく確認した",
+        "sentenceAfter": "、サインしてください。",
+        "en": "Please sign only after carefully reviewing the contents of the contract.",
+        "answer": "上で",
+        "acceptedAnswers": ["上で", "うえで"],
+        "choices": ["上で", "上に", "うちに", "ながら"]
+      }
+    },
+    {
+      "id": "g-n2-34",
+      "jlpt": 2,
+      "order": 34,
+      "pattern": "～甲斐がある (がいがある)",
+      "reading": "～がいがある",
+      "meaning": "worth doing; rewarding; effort paid off",
+      "structure": "Verb (た-form / ます-stem) / Noun+の + 甲斐がある (ない)",
+      "explanation": "Expresses satisfaction that an effort or hardship brought a worthwhile result. Negative form ～甲斐がない means 'was not worth it / all in vain'.",
+      "confusableWith": "With a past action, use た甲斐があった (努力した甲斐があった); attached to a verb stem as a noun, it expresses inherent rewardingness (やりがい = sense of fulfillment).",
+      "examples": [
+        {
+          "jp": "毎日練習した甲斐があって、大会で優勝できた。",
+          "reading": "まいにちれんしゅうしたかいがあって、たいかいでゆうしょうできた。",
+          "en": "My daily practice paid off, and I was able to win the tournament."
+        },
+        {
+          "jp": "苦労して作ったのに誰も食べないのでは、作った甲斐がない。",
+          "reading": "くろうしてつくったのにだれもたべないのでは、つくったかいがない。",
+          "en": "If nobody eats it after I worked hard to make it, there's no point having made it."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "わざわざ朝早く並んで買った",
+        "sentenceAfter": "があって、とてもおいしかった。",
+        "en": "It was worth lining up early in the morning to buy it—it was delicious.",
+        "answer": "甲斐",
+        "acceptedAnswers": ["甲斐", "かい"],
+        "choices": ["甲斐", "わけ", "はず", "せい"]
+      }
+    },
+    {
+      "id": "g-n2-35",
+      "jlpt": 2,
+      "order": 35,
+      "pattern": "～からといって (meskipun beralasan... bukan berarti)",
+      "reading": "～からといって",
+      "meaning": "just because ... (doesn't mean that ...)",
+      "structure": "Plain clause + からといって + ～わけではない / ～とは限らない / ～ない",
+      "explanation": "Rejects an overgeneralized conclusion drawn from a given reason. Almost always paired with a negative or partial-negation ending such as ～わけではない or ～とは限らない.",
+      "confusableWith": "Always look for a negative ending in the second clause when choosing からといって on JLPT N2.",
+      "examples": [
+        {
+          "jp": "値段が高いからといって、必ずしも品質が良いとは限らない。",
+          "reading": "ねだんがたかいからといって、かならずしもひんしつがよいとはかぎらない。",
+          "en": "Just because the price is high doesn't necessarily mean the quality is good."
+        },
+        {
+          "jp": "忙しいからといって、食事を抜くのはよくない。",
+          "reading": "いそがしいからといって、しょくじをぬくのはよくない。",
+          "en": "Just because you're busy doesn't make it okay to skip meals."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "一度失敗した",
+        "sentenceAfter": "、すべてが終わるわけではない。",
+        "en": "Just because you failed once doesn't mean everything is over.",
+        "answer": "からといって",
+        "acceptedAnswers": ["からといって"],
+        "choices": ["からといって", "からこそ", "ばかりか", "にしたがって"]
+      }
+    },
+    {
+      "id": "g-n2-36",
+      "jlpt": 2,
+      "order": 36,
+      "pattern": "～ことになっている (sudah menjadi aturan / jadwal)",
+      "reading": "～ことになっている",
+      "meaning": "it is scheduled/decided that ...; it is the rule that ...",
+      "structure": "Verb (Dictionary / ない-form) + ことになっている",
+      "explanation": "Describes an established rule, official schedule, or customary expectation decided by an organization or system rather than the speaker's personal whim.",
+      "confusableWith": "Compare with ～ことにしている (a personal habit or rule you set for yourself).",
+      "examples": [
+        {
+          "jp": "この施設では、室内で飲食してはいけないことになっている。",
+          "reading": "このしせつでは、しつないでいんしょくしてはいけないことになっている。",
+          "en": "At this facility, it is the rule that eating and drinking indoors is not allowed."
+        },
+        {
+          "jp": "来月から大阪支店へ転勤することになっています。",
+          "reading": "らいげつからおおさかしてんへてんきんすることになっています。",
+          "en": "It is scheduled that I will transfer to the Osaka branch starting next month."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "図書館の本は二週間以内に返す",
+        "sentenceAfter": "。",
+        "en": "Library books are supposed to be returned within two weeks.",
+        "answer": "ことになっている",
+        "acceptedAnswers": ["ことになっている", "ことになっています"],
+        "choices": ["ことになっている", "ことにしている", "わけにはいかない", "にすぎない"]
+      }
+    },
+    {
+      "id": "g-n2-37",
+      "jlpt": 2,
+      "order": 37,
+      "pattern": "～てはじめて (baru setelah... menyadari)",
+      "reading": "～てはじめて",
+      "meaning": "not until ...; only after doing ... did I realize ...",
+      "structure": "Verb (て-form) + はじめて",
+      "explanation": "Highlights a turning-point experience: only after actually experiencing X did the speaker truly understand or notice Y for the first time.",
+      "confusableWith": "Distinct from ～てから (neutral sequence); ～てはじめて strongly conveys a newfound realization.",
+      "examples": [
+        {
+          "jp": "病気になってはじめて、健康のありがたさがわかった。",
+          "reading": "びょうきになってはじめて、けんこうのありがたさがわかった。",
+          "en": "It wasn't until I fell ill that I truly understood the value of health."
+        },
+        {
+          "jp": "海外で暮らしてみてはじめて、自国の文化を見直すようになった。",
+          "reading": "かいがいでくらしてみてはじめて、じこくのぶんかをみなおすようになった。",
+          "en": "Only after living abroad did I come to re-examine my own country's culture."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "一人暮らしを始め",
+        "sentenceAfter": "、親の苦労が身にしみてわかった。",
+        "en": "Only after starting to live alone did I deeply understand my parents' hardships.",
+        "answer": "てはじめて",
+        "acceptedAnswers": ["てはじめて", "て初めて"],
+        "choices": ["てはじめて", "てばかり", "てしょうがない", "たきり"]
+      }
+    },
+    {
+      "id": "g-n2-38",
+      "jlpt": 2,
+      "order": 38,
+      "pattern": "～に決まっている (pasti / sudah jelas)",
+      "reading": "～にきまっている",
+      "meaning": "must surely be ...; is bound to be ... (strong subjective conviction)",
+      "structure": "Verb (Plain) / い-Adj / な-Adj stem / Noun + に決まっている",
+      "explanation": "Expresses the speaker's strong, often somewhat subjective or emotional certainty that something can only turn out one way.",
+      "confusableWith": "More emphatic and subjective than ～に違いない; attach directly to nouns and な-adjective stems without だ.",
+      "examples": [
+        {
+          "jp": "あんなに準備したのだから、発表は成功するに決まっている。",
+          "reading": "あんなにじゅんびしたのだから、はっぴょうはせいこうするにきまっている。",
+          "en": "Since we prepared so thoroughly, the presentation is bound to succeed."
+        },
+        {
+          "jp": "夜中にそんなに食べたら、太るに決まっているよ。",
+          "reading": "よなかにそんなにたべたら、ふとるにきまっているよ。",
+          "en": "If you eat that much in the middle of the night, of course you'll gain weight!"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "説明書も読まずに組み立てたら、間違える",
+        "sentenceAfter": "。",
+        "en": "If you assemble it without even reading the manual, you're bound to make a mistake.",
+        "answer": "に決まっている",
+        "acceptedAnswers": ["に決まっている", "にきまっている"],
+        "choices": ["に決まっている", "にすぎない", "かねる", "にあたらない"]
+      }
+    },
+    {
+      "id": "g-n2-39",
+      "jlpt": 2,
+      "order": 39,
+      "pattern": "～ばかりだ (semakin... saja)",
+      "reading": "～ばかりだ",
+      "meaning": "keep on ...ing; only getting more and more ... (unidirectional change)",
+      "structure": "Verb (Dictionary form of change verb) + ばかりだ",
+      "explanation": "Describes a continuous one-way trend—almost always an undesirable deterioration or increase (such as rising prices, declining population, or worsening symptoms).",
+      "confusableWith": "Compare with ～一方だ (similar meaning, slightly more formal/objective written style).",
+      "examples": [
+        {
+          "jp": "最近、物価は上がるばかりで生活が苦しい。",
+          "reading": "さいきん、ぶっかはあがるばかりでせいかつがくるしい。",
+          "en": "Recently prices just keep rising, making daily life tough."
+        },
+        {
+          "jp": "使わない漢字は忘れるばかりだ。",
+          "reading": "つかわないかんじはわすれるばかりだ。",
+          "en": "Kanji I don't use just keep slipping from my memory."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "地域の人口は年々減少する",
+        "sentenceAfter": "。",
+        "en": "The local population only keeps decreasing year after year.",
+        "answer": "ばかりだ",
+        "acceptedAnswers": ["ばかりだ", "一方だ"],
+        "choices": ["ばかりだ", "わけだ", "ものだ", "次第だ"]
+      }
+    },
+    {
+      "id": "g-n2-40",
+      "jlpt": 2,
+      "order": 40,
+      "pattern": "～抜きで / ～抜きにして (tanpa / mengesampingkan)",
+      "reading": "～ぬきで / ～ぬきにして",
+      "meaning": "without ...; leaving out ...; setting aside ...",
+      "structure": "Noun + 抜きで / 抜きにして / 抜きには～ない",
+      "explanation": "Indicates intentionally omitting something normally included (わさび抜きで = without wasabi; 冗談抜きで = jokes aside). With a negative ending (～抜きには～ない), means 'impossible without X'.",
+      "confusableWith": "Always attaches directly to a noun (no の in between).",
+      "examples": [
+        {
+          "jp": "お世辞抜きで、本当に素晴らしい発表でした。",
+          "reading": "おせじぬきで、ほんとうにすばらしいはっぴょうでした。",
+          "en": "All flattery aside, it was a truly wonderful presentation."
+        },
+        {
+          "jp": "地域の協力抜きには、この計画は成り立たない。",
+          "reading": "ちいきのきょうりょくぬきには、このけいかくはなりたたない。",
+          "en": "Without local community cooperation, this plan cannot succeed."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "時間がないので、前置きは",
+        "sentenceAfter": "本題に入りましょう。",
+        "en": "Since we don't have time, let's skip the preamble and get straight to the main topic.",
+        "answer": "抜きにして",
+        "acceptedAnswers": ["抜きにして", "ぬきにして"],
+        "choices": ["抜きにして", "を踏まえて", "をはじめとして", "をもとに"]
+      }
+    }
+  ]
+}

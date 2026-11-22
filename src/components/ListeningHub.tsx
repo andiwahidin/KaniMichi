@@ -1110,21 +1110,21 @@ export const ListeningHub: React.FC = () => {
             onClick={() => setActiveView('grammar')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            1. Grammar (150)
+            1. Grammar (200)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('kana-vocab')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            2. Kana JLPT (200)
+            2. Kana JLPT (250)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('reading')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (75)
+            3. Dokkai (100)
           </button>
           <button
             type="button"

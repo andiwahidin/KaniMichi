@@ -1,0 +1,236 @@
+{
+  "level": 1,
+  "pack": "n1-pack3",
+  "items": [
+    {
+      "id": "kv-n1-41",
+      "jlpt": 1,
+      "order": 41,
+      "word": "かたくなに",
+      "reading": "かたくなに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb (な-Adj)",
+      "primaryMeaning": "stubbornly; obstinately; rigidly",
+      "acceptedMeanings": ["stubbornly", "obstinately", "rigidly", "inflexibly"],
+      "usageNote": "Describes steadfastly refusing to yield, apologize, or change one's mind (かたくなに拒む).",
+      "example": {
+        "jp": "彼は周囲の説得にも耳を貸さず、かたくなに自説を曲げなかった。",
+        "reading": "かれはしゅういのせっとくにもみみをかさず、かたくなにじせつをまげなかった。",
+        "en": "Without listening to persuasion from those around him, he obstinately refused to alter his view."
+      },
+      "quiz": {
+        "sentenceBefore": "証人は記者からの質問に対し、",
+        "sentenceAfter": "口を閉ざし続けた。",
+        "en": "In response to reporters' questions, the witness stubbornly kept their mouth shut.",
+        "choices": ["かたくなに", "おのずと", "すかさず", "まんまと"]
+      }
+    },
+    {
+      "id": "kv-n1-42",
+      "jlpt": 1,
+      "order": 42,
+      "word": "おおよそ",
+      "reading": "おおよそ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "roughly; approximately; in general",
+      "acceptedMeanings": ["roughly", "approximately", "generally", "for the most part"],
+      "usageNote": "Formal/elevated counterpart of だいたい / およそ; also used with a negative to mean 'hardly/nothing at all'.",
+      "example": {
+        "jp": "新事業の構想は、おおよそ固まりつつある。",
+        "reading": "しんじぎょうのこうそうは、おおよそかたまりつつある。",
+        "en": "The blueprint for the new venture is roughly taking shape."
+      },
+      "quiz": {
+        "sentenceBefore": "復旧作業が完了するまで、",
+        "sentenceAfter": "三か月を要する見込みだ。",
+        "en": "Restoration work is expected to require roughly three months to complete.",
+        "choices": ["おおよそ", "ことごとく", "あえて", "かりに"]
+      }
+    },
+    {
+      "id": "kv-n1-43",
+      "jlpt": 1,
+      "order": 43,
+      "word": "とかく",
+      "reading": "とかく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "apt to; prone to (especially undesirable tendencies)",
+      "acceptedMeanings": ["apt to", "prone to", "tending to", "in any case"],
+      "usageNote": "Classic JLPT N1 essay adverb often paired with ～がちだ or ～ものだ to point out a common human flaw.",
+      "example": {
+        "jp": "人はとかく自分の欠点よりも他人の欠点に目が行きがちだ。",
+        "reading": "ひとはとかくじぶんのけってんよりもたにんのけってんにめがいきがちだ。",
+        "en": "People are all too apt to notice others' flaws rather than their own."
+      },
+      "quiz": {
+        "sentenceBefore": "成果を急ぐあまり、",
+        "sentenceAfter": "基本的な確認をおろそかにしがちである。",
+        "en": "In our haste for results, we are apt to neglect basic verification.",
+        "choices": ["とかく", "さぞ", "もっぱら", "ひたすら"]
+      }
+    },
+    {
+      "id": "kv-n1-44",
+      "jlpt": 1,
+      "order": 44,
+      "word": "いちがいに",
+      "reading": "いちがいに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "unconditionally; in a sweeping way (with negative)",
+      "acceptedMeanings": ["unconditionally", "sweeping", "without exception"],
+      "usageNote": "Always paired with a negative verb (いちがいに言えない = cannot make a sweeping generalization).",
+      "example": {
+        "jp": "どちらの案が優れているかは、いちがいには言えない。",
+        "reading": "どちらのあんがすぐれているかは、いちがいにはいえない。",
+        "en": "One cannot make a sweeping statement as to which proposal is superior."
+      },
+      "quiz": {
+        "sentenceBefore": "数字だけでは政策の成否を",
+        "sentenceAfter": "判断することはできない。",
+        "en": "One cannot unconditionally judge the success or failure of a policy from numbers alone.",
+        "choices": ["いちがいに", "たちどころに", "やたらに", "あながち"]
+      }
+    },
+    {
+      "id": "kv-n1-45",
+      "jlpt": 1,
+      "order": 45,
+      "word": "しかしながら",
+      "reading": "しかしながら",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "however; nevertheless; yet",
+      "acceptedMeanings": ["however", "nevertheless", "yet"],
+      "usageNote": "Formal written conjunction introducing a substantive counterargument in academic or policy texts.",
+      "example": {
+        "jp": "効率化は重要である。しかしながら、安全性を損なっては本末転倒だ。",
+        "reading": "こうりつかはじゅうようである。しかしながら、あんぜんせいをそこなってはほんまつてんとうだ。",
+        "en": "Efficiency is important. However, compromising safety puts the cart before the horse."
+      },
+      "quiz": {
+        "sentenceBefore": "新制度には多くの利点が認められる。",
+        "sentenceAfter": "、現場の負担増という課題も残っている。",
+        "en": "Many merits are recognized in the new system. However, the challenge of increased on-site workload remains.",
+        "choices": ["しかしながら", "ゆえに", "いわば", "かたや"]
+      }
+    },
+    {
+      "id": "kv-n1-46",
+      "jlpt": 1,
+      "order": 46,
+      "word": "ひるがえって",
+      "reading": "ひるがえって",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "conversely; turning to look at the other side",
+      "acceptedMeanings": ["conversely", "on the other hand", "turning to consider"],
+      "usageNote": "High-register N1 discourse marker used when pivoting from external examples back to one's own situation (ひるがえって考えるに).",
+      "example": {
+        "jp": "海外では再生可能エネルギーへの移行が急速に進んでいる。ひるがえって、我が国の現状はどうだろうか。",
+        "reading": "かいがいではさいせいかのうえねるぎーへのいこうがきゅうそくにすすんでいる。ひるがえって、わがくにのげんじょうはどうだろうか。",
+        "en": "Abroad, the shift to renewable energy is advancing rapidly. Turning to our own country, what is our current state?"
+      },
+      "quiz": {
+        "sentenceBefore": "他社の成功事例は参考になる。",
+        "sentenceAfter": "、自社の強みを見つめ直す必要もある。",
+        "en": "Other companies' success stories are helpful. Conversely, we also need to re-examine our own strengths.",
+        "choices": ["ひるがえって", "しかるに", "さりとて", "さりながら"]
+      }
+    },
+    {
+      "id": "kv-n1-47",
+      "jlpt": 1,
+      "order": 47,
+      "word": "ちぐはぐ",
+      "reading": "ちぐはぐ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (な-Adj / Noun)",
+      "primaryMeaning": "mismatched; inconsistent; out of sync",
+      "acceptedMeanings": ["mismatched", "inconsistent", "disjointed", "out of sync"],
+      "usageNote": "Describes uncoordinated communication, mismatched pairs, or contradictory policies.",
+      "example": {
+        "jp": "部署間の連携が足りず、対応がちぐはぐになってしまった。",
+        "reading": "ぶしょかんのれんけいがたりず、たいおうがちぐはぐになってしまった。",
+        "en": "Coordination between departments was lacking, and our response became inconsistent."
+      },
+      "quiz": {
+        "sentenceBefore": "発言と実際の行動が",
+        "sentenceAfter": "で、聴衆の信頼を得られなかった。",
+        "en": "Because their statements and actual actions were inconsistent, they failed to win the audience's trust.",
+        "choices": ["ちぐはぐ", "きっぱり", "ずばり", "そっくり"]
+      }
+    },
+    {
+      "id": "kv-n1-48",
+      "jlpt": 1,
+      "order": 48,
+      "word": "めきめき",
+      "reading": "めきめき",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "rapidly; noticeably; by leaps and bounds",
+      "acceptedMeanings": ["rapidly", "noticeably", "by leaps and bounds", "remarkably"],
+      "usageNote": "Describes visible, rapid improvement in skill, performance, or strength (実力をめきめき伸ばす).",
+      "example": {
+        "jp": "毎日欠かさず練習したおかげで、語学力がめきめき上達した。",
+        "reading": "まいにちかかさずれんしゅうしたおかげで、ごがくりょくがめきめきじょうたつした。",
+        "en": "Thanks to practicing without fail every day, my language ability improved by leaps and bounds."
+      },
+      "quiz": {
+        "sentenceBefore": "新しい指導法を取り入れてから、チームの成績が",
+        "sentenceAfter": "上がってきた。",
+        "en": "Since adopting the new coaching method, the team's results have risen noticeably.",
+        "choices": ["めきめき", "うんざり", "うやむや", "しぶしぶ"]
+      }
+    },
+    {
+      "id": "kv-n1-49",
+      "jlpt": 1,
+      "order": 49,
+      "word": "イノベーション",
+      "reading": "いのべーしょん",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "innovation; technological/structural breakthrough",
+      "acceptedMeanings": ["innovation", "technological innovation", "breakthrough"],
+      "usageNote": "Ubiquitous in N1 economic, policy, and management essays.",
+      "example": {
+        "jp": "異分野の知見を掛け合わせることで、新たなイノベーションが生まれる。",
+        "reading": "いぶんやのちけんをかけあわせることで、あらたないのべーしょんがうまれる。",
+        "en": "Combining insights across different fields gives rise to new innovation."
+      },
+      "quiz": {
+        "sentenceBefore": "既存の枠組みにとらわれない発想が、産業の",
+        "sentenceAfter": "を牽引する。",
+        "en": "Thinking unbound by existing frameworks drives industrial innovation.",
+        "choices": ["イノベーション", "ジレンマ", "レガシー", "コンセンサス"]
+      }
+    },
+    {
+      "id": "kv-n1-50",
+      "jlpt": 1,
+      "order": 50,
+      "word": "ガバナンス",
+      "reading": "がばなんす",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "governance; corporate/organizational oversight",
+      "acceptedMeanings": ["governance", "corporate governance", "oversight"],
+      "usageNote": "High-frequency N1 news & business katakana noun referring to transparent institutional control and accountability.",
+      "example": {
+        "jp": "不祥事の再発を防ぐため、社内のガバナンス体制を抜本的に見直した。",
+        "reading": "ふしょうじのさいはつをふせぐため、しゃないのがばなんすたいせいをばっぽんてきにみなおした。",
+        "en": "To prevent a recurrence of the scandal, we fundamentally overhauled our internal governance structure."
+      },
+      "quiz": {
+        "sentenceBefore": "投資家からの信頼を維持するには、透明性の高い",
+        "sentenceAfter": "が不可欠である。",
+        "en": "To maintain investor confidence, highly transparent governance is indispensable.",
+        "choices": ["ガバナンス", "インセンティブ", "パラダイム", "ポテンシャル"]
+      }
+    }
+  ]
+}

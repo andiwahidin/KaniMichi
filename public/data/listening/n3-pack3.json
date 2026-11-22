@@ -1,0 +1,294 @@
+{
+  "level": 3,
+  "pack": "n3-pack3",
+  "items": [
+    {
+      "id": "l-n3-16",
+      "jlpt": 3,
+      "taskType": "kadai",
+      "titleJp": "部署[ぶしょ]の歓迎会[かんげいかい]の段取[だんど]り",
+      "titleEn": "Organizing the Department Welcome Party",
+      "situationEn": "Two office coworkers divide tasks for next week's welcome party for new team members.",
+      "introJp": "会社[かいしゃ]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が歓迎会[かんげいかい]の準備[じゅんび]について話[はな]しています。男[おとこ]の人[ひと]は今日[きょう]中[じゅう]に何[なに]をしますか。",
+      "introEn": "A man and a woman at work are discussing welcome party preparations. What will the man do today?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "来週[らいしゅう]の歓迎会[かんげいかい]、お店[みせ]は駅前[えきまえ]の居酒屋[いざかや]に仮予約[かりよやく]しておいたよ。参加者[さんかしゃ]の最終[さいしゅう]人数[にんずう]、もう集[あつ]まった？",
+          "en": "For next week's welcome party, I made a tentative booking at the izakaya by the station. Have you gathered the final headcount yet?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "今[いま]のところ18人[じゅうはちにん]だけど、営業部[えいぎょうぶ]の鈴木[すずき]さんと中村[なかむら]さんからまだ返事[へんじ]が来[き]ていないんだ。",
+          "en": "It's 18 people so far, but Suzuki-san and Nakamura-san from Sales haven't replied yet."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "お店[みせ]から、人数[にんずう]の確定[かくてい]は明日[あした]の昼[ひる]までにお願[ねが]いしますって言[い]われてるの。今日[きょう]のうちに二人[ふたり]にチャットで確認[かくにん]してもらえる？",
+          "en": "The restaurant asked us to confirm the headcount by noon tomorrow. Could you check with those two via chat today?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "了解[りょうかい]。あと、新入社員[しんにゅうしゃいん]への花束[はなたば]も今日[きょう]注文[ちゅうもん]したほうがいい？",
+          "en": "Got it. Also, should I order the bouquet for the new hires today?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "花束[はなたば]はわたしが行[い]きつけのお花屋[はなや]さんに明日[あした]頼[たの]むから大丈夫[だいじょうぶ]。会費[かいひ]を集[あつ]めるのも当日[とうじつ]でいいしね。",
+          "en": "I'll order the bouquet from my regular florist tomorrow, so don't worry. We can collect the fee on the day of the party too."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は今日[きょう]中[じゅう]に何[なに]をしますか。",
+      "questionEn": "What will the man do today?",
+      "choices": [
+        "お店[みせ]に電話[でんわ]して予約[よやく]を確定[かくてい]する",
+        "返事[へんじ]がまだの二人[ふたり]に出席[しゅっせき]を確認[かくにん]する",
+        "新入社員[しんにゅうしゃいん]への花束[はなたば]を注文[ちゅうもん]する",
+        "参加者[さんかしゃ]から会費[かいひ]を集[あつ]める"
+      ],
+      "choicesEn": [
+        "Call the restaurant to finalize the reservation",
+        "Confirm attendance with the two colleagues who haven't replied",
+        "Order a bouquet for the new employees",
+        "Collect participation fees from attendees"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The woman handles the florist tomorrow, fees are collected on the day, and the restaurant deadline is tomorrow noon—so today the man needs to message the two unconfirmed colleagues.",
+      "keyPhrases": [
+        {
+          "jp": "仮予約[かりよやく]",
+          "reading": "かりよやく",
+          "en": "tentative reservation"
+        },
+        {
+          "jp": "確定[かくてい]する",
+          "reading": "かくていする",
+          "en": "to finalize / confirm"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-17",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "夜[よる]の静[しず]かな読書会[どくしょかい]",
+      "titleEn": "Why a Bookstore Started Late-Night Silent Reading Events",
+      "situationEn": "A radio host interviews the owner of an independent bookstore about a popular monthly event.",
+      "introJp": "ラジオで書店[しょてん]の店長[てんちょう]が話[はな]しています。店長[てんちょう]はなぜ「サイレント読書会[どくしょかい]」を始[はじ]めましたか。",
+      "introEn": "A bookstore owner is speaking on the radio. Why did the owner start the 'Silent Reading Club'?",
+      "lines": [
+        {
+          "speaker": "Host",
+          "role": "female",
+          "jp": "閉店後[へいてんご]の本屋[ほんや]に集[あつ]まって、1時間[いちじかん]だれとも話[はな]さずに本[ほん]を読[よ]むイベントが大人気[だいにんき]だそうですね。感想[かんそう]を話[はな]し合[あ]わないのは珍[めずら]しいですが、なぜこの形[かたち]にされたんですか。",
+          "en": "I hear your event where people gather after closing and read silently for an hour without talking is hugely popular. Not discussing impressions is unusual—why did you choose this format?"
+        },
+        {
+          "speaker": "Owner",
+          "role": "male",
+          "jp": "以前[いぜん]は感想[かんそう]をシェアする読書会[どくしょかい]を開[ひら]いていたんです。でも、常連[じょうれん]のお客[きゃく]さんから「人前[ひとまえ]でうまい感想[かんそう]を言[い]うのは緊張[きんちょう]するし、家[いえ]だとスマホを見[み]てしまって本[ほん]に集中[しゅうちゅう]できない」という声[こえ]を聞[き]きまして。",
+          "en": "Before, we held reading clubs where people shared impressions. However, regular customers told me they got nervous trying to say something clever in front of others, yet at home they end up checking their phones and can't focus on books."
+        },
+        {
+          "speaker": "Owner",
+          "role": "male",
+          "jp": "それで、発表[はっぴょう]のプレッシャーをなくして、ただスマホを置[お]いて読書[どくしょ]に没頭[ぼっとう]できる場[ば]を作[つく]ろうと思[おも]ったんです。",
+          "en": "So I decided to remove the pressure of speaking and create a space where people can simply put down their phones and immerse themselves in reading."
+        }
+      ],
+      "questionJp": "店長[てんちょう]はなぜこの読書会[どくしょかい]を始[はじ]めましたか。",
+      "questionEn": "Why did the owner start this silent reading event?",
+      "choices": [
+        "夜[よる]の売上[うりあげ]を増[ふ]やすために閉店時間[へいてんじかん]を延[の]ばしたかったから",
+        "感想[かんそう]を言[い]う負担[ふたん]をなくし、集中[しゅうちゅう]して本[ほん]を読[よ]める場所[ばしょ]を作[つく]りたかったから",
+        "読書会[どくしょかい]の司会[しかい]をするスタッフがいなくなったから",
+        "参加者[さんかしゃ]同士[どうし]が静[しず]かにSNSで感想[かんそう]を投稿[とうこう]できるようにするため"
+      ],
+      "choicesEn": [
+        "To extend closing hours and increase nighttime sales",
+        "To remove the pressure of giving opinions and offer a distraction-free place to read",
+        "Because they ran out of staff to moderate discussions",
+        "So participants could quietly post reviews on social media"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Customers felt stressed about presenting clever opinions and distracted by smartphones at home, so the owner created a pressure-free, focused reading space.",
+      "keyPhrases": [
+        {
+          "jp": "人前[ひとまえ]で",
+          "reading": "ひとまえで",
+          "en": "in front of other people"
+        },
+        {
+          "jp": "没頭[ぼっとう]する",
+          "reading": "ぼっとうする",
+          "en": "to immerse oneself in"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-18",
+      "jlpt": 3,
+      "taskType": "gaiyou",
+      "titleJp": "規格外[きかくがい]野菜[やさい]のレストラン",
+      "titleEn": "A Chef's Mission with Imperfect Vegetables",
+      "situationEn": "A chef speaks on a podcast about why her restaurant buys oddly shaped vegetables directly from farmers.",
+      "introJp": "ポッドキャストで料理人[りょうりにん]が話[はな]しています。この料理人[りょうりにん]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "introEn": "A chef is speaking on a podcast. What is the main point she wants to convey?",
+      "lines": [
+        {
+          "speaker": "Chef",
+          "role": "female",
+          "jp": "スーパーに並[なら]ぶ野菜[やさい]って、形[かたち]も大[おお]きさもきれいにそろっていますよね。でも実[じつ]は、少[すこ]し曲[ま]がっていたり傷[きず]がついたりしただけで、味[あじ]は全[まった]く変[か]わらないのに捨[す]てられてしまう野菜[やさい]がたくさんあるんです。",
+          "en": "Vegetables in supermarkets all have uniform shapes and sizes. Yet in reality, huge amounts of vegetables are discarded just for being slightly crooked or bruised, even though their flavor is identical."
+        },
+        {
+          "speaker": "Chef",
+          "role": "female",
+          "jp": "わたしの店[みせ]では、そういった野菜[やさい]を農家[のうか]さんから直接[ちょくせつ]買[か]い取[と]って、スープやカレーにしています。安[やす]く済[す]ませたいからではなく、見[み]た目[め]にこだわらなくても本当[ほんとう]においしい料理[りょうり]が作[つく]れることをお客[きゃく]さんに知[し]ってほしいんです。",
+          "en": "At my restaurant, we buy those vegetables directly from farmers and turn them into soups and curries. It's not to cut costs—I want customers to realize that truly delicious food can be made without obsessing over appearance."
+        },
+        {
+          "speaker": "Chef",
+          "role": "female",
+          "jp": "食事[しょくじ]を楽[たの]しみながら、食品[しょくひん]ロスについて考[かんが]えるきっかけになればうれしいですね。",
+          "en": "I'd be happy if enjoying a meal becomes a spark for people to think about food waste."
+        }
+      ],
+      "questionJp": "この料理人[りょうりにん]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "questionEn": "What is the chef's main message?",
+      "choices": [
+        "規格外[きかくがい]の野菜[やさい]を使[つか]えばレストランの利益[りえき]が大[おお]きく増[ふ]える",
+        "見[み]た目[め]が不揃[ふぞろ]いでも味[あじ]は良[よ]く、おいしく食[た]べることで食品[しょくひん]ロスを意識[いしき]してほしい",
+        "農家[のうか]はもっと見[み]た目[め]のきれいな野菜[やさい]を育[そだ]てるべきだ",
+        "スーパーマーケットはスープやカレーの販売[はんばい]を始[はじ]めたほうがいい"
+      ],
+      "choicesEn": [
+        "Using imperfect vegetables greatly boosts restaurant profits",
+        "Even oddly shaped vegetables taste great, and enjoying them can raise awareness of food waste",
+        "Farmers should grow better-looking vegetables",
+        "Supermarkets should start selling soup and curry"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "She explicitly states she does not use them just to save money, but to show that appearance doesn't affect taste and to inspire awareness about food waste.",
+      "keyPhrases": [
+        {
+          "jp": "規格外[きかくがい]",
+          "reading": "きかくがい",
+          "en": "non-standard / imperfect (produce)"
+        },
+        {
+          "jp": "〜きっかけになる",
+          "reading": "きっかけになる",
+          "en": "to become a trigger / opportunity for"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-19",
+      "jlpt": 3,
+      "taskType": "sokuji",
+      "titleJp": "同僚[どうりょう]からの急[きゅう]な頼[たの]み事[ごと]を断[ことわ]る",
+      "titleEn": "Quick Response: Politely Declining an Urgent Favor at Work",
+      "situationEn": "A coworker asks you to proofread a long report today, but you already have an urgent deadline.",
+      "introJp": "職場[しょくば]で同僚[どうりょう]が頼[たの]み事[ごと]をしています。今日[きょう]は忙[いそが]しくて手伝[てつだ]えないとき、何[なん]と言[い]いますか。",
+      "introEn": "A colleague asks for help at work, but you are too busy today. What is the most appropriate reply?",
+      "lines": [
+        {
+          "speaker": "Colleague",
+          "role": "male",
+          "jp": "ごめん、今日[きょう]中[じゅう]にこのプレゼン資料[しりょう]の誤字[ごじ]をチェックしてもらえないかな。",
+          "en": "Sorry, could you proofread this presentation deck for typos by the end of today?"
+        }
+      ],
+      "questionJp": "今日[きょう]は手伝[てつだ]えないとき、何[なん]と言[い]いますか。",
+      "questionEn": "How should you politely decline for today?",
+      "choices": [
+        "ごめん、今[いま]ちょっと手[て]が離[はな]せなくて……。明日[あした]の朝[あさ]一番[いちばん]なら見[み]られるんだけど、それでも大丈夫[だいじょうぶ]？",
+        "無理[むり]です。自分[じぶん]のミスは自分[じぶん]で直[なお]してください。",
+        "ええ、今日[きょう]は無理[むり]なので、何[なに]もできません。"
+      ],
+      "choicesEn": [
+        "Sorry, I can't step away from what I'm doing right now... I could look at it first thing tomorrow morning—would that be okay?",
+        "Impossible. Fix your own mistakes yourself.",
+        "Yeah, today is impossible, so I can't do anything."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "Using \"手が離せなくて\" to soften the refusal and offering an alternative time (明日の朝一番なら) is the hallmark of polite Japanese workplace communication.",
+      "keyPhrases": [
+        {
+          "jp": "手[て]が離[はな]せない",
+          "reading": "てがはなせない",
+          "en": "tied up / unable to take one's hands off current work"
+        },
+        {
+          "jp": "朝[あさ]一番[いちばん]",
+          "reading": "あさいちばん",
+          "en": "first thing in the morning"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-20",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "スポーツジムの施設[しせつ]利用[りよう]案内[あんない]",
+      "titleEn": "Sports Gym Facility Orientation",
+      "situationEn": "A gym staff member explains which facilities new members can use freely and which require booking.",
+      "introJp": "スポーツジムでスタッフが入会者[にゅうかいしゃ]に説明[せつめい]しています。事前[じぜん]に予約[よやく]が必要[ひつよう]な施設[しせつ]はどれですか。",
+      "introEn": "A gym staff member is briefing a new member. Which facility requires an advance reservation?",
+      "lines": [
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "当[とう]ジムの施設[しせつ]をご案内[あんない]します。2階[にかい]のトレーニングマシンと3階[さんがい]のプールは、営業時間内[えいぎょうじかんない]であれば予約[よやく]なしでいつでもご利用[りよう]いただけます。",
+          "en": "Let me explain our gym facilities. The 2nd-floor training machines and 3rd-floor pool can be used anytime during operating hours without a reservation."
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "4階[よんかい]のスタジオで行[おこな]うヨガレッスンも、先着順[せんちゃくじゅん]ですので直接[ちょくせつ]スタジオへお越[こ]しください。ただし、1階[いっかい]の個人[こじん]用[よう]ロッカーではなく、奥[おく]にあるパーソナルストレッチルームのみ、アプリから前日[ぜんじつ]までの予約[よやく]が必要[ひつよう]となります。",
+          "en": "Yoga classes in the 4th-floor studio are also first-come, first-served, so just head straight there. However, only the personal stretch room at the back of the 1st floor requires booking via the app by the day before."
+        },
+        {
+          "speaker": "Member",
+          "role": "male",
+          "jp": "わかりました。じゃあストレッチルームを使[つか]いたいときは前[まえ]の日[ひ]までにアプリで予約[よやく]すればいいんですね。",
+          "en": "Got it. So whenever I want to use the stretch room, I should reserve it on the app by the day before."
+        }
+      ],
+      "questionJp": "事前[じぜん]に予約[よやく]が必要[ひつよう]な施設[しせつ]はどれですか。",
+      "questionEn": "Which facility requires an advance reservation?",
+      "choices": [
+        "トレーニングマシン",
+        "プール",
+        "ヨガスタジオ",
+        "パーソナルストレッチルーム"
+      ],
+      "choicesEn": [
+        "Training machines",
+        "Swimming pool",
+        "Yoga studio",
+        "Personal stretch room"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "Machines and pool need no reservation, and yoga is first-come, first-served; only the personal stretch room (パーソナルストレッチルーム) requires app booking by the day before.",
+      "keyPhrases": [
+        {
+          "jp": "先着順[せんちゃくじゅん]",
+          "reading": "せんちゃくじゅん",
+          "en": "first-come, first-served"
+        },
+        {
+          "jp": "〜のみ",
+          "reading": "のみ",
+          "en": "only (formal)"
+        }
+      ]
+    }
+  ]
+}

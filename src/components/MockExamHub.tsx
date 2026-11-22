@@ -515,16 +515,16 @@ export const MockExamHub: React.FC = () => {
     for (const t of generated.choukaiTracks) recent.tracks.add(t.id);
 
     // Prevent sets from growing endlessly once a full cycle is exhausted
-    if (recent.passages.size >= (manifests?.reading.totalCount || 50)) {
+    if (recent.passages.size >= (manifests?.reading.totalCount || 100)) {
       recent.passages.clear();
     }
-    if (recent.tracks.size >= (manifests?.listening.totalCount || 50)) {
+    if (recent.tracks.size >= (manifests?.listening.totalCount || 100)) {
       recent.tracks.clear();
     }
-    if (recent.grammar.size >= (manifests?.grammar.totalCount || 100)) {
+    if (recent.grammar.size >= (manifests?.grammar.totalCount || 200)) {
       recent.grammar.clear();
     }
-    if (recent.kana.size >= (manifests?.kanaVocab.totalCount || 150)) {
+    if (recent.kana.size >= (manifests?.kanaVocab.totalCount || 250)) {
       recent.kana.clear();
     }
 

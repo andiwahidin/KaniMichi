@@ -1,0 +1,316 @@
+{
+  "level": 3,
+  "pack": "n3-pack3",
+  "items": [
+    {
+      "id": "g-n3-31",
+      "jlpt": 3,
+      "order": 31,
+      "pattern": "たとえ～ても (sekalipun / andaikata)",
+      "reading": "たとえ～ても",
+      "meaning": "even if ...; no matter what ...",
+      "structure": "たとえ + Verb/Adj (て-form / でも) + も",
+      "explanation": "Emphasizes a hypothetical extreme condition: even if that worst-case scenario occurs, the speaker's resolve or outcome will not change.",
+      "confusableWith": "Always pairs with ～ても / ～でも; cannot pair with ～たら or ～ば.",
+      "examples": [
+        {
+          "jp": "たとえ雨が降っても、試合は行われます。",
+          "reading": "たとえあめがふっても、しあいはおこなわれます。",
+          "en": "Even if it rains, the match will be held."
+        },
+        {
+          "jp": "たとえ失敗しても、あきらめないつもりだ。",
+          "reading": "たとえしっぱいしても、あきらめないつもりだ。",
+          "en": "Even if I fail, I intend not to give up."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "たとえ反対され",
+        "sentenceAfter": "、自分の夢を追いかけたい。",
+        "en": "Even if I am opposed, I want to pursue my own dream.",
+        "answer": "ても",
+        "acceptedAnswers": ["ても"],
+        "choices": ["ても", "たら", "なら", "のに"]
+      }
+    },
+    {
+      "id": "g-n3-32",
+      "jlpt": 3,
+      "order": 32,
+      "pattern": "～さえ～ば (asalkan saja)",
+      "reading": "～さえ～ば",
+      "meaning": "if only ...; as long as just ...",
+      "structure": "Noun + さえ + Conditional (～ば / ～たら) / Verb-stem + さえすれば",
+      "explanation": "States the single minimum requirement needed to achieve a result: if only that one condition is met, everything else will be fine.",
+      "confusableWith": "Compare with standalone ～さえ ('even ...'), which does not require a conditional ば/たら clause.",
+      "examples": [
+        {
+          "jp": "体さえ元気なら、何でもできる。",
+          "reading": "からださえげんきなら、なんでもできる。",
+          "en": "As long as you are healthy, you can do anything."
+        },
+        {
+          "jp": "薬を飲みさえすれば、すぐ治りますよ。",
+          "reading": "くすりをのみさえすれば、すぐなおりますよ。",
+          "en": "As long as you just take the medicine, you'll recover right away."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "時間",
+        "sentenceAfter": "あれば、ゆっくり旅行したいです。",
+        "en": "If only I had time, I'd like to travel leisurely.",
+        "answer": "さえ",
+        "acceptedAnswers": ["さえ"],
+        "choices": ["さえ", "ばかり", "ほど", "ぐらい"]
+      }
+    },
+    {
+      "id": "g-n3-33",
+      "jlpt": 3,
+      "order": 33,
+      "pattern": "～っけ (konfirmasi ingatan)",
+      "reading": "～っけ",
+      "meaning": "was it ... again?; let me recall ...",
+      "structure": "Plain past (た / だった) / です-past (でした / ました) + っけ",
+      "explanation": "Used in conversation when trying to recall something you once knew or heard, or confirming a half-remembered fact with someone else.",
+      "confusableWith": "Usually attaches to past tense forms (何時だったっけ / でしたっけ) even when referring to an upcoming schedule.",
+      "examples": [
+        {
+          "jp": "明日の会議、何時からでしたっけ。",
+          "reading": "あしたのかいぎ、なんじからでしたっけ。",
+          "en": "What time was tomorrow's meeting again?"
+        },
+        {
+          "jp": "あのお店の名前、何だったっけ。",
+          "reading": "あのおみせのなまえ、なんだったっけ。",
+          "en": "What was the name of that shop again?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "佐藤さんの電話番号、これで合っていまし",
+        "sentenceAfter": "。",
+        "en": "Was Sato-san's phone number right like this again?",
+        "answer": "たっけ",
+        "acceptedAnswers": ["たっけ"],
+        "choices": ["たっけ", "たはず", "たきり", "たまま"]
+      }
+    },
+    {
+      "id": "g-n3-34",
+      "jlpt": 3,
+      "order": 34,
+      "pattern": "～がち (cenderung / sering kali)",
+      "reading": "～がち",
+      "meaning": "tend to ...; prone to ... (usually undesirable)",
+      "structure": "Verb (ます-stem) / Noun + がちだ / がちな + Noun",
+      "explanation": "Indicates a frequent tendency toward something, almost always carrying a negative or undesirable nuance (such as getting sick, forgetting, or being late).",
+      "confusableWith": "Unlike ～やすい (neutral ease/tendency), ～がち almost always describes an unwanted habit or condition.",
+      "examples": [
+        {
+          "jp": "冬は風邪をひきがちなので、気をつけてください。",
+          "reading": "ふゆはかぜをひきがちなので、きをつけてください。",
+          "en": "People tend to catch colds in winter, so please be careful."
+        },
+        {
+          "jp": "最近は忙しくて、運動不足になりがちだ。",
+          "reading": "さいきんはいそがしくて、うんどうぶそくになりがちだ。",
+          "en": "I've been busy lately and tend to lack exercise."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼女は最近、学校を休み",
+        "sentenceAfter": "だ。",
+        "en": "Lately she has been prone to missing school.",
+        "answer": "がち",
+        "acceptedAnswers": ["がち"],
+        "choices": ["がち", "かけ", "きり", "ばかり"]
+      }
+    },
+    {
+      "id": "g-n3-35",
+      "jlpt": 3,
+      "order": 35,
+      "pattern": "～っぽい (terkesan seperti / mudah...)",
+      "reading": "～っぽい",
+      "meaning": "-ish; seeming like ...; easily prone to ...",
+      "structure": "Noun / Verb (ます-stem) / い-Adj stem + っぽい",
+      "explanation": "Conversational suffix functioning as an い-adjective. With nouns it means 'having the qualities of (often slightly critical)' like 子供っぽい (childish); with verb stems it means 'easily becoming' like 怒りっぽい (quick-tempered).",
+      "confusableWith": "Compare with ～らしい (praising ideal qualities, e.g., 男らしい) vs. ～っぽい (often casual or mildly critical, e.g., 安っぽい = cheap-looking).",
+      "examples": [
+        {
+          "jp": "彼は少し子供っぽいところがある。",
+          "reading": "かれはすこしこどもっぽいところがある。",
+          "en": "He has a somewhat childish side."
+        },
+        {
+          "jp": "最近、忘れっぽくなって困っています。",
+          "reading": "さいきん、わすれっぽくなってこまっています。",
+          "en": "Lately I've become forgetful, and it's troubling me."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このスープはちょっと水",
+        "sentenceAfter": "ですね。",
+        "en": "This soup is a little watery, isn't it?",
+        "answer": "っぽい",
+        "acceptedAnswers": ["っぽい"],
+        "choices": ["っぽい", "らしい", "がち", "だらけ"]
+      }
+    },
+    {
+      "id": "g-n3-36",
+      "jlpt": 3,
+      "order": 36,
+      "pattern": "～かける / ～かけの (setengah jalan / hampir)",
+      "reading": "～かける / ～かけの",
+      "meaning": "half-done; in the middle of ...; about to ...",
+      "structure": "Verb (ます-stem) + かける / かけだ / かけの + Noun",
+      "explanation": "Indicates an action that was started and left unfinished (読みかけの本 = a half-read book), or something on the verge of happening (沈みかける = about to sink).",
+      "confusableWith": "Compare with ～っぱなし (carelessly leaving a state open/on) vs. ～かけ (partially completed action).",
+      "examples": [
+        {
+          "jp": "テーブルの上に食べかけのパンが置いてある。",
+          "reading": "てーぶるのうえにたべかけのぱんがおいてある。",
+          "en": "There is a half-eaten piece of bread left on the table."
+        },
+        {
+          "jp": "何か言いかけたのに、急に黙ってしまった。",
+          "reading": "なにかいいかけたのに、きゅうにだまってしまった。",
+          "en": "Even though he started to say something, he suddenly fell silent."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "寝る前に読み",
+        "sentenceAfter": "の小説を最後まで読んでしまった。",
+        "en": "Before sleeping, I ended up finishing the novel I was halfway through reading.",
+        "answer": "かけ",
+        "acceptedAnswers": ["かけ"],
+        "choices": ["かけ", "きり", "がち", "っぱなし"]
+      }
+    },
+    {
+      "id": "g-n3-37",
+      "jlpt": 3,
+      "order": 37,
+      "pattern": "～きる / ～きれない (selesai tuntas / tak sanggup habis)",
+      "reading": "～きる / ～きれない",
+      "meaning": "to do completely to the end / unable to finish completely",
+      "structure": "Verb (ます-stem) + きる / きれる / きれない",
+      "explanation": "Emphasizes performing an action 100% completely (読みきる = read all the way through; 疲れきる = utterly exhausted). Its negative potential ～きれない means 'too much to finish completely'.",
+      "confusableWith": "Attach directly to the verb ます-stem (e.g., 食べきれない = can't finish eating it all).",
+      "examples": [
+        {
+          "jp": "量が多くて、一人では食べきれませんでした。",
+          "reading": "りょうがおおくて、ひとりではたべきれませんでした。",
+          "en": "The portion was so big I couldn't finish eating it by myself."
+        },
+        {
+          "jp": "42キロのマラソンを最後まで走りきった。",
+          "reading": "よんじゅうにきろのまらそんをさいごまではしりきった。",
+          "en": "I ran the entire 42km marathon all the way to the finish."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "机の上に数え",
+        "sentenceAfter": "ほどの書類が積まれている。",
+        "en": "A pile of documents too numerous to count is stacked on the desk.",
+        "answer": "きれない",
+        "acceptedAnswers": ["きれない", "切れない"],
+        "choices": ["きれない", "かけない", "がちない", "やすい"]
+      }
+    },
+    {
+      "id": "g-n3-38",
+      "jlpt": 3,
+      "order": 38,
+      "pattern": "～わけがない (mustahil / mana mungkin)",
+      "reading": "～わけがない",
+      "meaning": "there is no way ...; it is impossible that ...",
+      "structure": "Verb (Plain) / い-Adj / な-Adj+な / Noun+の + わけがない",
+      "explanation": "Strongly denies a possibility based on common sense or clear evidence. Slightly more emphatic and colloquial than ～はずがない.",
+      "confusableWith": "Do NOT confuse with ～わけではない ('it doesn't necessarily mean that...', partial negation).",
+      "examples": [
+        {
+          "jp": "そんな高い時計、学生の私に買えるわけがない。",
+          "reading": "そんなたかいとけい、がくせいのわたしにかえるわけがない。",
+          "en": "There's no way I, a student, can afford such an expensive watch."
+        },
+        {
+          "jp": "一度も練習していないのに、うまく弾けるわけがないよ。",
+          "reading": "いちどもれんしゅうしていないのに、うまくひけるわけがないよ。",
+          "en": "You haven't practiced even once; there's no way you can play it well."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "こんなに簡単すぎる条件を彼が断る",
+        "sentenceAfter": "。",
+        "en": "There is no way he would turn down such an easy condition.",
+        "answer": "わけがない",
+        "acceptedAnswers": ["わけがない", "わけがありません"],
+        "choices": ["わけがない", "わけではない", "わけだ", "べきだ"]
+      }
+    },
+    {
+      "id": "g-n3-39",
+      "jlpt": 3,
+      "order": 39,
+      "pattern": "～ずにはいられない (tidak tahan untuk tidak...)",
+      "reading": "～ずにはいられない",
+      "meaning": "cannot help doing ...; cannot resist ...",
+      "structure": "Verb (ない-stem) + ずにはいられない (する → せずにはいられない)",
+      "explanation": "Expresses an uncontrollable emotional impulse or natural reaction where the speaker simply cannot stop themselves from doing something.",
+      "confusableWith": "Remember the irregular verb する becomes せずにはいられない (not しずにはいられない).",
+      "examples": [
+        {
+          "jp": "その映画を見て、泣かずにはいられなかった。",
+          "reading": "そのえいがをみて、なかずにはいられなかった。",
+          "en": "Watching that movie, I couldn't help crying."
+        },
+        {
+          "jp": "彼の冗談がおもしろすぎて、笑わずにはいられない。",
+          "reading": "かれのじょうだんがおもしろすぎて、わらわずにはいられない。",
+          "en": "His joke is so funny that I can't help laughing."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "困っている人を見たら、助け",
+        "sentenceAfter": "。",
+        "en": "Whenever I see someone in trouble, I can't help helping them.",
+        "answer": "ずにはいられない",
+        "acceptedAnswers": ["ずにはいられない", "ないではいられない"],
+        "choices": ["ずにはいられない", "わけにはいかない", "とは限らない", "べきではない"]
+      }
+    },
+    {
+      "id": "g-n3-40",
+      "jlpt": 3,
+      "order": 40,
+      "pattern": "～ついでに (sekalian / mumpung)",
+      "reading": "～ついでに",
+      "meaning": "while you're at it; taking the opportunity of ...",
+      "structure": "Verb (Dictionary / た-form) / Noun + の + ついでに",
+      "explanation": "Indicates taking advantage of a primary errand or occasion to casually do a secondary task at the same time.",
+      "confusableWith": "The main errand comes before ついでに, and the secondary bonus action comes after.",
+      "examples": [
+        {
+          "jp": "銀行へ行くついでに、郵便局で切手を買ってきた。",
+          "reading": "ぎんこうへいくついでに、ゆうびんきょくできってをかってきた。",
+          "en": "While going to the bank, I also bought stamps at the post office."
+        },
+        {
+          "jp": "散歩のついでに、コンビニで牛乳を買いました。",
+          "reading": "さんぽのついでに、こんびにでぎゅうにゅうをかいました。",
+          "en": "While out for a walk, I picked up milk at the convenience store."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "東京へ出張した",
+        "sentenceAfter": "、大学時代の友達に会った。",
+        "en": "Taking advantage of my business trip to Tokyo, I met a friend from university.",
+        "answer": "ついでに",
+        "acceptedAnswers": ["ついでに"],
+        "choices": ["ついでに", "かわりに", "せいで", "くせに"]
+      }
+    }
+  ]
+}

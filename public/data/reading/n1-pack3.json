@@ -1,0 +1,288 @@
+{
+  "level": 1,
+  "pack": "n1-pack3",
+  "items": [
+    {
+      "id": "rd-n1-16",
+      "jlpt": 1,
+      "order": 16,
+      "passageType": "notice",
+      "titleJp": "学術[がくじゅつ]研究[けんきゅう]助成[じょせい]金[きん] 公募[こうぼ]要領[ようりょう]（抜粋[ばっすい]）",
+      "titleEn": "Academic Research Grant Call for Proposals (Excerpt)",
+      "recommendedMinutes": 7,
+      "contextEn": "Formal eligibility and expenditure rules from a foundation's research grant call.",
+      "paragraphs": [
+        "本[ほん]財団[ざいだん]は、異分野[いぶんや]融合[ゆうごう]による先駆的[せんくてき]な基礎[きそ]研究[けんきゅう]を支援[しえん]するため、令和[れいわ]八年度[はちねんど]の研究[けんきゅう]助成[じょせい]を公募[こうぼ]いたします。応募[おうぼ]資格[しかく]は国内[こくない]の研究[けんきゅう]機関[きかん]に所属[しょぞく]する研究者[けんきゅうしゃ]とし、常勤[じょうきん]・非常勤[ひじょうきん]の別[べつ]を問[と]いません。ただし、同一[どういつ]のテーマで他機関[たきかん]から既[すで]に公的[こうてき]助成[じょせい]を受[う]けている場合[ばあい]は、重複[ちょうふく]申請[しんせい]不可[ふか]とします。",
+        "助成[じょせい]対象[たいしょう]経費[けいひ]は、実験[じっけん]資材[しざい]費[ひ]、調査[ちょうさ]旅費[りょひ]、および研究[けんきゅう]補助[ほじょ]員[いん]への謝金[しゃきん]に限[かぎ]られ、汎用[はんよう]パソコンの購入[こうにゅう]費[ひ]や所属[しょぞく]機関[きかん]への間接[かんせつ]経費[けいひ]は認[みと]められません。なお、採択[さいたく]決定[けってい]後[ご]であっても、研究[けんきゅう]計画[けいかく]の大幅[おおはば]な逸脱[いつだつ]や不正[ふせい]受給[じゅきゅう]が判明[はんめい]した際[さい]には、助成[じょせい]金[きん]の全額[ぜんがく]返還[へんかん]を求[もと]めるものとする。"
+      ],
+      "translationEn": [
+        "This foundation invites applications for FY2026 research grants to support pioneering basic research combining different disciplines. Eligibility extends to researchers affiliated with domestic research institutions, regardless of full-time or part-time status. However, if public funding is already being received from another institution for the identical theme, duplicate applications are not permitted.",
+        "Eligible expenses are strictly limited to experimental materials, field research travel, and honoraria for research assistants; purchases of general-purpose PCs and institutional overhead costs are not permitted. Furthermore, even after selection is finalized, if major deviation from the research plan or fraudulent receipt is discovered, full repayment of the grant shall be required."
+      ],
+      "keyVocab": [
+        { "word": "先駆的", "reading": "せんくてき", "en": "pioneering; trailblazing" },
+        { "word": "汎用", "reading": "はんよう", "en": "general-purpose" },
+        { "word": "逸脱", "reading": "いつだつ", "en": "deviation; departure from" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-16-q1",
+          "promptJp": "この助成[じょせい]金[きん]に応募[おうぼ]でき、かつ対象[たいしょう]経費[けいひ]として認[みと]められる組合[くみあわ]せはどれですか。",
+          "promptEn": "Which combination is both eligible to apply and an allowable grant expense?",
+          "choices": [
+            "非常勤[ひじょうきん]の研究者[けんきゅうしゃ]が、他機関[たきかん]と重複[ちょうふく]しない新テーマで調査[ちょうさ]旅費[りょひ]を申請[しんせい]する。",
+            "常勤[じょうきん]の研究者[けんきゅうしゃ]が、実験[じっけん]用[よう]の汎用[はんよう]ノートパソコン購入[こうにゅう]費[ひ]を申請[しんせい]する。",
+            "公的[こうてき]助成[じょせい]を既[すで]に受[う]けている同一[どういつ]テーマで、研究[けんきゅう]補助[ほじょ]員[いん]の謝金[しゃきん]を申請[しんせい]する。",
+            "国内[こくない]大学[だいがく]の教授[きょうじゅ]が、所属[しょぞく]機関[きかん]への間接[かんせつ]経費[けいひ]を申請[しんせい]する。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Part-time status is allowed (常勤・非常勤の別を問わず), non-duplicate themes are eligible, and field survey travel (調査旅費) is explicitly allowed."
+        },
+        {
+          "id": "rd-n1-16-q2",
+          "promptJp": "採択[さいたく]後[ご]の規定[きてい]について正[ただ]しいのはどれですか。",
+          "promptEn": "What is stated about post-selection compliance?",
+          "choices": [
+            "一度[いちど]採択[さいたく]されれば、計画[けいかく]を大幅[おおはば]に変更[へんこう]しても返還[へんかん]の義務[ぎむ]はない。",
+            "計画[けいかく]の大幅[おおはば]な逸脱[いつだつ]や不正[ふせい]受給[じゅきゅう]が判明[はんめい]した場合[ばあい]、全額[ぜんがく]返還[へんかん]を求[もと]められる。",
+            "不正[ふせい]が判明[はんめい]した場合[ばあい]、未執行[みしっこう]の残額[ざんがく]のみ返還[へんかん]すればよい。",
+            "採択[さいたく]後[ご]であれば他機関[たきかん]との重複[ちょうふく]受給[じゅきゅう]が認[みと]められる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence mandates full repayment (全額返還) if major deviation or fraudulent receipt is discovered even after selection."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-17",
+      "jlpt": 1,
+      "order": 17,
+      "passageType": "short",
+      "titleJp": "翻訳[ほんやく]不能[ふのう]性[せい]が照[て]らす文化[ぶんか]の輪郭[りんかく]",
+      "titleEn": "How Untranslatability Illuminates Cultural Contours",
+      "recommendedMinutes": 6,
+      "contextEn": "Literary linguistics passage on what gets lost—and discovered—in translation.",
+      "paragraphs": [
+        "ある言語[げんご]の語彙[ごい]を別[べつ]の言語[げんご]へ完全[かんぜん]に一対一[いったいいち]で置換[ちかん]することは、原理的[げんりてき]に不可能[ふかのう]である。たとえば日本語[にほんご]の「木漏れ日[こもれび]」や「懐[なつ]かしい」といった語[ご]が帯[お]びる微細[びさい]な情調[じょうちょう]は、説明[せつめい]的[てき]な言い換[いいか]えを施[ほどこ]した途端[とたん]、原文[げんぶん]の持[も]つ余韻[よいん]を零[こぼ]れ落[お]としてしまう。",
+        "しかし、翻訳[ほんやく]のこの不完全[ふかんぜん]さこそが、異文化[いぶんか]理解[りかい]の出発点[しゅっぱつてん]となり得る。ぴたりと重[かさ]ならない隙間[すきま]に直面[ちょくめん]して初[はじ]めて、私[わたし]たちは自分[じぶん]の母語[ぼご]が世界[せかい]をどのように切り取[きりと]ってきたのかという無意識[むいしき]の枠組[わくぐ]みに気づ[きづ]かされるからだ。翻訳[ほんやく]とは、差異[さい]を消去[しょうきょ]する作業[さぎょう]ではなく、差異[さい]の輪郭[りんかく]を浮[う]き彫[ぼ]りにする営[いとな]みなのである。"
+      ],
+      "translationEn": [
+        "Replacing the vocabulary of one language completely one-to-one with another is impossible in principle. The subtle emotional coloring carried by Japanese words like komorebi or natsukashii loses the resonance of the original the moment an explanatory paraphrase is applied.",
+        "Yet this very imperfection of translation can become the starting point for intercultural understanding. Only when confronted with gaps that refuse to align neatly are we made aware of the unconscious framework through which our own native language slices up the world. Translation is not an act of erasing differences, but an endeavor that brings the contours of difference into sharp relief."
+      ],
+      "keyVocab": [
+        { "word": "情調", "reading": "じょうちょう", "en": "emotional tone; mood" },
+        { "word": "余韻", "reading": "よいん", "en": "lingering resonance; aftertaste" },
+        { "word": "浮き彫りにする", "reading": "うきぼりにする", "en": "to throw into sharp relief" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-17-q1",
+          "promptJp": "筆者[ひっしゃ]が翻訳[ほんやく]の「不完全[ふかんぜん]さ」を肯定的[こうていてき]に捉[とら]えている理由[りゆう]はどれですか。",
+          "promptEn": "Why does the author view the \"imperfection\" of translation positively?",
+          "choices": [
+            "言い換[いいか]えを工夫[くふう]すれば原文[げんぶん]の余韻[よいん]を百パーセント再現[さいげん]できるから。",
+            "言葉[ことば]が重[かさ]ならない隙間[すきま]を通[つう]じて、自[みずか]らの母語[ぼご]が世界[せかい]をどう切り取[きりと]っているかに気づ[きづ]けるから。",
+            "翻訳[ほんやく]不能[ふのう]な語彙[ごい]は日常[にちじょう]会話[かいわ]ではほとんど使[つか]われないから。",
+            "言語[げんご]間[かん]の差異[さい]を完全[かんぜん]に消去[しょうきょ]する手掛[てが]かりになるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that confronting non-overlapping gaps awakens awareness of our native language's unconscious way of framing the world."
+        },
+        {
+          "id": "rd-n1-17-q2",
+          "promptJp": "筆者[ひっしゃ]による「翻訳[ほんやく]」の位置[いち]づけに最[もっと]も近[ちか]いのはどれですか。",
+          "promptEn": "How does the author ultimately characterize translation?",
+          "choices": [
+            "言語[げんご]同士[どうし]の違[ちが]いを均質化[きんしつか]して無[な]くす技術[ぎじゅつ]。",
+            "文化[ぶんか]や言語[げんご]の差異[さい]の輪郭[りんかく]を際立[きわだ]たせる営[いとな]み。",
+            "一対一[いったいいち]の辞書[じしょ]的[てき]対応[たいおう]を完成[かんせい]させる機械[きかい]的[てき]作業[さぎょう]。",
+            "異文化[いぶんか]理解[りかい]を妨[さまた]げる避[さ]けがたい障壁[しょうへき]。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence defines translation as an endeavor that brings the contours of difference into relief rather than erasing them."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-18",
+      "jlpt": 1,
+      "order": 18,
+      "passageType": "essay",
+      "titleJp": "数値[すうち]目標[もくひょう]の独[ひと]り歩[ある]きと現場[げんば]の萎縮[いしゅく]",
+      "titleEn": "When Metric Targets Take on a Life of Their Own",
+      "recommendedMinutes": 7,
+      "contextEn": "Critical essay on Goodhart's Law in modern organizational management.",
+      "paragraphs": [
+        "組織[そしき]運営[うんえい]において、成果[せいか]を客観的[きゃっかんてき]な数値[すうち]で可視化[かしか]する手法[しゅほう]は広く[ひろく]定着[ていちゃく]した。曖昧[あいまい]な感覚[かんかく]に頼[たよ]る評価[ひょうか]を改[あらた]め、透明性[とうめいせい]を高[たか]める点[てん]で、指標[しひょう]の導入[どうにゅう]自体[じたい]には確[たし]かな意義[いぎ]がある。",
+        "しかしながら、「測[はか]れるものだけが価値[かち]あるものだ」という錯覚[さっかく]に陥[おちい]った瞬間[しゅんかん]、指標[しひょう]は本来[ほんらい]の目的[もくてき]から乖離[かいり]し始[はじ]める。たとえば顧客[こきゃく]対応[たいおう]の品質[ひんしつ]を高[たか]めるはずが、一件[いっけん]あたりの通話[つうわ]時間[じかん]短縮[たんしゅく]ばかりを評価[ひょうか]基準[きじゅん]に据[す]えれば、担当者[たんとうしゃ]は根本[こんぽん]的[てき]な問題[もんだい]解決[かいけつ]よりも早々[そうそう]に電話[でんわ]を切[き]ることを優先[ゆうせん]しかねない。",
+        "数値[すうち]はあくまで現実[げんじつ]の一側面[いちそくめん]を映[うつ]す計器[けいき]にすぎず、それ自体[じたい]が目的地[もくてきち]ではない。指標[しひょう]の裏側[うらがわ]にこぼれ落[お]ちる定性的[ていせいてき]な信頼[しんらい]や長期的[ちょうきてき]な学習[がくしゅう]をすくい上[あ]げる視点[してん]を欠[か]いた管理[かんり]は、かえって組織[そしき]の活力[かつりょく]を削[そ]ぐ結果[けっか]を招[まね]くのである。"
+      ],
+      "translationEn": [
+        "In organizational management, visualizing performance through objective metrics has become widely entrenched. In reforming vague, impressionistic evaluations and raising transparency, introducing indicators certainly holds real merit.",
+        "However, the moment an organization falls into the illusion that \"only what can be measured has value,\" metrics begin to diverge from their original purpose. For instance, if reducing call duration per case becomes the sole yardstick when the real goal is raising customer-service quality, staff may prioritize hanging up quickly over solving the underlying issue.",
+        "Numbers are merely instruments reflecting one facet of reality, not the destination itself. Management that lacks the perspective to capture qualitative trust and long-term learning slipping through the cracks of metrics ends up sapping the very vitality of the organization."
+      ],
+      "keyVocab": [
+        { "word": "乖離", "reading": "かいり", "en": "divergence; estrangement" },
+        { "word": "据える", "reading": "すえる", "en": "to set; establish as standard" },
+        { "word": "削ぐ", "reading": "そぐ", "en": "to chip away; sap; dampen" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-18-q1",
+          "promptJp": "通話[つうわ]時間[じかん]短縮[たんしゅく]の例[れい]を通[つう]じて、筆者[ひっしゃ]は何[なに]を指摘[してき]しているか。",
+          "promptEn": "What is the author illustrating through the call-duration example?",
+          "choices": [
+            "通話[つうわ]時間[じかん]を短[みじか]くするほど顧客[こきゃく]満足度[まんぞくど]は必[かなら]ず向上[こうじょう]するということ。",
+            "数値[すうち]指標[しひょう]自体[じたい]が目的化[もくてきか]すると、本来[ほんらい]の品質[ひんしつ]向上[こうじょう]と逆行[ぎゃっこう]する行動[こうどう]を招[まね]くということ。",
+            "顧客[こきゃく]対応[たいおう]の現場[げんば]では一切[いっさい]の記録[きろく]や数値[すうち]を取[と]るべきではないということ。",
+            "担当者[たんとうしゃ]の意欲[いよく]不足[ぶそく]が評価[ひょうか]制度[せいど]の失敗[しっぱい]原因[げんいん]だということ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 shows how making a metric (shorter call time) the end goal can induce behavior contrary to the real objective (resolving problems)."
+        },
+        {
+          "id": "rd-n1-18-q2",
+          "promptJp": "筆者[ひっしゃ]の主張[しゅちょう]に最[もっと]も合致[がっち]するものはどれか。",
+          "promptEn": "Which statement best aligns with the author's overall thesis?",
+          "choices": [
+            "数値[すうち]指標[しひょう]は完全[かんぜん]に廃止[はいし]し、上司[じょうし]の直感[ちょっかん]による評価[ひょうか]へ戻[もど]すべきだ。",
+            "数値[すうち]は一側面[いちそくめん]を測[はか]る計器[けいき]と心得[こころえ]、定性的[ていせいてき]な信頼[しんらい]や長期的[ちょうきてき]学習[がくしゅう]も併[あわ]せて評価[ひょうか]すべきだ。",
+            "透明性[とうめいせい]を高[たか]めるため、すべての信頼[しんらい]関係[かんけい]を点数化[てんすうか]して管理[かんり]すべきだ。",
+            "短期[たんき]的[てき]な効率[こうりつ]さえ上[あ]がれば、現場[げんば]の活力[かつりょく]は自然[しぜん]に回復[かいふく]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 acknowledges the value of transparency, while Paragraph 3 stresses treating metrics as instruments rather than destinations and capturing qualitative trust and long-term learning."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-19",
+      "jlpt": 1,
+      "order": 19,
+      "passageType": "essay",
+      "titleJp": "公共[こうきょう]空間[くうかん]における「寛容[かんよう]さ」の再[さい]設計[せっけい]",
+      "titleEn": "Redesigning Tolerance in Public Spaces",
+      "recommendedMinutes": 7,
+      "contextEn": "Sociological essay on overly restrictive rules in parks and plazas.",
+      "paragraphs": [
+        "近年[きんねん]、公園[こうえん]や駅前[えきまえ]広場[ひろば]の看板[かんばん]を見渡[みわた]すと、「ボール遊[あそ]び禁止[きんし]」「大声[おおごえ]禁止[きんし]」「ベンチでの横臥[おうが]禁止[きんし]」といった細[こま]かい禁止[きんし]事項[じこう]がびっしりと並[なら]んでいる。その背後[はいご]には、近隣[きんりん]からの苦情[くじょう]を未然[みぜん]に防[ふせ]ぎたい管理者[かんりしゃ]側[がわ]の防衛[ぼうえい]心理[しんり]があるのだろう。",
+        "だが、あらゆる摩擦[まさつ]の可能性[かのうせい]を規則[きそく]で先回[さきまわ]りして封[ふう]じ込[こ]めた空間[くうかん]は、一見[いっけん]秩序[ちつじょ]正[ただ]しく見[み]えても、実[じつ]は誰[だれ]にとっても居心地[いごこち]の悪[わる]い監視[かんし]の場[ば]へと変質[へんしつ]する。本来[ほんらい]、公共[こうきょう]空間[くうかん]とは価値観[かちかん]や世代[せだい]の異[こと]なる他者[たしゃ]が偶然[ぐうぜん]居合[いあ]わせ、些細[ささい]な譲[ゆず]り合[あ]いを通[つう]じて共存[きょうぞん]の作法[さほう]を学[まな]ぶ場[ば]であったはずだ。",
+        "危険[きけん]行為[こうい]の抑止[よくし]は必要[ひつよう]最小限[さいしょうげん]にとどめ、むしろ「この時間帯[じかんたい]なら子[こ]どもたちが遊[あそ]べる」「ここは静[しず]かに休[やす]める」といった緩[ゆる]やかな棲[す]み分[わ]けを地域[ちいき]で話[はな]し合[あ]うことこそ、生[い]きた公共性[こうきょうせい]を取[と]り戻[もど]す鍵[かぎ]となる。"
+      ],
+      "translationEn": [
+        "Looking at signboards in parks and station plazas in recent years, one sees densely packed lists of minute prohibitions: \"No ball games,\" \"No loud voices,\" \"No lying down on benches.\" Behind this likely lies managers' defensive desire to preempt neighborhood complaints.",
+        "Yet a space that preemptively seals off every potential friction through rules, however orderly it appears at first glance, actually mutates into a surveillance zone uncomfortable for everyone. Originally, public space was meant to be a place where strangers of different generations and values happen to share space and learn the art of coexistence through minor mutual concessions.",
+        "Limiting bans on dangerous behavior to the bare minimum, and instead discussing flexible zoning locally—such as times when children can play and quiet zones for resting—is the key to reclaiming living publicness."
+      ],
+      "keyVocab": [
+        { "word": "未然に防ぐ", "reading": "みぜんにふせぐ", "en": "to prevent beforehand" },
+        { "word": "変質する", "reading": "へんしつする", "en": "to degenerate; alter in nature" },
+        { "word": "棲み分け", "reading": "すみわけ", "en": "compartmentalization; peaceful zoning" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-19-q1",
+          "promptJp": "筆者[ひっしゃ]によれば、禁止[きんし]事項[じこう]を増[ふ]やしすぎることで公共[こうきょう]空間[くうかん]はどうなってしまうか。",
+          "promptEn": "According to the author, what happens when public spaces accumulate too many prohibitions?",
+          "choices": [
+            "あらゆる世代[せだい]が安全[あんぜん]かつ自由[じゆう]に交流[こうりゅう]できるようになる。",
+            "一見[いっけん]秩序[ちつじょ]あるように見[み]えても、誰[だれ]にとっても居心地[いごこち]の悪[わる]い監視[かんし]の場[ば]へ変質[へんしつ]する。",
+            "近隣[きんりん]住民[じゅうみん]の関心[かんしん]が高[たか]まり、地域[ちいき]の対話[たいわ]が活発[かっぱつ]になる。",
+            "管理者[かんりしゃ]の責任[せきにん]が重[おも]くなり、公園[こうえん]の数[かず]が減[へ]る。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 warns that preemptively banning every possible friction transforms public space into an uncomfortable surveillance zone."
+        },
+        {
+          "id": "rd-n1-19-q2",
+          "promptJp": "生[い]きた公共性[こうきょうせい]を取[と]り戻[もど]すために、筆者[ひっしゃ]が提案[ていあん]していることは何[なに]か。",
+          "promptEn": "What does the author propose to restore vibrant publicness?",
+          "choices": [
+            "危険[きけん]行為[こうい]を含[ふく]め、公園[こうえん]の規則[きそく]をすべて撤廃[てっぱい]すること。",
+            "苦情[くじょう]を出[だ]した住民[じゅうみん]の意見[いけん]だけを全面[ぜんめん]的[てき]に採[と]り入[い]れること。",
+            "禁止[きんし]は最小限[さいしょうげん]にとどめ、地域[ちいき]での対話[たいわ]によって緩[ゆる]やかな棲[す]み分[わ]けを設計[せっけい]すること。",
+            "駅前[えきまえ]広場[ひろば]や公園[こうえん]を有料[ゆうりょう]会員制[かいいんせい]にすること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 proposes keeping bans minimal and creating flexible local zoning through community dialogue."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-20",
+      "jlpt": 1,
+      "order": 20,
+      "passageType": "comparison",
+      "titleJp": "歴史[れきし]的[てき]建造物[けんぞうぶつ]の「動態[どうたい]保存[ほぞん]」と「厳格[げんかく]保全[ほぜん]」（A/B比較[ひかく]）",
+      "titleEn": "Active Adaptive Reuse vs. Strict Preservation of Historic Buildings (A/B Comparison)",
+      "recommendedMinutes": 8,
+      "contextEn": "Two heritage specialists debate how historic architecture should be passed on to future generations.",
+      "labelA": "A氏[し]の論考[ろんこう]（活用[かつよう]重視[じゅうし]）",
+      "labelB": "B氏[し]の論考[ろんこう]（原形[げんけい]保全[ほぜん]重視[じゅうし]）",
+      "paragraphs": [
+        "老朽化[ろうきゅうか]した歴史[れきし]的[てき]建造物[けんぞうぶつ]を未来[みらい]へ残[のこ]すには、ガラスケースに収[おさ]めるように立ち入[たちい]りを制限[せいげん]するのではなく、現代[げんだい]の用途[ようと]に合[あ]わせて改修[かいしゅう]し使[つか]い続[つづ]ける「活用[かつよう]型[がた]保存[ほぞん]」が不可欠[ふかけつ]だ。カフェや宿泊[しゅくはく]施設[しせつ]として収益[しゅうえき]を生[う]み出[だ]せば、莫大[ばくだい]な修繕費[しゅうぜんひ]を税金[ぜいきん]だけに頼[たよ]らずに賄[まかな]える。",
+        "人[ひと]が出入[でい]りし風[かぜ]を通[とお]すことで建物[たてもの]自体[じたい]の傷[いた]みも抑[おさ]えられる。外観[がいかん]の意匠[いしょう]を尊重[そんちょう]しつつ内部[ないぶ]に断熱[だんねつ]や耐震[たいしん]補強[ほきょう]を施[ほどこ]す柔軟[じゅうなん]さこそが、遺産[いさん]を街[まち]の記憶[きおく]として生[い]かし続[つづ]ける現実解[げんじつかい]である。"
+      ],
+      "paragraphsB": [
+        "歴史[れきし]的[てき]建造物[けんぞうぶつ]の商業[しょうぎょう]活用[かつよう]がもてはやされる一方[いっぽう]で、安易[あんい]なリノベーションによって本来[ほんらい]の資材[しざい]や空間[くうかん]構成[こうせい]が失[うしな]われてしまう危惧[きぐ]を禁[きん]じ得[え]ない。一度[いちど]手[て]を加[くわ]えて変質[へんしつ]した構造[こうぞう]は、もはや当時[とうじ]の職人[しょくにん]の技[わざ]や生活[せいかつ]感覚[かんかく]を証言[しょうげん]する一次[いちじ]資料[しりょう]とは言[い]い難[がた]い。",
+        "採算性[さいさんせい]ばかりを優先[ゆうせん]すれば、収益[しゅうえき]の見込[みこ]めない重要[じゅうよう]な建築[けんちく]が淘汰[とうた]される恐[おそ]れもある。観光[かんこう]資源[しげん]としての人気[にんき]に左右[さゆう]されず、公的[こうてき]支援[しえん]の下[もと]で原形[げんけい]を厳格[げんかく]に保全[ほぜん]する枠組[わくぐ]みこそ守[まも]り抜[ぬ]くべきだ。"
+      ],
+      "translationEn": [
+        "To preserve aging historic buildings for the future, rather than restricting access as if placing them in a glass case, \"adaptive reuse\"—renovating and continuing to use them for modern purposes—is indispensable. Generating revenue as cafés or lodgings allows massive repair costs to be covered without relying solely on tax funds.",
+        "Having people come and go and letting air circulate also slows physical decay of the building itself. Flexibility—respecting exterior design while adding interior insulation and seismic reinforcement—is the realistic way to keep heritage alive as part of a town's memory."
+      ],
+      "translationBEn": [
+        "While commercial reuse of historic buildings is widely celebrated, one cannot help fearing that casual renovations erase original materials and spatial composition. Once altered and transformed, a structure can hardly serve anymore as primary historical evidence testifying to artisans' techniques and ways of life of its era.",
+        "If profitability is prioritized above all, vital architecture lacking revenue prospects risks being weeded out. We must uphold frameworks that strictly preserve original forms under public support, unswayed by popularity as tourist attractions."
+      ],
+      "keyVocab": [
+        { "word": "賄う", "reading": "まかなう", "en": "to cover (costs); finance" },
+        { "word": "一次資料", "reading": "いちじしりょう", "en": "primary historical source" },
+        { "word": "淘汰される", "reading": "とうたされる", "en": "to be weeded out; eliminated" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-20-q1",
+          "promptJp": "A氏[し]が「活用[かつよう]型[がた]保存[ほぞん]」を推[お]す理由[りゆう]として本文[ほんぶん]に述[の]べられていることはどれか。",
+          "promptEn": "What reasons does Author A give in support of adaptive reuse?",
+          "choices": [
+            "税金[ぜいきん]の投入[とうにゅう]を増[ふ]やせば商業[しょうぎょう]利用[りよう]は不要[ふよう]になるから。",
+            "修繕費[しゅうぜんひ]を収益[しゅうえき]で賄[まかな]えるうえ、人[ひと]の出入[でい]りにより建物[たてもの]の傷[いた]みも抑[おさ]えられるから。",
+            "外観[がいかん]を現代[げんだい]風[ふう]に全面[ぜんめん]改築[かいちく]したほうが観光客[かんこうきゃく]が増[ふ]えるから。",
+            "職人[しょくにん]の技[わざ]を一次[いちじ]資料[しりょう]としてそのまま残[のこ]せるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author A cites generating repair revenue without relying only on taxes, plus slowing building deterioration through human occupancy and airflow."
+        },
+        {
+          "id": "rd-n1-20-q2",
+          "promptJp": "B氏[し]が商業[しょうぎょう]活用[かつよう]に対[たい]して懸念[けねん]している点[てん]はどれか。",
+          "promptEn": "What concern does Author B raise about commercial reuse?",
+          "choices": [
+            "建物[たてもの]に風[かぜ]を通[とお]すと耐震性[たいしんせい]が低下[ていか]してしまうこと。",
+            "改修[かいしゅう]で原形[げんけい]の資料[しりょう]的[てき]価値[かち]が損[そこ]なわれ、採算[さいさん]の合[あ]わない重要[じゅうよう]建築[けんちく]が淘汰[とうた]されかねないこと。",
+            "公的[こうてき]支援[しえん]を行[おこな]うと税金[ぜいきん]が無駄[むだ]になること。",
+            "観光客[かんこうきゃく]が増[ふ]えすぎて街[まち]の交通[こうつう]が渋滞[じゅうたい]すること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author B warns that renovation compromises primary historical value and prioritizing profitability risks weeding out unprofitable yet important heritage."
+        },
+        {
+          "id": "rd-n1-20-q3",
+          "promptJp": "A氏[し]とB氏[し]の立場[たちば]の対立点[たいりつてん]を最[もっと]も的確[てきかく]に表[あらわ]しているのはどれか。",
+          "promptEn": "Which best captures the core contrast between Author A and Author B?",
+          "choices": [
+            "A氏[し]は歴史[れきし]的[てき]建造物[けんぞうぶつ]の解体[かいたい]を主張[しゅちょう]し、B氏[し]は保存[ほぞん]を主張[しゅちょう]している。",
+            "A氏[し]は現代[げんだい]的[てき]改修[かいしゅう]と収益[しゅうえき]化[か]による持続[じぞく]を重視[じゅうし]し、B氏[し]は公的[こうてき]支援[しえん]による原形[げんけい]の厳格[げんかく]な資料[しりょう]保全[ほぜん]を重視[じゅうし]している。",
+            "A氏[し]は外観[がいかん]の変更[へんこう]を認[みと]め、B氏[し]は内部[ないぶ]の改修[かいしゅう]のみを認[みと]めている。",
+            "二人[ふたり]とも、収益[しゅうえき]を生[う]まない建物[たてもの]は保存[ほぞん]すべきでないという点[てん]で一致[いっち]している。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author A favors sustainable modern reuse and self-funding, whereas Author B insists on publicly funded strict preservation of original historical integrity."
+        }
+      ]
+    }
+  ]
+}

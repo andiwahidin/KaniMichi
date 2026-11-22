@@ -1,0 +1,316 @@
+{
+  "level": 1,
+  "pack": "n1-pack3",
+  "items": [
+    {
+      "id": "g-n1-31",
+      "jlpt": 1,
+      "order": 31,
+      "pattern": "～いかんにかかわらず / ～いかんによらず",
+      "reading": "～いかんにかかわらず / ～いかんによらず",
+      "meaning": "regardless of ...; irrespective of what ... may be",
+      "structure": "Noun + (の) + いかんにかかわらず / いかんによらず",
+      "explanation": "Formal written expression stating that a rule, decision, or outcome holds uniformly regardless of the nature, degree, or outcome of X.",
+      "confusableWith": "Compare with ～いかんによっては ('depending on X', where the outcome DOES change).",
+      "examples": [
+        {
+          "jp": "理由のいかんにかかわらず、期限後の申請は受理されない。",
+          "reading": "りゆうのいかんにかかわらず、きげんごのしんせいはじゅりされない。",
+          "en": "Regardless of the reason, applications submitted after the deadline will not be accepted."
+        },
+        {
+          "jp": "結果のいかんによらず、全力を尽くしたことに意義がある。",
+          "reading": "けっかのいかんによらず、ぜんりょくをつくしたことにいぎがある。",
+          "en": "Irrespective of the result, there is meaning in having given one's all."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "国籍や経歴の",
+        "sentenceAfter": "、意欲ある人材を広く募集します。",
+        "en": "Regardless of nationality or background, we broadly recruit motivated talent.",
+        "answer": "いかんにかかわらず",
+        "acceptedAnswers": ["いかんにかかわらず", "いかんによらず"],
+        "choices": ["いかんにかかわらず", "いかんによっては", "に即して", "と相まって"]
+      }
+    },
+    {
+      "id": "g-n1-32",
+      "jlpt": 1,
+      "order": 32,
+      "pattern": "～が最後 (sekali saja terjadi, tamatlah)",
+      "reading": "～がさいご",
+      "meaning": "once ... happens, it's all over / there is no turning back",
+      "structure": "Verb (た-form) + が最後",
+      "explanation": "Emphasizes that once a single action is taken or starts, an undesirable, unstoppable, or irreversible consequence inevitably follows.",
+      "confusableWith": "Always takes the past た-form (e.g., 言い出したが最後, 貸したが最後).",
+      "examples": [
+        {
+          "jp": "彼にお金を貸したが最後、二度と返ってこないだろう。",
+          "reading": "かれにおかねをかしたがさいご、にどとかえってこないだろう。",
+          "en": "Once you lend him money, it's gone for good—it'll never come back."
+        },
+        {
+          "jp": "部長は昔話を始めたが最後、一時間は止まらない。",
+          "reading": "ぶちょうはむかしばなしをはじめたがさいご、いちじかんはとまらない。",
+          "en": "Once the department manager starts telling old stories, he won't stop for an hour."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "一度秘密が外部に漏れ",
+        "sentenceAfter": "、信頼を回復するのは極めて難しい。",
+        "en": "Once a secret leaks outside, restoring trust is extremely difficult.",
+        "answer": "たが最後",
+        "acceptedAnswers": ["たが最後", "たがさいご"],
+        "choices": ["たが最後", "たところで", "てやまない", "ないまでも"]
+      }
+    },
+    {
+      "id": "g-n1-33",
+      "jlpt": 1,
+      "order": 33,
+      "pattern": "～かたがた (sambil sekaligus)",
+      "reading": "～かたがた",
+      "meaning": "for the dual purpose of ...; while also taking the occasion to ...",
+      "structure": "Noun (verbal noun) + かたがた",
+      "explanation": "Formal, polite expression used when a single visit or action serves two purposes at once (most commonly greeting/thanking/reporting combined with another visit).",
+      "confusableWith": "Much more formal than N3 ～ついでに; commonly pairs with nouns like お礼 (thanks), ご挨拶 (greeting), お見舞い (get-well visit).",
+      "examples": [
+        {
+          "jp": "先日のご支援のお礼かたがた、進捗をご報告に伺いました。",
+          "reading": "せんじつのごしえんのおれいかたがた、しんちょくをごほうこくにうかがいました。",
+          "en": "I have come to report our progress while also expressing thanks for your recent support."
+        },
+        {
+          "jp": "散歩かたがた、近所の書店まで足を運んだ。",
+          "reading": "さんぽかたがた、きんじょのしょてんまであしをはこんだ。",
+          "en": "While out for a stroll, I stopped by the neighborhood bookstore."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "引越しのご挨拶",
+        "sentenceAfter": "、近所の方へお菓子をお届けした。",
+        "en": "Combined with a moving-in greeting, I delivered sweets to the neighbors.",
+        "answer": "かたがた",
+        "acceptedAnswers": ["かたがた"],
+        "choices": ["かたがた", "ごとき", "そばから", "なり"]
+      }
+    },
+    {
+      "id": "g-n1-34",
+      "jlpt": 1,
+      "order": 34,
+      "pattern": "～かと思いきや (dikira... ternyata malah)",
+      "reading": "～かとおもいきや",
+      "meaning": "just when I thought ... (contrary to expectation, ...)",
+      "structure": "Plain clause (Noun/な-Adj without だ) + かと思いきや",
+      "explanation": "Dramatically contrasts an initial assumption with an unexpected twist that actually occurred.",
+      "confusableWith": "Usually describes a surprising past observation; cannot express the speaker's own future intention.",
+      "examples": [
+        {
+          "jp": "雨が上がったかと思いきや、また激しく降り出した。",
+          "reading": "あめがあがったかとおもいきや、またはげしくふりだした。",
+          "en": "Just when I thought the rain had let up, it started pouring heavily again."
+        },
+        {
+          "jp": "厳しい批判を受けるかと思いきや、意外にも高い評価を得た。",
+          "reading": "きびしいひはんをうけるかとおもいきや、いがいにもたかいひょうかをえた。",
+          "en": "Just when I expected harsh criticism, it unexpectedly received high praise."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "交渉は難航する",
+        "sentenceAfter": "、わずか三十分で合意に達した。",
+        "en": "Just when we thought negotiations would stall, an agreement was reached in just 30 minutes.",
+        "answer": "かと思いきや",
+        "acceptedAnswers": ["かと思いきや", "かとおもいきや"],
+        "choices": ["かと思いきや", "とあって", "が早いか", "べく"]
+      }
+    },
+    {
+      "id": "g-n1-35",
+      "jlpt": 1,
+      "order": 35,
+      "pattern": "～ごとき / ～ごとく (seperti / semacam)",
+      "reading": "～ごとき / ～ごとく",
+      "meaning": "like ... (literary simile); the likes of ... (humble/dismissive)",
+      "structure": "Noun + (の) + ごとき + Noun / ごとく + Verb / ごとし",
+      "explanation": "Classical-derived N1 expression with two key uses: (1) literary 'like/as' (嵐のごとく = like a storm), and (2) humble or disparaging 'someone/something as insignificant as' (私ごとき = the likes of me).",
+      "confusableWith": "Use ごとき before a noun, ごとく before a verb/adjective, and ごとし at sentence end.",
+      "examples": [
+        {
+          "jp": "未熟な私ごときが、このような大役を務められるでしょうか。",
+          "reading": "みじゅくなわたしごときが、このようなたいやくをつとめられるでしょうか。",
+          "en": "Could someone as inexperienced as myself possibly fulfill such a major role?"
+        },
+        {
+          "jp": "噂は瞬く間に風のごとく町中に広まった。",
+          "reading": "うわさはまたたくまにかぜのごとくまちじゅうにひろまった。",
+          "en": "The rumor spread throughout the town in an instant, like the wind."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "先ほど申し上げた",
+        "sentenceAfter": "、次回の会議は来週火曜日に変更となります。",
+        "en": "As I mentioned a moment ago, the next meeting will be moved to Tuesday next week.",
+        "answer": "ごとく",
+        "acceptedAnswers": ["ごとく", "如く"],
+        "choices": ["ごとく", "まじき", "極まりない", "とはいえ"]
+      }
+    },
+    {
+      "id": "g-n1-36",
+      "jlpt": 1,
+      "order": 36,
+      "pattern": "～たところで (sekalipun dilakukan... percuma)",
+      "reading": "～たところで",
+      "meaning": "even if one does ... (it will be pointless / yield no good result)",
+      "structure": "Verb (た-form) + ところで",
+      "explanation": "Conveys futility or resignation: even if you go to the trouble of doing X, the desired outcome will not follow anyway. Often accompanied by 今さら (at this late stage) or いくら (no matter how much).",
+      "confusableWith": "Always followed by a negative or futile conclusion, unlike N3/N2 ～ところで ('just when/at the moment').",
+      "examples": [
+        {
+          "jp": "今さら後悔したところで、過ぎた時間は戻らない。",
+          "reading": "いまさらこうかいしたところで、すぎたじかんはもどらない。",
+          "en": "Even if you regret it now, lost time will not come back."
+        },
+        {
+          "jp": "急いで走ったところで、終電には間に合わないだろう。",
+          "reading": "いそいではしったところで、しゅうでんにはまにあわないだろう。",
+          "en": "Even if we hurry and run, we probably won't make the last train."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼に何度注意し",
+        "sentenceAfter": "、態度が変わる見込みはない。",
+        "en": "No matter how many times you warn him, there is no prospect of his attitude changing.",
+        "answer": "たところで",
+        "acceptedAnswers": ["たところで"],
+        "choices": ["たところで", "てからというもの", "ばこそ", "とあって"]
+      }
+    },
+    {
+      "id": "g-n1-37",
+      "jlpt": 1,
+      "order": 37,
+      "pattern": "～てからというもの (sejak saat itu terus...)",
+      "reading": "～てからというもの",
+      "meaning": "ever since ... (a lasting change began and has continued)",
+      "structure": "Verb (て-form) + からというもの",
+      "explanation": "Highlights a decisive turning point after which a noticeably different state has persisted continuously up to the present.",
+      "confusableWith": "Do not use for one-time completed events or very recent moments (e.g., 'since 5 minutes ago'); the resulting state must span a meaningful period.",
+      "examples": [
+        {
+          "jp": "子どもが生まれてからというもの、生活のリズムが一変した。",
+          "reading": "こどもがうまれてからというもの、せいかつのりずむがいっぺんした。",
+          "en": "Ever since our child was born, the rhythm of our daily life has completely changed."
+        },
+        {
+          "jp": "駅前に大型商業施設ができてからというもの、商店街の客足が減った。",
+          "reading": "えきまえにおおがたしょうぎょうしせつができてからというもの、しょうてんがいのきゃくあしがへった。",
+          "en": "Ever since the large commercial complex opened by the station, foot traffic in the shopping street has declined."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "毎朝走る習慣をつけ",
+        "sentenceAfter": "、体調を崩すことがめっきり減った。",
+        "en": "Ever since I built the habit of running every morning, getting sick has noticeably decreased.",
+        "answer": "てからというもの",
+        "acceptedAnswers": ["てからというもの"],
+        "choices": ["てからというもの", "たが最後", "や否や", "を限りに"]
+      }
+    },
+    {
+      "id": "g-n1-38",
+      "jlpt": 1,
+      "order": 38,
+      "pattern": "～ともなく / ～ともなしに (tanpa disengaja / sadar)",
+      "reading": "～ともなく / ～ともなしに",
+      "meaning": "without particularly intending to ...; absently; somehow",
+      "structure": "Verb (Dictionary form) / Question word + ともなく / ともなしに",
+      "explanation": "Describes a relaxed, unfocused action done without clear conscious intent (often paired with perception verbs like 見る, 聞く, 眺める) or indefinite origin (どこからともなく = from out of nowhere).",
+      "confusableWith": "Often follows the same verb twice: 見るともなく見る (gaze without really looking).",
+      "examples": [
+        {
+          "jp": "窓の外を眺めるともなく眺めていたら、雪が降り始めた。",
+          "reading": "まどのそとをながめるともなくながめていたら、ゆきがふりはじめだした。",
+          "en": "As I was absently gazing out the window, snow began to fall."
+        },
+        {
+          "jp": "どこからともなく、懐かしいピアノの音色が聞こえてきた。",
+          "reading": "どこからともなく、なつかしいぴあののねいろがきこえてきた。",
+          "en": "From somewhere or other, a nostalgic piano melody drifted into earshot."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "ラジオを聞く",
+        "sentenceAfter": "聞いていたら、知っている曲が流れてきた。",
+        "en": "While half-listening to the radio without really paying attention, a song I knew came on.",
+        "answer": "ともなく",
+        "acceptedAnswers": ["ともなく", "ともなしに"],
+        "choices": ["ともなく", "べく", "まじき", "なりに"]
+      }
+    },
+    {
+      "id": "g-n1-39",
+      "jlpt": 1,
+      "order": 39,
+      "pattern": "～に至る / ～に至っては (hingga sampai pada tahap...)",
+      "reading": "～にいたる / ～にいたっては",
+      "meaning": "to reach the point of ...; as for (an extreme example) ...",
+      "structure": "Verb (Dict) / Noun + に至る / に至って(は) / に至るまで",
+      "explanation": "Formal expression showing a progression reaching a serious climax (辞任に至った = led to resignation) or singling out an extreme case with に至っては ('when it comes to X, it's even worse').",
+      "confusableWith": "Compare ～に至るまで ('even down to the smallest detail') vs. ～に至っては (highlighting an extreme case).",
+      "examples": [
+        {
+          "jp": "度重なる不祥事の末、社長はついに辞任するに至った。",
+          "reading": "たびかさなるふしょうじのすえ、しゃちょうはついにじにんするにいたった。",
+          "en": "Following repeated scandals, the president finally reached the point of resigning."
+        },
+        {
+          "jp": "今年の夏は猛暑で、先月に至っては連日38度を超えた。",
+          "reading": "ことしのなつはもうしょで、せんげつにいたってはれんじつさんじゅうはちどをこえた。",
+          "en": "This summer has been scorching, and as for last month, temperatures exceeded 38°C day after day."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "両社の交渉は決裂し、ついに訴訟に発展する",
+        "sentenceAfter": "。",
+        "en": "Negotiations between the two companies broke down and finally escalated to a lawsuit.",
+        "answer": "に至った",
+        "acceptedAnswers": ["に至った", "にいたった"],
+        "choices": ["に至った", "に足る", "に堪えない", "に即した"]
+      }
+    },
+    {
+      "id": "g-n1-40",
+      "jlpt": 1,
+      "order": 40,
+      "pattern": "～を尻目に (mengabaikan / tak peduli sekitar)",
+      "reading": "～をしりめに",
+      "meaning": "ignoring ...; paying no heed to (others' worries/criticism) and forging ahead",
+      "structure": "Noun + を尻目に",
+      "explanation": "Literally 'watching out of the corner of one's eye': portrays someone boldly proceeding with their own actions while completely brushing off surrounding opposition, anxiety, or rivals.",
+      "confusableWith": "Similar to ～をよそに, but ～を尻目に adds a sharper nuance of confident dismissal or leaving rivals behind.",
+      "examples": [
+        {
+          "jp": "周囲の反対を尻目に、彼は新事業への投資を断行した。",
+          "reading": "しゅういのはんたいをしりめに、かれはしんじぎょうへのとうしをだんこうした。",
+          "en": "Brushing aside opposition from those around him, he pushed through investment in the new venture."
+        },
+        {
+          "jp": "ライバル校の追い上げを尻目に、彼女は圧倒的な差で優勝した。",
+          "reading": "らいばるこうのおいあげをしりめに、かのじょはあっとうてきなさでゆうしょうした。",
+          "en": "Leaving rival schools' rally behind, she won by an overwhelming margin."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "世間の厳しい批判",
+        "sentenceAfter": "、その企業は値上げに踏み切った。",
+        "en": "Ignoring harsh public criticism, the company went ahead with the price hike.",
+        "answer": "を尻目に",
+        "acceptedAnswers": ["を尻目に", "をしりめに"],
+        "choices": ["を尻目に", "をもって", "を皮切りに", "に引き換え"]
+      }
+    }
+  ]
+}

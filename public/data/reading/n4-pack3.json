@@ -1,0 +1,269 @@
+{
+  "level": 4,
+  "pack": "n4-pack3",
+  "items": [
+    {
+      "id": "rd-n4-16",
+      "jlpt": 4,
+      "order": 16,
+      "passageType": "notice",
+      "titleJp": "留学生[りゅうがくせい]のための無料[むりょう]着物[きもの]体験[たいけん]会[かい]",
+      "titleEn": "Free Kimono Experience Event for International Students",
+      "recommendedMinutes": 4,
+      "contextEn": "Poster on a university international center bulletin board.",
+      "paragraphs": [
+        "国際[こくさい]交流[こうりゅう]センターでは、来月[らいげつ]の十日[とおか]（土[ど]）に「着物[きもの]体験[たいけん]会[かい]」を開[ひら]きます。日本[にほん]の伝統[でんとう]的[てき]な着物[きもの]を着[き]て、抹茶[まっちゃ]を飲[の]んだり写真[しゃしん]を撮[と]ったりすることができます。",
+        "参加費[さんかひ]は無料[むりょう]ですが、定員[ていいん]は二十名[にじゅうめい]までです。参加[さんか]したい人[ひと]は、今月[こんげつ]の三十日[さんじゅうにち]までにセンターの窓口[まどぐち]かホームページから申[もう]し込[こ]んでください。",
+        "着物[きもの]はセンターで用意[ようい]しますが、白[しろ]い靴下[くつした]だけは自分[じぶん]で持[も]ってきてください。当日[とうじつ]のキャンセルはできるだけ避[さ]けるようにしてください。"
+      ],
+      "translationEn": [
+        "The International Exchange Center will hold a \"Kimono Experience Event\" on Saturday the 10th of next month. You can wear a traditional Japanese kimono, drink matcha, and take photos.",
+        "Participation is free, but capacity is limited to 20 people. Those wishing to attend should apply at the center desk or via the website by the 30th of this month.",
+        "Kimonos will be provided by the center, but please bring your own white socks. Please try to avoid cancelling on the day of the event."
+      ],
+      "keyVocab": [
+        { "word": "定員", "reading": "ていいん", "en": "maximum capacity" },
+        { "word": "窓口", "reading": "まどぐち", "en": "service counter; desk" },
+        { "word": "避ける", "reading": "さける", "en": "to avoid" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-16-q1",
+          "promptJp": "参加[さんか]する人[ひと]が自分[じぶん]で用意[ようい]しなければならないものは何[なに]ですか。",
+          "promptEn": "What must participants prepare by themselves?",
+          "choices": [
+            "着物[きもの]",
+            "参加費[さんかひ]",
+            "白[しろ]い靴下[くつした]",
+            "抹茶[まっちゃ]とお菓子[かし]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 3 states that kimonos are provided, and participants only need to bring white socks (白い靴下だけは自分で持ってきてください)."
+        },
+        {
+          "id": "rd-n4-16-q2",
+          "promptJp": "この体験[たいけん]会[かい]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is correct about this event?",
+          "choices": [
+            "何人[なんにん]でも予約[よやく]なしで参加[さんか]できる。",
+            "今月[こんげつ]三十日[さんじゅうにち]までに申[もう]し込[こ]めば無料[むりょう]で参加[さんか]できる（二十名[にじゅうめい]まで）。",
+            "電話[でんわ]だけで申[もう]し込[こ]みを受[う]け付[つ]けている。",
+            "来月[らいげつ]十日[とおか]の日曜日[にちようび]に行[おこな]われる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Participation is free for up to 20 people who apply by the 30th of this month at the desk or online."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-17",
+      "jlpt": 4,
+      "order": 17,
+      "passageType": "email",
+      "titleJp": "アルバイトのシフト交代[こうたい]のお願[ねが]い",
+      "titleEn": "Request to Swap a Part-Time Shift",
+      "recommendedMinutes": 4,
+      "contextEn": "Message from a café part-timer asking a coworker to trade shifts.",
+      "paragraphs": [
+        "森田[もりた]さん、お疲[つか]れさまです。鈴木[すずき]です。",
+        "急[きゅう]なお願いで申[もう]し訳[わけ]ないのですが、今週[こんしゅう]の木曜日[もくようび]（夕方[ゆうがた]五時[ごじ]〜九時[くじ]）のシフトを代[か]わっていただけませんか。実は[じつは]、国[くに]から両親[りょうしん]が来[く]ることになって、空港[くうこう]へ迎[むか]えに行[い]かなければならなくなったんです。",
+        "もし代[か]わってもらえたら、来週[らいしゅう]の月曜日[げつようび]か水曜日[すいようび]のシフトは私[わたし]が入[はい]ります。店長[てんちょう]には、森田[もりた]さんが大丈夫[だいじょうぶ]なら交代[こうたい]してもいいと言[い]われました。お返事[へんじ]をお待[ま]ちしています。"
+      ],
+      "translationEn": [
+        "Hi Morita-san, thanks for your hard work. This is Suzuki.",
+        "I'm really sorry for the sudden request, but could you possibly take over my shift this Thursday (5:00 PM–9:00 PM)? Actually, it was decided that my parents are coming from my home country, and I have to go pick them up at the airport.",
+        "If you can cover for me, I can take your shift next Monday or Wednesday. The store manager told me we may swap as long as it is okay with you. Waiting for your reply."
+      ],
+      "keyVocab": [
+        { "word": "交代", "reading": "こうたい", "en": "shift swap; taking turns" },
+        { "word": "迎えに行く", "reading": "むかえにいく", "en": "to go pick someone up" },
+        { "word": "店長", "reading": "てんちょう", "en": "store manager" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-17-q1",
+          "promptJp": "鈴木[すずき]さんはどうして木曜日[もくようび]に働[はたら]けなくなりましたか。",
+          "promptEn": "Why can't Suzuki work on Thursday?",
+          "choices": [
+            "大学[だいがく]の試験[しけん]があるから。",
+            "両親[りょうしん]を空港[くうこう]へ迎[むか]えに行[い]くから。",
+            "風邪[かぜ]をひいて病院[びょういん]へ行[い]くから。",
+            "店長[てんちょう]に休[やす]むように言[い]われたから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Suzuki explains that their parents are visiting from home and Suzuki has to pick them up at the airport."
+        },
+        {
+          "id": "rd-n4-17-q2",
+          "promptJp": "鈴木[すずき]さんが森田[もりた]さんに提案[ていあん]していることは何[なに]ですか。",
+          "promptEn": "What is Suzuki offering Morita in return?",
+          "choices": [
+            "来週[らいしゅう]の月曜日[げつようび]か水曜日[すいようび]に代[か]わりに働[はたら]くこと。",
+            "空港[くうこう]のお土産[みやげ]を買[か]ってくること。",
+            "木曜日[もくようび]の夜[よる]八時[はちじ]からだけ働[はたら]くこと。",
+            "店長[てんちょう]に給料[きゅうりょう]を上[あ]げてもらうこと。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Suzuki offers to cover Morita's shift next Monday or Wednesday (来週の月曜日か水曜日のシフトは私が入ります)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-18",
+      "jlpt": 4,
+      "order": 18,
+      "passageType": "short",
+      "titleJp": "電子[でんし]書籍[しょせき]と紙[かみ]の本[ほん]",
+      "titleEn": "E-Books and Paper Books",
+      "recommendedMinutes": 4,
+      "contextEn": "Short personal reflection on how a reader chooses between e-books and print books.",
+      "paragraphs": [
+        "最近[さいきん]、電車[でんしゃ]の中[なか]でスマートフォンやタブレットで本[ほん]を読[よ]んでいる人[ひと]をよく見[み]かけます。私[わたし]も去年[きょねん]から電子[でんし]書籍[しょせき]を使[つか]い始[はじ]めました。",
+        "電子[でんし]書籍[しょせき]は軽[かる]くて何冊[なんさつ]でも持ち歩[もちある]けるので、旅行[りょこう]や通勤[つうきん]のときにとても便利[べんり]です。文字[もじ]の大[おお]きさを変[か]えられるのも助[たす]かります。",
+        "ただ、勉強[べんきょう]の教科書[きょうかしょ]や大事[だいじ]な小説[しょうせつ]は、今[いま]でも紙[かみ]の本[ほん]を買[か]うようにしています。紙[かみ]だとページにメモを書[か]きやすいし、前[まえ]のページへすぐ戻[もど]れるからです。これからは両方[りょうほう]を上手[じょうず]に使[つか]い分[わ]けたいと思[おも]います。"
+      ],
+      "translationEn": [
+        "Recently, I often see people reading books on smartphones or tablets on the train. I also started using e-books last year.",
+        "E-books are light and let you carry any number of volumes, so they are very convenient during travel or commuting. Being able to change the font size is also helpful.",
+        "However, for study textbooks and treasured novels, I still try to buy paper books. With paper it's easy to write notes on the page and quickly flip back to earlier pages. Going forward, I want to use both skillfully according to the situation."
+      ],
+      "keyVocab": [
+        { "word": "電子書籍", "reading": "でんししょせき", "en": "e-book" },
+        { "word": "持ち歩く", "reading": "もちあるく", "en": "to carry around" },
+        { "word": "使い分ける", "reading": "つかいわける", "en": "to use appropriately depending on purpose" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-18-q1",
+          "promptJp": "筆者[ひっしゃ]が紙[かみ]の教科書[きょうかしょ]を買[か]う理由[りゆう]はどれですか。",
+          "promptEn": "Why does the author buy paper textbooks?",
+          "choices": [
+            "電子[でんし]書籍[しょせき]より値段[ねだん]がずっと安[やす]いから。",
+            "メモを書[か]きやすく、前[まえ]のページへ戻[もど]りやすいから。",
+            "文字[もじ]の大[おお]きさを自由[じゆう]に変[か]えられるから。",
+            "軽[かる]くて旅行[りょこう]に持[も]って行[い]きやすいから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states that with paper books it is easy to write notes on the page and jump back to previous pages."
+        },
+        {
+          "id": "rd-n4-18-q2",
+          "promptJp": "筆者[ひっしゃ]の考[かんが]えに合[あ]っているのはどれですか。",
+          "promptEn": "Which statement matches the author's opinion?",
+          "choices": [
+            "これからは全部[ぜんぶ]電子[でんし]書籍[しょせき]にしたい。",
+            "紙[かみ]の本[ほん]のほうがいつも便利[べんり]なので電子[でんし]書籍[しょせき]はやめる。",
+            "目的[もくてき]に合[あ]わせて電子[でんし]書籍[しょせき]と紙[かみ]の本[ほん]の両方[りょうほう]を使[つか]いたい。",
+            "電車[でんしゃ]の中[なか]では本[ほん]を読[よ]まないほうがいい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The closing sentence says \"これからは両方を上手に使い分けたいと思います\" (I want to use both appropriately)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-19",
+      "jlpt": 4,
+      "order": 19,
+      "passageType": "essay",
+      "titleJp": "料理[りょうり]を始[はじ]めて気づ[きづ]いたこと",
+      "titleEn": "What I Realized After Starting to Cook",
+      "recommendedMinutes": 4,
+      "contextEn": "Short essay by a young worker who started cooking at home after living alone.",
+      "paragraphs": [
+        "一人暮[ひとりぐ]らしを始[はじ]めたころ、私[わたし]はほとんど料理[りょうり]をしませんでした。毎日[まいにち]コンビニのお弁当[べんとう]ばかり食[た]べていたので、食費[しょくひ]が高[たか]くなり、野菜[やさい]も足[た]りませんでした。",
+        "そこで、三か月[さんかげつ]前[まえ]から週末[しゅうまつ]に料理[りょうり]を練習[れんしゅう]することにしました。最初[さいしょ]は味[あじ]が濃[こ]すぎたり、野菜[やさい]を焦[こ]がしたりして、何度[なんど]も失敗[しっぱい]しました。",
+        "でも、動画[どうが]を見[み]ながら続[つづ]けているうちに、だんだん上手[じょうず]に作[つく]れるようになりました。自分[じぶん]で作[つく]ると健康[けんこう]にもいいし、何[なに]より毎日[まいにち]母[はは]が家族[かぞく]のために料理[りょうり]してくれていた大変[たいへん]さがよくわかりました。"
+      ],
+      "translationEn": [
+        "When I first started living alone, I hardly cooked at all. Because I ate nothing but convenience store bento every day, my food expenses grew high and I wasn't getting enough vegetables.",
+        "So three months ago, I decided to practice cooking on weekends. At first I failed many times—making flavors too strong or burning the vegetables.",
+        "However, while continuing by watching videos, I gradually became able to cook well. Making food myself is good for my health, and above all, I truly came to understand how much effort my mother put into cooking for our family every day."
+      ],
+      "keyVocab": [
+        { "word": "食費", "reading": "しょくひ", "en": "food expenses" },
+        { "word": "焦がす", "reading": "こがす", "en": "to burn/scorch food" },
+        { "word": "何より", "reading": "なにより", "en": "above all; most of all" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-19-q1",
+          "promptJp": "筆者[ひっしゃ]が料理[りょうり]を練習[れんしゅう]しようと思[おも]ったきっかけは何[なに]ですか。",
+          "promptEn": "What prompted the author to start practicing cooking?",
+          "choices": [
+            "料理[りょうり]の学校[がっこう]に入[はい]りたかったから。",
+            "コンビニのお弁当[べんとう]ばかりで食費[しょくひ]が高[たか]く、野菜[やさい]が足[た]りなかったから。",
+            "母[はは]に毎週[まいしゅう]料理[りょうり]を作[つく]るように頼[たの]まれたから。",
+            "近[ちか]くのコンビニが閉[し]まってしまったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 states that eating only convenience store bento caused high food costs and a lack of vegetables."
+        },
+        {
+          "id": "rd-n4-19-q2",
+          "promptJp": "料理[りょうり]を続[つづ]けて、筆者[ひっしゃ]が一番[いちばん]強[つよ]く感[かん]じたことは何[なに]ですか。",
+          "promptEn": "What did the author realize most strongly through cooking?",
+          "choices": [
+            "料理[りょうり]は動画[どうが]を見[み]ればだれでも最初[さいしょ]から失敗[しっぱい]しないこと。",
+            "コンビニのお弁当[べんとう]のほうが健康[けんこう]にいいこと。",
+            "毎日[まいにち]家族[かぞく]のために料理[りょうり]してくれていた母[はは]の大変[たいへん]さ。",
+            "一人暮[ひとりぐ]らしは野菜[やさい]を買[か]うのが難[むずか]しいこと。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence uses \"何より\" (above all) to highlight appreciating how hard their mother worked cooking every day."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-20",
+      "jlpt": 4,
+      "order": 20,
+      "passageType": "short",
+      "titleJp": "日本の「お土産[みやげ]」文化[ぶんか]",
+      "titleEn": "Japan's Souvenir (Omiyage) Culture",
+      "recommendedMinutes": 4,
+      "contextEn": "Cultural explanation for learners visiting Japan for the first time.",
+      "paragraphs": [
+        "日本[にほん]では、旅行[りょこう]や出張[しゅっちょう]へ行[い]ったとき、会社[かいしゃ]の同僚[どうりょう]や友達[ともだち]にお土産[みやげ]を買[か]って帰[かえ]る習慣[しゅうかん]があります。駅[えき]や空港[くうこう]の売店[ばいてん]には、その土地[とち]ならではの有名[ゆうめい]なお菓子[かし]がたくさん並[なら]んでいます。",
+        "お土産[みやげ]のお菓子[かし]は、一[ひと]つずつ小[ちい]さい袋[ふくろ]に入[はい]っていることが多[おお]いです。そうすれば、職場[しょくば]のみんなに配[くば]りやすく、手[て]も汚[よご]れないからです。お土産[みやげ]は高[たか]いものより、「あなたを思[おも]い出[だ]して買[か]いました」という気持[きも]ちが一番[いちばん]大切[たいせつ]だと言[い]われています。"
+      ],
+      "translationEn": [
+        "In Japan, when going on a trip or business trip, there is a custom of buying souvenirs to bring back for coworkers and friends. At station and airport shops, many famous sweets unique to that region are lined up.",
+        "Souvenir sweets are often individually wrapped in small bags. That way, they are easy to hand out to everyone at the workplace and don't get your hands dirty. Rather than something expensive, it is said that the feeling of \"I thought of you and bought this\" matters most."
+      ],
+      "keyVocab": [
+        { "word": "出張", "reading": "しゅっちょう", "en": "business trip" },
+        { "word": "配る", "reading": "くばる", "en": "to distribute; hand out" },
+        { "word": "汚れる", "reading": "よごれる", "en": "to get dirty" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-20-q1",
+          "promptJp": "お土産[みやげ]のお菓子[かし]が一[ひと]つずつ袋[ふくろ]に入[はい]っているのはどうしてですか。",
+          "promptEn": "Why are souvenir sweets often individually wrapped?",
+          "choices": [
+            "値段[ねだん]を高[たか]く見[み]せるため。",
+            "みんなに配[くば]りやすく、手[て]も汚[よご]れないため。",
+            "空港[くうこう]の売店[ばいてん]だけで売[う]るため。",
+            "家[いえ]で一人[ひとり]で食[た]べるため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains \"職場のみんなに配りやすく、手も汚れないからです\"."
+        },
+        {
+          "id": "rd-n4-20-q2",
+          "promptJp": "お土産[みやげ]で一番[いちばん]大切[たいせつ]だと書[か]かれていることは何[なに]ですか。",
+          "promptEn": "What does the passage say is most important about souvenirs?",
+          "choices": [
+            "できるだけ高[たか]いものを買[か]うこと。",
+            "相手[あいて]を思[おも]い出[だ]して買[か]ったという気持[きも]ち。",
+            "お菓子[かし]ではなく服[ふく]を買[か]うこと。",
+            "必[かなら]ず駅[えき]で買[か]うこと。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence states that the thoughtfulness of remembering the recipient matters more than high price."
+        }
+      ]
+    }
+  ]
+}

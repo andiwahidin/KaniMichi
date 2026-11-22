@@ -1,0 +1,290 @@
+{
+  "level": 2,
+  "pack": "n2-pack3",
+  "items": [
+    {
+      "id": "rd-n2-16",
+      "jlpt": 2,
+      "order": 16,
+      "passageType": "notice",
+      "titleJp": "社内[しゃない]資格[しかく]取得[しゅとく]支援[しえん]制度[せいど]の一部[いちぶ]改定[かいてい]について",
+      "titleEn": "Partial Revision to the Company Certification Support Program",
+      "recommendedMinutes": 6,
+      "contextEn": "HR circular explaining updated subsidy rules for employee exams.",
+      "paragraphs": [
+        "社員[しゃいん]各位[かくい]\n人事[じんじ]部[ぶ] 研修[けんしゅう]課[か]",
+        "平素[へいそ]より自己[じこ]啓発[けいはつ]に取[と]り組[く]んでいただき、感謝[かんしゃ]申[もう]し上[あ]げます。来月[らいげつ]一日[ついたち]より、資格[しかく]取得[しゅとく]支援[しえん]制度[せいど]の補助[ほじょ]条件[じょうけん]を以下[いか]のとおり改定[かいてい]いたします。",
+        "従来[じゅうらい]は対象[たいしょう]資格[しかく]に合格[ごうかく]した時点[じてん]で受験料[じゅけんりょう]の全額[ぜんがく]を支給[しきゅう]しておりましたが、今後は[こんごは]事前[じぜん]申請[しんせい]を行[おこな]った社員[しゃいん]に限[かぎ]り、合否[ごうひ]にかかわらず受験料[じゅけんりょう]の半額[はんがく]を補助[ほじょ]し、合格[ごうかく]した場合[ばあい]に残[のこ]りの半額[はんがく]を追加[ついか]支給[しきゅう]いたします。ただし、同一[どういつ]資格[しかく]への補助[ほじょ]は年度[ねんど]内[ない]二回[にかい]までとし、事前[じぜん]申請[しんせい]のない事後[じご]請求[せいきゅう]は対象外[たいしょうがい]となりますのでご注意ください。"
+      ],
+      "translationEn": [
+        "To all employees,\nHuman Resources Department, Training Section",
+        "Thank you for your ongoing commitment to self-development. Effective the 1st of next month, we will revise the subsidy conditions for the Certification Support Program as follows.",
+        "Previously, 100% of the exam fee was reimbursed upon passing an eligible certification. Going forward, strictly for employees who submit an advance application, half of the exam fee will be subsidized regardless of pass/fail, and the remaining half will be paid additionally upon passing. However, subsidies for the same certification are capped at twice per fiscal year, and retroactive claims without an advance application will not be eligible."
+      ],
+      "keyVocab": [
+        { "word": "自己啓発", "reading": "じこけいはつ", "en": "self-development" },
+        { "word": "合否", "reading": "ごうひ", "en": "pass or fail outcome" },
+        { "word": "事後請求", "reading": "じごせいきゅう", "en": "retroactive reimbursement claim" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-16-q1",
+          "promptJp": "改定[かいてい]後[ご]、事前[じぜん]申請[しんせい]をして試験[しけん]を受[う]けたが不合格[ふごうかく]だった社員[しゃいん]はどうなりますか。",
+          "promptEn": "Under the revised policy, what happens to an employee who applied in advance but failed the exam?",
+          "choices": [
+            "補助[ほじょ]は一切[いっさい]受[う]けられない。",
+            "受験料[じゅけんりょう]の半額[はんがく]が補助[ほじょ]される。",
+            "受験料[じゅけんりょう]の全額[ぜんがく]が補助[ほじょ]される。",
+            "来年度[らいねんど]まで同[おな]じ試験[しけん]の補助[ほじょ]を申請[しんせい]できない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "With an advance application, half of the fee is subsidized regardless of pass or fail (合否にかかわらず受験料の半額を補助), up to twice per fiscal year."
+        },
+        {
+          "id": "rd-n2-16-q2",
+          "promptJp": "新制度[しんせいど]で補助[ほじょ]を受[う]けられないケースはどれですか。",
+          "promptEn": "Which case is NOT eligible for a subsidy under the new policy?",
+          "choices": [
+            "事前[じぜん]申請[しんせい]をして同[おな]じ資格[しかく]を年度[ねんど]内[ない]に二回目[にかいめ]受験[じゅけん]した。",
+            "事前[じぜん]申請[しんせい]をせず、合格[ごうかく]後[ご]に領収書[りょうしゅうしょ]を出[だ]して請求[せいきゅう]した。",
+            "事前[じぜん]申請[しんせい]をして一度目[いちどめ]で合格[ごうかく]した。",
+            "別[べつ]の対象[たいしょう]資格[しかく]に事前[じぜん]申請[しんせい]をして受験[じゅけん]した。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The notice warns that retroactive claims without an advance application (事前申請のない事後請求) are ineligible."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-17",
+      "jlpt": 2,
+      "order": 17,
+      "passageType": "email",
+      "titleJp": "共同[きょうどう]セミナー資料[しりょう]の最終[さいしゅう]確認[かくにん]のお願[ねが]い",
+      "titleEn": "Final Review Request for Joint Seminar Slides",
+      "recommendedMinutes": 6,
+      "contextEn": "Business email coordinating final edits before printing handouts for a joint client seminar.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]みらいテック 営業[えいぎょう]部[ぶ] 高橋[たかはし]様[さま]\nいつも大変[たいへん]お世話[せわ]になっております。北川[きたがわ]商事[しょうじ]の山本[やまもと]です。",
+        "来週[らいしゅう]木曜日[もくようび]に開催[かいさい]予定[よてい]の共同[きょうどう]セミナーにつきまして、先日[せんじつ]いただいたご指摘[してき]を踏[ふ]まえ、配布[はいふ]資料[しりょう]の修正版[しゅうせいばん]を添付[てんぷ]いたしました。主[おも]な変更点[へんこうてん]は、十二ページ目[め]の導入[どうにゅう]事例[じれい]グラフを最新[さいしん]データへ差[さ]し替[か]えた点[てん]と、最終[さいしゅう]ページの問[と]い合[あ]わせ窓口[まどぐち]を両社[りょうしゃ]連名[れんめい]に改[あらた]めた点[てん]です。",
+        "印刷[いんさつ]会社[がいしゃ]への入稿[にゅうこう]締[し]め切[き]りが今週[こんしゅう]水曜日[すいようび]の正午[しょうご]となっております。お忙[いそが]しいところ恐縮[きょうしゅく]ですが、火曜日[かようび]の夕方[ゆうがた]五時[ごじ]までにご確認[かくにん]いただき、修正[しゅうせい]の有無[うむ]をご返信[へんしん]いただけますでしょうか。万一[まんいち]ご連絡[れんらく]がない場合[ばあい]でも、誤字[ごじ]などを見落[みお]とさないよう、水曜日[すいようび]の朝[あさ]にお電話[でんわ]にて最終[さいしゅう]確認[かくにん]をさせていただきます。"
+      ],
+      "translationEn": [
+        "Dear Mr. Takahashi, Sales Department, Mirai Tech Co., Ltd.,\nThank you always for your partnership. This is Yamamoto from Kitagawa Trading.",
+        "Regarding the joint seminar scheduled for next Thursday, based on your recent feedback, I have attached the revised handout slides. The main changes are replacing the case-study chart on page 12 with the latest data, and updating the contact desk on the final page to list both companies jointly.",
+        "Our submission deadline to the printing company is noon this Wednesday. I apologize for the inconvenience during your busy schedule, but could you please review it and reply by 5:00 PM on Tuesday whether any revisions are needed? Even if we happen not to hear back, we will call you Wednesday morning for final confirmation so we don't overlook any typos."
+      ],
+      "keyVocab": [
+        { "word": "差し替える", "reading": "さしかえる", "en": "to replace; swap out" },
+        { "word": "連名", "reading": "れんめい", "en": "joint signatures / joint listing" },
+        { "word": "入稿", "reading": "にゅうこう", "en": "submitting copy/artwork to printer" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-17-q1",
+          "promptJp": "高橋[たかはし]さんがいつまでに返信[へんしん]するよう頼[たの]まれていますか。",
+          "promptEn": "By when is Takahashi asked to reply?",
+          "choices": [
+            "今週[こんしゅう]火曜日[かようび]の午後[ごご]五時[ごじ]まで",
+            "今週[こんしゅう]水曜日[すいようび]の正午[しょうご]まで",
+            "今週[こんしゅう]水曜日[すいようび]の夕方[ゆうがた]まで",
+            "来週[らいしゅう]木曜日[もくようび]の朝[あさ]まで"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The printer deadline is Wednesday noon, so Yamamoto asks Takahashi to reply by 5:00 PM on Tuesday."
+        },
+        {
+          "id": "rd-n2-17-q2",
+          "promptJp": "火曜日[かようび]の夕方[ゆうがた]までに高橋[たかはし]さんから返信[へんしん]がなかった場合[ばあい]、山本[やまもと]さんはどうしますか。",
+          "promptEn": "What will Yamamoto do if Takahashi doesn't reply by Tuesday evening?",
+          "choices": [
+            "確認[かくにん]なしでそのまま印刷[いんさつ]会社[がいしゃ]へ入稿[にゅうこう]する。",
+            "水曜日[すいようび]の朝[あさ]に電話[でんわ]で最終[さいしゅう]確認[かくにん]をする。",
+            "共同[きょうどう]セミナーの開催[かいさい]を延期[えんき]する。",
+            "十二ページ目[め]のグラフを削除[さくじょ]して印刷[いんさつ]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence says Yamamoto will phone Takahashi on Wednesday morning for final confirmation rather than submitting unchecked."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-18",
+      "jlpt": 2,
+      "order": 18,
+      "passageType": "short",
+      "titleJp": "「選択肢[せんたくし]が多[おお]すぎる」ことの負担[ふたん]",
+      "titleEn": "The Burden of Too Many Choices",
+      "recommendedMinutes": 5,
+      "contextEn": "Behavioral economics short passage on choice overload.",
+      "paragraphs": [
+        "商品[しょうひん]の種類[しゅるい]が豊富[ほうふ]であるほど消費者[しょうひしゃ]の満足度[まんぞくど]は高[たか]まる——そう考[かんが]えるのは自然[しぜん]なことだ。ところが、実際[じっさい]の実験[じっけん]では、スーパーで二十四種類[にじゅうよんしゅるい]のジャムを試食[ししょく]させた場合[ばあい]より、六種類[ろくしゅるい]に絞[しぼ]った場合[ばあい]のほうが、購入[こうにゅう]にいたる割合[わりあい]がはるかに高[たか]かったという。",
+        "選択肢[せんたくし]が過剰[かじょう]になると、比較[ひかく]検討[けんとう]すること自体[じたい]が心理[しんり]的[てき]な負担[ふたん]となり、「別[べつ]のほうを選[えら]べばよかったのではないか」という後悔[こうかい]への恐[おそ]れが判断[はんだん]を鈍[にぶ]らせる。良[よ]いサービスとは、単[たん]に数[かず]を増[ふ]やすことではなく、利用[りよう]者[しゃ]が迷[まよ]わず選[えら]べるように適切[てきせつ]に整理[せいり]することなのかもしれない。"
+      ],
+      "translationEn": [
+        "The wider the variety of products, the higher consumer satisfaction rises—that seems like a natural assumption. Yet in an actual experiment, when supermarket shoppers sampled 6 jams instead of 24, the proportion who went on to purchase was far higher.",
+        "When choices become excessive, comparing options itself turns into a psychological burden, and fear of regretting \"maybe I should have picked the other one\" dulls decision-making. Good service may not be simply increasing quantity, but curating options appropriately so users can choose without hesitation."
+      ],
+      "keyVocab": [
+        { "word": "絞る", "reading": "しぼる", "en": "to narrow down" },
+        { "word": "過剰", "reading": "かじょう", "en": "excessive; surplus" },
+        { "word": "鈍らせる", "reading": "にぶらせる", "en": "to dull; slow down" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-18-q1",
+          "promptJp": "選択肢[せんたくし]が多[おお]すぎると購入[こうにゅう]が減[へ]るのはなぜだと書[か]かれていますか。",
+          "promptEn": "Why does having too many choices reduce purchases according to the passage?",
+          "choices": [
+            "種類[しゅるい]が多[おお]いと一[ひと]つひとつの品質[ひんしつ]が必[かなら]ず落[お]ちるから。",
+            "比較[ひかく]が心理[しんり]的[てき]負担[ふたん]になり、後悔[こうかい]への恐[おそ]れが判断[はんだん]を鈍[にぶ]らせるから。",
+            "試食[ししょく]だけでお腹[なか]がいっぱいになってしまうから。",
+            "値段[ねだん]が高[たか]い商品[しょうひん]ばかり並[なら]んでいるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 attributes it to the psychological burden of comparing too many items and fear of regret dulling decisions."
+        },
+        {
+          "id": "rd-n2-18-q2",
+          "promptJp": "筆者[ひっしゃ]が考[かんが]える「良[よ]いサービス」に最[もっと]も近[ちか]いのはどれですか。",
+          "promptEn": "Which best matches the author's idea of \"good service\"?",
+          "choices": [
+            "利用[りよう]者[しゃ]が迷[まよ]わず選[えら]べるように選択肢[せんたくし]を適切[てきせつ]に整理[せいり]すること。",
+            "可能[かのう]な限[かぎ]り多[おお]くのバリエーションを全[すべ]て提示[ていじ]すること。",
+            "商品[しょうひん]を一種類[いっしゅるい]だけに限定[げんてい]すること。",
+            "試食[ししょく]や無料[むりょう]体験[たいけん]を廃止[はいし]すること。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The closing sentence defines good service as appropriately curating options so users can choose without hesitation."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-19",
+      "jlpt": 2,
+      "order": 19,
+      "passageType": "essay",
+      "titleJp": "都市[とし]の「余白[よはく]」としての街路樹[がいろじゅ]",
+      "titleEn": "Street Trees as Urban \"Breathing Room\"",
+      "recommendedMinutes": 6,
+      "contextEn": "Urban planning essay discussing the multifaceted role of street trees.",
+      "paragraphs": [
+        "都市[とし]の再開発[さいかいはつ]が進[すす]む中[なか]で、維持[いじ]管理[かんり]のコストや落葉[らくよう]掃除[そうじ]の手間[てま]を理由[りゆう]に、街路樹[がいろじゅ]の伐採[ばっさい]が議論[ぎろん]される場面[ばめん]が増[ふ]えている。確[たし]かに、老朽化[ろうきゅうか]した大木[たいぼく]が台風[たいふう]で倒[たお]れる危険[きけん]や、根[ね]が歩道[ほどう]を持[も]ち上[あ]げてしまう問題[もんだい]は無視[むし]できない。",
+        "しかし、街路樹[がいろじゅ]を単[たん]なる「景観[けいかん]の飾[かざ]り」としてだけ評価[ひょうか]するのは早計[そうけい]である。真夏[まなつ]のアスファルト舗装[ほそう]の上[うえ]で木陰[こかげ]が路面[ろめん]温度[おんど]を十度[じゅうど]以上[いじょう]も下[さ]げる効果[こうか]は、高齢者[こうれいしゃ]や子[こ]どもにとって命[いのち]を守[まも]るインフラにほかならない。",
+        "さらに、季節[きせつ]ごとに葉[は]の色[いろ]を変[か]える木々[きぎ]の存在[そんざい]は、無機質[むきしつ]になりがちなビル街[がい]に時間[じかん]の流[なが]れと心理[しんり]的[てき]な余白[よはく]をもたらしてくれる。目先[めさき]の管理[かんり]費[ひ]だけを見て撤去[てっきょ]するのではなく、植[う]え替[か]えや適切[てきせつ]な剪定[せんてい]を通[つう]じて、都市[とし]と緑[みどり]が共存[きょうぞん]できる長期的[ちょうきてき]な設計[せっけい]へ投資[とうし]すべきではないだろうか。"
+      ],
+      "translationEn": [
+        "Amid ongoing urban redevelopment, discussions over cutting down street trees are increasing due to maintenance costs and the hassle of sweeping fallen leaves. Certainly, the danger of aging large trees toppling in typhoons and roots lifting sidewalks cannot be ignored.",
+        "However, evaluating street trees merely as \"scenic decoration\" is hasty. On midsummer asphalt pavement, the cooling effect of tree shade lowering surface temperatures by over 10 degrees is nothing less than life-saving infrastructure for seniors and children.",
+        "Furthermore, the presence of trees whose leaves change color with each season brings a sense of passing time and psychological breathing room to concrete office districts. Rather than removing them based solely on short-term upkeep costs, shouldn't we invest in long-term designs where cities and greenery coexist through replanting and proper pruning?"
+      ],
+      "keyVocab": [
+        { "word": "早計", "reading": "そうけい", "en": "rash; premature" },
+        { "word": "無機質", "reading": "むきしつ", "en": "inorganic; cold and sterile" },
+        { "word": "剪定", "reading": "せんてい", "en": "pruning (trees)" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-19-q1",
+          "promptJp": "筆者[ひっしゃ]が街路樹[がいろじゅ]を「命[いのち]を守[まも]るインフラ」と呼[よ]んでいる理由[りゆう]は何[なに]ですか。",
+          "promptEn": "Why does the author call street trees \"life-saving infrastructure\"?",
+          "choices": [
+            "台風[たいふう]のときに強風[きょうふう]を完全[かんぜん]に防[ふせ]いでくれるから。",
+            "真夏[まなつ]の路面[ろめん]温度[おんど]を大[おお]きく下[さ]げる木陰[こかげ]を作[つく]ってくれるから。",
+            "落葉[らくよう]が地域[ちいき]の肥料[ひりょう]として売[う]れるから。",
+            "歩道[ほどう]の舗装[ほそう]を丈夫[じょうぶ]にしてくれるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 points to tree shade lowering midsummer asphalt temperatures by more than 10°C, protecting seniors and children."
+        },
+        {
+          "id": "rd-n2-19-q2",
+          "promptJp": "街路樹[がいろじゅ]の問題[もんだい]に対[たい]する筆者[ひっしゃ]の主張[しゅちょう]はどれですか。",
+          "promptEn": "What does the author advocate regarding street tree challenges?",
+          "choices": [
+            "安全[あんぜん]のため老朽化[ろうきゅうか]した木[き]を含[ふく]め街路樹[がいろじゅ]はすべて撤去[てっきょ]すべきだ。",
+            "管理[かんり]費[ひ]を抑[おさ]えるため、落葉[らくよう]掃除[そうじ]は住民[じゅうみん]の義務[ぎむ]にすべきだ。",
+            "目先[めさき]のコストだけで撤去[てっきょ]せず、植[う]え替[か]えや剪定[せんてい]など共存[きょうぞん]のための長期[ちょうき]設計[せっけい]に投資[とうし]すべきだ。",
+            "街路樹[がいろじゅ]は公園[こうえん]の中[なか]だけに残[のこ]し、道路[どうろ]沿[ぞ]いには植[う]えないほうがいい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The closing sentence argues against short-sighted removal and favors investing in replanting, pruning, and long-term coexistence."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-20",
+      "jlpt": 2,
+      "order": 20,
+      "passageType": "comparison",
+      "titleJp": "AIによる自動[じどう]翻訳[ほんやく]と外国語[がいこくご]学習[がくしゅう]（A/B比較[ひかく]）",
+      "titleEn": "AI Machine Translation & Foreign Language Learning (A/B Comparison)",
+      "recommendedMinutes": 7,
+      "contextEn": "Two educators debate how advancing translation technology changes the purpose of learning foreign languages.",
+      "labelA": "A氏[し]の文章[ぶんしょう]",
+      "labelB": "B氏[し]の文章[ぶんしょう]",
+      "paragraphs": [
+        "AI翻訳[ほんやく]の精度[せいど]が飛躍的[ひやくてき]に高[たか]まった今[いま]、旅行[りょこう]や定型[ていけい]的[てき]なビジネスメールのやり取り[とり]であれば、語学[ごがく]力[りょく]がなくてもほぼ支障[ししょう]なく済[す]ませられる時代[じだい]になった。限[かぎ]られた学習[がくしゅう]時間[じかん]を単語[たんご]の丸暗記[まるあんき]に費[つい]やすよりも、翻訳[ほんやく]ツールを使い[つかい]こなして専門[せんもん]分野[ぶんや]の知識[ちしき]を深[ふか]めるほうが現実的[げんじつてき]だという見方[みかた]にも一理[いちり]ある。",
+        "もっとも、ツールに頼[たよ]る際[さい]にも、出力[しゅつりょく]された訳文[やくぶん]が不自然[ふしぜん]でないかを見抜[みぬ]く最低限[さいていげん]の読解力[どっかいりょく]は必要[ひつよう]であり、語学[ごがく]教育[きょういく]は「すべてを自力[じりき]で訳[やく]す訓練[くんれん]」から「AIの出力[しゅつりょく]を検証[けんしょう]し編集[へんしゅう]する力[ちから]」へと軸足[じくあし]を移[うつ]すべきだろう。"
+      ],
+      "paragraphsB": [
+        "自動[じどう]翻訳[ほんやく]がどれほど進化[しんか]しても、外国語[がいこくご]を自[みずか]ら学[まな]ぶ価値[かち]はいささかも揺[ゆ]らがないと私[わたし]は考[かんが]える。言葉[ことば]は単[たん]に情報[じょうほう]を伝達[でんたつ]する記号[きごう]ではなく、その社会[しゃかい]の歴史[れきし]や価値観[かちかん]、人[ひと]と人[ひと]との距離感[きょりかん]を映[うつ]し出[だ]す鏡[かがみ]だからだ。",
+        "相手[あいて]の言語[げんご]で直接[ちょくせつ]笑[わら]い合[あ]い、言葉[ことば]に詰[つ]まりながらも誠実[せいじつ]に伝[つた]えようとする姿勢[しせい]こそが信頼[しんらい]関係[かんけい]を生[う]む。翻訳[ほんやく]機[き]を補助[ほじょ]として活用[かつよう]しつつも、自分[じぶん]の口[くち]で語[かた]り理解[りかい]する喜[よろこ]びを手放[てばな]してはならない。"
+      ],
+      "translationEn": [
+        "Now that AI translation accuracy has surged dramatically, we have entered an era where travel and routine business emails can be handled with almost no hindrance without language proficiency. There is merit in the view that rather than spending limited study hours on rote memorization, mastering translation tools while deepening domain expertise is more practical.",
+        "Still, even when relying on tools, minimal reading ability to spot unnatural outputs is required; language education should shift its focus from \"training to translate everything unaided\" toward \"the skill of verifying and editing AI output.\""
+      ],
+      "translationBEn": [
+        "No matter how much machine translation advances, I believe the value of learning a foreign language oneself does not waver in the slightest. Language is not merely a code for transmitting information, but a mirror reflecting a society's history, values, and interpersonal distance.",
+        "Laughing directly in the other person's language and earnestly trying to communicate even while stumbling over words is precisely what builds trust. While using translators as an aid, we must not let go of the joy of speaking and understanding with our own voice."
+      ],
+      "keyVocab": [
+        { "word": "飛躍的", "reading": "ひやくてき", "en": "rapid; by leaps and bounds" },
+        { "word": "軸足", "reading": "じくあし", "en": "pivot foot; core focus" },
+        { "word": "いささかも", "reading": "いささかも", "en": "not in the slightest" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-20-q1",
+          "promptJp": "A氏[し]は、今後の[こんごの]語学[ごがく]教育[きょういく]はどう変[か]わるべきだと述[の]べていますか。",
+          "promptEn": "How does Author A say language education should change going forward?",
+          "choices": [
+            "語学[ごがく]教育[きょういく]そのものを完全[かんぜん]に廃止[はいし]すべきだ。",
+            "すべて自力[じりき]で訳[やく]す訓練[くんれん]から、AIの訳文[やくぶん]を検証[けんしょう]・編集[へんしゅう]する力[ちから]へ軸足[じくあし]を移[うつ]すべきだ。",
+            "翻訳[ほんやく]ツールの使用[しよう]を禁止[きんし]して単語[たんご]の丸暗記[まるあんき]を強化[きょうか]すべきだ。",
+            "ビジネスメールだけは機械[きかい]を使[つか]わずに書[か]くべきだ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author A argues language education should pivot toward the ability to verify and edit AI-generated translations."
+        },
+        {
+          "id": "rd-n2-20-q2",
+          "promptJp": "B氏[し]が外国語[がいこくご]を自[みずか]ら学[まな]ぶべきだと主張[しゅちょう]する根拠[こんきょ]はどれですか。",
+          "promptEn": "What grounds does Author B give for learning foreign languages oneself?",
+          "choices": [
+            "AI翻訳[ほんやく]は定型[ていけい]的[てき]な旅行[りょこう]会話[かいわ]にも使[つか]えないから。",
+            "言語[げんご]には社会[しゃかい]の価値観[かちかん]が映[うつ]り、自分[じぶん]の言葉[ことば]で伝[つた]える姿勢[しせい]が信頼[しんらい]を生[う]むから。",
+            "翻訳[ほんやく]ツールを使う[つかう]と専門[せんもん]知識[ちしき]が身[み]につかないから。",
+            "翻訳[ほんやく]機[き]の利用[りよう]料金[りょうきん]が高[たか]すぎるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author B emphasizes that language reflects cultural values and that speaking directly with sincerity builds human trust."
+        },
+        {
+          "id": "rd-n2-20-q3",
+          "promptJp": "A氏[し]とB氏[し]の両方[りょうほう]の文章[ぶんしょう]に共通[きょうつう]している点[てん]はどれですか。",
+          "promptEn": "What point do both Author A and Author B share?",
+          "choices": [
+            "翻訳[ほんやく]ツールを一切[いっさい]使[つか]うべきではないと考えている。",
+            "AI翻訳[ほんやく]が進歩[しんぽ]しても、人間[にんげん]側[がわ]の語学[ごがく]学習[がくしゅう]や理解[りかい]を完全[かんぜん]になくすべきではないと考えている。",
+            "単語[たんご]の丸暗記[まるあんき]こそが最[もっと]も効率[こうりつ]的[てき]な学習[がくしゅう]法[ほう]だと述[の]べている。",
+            "信頼[しんらい]関係[かんけい]は翻訳[ほんやく]アプリだけで十分[じゅうぶん]に築[きず]けると主張[しゅちょう]している。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author A still insists on reading ability to verify AI output, and Author B champions direct human understanding—neither calls for abandoning language learning."
+        }
+      ]
+    }
+  ]
+}

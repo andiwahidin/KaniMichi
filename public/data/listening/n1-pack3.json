@@ -1,0 +1,324 @@
+{
+  "level": 1,
+  "pack": "n1-pack3",
+  "items": [
+    {
+      "id": "l-n1-16",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "国際[こくさい]シンポジウム基調[きちょう]講演[こうえん]の急遽[きゅうきょ]変更[へんこう]",
+      "titleEn": "Emergency Adjustment for a Symposium Keynote Cancellation",
+      "situationEn": "Two university symposium organizers react to news that the keynote speaker's flight was cancelled.",
+      "introJp": "大学[だいがく]のシンポジウム実行[じっこう]委員[いいん]の二人[ふたり]が話[はな]しています。女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "introEn": "Two university symposium organizers are talking. What will the woman do first?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "大変[たいへん]だ。明日[あした]の基調[きちょう]講演[こうえん]をお願いしているミラー教授[きょうじゅ]の便[びん]が欠航[けっこう]になって、開会[かいかい]に間[ま]に合[あ]わないと連絡[れんらく]が入[はい]った。",
+          "en": "We have a crisis. Professor Miller's flight was cancelled, and we just got word he won't make it in time for tomorrow's opening keynote."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "えっ、今[いま]からオンライン登壇[とうだん]に切[き]り替[か]えることはできますか。会場[かいじょう]の回線[かいせん]と大型[おおがた]スクリーンは使[つか]えますよね。",
+          "en": "Oh no—can we switch him to an online appearance? We can use the hall's internet line and main screen, right?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "うん、教授[きょうじゅ]も現地のホテルからオンラインなら登壇[とうだん]可能[かのう]だと言[い]っている。ただ、時差[じさ]の関係[かんけい]で開始[かいし]を午後[ごご]の部[ぶ]と入[い]れ替[か]えないと厳[きび]しいらしいんだ。",
+          "en": "Yes, he said he can present online from his local hotel. However, due to the time difference, it'll be tough unless we swap his slot with the afternoon session."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "なるほど。では午後[ごご]のパネル討論[とうろん]の登壇者[とうだんしゃ]に午前[ごぜん]へ繰[く]り上[あ]げられるか確認[かくにん]しないとですね。参加者[さんかしゃ]への一斉[いっせい]メールと配布[はいふ]資料[しりょう]の訂正[ていせい]は、その返事[へんじ]を待[ま]ってからですね。",
+          "en": "I see. Then we must check whether the afternoon panelists can move up to the morning slot. Mass-emailing attendees and revising handouts will have to wait for their confirmation."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "そうだね。会場[かいじょう]の機材[きざい]テストはぼくが業者[ぎょうしゃ]に手配[てはい]するから、きみはパネル登壇者[とうだんしゃ]への連絡[れんらく]を最優先[さいゆうせん]で頼[たの]める？",
+          "en": "Right. I'll coordinate the AV test with the vendor, so could you prioritize contacting the afternoon panelists?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "わかりました、すぐ電話[でんわ]します。",
+          "en": "Understood—I'll call them right away."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the woman do first?",
+      "choices": [
+        "参加者[さんかしゃ]全員[ぜんいん]にプログラム変更[へんこう]のメールを送[おく]る",
+        "午後[ごご]のパネル討論[とうろん]の登壇者[とうだんしゃ]に時間[じかん]変更[へんこう]が可能[かのう]か確認[かくにん]する",
+        "業者[ぎょうしゃ]と会場[かいじょう]のオンライン配信[はいしん]機材[きざい]をテストする",
+        "配布[はいふ]資料[しりょう]のタイムテーブルを刷[す]り直[なお]す"
+      ],
+      "choicesEn": [
+        "Send a schedule-change email to all attendees",
+        "Confirm with afternoon panelists whether they can move to the morning slot",
+        "Test the venue's live-streaming equipment with the vendor",
+        "Reprint the handout timetables"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The man handles the AV vendor, while attendee emails and handouts depend on whether the afternoon panelists can swap slots, so the woman calls the panelists first.",
+      "keyPhrases": [
+        {
+          "jp": "繰[く]り上[あ]げる",
+          "reading": "くりあげる",
+          "en": "to move up (a schedule)"
+        },
+        {
+          "jp": "最優先[さいゆうせん]",
+          "reading": "さいゆうせん",
+          "en": "top priority"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-17",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "ミニシアターが配信[はいしん]時代[じだい]に生[い]き残[のこ]った背景[はいけい]",
+      "titleEn": "How Independent Cinemas Survived the Streaming Era",
+      "situationEn": "A film critic discusses on a cultural broadcast why certain independent theaters retained loyal audiences.",
+      "introJp": "文化[ぶんか]番組[ばんぐみ]で映画[えいが]評論家[ひょうろんか]が話[はな]しています。評論家[ひょうろんか]は、ミニシアターが支持[しじ]され続[つづ]けている核心[かくしん]を何[なに]だと述[の]べていますか。",
+      "introEn": "A film critic is speaking on a cultural program. What does the critic identify as the core reason independent cinemas remain supported?",
+      "lines": [
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "定額[ていがく]動画[どうが]配信[はいしん]が普及[ふきゅう]した当初[とうしょ]、小規模[しょうきぼ]なミニシアターは淘汰[とうた]されるという見方[みかた]が大勢[たいせい]を占[し]めていました。実際[じっさい]、閉館[へいかん]に追[お]い込[こ]まれた劇場[げきじょう]も少[すく]なくありません。",
+          "en": "When subscription streaming first spread, the prevailing view was that small independent cinemas would be wiped out. Indeed, quite a few were forced to close."
+        },
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "ところが近年[きんねん]、若[わか]い観客[かんきゃく]を呼[よ]び戻[もど]している劇場[げきじょう]には共通点[きょうつうてん]があります。配信[はいしん]のアルゴリズムが利用者[りようしゃ]の過去[かこ]の履歴[りれき]に似[に]た作品[さくひん]ばかりを薦[すす]めるのに対[たい]し、支配人[しはいにん]の独自[どくじ]の審美眼[しんびがん]で編[あ]まれた特集[とくしゅう]上映[じょうえい]は、観客[かんきゃく]が自分[じぶん]では決[けっ]して検索[けんさく]しない未知[みち]の作品[さくひん]との偶発的[ぐうはつてき]な出会[であ]いをもたらすのです。",
+          "en": "Yet theaters winning back young audiences share a trait: whereas streaming algorithms keep recommending titles similar to viewing history, curated retrospectives shaped by a programmer's distinct eye create serendipitous encounters with unfamiliar films viewers would never search for."
+        },
+        {
+          "speaker": "Critic",
+          "role": "male",
+          "jp": "単[たん]に音響[おんきょう]設備[せつび]の豪華[ごうか]さではなく、この「選[えら]び抜[ぬ]かれた文脈[ぶんみゃく]を共有[きょうゆう]する体験[たいけん]」こそが、わざわざ足[あし]を運[はこ]ぶ動機[どうき]になっています。",
+          "en": "Rather than sheer audiovisual luxury, this experience of sharing a thoughtfully curated context is what motivates audiences to make the trip."
+        }
+      ],
+      "questionJp": "評論家[ひょうろんか]は、ミニシアターが支持[しじ]される核心[かくしん]を何[なに]だと述[の]べていますか。",
+      "questionEn": "What does the critic say is the core appeal of surviving independent cinemas?",
+      "choices": [
+        "最新[さいしん]の音響[おんきょう]設備[せつび]と大型[おおがた]スクリーンを備[そな]えている点[てん]",
+        "アルゴリズムでは出会[であ]えない作品[さくひん]を独自[どくじ]の視点[してん]で提示[ていじ]し、偶発的[ぐうはつてき]な発見[はっけん]を生[う]む点[てん]",
+        "動画[どうが]配信[はいしん]よりチケット料金[りょうきん]を大幅[おおはば]に安[やす]く設定[せってい]している点[てん]",
+        "人気[にんき]俳優[はいゆう]の話題作[わだいさく]だけを厳選[げんせん]して上映[じょうえい]している点[てん]"
+      ],
+      "choicesEn": [
+        "Having cutting-edge sound systems and massive screens",
+        "Curating distinctive programs that spark serendipitous discoveries algorithms rarely surface",
+        "Pricing tickets far cheaper than streaming subscriptions",
+        "Screening only buzzworthy blockbusters with popular actors"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The critic contrasts algorithmic similarity with human curation that creates serendipitous encounters with unknown works within a shared context.",
+      "keyPhrases": [
+        {
+          "jp": "大勢[たいせい]を占[し]める",
+          "reading": "たいせいをしめる",
+          "en": "to be the prevailing view / majority"
+        },
+        {
+          "jp": "審美眼[しんびがん]",
+          "reading": "しんびがん",
+          "en": "discerning aesthetic eye"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-18",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "選択[せんたく]過多[かた]と初期[しょき]設定[せってい]の倫理[りんり]",
+      "titleEn": "Choice Overload and the Ethics of Default Architecture",
+      "situationEn": "A behavioral economist delivers a university lecture on default options in public policy and consumer services.",
+      "introJp": "大学[だいがく]の講義[こうぎ]で行動[こうどう]経済学[けいざいがく]の教授[きょうじゅ]が話[はな]しています。教授[きょうじゅ]の主張[しゅちょう]の要点[ようてん]はどれですか。",
+      "introEn": "A behavioral economics professor is lecturing at a university. What is the core point of the professor's argument?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "近代[きんだい]経済学[けいざいがく]では長[なが]らく、選択肢[せんたくし]が多[おお]いほど個人[こじん]の厚生[こうせい]は高[たか]まると前提[ぜんてい]されてきました。しかし実証[じっしょう]研究[けんきゅう]によれば、情報[じょうほう]が過剰[かじょう]になると人間[にんげん]は判断[はんだん]を先延[さきの]ばしにし、あらかじめ用意[ようい]された「初期[しょき]設定[せってい]」をそのまま受[う]け入[い]れる傾向[けいこう]が強[つよ]まります。",
+          "en": "Modern economics long assumed that more options increase individual welfare. Yet empirical research shows that when overwhelmed by choices, people defer decisions and stick with the pre-set 'default'."
+        },
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "この性質[せいしつ]を応用[おうよう]すれば、年金[ねんきん]加入[かにゅう]や省[しょう]エネ電力[でんりょく]の普及[ふきゅう]など、社会[しゃかい]にとって望[のぞ]ましい行動[こうどう]を強制[きょうせい]せずに促[うなが]すことができます。ただし問題[もんだい]は、初期[しょき]設定[せってい]を設計[せっけい]する側[がわ]が誰[だれ]の利益[りえき]を優先[ゆうせん]しているかが見[み]えにくい点[てん]です。",
+          "en": "Applying this insight can encourage socially desirable actions like pension enrollment or green energy without coercion. The problem, however, is that it's hard to see whose interests the default designer prioritizes."
+        },
+        {
+          "speaker": "Professor",
+          "role": "female",
+          "jp": "したがって、初期[しょき]設定[せってい]を活用[かつよう]する制度[せいど]ほど、いつでも容易[ようい]に変更[へんこう]できる透明性[とうめいせい]と、設計[せっけい]根拠[こんきょ]の公開[こうかい]が不可欠[ふかけつ]なのです。",
+          "en": "Therefore, the more an institution relies on defaults, the more essential it is to guarantee easy opt-out transparency and public disclosure of the design rationale."
+        }
+      ],
+      "questionJp": "教授[きょうじゅ]の主張[しゅちょう]の要点[ようてん]はどれですか。",
+      "questionEn": "What is the key takeaway of the professor's argument?",
+      "choices": [
+        "初期[しょき]設定[せってい]は個人[こじん]の自由[じゆう]を侵害[しんがい]するため、あらゆる制度[せいど]から排除[はいじょ]すべきだ",
+        "初期[しょき]設定[せってい]は有用[ゆうよう]だが、設計[せっけい]意図[いと]の公開[こうかい]と変更[へんこう]のしやすさを担保[たんぽ]する必要がある",
+        "選択肢[せんたくし]を増[ふ]やし続[つづ]ければ、消費者[しょうひしゃ]は必[かなら]ず合理的[ごうりてき]な判断[はんだん]を下[くだ]すようになる",
+        "行動[こうどう]経済学[けいざいがく]の知見[ちけん]は民間[みんかん]企業[きぎょう]の販促[はんそく]にのみ適用[てきよう]すべきだ"
+      ],
+      "choicesEn": [
+        "Defaults violate liberty and should be banned from all institutions",
+        "Defaults are useful, yet require transparent design rationales and effortless opt-out mechanisms",
+        "Adding more choices always leads consumers to make rational decisions",
+        "Behavioral economics should only be used in private-sector marketing"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The professor acknowledges the utility of defaults in overcoming choice overload, while stressing that transparency of design intent and easy modification are indispensable.",
+      "keyPhrases": [
+        {
+          "jp": "判断[はんだん]を先延[さきの]ばしにする",
+          "reading": "はんだんをさきのばしにする",
+          "en": "to postpone / defer a decision"
+        },
+        {
+          "jp": "不可欠[ふかけつ]",
+          "reading": "ふかけつ",
+          "en": "indispensable; essential"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-19",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "役員[やくいん]会議[かいぎ]での厳[きび]しい指摘[してき]への応対[おうたい]",
+      "titleEn": "Quick Response: Responding to an Executive's Sharp Critique",
+      "situationEn": "During a board briefing, an executive criticizes your revenue forecast as overly optimistic.",
+      "introJp": "役員[やくいん]会議[かいぎ]で常務[じょうむ]から厳[きび]しい指摘[してき]を受[う]けました。担当者[たんとうしゃ]として最[もっと]も適切[てきせつ]な返答[へんとう]はどれですか。",
+      "introEn": "A managing director gives a sharp critique during a board meeting. What is the most professional response?",
+      "lines": [
+        {
+          "speaker": "Executive",
+          "role": "male",
+          "jp": "この新規[しんき]事業[じぎょう]の収益[しゅうえき]見通[みとお]しだが、競合[きょうごう]の値下げ[ねさげ]リスクを一切[いっさい]織[お]り込[こ]んでいないのは、いささか楽観的[らっかんてき]すぎないか。",
+          "en": "Regarding this new venture's revenue forecast—failing to factor in competitor price-cut risks at all seems rather overly optimistic, doesn't it?"
+        }
+      ],
+      "questionJp": "担当者[たんとうしゃ]として最[もっと]も適切[てきせつ]な返答[へんとう]はどれですか。",
+      "questionEn": "What is the most appropriate response?",
+      "choices": [
+        "ご指摘[してき]の通[とお]り、検討[けんとう]が不十分[ふじゅうぶん]でした。競合[きょうごう]が価格[かかく]を1割[いちわり]から2割[にわり]引[ひ]き下[さ]げた場合[ばあい]の試算[しさん]も早急[さっきゅう]に作成[さくせい]し、次回[じかい]までにお示[しめ]しいたします。",
+        "いえ、競合[きょうごう]他社[たしゃ]が値下げ[ねさげ]するはずがないという前提[ぜんてい]ですので、このままで問題[もんだい]ございません。",
+        "おっしゃることはわかりますが、時間[じかん]が足[た]りずそこまで計算[けいさん]する余裕[よゆう]がありませんでした。"
+      ],
+      "choicesEn": [
+        "As you point out, our analysis was insufficient. We will promptly model scenarios where competitors cut prices by 10–20% and present them by the next meeting.",
+        "No, our premise is that competitors could never cut prices, so it is fine as is.",
+        "I see what you mean, but we didn't have enough time to calculate that far."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "Option 1 calmly accepts the valid oversight without making excuses and commits to a concrete follow-up sensitivity analysis (試算).",
+      "keyPhrases": [
+        {
+          "jp": "織[お]り込[こ]む",
+          "reading": "おりこむ",
+          "en": "to factor in / incorporate (into a forecast)"
+        },
+        {
+          "jp": "いささか〜すぎる",
+          "reading": "いささかすぎる",
+          "en": "somewhat too..."
+        }
+      ]
+    },
+    {
+      "id": "l-n1-20",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "歴史的[れきしてき]港湾[こうわん]倉庫[そうこ]地区[ちく]の再開発[さいかいはつ]案[あん]の採択[さいたく]",
+      "titleEn": "Integrated Comprehension: Selecting a Waterfront Warehouse Revitalization Plan",
+      "situationEn": "A city council chair and deputy review four redevelopment proposals for historic brick warehouses along the harbor.",
+      "introJp": "市[し]の再開発[さいかいはつ]検討[けんとう]委員会[いいんかい]で、委員長[いいんちょう]と副委員長[ふくいいんちょう]が歴史的[れきしてき]倉庫[そうこ]地区[ちく]の四[よっ]つの活用[かつよう]案[あん]を比較[ひかく]しています。どの案[あん]を推[お]すことに決[き]まりましたか。",
+      "introEn": "The chair and vice-chair of a municipal redevelopment committee compare four proposals for a historic warehouse district. Which proposal do they decide to endorse?",
+      "lines": [
+        {
+          "speaker": "Vice-Chair",
+          "role": "female",
+          "jp": "赤[あか]レンガ倉庫[そうこ]地区[ちく]の再開発[さいかいはつ]ですが、公募[こうぼ]した四[よっ]つの案[あん]を整理[せいり]しました。まず第一案[だいいちあん]は、倉庫[そうこ]を全面[ぜんめん]解体[かいたい]して高層[こうそう]マンションと商業[しょうぎょう]棟[とう]を建[た]てる計画[けいかく]です。税収[ぜいしゅう]見込[みこ]みは最大[さいだい]ですが、景観[けいかん]保護[ほご]団体[だんたい]や住民[じゅうみん]の反発[はんぱつ]が極[きわ]めて強[つよ]い状況[じょうきょう]です。",
+          "en": "I've summarized the four public proposals for the red-brick warehouse redevelopment. Proposal 1 demolishes the warehouses entirely for a high-rise condo and retail tower. It projects the highest tax revenue, yet faces fierce opposition from preservationists and residents."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "百年[ひゃくねん]の象徴[しょうちょう]を壊[こわ]してしまっては、合意[ごうい]形成[けいせい]が不可能[ふかのう]だね。第一案[だいいちあん]は現実的[げんじつてき]ではない。第二案[だいにあん]は？",
+          "en": "Demolishing a century-old landmark makes consensus impossible. Proposal 1 isn't viable. What about Proposal 2?"
+        },
+        {
+          "speaker": "Vice-Chair",
+          "role": "female",
+          "jp": "第二案[だいにあん]は外観[がいかん]を完全[かんぜん]保存[ほぞん]し、市営[しえい]の海事[かいじ]資料館[しりょうかん]に転用[てんよう]する案[あん]です。文化財[ぶんかざい]保護[ほご]の観点[かんてん]からは満点[まんてん]ですが、初期[しょき]改修[かいしゅう]費[ひ]と毎年[まいとし]の維持[いじ]費[ひ]を全額[ぜんがく]市[し]の財源[ざいげん]で賄[まかな]う必要[ひつよう]があり、財政[ざいせい]部門[ぶもん]から難色[なんしょく]を示[しめ]されています。",
+          "en": "Proposal 2 fully preserves the exterior and converts it into a municipal maritime museum. Ideal for heritage preservation, yet initial renovation and annual upkeep fall 100% on city coffers, which the finance division objects to."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "単独[たんどく]の公費[こうひ]負担[ふたん]は議会[ぎかい]を通[とお]らないだろうね。残[のこ]りの第三案[だいさんあん]と第四案[だいよんあん]はどうかな。",
+          "en": "Sole public funding won't pass the assembly. How about Proposals 3 and 4?"
+        },
+        {
+          "speaker": "Vice-Chair",
+          "role": "female",
+          "jp": "第三案[だいさんあん]は、耐震[たいしん]補強[ほきょう]を施[ほどこ]したうえで民間[みんかん]と連携[れんけい]し、地場[じば]食材[しょくざい]のマーケットと若手[わかて]工芸[こうげい]作家の工房[こうぼう]・市民[しみん]広場[ひろば]を複合[ふくごう]展開[てんかい]する計画[けいかく]です。大規模[だいきぼ]な収益[しゅうえき]は望[のぞ]めないものの、民間[みんかん]賃料[ちんりょう]で維持[いじ]費[ひ]を自律的[じりつてき]に賄[まかな]える試算[しさん]です。",
+          "en": "Proposal 3 seismically retrofits the buildings in a public-private partnership, combining a local food market, young artisans' studios, and a civic plaza. While profits are modest, private lease revenue independently covers ongoing upkeep."
+        },
+        {
+          "speaker": "Vice-Chair",
+          "role": "female",
+          "jp": "第四案[だいよんあん]も外観[がいかん]保存[ほぞん]で民間[みんかん]資本[しほん]を入[い]れますが、外資系[がいしけい]会員制[かいいんせい]高級[こうきゅう]ホテル専用[せんよう]にする内容[ないよう]で、一般[いっぱん]市民[しみん]の立[た]ち入[い]りが制限[せいげん]されてしまいます。",
+          "en": "Proposal 4 also preserves the facade with private capital, but turns it exclusively into a foreign luxury members-only hotel, restricting general public access."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "市民[しみん]に開[ひら]かれた水辺[みずべ]空間[くうかん]を残[のこ]しつつ、歴史[れきし]的[てき]景観[けいかん]と財政[ざいせい]の持続[じぞく]可能性[かのうせい]を両立[りょうりつ]できる案[あん]が一番[いちばん]筋[すじ]が通[とお]っているね。委員会[いいんかい]としては、そちらを第一候補[だいいちこうほ]として答申[とうしん]しよう。",
+          "en": "Balancing historic preservation, fiscal sustainability, and an open waterfront for citizens makes the most sense. Let's recommend that one as our top choice."
+        }
+      ],
+      "questionJp": "委員会[いいんかい]はどの案[あん]を第一候補[だいいちこうほ]として推[お]すことに決[き]まりましたか。",
+      "questionEn": "Which proposal did the committee decide to endorse as its top choice?",
+      "choices": [
+        "第一案[だいいちあん]（高層[こうそう]マンションと商業[しょうぎょう]棟[とう]への建[た]て替[か]え）",
+        "第二案[だいにあん]（全額[ぜんがく]市費[しひ]による海事[かいじ]資料館[しりょうかん]）",
+        "第三案[だいさんあん]（官民[かんみん]連携[れんけい]のマーケット・工房[こうぼう]・市民[しみん]広場[ひろば]）",
+        "第四案[だいよんあん]（会員制[かいいんせい]高級[こうきゅう]ホテル専用[せんよう]施設[しせつ]）"
+      ],
+      "choicesEn": [
+        "Proposal 1 (Demolition for high-rise condos & retail tower)",
+        "Proposal 2 (City-funded maritime museum)",
+        "Proposal 3 (Public-private market, artisan studios & civic plaza)",
+        "Proposal 4 (Exclusive members-only luxury hotel)"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Proposal 1 destroys heritage; Proposal 2 strains municipal finances; Proposal 4 excludes citizens. Proposal 3 achieves historic preservation, self-sustaining upkeep via private leases, and public waterfront access.",
+      "keyPhrases": [
+        {
+          "jp": "難色[なんしょく]を示[しめ]す",
+          "reading": "なんしょくをしめす",
+          "en": "to express reluctance / disapproval"
+        },
+        {
+          "jp": "筋[すじ]が通[とお]っている",
+          "reading": "すじがとおっている",
+          "en": "makes logical sense; is well-reasoned"
+        }
+      ]
+    }
+  ]
+}

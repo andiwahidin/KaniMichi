@@ -1,0 +1,236 @@
+{
+  "level": 4,
+  "pack": "n4-pack3",
+  "items": [
+    {
+      "id": "kv-n4-41",
+      "jlpt": 4,
+      "order": 41,
+      "word": "かなり",
+      "reading": "かなり",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "considerably; fairly; quite",
+      "acceptedMeanings": ["considerably", "fairly", "quite", "pretty"],
+      "usageNote": "Indicates a higher degree than expected (かなり難しい = quite difficult).",
+      "example": {
+        "jp": "この問題はかなり難しいですが、頑張ります。",
+        "reading": "このもんだいはかなりむずかしいですが、がんばります。",
+        "en": "This question is quite difficult, but I will do my best."
+      },
+      "quiz": {
+        "sentenceBefore": "駅前の工事は",
+        "sentenceAfter": "進みましたね。",
+        "en": "The construction in front of the station has progressed considerably, hasn't it?",
+        "choices": ["かなり", "めったに", "さっき", "たまに"]
+      }
+    },
+    {
+      "id": "kv-n4-42",
+      "jlpt": 4,
+      "order": 42,
+      "word": "ちゃんと",
+      "reading": "ちゃんと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "properly; neatly; reliably",
+      "acceptedMeanings": ["properly", "neatly", "reliably", "correctly"],
+      "usageNote": "Everyday adverb emphasizing doing something carefully and as expected.",
+      "example": {
+        "jp": "出かける前に、部屋の鍵をちゃんと閉めましたか。",
+        "reading": "でかけるまえに、へやのかぎをちゃんとしめましたか。",
+        "en": "Did you lock the room door properly before going out?"
+      },
+      "quiz": {
+        "sentenceBefore": "毎日",
+        "sentenceAfter": "朝ごはんを食べたほうがいいですよ。",
+        "en": "You should eat breakfast properly every day.",
+        "choices": ["ちゃんと", "うっかり", "ばらばら", "そろそろ"]
+      }
+    },
+    {
+      "id": "kv-n4-43",
+      "jlpt": 4,
+      "order": 43,
+      "word": "たしかに",
+      "reading": "たしかに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "certainly; surely; indeed",
+      "acceptedMeanings": ["certainly", "surely", "indeed", "undoubtedly"],
+      "usageNote": "Often used to agree with someone's point before adding a mild counterpoint (たしかに〜が).",
+      "example": {
+        "jp": "たしかに便利ですが、少し値段が高いですね。",
+        "reading": "たしかにべんりですが、すこしねだんがたかいですね。",
+        "en": "It is certainly convenient, though the price is a bit high."
+      },
+      "quiz": {
+        "sentenceBefore": "あなたの言うとおり、",
+        "sentenceAfter": "この方法が一番安全ですね。",
+        "en": "Just as you say, this method is indeed the safest.",
+        "choices": ["たしかに", "なるほど", "めったに", "もうすぐ"]
+      }
+    },
+    {
+      "id": "kv-n4-44",
+      "jlpt": 4,
+      "order": 44,
+      "word": "なるほど",
+      "reading": "なるほど",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Interjection",
+      "primaryMeaning": "I see; indeed; that makes sense",
+      "acceptedMeanings": ["I see", "indeed", "that makes sense"],
+      "usageNote": "Shows genuine understanding after hearing someone's explanation. Avoid using directly toward a high superior.",
+      "example": {
+        "jp": "なるほど、それで昨日は道が込んでいたんですね。",
+        "reading": "なるほど、それできのうはみちがこんでいたんですね。",
+        "en": "I see—so that's why the roads were crowded yesterday."
+      },
+      "quiz": {
+        "sentenceBefore": "「駅で祭りがあったんですよ。」「",
+        "sentenceAfter": "、だから人が多かったんですね。」",
+        "en": "'There was a festival at the station.' 'I see, that's why there were so many people.'",
+        "choices": ["なるほど", "なるべく", "ぜひ", "きっと"]
+      }
+    },
+    {
+      "id": "kv-n4-45",
+      "jlpt": 4,
+      "order": 45,
+      "word": "それでも",
+      "reading": "それでも",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "even so; nevertheless; still",
+      "acceptedMeanings": ["even so", "nevertheless", "still"],
+      "usageNote": "Connects a difficult condition with a persistent action or result that happens anyway.",
+      "example": {
+        "jp": "雨が強く降っていました。それでも、試合は続きました。",
+        "reading": "あめがつよくふっていました。それでも、しあいはつづきました。",
+        "en": "It was raining heavily. Even so, the match continued."
+      },
+      "quiz": {
+        "sentenceBefore": "昨日はあまり眠れませんでした。",
+        "sentenceAfter": "、大事な試験なので頑張りました。",
+        "en": "I couldn't sleep much yesterday. Even so, it was an important exam so I did my best.",
+        "choices": ["それでも", "それで", "たとえば", "ところで"]
+      }
+    },
+    {
+      "id": "kv-n4-46",
+      "jlpt": 4,
+      "order": 46,
+      "word": "そのうえ",
+      "reading": "そのうえ",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "in addition; furthermore; on top of that",
+      "acceptedMeanings": ["in addition", "furthermore", "on top of that"],
+      "usageNote": "Adds another positive or negative detail on top of the previous sentence.",
+      "example": {
+        "jp": "この部屋は広くて明るいです。そのうえ、駅からも近いです。",
+        "reading": "このへやはひろくてあかるいです。そのうえ、えきからもちかいです。",
+        "en": "This room is spacious and bright. Furthermore, it is close to the station."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は英語が上手です。",
+        "sentenceAfter": "、中国語も少し話せます。",
+        "en": "He is good at English. Moreover, he can speak a little Chinese too.",
+        "choices": ["そのうえ", "ところで", "なぜなら", "それでは"]
+      }
+    },
+    {
+      "id": "kv-n4-47",
+      "jlpt": 4,
+      "order": 47,
+      "word": "ぺこぺこ",
+      "reading": "ぺこぺこ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (な-Adj / Adverb)",
+      "primaryMeaning": "starving; very hungry; bowing repeatedly",
+      "acceptedMeanings": ["starving", "very hungry", "famished"],
+      "usageNote": "Most commonly used in お腹がぺこぺこだ (my stomach is completely empty / starving).",
+      "example": {
+        "jp": "朝から何も食べていないので、お腹がぺこぺこです。",
+        "reading": "あさからなにもたべていないので、おなかがぺこぺこです。",
+        "en": "I haven't eaten anything since morning, so I'm starving."
+      },
+      "quiz": {
+        "sentenceBefore": "たくさん泳いだので、お腹が",
+        "sentenceAfter": "になりました。",
+        "en": "I swam a lot, so I became starving.",
+        "choices": ["ぺこぺこ", "ぴかぴか", "にこにこ", "ぐっすり"]
+      }
+    },
+    {
+      "id": "kv-n4-48",
+      "jlpt": 4,
+      "order": 48,
+      "word": "ざあざあ",
+      "reading": "ざあざあ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "pouring heavily (rain sound)",
+      "acceptedMeanings": ["pouring heavily", "raining heavily", "pouring"],
+      "usageNote": "Sound-word for heavy pouring rain or rushing water; contrasts with しとしと (gentle drizzle).",
+      "example": {
+        "jp": "外では雨がざあざあ降っています。",
+        "reading": "そとではあめがざあざあふっています。",
+        "en": "Outside, the rain is pouring down heavily."
+      },
+      "quiz": {
+        "sentenceBefore": "さっきから雨が",
+        "sentenceAfter": "降っているので、出かけられません。",
+        "en": "It has been pouring heavily since a moment ago, so I can't go out.",
+        "choices": ["ざあざあ", "わくわく", "どきどき", "いらいら"]
+      }
+    },
+    {
+      "id": "kv-n4-49",
+      "jlpt": 4,
+      "order": 49,
+      "word": "アクセサリー",
+      "reading": "あくせさりー",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "jewelry; fashion accessories",
+      "acceptedMeanings": ["jewelry", "accessories", "fashion accessories"],
+      "usageNote": "In Japanese, アクセサリー typically refers to earrings, necklaces, rings, and bracelets rather than phone parts.",
+      "example": {
+        "jp": "友達の誕生日に手作りのアクセサリーを贈りました。",
+        "reading": "ともだちのたんじょうびにてづくりのあくせさりーをおくりました。",
+        "en": "I gave handmade jewelry for my friend's birthday."
+      },
+      "quiz": {
+        "sentenceBefore": "仕事中は目立つ",
+        "sentenceAfter": "を外すことになっています。",
+        "en": "During work hours, we are supposed to remove flashy jewelry.",
+        "choices": ["アクセサリー", "コンセント", "アンケート", "スケジュール"]
+      }
+    },
+    {
+      "id": "kv-n4-50",
+      "jlpt": 4,
+      "order": 50,
+      "word": "メッセージ",
+      "reading": "めっせーじ",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "message; text message",
+      "acceptedMeanings": ["message", "text message"],
+      "usageNote": "Used for phone texts, voicemails, and written greetings.",
+      "example": {
+        "jp": "先生から届いたメッセージをすぐに確認しました。",
+        "reading": "せんせいからとどいためっせーじをすぐにかくにんしました。",
+        "en": "I immediately checked the message that arrived from my teacher."
+      },
+      "quiz": {
+        "sentenceBefore": "電話に出られなかったので、後で",
+        "sentenceAfter": "を送りました。",
+        "en": "I couldn't answer the phone, so I sent a message later.",
+        "choices": ["メッセージ", "マンション", "ビニール", "サラリーマン"]
+      }
+    }
+  ]
+}

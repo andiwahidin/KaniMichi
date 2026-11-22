@@ -1,0 +1,316 @@
+{
+  "level": 5,
+  "pack": "n5-pack3",
+  "items": [
+    {
+      "id": "g-n5-31",
+      "jlpt": 5,
+      "order": 31,
+      "pattern": "～の (kepemilikan & kata ganti)",
+      "reading": "～の",
+      "meaning": "of; 's; one (pronoun substitute)",
+      "structure": "Noun A + の + Noun B / Adj + の",
+      "explanation": "Connects two nouns to show possession, affiliation, or description. When placed after an adjective or noun phrase, の also replaces a previously mentioned noun like English 'one'.",
+      "confusableWith": "After a な-adjective, use な before の (e.g., きれいなの), not の directly.",
+      "examples": [
+        {
+          "jp": "これは姉の傘です。",
+          "reading": "これはあねのかさです。",
+          "en": "This is my older sister's umbrella."
+        },
+        {
+          "jp": "大きいりんごより、小さいのが好きです。",
+          "reading": "おおきいりんごより、ちいさいのがすきです。",
+          "en": "I prefer the small ones over the big apples."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "青いペンは私",
+        "sentenceAfter": "です。",
+        "en": "The blue pen is mine.",
+        "answer": "の",
+        "acceptedAnswers": ["の"],
+        "choices": ["の", "に", "で", "を"]
+      }
+    },
+    {
+      "id": "g-n5-32",
+      "jlpt": 5,
+      "order": 32,
+      "pattern": "～で (tempat aksi & alat/cara)",
+      "reading": "～で",
+      "meaning": "at / in (place of action); by / with (means or tool)",
+      "structure": "Place / Tool / Language + で + Verb",
+      "explanation": "Marks the location where an active event takes place (such as eating, studying, or buying), as well as the tool, transport, or language used to perform an action.",
+      "confusableWith": "Use に (not で) for static existence (います/あります) or destination of movement (行きます).",
+      "examples": [
+        {
+          "jp": "毎日図書館で日本語を勉強します。",
+          "reading": "まいにちとしょかんでにほんごをべんきょうします。",
+          "en": "I study Japanese at the library every day."
+        },
+        {
+          "jp": "はしでラーメンを食べます。",
+          "reading": "はしでらーめんをたべます。",
+          "en": "I eat ramen with chopsticks."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "いつも電車",
+        "sentenceAfter": "学校へ行きます。",
+        "en": "I always go to school by train.",
+        "answer": "で",
+        "acceptedAnswers": ["で"],
+        "choices": ["で", "を", "が", "の"]
+      }
+    },
+    {
+      "id": "g-n5-33",
+      "jlpt": 5,
+      "order": 33,
+      "pattern": "～に (waktu spesifik & tujuan)",
+      "reading": "～に",
+      "meaning": "at / on (specific time); to (destination / recipient)",
+      "structure": "Time / Place / Person + に + Verb",
+      "explanation": "Marks exact points in time (hours, dates, days of the week), the destination of movement, or the indirect recipient of an action.",
+      "confusableWith": "Do NOT attach に to relative time words like 今日 (today), 明日 (tomorrow), 毎日 (every day), or 今週 (this week).",
+      "examples": [
+        {
+          "jp": "毎朝七時に起きます。",
+          "reading": "まいあさしちじにおきます。",
+          "en": "I wake up at 7 o'clock every morning."
+        },
+        {
+          "jp": "母に手紙を書きました。",
+          "reading": "ははにてがみをかきました。",
+          "en": "I wrote a letter to my mother."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "土曜日の午後三時",
+        "sentenceAfter": "駅で会いましょう。",
+        "en": "Let's meet at the station at 3:00 PM on Saturday.",
+        "answer": "に",
+        "acceptedAnswers": ["に"],
+        "choices": ["に", "で", "を", "へ"]
+      }
+    },
+    {
+      "id": "g-n5-34",
+      "jlpt": 5,
+      "order": 34,
+      "pattern": "～から～まで",
+      "reading": "～から～まで",
+      "meaning": "from ... to / until ...",
+      "structure": "Start (Time/Place) + から + End (Time/Place) + まで",
+      "explanation": "Expresses a starting point (から) and an ending point (まで) in either time or physical distance.",
+      "confusableWith": "までに (with に) means 'by a deadline', whereas まで means 'continuously until'.",
+      "examples": [
+        {
+          "jp": "仕事は九時から五時までです。",
+          "reading": "しごとはくじからごじまでです。",
+          "en": "Work is from 9:00 to 5:00."
+        },
+        {
+          "jp": "家から駅まで歩いて十分かかります。",
+          "reading": "いえからえきまであるいてじゅっぷんかかります。",
+          "en": "It takes ten minutes on foot from home to the station."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "銀行は午前九時",
+        "sentenceAfter": "午後三時まで開いています。",
+        "en": "The bank is open from 9:00 AM until 3:00 PM.",
+        "answer": "から",
+        "acceptedAnswers": ["から"],
+        "choices": ["から", "まで", "より", "ほど"]
+      }
+    },
+    {
+      "id": "g-n5-35",
+      "jlpt": 5,
+      "order": 35,
+      "pattern": "～が (tetapi / kalimat pembuka)",
+      "reading": "～が",
+      "meaning": "but; however; (soft introductory transition)",
+      "structure": "Clause A (です/ます/Plain) + が、Clause B",
+      "explanation": "Connects two contrasting clauses ('but'), or softly introduces background context before making a request or asking a question.",
+      "confusableWith": "Unlike でも (which starts a new sentence), が joins two clauses inside one sentence.",
+      "examples": [
+        {
+          "jp": "このレストランはおいしいですが、少し高いです。",
+          "reading": "このれすとらんはおいしいですが、すこしたかいです。",
+          "en": "This restaurant is delicious, but a bit expensive."
+        },
+        {
+          "jp": "すみませんが、駅はどこですか。",
+          "reading": "すみませんが、えきはどこですか。",
+          "en": "Excuse me, where is the station?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日本語の勉強は難しいです",
+        "sentenceAfter": "、とても面白いです。",
+        "en": "Studying Japanese is difficult, but very interesting.",
+        "answer": "が",
+        "acceptedAnswers": ["が"],
+        "choices": ["が", "から", "ので", "と"]
+      }
+    },
+    {
+      "id": "g-n5-36",
+      "jlpt": 5,
+      "order": 36,
+      "pattern": "～後で (あとで)",
+      "reading": "～あとで",
+      "meaning": "after doing ...; later",
+      "structure": "Verb (た-form) / Noun + の + 後で",
+      "explanation": "Indicates that one action takes place after another completed action or event. Always uses the past た-form for verbs, even when talking about the future.",
+      "confusableWith": "Compare with ～前に (uses dictionary form before 前に) and ～てから (emphasizes sequential prerequisite).",
+      "examples": [
+        {
+          "jp": "晩ごはんを食べた後で、散歩します。",
+          "reading": "ばんごはんをたべたあとで、さんぽします。",
+          "en": "After eating dinner, I will take a walk."
+        },
+        {
+          "jp": "授業の後で、友達と話しました。",
+          "reading": "じゅぎょうのあとで、ともだちとはなしました。",
+          "en": "After class, I talked with my friend."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "映画を",
+        "sentenceAfter": "後で、カフェでお茶を飲みましょう。",
+        "en": "After watching the movie, let's drink tea at a café.",
+        "answer": "見た",
+        "acceptedAnswers": ["見た", "みた"],
+        "choices": ["見た", "見る", "見て", "見ない"]
+      }
+    },
+    {
+      "id": "g-n5-37",
+      "jlpt": 5,
+      "order": 37,
+      "pattern": "～方 (かた)",
+      "reading": "～かた",
+      "meaning": "how to do ...; way of doing ...",
+      "structure": "Verb (ます-stem) + 方",
+      "explanation": "Turns a verb into a noun meaning 'the way/method of doing [verb]'. Frequently used with 教えて (teach me), わかりません (don't know), or 難しい (difficult).",
+      "confusableWith": "Attach 方 directly to the ます-stem (e.g., 読みます → 読み方, not 読む方).",
+      "examples": [
+        {
+          "jp": "この漢字の読み方を教えてください。",
+          "reading": "このかんじのよみかたをおしえてください。",
+          "en": "Please teach me how to read this kanji."
+        },
+        {
+          "jp": "新幹線の切符の買い方がわかりません。",
+          "reading": "しんかんせんのきっぷのかいかたがわかりません。",
+          "en": "I don't know how to buy a Shinkansen ticket."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このカメラの使い",
+        "sentenceAfter": "はとても簡単です。",
+        "en": "How to use this camera is very simple.",
+        "answer": "方",
+        "acceptedAnswers": ["方", "かた"],
+        "choices": ["方", "こと", "もの", "とき"]
+      }
+    },
+    {
+      "id": "g-n5-38",
+      "jlpt": 5,
+      "order": 38,
+      "pattern": "～とき (時)",
+      "reading": "～とき",
+      "meaning": "when ...; at the time of ...",
+      "structure": "Verb (Plain) / い-Adj / な-Adj+な / Noun+の + とき",
+      "explanation": "Specifies the time or situation in which an action occurs. Using the dictionary form before とき means 'before/on the way to doing', while the た-form means 'after arriving/completing'.",
+      "confusableWith": "Remember to insert の after a noun (子どものとき) and な after a な-adjective (ひまなとき).",
+      "examples": [
+        {
+          "jp": "日本へ行くとき、お土産を買います。",
+          "reading": "にほんへいくとき、おみやげをかいます。",
+          "en": "When going to Japan (before leaving), I will buy souvenirs."
+        },
+        {
+          "jp": "ひまなとき、よく音楽を聞きます。",
+          "reading": "ひまなとき、よくおんがくをききます。",
+          "en": "When I have free time, I often listen to music."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "子ども",
+        "sentenceAfter": "とき、毎夏海へ行きました。",
+        "en": "When I was a child, I went to the sea every summer.",
+        "answer": "の",
+        "acceptedAnswers": ["の"],
+        "choices": ["の", "な", "に", "で"]
+      }
+    },
+    {
+      "id": "g-n5-39",
+      "jlpt": 5,
+      "order": 39,
+      "pattern": "～ながら (dasar: sambil)",
+      "reading": "～ながら",
+      "meaning": "while doing ... (simultaneous actions)",
+      "structure": "Verb A (ます-stem) + ながら、Verb B",
+      "explanation": "Shows two actions performed simultaneously by the same person. The main action always comes at the end (Verb B), while Verb A is the background action.",
+      "confusableWith": "Both actions must share the same subject; use 間に if two different people act at the same time.",
+      "examples": [
+        {
+          "jp": "音楽を聞きながら、掃除をします。",
+          "reading": "おんがくをききながら、そうじをします。",
+          "en": "I clean while listening to music."
+        },
+        {
+          "jp": "コーヒーを飲みながら、新聞を読みます。",
+          "reading": "こーひーをのみながら、しんぶんをよみます。",
+          "en": "I read the newspaper while drinking coffee."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "テレビを見",
+        "sentenceAfter": "、晩ごはんを食べました。",
+        "en": "I ate dinner while watching TV.",
+        "answer": "ながら",
+        "acceptedAnswers": ["ながら"],
+        "choices": ["ながら", "てから", "まえに", "あとで"]
+      }
+    },
+    {
+      "id": "g-n5-40",
+      "jlpt": 5,
+      "order": 40,
+      "pattern": "～ほしい (欲しがる / 欲しい)",
+      "reading": "～ほしい",
+      "meaning": "to want (an object/thing)",
+      "structure": "Noun + が + ほしいです",
+      "explanation": "Expresses the speaker's desire to have a tangible object or thing. Acts like an い-adjective, so its negative form is ほしくないです and past form is ほしかったです.",
+      "confusableWith": "Use ～たいです for wanting to DO an action (verb), and ～がほしいです for wanting a THING (noun).",
+      "examples": [
+        {
+          "jp": "新しいパソコンがほしいです。",
+          "reading": "あたらしいぱそこんがほしいです。",
+          "en": "I want a new computer."
+        },
+        {
+          "jp": "誕生日に何がほしいですか。",
+          "reading": "たんじょうびになにがほしいですか。",
+          "en": "What do you want for your birthday?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "もっと休みの時間",
+        "sentenceAfter": "ほしいです。",
+        "en": "I want more vacation time.",
+        "answer": "が",
+        "acceptedAnswers": ["が"],
+        "choices": ["が", "で", "に", "から"]
+      }
+    }
+  ]
+}

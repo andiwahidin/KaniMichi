@@ -685,7 +685,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 1 · Tata Bahasa
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              150 Pola Grammar N5–N1
+              200 Pola Grammar N5–N1
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Latihan kalimat rumpang SRS dengan Pilihan Ganda &amp; IME Hiragana.
@@ -695,7 +695,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Mulai <strong className="text-slate-900 dark:text-white">{grammarSummary.started}/150</strong>
+                Mulai <strong className="text-slate-900 dark:text-white">{grammarSummary.started}/200</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
@@ -728,7 +728,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 2 · Non-Kanji SRS
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              200 Kata Kana &amp; Katakana
+              250 Kata Kana &amp; Katakana
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Adverbia, penghubung, onomatope, dan serapan katakana N5–N1.
@@ -738,7 +738,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Mulai <strong className="text-slate-900 dark:text-white">{kanaVocabSummary.started}/200</strong>
+                Mulai <strong className="text-slate-900 dark:text-white">{kanaVocabSummary.started}/250</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
@@ -771,7 +771,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 3 · Membaca Dokkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              75 Wacana &amp; 156 Soal
+              100 Wacana &amp; 209 Soal
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Pengumuman, email bisnis, esai, dan perbandingan A/B dengan timer.
@@ -781,11 +781,11 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/75</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{readingSummary.passed}/100</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>
-                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/156</strong>
+                Benar <strong className="text-[#D97706] dark:text-amber-400">{readingSummary.bestCorrect}/209</strong>
               </span>
             </div>
 
@@ -806,7 +806,7 @@ export const Dashboard: React.FC = () => {
               JLPT Tahap 4 · Mendengarkan Chōkai
             </div>
             <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
-              75 Audio Dialog N5–N1
+              100 Audio Dialog N5–N1
             </h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Kadai, Pointo, Gaiyō, Sokuji Ōtō &amp; Tōgō Rikai dengan transkrip.
@@ -816,7 +816,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <div className="flex flex-wrap items-center gap-2 text-xs font-mono-num text-slate-600 dark:text-slate-300">
               <span>
-                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/75</strong>
+                Lulus <strong className="text-slate-900 dark:text-white">{listeningSummary.passed}/100</strong>
               </span>
               <span aria-hidden="true">·</span>
               <span>

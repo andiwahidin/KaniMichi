@@ -1,0 +1,312 @@
+{
+  "level": 4,
+  "pack": "n4-pack3",
+  "items": [
+    {
+      "id": "l-n4-16",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "引[ひ]っ越[こ]し前[まえ]の手続[てつづ]き",
+      "titleEn": "Pre-Move Procedures Before Leaving an Apartment",
+      "situationEn": "A senior student advises a junior student on what to handle before moving out next week.",
+      "introJp": "男[おとこ]の学生[がくせい]と女[おんな]の学生[がくせい]が引[ひ]っ越[こ]しについて話[はな]しています。男[おとこ]の学生[がくせい]は今日[きょう]中[じゅう]に何[なに]をしなければなりませんか。",
+      "introEn": "A male and female student are talking about moving apartments. What must the male student do before the end of today?",
+      "lines": [
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "来週[らいしゅう]の土曜日[どようび]に引[ひ]っ越[こ]すんですが、何[なに]か忘[わす]れていることがないか心配[しんぱい]で……。",
+          "en": "I'm moving next Saturday, and I'm worried I might be forgetting something..."
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "引[ひ]っ越[こ]し会社[がいしゃ]と、電気[でんき]や水道[すいどう]を止[と]める連絡[れんらく]はもう済[す]んだの？",
+          "en": "Have you already contacted the moving company and arranged to stop electricity and water?"
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "はい、先週[せんしゅう]インターネットで申[もう]し込[こ]みました。あ、ガスだけまだです。",
+          "en": "Yes, I applied online last week. Oh, I haven't done gas yet."
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "ガスは係[かかり]の人[ひと]に来[き]てもらう必要[ひつよう]がある場合[ばあい]もあるから、遅[おそ]くとも一週間[いっしゅうかん]前[まえ]に電話[でんわ]しておいたほうがいいよ。今日[きょう]のうちに連絡[れんらく]しなさい。",
+          "en": "For gas, a technician sometimes needs to come in person, so you should call at least a week in advance. Contact them sometime today."
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "市役所[しやくしょ]の届[とど]けはどうですか。",
+          "en": "What about the city hall notification?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "それは月曜日[げつようび]に授業[じゅぎょう]の合間[あいま]に行[い]けば間[ま]に合[あ]うよ。",
+          "en": "You can make it in time if you go on Monday between classes."
+        }
+      ],
+      "questionJp": "男[おとこ]の学生[がくせい]は今日[きょう]中[じゅう]に何[なに]をしなければなりませんか。",
+      "questionEn": "What must the male student do before the end of today?",
+      "choices": [
+        "引[ひ]っ越[こ]し会社[がいしゃ]を予約[よやく]する",
+        "電気[でんき]と水道[すいどう]を止[と]める",
+        "ガス会社[がいしゃ]に電話[でんわ]する",
+        "市役所[しやくしょ]へ届[とど]けを出[だ]す"
+      ],
+      "choicesEn": [
+        "Book the moving company",
+        "Shut off electricity and water",
+        "Call the gas company",
+        "Submit a notice at city hall"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The moving company, electricity, and water are already arranged, and city hall can wait until Monday. He must call the gas company today (今日のうちに連絡しなさい).",
+      "keyPhrases": [
+        {
+          "jp": "遅[おそ]くとも",
+          "reading": "おそくとも",
+          "en": "at the latest"
+        },
+        {
+          "jp": "今日[きょう]のうちに",
+          "reading": "きょうのうちに",
+          "en": "before the end of today"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-17",
+      "jlpt": 4,
+      "taskType": "point",
+      "titleJp": "レストランの定休日[ていきゅうび]の変更[へんこう]",
+      "titleEn": "Why the Restaurant Changed Its Regular Closing Day",
+      "situationEn": "A regular customer asks a restaurant owner why the shop is now closed on Wednesdays.",
+      "introJp": "レストランでお客[きゃく]さんと店長[てんちょう]が話[はな]しています。この店[みせ]はなぜ定休日[ていきゅうび]を変[か]えましたか。",
+      "introEn": "A customer and a restaurant manager are talking. Why did this restaurant change its regular day off?",
+      "lines": [
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "店長[てんちょう]、来月[らいげつ]から休[やす]みが月曜日[げつようび]じゃなくて水曜日[すいようび]になるんですね。人手[ひとで]が足[た]りないんですか。",
+          "en": "Manager, starting next month you're closing on Wednesdays instead of Mondays, right? Are you short-staffed?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "いや、スタッフは十分[じゅうぶん]いるんですよ。実[じつ]は、うちが使[つか]っている魚[さかな]の市場[いちば]が、今度[こんど]から水曜日[すいようび]に休[やす]みになるんです。",
+          "en": "No, we have plenty of staff. Actually, the fish market we buy from is going to close on Wednesdays from now on."
+        },
+        {
+          "speaker": "Customer",
+          "role": "female",
+          "jp": "ああ、新鮮[しんせん]な魚[さかな]が仕入[しい]れられなくなるからですか。",
+          "en": "Oh, because you wouldn't be able to procure fresh fish?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "そうなんです。それに、月曜日[げつようび]は祝日[しゅくじつ]になることが多[おお]いので、開[あ]けてほしいという声[こえ]も多[おお]かったんですよ。",
+          "en": "Exactly. Plus, Mondays are often national holidays, so many people asked us to stay open then."
+        }
+      ],
+      "questionJp": "この店[みせ]はなぜ定休日[ていきゅうび]を水曜日[すいようび]に変[か]えましたか。",
+      "questionEn": "Why did the restaurant change its regular closing day to Wednesday?",
+      "choices": [
+        "スタッフの数[かず]が減[へ]ったから",
+        "魚[さかな]の市場[いちば]が水曜日[すいようび]に休[やす]みになるから",
+        "水曜日[すいようび]にお客[きゃく]さんが少[すく]ないから",
+        "店[みせ]の掃除[そうじ]を水曜日[すいようび]にしたいから"
+      ],
+      "choicesEn": [
+        "Because the number of staff decreased",
+        "Because the fish market will be closed on Wednesdays",
+        "Because few customers come on Wednesdays",
+        "Because they want to clean the shop on Wednesdays"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The manager explains that the fish market they source from will start closing on Wednesdays, so they couldn't get fresh fish on that day.",
+      "keyPhrases": [
+        {
+          "jp": "定休日[ていきゅうび]",
+          "reading": "ていきゅうび",
+          "en": "regular closing day"
+        },
+        {
+          "jp": "仕入[しい]れる",
+          "reading": "しいれる",
+          "en": "to stock / procure goods"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-18",
+      "jlpt": 4,
+      "taskType": "gaiyou",
+      "titleJp": "美術館[びじゅつかん]での案内[あんない]",
+      "titleEn": "Art Museum Tour Announcement",
+      "situationEn": "A museum guide addresses a tour group right before entering the special exhibition hall.",
+      "introJp": "美術館[びじゅつかん]で係[かかり]の人[ひと]が案内[あんない]をしています。この案内[あんない]で一番[いちばん]伝[つた]えたい注意[ちゅうい]は何[なに]ですか。",
+      "introEn": "A staff member is making an announcement at an art museum. What is the main rule she wants visitors to know?",
+      "lines": [
+        {
+          "speaker": "Guide",
+          "role": "female",
+          "jp": "みなさま、本日[ほんじつ]は特別展[とくべつてん]にお越[こ]しいただき、ありがとうございます。展示室[てんじしつ]に入[はい]る前[まえ]に、写真[しゃしん]撮影[さつえい]についてお知[し]らせします。",
+          "en": "Welcome everyone to today's special exhibition. Before entering the gallery, here is an announcement regarding photography."
+        },
+        {
+          "speaker": "Guide",
+          "role": "female",
+          "jp": "この特別展[とくべつてん]では、ほとんどの作品[さくひん]をスマートフォンで撮影[さつえい]していただけます。ただし、フラッシュを使[つか]うと絵[え]の色[いろ]が変[か]わってしまうため、必[かなら]ずフラッシュを消[け]してください。",
+          "en": "In this special exhibition, you may photograph most works with a smartphone. However, using a flash alters the paintings' colors, so please make sure to turn your flash off."
+        },
+        {
+          "speaker": "Guide",
+          "role": "female",
+          "jp": "また、カメラ禁止[きんし]のマークがついている3点[さんてん]だけは撮影[さつえい]できませんので、ご注意[ちゅうい]ください。",
+          "en": "Also, please note that the three pieces marked with a no-camera symbol may not be photographed."
+        }
+      ],
+      "questionJp": "美術館[びじゅつかん]での写真[しゃしん]撮影[さつえい]について正[ただ]しいのはどれですか。",
+      "questionEn": "Which statement about taking photos at the museum is correct?",
+      "choices": [
+        "すべての作品[さくひん]が撮影[さつえい]禁止[きんし]である",
+        "フラッシュを使[つか]わなければ、禁止[きんし]マークのない作品[さくひん]は撮[と]れる",
+        "スマートフォン以外[いがい]のカメラならフラッシュを使[つか]ってもいい",
+        "特別展[とくべつてん]の3点[さんてん]だけ写真[しゃしん]を撮[と]ることができる"
+      ],
+      "choicesEn": [
+        "All works are strictly prohibited from photography",
+        "Works without a prohibition mark may be photographed without flash",
+        "Non-smartphone cameras may use flash",
+        "Only three special works can be photographed"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Most artworks may be photographed as long as the flash is turned off, except for the 3 pieces carrying a no-camera mark.",
+      "keyPhrases": [
+        {
+          "jp": "ただし",
+          "reading": "ただし",
+          "en": "however; provided that"
+        },
+        {
+          "jp": "フラッシュを消[け]す",
+          "reading": "ふらっしゅをけす",
+          "en": "to turn off the flash"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-19",
+      "jlpt": 4,
+      "taskType": "sokuji",
+      "titleJp": "ホームステイ先[さき]での夕食後[ゆうしょくご]",
+      "titleEn": "Quick Response: Offering to Help After Dinner",
+      "situationEn": "Your host mother finishes serving dinner and you have finished eating.",
+      "introJp": "ホームステイ先[さき]で、ホストマザーが言[い]いました。何[なん]と答[こた]えますか。",
+      "introEn": "Your host mother speaks to you after dinner. How should you reply?",
+      "lines": [
+        {
+          "speaker": "Host Mother",
+          "role": "female",
+          "jp": "あ、お皿[さら]を運[はこ]んでくれてありがとう。あとはわたし一人[ひとり]で洗[あら]うから、ゆっくり休[やす]んでてね。",
+          "en": "Oh, thank you for carrying the plates. I'll wash the rest by myself, so please relax."
+        }
+      ],
+      "questionJp": "何[なん]と答[こた]えますか。",
+      "questionEn": "What is the most natural reply?",
+      "choices": [
+        "いいえ、わたしに拭[ふ]かせてください。お皿[さら]を拭[ふ]くくらいならできますから。",
+        "はい、わかりました。早く[はやく]洗[あら]ってくださいね。",
+        "どういたしまして。料理[りょうり]はまずくなかったですよ。"
+      ],
+      "choicesEn": [
+        "No, please let me dry them. I can at least dry the dishes.",
+        "Yes, understood. Please wash them quickly.",
+        "You're welcome. The food wasn't bad."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "Offering to help dry the dishes (拭かせてください) is polite and warm in a homestay. Options 2 and 3 are rude.",
+      "keyPhrases": [
+        {
+          "jp": "〜させてください",
+          "reading": "させてください",
+          "en": "please let me do..."
+        },
+        {
+          "jp": "〜くらいならできる",
+          "reading": "くらいならできる",
+          "en": "can at least do..."
+        }
+      ]
+    },
+    {
+      "id": "l-n4-20",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "アルバイトのシフト交代[こうたい]",
+      "titleEn": "Swapping a Part-Time Job Shift",
+      "situationEn": "Two part-time café coworkers coordinate a shift swap for this week.",
+      "introJp": "カフェのアルバイト同士[どうし]が話[はな]しています。女[おんな]の人[ひと]は今週[こんしゅう]のいつ働[はたら]くことになりましたか。",
+      "introEn": "Two part-time café workers are talking. When will the woman end up working this week?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "佐藤[さとう]さん、ごめん！今週[こんしゅう]の金曜日[きんようび]の午後[ごご]、急[きゅう]にゼミの発表[はっぴょう]が入[はい]っちゃって、代[か]わってもらえないかな。",
+          "en": "Sato-san, sorry! A seminar presentation suddenly came up this Friday afternoon—could you cover for me?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "金曜日[きんようび]の午後[ごご]かあ……わたし、もともと木曜日[もくようび]の午前[ごぜん]に入[はい]っているんだけど、木曜日[もくようび]と交換[こうかん]してくれるならいいよ。",
+          "en": "Friday afternoon, huh... I'm originally scheduled for Thursday morning, so if you swap Thursday with me, that works."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "木曜日[もくようび]の午前[ごぜん]ね！うん、その時間[じかん]は空[あ]いてるから、ぜひ代[か]わるよ。本当に[ほんとうに]助[たす]かる！",
+          "en": "Thursday morning! Yeah, I'm free then, so I'll definitely take it. That really saves me!"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "よかった。じゃあ店長[てんちょう]にも伝[つた]えておくね。",
+          "en": "Great. I'll let the manager know too."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は今週[こんしゅう]のいつ働[はたら]くことになりましたか。",
+      "questionEn": "When will the woman work this week?",
+      "choices": [
+        "木曜日[もくようび]の午前[ごぜん]",
+        "木曜日[もくようび]の午後[ごご]",
+        "金曜日[きんようび]の午前[ごぜん]",
+        "金曜日[きんようび]の午後[ごご]"
+      ],
+      "choicesEn": [
+        "Thursday morning",
+        "Thursday afternoon",
+        "Friday morning",
+        "Friday afternoon"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "She gives her original Thursday morning shift to the man in exchange for taking his Friday afternoon (金曜日の午後) shift.",
+      "keyPhrases": [
+        {
+          "jp": "代[か]わってもらえないかな",
+          "reading": "かわってもらえないかな",
+          "en": "could you cover for me?"
+        },
+        {
+          "jp": "本当に[ほんとうに]助[たす]かる",
+          "reading": "ほんとうにたすかる",
+          "en": "that really helps me out"
+        }
+      ]
+    }
+  ]
+}

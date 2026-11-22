@@ -1,0 +1,236 @@
+{
+  "level": 2,
+  "pack": "n2-pack3",
+  "items": [
+    {
+      "id": "kv-n2-41",
+      "jlpt": 2,
+      "order": 41,
+      "word": "あくまで",
+      "reading": "あくまで",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "strictly; purely; to the very end",
+      "acceptedMeanings": ["strictly", "purely", "merely", "to the very end"],
+      "usageNote": "Frequently appears in N2/N1 essays and business Japanese to qualify a statement (あくまで目安です = strictly a guideline).",
+      "example": {
+        "jp": "これはあくまで私個人の意見にすぎません。",
+        "reading": "これはあくまでわたしこじんのいけんにすぎません。",
+        "en": "This is strictly nothing more than my personal opinion."
+      },
+      "quiz": {
+        "sentenceBefore": "この数値は",
+        "sentenceAfter": "予測であり、確定したものではありません。",
+        "en": "This figure is strictly a forecast and is not yet finalized.",
+        "choices": ["あくまで", "とっくに", "せめて", "かえって"]
+      }
+    },
+    {
+      "id": "kv-n2-42",
+      "jlpt": 2,
+      "order": 42,
+      "word": "あらかじめ",
+      "reading": "あらかじめ",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "beforehand; in advance",
+      "acceptedMeanings": ["beforehand", "in advance", "ahead of time"],
+      "usageNote": "Very common in formal notices, business emails, and JLPT Dokkai instructions (あらかじめご了承ください).",
+      "example": {
+        "jp": "参加を希望される方は、あらかじめお申し込みください。",
+        "reading": "さんかをきぼうされるかたは、あらかじめおもうしこみください。",
+        "en": "Those wishing to participate, please apply in advance."
+      },
+      "quiz": {
+        "sentenceBefore": "当日は混雑が予想されるため、",
+        "sentenceAfter": "チケットをご購入ください。",
+        "en": "Crowds are expected on the day, so please purchase tickets in advance.",
+        "choices": ["あらかじめ", "あいにく", "むしろ", "たちまち"]
+      }
+    },
+    {
+      "id": "kv-n2-43",
+      "jlpt": 2,
+      "order": 43,
+      "word": "わざとらしく",
+      "reading": "わざとらしく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb (い-Adj)",
+      "primaryMeaning": "unnaturally; artificially; putting it on",
+      "acceptedMeanings": ["unnaturally", "artificially", "forcedly"],
+      "usageNote": "Derived from わざと (on purpose); describes forced praise, fake laughter, or staged acting.",
+      "example": {
+        "jp": "そんなにわざとらしく褒められても、かえって困ってしまう。",
+        "reading": "そんなにわざとらしくほめられても、かえってこまってしまう。",
+        "en": "Being praised so unnaturally actually just makes me feel awkward."
+      },
+      "quiz": {
+        "sentenceBefore": "彼は自分の失敗をごまかすため、",
+        "sentenceAfter": "大きな声で笑った。",
+        "en": "To cover up his mistake, he laughed loudly in an unnatural, forced way.",
+        "choices": ["わざとらしく", "ひとまず", "おそらく", "およそ"]
+      }
+    },
+    {
+      "id": "kv-n2-44",
+      "jlpt": 2,
+      "order": 44,
+      "word": "ひたむきに",
+      "reading": "ひたむきに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb (な-Adj)",
+      "primaryMeaning": "earnestly; single-mindedly; wholeheartedly",
+      "acceptedMeanings": ["earnestly", "single-mindedly", "wholeheartedly", "devotedly"],
+      "usageNote": "Positive literary/journalistic word praising pure, unwavering dedication toward a goal.",
+      "example": {
+        "jp": "目標に向かってひたむきに努力する姿に感動した。",
+        "reading": "もくひょうにむかってひたむきにどりょくするすがたにかんどうした。",
+        "en": "I was moved by the sight of them working single-mindedly toward their goal."
+      },
+      "quiz": {
+        "sentenceBefore": "若手選手たちが勝利を目指して",
+        "sentenceAfter": "練習に取り組んでいる。",
+        "en": "The young athletes are training wholeheartedly in pursuit of victory.",
+        "choices": ["ひたむきに", "あっさり", "ぐったり", "ぼろぼろ"]
+      }
+    },
+    {
+      "id": "kv-n2-45",
+      "jlpt": 2,
+      "order": 45,
+      "word": "もっともらしい",
+      "reading": "もっともらしい",
+      "category": "adverb",
+      "partOfSpeech": "い-Adjective",
+      "primaryMeaning": "plausible; specious; sounding reasonable (on the surface)",
+      "acceptedMeanings": ["plausible", "specious", "seemingly reasonable"],
+      "usageNote": "Often carries mild skepticism: an excuse or argument that sounds convincing superficially.",
+      "example": {
+        "jp": "彼はもっともらしい理由を並べて、会議を欠席した。",
+        "reading": "かれはもっともらしいりゆうをならべて、かいぎをけっせきした。",
+        "en": "He lined up plausible-sounding excuses and skipped the meeting."
+      },
+      "quiz": {
+        "sentenceBefore": "データのない",
+        "sentenceAfter": "説明だけでは、顧客を納得させられない。",
+        "en": "A plausible-sounding explanation without data alone cannot convince clients.",
+        "choices": ["もっともらしい", "しっとりした", "うっとりした", "ばったりな"]
+      }
+    },
+    {
+      "id": "kv-n2-46",
+      "jlpt": 2,
+      "order": 46,
+      "word": "それどころか",
+      "reading": "それどころか",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "far from it; on the contrary",
+      "acceptedMeanings": ["far from it", "on the contrary", "not only that"],
+      "usageNote": "Emphatically escalates or reverses the expectation from the previous sentence.",
+      "example": {
+        "jp": "体調は良くならなかった。それどころか、熱がさらに上がってしまった。",
+        "reading": "たいちょうはよくならなかった。それどころか、ねつがさらにあがってしまった。",
+        "en": "My condition didn't improve. Far from it—my fever rose even higher."
+      },
+      "quiz": {
+        "sentenceBefore": "謝罪があると思っていた。",
+        "sentenceAfter": "、彼は責任をこちらに押し付けてきた。",
+        "en": "I expected an apology. On the contrary, he shifted the blame onto us.",
+        "choices": ["それどころか", "すなわち", "なお", "あるいは"]
+      }
+    },
+    {
+      "id": "kv-n2-47",
+      "jlpt": 2,
+      "order": 47,
+      "word": "ころっと",
+      "reading": "ころっと",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "completely and suddenly (change attitude / forget)",
+      "acceptedMeanings": ["completely", "suddenly", "abruptly"],
+      "usageNote": "Expresses a sudden, effortless flip in opinion, memory, or mood (態度がころっと変わる).",
+      "example": {
+        "jp": "昨日まで反対していたのに、今朝になって態度がころっと変わった。",
+        "reading": "きのうまではんたいしていたのに、けさになってたいどがころっとかわった。",
+        "en": "He opposed it until yesterday, yet this morning his attitude flipped completely."
+      },
+      "quiz": {
+        "sentenceBefore": "あれほど覚えていたはずのパスワードを、",
+        "sentenceAfter": "忘れてしまった。",
+        "en": "I completely and suddenly forgot the password I was sure I knew.",
+        "choices": ["ころっと", "ずらり", "じっと", "めっきり"]
+      }
+    },
+    {
+      "id": "kv-n2-48",
+      "jlpt": 2,
+      "order": 48,
+      "word": "くっきり",
+      "reading": "くっきり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "clearly; sharply; distinctly outlined",
+      "acceptedMeanings": ["clearly", "sharply", "distinctly", "vividly"],
+      "usageNote": "Describes crisp visual outlines such as Mount Fuji against a winter sky or sharp shadows.",
+      "example": {
+        "jp": "冬の朝は空気が澄んでいて、富士山がくっきり見える。",
+        "reading": "ふゆのあさはくうきがすんでいて、ふじさんがくっきりみえる。",
+        "en": "On winter mornings the air is clear, and Mount Fuji is sharply visible."
+      },
+      "quiz": {
+        "sentenceBefore": "雨が上がった後、空に虹が",
+        "sentenceAfter": "と浮かび上がった。",
+        "en": "After the rain stopped, a rainbow stood out vividly in the sky.",
+        "choices": ["くっきり", "ぐったり", "ぼろぼろ", "あっさり"]
+      }
+    },
+    {
+      "id": "kv-n2-49",
+      "jlpt": 2,
+      "order": 49,
+      "word": "コストパフォーマンス",
+      "reading": "こすとぱふぉーまんす",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "cost performance; value for money",
+      "acceptedMeanings": ["cost performance", "value for money", "bang for the buck"],
+      "usageNote": "Often shortened to コスパ in everyday speech; appears in full in N2 business articles.",
+      "example": {
+        "jp": "この製品は耐久性が高く、コストパフォーマンスに優れている。",
+        "reading": "このせいひんはたいきゅうせいがたかく、こすとぱふぉーまんすにすぐれている。",
+        "en": "This product is highly durable and offers excellent value for money."
+      },
+      "quiz": {
+        "sentenceBefore": "品質と価格のバランスから見て、",
+        "sentenceAfter": "が最も高いプランを選んだ。",
+        "en": "Judging by the balance of quality and price, we chose the plan with the best value for money.",
+        "choices": ["コストパフォーマンス", "モチベーション", "フィードバック", "アプローチ"]
+      }
+    },
+    {
+      "id": "kv-n2-50",
+      "jlpt": 2,
+      "order": 50,
+      "word": "ガイドライン",
+      "reading": "がいどらいん",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "guideline; official standards",
+      "acceptedMeanings": ["guideline", "guidelines", "official standards"],
+      "usageNote": "Frequent in JLPT N2/N1 workplace policies, IT notices, and administrative announcements.",
+      "example": {
+        "jp": "情報セキュリティに関する新しいガイドラインが策定された。",
+        "reading": "じょうほうせきゅりてぃにかんするあたらしいがいどらいんがさくていされた。",
+        "en": "New guidelines regarding information security were established."
+      },
+      "quiz": {
+        "sentenceBefore": "社内の",
+        "sentenceAfter": "に沿って、顧客情報を厳重に管理しています。",
+        "en": "We strictly manage customer data in accordance with internal guidelines.",
+        "choices": ["ガイドライン", "ノウハウ", "コンセプト", "ニーズ"]
+      }
+    }
+  ]
+}

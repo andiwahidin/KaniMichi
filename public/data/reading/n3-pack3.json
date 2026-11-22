@@ -1,0 +1,290 @@
+{
+  "level": 3,
+  "pack": "n3-pack3",
+  "items": [
+    {
+      "id": "rd-n3-16",
+      "jlpt": 3,
+      "order": 16,
+      "passageType": "notice",
+      "titleJp": "社内[しゃない]パソコン入替[いれか]え作業[さぎょう]のお知[し]らせ",
+      "titleEn": "Office PC Replacement Maintenance Notice",
+      "recommendedMinutes": 5,
+      "contextEn": "Internal IT notice sent to all company staff regarding upcoming laptop upgrades.",
+      "paragraphs": [
+        "社員[しゃいん]各位[かくい]\n情報[じょうほう]システム部[ぶ]",
+        "来月[らいげつ]一日[ついたち]から順次[じゅんじ]、入社[にゅうしゃ]から四年[よねん]以上[いじょう]経過[けいか]したパソコンを新機種[しんきしゅ]へ交換[こうかん]いたします。対象者[たいしょうしゃ]には、今週[こんしゅう]金曜日[きんようび]までに個別[こべつ]メールで交換日[こうかんび]をお知[し]らせします。",
+        "交換[こうかん]の前日[ぜんじつ]までに、デスクトップ上[じょう]の必要[ひつよう]なファイルは必[かなら]ず社内[しゃない]クラウドへ保存[ほぞん]しておいてください。古い[ふるい]パソコンの返却[へんきゃく]後[ご]はデータを復元[ふくげん]できません。なお、メール履歴[りれき]や社内[しゃない]チャットのデータは自動[じどう]で引き継[ひきつ]がれるため、バックアップは不要[ふよう]です。"
+      ],
+      "translationEn": [
+        "To all employees,\nInformation Systems Department",
+        "Starting on the 1st of next month, we will sequentially replace PCs that are over four years old with new models. Eligible staff will be notified of their exchange date via individual email by this Friday.",
+        "By the day before your exchange, please be sure to save all necessary files on your desktop to the company cloud. Once the old PC is returned, data cannot be recovered. Please note that email history and internal chat data transfer automatically, so backing them up is unnecessary."
+      ],
+      "keyVocab": [
+        { "word": "順次", "reading": "じゅんじ", "en": "sequentially; in order" },
+        { "word": "復元", "reading": "ふくげん", "en": "restoration; data recovery" },
+        { "word": "引き継ぐ", "reading": "ひきつぐ", "en": "to carry over; inherit" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-16-q1",
+          "promptJp": "交換[こうかん]の対象[たいしょう]になった社員[しゃいん]が、前日[ぜんじつ]までにしなければならないことは何[なに]ですか。",
+          "promptEn": "What must eligible employees do by the day before replacement?",
+          "choices": [
+            "メール履歴[りれき]をすべて印刷[いんさつ]して保存[ほぞん]する。",
+            "デスクトップの必要[ひつよう]なファイルを社内[しゃない]クラウドへ保存[ほぞん]する。",
+            "情報[じょうほう]システム部[ぶ]へ交換[こうかん]を申[もう]し込[こ]む。",
+            "社内[しゃない]チャットのデータを手動[しゅどう]で移[うつ]す。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The notice requires saving necessary desktop files to the company cloud by the day before exchange; email and chat transfer automatically."
+        },
+        {
+          "id": "rd-n3-16-q2",
+          "promptJp": "このお知[し]らせの内容[ないよう]に合[あ]っているものはどれですか。",
+          "promptEn": "Which statement matches the notice?",
+          "choices": [
+            "全社員[ぜんしゃいん]のパソコンを一度[いちど]に交換[こうかん]する。",
+            "返却[へんきゃく]したあとも、依頼[いらい]すれば古い[ふるい]データを戻[もど]せる。",
+            "対象者[たいしょうしゃ]には今週[こんしゅう]金曜日[きんようび]までに個別[こべつ]メールが届[とど]く。",
+            "チャット履歴[りれき]は自分[じぶん]でクラウドへ移[うつ]す必要[ひつよう]がある。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Only PCs 4+ years old are replaced sequentially, and eligible staff receive an individual email by this Friday."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-17",
+      "jlpt": 3,
+      "order": 17,
+      "passageType": "email",
+      "titleJp": "工場[こうじょう]見学[けんがく]の日程[にってい]変更[へんこう]のご相談[そうだん]",
+      "titleEn": "Request to Reschedule a Factory Tour",
+      "recommendedMinutes": 5,
+      "contextEn": "Polite business email requesting a schedule adjustment for a university group tour.",
+      "paragraphs": [
+        "青葉[あおば]食品[しょくひん]株式会社[かぶしきがいしゃ] 広報[こうほう]ご担当者[たんとうしゃ]様[さま]\nいつも大変[たいへん]お世話[せわ]になっております。さくら大学[だいがく]の佐々木[ささき]と申[もう]します。",
+        "来月[らいげつ]十二日[じゅうににち]（火[か]）午前[ごぜん]十時[じゅうじ]より予約[よやく]させていただいております工場[こうじょう]見学[けんがく]の件[けん]でご連絡[れんらく]いたしました。急[きゅう]な授業[じゅぎょう]変更[へんこう]により、参加[さんか]予定[よてい]の学生[がくせい]二十五名[にじゅうごめい]のうち半数[はんすう]以上[いじょう]が午前中[ごぜんちゅう]に出席[しゅっせき]できなくなってしまいました。",
+        "誠[まこと]に勝手[かって]なお願いで恐縮[きょうしゅく]ですが、同日[どうじつ]の午後[ごご]二時[にじ]から、または十四日[じゅうよっか]（木[もく]）の午前[ごぜん]十時[じゅうじ]へ変更[へんこう]していただくことは可能[かのう]でしょうか。もしどちらも難[むずか]しい場合[ばあい]は、参加[さんか]できる学生[がくせい]のみで予定[よてい]どおり伺[うかが]います。ご確認[かくにん]のほどよろしくお願いいたします。"
+      ],
+      "translationEn": [
+        "Dear Public Relations Representative, Aoba Foods Co., Ltd.,\nThank you always for your kind support. My name is Sasaki from Sakura University.",
+        "I am writing regarding the factory tour we reserved for Tuesday the 12th of next month at 10:00 AM. Due to a sudden class schedule change, more than half of the 25 planned students can no longer attend in the morning.",
+        "I am terribly sorry for the selfish request, but would it be possible to move it to 2:00 PM on the same day, or to 10:00 AM on Thursday the 14th? If neither is possible, we will visit as originally scheduled with only the students who can attend. Thank you for checking."
+      ],
+      "keyVocab": [
+        { "word": "半数以上", "reading": "はんすういじょう", "en": "more than half" },
+        { "word": "恐縮", "reading": "きょうしゅく", "en": "feeling apologetic/obliged" },
+        { "word": "同日", "reading": "どうじつ", "en": "the same day" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-17-q1",
+          "promptJp": "佐々木[ささき]さんがこのメールを送[おく]った一番[いちばん]の目的[もくてき]は何[なに]ですか。",
+          "promptEn": "What is Sasaki's primary purpose for sending this email?",
+          "choices": [
+            "工場[こうじょう]見学[けんがく]を完全[かんぜん]にキャンセルすること。",
+            "見学[けんがく]の人数[にんずう]を五十名[ごじゅうめい]に増[ふ]やすこと。",
+            "工場[こうじょう]見学[けんがく]の日時[にちじ]を変更[へんこう]できるか相談[そうだん]すること。",
+            "工場[こうじょう]までのバスを手配[てはい]してもらうこと。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Sasaki asks whether the tour can be shifted to 2:00 PM on the 12th or 10:00 AM on the 14th due to a sudden class change."
+        },
+        {
+          "id": "rd-n3-17-q2",
+          "promptJp": "変更[へんこう]が難[むずか]しい場合[ばあい]、佐々木[ささき]さんはどうするつもりですか。",
+          "promptEn": "What does Sasaki plan to do if rescheduling is not possible?",
+          "choices": [
+            "見学[けんがく]を中止[ちゅうし]する。",
+            "参加[さんか]できる学生[がくせい]だけで予定[よてい]どおり訪問[ほうもん]する。",
+            "来月[らいげつ]の末[すえ]に改[あらた]めて申[もう]し込[こ]む。",
+            "オンライン見学[けんがく]に切[き]り替[か]える。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 says \"もしどちらも難しい場合は、参加できる学生のみで予定どおり伺います\"."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-18",
+      "jlpt": 3,
+      "order": 18,
+      "passageType": "short",
+      "titleJp": "「ながらスマホ」が奪[うば]う記憶[きおく]",
+      "titleEn": "Memories Stolen by Distracted Phone Use",
+      "recommendedMinutes": 5,
+      "contextEn": "Short column discussing attention and memory in everyday life.",
+      "paragraphs": [
+        "映画[えいが]を見[み]ながら、あるいは家族[かぞく]と食卓[しょくたく]を囲[かこ]みながら、ついスマートフォンを触[さわ]ってしまうことはないだろうか。ちょっとした通知[つうち]を確認[かくにん]するだけのつもりでも、意識[いしき]が一度[いちど]途切[とぎ]れると、元[もと]の会話[かいわ]や映像[えいぞう]に集中[しゅうちゅう]し直[なお]すのに思[おも]った以上[いじょう]の時間[じかん]がかかる。",
+        "ある心理学[しんりがく]の調査[ちょうさ]では、スマホを机[つくえ]の上[うえ]に置[お]いておくだけで、見[み]ていなくても人[ひと]の注意[ちゅうい]力[りょく]が下[さ]がるという結果[けっか]が出[で]ている。楽[たの]しい時間[じかん]をしっかり記憶[きおく]に残[のこ]すためには、通知[つうち]を切[き]ってカバンの中[なか]にしまっておく工夫[くふう]が効果[こうか]的[てき]だ。"
+      ],
+      "translationEn": [
+        "Have you ever found yourself reaching for your smartphone while watching a movie or sharing a meal with family? Even if you only intend to check a quick notification, once your attention breaks, it takes longer than expected to refocus on the conversation or film.",
+        "In one psychology study, results showed that simply leaving a smartphone on the desk reduces attention even without looking at it. To preserve enjoyable moments vividly in memory, turning off notifications and keeping the phone tucked inside a bag is an effective habit."
+      ],
+      "keyVocab": [
+        { "word": "途切れる", "reading": "とぎれる", "en": "to be interrupted; break off" },
+        { "word": "注意力", "reading": "ちゅういりょく", "en": "power of attention" },
+        { "word": "工夫", "reading": "くふう", "en": "practical measure; ingenuity" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-18-q1",
+          "promptJp": "心理学[しんりがく]の調査[ちょうさ]でわかったことは何[なに]ですか。",
+          "promptEn": "What did the psychology study reveal?",
+          "choices": [
+            "通知[つうち]を見[み]なければスマホを机[つくえ]に置[お]いても影響[えいきょう]はない。",
+            "スマホを机[つくえ]に置[お]いておくだけで注意[ちゅうい]力[りょく]が下[さ]がる。",
+            "映画[えいが]を見[み]ながらスマホを使[つか]うと記憶[きおく]力[りょく]が高[たか]まる。",
+            "家族[かぞく]と食事[しょくじ]するときだけスマホを使[つか]わないほうがいい。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 says merely placing a smartphone on the desk lowers attention even without looking at it."
+        },
+        {
+          "id": "rd-n3-18-q2",
+          "promptJp": "筆者[ひっしゃ]がすすめている工夫[くふう]はどれですか。",
+          "promptEn": "What practical habit does the author recommend?",
+          "choices": [
+            "通知[つうち]を切[き]ってスマホをカバンの中[なか]にしまっておくこと。",
+            "スマホの画面[がめん]を暗[くら]くして机[つくえ]に置[お]くこと。",
+            "一時間[いちじかん]に一回[いっかい]だけ通知[つうち]を確認[かくにん]すること。",
+            "スマートフォンを持[も]たずに外出[がいしゅつ]すること。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The closing sentence recommends turning off notifications and putting the phone away inside a bag."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-19",
+      "jlpt": 3,
+      "order": 19,
+      "passageType": "essay",
+      "titleJp": "「失敗[しっぱい]ノート」をつける意味[いみ]",
+      "titleEn": "The Value of Keeping a \"Mistake Notebook\"",
+      "recommendedMinutes": 5,
+      "contextEn": "Essay about learning effectively from errors in language study and work.",
+      "paragraphs": [
+        "試験[しけん]の練習[れんしゅう]問題[もんだい]を解[と]いたあと、点数[てんすう]だけを見[み]て「よかった」「だめだった」で終[お]わらせてしまう人[ひと]は少[すく]なくない。しかし、本当[ほんとう]に実力[じつりょく]が伸[の]びるのは、間違[まちが]えた問題[もんだい]に向[む]き合[あ]う瞬間[しゅんかん]だ。",
+        "私[わたし]は語学[ごがく]の勉強[べんきょう]をするとき、間違[まちが]えた単語[たんご]や文法[ぶんぽう]だけをまとめた「失敗[しっぱい]ノート」を作[つく]っている。大事[だいじ]なのは正解[せいかい]を写[うつ]すことではなく、「なぜその選択肢[せんたくし]を選[えら]んでしまったのか」という自分[じぶん]の勘違[かんちが]いを一行[いちぎょう]書[か]き添[そ]えることだ。",
+        "そうやって見返[みかえ]してみると、自分[じぶん]に共通[きょうつう]する弱点[じゃくてん]のパターンが見[み]えてくる。失敗[しっぱい]を隠[かく]すのではなく記録[きろく]して活[い]かすことこそが、遠回[とおまわ]りに見[み]えて一番[いちばん]の近道[ちかみち]なのである。"
+      ],
+      "translationEn": [
+        "After solving practice exam questions, quite a few people just look at their score, think \"great\" or \"no good,\" and stop there. However, true ability grows in the moment you confront the questions you got wrong.",
+        "When I study languages, I make a \"mistake notebook\" gathering only the words and grammar I missed. What matters is not copying down the correct answer, but jotting down one line about my own misunderstanding: \"Why did I choose that option?\"",
+        "When you review it that way, common patterns in your weaknesses emerge. Rather than hiding mistakes, recording and leveraging them may look like a detour, yet it is actually the fastest shortcut."
+      ],
+      "keyVocab": [
+        { "word": "勘違い", "reading": "かんちがい", "en": "misunderstanding; misconception" },
+        { "word": "弱点", "reading": "じゃくてん", "en": "weak point" },
+        { "word": "近道", "reading": "ちかみち", "en": "shortcut" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-19-q1",
+          "promptJp": "筆者[ひっしゃ]が「失敗[しっぱい]ノート」で一番[いちばん]大事[だいじ]だと言[い]っていることは何[なに]ですか。",
+          "promptEn": "What does the author say is most important in a mistake notebook?",
+          "choices": [
+            "問題[もんだい]文[ぶん]と正解[せいかい]をきれいに全部[ぜんぶ]写[うつ]すこと。",
+            "毎回[まいかい]のテストの点数[てんすう]をグラフにすること。",
+            "なぜ間違[まちが]えた選択肢[せんたくし]を選[えら]んだか、自分[じぶん]の勘違[かんちが]いを書[か]くこと。",
+            "得意[とくい]な問題[もんだい]ばかり集[あつ]めて自信[じしん]をつけること。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Paragraph 2 stresses writing down one line explaining your own misconception—why you picked the wrong choice—rather than just copying the answer."
+        },
+        {
+          "id": "rd-n3-19-q2",
+          "promptJp": "この文章[ぶんしょう]で筆者[ひっしゃ]が最[もっと]も伝[つた]えたいことはどれですか。",
+          "promptEn": "What is the author's main message?",
+          "choices": [
+            "失敗[しっぱい]を記録[きろく]して原因[げんいん]を分析[ぶんせき]することが、実力[じつりょく]を伸[の]ばす近道[ちかみち]だ。",
+            "練習[れんしゅう]問題[もんだい]はたくさん解[と]くほど点数[てんすう]が自動[じどう]で上[あ]がる。",
+            "語学[ごがく]の勉強[べんきょう]では、ノートを作[つく]ると遠回[とおまわ]りになる。",
+            "間違[まちが]えた問題[もんだい]は気[き]にせず次[つぎ]へ進[すす]むべきだ。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The closing sentence sums up that recording and using mistakes to spot weakness patterns is the quickest shortcut to growth."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-20",
+      "jlpt": 3,
+      "order": 20,
+      "passageType": "comparison",
+      "titleJp": "キャッシュレス決済[けっさい]と現金[げんきん]払い[ばらい]（A/B比較[ひかく]）",
+      "titleEn": "Cashless Payment vs. Paying with Cash (A/B Comparison)",
+      "recommendedMinutes": 6,
+      "contextEn": "Two consumers compare cashless mobile payments and traditional cash.",
+      "labelA": "Aさんの意見[いけん]（キャッシュレス派[は]）",
+      "labelB": "Bさんの意見[いけん]（現金[げんきん]派[は]）",
+      "paragraphs": [
+        "私[わたし]は買[か]い物[もの]のほとんどをスマートフォンやカードで支払[しはら]っている。レジで小銭[こぜに]を探[さが]す手間[てま]がなく、会計[かいけい]が一瞬[いっしゅん]で終[お]わるのが快適[かいてき]だ。",
+        "さらに、アプリを見[み]れば「いつ・どこで・いくら使[つか]ったか」が自動[じどう]で記録[きろく]されるため、家計[かけい]簿[ぼ]をつける必要[ひつよう]がない。ポイントも貯[た]まるので、結果[けっか]的[てき]に節約[せつやく]にもつながっている。"
+      ],
+      "paragraphsB": [
+        "キャッシュレス決済[けっさい]が便利[べんり]なのは認[みと]めるが、私[わたし]はあえて現金[げんきん]を中心[ちゅうしん]に使[つか]っている。スマホでピッと払[はら]うだけだと「お金[かね]が減[へ]った」という実感[じっかん]が薄[うす]く、つい予定[よてい]以上[いじょう]に買[か]いすぎてしまうからだ。",
+        "現金[げんきん]なら、財布[さいふ]の中[なか]の残高[ざんだか]が目[め]に見[み]えてわかるので無駄遣[むだづか]いを防[ふせ]げる。また、停電[ていでん]や通信[つうしん]障害[しょうがい]が起[お]きたときでも確実[かくじつ]に支払[しはら]える安心感[あんしんかん]がある。"
+      ],
+      "translationEn": [
+        "I pay for most of my shopping using a smartphone or card. There is no hassle looking for coins at the register, and checkout finishes in an instant, which feels great.",
+        "Moreover, checking the app shows an automatic record of when, where, and how much I spent, so there is no need to keep a manual budget book. Reward points also accumulate, leading to savings as a result."
+      ],
+      "translationBEn": [
+        "I admit cashless payments are convenient, but I deliberately use mostly cash. Simply tapping a phone gives little tangible feeling that money is decreasing, so I end up buying more than planned.",
+        "With cash, you can visually see the remaining balance in your wallet and prevent wasteful spending. There is also peace of mind knowing you can definitely pay even during power outages or network disruptions."
+      ],
+      "keyVocab": [
+        { "word": "手間", "reading": "てま", "en": "time and trouble; hassle" },
+        { "word": "実感", "reading": "じっかん", "en": "tangible feeling; real sense" },
+        { "word": "無駄遣い", "reading": "むだづかい", "en": "wasteful spending" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-20-q1",
+          "promptJp": "Aさんがキャッシュレス決済[けっさい]を節約[せつやく]に役立[やくだ]つと考[かんが]えている理由[りゆう]はどれですか。",
+          "promptEn": "Why does Person A think cashless payment helps with saving/managing money?",
+          "choices": [
+            "停電[ていでん]のときでも必[かなら]ず支払[しはら]えるから。",
+            "利用[りよう]履歴[りれき]が自動[じどう]で記録[きろく]され、ポイントも貯[た]まるから。",
+            "財布[さいふ]の残高[ざんだか]が目[め]に見[み]えて減[へ]る実感[じっかん]があるから。",
+            "どの店[みせ]でも現金[げんきん]より半額[はんがく]になるから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Person A points out automatic expense tracking in the app and accumulating reward points."
+        },
+        {
+          "id": "rd-n3-20-q2",
+          "promptJp": "Bさんが現金[げんきん]を使[つか]う理由[りゆう]として挙[あ]げているのはどれですか。",
+          "promptEn": "What reason does Person B give for preferring cash?",
+          "choices": [
+            "小銭[こぜに]を集[あつ]めるのが趣味[しゅみ]だから。",
+            "残高[ざんだか]が目[め]に見[み]えて無駄遣[むだづか]いを防[ふせ]げ、通信[つうしん]障害[しょうがい]時[じ]も安心[あんしん]だから。",
+            "カードやスマートフォンの操作[そうさ]がまったくわからないから。",
+            "レジでの会計[かいけい]時間[じかん]がカードより短[みじか]いから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Person B cites seeing the wallet balance clearly to avoid overspending and reliability during outages."
+        },
+        {
+          "id": "rd-n3-20-q3",
+          "promptJp": "AさんとBさんの意見[いけん]について正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement accurately compares Person A and Person B?",
+          "choices": [
+            "二人[ふたり]とも、キャッシュレス決済[けっさい]の便利[べんり]さ自体[じたい]は認[みと]めている。",
+            "二人[ふたり]とも、家計[かけい]簿[ぼ]を紙[かみ]に書[か]くべきだと主張[しゅちょう]している。",
+            "Aさんは現金[げんきん]を一切[いっさい]持[も]つべきではないと言[い]っている。",
+            "Bさんはキャッシュレス決済[けっさい]には利点[りてん]がまったくないと言[い]っている。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Person A praises its speed and convenience, and Person B opens by saying \"キャッシュレス決済が便利なのは認めるが\" (I admit cashless payment is convenient)."
+        }
+      ]
+    }
+  ]
+}

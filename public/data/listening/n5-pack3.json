@@ -1,0 +1,330 @@
+{
+  "level": 5,
+  "pack": "n5-pack3",
+  "items": [
+    {
+      "id": "l-n5-16",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "公園[こうえん]のピクニックの準備[じゅんび]",
+      "titleEn": "Preparing for a Picnic in the Park",
+      "situationEn": "Two friends decide what each person will bring to a picnic tomorrow.",
+      "introJp": "男[おとこ]の人[ひと]と女[おんな]の人[ひと]が明日[あした]のピクニックについて話[はな]しています。男[おとこ]の人[ひと]は何[なに]を持[も]って行[い]きますか。",
+      "introEn": "A man and a woman are talking about tomorrow's picnic. What will the man bring?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "明日[あした]のピクニック、楽しみ[たのしみ]ですね。わたしはおにぎりとサンドイッチを作[つく]って行[い]きますよ。",
+          "en": "I'm looking forward to tomorrow's picnic. I'll make rice balls and sandwiches to bring."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わあ、ありがとうございます。じゃあ、ぼくは飲[の]み物[もの]を買[か]って行[い]きましょうか。",
+          "en": "Wow, thank you. Then shall I buy drinks to bring?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あ、お茶[ちゃ]とジュースは田中[たなか]さんが持[も]って来[く]るって言[い]っていました。だから、リンゴやミカンなど、果物[くだもの]をお願[ねが]いできますか。",
+          "en": "Oh, Tanaka-san said they would bring tea and juice. So could you bring fruit, like apples or mandarins?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わかりました。あと、紙コップ[かみこっぷ]も要[い]りますか。",
+          "en": "Got it. Also, do we need paper cups?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "紙コップ[かみこっぷ]とお皿[さら]はわたしがいっぱい持[も]っていますから、大丈夫[だいじょうぶ]ですよ。",
+          "en": "I have plenty of paper cups and plates, so we're fine."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は何[なに]を持[も]って行[い]きますか。",
+      "questionEn": "What will the man bring?",
+      "choices": [
+        "おにぎりとサンドイッチ",
+        "お茶[ちゃ]とジュース",
+        "果物[くだもの]",
+        "紙コップ[かみこっぷ]とお皿[さら]"
+      ],
+      "choicesEn": [
+        "Rice balls and sandwiches",
+        "Tea and juice",
+        "Fruit",
+        "Paper cups and plates"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The woman brings rice balls, sandwiches, cups, and plates; Tanaka brings drinks; so the woman asks the man to bring fruit (果物).",
+      "keyPhrases": [
+        {
+          "jp": "持[も]って行[い]く",
+          "reading": "もっていく",
+          "en": "to take along; to bring"
+        },
+        {
+          "jp": "要[い]りますか",
+          "reading": "いりますか",
+          "en": "do we need...?"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-17",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "映画館[えいがかん]の次[つぎ]の上映[じょうえい]時間[じかん]",
+      "titleEn": "Next Movie Showtime at the Cinema",
+      "situationEn": "A customer asks a movie theater staff member about the next screening of a film.",
+      "introJp": "映画館[えいがかん]で男[おとこ]の人[ひと]と店員[てんいん]が話[はな]しています。男[おとこ]の人[ひと]は何時[なんじ]の映画[えいが]を見[み]ますか。",
+      "introEn": "A man and a theater staff member are talking. Which showtime will the man watch?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "すみません、『夏[なつ]の海[うみ]』という映画[えいが]のチケットを1枚[いちまい]ください。",
+          "en": "Excuse me, one ticket for the movie 'Summer Sea', please."
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "はい。次[つぎ]は午後[ごご]2時[にじ]からですが、もう席[せき]がいっぱいです。その次[つぎ]の4時[よじ]15分[じゅうごふん]からの回[かい]なら空[あ]いていますよ。",
+          "en": "Certainly. The next showing is at 2:00 PM, but it is already full. The one after that at 4:15 PM has seats available."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "うーん、4時[よじ]15分[じゅうごふん]だと、6時[ろくじ]からの約束[やくそく]に間[ま]に合[あ]わないですね。夜[よる]の回[かい]はありますか。",
+          "en": "Hmm, if it's 4:15, I won't make my 6:00 PM appointment. Is there an evening showing?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "はい、午後[ごご]7時[しちじ]半[はん]からあります。こちらはまだたくさん空[あ]いています。",
+          "en": "Yes, there is one at 7:30 PM. That one still has plenty of seats."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "じゃあ、それをお願[ねが]いします。",
+          "en": "Then I'll take that one, please."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は何時[なんじ]の映画[えいが]を見[み]ますか。",
+      "questionEn": "Which showtime will the man watch?",
+      "choices": [
+        "午後[ごご]2時[にじ]",
+        "午後[ごご]4時[よじ]15分[じゅうごふん]",
+        "午後[ごご]6時[ろくじ]",
+        "午後[ごご]7時[しちじ]半[はん]"
+      ],
+      "choicesEn": [
+        "2:00 PM",
+        "4:15 PM",
+        "6:00 PM",
+        "7:30 PM"
+      ],
+      "answerIndex": 3,
+      "explanationEn": "The 2:00 PM showing is full, and the 4:15 PM showing conflicts with his 6:00 PM plans, so he chooses the 7:30 PM (午後7時半) showing.",
+      "keyPhrases": [
+        {
+          "jp": "席[せき]がいっぱい",
+          "reading": "せきがいっぱい",
+          "en": "seats are full"
+        },
+        {
+          "jp": "間[ま]に合[あ]わない",
+          "reading": "まにあわない",
+          "en": "won't make it in time"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-18",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "郵便局[ゆうびんきょく]で荷物[にもつ]を送[おく]る",
+      "titleEn": "Sending a Parcel at the Post Office",
+      "situationEn": "A woman wants to send a small box abroad and talks with a postal clerk.",
+      "introJp": "郵便局[ゆうびんきょく]で女[おんな]の人[ひと]と局員[きょくいん]が話[はな]しています。女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "introEn": "A woman and a postal clerk are talking at the post office. What will the woman do first?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "すみません、この箱[はこ]を国[くに]の家族[かぞく]に送[おく]りたいんですが。",
+          "en": "Excuse me, I'd like to send this box to my family back home."
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "はい、お預[あず]かりします。あ、箱[はこ]の上[うえ]にまだテープが貼[は]ってありませんね。こちらのテープでしっかり閉[し]めてください。",
+          "en": "Certainly. Oh, the top of the box isn't taped shut yet. Please seal it firmly with this tape."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あ、すみません。すぐ貼[は]ります。紙[かみ]に住所[じゅうしょ]も書[か]きますか。",
+          "en": "Oh, sorry. I'll tape it right away. Should I write the address on a form too?"
+        },
+        {
+          "speaker": "Clerk",
+          "role": "male",
+          "jp": "はい、箱[はこ]を閉[し]めたあとで、あのテーブルで名前[なまえ]と住所[じゅうしょ]を書[か]いて、またこの窓口[まどぐち]へ持[も]って来[き]てください。お金[かね]はそのときでいいですよ。",
+          "en": "Yes, after sealing the box, write the name and address at that table and bring it back to this counter. You can pay then."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the woman do first?",
+      "choices": [
+        "お金[かね]を払[はら]う",
+        "紙[かみ]に住所[じゅうしょ]を書[か]く",
+        "箱[はこ]にテープを貼[は]る",
+        "別[べつ]の窓口[まどぐち]へ行[い]く"
+      ],
+      "choicesEn": [
+        "Pay the postage",
+        "Write the address on the form",
+        "Tape the box shut",
+        "Go to a different counter"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The clerk says to seal the box with tape first (箱を閉めたあとで), then write the address, and pay last.",
+      "keyPhrases": [
+        {
+          "jp": "しっかり閉[し]める",
+          "reading": "しっかりしめる",
+          "en": "to close/seal tightly"
+        },
+        {
+          "jp": "窓口[まどぐち]",
+          "reading": "まどぐち",
+          "en": "service counter / window"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-19",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "ペンを借[か]りたいとき",
+      "titleEn": "Quick Response: Lending a Pen to a Classmate",
+      "situationEn": "A classmate asks to borrow a red pen during class.",
+      "introJp": "教室[きょうしつ]で友[とも]だちが話[はな]しかけました。何[なん]と言[い]いますか。",
+      "introEn": "A friend speaks to you in the classroom. What is the best reply?",
+      "lines": [
+        {
+          "speaker": "Classmate",
+          "role": "female",
+          "jp": "あのう、ちょっと赤[あか]いペンを貸[か]してもらえませんか。",
+          "en": "Um, could you lend me a red pen for a moment?"
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural response?",
+      "choices": [
+        "はい、いいですよ。どうぞ。",
+        "はい、借[か]りてください。",
+        "いいえ、どういたしまして。"
+      ],
+      "choicesEn": [
+        "Yes, sure. Here you go.",
+        "Yes, please borrow it. (awkward)",
+        "No, you're welcome."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"はい、いいですよ。どうぞ。\" is the natural, friendly way to agree to lend something. \"どういたしまして\" only replies to \"ありがとう\".",
+      "keyPhrases": [
+        {
+          "jp": "貸[か]してもらえませんか",
+          "reading": "かしてもらえませんか",
+          "en": "could you lend me...?"
+        },
+        {
+          "jp": "いいですよ、どうぞ",
+          "reading": "いいですよ、どうぞ",
+          "en": "sure, go ahead / here you go"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-20",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "昨日[きのう]の午後[ごご]の予定[よてい]",
+      "titleEn": "Why She Couldn't Go Shopping Yesterday",
+      "situationEn": "Two friends chat about what the woman did yesterday afternoon.",
+      "introJp": "男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]は昨日[きのう]の午後[ごご]、どうして買[か]い物[もの]に行[い]きませんでしたか。",
+      "introEn": "A man and a woman are talking. Why didn't the woman go shopping yesterday afternoon?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "マリアさん、昨日[きのう]の午後[ごご]、駅前[えきまえ]のデパートへ買[か]い物[もの]に行[い]きましたか。",
+          "en": "Maria, did you go shopping at the department store by the station yesterday afternoon?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "行[い]きたかったんですが、行[い]けなかったんです。",
+          "en": "I wanted to go, but I couldn't."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "ええ、どうしてですか。雨[あめ]が強[つよ]かったからですか。",
+          "en": "Oh, why? Because the rain was heavy?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "雨[あめ]は昼[ひる]まえにやみましたよ。でも、朝[あさ]から歯[は]がすごく痛[いた]くなって、午後[ごご]は歯医者[はいしゃ]へ行[い]ったんです。",
+          "en": "The rain stopped before noon. Actually, my tooth started hurting badly in the morning, so I went to the dentist in the afternoon."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "それは大変[たいへん]でしたね。もう大丈夫[だいじょうぶ]ですか。",
+          "en": "That must have been rough. Are you okay now?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "はい、薬[くすり]をもらって、今朝[けさ]はすっかり良[よ]くなりました。",
+          "en": "Yes, I got medicine and it feels completely better this morning."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は昨日[きのう]の午後[ごご]、どうして買[か]い物[もの]に行[い]きませんでしたか。",
+      "questionEn": "Why didn't the woman go shopping yesterday afternoon?",
+      "choices": [
+        "雨[あめ]が強[つよ]かったから",
+        "デパートが休[やす]みだったから",
+        "歯[は]が痛[いた]くて歯医者[はいしゃ]へ行[い]ったから",
+        "風邪[かぜ]をひいて家[いえ]で寝[ね]ていたから"
+      ],
+      "choicesEn": [
+        "Because the rain was heavy",
+        "Because the department store was closed",
+        "Because her tooth hurt and she went to the dentist",
+        "Because she caught a cold and slept at home"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "She notes the rain stopped before noon, and the real reason she couldn't go shopping was a severe toothache that sent her to the dentist (歯医者).",
+      "keyPhrases": [
+        {
+          "jp": "歯医者[はいしゃ]",
+          "reading": "はいしゃ",
+          "en": "dentist"
+        },
+        {
+          "jp": "すっかり良[よ]くなる",
+          "reading": "すっかりよくなる",
+          "en": "to get completely better"
+        }
+      ]
+    }
+  ]
+}

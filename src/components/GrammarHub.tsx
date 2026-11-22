@@ -497,7 +497,7 @@ export const GrammarHub: React.FC = () => {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
           <div className="font-display text-base font-bold text-slate-900 dark:text-white">
-            Memuat 150 Pola Tata Bahasa JLPT N5–N1...
+            Memuat 200 Pola Tata Bahasa JLPT N5–N1...
           </div>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Menyiapkan kalimat contoh, aturan struktur, dan bank kuis SRS.
@@ -1194,21 +1194,21 @@ export const GrammarHub: React.FC = () => {
             onClick={() => setActiveView('kana-vocab')}
             className="px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            2. Kana JLPT (200)
+            2. Kana JLPT (250)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('reading')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            3. Dokkai (75)
+            3. Dokkai (100)
           </button>
           <button
             type="button"
             onClick={() => setActiveView('listening')}
             className="px-3 sm:px-3.5 py-2 rounded-md text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white whitespace-nowrap cursor-pointer"
           >
-            4. Chōkai (75)
+            4. Chōkai (100)
           </button>
           <button
             type="button"

@@ -1,0 +1,236 @@
+{
+  "level": 3,
+  "pack": "n3-pack3",
+  "items": [
+    {
+      "id": "kv-n3-41",
+      "jlpt": 3,
+      "order": 41,
+      "word": "さっぱり",
+      "reading": "さっぱり",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not at all (with negative); refreshing",
+      "acceptedMeanings": ["not at all", "refreshing", "clean"],
+      "usageNote": "With a negative verb (さっぱりわからない) means 'not at all'; as a descriptive word means 'light/refreshing' (food or feeling).",
+      "example": {
+        "jp": "専門用語が多すぎて、話の意味がさっぱりわからなかった。",
+        "reading": "せんもんようごがおおすぎて、はなしのいみがさっぱりわからなかった。",
+        "en": "There was so much technical jargon that I didn't understand the talk at all."
+      },
+      "quiz": {
+        "sentenceBefore": "難しい数学の説明を聞いたが、",
+        "sentenceAfter": "理解できなかった。",
+        "en": "I listened to the difficult math explanation, but I couldn't understand it at all.",
+        "choices": ["さっぱり", "ぎりぎり", "すらすら", "のんびり"]
+      }
+    },
+    {
+      "id": "kv-n3-42",
+      "jlpt": 3,
+      "order": 42,
+      "word": "とたんに",
+      "reading": "とたんに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "the instant; just at that moment",
+      "acceptedMeanings": ["the instant", "immediately after", "just as"],
+      "usageNote": "Marks a sudden, unexpected change right after an action occurs.",
+      "example": {
+        "jp": "窓を開けたとたんに、強い風が吹き込んできた。",
+        "reading": "まどをあけたとたんに、つよいかぜがふきこんできた。",
+        "en": "The instant I opened the window, a strong gust of wind blew in."
+      },
+      "quiz": {
+        "sentenceBefore": "電車を降りた",
+        "sentenceAfter": "、急に大雨が降り出した。",
+        "en": "The instant I got off the train, heavy rain suddenly started falling.",
+        "choices": ["とたんに", "ついでに", "わざと", "せっかく"]
+      }
+    },
+    {
+      "id": "kv-n3-43",
+      "jlpt": 3,
+      "order": 43,
+      "word": "いったい",
+      "reading": "いったい",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "what on earth; in the world",
+      "acceptedMeanings": ["what on earth", "in the world", "actually"],
+      "usageNote": "Used with question words (何, どこ, どうして) to express strong curiosity, surprise, or confusion.",
+      "example": {
+        "jp": "この箱の中身はいったい何が入っているんですか。",
+        "reading": "このはこのなかみはいったいなにがはいっているんですか。",
+        "en": "What on earth is inside this box?"
+      },
+      "quiz": {
+        "sentenceBefore": "約束の時間を一時間も過ぎたのに、彼は",
+        "sentenceAfter": "どこにいるのだろう。",
+        "en": "It's already an hour past our meeting time—where on earth could he be?",
+        "choices": ["いったい", "たいてい", "わりと", "やがて"]
+      }
+    },
+    {
+      "id": "kv-n3-44",
+      "jlpt": 3,
+      "order": 44,
+      "word": "めずらしく",
+      "reading": "めずらしく",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "unusually; rarely (for once)",
+      "acceptedMeanings": ["unusually", "rarely", "for once"],
+      "usageNote": "Highlights that someone is doing something out of their usual habit today.",
+      "example": {
+        "jp": "いつも遅刻する彼が、今日はめずらしく早く来た。",
+        "reading": "いつもちこくするかれが、きょうはめずらしく はやくきた。",
+        "en": "He's always late, yet unusually he arrived early today."
+      },
+      "quiz": {
+        "sentenceBefore": "甘いものが苦手な父が、今日は",
+        "sentenceAfter": "ケーキを食べている。",
+        "en": "My father, who dislikes sweets, is unusually eating cake today.",
+        "choices": ["めずらしく", "わざわざ", "さすがに", "まさか"]
+      }
+    },
+    {
+      "id": "kv-n3-45",
+      "jlpt": 3,
+      "order": 45,
+      "word": "それなのに",
+      "reading": "それなのに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "and yet; despite that; even though",
+      "acceptedMeanings": ["and yet", "despite that", "even though", "nevertheless"],
+      "usageNote": "Expresses dissatisfaction, surprise, or complaint when the outcome contradicts the first sentence.",
+      "example": {
+        "jp": "何度も確認した。それなのに、また同じミスをしてしまった。",
+        "reading": "なんどもかくにんした。それなのに、またおなじみすをしてしまった。",
+        "en": "I checked many times. And yet, I made the same mistake again."
+      },
+      "quiz": {
+        "sentenceBefore": "天気予報では晴れだと言っていた。",
+        "sentenceAfter": "、午後から急に雨が降ってきた。",
+        "en": "The weather forecast said it would be sunny. And yet, rain suddenly fell in the afternoon.",
+        "choices": ["それなのに", "したがって", "つまり", "ちなみに"]
+      }
+    },
+    {
+      "id": "kv-n3-46",
+      "jlpt": 3,
+      "order": 46,
+      "word": "いっぽうで",
+      "reading": "いっぽうで",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "on the other hand; meanwhile",
+      "acceptedMeanings": ["on the other hand", "meanwhile", "while"],
+      "usageNote": "Balances two contrasting sides or viewpoints cleanly in essays and presentations.",
+      "example": {
+        "jp": "在宅勤務は通勤時間が減る。いっぽうで、運動不足になりやすい。",
+        "reading": "ざいたくきんむはつうきんじかんがへる。いっぽうで、うんどうぶそくになりやすい。",
+        "en": "Remote work cuts commute time. On the other hand, it can easily lead to lack of exercise."
+      },
+      "quiz": {
+        "sentenceBefore": "スマートフォンの普及で生活は便利になった。",
+        "sentenceAfter": "、睡眠時間が短くなる人も増えている。",
+        "en": "Life became convenient with smartphones. On the other hand, more people are getting less sleep.",
+        "choices": ["いっぽうで", "しかも", "ただし", "ところが"]
+      }
+    },
+    {
+      "id": "kv-n3-47",
+      "jlpt": 3,
+      "order": 47,
+      "word": "くたくた",
+      "reading": "くたくた",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (な-Adj / Adverb)",
+      "primaryMeaning": "exhausted; worn out; dead tired",
+      "acceptedMeanings": ["exhausted", "worn out", "dead tired", "beat"],
+      "usageNote": "Common JLPT N3 state word describing complete physical fatigue after long work or exercise.",
+      "example": {
+        "jp": "一日中引っ越しの片付けをして、体がくたくたになった。",
+        "reading": "いちにちじゅうひっこしのかたづけをして、からだがくたくたになった。",
+        "en": "After unpacking from the move all day, my body became completely exhausted."
+      },
+      "quiz": {
+        "sentenceBefore": "山を五時間も歩いたので、もう",
+        "sentenceAfter": "で動けません。",
+        "en": "I walked in the mountains for five hours, so I'm too exhausted to move.",
+        "choices": ["くたくた", "ほっと", "すっきり", "ぺらぺら"]
+      }
+    },
+    {
+      "id": "kv-n3-48",
+      "jlpt": 3,
+      "order": 48,
+      "word": "ばたばた",
+      "reading": "ばたばた",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "hectic; rushing about busily; flapping",
+      "acceptedMeanings": ["hectic", "rushing about", "flapping", "frantically busy"],
+      "usageNote": "Frequently heard in workplace Japanese (今週はちょっとばたばたしていて = things have been hectic this week).",
+      "example": {
+        "jp": "年度末で仕事がばたばたしていて、連絡が遅れました。",
+        "reading": "ねんどまつでしごとがばたばたしていて、れんらくがおくれました。",
+        "en": "Work has been hectic at the end of the fiscal year, so my reply was delayed."
+      },
+      "quiz": {
+        "sentenceBefore": "朝寝坊してしまい、家を出るまで",
+        "sentenceAfter": "していた。",
+        "en": "I overslept and was rushing around frantically until leaving the house.",
+        "choices": ["ばたばた", "のんびり", "こっそり", "うろうろ"]
+      }
+    },
+    {
+      "id": "kv-n3-49",
+      "jlpt": 3,
+      "order": 49,
+      "word": "データ",
+      "reading": "でーた",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "data; statistics",
+      "acceptedMeanings": ["data", "statistics", "records"],
+      "usageNote": "Core business & academic katakana noun paired with を集める (collect) or を分析する (analyze).",
+      "example": {
+        "jp": "正確なデータをもとに、新しい計画を立てましょう。",
+        "reading": "せいかくなでーたをもとに、あたらしいけいかくをたてましょう。",
+        "en": "Let's build a new plan based on accurate data."
+      },
+      "quiz": {
+        "sentenceBefore": "調査の結果をまとめた",
+        "sentenceAfter": "を会議で共有しました。",
+        "en": "I shared the data summarizing the survey results at the meeting.",
+        "choices": ["データ", "マナー", "クレーム", "ストレス"]
+      }
+    },
+    {
+      "id": "kv-n3-50",
+      "jlpt": 3,
+      "order": 50,
+      "word": "テーマ",
+      "reading": "てーま",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "theme; topic; subject",
+      "acceptedMeanings": ["theme", "topic", "subject"],
+      "usageNote": "Derived from German 'Thema'; ubiquitous in school essays, discussions, and JLPT reading passages.",
+      "example": {
+        "jp": "今度のスピーチのテーマは「環境保護」です。",
+        "reading": "こんどのすぴーちのてーまは「かんきょうほご」です。",
+        "en": "The topic of the upcoming speech is 'environmental protection'."
+      },
+      "quiz": {
+        "sentenceBefore": "卒業論文の",
+        "sentenceAfter": "を来月までに決めなければなりません。",
+        "en": "I must decide the topic of my graduation thesis by next month.",
+        "choices": ["テーマ", "トラブル", "コスト", "バランス"]
+      }
+    }
+  ]
+}

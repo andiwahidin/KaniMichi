@@ -1,0 +1,265 @@
+{
+  "level": 5,
+  "pack": "n5-pack3",
+  "items": [
+    {
+      "id": "rd-n5-16",
+      "jlpt": 5,
+      "order": 16,
+      "passageType": "notice",
+      "titleJp": "市立[しりつ]図書館[としょかん] 特別[とくべつ]休館[きゅうかん]のお知[し]らせ",
+      "titleEn": "City Library Special Closure Notice",
+      "recommendedMinutes": 3,
+      "contextEn": "Notice posted near the entrance counter of a municipal library.",
+      "paragraphs": [
+        "利用者[りようしゃ]のみなさまへ",
+        "本[ほん]の整理[せいり]のため、十月[じゅうがつ]十五日[じゅうごにち]（火[か]）から十月[じゅうがつ]十七日[じゅうしちにち]（木[もく]）まで図書館[としょかん]を休[やす]みます。十八日[じゅうはちにち]（金[きん]）の午前[ごぜん]九時半[くじはん]から開[あ]けます。",
+        "休[やす]みの間[あいだ]に本[ほん]を返[かえ]したい人[ひと]は、入口[いりぐち]の横[よこ]にある白[しろ]い返却[へんきゃく]ポストに入[い]れてください。CDやDVDはポストに入[い]れないで、十八日[じゅうはちにち]のあとでカウンターへ返[かえ]してください。"
+      ],
+      "translationEn": [
+        "To all library users,",
+        "For book inventory organization, the library will be closed from Tuesday, October 15 to Thursday, October 17. It will reopen at 9:30 AM on Friday, October 18.",
+        "Those who wish to return books during the closure should place them in the white return box next to the entrance. Please do not put CDs or DVDs into the return box; return them to the counter on or after October 18."
+      ],
+      "keyVocab": [
+        { "word": "休館", "reading": "きゅうかん", "en": "library/museum closure" },
+        { "word": "整理", "reading": "せいり", "en": "sorting; organizing" },
+        { "word": "返却ポスト", "reading": "へんきゃくぽすと", "en": "book return drop-box" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-16-q1",
+          "promptJp": "十月[じゅうがつ]十六日[じゅうろくにち]に本[ほん]を返[かえ]したいとき、どうしますか。",
+          "promptEn": "What should you do if you want to return a book on October 16?",
+          "choices": [
+            "カウンターの人[ひと]に渡[わた]す。",
+            "入口[いりぐち]の横[よこ]の白[しろ]いポストに入[い]れる。",
+            "十月[じゅうがつ]十八日[じゅうはちにち]まで家[いえ]に置[お]く。",
+            "電話[でんわ]で図書館[としょかん]に連絡[れんらく]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "October 16 falls during the closure (Oct 15–17), and books can be placed in the white return box next to the entrance."
+        },
+        {
+          "id": "rd-n5-16-q2",
+          "promptJp": "CDを借[か]りている人[ひと]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is correct for someone who borrowed a CD?",
+          "choices": [
+            "休[やす]みの日[ひ]にポストへ入[い]れて返[かえ]す。",
+            "十月[じゅうがつ]十七日[じゅうしちにち]にカウンターへ返[かえ]す。",
+            "ポストに入[い]れず、十八日[じゅうはちにち]のあとでカウンターへ返[かえ]す。",
+            "図書館[としょかん]に返[かえ]さなくてもいい。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The notice explicitly says not to place CDs/DVDs in the drop-box and to return them at the counter on or after October 18."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-17",
+      "jlpt": 5,
+      "order": 17,
+      "passageType": "email",
+      "titleJp": "日本語[にほんご]クラス パーティーの案内[あんない]",
+      "titleEn": "Japanese Class Party Invitation",
+      "recommendedMinutes": 3,
+      "contextEn": "Email from a Japanese teacher to students about a semester-end party.",
+      "paragraphs": [
+        "みなさん、こんにちは。",
+        "来週[らいしゅう]の金曜日[きんようび]の授業[じゅぎょう]のあとで、クラスパーティーをします。場所[ばしょ]は学校[がっこう]の三階[さんがい]の食堂[しょくどう]で、時間[じかん]は午後[ごご]四時[よじ]から六時[ろくじ]までです。",
+        "飲[の]み物[もの]とピザは先生[せんせい]が用意[ようい]します。みなさんは、自分[じぶん]の国[くに]のお菓子[かし]か果物[くだもの]を少[すこ]し持[も]ってきてください。参加[さんか]できる人[ひと]は、水曜日[すいようび]までにメールで教[おし]えてくださいね。\n山本[やまもと]"
+      ],
+      "translationEn": [
+        "Hello everyone,",
+        "Next Friday after class, we will have a class party. The location is the school cafeteria on the 3rd floor, from 4:00 PM to 6:00 PM.",
+        "I (the teacher) will prepare drinks and pizza. Everyone, please bring a small amount of snacks or fruit from your own country. If you can attend, please let me know by email by Wednesday.\nYamamoto"
+      ],
+      "keyVocab": [
+        { "word": "食堂", "reading": "しょくどう", "en": "cafeteria; dining hall" },
+        { "word": "用意", "reading": "ようい", "en": "preparation" },
+        { "word": "参加", "reading": "さんか", "en": "participation" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-17-q1",
+          "promptJp": "学生[がくせい]がパーティーに持[も]っていくものは何[なに]ですか。",
+          "promptEn": "What should the students bring to the party?",
+          "choices": [
+            "ピザと飲[の]み物[もの]",
+            "自分[じぶん]の国[くに]のお菓子[かし]か果物[くだもの]",
+            "お弁当[べんとう]とお茶[ちゃ]",
+            "何[なに]も持[も]っていかなくていい"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Teacher Yamamoto prepares drinks and pizza, and asks students to bring a little snack or fruit from their home country."
+        },
+        {
+          "id": "rd-n5-17-q2",
+          "promptJp": "参加[さんか]したい学生[がくせい]は、いつまでに連絡[れんらく]しますか。",
+          "promptEn": "By when should students who want to join contact the teacher?",
+          "choices": [
+            "火曜日[かようび]まで",
+            "水曜日[すいようび]まで",
+            "木曜日[もくようび]まで",
+            "金曜日[きんようび]の午後[ごご]四時[よじ]まで"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The email states \"水曜日までにメールで教えてください\" (please tell me by email by Wednesday)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-18",
+      "jlpt": 5,
+      "order": 18,
+      "passageType": "short",
+      "titleJp": "私[わたし]の朝[あさ]の習慣[しゅうかん]",
+      "titleEn": "My Morning Routine",
+      "recommendedMinutes": 3,
+      "contextEn": "Short diary entry by a university student about waking up earlier.",
+      "paragraphs": [
+        "去年[きょねん]まで、私[わたし]は毎朝[まいあさ]八時[はちじ]ごろ起[お]きていました。いつも時間[じかん]がなくて、朝[あさ]ごはんを食[た]べないで学校[がっこう]へ行[い]っていました。",
+        "でも、今年[ことし]の四月[しがつ]から六時半[ろくじはん]に起[お]きるようにしました。まず公園[こうえん]を二十分[にじゅっぷん]散歩[さんぽ]します。それから家[いえ]でゆっくりパンとコーヒーを食[た]べて、新聞[しんぶん]を読[よ]みます。早[はや]く起[お]きると、一日[いちにち]がとても元気[げんき]になります。"
+      ],
+      "translationEn": [
+        "Until last year, I used to wake up around 8:00 every morning. I never had time, so I went to school without eating breakfast.",
+        "However, starting this April I began waking up at 6:30. First I take a 20-minute walk in the park. Then at home I leisurely have bread and coffee and read the newspaper. Waking up early makes me feel very energetic all day."
+      ],
+      "keyVocab": [
+        { "word": "習慣", "reading": "しゅうかん", "en": "habit; routine" },
+        { "word": "散歩", "reading": "さんぽ", "en": "stroll; walk" },
+        { "word": "新聞", "reading": "しんぶん", "en": "newspaper" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-18-q1",
+          "promptJp": "この人[ひと]は今[いま]、朝[あさ]起[お]きて最初[さいしょ]に何[なに]をしますか。",
+          "promptEn": "What does the writer do first after waking up now?",
+          "choices": [
+            "パンとコーヒーを食[た]べる。",
+            "公園[こうえん]を二十分[にじゅっぷん]散歩[さんぽ]する。",
+            "新聞[しんぶん]を読[よ]む。",
+            "すぐに学校[がっこう]へ行[い]く。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The second paragraph says \"まず公園を二十分散歩します\" (First, I walk in the park for 20 minutes)."
+        },
+        {
+          "id": "rd-n5-18-q2",
+          "promptJp": "去年[きょねん]のこの人[ひと]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about the writer last year?",
+          "choices": [
+            "六時半[ろくじはん]に起[お]きていた。",
+            "朝[あさ]ごはんを食[た]べないで学校[がっこう]へ行[い]っていた。",
+            "毎朝[まいあさ]公園[こうえん]で走[はし]っていた。",
+            "家[いえ]で新聞[しんぶん]を読[よ]んでいた。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 says until last year they woke up around 8:00 and went to school without eating breakfast."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-19",
+      "jlpt": 5,
+      "order": 19,
+      "passageType": "short",
+      "titleJp": "駅[えき]の近[ちか]くの古本屋[ふるほんや]",
+      "titleEn": "The Used Bookstore Near the Station",
+      "recommendedMinutes": 3,
+      "contextEn": "Short essay introducing a favorite neighborhood shop.",
+      "paragraphs": [
+        "駅[えき]の南口[みなみぐち]から歩[ある]いて三分[さんぷん]のところに、小[ちい]さい古本屋[ふるほんや]があります。お店[みせ]は古[ふる]いですが、中[なか]はとてもきれいで静[しず]かです。",
+        "ここには日本の小説[しょうせつ]や料理[りょうり]の本[ほん]、旅行[りょこう]のガイドブックがたくさんあります。どの本[ほん]も新[あたら]しい本[ほん]の半額[はんがく]ぐらいで買[か]えるので、学生[がくせい]に人気[にんき]があります。私[わたし]も毎週[まいしゅう]土曜日[どようび]に行って、二冊[にさつ]か三冊[さんさつ]買[か]います。"
+      ],
+      "translationEn": [
+        "Three minutes on foot from the South Exit of the station, there is a small used bookstore. The shop is old, but the inside is very clean and quiet.",
+        "Here there are many Japanese novels, cookbooks, and travel guidebooks. Since every book can be bought for about half the price of a new book, it is popular with students. I also go every Saturday and buy two or three books."
+      ],
+      "keyVocab": [
+        { "word": "古本屋", "reading": "ふるほんや", "en": "secondhand bookstore" },
+        { "word": "半額", "reading": "はんがく", "en": "half price" },
+        { "word": "人気", "reading": "にんき", "en": "popularity" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-19-q1",
+          "promptJp": "この古本屋[ふるほんや]が学生[がくせい]に人気[にんき]がある理由[りゆう]は何[なに]ですか。",
+          "promptEn": "Why is this used bookstore popular with students?",
+          "choices": [
+            "新[あたら]しい本[ほん]の半額[はんがく]ぐらいで安[やす]く買[か]えるから。",
+            "お店[みせ]の中[なか]でコーヒーが飲[の]めるから。",
+            "夜[よる]遅[おそ]くまで開[あ]いているから。",
+            "外国[がいこく]の雑誌[ざっし]ばかり置[お]いてあるから。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The passage explains \"どの本も新しい本の半額ぐらいで買えるので、学生に人気があります\"."
+        },
+        {
+          "id": "rd-n5-19-q2",
+          "promptJp": "この人[ひと]はいつこのお店[みせ]へ行[い]きますか。",
+          "promptEn": "When does the writer go to this shop?",
+          "choices": [
+            "毎日[まいにち]",
+            "毎週[まいしゅう]土曜日[どようび]",
+            "毎月[まいつき]一回[いっかい]",
+            "夏休[なつやす]みだけ"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final sentence says \"私も毎週土曜日に行って、二冊か三冊買います\" (I also go every Saturday)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-20",
+      "jlpt": 5,
+      "order": 20,
+      "passageType": "notice",
+      "titleJp": "花見[はなみ]公園[こうえん]のルール",
+      "titleEn": "Cherry Blossom Park Visitor Rules",
+      "recommendedMinutes": 3,
+      "contextEn": "Signboard placed at the gate of a public park during sakura season.",
+      "paragraphs": [
+        "花見[はなみ]公園[こうえん]へようこそ！みんなが楽[たの]しく過[す]ごせるように、次[つぎ]のことを守[まも]ってください。",
+        "一[いち]、お弁当[べんとう]や飲[の]み物[もの]のゴミは、自分[じぶん]で家[いえ]へ持[も]って帰[かえ]ってください。公園[こうえん]にゴミ箱[ばこ]はありません。\n二[に]、桜[さくら]の枝[えだ]を折[お]ったり、木[き]に登[のぼ]ったりしないでください。\n三[さん]、夜[よる]九時[くじ]に公園[こうえん]の電気[でんき]が消[き]えます。九時[くじ]前[まえ]に外[そと]へ出[で]てください。"
+      ],
+      "translationEn": [
+        "Welcome to Hanami Park! So that everyone can enjoy themselves, please follow the rules below.",
+        "1. Please take garbage from bento boxes and drinks home with you. There are no trash cans in the park.\n2. Please do not break cherry blossom branches or climb the trees.\n3. The park lights turn off at 9:00 PM. Please leave the park before 9:00 PM."
+      ],
+      "keyVocab": [
+        { "word": "守る", "reading": "まもる", "en": "to obey; follow (rules)" },
+        { "word": "枝", "reading": "えだ", "en": "tree branch" },
+        { "word": "消える", "reading": "きえる", "en": "to go out; turn off (lights)" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-20-q1",
+          "promptJp": "公園[こうえん]でお弁当[べんとう]を食[た]べたあと、ゴミはどうしますか。",
+          "promptEn": "What should you do with your trash after eating bento in the park?",
+          "choices": [
+            "入口[いりぐち]のゴミ箱[ばこ]に捨[す]てる。",
+            "自分[じぶん]で家[いえ]へ持[も]って帰[かえ]る。",
+            "木[き]の下[した]に置[お]いて帰[かえ]る。",
+            "公園[こうえん]の人[ひと]に渡[わた]す。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Rule 1 states there are no trash cans in the park, so visitors must take their trash home."
+        },
+        {
+          "id": "rd-n5-20-q2",
+          "promptJp": "夜[よる]、何時[なんじ]までに公園[こうえん]を出[で]なければなりませんか。",
+          "promptEn": "By what time must visitors leave the park at night?",
+          "choices": [
+            "夜[よる]七時[しちじ]",
+            "夜[よる]八時[はちじ]",
+            "夜[よる]九時[くじ]",
+            "夜[よる]十時[じゅうじ]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Rule 3 states that park lights turn off at 9:00 PM and asks visitors to exit before 9:00 PM."
+        }
+      ]
+    }
+  ]
+}
