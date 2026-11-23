@@ -1,0 +1,317 @@
+{
+  "level": 4,
+  "pack": "n4-pack4",
+  "items": [
+    {
+      "id": "l-n4-21",
+      "jlpt": 4,
+      "taskType": "kadai",
+      "titleJp": "留学生[りゅうがくせい]交流会[こうりゅうかい]の受付[うけつけ]準備[じゅんび]",
+      "titleEn": "Setting Up the Reception Desk for an Exchange Event",
+      "situationEn": "Two student volunteers divide final setup tasks before guests arrive.",
+      "introJp": "大学[だいがく]で男[おとこ]の学生[がくせい]と女[おんな]の学生[がくせい]が話[はな]しています。女[おんな]の学生[がくせい]はこれから何[なに]をしますか。",
+      "introEn": "A male and female student are talking at university. What will the female student do next?",
+      "lines": [
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "そろそろ交流会[こうりゅうかい]が始[はじ]まるね。椅子[いす]はもう全部[ぜんぶ]並[なら]べたよ。",
+          "en": "The exchange event is about to start. I already lined up all the chairs."
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "ありがとう！じゃあ、私[わたし]は受付[うけつけ]のテーブルに名前[なまえ]カードとペンを置[お]いておこうか。",
+          "en": "Thanks! Then should I put the name cards and pens on the reception table?"
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "あ、それはさっき山田[やまだ]さんがやってくれたよ。それより、会場[かいじょう]の入口[いりぐち]に案内[あんない]のポスターを貼[は]るのを忘[わす]れてたんだ。お願い[ねがい]できる？",
+          "en": "Oh, Yamada-san did that earlier. More importantly, I forgot to put up the directional poster at the venue entrance. Could you do that?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "わかった。すぐテープを持[も]って貼[は]りに行[い]くね。飲[の]み物[もの]の用意[ようい]は？",
+          "en": "Got it. I'll grab tape and go put it up right away. What about preparing the drinks?"
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "飲[の]み物[もの]は僕[ぼく]が冷蔵庫[れいぞうこ]から運[はこ]んでおくよ。",
+          "en": "I'll carry the drinks out from the fridge."
+        }
+      ],
+      "questionJp": "女[おんな]の学生[がくせい]はこれから何[なに]をしますか。",
+      "questionEn": "What will the female student do next?",
+      "choices": [
+        "会場[かいじょう]の椅子[いす]を並[なら]べる",
+        "受付[うけつけ]に名前[なまえ]カードを置[お]く",
+        "入口[いりぐち]に案内[あんない]のポスターを貼[は]る",
+        "冷蔵庫[れいぞうこ]から飲[の]み物[もの]を運[はこ]ぶ"
+      ],
+      "choicesEn": [
+        "Line up the chairs in the hall",
+        "Place name cards at reception",
+        "Put up the directional poster at the entrance",
+        "Carry drinks from the refrigerator"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Chairs and name cards are already done, and the male student will carry the drinks, so the female student goes to put up the poster at the entrance."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "それより",
+          "reading": "それより",
+          "en": "more importantly / rather than that"
+        },
+        {
+          "jp": "貼[は]りに行[い]く",
+          "reading": "はりにいく",
+          "en": "to go put up / stick up"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-22",
+      "jlpt": 4,
+      "taskType": "point",
+      "titleJp": "自転車[じてんしゃ]を修理[しゅうり]に出[だ]した理由[りゆう]",
+      "titleEn": "Why He Took His Bicycle to the Repair Shop",
+      "situationEn": "Two coworkers chat during lunch break about commuting.",
+      "introJp": "会社[かいしゃ]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。男[おとこ]の人[ひと]は今日[きょう]、どうして自転車[じてんしゃ]で来[き]ませんでしたか。",
+      "introEn": "A man and a woman are talking at work. Why didn't the man come by bicycle today?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "あれ、森[もり]さん、今日[きょう]は電車[でんしゃ]で来[き]たんですか。いつも自転車[じてんしゃ]なのに珍[めずら]しいですね。",
+          "en": "Oh, Mori-san, did you come by train today? That's unusual since you always ride your bike."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "ええ、実[じつ]は昨日[きのう]の帰[かえ]り道[みち]で、ブレーキの調子[ちょうし]がおかしくなってしまって。",
+          "en": "Yeah, actually on the way home yesterday, the brakes started acting up."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "それは危[あぶ]ないですね。タイヤがパンクしたのかと思[おも]いましたよ。",
+          "en": "That's dangerous. I thought maybe your tire had gone flat."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "タイヤは大丈夫[だいじょうぶ]だったんですが、坂道[さかみち]でブレーキが効[き]かないと怖[こわ]いですからね。今朝[けさ]自転車屋[じてんしゃや]に預[あず]けてきたんです。",
+          "en": "The tires were fine, but it's scary if the brakes don't work on slopes. I dropped it off at the bike shop this morning."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]は今日[きょう]、どうして自転車[じてんしゃ]で来[き]ませんでしたか。",
+      "questionEn": "Why didn't the man commute by bicycle today?",
+      "choices": [
+        "朝[あさ]から雨[あめ]が降[ふ]っていたから",
+        "タイヤがパンクしてしまったから",
+        "ブレーキの調子[ちょうし]が悪[わる]くて店[みせ]に預[あず]けたから",
+        "自転車[じてんしゃ]を友達[ともだち]に貸[か]しているから"
+      ],
+      "choicesEn": [
+        "Because it was raining since morning",
+        "Because the tire went flat",
+        "Because the brakes were faulty and he left it at a repair shop",
+        "Because he lent his bicycle to a friend"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "He clarifies the tires were fine; the brakes stopped working properly yesterday, so he left the bike at a shop this morning."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "調子[ちょうし]がおかしい",
+          "reading": "ちょうしがおかしい",
+          "en": "acting strange / out of order"
+        },
+        {
+          "jp": "店[みせ]に預[あず]ける",
+          "reading": "みせにあずける",
+          "en": "to drop off / leave at a shop"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-23",
+      "jlpt": 4,
+      "taskType": "gaiyou",
+      "titleJp": "植物園[しょくぶつえん]の案内[あんない]放送[ほうそう]",
+      "titleEn": "Botanical Garden Greenhouse Announcement",
+      "situationEn": "An announcement plays over the speakers inside a municipal botanical garden.",
+      "introJp": "植物園[しょくぶつえん]で案内[あんない]放送[ほうそう]が流[なが]れています。この放送[ほうそう]は何[なに]について知[し]らせていますか。",
+      "introEn": "An announcement is playing at a botanical garden. What is it mainly announcing?",
+      "lines": [
+        {
+          "speaker": "Announcer",
+          "role": "female",
+          "jp": "ご来園[らいえん]のみなさまにお知[し]らせいたします。まもなく午後[ごご]二時[にじ]より、中央[ちゅうおう]温室[おんしつ]にて、専門[せんもん]スタッフによる「熱帯[ねったい]の珍[めずら]しい花[はな]ツアー」を行[おこな]います。",
+          "en": "Attention all visitors. Starting shortly at 2:00 PM in the Central Greenhouse, our specialist staff will host a 'Rare Tropical Flowers Tour.'"
+        },
+        {
+          "speaker": "Announcer",
+          "role": "female",
+          "jp": "今週[こんしゅう]ちょうど咲[さ]き始[はじ]めたばかりの大[おお]きなランの花[はな]などを、約[やく]三十分間[さんじゅっぷんかん]かけてわかりやすくご説明[せつめい]いたします。参加[さんか]は無料[むりょう]で、予約[よやく]も必要[ひつよう]ありません。",
+          "en": "Over about 30 minutes, we will clearly explain highlights such as the large orchids that just began blooming this week. Participation is free and no reservation is required."
+        },
+        {
+          "speaker": "Announcer",
+          "role": "female",
+          "jp": "ご希望[きぼう]の方[かた]は、二時[にじ]五分前[ごふんまえ]までに温室[おんしつ]の入口[いりぐち]前[まえ]へお集[あつ]まりください。",
+          "en": "Those who wish to join, please gather in front of the greenhouse entrance by five minutes before two."
+        }
+      ],
+      "questionJp": "この放送[ほうそう]は何[なに]について知[し]らせていますか。",
+      "questionEn": "What is this announcement mainly about?",
+      "choices": [
+        "植物園[しょくぶつえん]が今日[きょう]早[はや]く閉[し]まること",
+        "温室[おんしつ]で行[おこな]われる無料[むりょう]のガイドツアーの案内[あんない]",
+        "お土産[みやげ]ショップのセールが始[はじ]まること",
+        "花[はな]の写真[しゃしん]を撮[と]ってはいけない場所[ばしょ]の注意[ちゅうい]"
+      ],
+      "choicesEn": [
+        "The botanical garden closing early today",
+        "A free guided tour starting in the greenhouse",
+        "A sale starting at the souvenir shop",
+        "A warning about places where photography is banned"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The announcement invites visitors to a free, no-reservation guided tour of tropical flowers starting at 2:00 PM in the Central Greenhouse."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "まもなく～より",
+          "reading": "まもなく～より",
+          "en": "starting shortly at ..."
+        },
+        {
+          "jp": "お集[あつ]まりください",
+          "reading": "おあつまりください",
+          "en": "please gather (polite)"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-24",
+      "jlpt": 4,
+      "taskType": "sokuji",
+      "titleJp": "道[みち]を教[おし]えてもらったお礼[れい]",
+      "titleEn": "Quick Response: Replying When Someone Thanks You for Directions",
+      "situationEn": "A tourist thanks you warmly after you showed them the way to the station.",
+      "introJp": "道[みち]を教[おし]えたあと、相手[あいて]がお礼[れい]を言[い]いました。何[なん]と言[い]いますか。",
+      "introEn": "After you give directions, the person thanks you. What is the best reply?",
+      "lines": [
+        {
+          "speaker": "Traveler",
+          "role": "male",
+          "jp": "親切[しんせつ]に教[おし]えてくださって、本当[ほんとう]に助[たす]かりました。",
+          "en": "Thank you for kindly showing me the way; that really saved me."
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural response?",
+      "choices": [
+        "いいえ、とんでもないです。お気[き]をつけて。",
+        "はい、お先[さき]に失礼[しつれい]します。",
+        "すみません、もう少[すこ]し待[ま]ってください。"
+      ],
+      "choicesEn": [
+        "Not at all, it was nothing. Have a safe trip.",
+        "Yes, excuse me for leaving first.",
+        "Sorry, please wait a little longer."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"いいえ、とんでもないです\" ('Not at all / Don't mention it') followed by \"お気をつけて\" ('Take care') is the classic polite Japanese reply to warm thanks."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "とんでもないです",
+          "reading": "とんでもないです",
+          "en": "not at all / don't mention it"
+        },
+        {
+          "jp": "お気[き]をつけて",
+          "reading": "おきをつけて",
+          "en": "take care / travel safely"
+        }
+      ]
+    },
+    {
+      "id": "l-n4-25",
+      "jlpt": 4,
+      "taskType": "point",
+      "titleJp": "料理[りょうり]教室[きょうしつ]の日程[にってい]変更[へんこう]",
+      "titleEn": "Rescheduling a Cooking Class Lesson",
+      "situationEn": "A student speaks with a cooking school receptionist about switching her class day.",
+      "introJp": "料理[りょうり]教室[きょうしつ]で女[おんな]の人[ひと]と受付[うけつけ]の人[ひと]が話[はな]しています。女[おんな]の人[ひと]はいつ教室[きょうしつ]に来[き]ますか。",
+      "introEn": "A woman and a receptionist talk at a cooking school. When will the woman attend class?",
+      "lines": [
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "すみません、来週[らいしゅう]の火曜日[かようび]のクラスを予約[よやく]しているんですが、急[きゅう]に仕事[しごと]が入[はい]ってしまって…。別[べつ]の日[ひ]に変[か]えられますか。",
+          "en": "Excuse me, I'm booked for next Tuesday's class, but work suddenly came up... Can I switch to another day?"
+        },
+        {
+          "speaker": "Receptionist",
+          "role": "female2",
+          "jp": "はい、確認[かくにん]しますね。同[おな]じメニューのクラスは、木曜日[もくようび]の夜[よる]と土曜日[どようび]の午前[ごぜん]があります。",
+          "en": "Sure, let me check. Classes with the same menu are on Thursday evening and Saturday morning."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "木曜日[もくようび]の夜[よる]がいいんですが、空[あ]いていますか。",
+          "en": "Thursday evening would be great—are there openings?"
+        },
+        {
+          "speaker": "Receptionist",
+          "role": "female2",
+          "jp": "申[もう]し訳[わけ]ありません、木曜日[もくようび]はもう満席[まんせき]なんです。土曜日[どようび]の午前[ごぜん]十時[じゅうじ]からなら、あと二席[にせき]空[あ]いていますよ。",
+          "en": "I'm sorry, Thursday is already full. For Saturday morning from 10:00 AM, there are two spots left."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "そうですか。じゃあ、土曜日[どようび]にお願[ねが]いします。",
+          "en": "I see. Then please put me down for Saturday."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]はいつ教室[きょうしつ]に来[き]ますか。",
+      "questionEn": "When will the woman attend the cooking class?",
+      "choices": [
+        "来週[らいしゅう]の火曜日[かようび]",
+        "来週[らいしゅう]の木曜日[もくようび]の夜[よる]",
+        "来週[らいしゅう]の土曜日[どようび]の午前[ごぜん]",
+        "再来週[さらいしゅう]の火曜日[かようび]"
+      ],
+      "choicesEn": [
+        "Next Tuesday",
+        "Next Thursday evening",
+        "Next Saturday morning",
+        "The Tuesday after next"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Tuesday conflicts with work and Thursday evening is full (満席), so she switches to Saturday morning at 10:00 AM."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "急[きゅう]に仕事[しごと]が入[はい]る",
+          "reading": "きゅうにしごとがはいる",
+          "en": "work suddenly comes up"
+        },
+        {
+          "jp": "満席[まんせき]",
+          "reading": "まんせき",
+          "en": "fully booked / no seats left"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "level": 3,
+  "pack": "n3-pack4",
+  "items": [
+    {
+      "id": "rd-n3-21",
+      "jlpt": 3,
+      "order": 21,
+      "passageType": "notice",
+      "titleJp": "社内[しゃない]シャトルバス ダイヤ改正[かいせい]のお知らせ",
+      "titleEn": "Company Shuttle Bus Timetable Revision Notice",
+      "recommendedMinutes": 5,
+      "contextEn": "Intranet announcement sent to employees commuting to a suburban office park.",
+      "paragraphs": [
+        "社員[しゃいん]各位[かくい]",
+        "来月[らいげつ]十日[とおか]（月[げつ]）より、最寄[もよ]り駅[えき]と本社[ほんしゃ]ビルを結[むす]ぶ無料[むりょう]シャトルバスの運行[うんこう]スケジュールを一部[いちぶ]変更[へんこう]いたします。最近[さいきん]、午前[ごぜん]八時台[はちじだい]の混雑[こんざつ]が激[はげ]しく、乗[の]り切[き]れないケースが増[ふ]えているためです。",
+        "改正後[かいせいご]は、午前[ごぜん]八時[はちじ]から八時[はちじ]四十分[よんじゅっぷん]の間[あいだ]、現在[げんざい]の十分[じゅっぷん]おきから五分[ごふん]おきに増便[ぞうびん]します。そのかわり、利用者[りようしゃ]の少[すく]ない午後[ごご]二時台[にじだい]の便[びん]は廃止[はいし]となります。また、乗車時[じょうしゃじ]には必[かなら]ず社員証[しゃいんしょう]を運転手[うんてんしゅ]に提示[ていじ]してください。忘[わす]れた場合[ばあい]は、受付[うけつけ]で臨時[りんじ]乗車券[じょうしゃけん]を受け取[うけと]る必要[ひつよう]があります。"
+      ],
+      "translationEn": [
+        "Dear All Employees,",
+        "Starting Monday the 10th of next month, we will partially revise the operating schedule of the free shuttle bus connecting the nearest station and the headquarters building. This is because congestion during the 8:00 AM hour has recently become severe, with increasing cases of passengers being unable to board.",
+        "After the revision, between 8:00 AM and 8:40 AM, service will increase from the current 10-minute intervals to 5-minute intervals. In exchange, the 2:00 PM departures, which have few riders, will be discontinued. In addition, please be sure to show your employee ID card to the driver when boarding. If you forget it, you will need to obtain a temporary boarding pass at reception."
+      ],
+      "keyVocab": [
+        { "word": "増便", "reading": "ぞうびん", "en": "increase in bus/train frequency" },
+        { "word": "廃止", "reading": "はいし", "en": "discontinuation; abolition" },
+        { "word": "提示", "reading": "ていじ", "en": "presentation (of ID/document)" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-21-q1",
+          "promptJp": "今回[こんかい]、シャトルバスのダイヤを変[か]える一番[いちばん]の理由[りゆう]は何[なに]ですか。",
+          "promptEn": "What is the main reason for revising the shuttle bus timetable?",
+          "choices": [
+            "バスの運転手[うんてんしゅ]が足[た]りなくなったから。",
+            "午前[ごぜん]八時台[はちじだい]が混[こ]んで乗[の]れない社員[しゃいん]が増[ふ]えているから。",
+            "午後[ごご]二時台[にじだい]の利用者[りようしゃ]が急[きゅう]に増[ふ]えたから。",
+            "無料[むりょう]バスを有料[ゆうりょう]にする準備[じゅんび]のため。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 states that severe 8:00 AM congestion caused rising cases of employees unable to board."
+        },
+        {
+          "id": "rd-n3-21-q2",
+          "promptJp": "社員証[しゃいんしょう]を家[いえ]に忘[わす]れた社員[しゃいん]は、バスに乗[の]るためにどうしますか。",
+          "promptEn": "What must an employee who forgot their ID card at home do to ride the bus?",
+          "choices": [
+            "料金[りょうきん]を現金[げんきん]で運転手[うんてんしゅ]に払[はら]う。",
+            "その日[ひ]はシャトルバスを使[つか]えない。",
+            "受付[うけつけ]で臨時[りんじ]乗車券[じょうしゃけん]をもらう。",
+            "上司[じょうし]にいっしょに乗[の]ってもらう。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence says anyone who forgets their ID must pick up a temporary pass at reception (受付で臨時乗車券を受け取る)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-22",
+      "jlpt": 3,
+      "order": 22,
+      "passageType": "email",
+      "titleJp": "共同[きょうどう]プレゼン資料[しりょう]の修正[しゅうせい]依頼[いらい]",
+      "titleEn": "Request to Revise Joint Presentation Slides",
+      "recommendedMinutes": 5,
+      "contextEn": "Workplace email from a project lead to a colleague before a client meeting.",
+      "paragraphs": [
+        "高橋[たかはし]さん、お疲れ様[おつかれさま]です。営業部[えいぎょうぶ]の中村[なかむら]です。",
+        "先ほど[さきほど]共有[きょうゆう]していただいた来週[らいしゅう]の提案書[ていあんしょ]、早速[さっそく]確認[かくにん]しました。全体[ぜんたい]の構成[こうせい]がとても分[わ]かりやすく、データも丁寧[ていねい]にまとまっていて助[たす]かります。",
+        "ただ、二点[にてん]だけ修正[しゅうせい]をお願い[ねがい]できますか。まず、五ページ目[め]のグラフですが、去年[きょねん]と今年[ことし]の色[いろ]が似[に]ていて少し見分け[みわけ]にくいので、コントラストをはっきりさせてほしいです。次に、最後[さいご]のスケジュール表[ひょう]について、開始日[かいしび]が「六月一日」になっていますが、先方[せんぽう]との打[う]ち合[あ]わせで「六月十五日」に変更[へんこう]になりました。お忙[いそが]しいところ恐縮[きょうしゅく]ですが、明日[あした]の正午[しょうご]までに差[さ]し替[か]えをお願い[ねがい]いたします。"
+      ],
+      "translationEn": [
+        "Hi Takahashi-san, thank you for your hard work. This is Nakamura from Sales.",
+        "I immediately reviewed the proposal for next week that you shared earlier. The overall structure is very clear and the data is neatly organized, which is a huge help.",
+        "However, could I ask for just two revisions? First, on the chart on page 5, the colors for last year and this year are similar and a bit hard to distinguish, so I'd like clearer contrast. Second, on the final schedule table, the start date is listed as June 1, but in our meeting with the client it was changed to June 15. Apologies while you are busy, but please replace the file by noon tomorrow."
+      ],
+      "keyVocab": [
+        { "word": "提案書", "reading": "ていあんしょ", "en": "written proposal" },
+        { "word": "先方", "reading": "せんぽう", "en": "the other party / client" },
+        { "word": "差し替え", "reading": "さしかえ", "en": "replacement / swap" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-22-q1",
+          "promptJp": "中村[なかむら]さんが高橋[たかはし]さんに頼[たの]んでいる修正[しゅうせい]はどれですか。",
+          "promptEn": "Which revisions is Nakamura requesting from Takahashi?",
+          "choices": [
+            "資料[しりょう]の構成[こうせい]を全部[ぜんぶ]作り直[つくりなお]すこと。",
+            "五ページ目[め]のグラフの色[いろ]を見[み]やすくし、スケジュール表[ひょう]の開始日[かいしび]を直す[なおす]こと。",
+            "データをもっと減[へ]らして三ページにまとめること。",
+            "先方[せんぽう]へ日程[にってい]変更[へんこう]のメールを送[おく]ること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Nakamura asks for two specific edits: clearer color contrast on page 5's chart and changing the start date to June 15."
+        },
+        {
+          "id": "rd-n3-22-q2",
+          "promptJp": "修正[しゅうせい]した資料[しりょう]はいつまでに提出[ていしゅつ]しますか。",
+          "promptEn": "By when should the revised slides be updated?",
+          "choices": [
+            "今日[きょう]の夕方[ゆうがた]まで",
+            "明日[あした]の昼[ひる]十二時[じゅうにじ]まで",
+            "来週[らいしゅう]の月曜日[げつようび]まで",
+            "六月[ろくがつ]十五日[じゅうごにち]まで"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "\"明日の正午まで\" means by noon (12:00 PM) tomorrow."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-23",
+      "jlpt": 3,
+      "order": 23,
+      "passageType": "essay",
+      "titleJp": "「退屈[たいくつ]な時間[じかん]」がくれる発見[はっけん]",
+      "titleEn": "Discoveries Gifted by 'Boring Time'",
+      "recommendedMinutes": 5,
+      "contextEn": "Magazine essay reflecting on constant digital stimulation and creativity.",
+      "paragraphs": [
+        "電車[でんしゃ]を待[ま]つ数分間[すうふんかん]や、レジの列[れつ]に並[なら]んでいる間[あいだ]、私たちは無意識[むいしき]のうちにスマートフォンを取り出[とりだ]してしまう。少しの「すきま時間[じかん]」でもニュースや動画[どうが]で埋[う]めないと、何[なに]か損[そん]をしているような気分[きぶん]になるからだ。",
+        "しかし、常[つね]に外[そと]からの情報[じょうほう]を入[い]れ続[つづ]けていると、頭[あたま]の中[なか]で自分[じぶん]の考[かんが]えを整理[せいり]する余裕[よゆう]がなくなってしまう。実際[じっさい]、仕事[しごと]の良[よ]いアイデアが浮[う]かぶのは、机[つくえ]に向[む]かっているときよりも、何[なに]もせずにお風呂[ふろ]に入[はい]ったり歩[ある]いたりしている「退屈[たいくつ]な時間[じかん]」であることが多[おお]い。",
+        "効率[こうりつ]ばかりを追[お]い求[もと]めて隙間[すきま]をすべて埋[う]めるのではなく、あえて画面[がめん]を閉[と]じてぼんやりする時間[じかん]を残[のこ]しておくことが、結果的[けっかてき]には心[こころ]と発想[はっそう]を豊[ゆた]かにしてくれるのではないだろうか。"
+      ],
+      "translationEn": [
+        "During a few minutes waiting for a train or standing in a checkout line, we unconsciously pull out our smartphones. That is because if we don't fill even a tiny spare moment with news or videos, we feel as though we are missing out.",
+        "However, if we keep feeding external information nonstop, we lose the mental space needed to organize our own thoughts. In fact, good work ideas often surface not while sitting at a desk, but during 'boring moments' when we do nothing in the bath or while walking.",
+        "Rather than chasing efficiency and filling every gap, intentionally closing the screen and leaving time to space out may ultimately enrich both our mind and our creativity."
+      ],
+      "keyVocab": [
+        { "word": "無意識", "reading": "むいしき", "en": "unconsciously" },
+        { "word": "余裕", "reading": "よゆう", "en": "room; margin; leeway" },
+        { "word": "発想", "reading": "はっそう", "en": "idea; creative conception" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-23-q1",
+          "promptJp": "筆者[ひっしゃ]によると、常[つね]にスマートフォンで情報[じょうほう]を見[み]続[つづ]けるとどうなりますか。",
+          "promptEn": "According to the author, what happens when we constantly consume info on smartphones?",
+          "choices": [
+            "最新[さいしん]のニュースに詳[くわ]しくなり、アイデアが増[ふ]える。",
+            "自分[じぶん]の考[かんが]えを頭[あたま]で整理[せいり]する余裕[よゆう]がなくなる。",
+            "電車[でんしゃ]に乗[の]り遅[おく]れることが多[おお]くなる。",
+            "仕事[しごと]の効率[こうりつ]が大幅[おおはば]に上[あ]がる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 says continuous external input leaves no mental room to organize our own thoughts."
+        },
+        {
+          "id": "rd-n3-23-q2",
+          "promptJp": "筆者[ひっしゃ]が勧[すす]めているのはどんな過[す]ごし方[かた]ですか。",
+          "promptEn": "What way of spending time does the author recommend?",
+          "choices": [
+            "すきま時間[じかん]に語学[ごがく]の動画[どうが]を見[み]ること。",
+            "毎日[まいにち]机[つくえ]の前[まえ]で長[なが]く考[かんが]えること。",
+            "あえて画面[がめん]を閉[と]じてぼんやりする時間[じかん]を残[のこ]すこと。",
+            "スマートフォンを完全[かんぜん]に使[つか]わないこと。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final paragraph recommends intentionally closing screens and keeping idle moments to daydream/space out."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-24",
+      "jlpt": 3,
+      "order": 24,
+      "passageType": "short",
+      "titleJp": "修理[しゅうり]して使[つか]い続[つづ]ける文化[ぶんか]",
+      "titleEn": "A Culture of Repairing and Continuing to Use Things",
+      "recommendedMinutes": 5,
+      "contextEn": "Newspaper feature about a volunteer 'repair café' in a local town.",
+      "paragraphs": [
+        "壊[こわ]れた家電[かでん]や傘[かさ]をすぐ買[か]い替[か]えるのではなく、地域[ちいき]の人[ひと]がいっしょに直[なお]す「リペアカフェ」が注目[ちゅうもく]を集[あつ]めている。月[つき]に一度[いちど]、公民館[こうみんかん]に集[あつ]まり、元[もと]エンジニアや裁縫[さいほう]が得意[とくい]な住民[じゅうみん]がボランティアで修理[しゅうり]を手伝[てつだ]う仕組[しく]みだ。",
+        "特徴[とくちょう]的なのは、プロに任[まか]せきりにせず、持[も]ち主[ぬし]も横[よこ]で作業[さぎょう]を見[み]たり手伝[てつだ]ったりすることである。「どうすれば直[なお]るのか分[わ]かると、物[もの]への愛着[あいちゃく]が湧[わ]くし、地域[ちいき]の顔見知[かおみし]りも増[ふ]えた」と参加者[さんかしゃ]は笑顔[えがお]で話[はな]す。"
+      ],
+      "translationEn": [
+        "'Repair Cafés,' where local residents fix broken appliances and umbrellas together instead of immediately replacing them, are attracting attention. Once a month, people gather at the community center, and retired engineers or residents skilled at sewing volunteer to help with repairs.",
+        "What makes it distinctive is that rather than leaving everything to pros, owners watch and assist alongside them. 'When you learn how something can be fixed, you grow more attached to your belongings, and I've also made more acquaintances in the neighborhood,' a participant says with a smile."
+      ],
+      "keyVocab": [
+        { "word": "買い替える", "reading": "かいかえる", "en": "to buy a replacement" },
+        { "word": "愛着", "reading": "あいちゃく", "en": "attachment; affection" },
+        { "word": "顔見知り", "reading": "かおみしり", "en": "acquaintance" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-24-q1",
+          "promptJp": "この「リペアカフェ」の特徴[とくちょう]は何[なに]ですか。",
+          "promptEn": "What is a distinctive feature of this Repair Café?",
+          "choices": [
+            "壊[こわ]れた物[もの]を新品[しんぴん]と交換[こうかん]してくれる。",
+            "修理[しゅうり]を人[ひと]に任[まか]せるだけでなく、持[も]ち主[ぬし]もいっしょに作業[さぎょう]に関[かか]わる。",
+            "毎日[まいにち]店[みせ]が開[あ]いていて有料[ゆうりょう]で直[なお]してくれる。",
+            "電気[でんき]製品[せいひん]だけは修理[しゅうり]できない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 highlights that owners do not simply hand items off; they watch and help with the repair."
+        },
+        {
+          "id": "rd-n3-24-q2",
+          "promptJp": "参加者[さんかしゃ]が感[かん]じている良[よ]い点[てん]に含[ふく]まれるものはどれですか。",
+          "promptEn": "Which benefit did the participant mention?",
+          "choices": [
+            "壊[こわ]れた傘[かさ]を高[たか]く売[う]れるようになった。",
+            "物[もの]への愛着[あいちゃく]が湧[わ]き、地域[ちいき]の知[し]り合[あ]いも増[ふ]えた。",
+            "エンジニアの資格[しかく]が無料[むりょう]で取[と]れるようになった。",
+            "公民館[こうみんかん]の利用料[りようりょう]が安[やす]くなった。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The participant notes gaining greater attachment to belongings (物への愛着が湧く) and making local acquaintances (地域の顔見知りも増えた)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n3-25",
+      "jlpt": 3,
+      "order": 25,
+      "passageType": "comparison",
+      "titleJp": "語学[ごがく]学習[がくしゅう]：一人[ひとり]で学[まな]ぶ vs 教室[きょうしつ]で学[まな]ぶ",
+      "titleEn": "Language Study: Self-Study vs. Classroom Learning (A/B Comparison)",
+      "recommendedMinutes": 6,
+      "contextEn": "Two learners share their views on the best way to study a foreign language.",
+      "labelA": "意見[いけん]A（独学[どくがく]派[は]）",
+      "labelB": "意見[いけん]B（教室[きょうしつ]派[は]）",
+      "paragraphs": [
+        "私[わたし]はアプリや教材[きょうざい]を使[つか]った独学[どくがく]が一番[いちばん]合[あ]っていると思[おも]う。仕事[しごと]のスケジュールが不規則[ふきそく]でも、通勤[つうきん]時間[じかん]や寝[ね]る前[まえ]に自分[じぶん]のペースで進[すす]められるからだ。苦手[にがて]な文法[ぶんぽう]だけを何度[なんど]も復習[ふくしゅう]できる点[てん]も効率[こうりつ]がいい。ただし、話[はな]す機会[きかい]が減[へ]りやすいので、週末[しゅうまつ]はオンライン会話[かいわ]を取り入[とりい]れて補[おぎな]っている。"
+      ],
+      "paragraphsB": [
+        "自分[じぶん]一人[ひとり]だと、忙[いそが]しいときについ勉強[べんきょう]を休[やす]んでしまいがちだ。その点[てん]、毎週[まいしゅう]決[き]まった曜日[ようび]に教室[きょうしつ]へ通[かよ]えば、仲間[なかま]と励[はげ]まし合[あ]いながら習慣[しゅうかん]を保[たも]てる。先生[せんせい]にその場[ば]で発音[はつおん]の癖[くせ]や微妙[びみょう]なニュアンスを質問[しつもん]できるのも大[おお]きな魅力[みりょく]だ。もちろん、授業[じゅぎょう]の復習[ふくしゅう]は家[いえ]で自分[じぶん]でやる必要[ひつよう]がある。"
+      ],
+      "translationEn": [
+        "Opinion A: I think self-study using apps and textbooks suits me best. Even with an irregular work schedule, I can progress at my own pace during my commute or before bed. Being able to repeatedly review only my weak grammar points is also efficient. However, since speaking opportunities easily drop, I supplement it with online conversation on weekends."
+      ],
+      "translationBEn": [
+        "Opinion B: On my own, I tend to skip studying whenever I get busy. In that respect, attending a classroom on a fixed day each week lets me maintain a habit while encouraging one another with classmates. Being able to ask the teacher right on the spot about pronunciation habits or subtle nuances is also a major appeal. Of course, reviewing lessons still has to be done by myself at home."
+      ],
+      "keyVocab": [
+        { "word": "独学", "reading": "どくがく", "en": "self-study" },
+        { "word": "補う", "reading": "おぎなう", "en": "to supplement; make up for" },
+        { "word": "励まし合う", "reading": "はげましあう", "en": "to encourage each other" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n3-25-q1",
+          "promptJp": "意見[いけん]Aの人[ひと]が、独学[どくがく]の弱点[じゃくてん]を補[おぎな]うためにしていることは何[なに]ですか。",
+          "promptEn": "What does Writer A do to compensate for the weak point of self-study?",
+          "choices": [
+            "毎週[まいしゅう]学校[がっこう]の教室[きょうしつ]に通[かよ]っている。",
+            "週末[しゅうまつ]にオンライン会話[かいわ]を取り入[とりい]れている。",
+            "仕事[しごと]のスケジュールを固定[こてい]に変[か]えた。",
+            "文法[ぶんぽう]の勉強[べんきょう]をやめて会話[かいわ]だけしている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Writer A says speaking opportunities drop in self-study, so they supplement with weekend online conversation."
+        },
+        {
+          "id": "rd-n3-25-q2",
+          "promptJp": "意見[いけん]Aと意見[いけん]Bの両方[りょうほう]から言[い]えることはどれですか。",
+          "promptEn": "What can be inferred from both Opinion A and Opinion B?",
+          "choices": [
+            "どちらの学習法[がくしゅうほう]でも、それぞれの工夫[くふう]や自主的[じしゅてき]な取[と]り組[く]みが必要[ひつよう]である。",
+            "教室[きょうしつ]に通[かよ]えば家[いえ]で復習[ふくしゅう]する必要[ひつよう]はまったくない。",
+            "独学[どくがく]では発音[はつおん]を一切[いっさい]練習[れんしゅう]できない。",
+            "二人[ふたり]とも語学[ごがく]アプリは役[やく]に立[た]たないと考え[かんがえ]ている。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Writer A supplements self-study with online speaking, while Writer B notes home review is still necessary alongside class — both require personal effort/adaptation."
+        }
+      ]
+    }
+  ]
+}

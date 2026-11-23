@@ -281,6 +281,7 @@ export async function fetchCloudSrsState(
       autoAdvanceDelayMs: rawSettings.autoAdvanceDelayMs ?? 1500,
       includeVocabListeningQuiz: rawSettings.includeVocabListeningQuiz ?? true,
       includeVocabPronunciationQuiz: rawSettings.includeVocabPronunciationQuiz ?? true,
+      srsMode: rawSettings.srsMode ?? 'open',
     },
     streakDays: row.streak_days ?? 0,
     lastActiveDate: row.last_active_date ?? null,
@@ -320,6 +321,7 @@ export async function saveCloudSrsState(
       includeVocabListeningQuiz: state.settings.includeVocabListeningQuiz ?? true,
       includeVocabPronunciationQuiz:
         state.settings.includeVocabPronunciationQuiz ?? true,
+      srsMode: state.settings.srsMode ?? 'open',
       _moduleProgress: moduleProgress,
     },
     streak_days: state.streakDays,

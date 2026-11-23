@@ -3,7 +3,14 @@ import { ChevronLeft, ChevronRight, Lock, Search } from 'lucide-react';
 import { getTierForLevel, LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { ItemType, SrsCategory } from '../types/curriculum';
-import { getCategoryLabel, getItemTypeLabel, getSrsCategory } from '../utils/srs';
+import {
+  getCategoryLabel,
+  getItemTypeLabel,
+  getSrsCategory,
+  getSrsPolicy,
+  resolveSrsMode,
+  SRS_STAGE_NAMES,
+} from '../utils/srs';
 
 interface CurriculumBrowserProps {
   mode: 'levels' | 'radicals' | 'kanji' | 'vocabulary';
@@ -293,26 +300,39 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
             </div>
           </div>
 
-          {renderGroup(
-            '1. Radikal (Fondasi Bentuk)',
-            'Pelajari komponen visual dasar hingga tahap Guru.',
-            'radical',
-            radicals
-          )}
+          {(() => {
+            const srsPolicy = getSrsPolicy(resolveSrsMode(state.settings));
+            const unlockLabel =
+              srsPolicy.unlockDepStage === 1
+                ? 'selesai Lesson'
+                : `mencapai ${SRS_STAGE_NAMES[srsPolicy.unlockDepStage]}`;
+            return (
+              <>
+                {renderGroup(
+                  '1. Radikal (Fondasi Bentuk)',
+                  srsPolicy.unlockDepStage === 1
+                    ? 'Selesaikan Lesson radikal untuk langsung membuka Kanji terkait.'
+                    : `Pelajari komponen visual dasar hingga tahap ${SRS_STAGE_NAMES[srsPolicy.unlockDepStage]}.`,
+                  'radical',
+                  radicals
+                )}
 
-          {renderGroup(
-            '2. Kanji (Kombinasi Radikal)',
-            'Terbuka otomatis saat semua radikal penyusunnya mencapai Guru.',
-            'kanji',
-            kanjis
-          )}
+                {renderGroup(
+                  '2. Kanji (Kombinasi Radikal)',
+                  `Terbuka otomatis saat semua radikal penyusunnya ${unlockLabel}.`,
+                  'kanji',
+                  kanjis
+                )}
 
-          {renderGroup(
-            '3. Kosakata (Penerapan Nyata)',
-            'Terbuka otomatis saat kanji penyusunnya mencapai Guru.',
-            'vocabulary',
-            vocabs
-          )}
+                {renderGroup(
+                  '3. Kosakata (Penerapan Nyata)',
+                  `Terbuka otomatis saat kanji penyusunnya ${unlockLabel}.`,
+                  'vocabulary',
+                  vocabs
+                )}
+              </>
+            );
+          })()}
         </div>
       </main>
     );

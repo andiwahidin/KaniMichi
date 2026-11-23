@@ -1,0 +1,236 @@
+{
+  "level": 2,
+  "pack": "n2-pack4",
+  "items": [
+    {
+      "id": "kv-n2-51",
+      "jlpt": 2,
+      "order": 51,
+      "word": "いまさら",
+      "reading": "いまさら",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "now (when it is too late); at this late stage",
+      "acceptedMeanings": ["now", "at this late stage", "too late now"],
+      "usageNote": "Conveys regret or futility that taking action now is belated ('It's too late to apologize now').",
+      "example": {
+        "jp": "締切を過ぎてしまったので、いまさら後悔しても仕方がない。",
+        "reading": "しめきりをすぎてしまったので、いまさらこうかいしてもしようがない。",
+        "en": "Since the deadline has already passed, there is no use regretting it at this late stage."
+      },
+      "quiz": {
+        "sentenceBefore": "出発の直前になって、",
+        "sentenceAfter": "予定を変えるわけにはいかない。",
+        "en": "Right before departure, we cannot possibly change the schedule at this late stage.",
+        "choices": ["いまさら", "あらかじめ", "ひとまず", "とっくに"]
+      }
+    },
+    {
+      "id": "kv-n2-52",
+      "jlpt": 2,
+      "order": 52,
+      "word": "いちいち",
+      "reading": "いちいち",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "one by one; every single time (often with annoyance)",
+      "acceptedMeanings": ["one by one", "every single time", "in every detail"],
+      "usageNote": "Often carries mild exasperation at having to check, report, or react to every tiny detail.",
+      "example": {
+        "jp": "細かい作業までいちいち上司に確認していては、仕事が進まない。",
+        "reading": "こまかいさぎょうまでいちいちじょうしにかくにんしていては、しごとがすすまない。",
+        "en": "If you check every single minor task with your boss, work will never move forward."
+      },
+      "quiz": {
+        "sentenceBefore": "他人の些細な批判を",
+        "sentenceAfter": "気にしていたら疲れてしまう。",
+        "en": "If you worry about every single trivial criticism from others, you'll wear yourself out.",
+        "choices": ["いちいち", "およそ", "せめて", "ふと"]
+      }
+    },
+    {
+      "id": "kv-n2-53",
+      "jlpt": 2,
+      "order": 53,
+      "word": "おおむね",
+      "reading": "おおむね",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "generally; on the whole; largely",
+      "acceptedMeanings": ["generally", "on the whole", "largely", "mostly"],
+      "usageNote": "Formal evaluative adverb common in business reports, weather forecasts, and survey summaries (おおむね好評 = generally well-received).",
+      "example": {
+        "jp": "新制度に対する社員の反応は、おおむね良好だった。",
+        "reading": "しんせいどにたいするしゃいんのはんのうは、おおむねりょうこうだった。",
+        "en": "Employees' reactions to the new system were largely favorable."
+      },
+      "quiz": {
+        "sentenceBefore": "今回のアンケート結果を見ると、利用者の満足度は",
+        "sentenceAfter": "高いと言える。",
+        "en": "Looking at this survey's results, user satisfaction can be said to be high on the whole.",
+        "choices": ["おおむね", "あいにく", "むしろ", "かえって"]
+      }
+    },
+    {
+      "id": "kv-n2-54",
+      "jlpt": 2,
+      "order": 54,
+      "word": "みずから",
+      "reading": "みずから",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / Noun",
+      "primaryMeaning": "oneself; personally; of one's own accord",
+      "acceptedMeanings": ["oneself", "personally", "by oneself", "voluntarily"],
+      "usageNote": "More formal than 自分で; emphasizes taking personal initiative or direct responsibility (社長みずから現場を視察した).",
+      "example": {
+        "jp": "問題解決のため、部長みずから顧客のもとへ出向いた。",
+        "reading": "もんだいかいけつのため、ぶちょうみずからこきゃくのもとへでむいた。",
+        "en": "To resolve the issue, the department manager personally went to visit the client."
+      },
+      "quiz": {
+        "sentenceBefore": "指示を待つのではなく、",
+        "sentenceAfter": "課題を見つけて行動する姿勢が求められる。",
+        "en": "Rather than waiting for orders, an attitude of finding issues and acting on one's own initiative is expected.",
+        "choices": ["みずから", "なにも", "おそらく", "そもそも"]
+      }
+    },
+    {
+      "id": "kv-n2-55",
+      "jlpt": 2,
+      "order": 55,
+      "word": "というのも",
+      "reading": "というのも",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "the reason is that ...; because (introducing an explanation)",
+      "acceptedMeanings": ["the reason is that", "because", "for"],
+      "usageNote": "Follows a main claim to introduce a thorough explanation, usually ending the sentence with からだ / のだ.",
+      "example": {
+        "jp": "今月の売上が伸びた。というのも、新商品のSNS広告が予想以上に反響を呼んだからだ。",
+        "reading": "こんげつのうりあげがのびた。というのも、しんしょうひんのえすえぬえすこうこくがよそういじょうにはんきょうをよんだからだ。",
+        "en": "This month's sales grew. That is because the social media ad for the new product generated a bigger response than expected."
+      },
+      "quiz": {
+        "sentenceBefore": "計画を延期することにした。",
+        "sentenceAfter": "、必要な部品の調達が間に合わないことが判明したからだ。",
+        "en": "We decided to postpone the plan. The reason is that we found procurement of necessary parts won't make it in time.",
+        "choices": ["というのも", "すると", "あるいは", "それどころか"]
+      }
+    },
+    {
+      "id": "kv-n2-56",
+      "jlpt": 2,
+      "order": 56,
+      "word": "おまけに",
+      "reading": "おまけに",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "furthermore; on top of that; to make matters worse",
+      "acceptedMeanings": ["furthermore", "on top of that", "besides", "moreover"],
+      "usageNote": "Adds an extra positive or negative circumstance on top of what was already stated (slightly more colloquial than そのうえ).",
+      "example": {
+        "jp": "電車が遅延した。おまけに傘も忘れてしまい、ずぶ濡れになった。",
+        "reading": "でんしゃがちえんした。おまけにかさもわすれてしまい、ずぶぬれになった。",
+        "en": "The train was delayed. On top of that, I forgot my umbrella and got soaking wet."
+      },
+      "quiz": {
+        "sentenceBefore": "そのホテルは駅から近くて清潔だ。",
+        "sentenceAfter": "、朝食バイキングまで無料で付いている。",
+        "en": "That hotel is close to the station and clean. Furthermore, even a breakfast buffet is included for free.",
+        "choices": ["おまけに", "すなわち", "それにもかかわらず", "もっとも"]
+      }
+    },
+    {
+      "id": "kv-n2-57",
+      "jlpt": 2,
+      "order": 57,
+      "word": "きっちり",
+      "reading": "きっちり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "precisely; neatly; exactly; without slack",
+      "acceptedMeanings": ["precisely", "neatly", "exactly", "punctually"],
+      "usageNote": "Describes exact timing (九時きっちり), exact amounts, or thorough, methodical execution of work.",
+      "example": {
+        "jp": "締切の時間きっちりに全チームの資料が提出された。",
+        "reading": "しめきりのじかんきっちりにぜんちーむのしりょうがていしゅつされた。",
+        "en": "Materials from every team were submitted right on the exact deadline."
+      },
+      "quiz": {
+        "sentenceBefore": "経費の計算は一円の誤差もなく",
+        "sentenceAfter": "合わせておいてください。",
+        "en": "Please reconcile the expense calculations precisely without even a one-yen discrepancy.",
+        "choices": ["きっちり", "ぐったり", "ぼろぼろ", "ばったり"]
+      }
+    },
+    {
+      "id": "kv-n2-58",
+      "jlpt": 2,
+      "order": 58,
+      "word": "すんなり",
+      "reading": "すんなり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "smoothly; effortlessly; without resistance or hitch",
+      "acceptedMeanings": ["smoothly", "easily", "without resistance", "effortlessly"],
+      "usageNote": "Frequently used in business negotiations or approvals that pass more easily than anticipated (すんなり承認された).",
+      "example": {
+        "jp": "反対意見が出ると思っていたが、提案はすんなり通った。",
+        "reading": "はんたいいけんがでるとおもっていたが、ていあんはすんなりとおった。",
+        "en": "I expected opposing views, yet the proposal passed smoothly."
+      },
+      "quiz": {
+        "sentenceBefore": "事前に関係部署と相談しておいたおかげで、会議では",
+        "sentenceAfter": "合意できた。",
+        "en": "Thanks to consulting related departments in advance, we reached agreement smoothly at the meeting.",
+        "choices": ["すんなり", "うっとり", "めっきり", "あっさり"]
+      }
+    },
+    {
+      "id": "kv-n2-59",
+      "jlpt": 2,
+      "order": 59,
+      "word": "トレンド",
+      "reading": "とれんど",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "trend; prevailing tendency",
+      "acceptedMeanings": ["trend", "tendency", "current vogue"],
+      "usageNote": "Standard business and consumer-market term in JLPT N2 reading and listening interviews.",
+      "example": {
+        "jp": "市場のトレンドを素早く捉えることが、商品開発の鍵を握る。",
+        "reading": "しじょうのとれんどをすばやくとらえることが、しょうひんかいはつのかぎをにぎる。",
+        "en": "Quickly capturing market trends holds the key to product development."
+      },
+      "quiz": {
+        "sentenceBefore": "健康志向の高まりは、近年の食品業界における大きな",
+        "sentenceAfter": "となっている。",
+        "en": "Rising health consciousness has become a major trend in the food industry in recent years.",
+        "choices": ["トレンド", "リスク", "プロセス", "ガイドライン"]
+      }
+    },
+    {
+      "id": "kv-n2-60",
+      "jlpt": 2,
+      "order": 60,
+      "word": "コンプライアンス",
+      "reading": "こんぷらいあんす",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "compliance (adherence to laws and corporate ethics)",
+      "acceptedMeanings": ["compliance", "regulatory compliance"],
+      "usageNote": "Widely tested corporate Japanese term (法令遵守), especially in N2 internal policy notices and news articles.",
+      "example": {
+        "jp": "全社員を対象に、年二回のコンプライアンス研修が義務づけられている。",
+        "reading": "ぜんしゃいんをたいしょうに、ねんにかいのこんぷらいあんすけんしゅうがぎむづけられている。",
+        "en": "Biannual compliance training is mandatory for all employees."
+      },
+      "quiz": {
+        "sentenceBefore": "企業の社会的信用を守るためには、",
+        "sentenceAfter": "の徹底が不可欠だ。",
+        "en": "To protect a company's social credibility, thorough enforcement of compliance is indispensable.",
+        "choices": ["コンプライアンス", "モチベーション", "コンセプト", "フィードバック"]
+      }
+    }
+  ]
+}

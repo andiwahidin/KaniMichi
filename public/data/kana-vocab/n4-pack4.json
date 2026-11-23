@@ -1,0 +1,236 @@
+{
+  "level": 4,
+  "pack": "n4-pack4",
+  "items": [
+    {
+      "id": "kv-n4-51",
+      "jlpt": 4,
+      "order": 51,
+      "word": "ずっと",
+      "reading": "ずっと",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "all the time; continuously; by far (in comparisons)",
+      "acceptedMeanings": ["continuously", "all the time", "the whole time", "by far", "much more"],
+      "usageNote": "Two essential N4 uses: duration ('the entire time': 朝からずっと) and degree in comparisons ('much bigger': ずっと大きい).",
+      "example": {
+        "jp": "今日は朝からずっと雨が降っています。",
+        "reading": "きょうはあさからずっとあめがふっています。",
+        "en": "It has been raining continuously since morning today."
+      },
+      "quiz": {
+        "sentenceBefore": "バスより新幹線のほうが",
+        "sentenceAfter": "速くて便利です。",
+        "en": "The Shinkansen is by far faster and more convenient than the bus.",
+        "choices": ["ずっと", "さっき", "そろそろ", "たまに"]
+      }
+    },
+    {
+      "id": "kv-n4-52",
+      "jlpt": 4,
+      "order": 52,
+      "word": "たしか",
+      "reading": "たしか",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "if I remember correctly; surely; probably",
+      "acceptedMeanings": ["if i remember correctly", "if i recall correctly", "surely", "probably"],
+      "usageNote": "Used when recalling a memory you feel fairly confident about, often ending with はずです or と思います.",
+      "example": {
+        "jp": "たしか、次の会議は木曜日の午後二時からでしたよね。",
+        "reading": "たしか、つぎのかいぎはもくようびのごごにじからでしたよね。",
+        "en": "If I remember correctly, the next meeting is from 2:00 PM on Thursday, right?"
+      },
+      "quiz": {
+        "sentenceBefore": "",
+        "sentenceAfter": "、図書館は月曜日が休みだったと思います。",
+        "en": "If I remember right, I think the library is closed on Mondays.",
+        "choices": ["たしか", "ぜひ", "なるべく", "ようやく"]
+      }
+    },
+    {
+      "id": "kv-n4-53",
+      "jlpt": 4,
+      "order": 53,
+      "word": "なかなか",
+      "reading": "なかなか",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "quite / fairly (+ positive); not easily / not readily (+ negative)",
+      "acceptedMeanings": ["quite", "fairly", "not easily", "hardly"],
+      "usageNote": "Classic JLPT trap: with positive verbs/adjectives it means 'surprisingly good/quite'; with negative verbs it means 'won't easily happen' (バスがなかなか来ない).",
+      "example": {
+        "jp": "二十分も待っているのに、バスがなかなか来ません。",
+        "reading": "にじゅっぷんもまっているのに、ばすがなかなかきません。",
+        "en": "Even though I've been waiting 20 minutes, the bus just won't come."
+      },
+      "quiz": {
+        "sentenceBefore": "漢字は難しくて、",
+        "sentenceAfter": "覚えられません。",
+        "en": "Kanji are difficult, so I can't easily memorize them.",
+        "choices": ["なかなか", "きっと", "すっかり", "どんどん"]
+      }
+    },
+    {
+      "id": "kv-n4-54",
+      "jlpt": 4,
+      "order": 54,
+      "word": "べつに",
+      "reading": "べつに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "not particularly; nothing special (with negative)",
+      "acceptedMeanings": ["not particularly", "not especially", "nothing special"],
+      "usageNote": "Pairs with a negative predicate (べつに構いません = I don't particularly mind) or stands alone casually ('Not really').",
+      "example": {
+        "jp": "何か嫌なことがあったの？ — いや、べつに何もないよ。",
+        "reading": "なにかいやなことがあったの？ — いや、べつになにもないよ。",
+        "en": "Did something bad happen? — No, nothing in particular."
+      },
+      "quiz": {
+        "sentenceBefore": "辛い料理は苦手ですか。— いいえ、",
+        "sentenceAfter": "嫌いではありません。",
+        "en": "Are you bad with spicy food? — No, I don't particularly dislike it.",
+        "choices": ["べつに", "ぜひ", "かなり", "いよいよ"]
+      }
+    },
+    {
+      "id": "kv-n4-55",
+      "jlpt": 4,
+      "order": 55,
+      "word": "ですから",
+      "reading": "ですから",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "therefore; so; for that reason (polite)",
+      "acceptedMeanings": ["therefore", "so", "for that reason"],
+      "usageNote": "The polite counterpart to だから. Frequently appears in announcements, notices, and formal conversations.",
+      "example": {
+        "jp": "明日は台風が近づいています。ですから、試合は中止になります。",
+        "reading": "あしたはたいふうがちかづいています。ですから、しあいはちゅうしになります。",
+        "en": "A typhoon is approaching tomorrow. Therefore, the match will be canceled."
+      },
+      "quiz": {
+        "sentenceBefore": "この道は夜とても暗いです。",
+        "sentenceAfter": "、気をつけて歩いてください。",
+        "en": "This road is very dark at night. Therefore, please walk carefully.",
+        "choices": ["ですから", "ところで", "それでも", "たとえば"]
+      }
+    },
+    {
+      "id": "kv-n4-56",
+      "jlpt": 4,
+      "order": 56,
+      "word": "または",
+      "reading": "または",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "or; otherwise (written / formal)",
+      "acceptedMeanings": ["or", "otherwise", "alternatively"],
+      "usageNote": "Common in official forms, signs, and JLPT reading notices ('Please apply by phone or email').",
+      "example": {
+        "jp": "申し込みは電話、またはウェブサイトからお願いします。",
+        "reading": "もうしこみはでんわ、またはうぇぶさいとからおねがいします。",
+        "en": "Please apply by phone or through the website."
+      },
+      "quiz": {
+        "sentenceBefore": "お支払いは現金",
+        "sentenceAfter": "クレジットカードでお願いします。",
+        "en": "Please pay by cash or credit card.",
+        "choices": ["または", "それに", "なぜなら", "それで"]
+      }
+    },
+    {
+      "id": "kv-n4-57",
+      "jlpt": 4,
+      "order": 57,
+      "word": "ぶらぶら",
+      "reading": "ぶらぶら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "strolling aimlessly; wandering leisurely; dangling",
+      "acceptedMeanings": ["strolling aimlessly", "wandering", "dangling", "hanging loosely"],
+      "usageNote": "Often used with 歩く or する for window-shopping or exploring a neighborhood with no fixed destination.",
+      "example": {
+        "jp": "時間があったので、駅前の商店街をぶらぶら歩きました。",
+        "reading": "じかんがあったので、えきまえのしょうてんがいをぶらぶらあるきました。",
+        "en": "Since I had time, I strolled leisurely through the shopping street by the station."
+      },
+      "quiz": {
+        "sentenceBefore": "観光ガイドを見ないで、京都の古い町を",
+        "sentenceAfter": "歩くのが好きです。",
+        "en": "I love strolling aimlessly through the old streets of Kyoto without a guidebook.",
+        "choices": ["ぶらぶら", "ぐっすり", "ざあざあ", "ぺこぺこ"]
+      }
+    },
+    {
+      "id": "kv-n4-58",
+      "jlpt": 4,
+      "order": 58,
+      "word": "ふらふら",
+      "reading": "ふらふら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "dizzy; lightheaded; unsteady on one's feet",
+      "acceptedMeanings": ["dizzy", "lightheaded", "unsteady", "staggering"],
+      "usageNote": "Describes physical dizziness from fever, lack of sleep, or heatstroke (頭がふらふらする).",
+      "example": {
+        "jp": "熱が高くて、立ち上がると頭がふらふらします。",
+        "reading": "ねつがたかくて、たちあがるとあたまがふらふらします。",
+        "en": "My fever is high, so my head feels dizzy when I stand up."
+      },
+      "quiz": {
+        "sentenceBefore": "朝ごはんを食べずに走ったら、少し",
+        "sentenceAfter": "してきました。",
+        "en": "When I ran without eating breakfast, I started feeling a bit lightheaded.",
+        "choices": ["ふらふら", "わくわく", "にこにこ", "ぴかぴか"]
+      }
+    },
+    {
+      "id": "kv-n4-59",
+      "jlpt": 4,
+      "order": 59,
+      "word": "マニュアル",
+      "reading": "まにゅある",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "manual; handbook; instruction guide",
+      "acceptedMeanings": ["manual", "handbook", "guide"],
+      "usageNote": "Frequently appears in part-time job and workplace dialogues in JLPT N4–N3 listening.",
+      "example": {
+        "jp": "新しいアルバイトの人は、まずこのマニュアルを読んでください。",
+        "reading": "あたらしいあるばいとのひとは、まずこのまにゅあるをよんでください。",
+        "en": "New part-time staff, please read this manual first."
+      },
+      "quiz": {
+        "sentenceBefore": "機械の動かし方がわからないときは、",
+        "sentenceAfter": "を確認してください。",
+        "en": "When you don't know how to operate the machine, please check the manual.",
+        "choices": ["マニュアル", "マンション", "コンセント", "ビニール"]
+      }
+    },
+    {
+      "id": "kv-n4-60",
+      "jlpt": 4,
+      "order": 60,
+      "word": "リサイクル",
+      "reading": "りさいくる",
+      "category": "katakana",
+      "partOfSpeech": "Noun / する-verb (Katakana)",
+      "primaryMeaning": "recycling",
+      "acceptedMeanings": ["recycling", "recycle"],
+      "usageNote": "Common in municipal garbage-sorting notices and environmental reading passages (リサイクルショップ = thrift store).",
+      "example": {
+        "jp": "ペットボトルはきれいに洗ってからリサイクルに出します。",
+        "reading": "ぺっとぼとるはきれいにあらってからりさいくるにだします。",
+        "en": "We wash plastic bottles cleanly before putting them out for recycling."
+      },
+      "quiz": {
+        "sentenceBefore": "使わなくなった服を近くの",
+        "sentenceAfter": "ショップへ持って行きました。",
+        "en": "I took the clothes I no longer wear to a nearby thrift (recycling) shop.",
+        "choices": ["リサイクル", "スケジュール", "キャンセル", "アンケート"]
+      }
+    }
+  ]
+}

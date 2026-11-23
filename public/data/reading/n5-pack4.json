@@ -1,0 +1,267 @@
+{
+  "level": 5,
+  "pack": "n5-pack4",
+  "items": [
+    {
+      "id": "rd-n5-21",
+      "jlpt": 5,
+      "order": 21,
+      "passageType": "notice",
+      "titleJp": "パン屋[や]「あさひ」の営業時間[えいぎょうじかん]",
+      "titleEn": "Asahi Bakery Opening Hours Notice",
+      "recommendedMinutes": 3,
+      "contextEn": "Poster displayed on the glass door of a neighborhood bakery.",
+      "paragraphs": [
+        "いつもパン屋[や]「あさひ」に来[き]てくれて、ありがとうございます。",
+        "来月[らいげつ]の四月[しがつ]一日[ついたち]から、お店[みせ]の時間[じかん]が少[すこ]し変[か]わります。火曜日[かようび]から土曜日[どようび]は朝[あさ]七時[しちじ]から夜[よる]七時[しちじ]まで開[あ]いています。日曜日[にちようび]は朝[あさ]八時[はちじ]から夕方[ゆうがた]五時[ごじ]までです。",
+        "月曜日[げつようび]は休[やす]みです。夕方[ゆうがた]六時[ろくじ]からパンが二十[にじゅっ]パーセント安[やす]くなりますよ。"
+      ],
+      "translationEn": [
+        "Thank you for always visiting Asahi Bakery.",
+        "Starting April 1 next month, our store hours will change slightly. From Tuesday to Saturday, we are open from 7:00 AM to 7:00 PM. On Sunday, we are open from 8:00 AM to 5:00 PM.",
+        "We are closed on Mondays. From 6:00 PM in the evening, bread is 20% cheaper."
+      ],
+      "keyVocab": [
+        { "word": "営業時間", "reading": "えいぎょうじかん", "en": "business hours" },
+        { "word": "変わる", "reading": "かわる", "en": "to change" },
+        { "word": "夕方", "reading": "ゆうがた", "en": "early evening" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-21-q1",
+          "promptJp": "四月[しがつ]から、日曜日[にちようび]は何時[なんじ]まで開[あ]いていますか。",
+          "promptEn": "Starting in April, until what time is the bakery open on Sundays?",
+          "choices": [
+            "夕方[ゆうがた]五時[ごじ]まで",
+            "夕方[ゆうがた]六時[ろくじ]まで",
+            "夜[よる]七時[しちじ]まで",
+            "日曜日[にちようび]は休[やす]みです"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The notice states that on Sundays the bakery is open from 8:00 AM until 5:00 PM (夕方五時まで)."
+        },
+        {
+          "id": "rd-n5-21-q2",
+          "promptJp": "このお店[みせ]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about this bakery?",
+          "choices": [
+            "毎日[まいにち]休[やす]まないで開[あ]いている。",
+            "月曜日[げつようび]が休[やす]みだ。",
+            "朝[あさ]七時[しちじ]にパンが安[やす]くなる。",
+            "日曜日[にちようび]も朝[あさ]七時[しちじ]から開[あ]いている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The final paragraph states \"月曜日は休みです\" (Closed on Mondays)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-22",
+      "jlpt": 5,
+      "order": 22,
+      "passageType": "email",
+      "titleJp": "日曜日[にちようび]のハイキングのお誘[さそ]い",
+      "titleEn": "Invitation to a Sunday Hike",
+      "recommendedMinutes": 3,
+      "contextEn": "Message from a friend inviting you on a weekend mountain walk.",
+      "paragraphs": [
+        "リナさん、元気[げんき]ですか。",
+        "今度[こんど]の日曜日[にちようび]、大学[だいがく]の友達[ともだち]三[さん]人[にん]と高尾山[たかおさん]へ登[のぼ]りに行[い]きます。リナさんもいっしょに行[い]きませんか。",
+        "朝[あさ]八時半[はちじはん]に新宿駅[しんじゅくえき]の西口[にしぐち]で会[あ]います。山[やま]の上[うえ]で昼[ひる]ごはんを食[た]べるので、お弁当[べんとう]と水[みず]を持[も]ってきてください。もし雨[あめ]が降[ふ]ったら、山[やま]には行[い]かないで、みんなで映画[えいが]を見[み]ます。返事[へんじ]を待[ま]っています。\nけんた"
+      ],
+      "translationEn": [
+        "Hi Rina, how are you?",
+        "This coming Sunday, I am going to climb Mt. Takao with three university friends. Would you like to come along too, Rina?",
+        "We will meet at the West Exit of Shinjuku Station at 8:30 AM. Since we will eat lunch at the top of the mountain, please bring a bento and water. If it rains, we won't go to the mountain and will watch a movie together instead. Waiting for your reply.\nKenta"
+      ],
+      "keyVocab": [
+        { "word": "登る", "reading": "のぼる", "en": "to climb" },
+        { "word": "西口", "reading": "にしぐち", "en": "West Exit" },
+        { "word": "返事", "reading": "へんじ", "en": "reply" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-22-q1",
+          "promptJp": "日曜日[にちようび]に雨[あめ]が降[ふ]ったら、どうしますか。",
+          "promptEn": "What will they do if it rains on Sunday?",
+          "choices": [
+            "傘[かさ]を持[も]って山[やま]へ登[のぼ]る。",
+            "みんなで映画[えいが]を見[み]る。",
+            "次[つぎ]の日曜日[にちようび]に変[か]える。",
+            "何[なに]もしないで家[いえ]にいる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Kenta writes \"もし雨が降ったら、山には行かないで、みんなで映画を見ます\" (If it rains, they will watch a movie together)."
+        },
+        {
+          "id": "rd-n5-22-q2",
+          "promptJp": "リナさんは日曜日[にちようび]の朝[あさ]、どこへ行[い]きますか。",
+          "promptEn": "Where should Rina go on Sunday morning?",
+          "choices": [
+            "大学[だいがく]の食堂[しょくどう]",
+            "新宿駅[しんじゅくえき]の西口[にしぐち]",
+            "新宿駅[しんじゅくえき]の東口[ひがしぐち]",
+            "映画館[えいがかん]の前[まえ]"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "They are meeting at the West Exit of Shinjuku Station (新宿駅の西口) at 8:30 AM."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-23",
+      "jlpt": 5,
+      "order": 23,
+      "passageType": "short",
+      "titleJp": "私[わたし]のペットの犬[いぬ]",
+      "titleEn": "My Pet Dog, Mugi",
+      "recommendedMinutes": 3,
+      "contextEn": "Short essay by a high school student about their family dog.",
+      "paragraphs": [
+        "私[わたし]の家[いえ]には「むぎ」という茶色[ちゃいろ]の犬[いぬ]がいます。三年前[さんねんまえ]に家族[かぞく]になりました。むぎは人[ひと]が大好き[だいすき]で、誰[だれ]にでもすぐしっぽを振[ふ]ります。",
+        "毎朝[まいあさ]六時半[ろくじはん]に父[ちち]がむぎを公園[こうえん]へ散歩[さんぽ]に連[つ]れて行[い]きます。夕方[ゆうがた]の散歩[さんぽ]は私[わたし]の仕事[しごと]です。雨[あめ]の日[ひ]は外[そと]へ出[で]られないので、むぎはいつも窓[まど]のそばで少[すこ]し寂[さび]しそうに外[そと]を見[み]ています。"
+      ],
+      "translationEn": [
+        "My family has a brown dog named Mugi. He became part of our family three years ago. Mugi loves people and immediately wags his tail at anyone.",
+        "Every morning at 6:30 my father takes Mugi for a walk in the park. The evening walk is my job. On rainy days he cannot go outside, so Mugi always looks out the window looking a little lonely."
+      ],
+      "keyVocab": [
+        { "word": "茶色", "reading": "ちゃいろ", "en": "brown color" },
+        { "word": "連れて行く", "reading": "つれていく", "en": "to take someone/a pet along" },
+        { "word": "寂しそう", "reading": "さびしそう", "en": "looking lonely" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-23-q1",
+          "promptJp": "夕方[ゆうがた]、誰[だれ]がむぎと散歩[さんぽ]しますか。",
+          "promptEn": "Who walks Mugi in the evening?",
+          "choices": [
+            "父[ちち]",
+            "母[はは]",
+            "この文章[ぶんしょう]を書[か]いた人[ひと]",
+            "近所[きんじょ]の人[ひと]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The writer says \"夕方の散歩は私の仕事です\" (The evening walk is my job), while their father does the morning walk."
+        },
+        {
+          "id": "rd-n5-23-q2",
+          "promptJp": "雨[あめ]の日[ひ]、むぎはどうしていますか。",
+          "promptEn": "What does Mugi do on rainy days?",
+          "choices": [
+            "公園[こうえん]で走[はし]っている。",
+            "窓[まど]のそばで外[そと]を見[み]ている。",
+            "ずっとベッドで寝[ね]ている。",
+            "大[おお]きい声[こえ]で鳴[な]いている。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The last sentence says on rainy days Mugi sits by the window looking outside (窓のそばで少し寂しそうに外を見ています)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-24",
+      "jlpt": 5,
+      "order": 24,
+      "passageType": "short",
+      "titleJp": "新[あたら]しいアパートでの生活[せいかつ]",
+      "titleEn": "Life in My New Apartment",
+      "recommendedMinutes": 3,
+      "contextEn": "Short blog post from a student who recently moved to a new neighborhood.",
+      "paragraphs": [
+        "先月[せんげつ]、大学[だいがく]の近[ちか]くのアパートに引[ひ]っ越[こ]しました。前[まえ]の家[いえ]より少[すこ]し狭[せま]いですが、駅[えき]まで歩[ある]いて五分[ごふん]なので、とても便利[べんり]です。",
+        "アパートのすぐ隣[となり]にスーパーがあって、夜[よる]十時[じゅうじ]まで開[あ]いています。だから、授業[じゅぎょう]が遅[おそ]く終[お]わった日[ひ]でも、安[やす]い野菜[やさい]や果物[くだもの]を買[か]って自分[じぶん]で料理[りょうり]ができます。前[まえ]はよくコンビニでお弁当[べんとう]を買[か]っていましたが、今[いま]はほとんど毎日[まいにち]自分[じぶん]で作[つく]っています。"
+      ],
+      "translationEn": [
+        "Last month I moved into an apartment near my university. It is a little smaller than my previous home, but it is only a five-minute walk to the station, so it is very convenient.",
+        "Right next door to the apartment is a supermarket that stays open until 10:00 PM. Therefore, even on days when classes end late, I can buy cheap vegetables and fruit and cook for myself. Before, I often bought bento boxes at convenience stores, but now I cook for myself almost every day."
+      ],
+      "keyVocab": [
+        { "word": "引っ越す", "reading": "ひっこす", "en": "to move house" },
+        { "word": "狭い", "reading": "せまい", "en": "narrow; small (space)" },
+        { "word": "隣", "reading": "となり", "en": "next door" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-24-q1",
+          "promptJp": "新[あたら]しいアパートについて、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is true about the new apartment?",
+          "choices": [
+            "前[まえ]の家[いえ]より広[ひろ]い。",
+            "駅[えき]まで歩[ある]いて五分[ごふん]だ。",
+            "スーパーまで歩[ある]いて二十分[にじゅっぷん]かかる。",
+            "大学[だいがく]からとても遠[とお]い。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The passage says the apartment is smaller than before, near the university, right next to a supermarket, and 5 minutes on foot from the station."
+        },
+        {
+          "id": "rd-n5-24-q2",
+          "promptJp": "この人[ひと]は今[いま]、食事[しょくじ]をどうしていますか。",
+          "promptEn": "How does the writer handle meals now?",
+          "choices": [
+            "毎日[まいにち]コンビニでお弁当[べんとう]を買[か]う。",
+            "毎日[まいにち]レストランで食[た]べる。",
+            "ほとんど毎日[まいにち]自分[じぶん]で料理[りょうり]を作[つく]る。",
+            "友達[ともだち]の家[いえ]で食[た]べる。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence says \"今はほとんど毎日自分で作っています\" (Now I cook for myself almost every day)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n5-25",
+      "jlpt": 5,
+      "order": 25,
+      "passageType": "notice",
+      "titleJp": "地域[ちいき]プール 利用[りよう]のご案内[あんない]",
+      "titleEn": "Community Swimming Pool Guide",
+      "recommendedMinutes": 3,
+      "contextEn": "Information board inside the reception area of a local sports center.",
+      "paragraphs": [
+        "市民[しみん]プールをご利用[りよう]のみなさまへ",
+        "利用[りよう]料金[りょうきん]は、大人[おとな]が二時間[にじかん]で四百円[よんひゃくえん]、子ども（中学生[ちゅうがくせい]まで）が二百円[にひゃくえん]です。券売機[けんばいき]でチケットを買[か]ってから、受付[うけつけ]に見[み]せてください。",
+        "プールに入[はい]るときは、水着[みずぎ]と水泳[すいえい]キャップが要[い]ります。キャップを忘[わす]れた人[ひと]は、受付[うけつけ]で百円[ひゃくえん]で借[か]りることができます。カメラやスマートフォンはプールの中[なか]へ持[も]って入[はい]らないでください。"
+      ],
+      "translationEn": [
+        "To all users of the Municipal Pool,",
+        "The usage fee is 400 yen for 2 hours for adults, and 200 yen for children (up to junior high school students). Please buy a ticket at the vending machine and show it at reception.",
+        "When entering the pool, a swimsuit and swim cap are required. Those who forgot a cap can rent one at reception for 100 yen. Please do not bring cameras or smartphones into the pool area."
+      ],
+      "keyVocab": [
+        { "word": "料金", "reading": "りょうきん", "en": "fee; charge" },
+        { "word": "券売機", "reading": "けんばいき", "en": "ticket vending machine" },
+        { "word": "水着", "reading": "みずぎ", "en": "swimsuit" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n5-25-q1",
+          "promptJp": "大人[おとな]がキャップを忘[わす]れて、二時間[にじかん]プールを使[つか]うとき、全部[ぜんぶ]でいくら払[はら]いますか。",
+          "promptEn": "If an adult forgets their swim cap and uses the pool for 2 hours, how much do they pay in total?",
+          "choices": [
+            "三百円[さんびゃくえん]",
+            "四百円[よんひゃくえん]",
+            "五百円[ごひゃくえん]",
+            "六百円[ろっぴゃくえん]"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "Adult 2-hour admission is 400 yen plus 100 yen for renting a swim cap = 500 yen (五百円)."
+        },
+        {
+          "id": "rd-n5-25-q2",
+          "promptJp": "プールの中[なか]へ持[も]って入[はい]ってはいけないものは何[なに]ですか。",
+          "promptEn": "What is prohibited from being brought into the pool area?",
+          "choices": [
+            "水泳[すいえい]キャップ",
+            "水着[みずぎ]",
+            "カメラやスマートフォン",
+            "受付[うけつけ]で借[か]りたキャップ"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The final sentence prohibits bringing cameras or smartphones into the pool area."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "level": 2,
+  "pack": "n2-pack4",
+  "items": [
+    {
+      "id": "g-n2-41",
+      "jlpt": 2,
+      "order": 41,
+      "pattern": "～あげく (あげくに)",
+      "reading": "～あげく",
+      "meaning": "in the end; after a long period of ... (negative/unfortunate outcome)",
+      "structure": "Verb (た-form) / Noun + の + あげく(に)",
+      "explanation": "Indicates that after spending a long time doing something (worrying, arguing, searching), the final outcome turned out disappointing or unfortunate.",
+      "confusableWith": "Compare with ～末に (can end positively or negatively) vs. ～あげく (almost always leads to a regrettable result).",
+      "examples": [
+        {
+          "jp": "さんざん迷ったあげく、結局何も買わずに帰った。",
+          "reading": "さんざんまよったあげく、けっきょくなにもかわずにかえった。",
+          "en": "After hesitating endlessly, I ended up going home without buying anything."
+        },
+        {
+          "jp": "激しい口論のあげく、二人は別れることになった。",
+          "reading": "はげしいこうろんのあげく、ふたりはわかれることになった。",
+          "en": "After a heated argument, the two ended up parting ways."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "何時間も悩んだ",
+        "sentenceAfter": "、最初の案が一番いいという結論になった。",
+        "en": "After agonizing for hours, we ended up concluding that the very first draft was best.",
+        "answer": "あげく",
+        "acceptedAnswers": ["あげく", "あげくに", "挙げ句"],
+        "choices": ["あげく", "おかげで", "次第", "ついでに"]
+      }
+    },
+    {
+      "id": "g-n2-42",
+      "jlpt": 2,
+      "order": 42,
+      "pattern": "～末に (すえに)",
+      "reading": "～すえに",
+      "meaning": "after much ...; following a long process",
+      "structure": "Verb (た-form) / Noun + の + 末(に)",
+      "explanation": "Expresses a significant conclusion reached only after prolonged effort, discussion, or hardship. Works for both triumphant and somber outcomes.",
+      "confusableWith": "More formal and neutral than あげく; frequently used in news reports and formal narratives.",
+      "examples": [
+        {
+          "jp": "長い議論の末に、新しい規約が承認された。",
+          "reading": "ながいぎろんのすえに、あたらしいきやくがしょうにんされた。",
+          "en": "After lengthy debate, the new regulations were approved."
+        },
+        {
+          "jp": "何度も失敗を繰り返した末に、ついに実験に成功した。",
+          "reading": "なんどもしっぱいをくりかえしたすえに、ついにじっけんにせいこうした。",
+          "en": "After repeating failure many times, we finally succeeded in the experiment."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "家族と何度も話し合った",
+        "sentenceAfter": "、海外へ移住する決心をした。",
+        "en": "After discussing it repeatedly with my family, I made up my mind to move abroad.",
+        "answer": "末に",
+        "acceptedAnswers": ["末に", "すえに"],
+        "choices": ["末に", "ばかりに", "どころか", "かわりに"]
+      }
+    },
+    {
+      "id": "g-n2-43",
+      "jlpt": 2,
+      "order": 43,
+      "pattern": "～限り (かぎり)",
+      "reading": "～かぎり",
+      "meaning": "as long as ...; as far as (one knows/can)",
+      "structure": "Verb (Plain) / い-Adj / な-Adj+な / Noun+の + 限り(は)",
+      "explanation": "Sets a condition or scope boundary: 'as long as X continues, Y holds true' (元気な限り), or 'within the limits of my knowledge/ability' (私の知る限り).",
+      "confusableWith": "Don't confuse with N1 ～を限りに ('ending at this point in time').",
+      "examples": [
+        {
+          "jp": "私の知っている限りでは、この計画に反対する人はいない。",
+          "reading": "わたしのしっているかぎりでは、このけいかくにはんたいするひとはいない。",
+          "en": "As far as I know, no one opposes this plan."
+        },
+        {
+          "jp": "体が動く限り、この仕事を続けたいと思っている。",
+          "reading": "からだがうごくかぎり、このしごとをつづけたいとおもっている。",
+          "en": "As long as my body can move, I want to continue this work."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "できる",
+        "sentenceAfter": "、環境にやさしい製品を選ぶようにしている。",
+        "en": "As far as possible, I try to choose environmentally friendly products.",
+        "answer": "限り",
+        "acceptedAnswers": ["限り", "かぎり"],
+        "choices": ["限り", "次第", "抜きの", "わけ"]
+      }
+    },
+    {
+      "id": "g-n2-44",
+      "jlpt": 2,
+      "order": 44,
+      "pattern": "～をきっかけに",
+      "reading": "～をきっかけに",
+      "meaning": "triggered by ...; using ... as a turning point",
+      "structure": "Noun + をきっかけに(して) / をきっかけとして",
+      "explanation": "Identifies the event or encounter that sparked a new habit, career change, or lasting shift.",
+      "confusableWith": "Compare with ～をもとに (used as source material/basis) vs. ～をきっかけに (the starting spark or catalyst).",
+      "examples": [
+        {
+          "jp": "日本へ旅行したことをきっかけに、日本語の勉強を始めた。",
+          "reading": "にほんへりょこうしたことをきっかけに、にほんごのべんきょうをはじめた。",
+          "en": "Using my trip to Japan as a catalyst, I started studying Japanese."
+        },
+        {
+          "jp": "引っ越しをきっかけに、不要な物をすべて整理した。",
+          "reading": "ひっこしをきっかけに、ふようなものをすべてせいりした。",
+          "en": "Taking the move as an opportunity, I cleared out all unnecessary belongings."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "そのドキュメンタリーを見たこと",
+        "sentenceAfter": "、環境問題に関心を持つようになった。",
+        "en": "Watching that documentary sparked my interest in environmental issues.",
+        "answer": "をきっかけに",
+        "acceptedAnswers": ["をきっかけに"],
+        "choices": ["をきっかけに", "を問わず", "をめぐって", "に反して"]
+      }
+    },
+    {
+      "id": "g-n2-45",
+      "jlpt": 2,
+      "order": 45,
+      "pattern": "～に先立って (にさきだって)",
+      "reading": "～にさきだって",
+      "meaning": "prior to ...; ahead of (a major event)",
+      "structure": "Noun + に先立って / に先立ち",
+      "explanation": "Formal expression indicating a preparatory action carried out right before an important ceremony, launch, or official undertaking.",
+      "confusableWith": "Used for significant scheduled milestones, not everyday routine actions like eating breakfast.",
+      "examples": [
+        {
+          "jp": "新製品の発売に先立って、記者発表会が開かれた。",
+          "reading": "しんせいひんのはつばいにさきだって、きしゃはっぴょうかいがひらかれた。",
+          "en": "Prior to the release of the new product, a press conference was held."
+        },
+        {
+          "jp": "開会に先立ち、主催者から挨拶がありました。",
+          "reading": "かいかいにさきだち、しゅさいしゃからあいさつがありました。",
+          "en": "Prior to the opening, there was a greeting from the organizer."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "工事の開始",
+        "sentenceAfter": "、近隣住民への説明会を行う予定です。",
+        "en": "Prior to starting construction, we plan to hold an informational meeting for nearby residents.",
+        "answer": "に先立って",
+        "acceptedAnswers": ["に先立って", "にさきだって", "に先立ち"],
+        "choices": ["に先立って", "にわたって", "に比べて", "に反して"]
+      }
+    },
+    {
+      "id": "g-n2-46",
+      "jlpt": 2,
+      "order": 46,
+      "pattern": "～に応えて (にこたえて)",
+      "reading": "～にこたえて",
+      "meaning": "in response to ...; living up to (expectations/requests)",
+      "structure": "Noun (期待 / 要望 / 声 / リクエスト) + に応えて",
+      "explanation": "Shows acting in order to fulfill someone's hopes, demands, cheers, or customer feedback.",
+      "confusableWith": "Often confused with ～に応じて (adjusting proportionally to conditions like age/budget) — に応えて specifically answers hopes or requests.",
+      "examples": [
+        {
+          "jp": "利用者の要望に応えて、営業時間を一時間延長した。",
+          "reading": "りようしゃのようぼうにこたえて、えいぎょうじかんをいちじかんえんちょうした。",
+          "en": "In response to user requests, we extended business hours by one hour."
+        },
+        {
+          "jp": "ファンの期待に応え、選手は見事な逆転勝利を飾った。",
+          "reading": "ふぁんのきたいにこたえ、せんしゅはみごとなぎゃくてんしょうりをかざった。",
+          "en": "Living up to fans' expectations, the athlete achieved a stunning comeback victory."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "観客の熱いアンコール",
+        "sentenceAfter": "、楽団はもう一曲演奏してくれた。",
+        "en": "In response to the audience's enthusiastic encore, the orchestra played one more piece.",
+        "answer": "に応えて",
+        "acceptedAnswers": ["に応えて", "にこたえて"],
+        "choices": ["に応えて", "に際して", "にあたって", "に加えて"]
+      }
+    },
+    {
+      "id": "g-n2-47",
+      "jlpt": 2,
+      "order": 47,
+      "pattern": "～に沿って (にそって)",
+      "reading": "～にそって",
+      "meaning": "along ...; in accordance with (a policy/plan/theme)",
+      "structure": "Noun + に沿って / に沿った + Noun",
+      "explanation": "Used both physically ('along the river') and abstractly ('in line with the guidelines, curriculum, or strategy').",
+      "confusableWith": "Similar to ～に基づいて ('based on data/law'), while ～に沿って emphasizes staying aligned with a path, policy, or theme.",
+      "examples": [
+        {
+          "jp": "新しい方針に沿って、プロジェクトを進めることになった。",
+          "reading": "あたらしいほうしんにそって、ぷろじぇくとをすすめることになった。",
+          "en": "It was decided to advance the project in line with the new policy."
+        },
+        {
+          "jp": "テーマに沿った具体的な事例を挙げて説明してください。",
+          "reading": "てーまにそったぐたいてきなじれいをあげてせつめいしてください。",
+          "en": "Please explain by giving concrete examples aligned with the theme."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "マニュアルの手順",
+        "sentenceAfter": "作業すれば、ミスを防げる。",
+        "en": "If you work in accordance with the manual's procedures, you can prevent errors.",
+        "answer": "に沿って",
+        "acceptedAnswers": ["に沿って", "にそって"],
+        "choices": ["に沿って", "に反して", "にかかわらず", "にすぎず"]
+      }
+    },
+    {
+      "id": "g-n2-48",
+      "jlpt": 2,
+      "order": 48,
+      "pattern": "～のもとで / ～のもとに",
+      "reading": "～のもとで",
+      "meaning": "under (the guidance / conditions / banner of ...)",
+      "structure": "Noun + のもとで / のもとに",
+      "explanation": "Expresses operating under someone's mentorship, leadership, legal framework, or a specific set of conditions.",
+      "confusableWith": "Use のもとで for mentoring/conditions (先生のもとで学ぶ), and のもとに often for a guiding principle or slogan (平和のもとに).",
+      "examples": [
+        {
+          "jp": "優秀な指導者のもとで、彼女は大きく成長した。",
+          "reading": "ゆうしゅうなしどうしゃのもとで、かのじょはおおきくせいちょうした。",
+          "en": "Under an outstanding mentor, she grew tremendously."
+        },
+        {
+          "jp": "厳格な安全管理のもとで実験が行われている。",
+          "reading": "げんかくなあんぜんかんりのもとでじっけんがおこなわれている。",
+          "en": "The experiment is being conducted under strict safety management."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "有名な建築家",
+        "sentenceAfter": "五年間修行を積んだ。",
+        "en": "I trained for five years under a famous architect.",
+        "answer": "のもとで",
+        "acceptedAnswers": ["のもとで", "の下で", "のもとに"],
+        "choices": ["のもとで", "をめぐって", "をはじめ", "をもとに"]
+      }
+    },
+    {
+      "id": "g-n2-49",
+      "jlpt": 2,
+      "order": 49,
+      "pattern": "～まい (tekad / dugaan negatif formal)",
+      "reading": "～まい",
+      "meaning": "will never ... (firm resolve); probably not ...",
+      "structure": "Group 1 Dict + まい / Group 2 Stem or Dict + まい / する→するまい・すまい",
+      "explanation": "A literary/formal negative volitional or conjecture expression: either strong determination ('I shall never make that mistake again') or negative inference ('He probably doesn't know').",
+      "confusableWith": "First person = firm negative resolve (二度と行くまい); third person = negative conjecture (そんなはずはあるまい).",
+      "examples": [
+        {
+          "jp": "あんな失敗は二度と繰り返すまいと心に誓った。",
+          "reading": "あんなしっぱいはにどとくりかえすまいとこころにちかった。",
+          "en": "I swore to myself that I would never repeat such a mistake."
+        },
+        {
+          "jp": "これほど詳しい事情は、誰も知るまい。",
+          "reading": "これほどくわしいじじょうは、だれもしるまい。",
+          "en": "Hardly anyone would know such detailed circumstances."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "もう二度とあんな無謀な賭けは",
+        "sentenceAfter": "と決意した。",
+        "en": "I resolved never again to make such a reckless gamble.",
+        "answer": "するまい",
+        "acceptedAnswers": ["するまい", "すまい"],
+        "choices": ["するまい", "しかねる", "しかねない", "ざるを得ない"]
+      }
+    },
+    {
+      "id": "g-n2-50",
+      "jlpt": 2,
+      "order": 50,
+      "pattern": "～ものなら (jika memang bisa / berani)",
+      "reading": "～ものなら",
+      "meaning": "if one could only ...; if you dare to ...",
+      "structure": "Verb (Potential / Dictionary) + ものなら",
+      "explanation": "With a potential verb, expresses an unlikely wish ('If I could return to my youth, I would...'). With a plain verb, warns of a severe consequence if an undesirable event occurs.",
+      "confusableWith": "Potential + ものなら = wishful hypothetical; ordinary verb + ものなら = warning of serious fallout.",
+      "examples": [
+        {
+          "jp": "もう一度やり直せるものなら、あの日の選択を変えたい。",
+          "reading": "もういちどやりなおせるものなら、あのひのせんたくをかえたい。",
+          "en": "If I could do it over again, I would change the choice I made that day."
+        },
+        {
+          "jp": "そんな大切な会議に遅刻しようものなら、信用を失ってしまう。",
+          "reading": "そんなたいせつなかいぎにちこくしようものなら、しんようをうしなってしまう。",
+          "en": "If you were to be late for such an important meeting, you would lose all trust."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "時間を戻せる",
+        "sentenceAfter": "、学生時代にもっと本を読んでおきたかった。",
+        "en": "If I could turn back time, I wish I had read more books during my student days.",
+        "answer": "ものなら",
+        "acceptedAnswers": ["ものなら"],
+        "choices": ["ものなら", "ものの", "ものだ", "わけには"]
+      }
+    }
+  ]
+}

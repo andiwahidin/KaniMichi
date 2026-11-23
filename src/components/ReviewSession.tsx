@@ -27,7 +27,12 @@ import {
   validateMeaningAnswer,
   validateReadingAnswer,
 } from '../utils/kana';
-import { getItemTypeLabel, SRS_STAGE_NAMES } from '../utils/srs';
+import {
+  getItemTypeLabel,
+  getSrsPolicy,
+  resolveSrsMode,
+  SRS_STAGE_NAMES,
+} from '../utils/srs';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -553,7 +558,8 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                   Selamat! Kamu Naik ke Level {leveledUpTo}
                 </h2>
                 <p className="text-sm text-white/90">
-                  Lebih dari 90% Kanji level sebelumnya mencapai tahap Guru. Radikal Level {leveledUpTo} kini terbuka di Pelajaran!
+                  Lebih dari 90% Kanji level sebelumnya mencapai tahap{' '}
+                  {SRS_STAGE_NAMES[getSrsPolicy(resolveSrsMode(state.settings)).levelUpKanjiStage]}. Radikal Level {leveledUpTo} kini terbuka di Pelajaran!
                 </p>
               </div>
             </div>

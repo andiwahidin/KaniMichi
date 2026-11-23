@@ -4,27 +4,126 @@ import {
   ItemType,
   ReviewHistoryEntry,
   SrsCategory,
+  SrsMode,
   SrsStage,
   UserItemProgress,
+  UserSettings,
   UserState,
 } from '../types/curriculum';
 
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 
-/** Authentic WaniKani SRS intervals from stage N to next review */
-export const SRS_INTERVALS_MS: Record<SrsStage, number | null> = {
+export const DEFAULT_SRS_MODE: SrsMode = 'open';
+
+export interface SrsModePolicy {
+  id: SrsMode;
+  label: string;
+  shortLabel: string;
+  description: string;
+  unlockDepStage: SrsStage;
+  levelUpKanjiStage: SrsStage;
+  allowManualAdvanceOnLessonComplete: boolean;
+  firstReviewLabel: string;
+  fastForwardStepHours: number;
+  intervalsMs: Record<SrsStage, number | null>;
+}
+
+/** Accelerated SRS intervals (Mode Buka Bebas & Mode Cepat) */
+export const FAST_SRS_INTERVALS_MS: Record<SrsStage, number | null> = {
   0: null,
-  1: 4 * HOUR_MS,      // Apprentice I -> 4 jam
-  2: 8 * HOUR_MS,      // Apprentice II -> 8 jam
-  3: 1 * DAY_MS,       // Apprentice III -> 1 hari
-  4: 2 * DAY_MS,       // Apprentice IV -> 2 hari
-  5: 7 * DAY_MS,       // Guru I -> 1 minggu
-  6: 14 * DAY_MS,      // Guru II -> 2 minggu
-  7: 30 * DAY_MS,      // Master -> 1 bulan
-  8: 120 * DAY_MS,     // Enlightened -> 4 bulan
-  9: null,             // Burned -> Tamat
+  1: 1 * HOUR_MS,       // Apprentice I -> 1 jam
+  2: 3 * HOUR_MS,       // Apprentice II -> 3 jam
+  3: 8 * HOUR_MS,       // Apprentice III -> 8 jam
+  4: 1 * DAY_MS,        // Apprentice IV -> 1 hari
+  5: 4 * DAY_MS,        // Guru I -> 4 hari
+  6: 10 * DAY_MS,       // Guru II -> 10 hari
+  7: 21 * DAY_MS,       // Master -> 21 hari
+  8: 90 * DAY_MS,       // Enlightened -> 90 hari
+  9: null,              // Burned -> Tamat
 };
+
+/** Authentic WaniKani SRS intervals from stage N to next review */
+export const STANDARD_SRS_INTERVALS_MS: Record<SrsStage, number | null> = {
+  0: null,
+  1: 4 * HOUR_MS,       // Apprentice I -> 4 jam
+  2: 8 * HOUR_MS,       // Apprentice II -> 8 jam
+  3: 1 * DAY_MS,        // Apprentice III -> 1 hari
+  4: 2 * DAY_MS,        // Apprentice IV -> 2 hari
+  5: 7 * DAY_MS,        // Guru I -> 1 minggu
+  6: 14 * DAY_MS,       // Guru II -> 2 minggu
+  7: 30 * DAY_MS,       // Master -> 1 bulan
+  8: 120 * DAY_MS,      // Enlightened -> 4 bulan
+  9: null,              // Burned -> Tamat
+};
+
+/** Backwards-compatible default intervals export (matches DEFAULT_SRS_MODE) */
+export const SRS_INTERVALS_MS: Record<SrsStage, number | null> = FAST_SRS_INTERVALS_MS;
+
+export const SRS_MODE_POLICIES: Record<SrsMode, SrsModePolicy> = {
+  open: {
+    id: 'open',
+    label: 'Buka Bebas',
+    shortLabel: 'Buka Bebas',
+    description:
+      'Kanji & Kosakata langsung terbuka begitu prasyarat selesai Lesson. Interval dipercepat (1 jam → 1 hari) dan naik level di Apprentice III.',
+    unlockDepStage: 1,
+    levelUpKanjiStage: 3,
+    allowManualAdvanceOnLessonComplete: true,
+    firstReviewLabel: '1 jam',
+    fastForwardStepHours: 1,
+    intervalsMs: FAST_SRS_INTERVALS_MS,
+  },
+  fast: {
+    id: 'fast',
+    label: 'Cepat',
+    shortLabel: 'Cepat',
+    description:
+      'Kanji & Kosakata terbuka saat prasyarat mencapai Apprentice III (2x review). Interval dipercepat dan naik level di Guru I.',
+    unlockDepStage: 3,
+    levelUpKanjiStage: 5,
+    allowManualAdvanceOnLessonComplete: false,
+    firstReviewLabel: '1 jam',
+    fastForwardStepHours: 1,
+    intervalsMs: FAST_SRS_INTERVALS_MS,
+  },
+  standard: {
+    id: 'standard',
+    label: 'Standar',
+    shortLabel: 'Standar',
+    description:
+      'Aturan klasik WaniKani: materi turunan terbuka & naik level di Guru I dengan interval penuh (4 jam → 4 bulan).',
+    unlockDepStage: 5,
+    levelUpKanjiStage: 5,
+    allowManualAdvanceOnLessonComplete: false,
+    firstReviewLabel: '4 jam',
+    fastForwardStepHours: 4,
+    intervalsMs: STANDARD_SRS_INTERVALS_MS,
+  },
+};
+
+export function resolveSrsMode(settings?: Partial<UserSettings> | null): SrsMode {
+  const mode = settings?.srsMode;
+  if (mode === 'open' || mode === 'fast' || mode === 'standard') {
+    return mode;
+  }
+  return DEFAULT_SRS_MODE;
+}
+
+export function getSrsPolicy(mode: SrsMode = DEFAULT_SRS_MODE): SrsModePolicy {
+  return SRS_MODE_POLICIES[mode] ?? SRS_MODE_POLICIES[DEFAULT_SRS_MODE];
+}
+
+export function formatIntervalShort(ms: number | null): string {
+  if (ms === null) return 'Tamat';
+  const hours = Math.round(ms / HOUR_MS);
+  if (hours < 24) return `${hours} jam`;
+  const days = Math.round(hours / 24);
+  if (days >= 30 && days % 30 === 0) {
+    return `${days / 30} bln`;
+  }
+  return `${days} hari`;
+}
 
 export const SRS_STAGE_NAMES: Record<SrsStage, string> = {
   0: 'Pelajaran',
@@ -121,19 +220,32 @@ export function calculateNextSrsStage(
   return Math.max(1, currentStage - adjustment * penaltyFactor) as SrsStage;
 }
 
-/** Round review timestamp down to the top of the hour (WaniKani batching behavior) */
-export function calculateNextReviewAt(nextStage: SrsStage, now = Date.now()): number | null {
-  const interval = SRS_INTERVALS_MS[nextStage];
+/**
+ * Calculate next review timestamp according to active SRS mode.
+ * - For short intervals (<= 8 hours) in Open/Fast modes, keep exact minute precision so 1h/3h/8h reviews arrive accurately.
+ * - For daily intervals (>= 24 hours) or Standard mode, batch neatly to the top of the hour.
+ */
+export function calculateNextReviewAt(
+  nextStage: SrsStage,
+  now = Date.now(),
+  mode: SrsMode = DEFAULT_SRS_MODE
+): number | null {
+  const policy = getSrsPolicy(mode);
+  const interval = policy.intervalsMs[nextStage];
   if (interval === null) return null;
   const target = new Date(now + interval);
-  target.setMinutes(0, 0, 0);
+  if (mode === 'standard' || interval >= DAY_MS) {
+    target.setMinutes(0, 0, 0);
+  } else {
+    target.setSeconds(0, 0);
+  }
   return target.getTime();
 }
 
 /**
  * Sparse progress reconciler across all 60 levels:
- * - Checks >= 90% Kanji Guru rule for automatic Level Up (up to Level 60)
- * - Unlocks Radicals of <= currentLevel, and unlocks Kanji/Vocab whose dependencies reached Guru (stage >= 5)
+ * - Checks >= 90% Kanji at policy.levelUpKanjiStage for automatic Level Up (up to Level 60)
+ * - Unlocks Radicals of <= currentLevel, and unlocks Kanji/Vocab whose dependencies reached policy.unlockDepStage
  * - Only writes entries into state.progress for unlocked items (keeps localStorage tiny!)
  */
 export function reconcileUnlocksAndLevelUp(
@@ -141,21 +253,23 @@ export function reconcileUnlocksAndLevelUp(
   dataset: CurriculumDataset,
   now = Date.now()
 ): { nextState: UserState; newlyUnlockedIds: string[]; leveledUpTo: number | null } {
+  const mode = resolveSrsMode(state.settings);
+  const policy = getSrsPolicy(mode);
   const progress: Record<string, UserItemProgress> = { ...state.progress };
   let currentLevel = Math.min(MAX_LEVEL, Math.max(1, state.currentLevel));
   let leveledUpTo: number | null = null;
   const newlyUnlockedIds: string[] = [];
 
-  // Check Level-Up condition: >= 90% of current level's Kanji at Guru (stage >= 5)
+  // Check Level-Up condition: >= 90% of current level's Kanji at policy.levelUpKanjiStage
   while (currentLevel < MAX_LEVEL) {
     const levelKanji = (dataset.byLevel[currentLevel] ?? []).filter(
       (i) => i.type === 'kanji'
     );
-    const guruCount = levelKanji.filter(
-      (k) => (progress[k.id]?.srsStage ?? -1) >= 5
+    const qualifiedCount = levelKanji.filter(
+      (k) => (progress[k.id]?.srsStage ?? -1) >= policy.levelUpKanjiStage
     ).length;
     const required = Math.ceil(levelKanji.length * 0.9);
-    if (levelKanji.length > 0 && guruCount >= required) {
+    if (levelKanji.length > 0 && qualifiedCount >= required) {
       currentLevel += 1;
       leveledUpTo = currentLevel;
     } else {
@@ -179,7 +293,11 @@ export function reconcileUnlocksAndLevelUp(
           deps.length === 0 ||
           deps.every((depId) => {
             const depProg = progress[depId];
-            return depProg && depProg.srsStage !== null && depProg.srsStage >= 5;
+            return (
+              depProg &&
+              depProg.srsStage !== null &&
+              depProg.srsStage >= policy.unlockDepStage
+            );
           });
       }
 
@@ -206,7 +324,161 @@ export function reconcileUnlocksAndLevelUp(
   };
 }
 
-/** Create a completely fresh Level 1 state (all 16 Level 1 radicals ready in Lesson Queue) */
+/**
+ * Switch SRS mode, tighten any pending future reviews across ALL 3 SRS modules
+ * (Main Curriculum, Grammar JLPT, Kana JLPT) whose remaining wait exceeds the new mode's interval,
+ * and immediately reconcile newly eligible unlocks / level-ups.
+ */
+export function rescheduleStateForSrsMode(
+  state: UserState,
+  dataset: CurriculumDataset,
+  newMode: SrsMode,
+  now = Date.now()
+): {
+  nextState: UserState;
+  newlyUnlockedIds: string[];
+  leveledUpTo: number | null;
+  rescheduledCount: number;
+} {
+  const policy = getSrsPolicy(newMode);
+  let rescheduledCount = 0;
+
+  const clampReviewAt = (
+    stage: SrsStage,
+    currentNextReviewAt: number | null,
+    anchorTs: number | null
+  ): number | null => {
+    if (stage < 1 || stage > 8) return currentNextReviewAt;
+    const interval = policy.intervalsMs[stage];
+    if (interval === null) return null;
+    if (currentNextReviewAt === null) {
+      rescheduledCount += 1;
+      return calculateNextReviewAt(stage, now, newMode);
+    }
+    // If already due, leave it due right now
+    if (currentNextReviewAt <= now) return currentNextReviewAt;
+
+    // Anchor from lastReviewedAt/startedAt if available, capped at now + interval
+    const fromAnchor = anchorTs ? anchorTs + interval : now + interval;
+    const maxAllowed = calculateNextReviewAt(stage, now, newMode) ?? now + interval;
+    const target = Math.min(fromAnchor, maxAllowed);
+
+    if (currentNextReviewAt > target + 60_000) {
+      rescheduledCount += 1;
+      return target;
+    }
+    return currentNextReviewAt;
+  };
+
+  const progress: Record<string, UserItemProgress> = { ...state.progress };
+  for (const [id, p] of Object.entries(progress)) {
+    if (p.srsStage !== null && p.srsStage >= 1 && p.srsStage <= 8) {
+      const nextAt = clampReviewAt(
+        p.srsStage,
+        p.nextReviewAt,
+        p.lastReviewedAt ?? p.startedAt
+      );
+      if (nextAt !== p.nextReviewAt) {
+        progress[id] = { ...p, nextReviewAt: nextAt };
+      }
+    }
+  }
+
+  let grammarProgress = state.grammarProgress;
+  if (grammarProgress) {
+    const nextGp = { ...grammarProgress };
+    for (const [id, p] of Object.entries(nextGp)) {
+      if (p.srsStage >= 1 && p.srsStage <= 8) {
+        const nextAt = clampReviewAt(
+          p.srsStage,
+          p.nextReviewAt,
+          p.lastReviewedAt ?? p.startedAt
+        );
+        if (nextAt !== p.nextReviewAt) {
+          nextGp[id] = { ...p, nextReviewAt: nextAt };
+        }
+      }
+    }
+    grammarProgress = nextGp;
+  }
+
+  let kanaVocabProgress = state.kanaVocabProgress;
+  if (kanaVocabProgress) {
+    const nextKp = { ...kanaVocabProgress };
+    for (const [id, p] of Object.entries(nextKp)) {
+      if (p.srsStage >= 1 && p.srsStage <= 8) {
+        const nextAt = clampReviewAt(
+          p.srsStage,
+          p.nextReviewAt,
+          p.lastReviewedAt ?? p.startedAt
+        );
+        if (nextAt !== p.nextReviewAt) {
+          nextKp[id] = { ...p, nextReviewAt: nextAt };
+        }
+      }
+    }
+    kanaVocabProgress = nextKp;
+  }
+
+  const updatedState: UserState = {
+    ...state,
+    progress,
+    grammarProgress,
+    kanaVocabProgress,
+    settings: {
+      ...state.settings,
+      srsMode: newMode,
+    },
+  };
+
+  const reconciled = reconcileUnlocksAndLevelUp(updatedState, dataset, now);
+  return {
+    nextState: reconciled.nextState,
+    newlyUnlockedIds: reconciled.newlyUnlockedIds,
+    leveledUpTo: reconciled.leveledUpTo,
+    rescheduledCount,
+  };
+}
+
+/**
+ * Manual early level advancement for Open mode:
+ * Allowed when >= 90% of current level's Kanji have at least completed Lesson (srsStage >= 1).
+ */
+export function advanceToNextLevelIfEligible(
+  state: UserState,
+  dataset: CurriculumDataset,
+  now = Date.now()
+): { ok: boolean; nextState: UserState; newLevel?: number } {
+  const mode = resolveSrsMode(state.settings);
+  const policy = getSrsPolicy(mode);
+  if (!policy.allowManualAdvanceOnLessonComplete || state.currentLevel >= MAX_LEVEL) {
+    return { ok: false, nextState: state };
+  }
+  const levelKanji = (dataset.byLevel[state.currentLevel] ?? []).filter(
+    (i) => i.type === 'kanji'
+  );
+  const startedCount = levelKanji.filter(
+    (k) => (state.progress[k.id]?.srsStage ?? -1) >= 1
+  ).length;
+  const required = Math.ceil(levelKanji.length * 0.9);
+  if (levelKanji.length === 0 || startedCount < required) {
+    return { ok: false, nextState: state };
+  }
+  const nextLevel = Math.min(MAX_LEVEL, state.currentLevel + 1);
+  const bumped: UserState = {
+    ...state,
+    currentLevel: nextLevel,
+    levelUpNotification: nextLevel,
+  };
+  const reconciled = reconcileUnlocksAndLevelUp(bumped, dataset, now);
+  return {
+    ok: true,
+    nextState: reconciled.nextState,
+    newLevel: reconciled.nextState.currentLevel,
+  };
+}
+
+/** Create a completely fresh Level 1 state (all Level 1 radicals ready in Lesson Queue) */
 export function createFreshLevel1State(
   dataset: CurriculumDataset,
   now = Date.now()
@@ -222,6 +494,7 @@ export function createFreshLevel1State(
       vacationMode: false,
       vacationStartedAt: null,
       dailyReviewGoal: 25,
+      srsMode: DEFAULT_SRS_MODE,
     },
     streakDays: 0,
     lastActiveDate: null,

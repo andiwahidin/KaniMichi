@@ -26,7 +26,12 @@ import {
   validateMeaningAnswer,
   validateReadingAnswer,
 } from '../utils/kana';
-import { getItemTypeLabel } from '../utils/srs';
+import {
+  getItemTypeLabel,
+  getSrsPolicy,
+  resolveSrsMode,
+  SRS_STAGE_NAMES,
+} from '../utils/srs';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -81,6 +86,9 @@ export const LessonSession: React.FC = () => {
   const [feedbackMsg, setFeedbackMsg] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [newlyUnlockedIds, setNewlyUnlockedIds] = useState<string[]>([]);
+
+  const srsPolicy = getSrsPolicy(resolveSrsMode(state.settings));
 
   const inputRef = useRef<HTMLInputElement>(null);
   const advanceQuizRef = useRef<() => void>(() => {});
@@ -233,8 +241,9 @@ export const LessonSession: React.FC = () => {
       const nextDone = completedQuizCount + 1;
       setCompletedQuizCount(nextDone);
       if (rest.length === 0) {
-        // Batch mastered! Promote all items to Apprentice I
-        completeLessonBatch(batch.map((i) => i.id));
+        // Batch mastered! Promote all items to Apprentice I & unlock dependent items immediately
+        const outcome = completeLessonBatch(batch.map((i) => i.id));
+        setNewlyUnlockedIds(outcome.newlyUnlockedIds);
         setPhase('complete');
         return;
       }
@@ -393,6 +402,7 @@ export const LessonSession: React.FC = () => {
     const next = lessonQueue.slice(0, batchSize);
     setBatch(next);
     setSlideIdx(0);
+    setNewlyUnlockedIds([]);
     setPhase('study');
   };
 
@@ -403,7 +413,7 @@ export const LessonSession: React.FC = () => {
           Semua Pelajaran Saat Ini Sudah Selesai
         </h1>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          Selesaikan Review Harian hingga item mencapai tahap Guru untuk membuka Kanji dan Kosakata baru.
+          Selesaikan Review Harian hingga item mencapai tahap {SRS_STAGE_NAMES[srsPolicy.levelUpKanjiStage]} untuk membuka level berikutnya.
         </p>
         <button
           type="button"
@@ -419,20 +429,26 @@ export const LessonSession: React.FC = () => {
 
   // PHASE 3: COMPLETION SUMMARY
   if (phase === 'complete') {
+    const unlockedItems = newlyUnlockedIds
+      .map((id) => dataset.byId[id])
+      .filter((it): it is CurriculumItem => Boolean(it));
+
     return (
       <div className="max-w-3xl mx-auto px-4 py-12 space-y-6">
-        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-4">
+        <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-5">
           <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-6 h-6" />
           </div>
-          <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
-            Sesi Pelajaran Selesai
-          </h1>
-          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
-            {batch.length} item telah dipindahkan ke tahap <strong>Apprentice I</strong>. Review pertamamu untuk item ini dijadwalkan dalam 4 jam.
-          </p>
+          <div className="space-y-1.5">
+            <h1 className="font-display text-2xl font-bold text-slate-900 dark:text-white">
+              Sesi Pelajaran Selesai
+            </h1>
+            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto">
+              {batch.length} item telah dipindahkan ke tahap <strong>Apprentice I</strong>. Review pertamamu dijadwalkan dalam <strong>{srsPolicy.firstReviewLabel}</strong>.
+            </p>
+          </div>
 
-          <div className="flex flex-wrap justify-center gap-2.5 pt-2">
+          <div className="flex flex-wrap justify-center gap-2.5">
             {batch.map((item) => (
               <button
                 key={item.id}
@@ -454,7 +470,46 @@ export const LessonSession: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
+          {unlockedItems.length > 0 && (
+            <div className="pt-5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+              <div className="space-y-0.5">
+                <div className="text-xs font-semibold text-[#059669] dark:text-emerald-400">
+                  Pelajaran Baru Langsung Terbuka · {unlockedItems.length} Item
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Materi turunan langsung masuk ke antrean Pelajaran tanpa perlu menunggu hari berikutnya.
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-2">
+                {unlockedItems.slice(0, 14).map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => openItemDetail(item.id)}
+                    className={`px-2.5 py-1.5 rounded-lg text-white font-jp font-bold text-sm flex items-center gap-1.5 cursor-pointer transition-opacity hover:opacity-90 ${
+                      item.type === 'radical'
+                        ? 'bg-[#0284C7]'
+                        : item.type === 'kanji'
+                        ? 'bg-[#DB2777]'
+                        : 'bg-[#7C3AED]'
+                    }`}
+                  >
+                    <span>{item.characters}</span>
+                    <span className="font-sans text-[11px] font-medium text-white/90">
+                      {item.primaryMeaning}
+                    </span>
+                  </button>
+                ))}
+                {unlockedItems.length > 14 && (
+                  <span className="self-center text-xs font-mono-num text-slate-500 dark:text-slate-400 px-1">
+                    +{unlockedItems.length - 14} lainnya
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
             <button
               type="button"
               onClick={() => setActiveView('dashboard')}

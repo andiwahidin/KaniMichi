@@ -1,0 +1,273 @@
+{
+  "level": 2,
+  "pack": "n2-pack4",
+  "items": [
+    {
+      "id": "rd-n2-21",
+      "jlpt": 2,
+      "order": 21,
+      "passageType": "notice",
+      "titleJp": "テレワーク勤務[きんむ]規程[きてい]の一部[いちぶ]改定[かいてい]について",
+      "titleEn": "Partial Revision to the Telework Policy",
+      "recommendedMinutes": 6,
+      "contextEn": "Internal HR memo announcing updated hybrid-work eligibility rules.",
+      "paragraphs": [
+        "社員[しゃいん]各位[かくい]\n人事部[じんじぶ]より、来月[らいげつ]一日[ついたち]施行[しこう]のテレワーク勤務[きんむ]規程[きてい]改定[かいてい]についてご案内[あんない]いたします。",
+        "従来[じゅうらい]、在宅[ざいたく]勤務[きんむ]は週[しゅう]二日[ふつか]を上限[じょうげん]とし、実施[じっし]の三営業日[さんえいぎょうび]前[まえ]までに上長[じょうちょう]の承認[しょうにん]を得[え]る必要[ひつよう]がありました。今回の改定[かいてい]により、上限[じょうげん]は週[しゅう]三日[みっか]へ拡大[かくだい]され、申請[しんせい]期限[きげん]も前営業日[ぜんえいぎょうび]の午後[ごご]三時[さんじ]までに緩和[かんわ]されます。",
+        "ただし、新入社員[しんにゅうしゃいん]および異動[いどう]直後[ちょくご]の三か月間[さんかげつかん]は、業務[ぎょうむ]習得[しゅうとく]とチーム内[ない]の連携[れんけい]を重視[じゅうし]するため、原則[げんそく]として週[しゅう]一日[いちにち]までとします。また、カフェなど不特定[ふとくてい]多数[たすう]が出入[でい]りする場所[ばしょ]での業務[ぎょうむ]は、情報[じょうほう]漏洩[ろうえい]防止[ぼうし]の観点[かんてん]から引[ひ]き続[つづ]き禁止[きんし]となります。"
+      ],
+      "translationEn": [
+        "Dear All Employees,\nHuman Resources hereby announces a revision to the Telework Policy taking effect on the 1st of next month.",
+        "Previously, working from home was capped at two days per week and required supervisor approval at least three business days in advance. Under this revision, the cap expands to three days per week, and the application deadline is relaxed to 3:00 PM on the previous business day.",
+        "However, for new hires and during the first three months immediately following a transfer, telework is in principle limited to one day per week to prioritize onboarding and team coordination. Furthermore, working in places frequented by the general public such as cafés remains prohibited to prevent information leaks."
+      ],
+      "keyVocab": [
+        { "word": "緩和", "reading": "かんわ", "en": "relaxation; easing (of rules)" },
+        { "word": "異動", "reading": "いどう", "en": "department transfer" },
+        { "word": "情報漏洩", "reading": "じょうほうろうえい", "en": "information leak" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-21-q1",
+          "promptJp": "改定後[かいていご]のテレワーク規程[きてい]について、正[ただ]しいのはどれですか。",
+          "promptEn": "Which statement is accurate regarding the revised telework policy?",
+          "choices": [
+            "全社員[ぜんしゃいん]が例外[れいがい]なく週[しゅう]三日[みっか]まで在宅[ざいたく]勤務[きんむ]できる。",
+            "申請[しんせい]期限[きげん]は実施[じっし]の前営業日[ぜんえいぎょうび]の午後[ごご]三時[さんじ]までに緩和[かんわ]される。",
+            "情報[じょうほう]管理[かんり]に気[き]をつければカフェでの業務[ぎょうむ]も認[みと]められる。",
+            "上長[じょうちょう]の承認[しょうにん]は今後[こんご]不要[ふよう]になる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The deadline is relaxed to 3:00 PM the prior business day. New hires/transferees are capped at 1 day, and cafés remain strictly prohibited."
+        },
+        {
+          "id": "rd-n2-21-q2",
+          "promptJp": "異動[いどう]して二か月目[にかげつめ]の社員[しゃいん]は、原則[げんそく]として週[しゅう]何日[なんにち]までテレワークができますか。",
+          "promptEn": "In principle, up to how many days per week may an employee in their 2nd month after a transfer telework?",
+          "choices": [
+            "テレワークは一切[いっさい]できない。",
+            "週[しゅう]一日[いちにち]まで",
+            "週[しゅう]二日[ふつか]まで",
+            "週[しゅう]三日[みっか]まで"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "During the first three months after a transfer (異動直後の三か月間), telework is capped at one day per week (週一日まで)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-22",
+      "jlpt": 2,
+      "order": 22,
+      "passageType": "essay",
+      "titleJp": "「質問[しつもん]する力[ちから]」と職場[しょくば]の学び[まなび]",
+      "titleEn": "The Skill of Asking Questions and Workplace Learning",
+      "recommendedMinutes": 6,
+      "contextEn": "Business essay on why framing good questions accelerates problem solving.",
+      "paragraphs": [
+        "職場[しょくば]でわからないことが生[しょう]じた際[さい]、「こんな初歩的[しょほてき]なことを聞[き]いたら呆[あき]れられるのではないか」と躊躇[ちゅうちょ]してしまう若手[わかて]は少[すく]なくない。しかし、疑問[ぎもん]を抱[かか]えたまま自己流[じこりゅう]で進[すす]めた結果[けっか]、後[あと]になって大[おお]きな手戻[てもど]りが発生[はっせい]するケースのほうが、組織[そしき]にとっての損失[そんしつ]はずっと大[おお]きい。",
+        "もっとも、単[たん]に「どうすればいいですか」と丸投[まるな]げするのでは、答[こた]える側[がわ]の負担[ふたん]が重[おも]くなる。大切[たいせつ]なのは、「ここまでは確認[かくにん]したが、A案[あん]とB案[あん]の判断[はんだん]基準[きじゅん]が曖昧[あいまい]だ」というように、自分[じぶん]の仮説[かせつ]と詰[つ]まっている箇所[かしょ]を整理[せいり]した上[うえ]で尋[たず]ねることである。",
+        "良質[りょうしつ]な質問[しつもん]は、尋[たず]ねる側[がわ]の理解[りかい]を深[ふか]めるばかりか、質問[しつもん]を受[う]けた側[がわ]にも暗黙[あんもく]の前提[ぜんてい]を見直[みなお]す契機[けいき]を与[あた]える。質問[しつもん]は知識[ちしき]不足[ぶそく]の証明[しょうめい]ではなく、仕事[しごと]の質[しつ]を高[たか]めるための共同[きょうどう]作業[さぎょう]なのである。"
+      ],
+      "translationEn": [
+        "When an uncertainty arises at work, many junior staff hesitate, thinking, 'Won't people be exasperated if I ask something so basic?' Yet cases where someone proceeds in their own way while hiding doubts—causing major rework later—represent a far greater loss to the organization.",
+        "That said, merely dumping 'What should I do?' onto someone places a heavy burden on the responder. What matters is organizing your own hypothesis and exact sticking point beforehand—such as, 'I checked up to here, but the criteria for choosing between Plan A and Plan B are unclear.'",
+        "A well-crafted question not only deepens the questioner's understanding, it also gives the responder a catalyst to re-examine unspoken assumptions. Asking questions is not proof of ignorance; it is a collaborative act to raise the quality of work."
+      ],
+      "keyVocab": [
+        { "word": "手戻り", "reading": "てもどり", "en": "rework; having to redo work" },
+        { "word": "丸投げ", "reading": "まるなげ", "en": "dumping everything onto someone else" },
+        { "word": "暗黙の前提", "reading": "あんもくのぜんてい", "en": "unspoken assumption" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-22-q1",
+          "promptJp": "筆者[ひっしゃ]が勧[すす]めている質問[しつもん]の仕方[しかた]はどれですか。",
+          "promptEn": "What way of asking questions does the author recommend?",
+          "choices": [
+            "まず何も調べず[しらべず]にすぐ上司[じょうし]へ丸投[まるな]げする。",
+            "自分[じぶん]の仮説[かせつ]と分[わ]からない箇所[かしょ]を整理[せいり]してから尋[たず]ねる。",
+            "初歩的[しょほてき]な疑問[ぎもん]は聞[き]かず、自己流[じこりゅう]で最後までやり切[き]る。",
+            "メールではなく必[かなら]ず会議[かいぎ]の場[ば]で質問[しつもん]する。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 advises clarifying what you checked, your hypothesis, and the specific point where you are stuck before asking."
+        },
+        {
+          "id": "rd-n2-22-q2",
+          "promptJp": "筆者[ひっしゃ]によると、良質[りょうしつ]な質問[しつもん]は質問[しつもん]を受[う]けた側[がわ]にもどんな効果[こうか]をもたらすか。",
+          "promptEn": "According to the author, what effect does a good question have on the person being asked?",
+          "choices": [
+            "自分[じぶん]の仕事[しごと]を減[へ]らすことができる。",
+            "暗黙[あんもく]の前提[ぜんてい]を見直[みなお]すきっかけになる。",
+            "若手[わかて]の知識[ちしき]不足[ぶそく]を評価[ひょうか]しやすくなる。",
+            "マニュアルを廃止[はいし]する理由[りゆう]になる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 3 states that good questions give the responder an occasion to re-examine unspoken assumptions (暗黙の前提を見直す契機)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-23",
+      "jlpt": 2,
+      "order": 23,
+      "passageType": "short",
+      "titleJp": "過剰[かじょう]包装[ほうそう]の見直[みなお]しと消費者[しょうひしゃ]意識[いしき]",
+      "titleEn": "Rethinking Excessive Packaging and Consumer Mindset",
+      "recommendedMinutes": 5,
+      "contextEn": "Editorial column discussing retail packaging habits in Japan.",
+      "paragraphs": [
+        "日本[にほん]の贈答品[ぞうとうひん]は、何重[なんじゅう]もの包装紙[ほうそうし]や頑丈[がんじょう]な化粧箱[けしょうばこ]によって美[うつく]しく仕上[しあ]げられてきた。相手[あいて]への敬意[けいい]や丁寧[ていねい]さを表[あらわ]す文化[ぶんか]として定着[ていちゃく]してきた一面[いちめん]は確か[たしか]にある。",
+        "一方で、環境[かんきょう]負荷[ふか]への関心[かんしん]が高[たか]まる中[なか]、簡易[かんい]包装[ほうそう]を積極的[せっきょくてき]に選[えら]ぶ消費者[しょうひしゃ]が増[ふ]えている。興味深[きょうみぶか]いのは、ある百貨店[ひゃっかてん]の調査[ちょうさ]で、贈[おく]り主[ぬし]が心配[しんぱい]するほど受[う]け取[と]り手[て]は豪華[ごうか]な包装[ほうそう]を求[もと]めておらず、むしろ「ゴミが少なくて助[たす]かる」と好意的[こういてき]に受[う]け止[と]める声[こえ]が多[おお]かったことだ。慣習[かんしゅう]と思[おも]い込[こ]みを見直[みなお]すことで、礼儀[れいぎ]と持続[じぞく]可能性[かのうせい]は十分[じゅうぶん]に両立[りょうりつ]できる。"
+      ],
+      "translationEn": [
+        "Japanese gifts have traditionally been beautifully finished with multiple layers of wrapping paper and sturdy decorative boxes. It is certainly true that this took root as a culture expressing respect and care for the recipient.",
+        "On the other hand, amid rising awareness of environmental impact, more consumers are actively choosing simple packaging. Interestingly, a department store survey found that recipients do not expect lavish wrapping nearly as much as gift-givers fear; rather, many reacted favorably, saying 'It's helpful to have less trash.' By reconsidering habits and assumptions, courtesy and sustainability can easily coexist."
+      ],
+      "keyVocab": [
+        { "word": "環境負荷", "reading": "かんきょうふか", "en": "environmental burden / impact" },
+        { "word": "思い込み", "reading": "おもいこみ", "en": "assumption; preconceived notion" },
+        { "word": "両立", "reading": "りょうりつ", "en": "coexistence; balancing both" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-23-q1",
+          "promptJp": "百貨店[ひゃっかてん]の調査[ちょうさ]で分[わ]かったことは何[なに]ですか。",
+          "promptEn": "What did the department store survey reveal?",
+          "choices": [
+            "受[う]け取[と]り手[て]は豪華[ごうか]な化粧箱[けしょうばこ]がないと失礼[しつれい]だと感[かん]じる。",
+            "受[う]け取[と]り手[て]は贈[おく]り主[ぬし]が心配[しんぱい]するほど豪華[ごうか]な包装[ほうそう]を求[もと]めていない。",
+            "簡易[かんい]包装[ほうそう]にすると贈答品[ぞうとうひん]の売[う]り上[あ]げが急減[きゅうげん]する。",
+            "若[わか]い世代[せだい]ほど何重[なんじゅう]もの包装[ほうそう]を好[この]む。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The survey showed recipients do not demand lavish packaging as much as givers worry, and many appreciate generating less trash."
+        },
+        {
+          "id": "rd-n2-23-q2",
+          "promptJp": "筆者[ひっしゃ]の結論[けつろん]として最[もっと]も適切[てきせつ]なものはどれですか。",
+          "promptEn": "Which best expresses the author's conclusion?",
+          "choices": [
+            "環境[かんきょう]のために贈答[ぞうとう]の習慣[しゅうかん]自体[じたい]をやめるべきだ。",
+            "思い込[おもいこ]みを見直[みなお]せば、礼儀[れいぎ]と持続[じぞく]可能性[かのうせい]は両立[りょうりつ]できる。",
+            "包装紙[ほうそうし]は必[かなら]ず有料[ゆうりょう]に義務[ぎむ]づけるべきだ。",
+            "伝統[でんとう]文化[ぶんか]を守[まも]るには豪華[ごうか]な箱[はこ]が不可欠[ふかけつ]だ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence states that reconsidering assumptions allows courtesy and sustainability to coexist (礼儀と持続可能性は十分に両立できる)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-24",
+      "jlpt": 2,
+      "order": 24,
+      "passageType": "email",
+      "titleJp": "展示会[てんじかい]出展[しゅってん]ブースの搬入[はんにゅう]時間[じかん]変更[へんこう]のお詫[わ]び",
+      "titleEn": "Apology for Trade Show Booth Load-In Time Change",
+      "recommendedMinutes": 5,
+      "contextEn": "Formal email from an event secretariat to an exhibiting partner company.",
+      "paragraphs": [
+        "株式会社[かぶしきがいしゃ]みらいテック 広報部[こうほうぶ] 鈴木[すずき]様[さま]\n平素[へいそ]より格別[かくべつ]のご高配[こうはい]を賜[たまわ]り、厚[あつ]く御礼[おんれい]申し上[もうしあ]げます。展示会[てんじかい]事務局[じむきょく]の渡辺[わたなべ]でございます。",
+        "来週[らいしゅう]金曜[きんよう]に予定[よてい]しております機材[きざい]搬入[はんにゅう]につきまして、会場[かいじょう]側[がわ]のエレベーター点検[てんけん]が長引[ながび]く見込[みこ]みとなったため、貴社[きしゃ]の搬入[はんにゅう]枠[わく]を「午後[ごご]一時[いちじ]〜三時[さんじ]」から「午後[ごご]二時半[にじはん]〜四時半[よじはん]」へ変更[へんこう]させていただきたくご連絡[れんらく]いたしました。",
+        "なお、小型[こがた]のパンフレットなど階段[かいだん]で運[はこ]べるお荷物[にもつ]については、当初[とうしょ]の予定[よてい]通[どお]り午後[ごご]一時[いちじ]からブース内[ない]へ置[お]いていただくことが可能[かのう]です。急[きゅう]な変更[へんこう]によりご迷惑[めいわく]をおかけし誠[まこと]に申し訳[もうしわけ]ございませんが、ご都合[つごう]に支障[ししょう]がある際[さい]は、明日[あした]十七時[じゅうしちじ]までにご返信[へんしん]くださいますようお願い申し上[おねがいもうしあ]げます。"
+      ],
+      "translationEn": [
+        "Dear Mr./Ms. Suzuki, PR Department, Mirai Tech Co., Ltd.,\nThank you for your continued patronage. This is Watanabe from the Trade Show Secretariat.",
+        "Regarding equipment load-in scheduled for next Friday, because elevator maintenance by the venue is expected to take longer than planned, we are writing to ask to shift your company's load-in slot from 1:00–3:00 PM to 2:30–4:30 PM.",
+        "Please note that small items that can be carried by stairs, such as brochures, may still be placed inside your booth starting at 1:00 PM as originally scheduled. We sincerely apologize for any inconvenience caused by this sudden change; if this creates a conflict with your schedule, please reply by 5:00 PM tomorrow."
+      ],
+      "keyVocab": [
+        { "word": "搬入", "reading": "はんにゅう", "en": "carrying in / load-in of equipment" },
+        { "word": "見込み", "reading": "みこみ", "en": "forecast; expectation" },
+        { "word": "支障", "reading": "ししょう", "en": "hindrance; conflict" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-24-q1",
+          "promptJp": "機材[きざい]の搬入[はんにゅう]時間[じかん]が変更[へんこう]になった理由[りゆう]は何[なに]ですか。",
+          "promptEn": "Why was the equipment load-in slot changed?",
+          "choices": [
+            "鈴木[すずき]さんの会社[かいしゃ]から延期[えんき]の依頼[いらい]があったから。",
+            "会場[かいじょう]のエレベーター点検[てんけん]が長引[ながび]く見込[みこ]みになったから。",
+            "台風[たいふう]でトラックの到着[とうちゃく]が遅[おく]れるから。",
+            "展示会[てんじかい]の開催日[かいさいび]自体[じたい]が変更[へんこう]になったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The email explains that venue elevator inspection/maintenance is expected to run long."
+        },
+        {
+          "id": "rd-n2-24-q2",
+          "promptJp": "午後[ごご]一時[いちじ]の時点[じてん]で鈴木[すずき]さんの会社[かいしゃ]ができることはどれですか。",
+          "promptEn": "What can Suzuki's company still do starting at 1:00 PM?",
+          "choices": [
+            "大型[おおがた]機材[きざい]をエレベーターで運[はこ]ぶ。",
+            "階段[かいだん]で運[はこ]べる小型[こがた]のパンフレットなどをブースへ置[お]く。",
+            "展示会[てんじかい]の一般[いっぱん]公開[こうかい]を始[はじ]める。",
+            "何[なに]も運[はこ]べないので二時半[にじはん]まで入場[にゅうじょう]できない。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Small items carryable via stairs (such as brochures) can still be brought into the booth from 1:00 PM as originally scheduled."
+        }
+      ]
+    },
+    {
+      "id": "rd-n2-25",
+      "jlpt": 2,
+      "order": 25,
+      "passageType": "comparison",
+      "titleJp": "公共[こうきょう]図書館[としょかん]の静粛性[せいしゅくせい] vs 交流[こうりゅう]空間[くうかん]化[か]",
+      "titleEn": "Quiet Public Libraries vs. Community Interaction Spaces (A/B Comparison)",
+      "recommendedMinutes": 7,
+      "contextEn": "Two urban planners debate the ideal atmosphere of modern municipal libraries.",
+      "labelA": "文章[ぶんしょう]A",
+      "labelB": "文章[ぶんしょう]B",
+      "paragraphs": [
+        "近年[きんねん]、カフェを併設[へいせつ]したり談話[だんわ]スペースを設[もう]けたりする「にぎやかな図書館[としょかん]」が各地[かくち]で増[ふ]えている。市民[しみん]の交流[こうりゅう]を促[うなが]す意図[いと]は理解[りかい]できるものの、静[しず]かに本[ほん]と向[む]き合[あ]える公共[こうきょう]空間[くうかん]は現代[げんだい]社会[しゃかい]においてますます希少[きしょう]になっている。商業[しょうぎょう]施設[しせつ]と違[ちが]い、お金[かね]を払[はら]わずに落ち着[おちつ]いて思索[しさく]できる「静寂[せいじゃく]の砦[とりで]」としての役割[やくわり]こそ、図書館[としょかん]が手放[てばな]してはならない原点[げんてん]だ。"
+      ],
+      "paragraphsB": [
+        "図書館[としょかん]を「私語[しご]厳禁[げんきん]の静[しず]かな場所[ばしょ]」に固定[こてい]してしまうと、子連[こづ]れの親[おや]や、仲間[なかま]と議論[ぎろん]しながら調[しら]べ学習[がくしゅう]をしたい学生[がくせい]が足[あし]を運[はこ]びにくくなる。情報[じょうほう]は単[たん]に個人[こじん]で読[よ]み込[こ]むだけでなく、人[ひと]との対話[たいわ]を通[つう]じて新[あら]たな知[ち]へと育[そだ]つものだ。もちろん集中[しゅうちゅう]閲覧室[えつらんしつ]を別[べつ]フロアに分[わ]ける工夫[くふう]は必要[ひつよう]だが、開[ひら]かれた交流[こうりゅう]の場[ば]へ進化[しんか]させることこそ地域[ちいき]の財産[ざいさん]になる。"
+      ],
+      "translationEn": [
+        "Text A: Recently, 'lively libraries' with attached cafés and conversation zones have increased everywhere. While the intent to encourage civic interaction is understandable, public spaces where one can quietly engage with books are becoming ever scarcer in modern society. Unlike commercial facilities, the role of a 'sanctuary of quiet' where anyone can reflect calmly without paying is the core origin libraries must never give up."
+      ],
+      "translationBEn": [
+        "Text B: Fixing libraries as strictly 'no-talking quiet zones' makes it harder for parents with young children or students doing collaborative research to visit. Information does not merely sit for solitary reading; it grows into new knowledge through dialogue with others. Of course, separating a quiet reading room on another floor is necessary, yet evolving libraries into open hubs of interaction truly makes them a community treasure."
+      ],
+      "keyVocab": [
+        { "word": "希少", "reading": "きしょう", "en": "scarce; rare" },
+        { "word": "思索", "reading": "しさく", "en": "contemplation; deep thought" },
+        { "word": "私語厳禁", "reading": "しごげんきん", "en": "strictly no chatting" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n2-25-q1",
+          "promptJp": "文章[ぶんしょう]Aの筆者[ひっしゃ]が図書館[としょかん]に最[もっと]も求[もと]めている役割[やくわり]は何[なに]か。",
+          "promptEn": "What role does the author of Text A value most in a public library?",
+          "choices": [
+            "カフェ収入[しゅうにゅう]で自治体[じちたい]の財政[ざいせい]を支[ささ]えること。",
+            "無料[むりょう]で静[しず]かに本[ほん]と向[む]き合[あ]い思索[しさく]できる空間[くうかん]を守[まも]ること。",
+            "子どもたちが自由[じゆう]に遊[あそ]べる屋内[おくない]公園[こうえん]になること。",
+            "電子[でんし]書籍[しょせき]だけを貸[か]し出[だ]す無人の施設[しせつ]にすること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author A emphasizes preserving a free, quiet sanctuary where citizens can calmly engage with books and thought."
+        },
+        {
+          "id": "rd-n2-25-q2",
+          "promptJp": "文章[ぶんしょう]Aと文章[ぶんしょう]Bの立場[たちば]の違[ちが]いとして正[ただ]しいのはどれか。",
+          "promptEn": "Which accurately describes the difference between Text A and Text B?",
+          "choices": [
+            "Aは図書館[としょかん]の静粛性[せいしゅくせい]を原点[げんてん]として重視[じゅうし]し、Bはゾーニングで静[しず]けさを保[たも]ちつつ交流[こうりゅう]の場[ば]へ広[ひろ]げるべきだと主張[しゅちょう]している。",
+            "AもBも、図書館[としょかん]内[ない]での会話[かいわ]は全面[ぜんめん]禁止[きんし]すべきだと考[かんが]えている。",
+            "Bは図書館[としょかん]に静[しず]かな閲覧室[えつらんしつ]は一切[いっさい]不要[ふよう]だと述[の]べている。",
+            "Aは商業[しょうぎょう]施設[しせつ]のほうが図書館[としょかん]より静[しず]かだと主張[しゅちょう]している。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "A defends quietness as the library's core origin, while B advocates expanding into an interactive hub while separating a quiet reading room on another floor."
+        }
+      ]
+    }
+  ]
+}

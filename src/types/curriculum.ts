@@ -88,6 +88,8 @@ export interface ReviewHistoryEntry {
   studyMinutes?: number;
 }
 
+export type SrsMode = 'open' | 'fast' | 'standard';
+
 export interface UserSettings {
   lessonBatchSize: 3 | 5 | 7;
   autoplayAudio: boolean;
@@ -98,6 +100,8 @@ export interface UserSettings {
   autoAdvanceDelayMs?: 0 | 1000 | 1500 | 2500;
   includeVocabListeningQuiz?: boolean;
   includeVocabPronunciationQuiz?: boolean;
+  /** SRS pace & unlock policy: 'open' (default Buka Bebas), 'fast' (Cepat), 'standard' (WaniKani klasik) */
+  srsMode?: SrsMode;
 }
 
 export interface UserState {

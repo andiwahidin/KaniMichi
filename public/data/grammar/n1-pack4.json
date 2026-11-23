@@ -1,0 +1,316 @@
+{
+  "level": 1,
+  "pack": "n1-pack4",
+  "items": [
+    {
+      "id": "g-n1-41",
+      "jlpt": 1,
+      "order": 41,
+      "pattern": "～あっての (hanya ada berkat...)",
+      "reading": "～あっての",
+      "meaning": "which exists only because of ...; owing everything to ...",
+      "structure": "Noun A + あっての + Noun B",
+      "explanation": "Emphasizes that Noun B could not exist or hold value without Noun A as its indispensable foundation ('A team exists only thanks to its fans').",
+      "confusableWith": "Do not confuse with ～とあって ('because of the special occasion of...'). あっての links two nouns directly.",
+      "examples": [
+        {
+          "jp": "この成功は、家族の支えあってのものだと感謝している。",
+          "reading": "このせいこうは、かぞくのささえあってのものだとかんしゃしている。",
+          "en": "I am grateful that this success exists solely because of my family's support."
+        },
+        {
+          "jp": "健康あっての仕事だから、無理は禁物だ。",
+          "reading": "けんこうあってのしごとだから、むりはきんもつだ。",
+          "en": "Work is only possible when you have your health, so overexertion is strictly forbidden."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "信頼関係",
+        "sentenceAfter": "取引であり、誠実さを欠いては成り立たない。",
+        "en": "Business transactions exist only on the basis of trust, and cannot stand without integrity.",
+        "answer": "あっての",
+        "acceptedAnswers": ["あっての"],
+        "choices": ["あっての", "とあって", "にあたって", "をめぐって"]
+      }
+    },
+    {
+      "id": "g-n1-42",
+      "jlpt": 1,
+      "order": 42,
+      "pattern": "～かぎりだ (sangat / luar biasa)",
+      "reading": "～かぎりだ",
+      "meaning": "exceedingly ...; beyond words (emotion/impression)",
+      "structure": "Emotion Adjective (嬉しい / 羨ましい / 残念な / 心強い) + 限りだ",
+      "explanation": "Expresses the utmost degree of a personal emotion or sentiment in formal speech and writing ('I am beyond delighted', 'It is deeply regrettable').",
+      "confusableWith": "Unlike N2 ～限り ('as long as'), N1 ～限りだ attaches specifically to emotion adjectives to intensify them.",
+      "examples": [
+        {
+          "jp": "長年の努力が実を結び、喜ばしい限りです。",
+          "reading": "ながねんのどりょくがみをむすび、よろこばしいかぎりです。",
+          "en": "With years of effort bearing fruit, I am delighted beyond measure."
+        },
+        {
+          "jp": "若いのにこれほど落ち着いた判断ができるとは、羨ましい限りだ。",
+          "reading": "わかいのにこれほどおちついたはんだんができるとは、うらやましいかぎりだ。",
+          "en": "To be able to make such calm judgments at a young age is truly enviable."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "頼もしい後輩がチームに加わってくれて、心強い",
+        "sentenceAfter": "。",
+        "en": "Having such a dependable junior join the team is reassuring beyond words.",
+        "answer": "限りだ",
+        "acceptedAnswers": ["限りだ", "かぎりだ"],
+        "choices": ["限りだ", "次第だ", "ばかりだ", "わけだ"]
+      }
+    },
+    {
+      "id": "g-n1-43",
+      "jlpt": 1,
+      "order": 43,
+      "pattern": "～がてら (sambil sekalian)",
+      "reading": "～がてら",
+      "meaning": "while also ...; taking the opportunity of ...",
+      "structure": "Action Noun / Verb (ます-stem) + がてら",
+      "explanation": "Literary/refined expression indicating that while doing a main outing or activity (strolling, shopping, sightseeing), one accomplishes a secondary purpose at the same time.",
+      "confusableWith": "Similar to かたがた, though がてら is slightly lighter and pairs naturally with everyday outings like 散歩がてら.",
+      "examples": [
+        {
+          "jp": "散歩がてら、駅前の本屋まで行ってきた。",
+          "reading": "さんぽがてら、えきまえのほんやまでいってきた。",
+          "en": "While out for a stroll, I stopped by the bookstore in front of the station."
+        },
+        {
+          "jp": "出張がてら、京都に住む旧友を訪ねるつもりだ。",
+          "reading": "しゅっちょうがてら、きょうとにすむきゅうゆうをたずねるつもりだ。",
+          "en": "Taking advantage of my business trip, I plan to visit an old friend living in Kyoto."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "気晴らし",
+        "sentenceAfter": "、海沿いの公園まで車を走らせた。",
+        "en": "By way of a change of pace, I drove out to the seaside park.",
+        "answer": "がてら",
+        "acceptedAnswers": ["がてら"],
+        "choices": ["がてら", "そばから", "なり", "べく"]
+      }
+    },
+    {
+      "id": "g-n1-44",
+      "jlpt": 1,
+      "order": 44,
+      "pattern": "～きらいがある",
+      "reading": "～きらいがある",
+      "meaning": "to have an unfortunate tendency to ...; to lean toward ...",
+      "structure": "Verb (Dictionary) / Noun + の + きらいがある",
+      "explanation": "Critically points out a slight but noticeable undesirable tendency or bias in a person, organization, or social trend.",
+      "confusableWith": "More formal and evaluative than N3 ～がち; always carries a mildly critical nuance.",
+      "examples": [
+        {
+          "jp": "彼は細かいことにこだわりすぎるきらいがある。",
+          "reading": "かれはこまかいことにこだわりすぎるきらいがある。",
+          "en": "He has a tendency to obsess too much over minor details."
+        },
+        {
+          "jp": "最近の報道は、結論を急ぐきらいがあるように思う。",
+          "reading": "さいきんのほうどうは、けつろんをいそぐきらいがあるようにおもう。",
+          "en": "I feel recent news coverage has a tendency to rush to conclusions."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "当社の会議は、反対意見を出しにくい雰囲気になりやすい",
+        "sentenceAfter": "。",
+        "en": "Our company's meetings tend to develop an atmosphere where it's hard to voice dissent.",
+        "answer": "きらいがある",
+        "acceptedAnswers": ["きらいがある", "嫌いがある"],
+        "choices": ["きらいがある", "に難くない", "に足る", "てやまない"]
+      }
+    },
+    {
+      "id": "g-n1-45",
+      "jlpt": 1,
+      "order": 45,
+      "pattern": "～ずくめ (serba penuh dengan)",
+      "reading": "～ずくめ",
+      "meaning": "nothing but ...; entirely ... from top to bottom",
+      "structure": "Noun (黒 / いいこと / 結構 / 規則) + ずくめ(だ / の)",
+      "explanation": "Indicates that everything in a situation or outfit consists exclusively of one trait ('dressed all in black', 'a string of good fortune', 'nothing but rules').",
+      "confusableWith": "Unlike だらけ (always messy/negative), ずくめ works for both positive streaks (いいことずくめ) and uniform traits (黒ずくめ).",
+      "examples": [
+        {
+          "jp": "昇進に引っ越しと、今年はいいことずくめの一年だった。",
+          "reading": "しょうしんにひっこしと、ことしはいいことずくめのいちねんだった。",
+          "en": "Between a promotion and a new home, this year was nothing but good news."
+        },
+        {
+          "jp": "全身黒ずくめの衣装で舞台に現れた。",
+          "reading": "ぜんしんくろずくめのいしょうでぶたいにあらわれた。",
+          "en": "They appeared on stage dressed entirely in black from head to toe."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "一見すると得ばかりで、いいこと",
+        "sentenceAfter": "の提案に見えるが、裏がないか確認すべきだ。",
+        "en": "At first glance the proposal looks like nothing but advantages, yet we should verify there is no catch.",
+        "answer": "ずくめ",
+        "acceptedAnswers": ["ずくめ", "尽くめ"],
+        "choices": ["ずくめ", "ごとき", "まじき", "ばかりか"]
+      }
+    },
+    {
+      "id": "g-n1-46",
+      "jlpt": 1,
+      "order": 46,
+      "pattern": "～だに (membayangkannya saja)",
+      "reading": "～だに",
+      "meaning": "even just (thinking / imagining / hearing) ...",
+      "structure": "Verb (Dictionary: 思う / 想像する / 聞く) / Noun + だに",
+      "explanation": "Elevated literary particle equivalent to さえ, used almost exclusively with cognitive verbs like 想像する (imagine), 思う (think), or 夢にも (in one's dreams) to stress an extreme reaction.",
+      "confusableWith": "Very idiomatic: memorize high-frequency collocations like 想像だにしない and 考えるだに恐ろしい.",
+      "examples": [
+        {
+          "jp": "もしあの時ブレーキが効かなかったらと、考えるだに恐ろしい。",
+          "reading": "もしあのときぶれーきがきかなかったらと、かんがえるだにおそろしい。",
+          "en": "It is terrifying even to think what would have happened if the brakes had failed then."
+        },
+        {
+          "jp": "こんな大役を任されるとは、夢にも思わなかった—想像だにしなかった。",
+          "reading": "こんなたいやくをまかされるとは、ゆめにもおもわなかった—そうぞうだにしなかった。",
+          "en": "I never even imagined being entrusted with such an important role."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "数年前には、これほど急速に社会が変わるとは想像",
+        "sentenceAfter": "しなかった。",
+        "en": "A few years ago, I couldn't even imagine society changing this rapidly.",
+        "answer": "だに",
+        "acceptedAnswers": ["だに"],
+        "choices": ["だに", "なり", "まで", "やら"]
+      }
+    },
+    {
+      "id": "g-n1-47",
+      "jlpt": 1,
+      "order": 47,
+      "pattern": "～とばかりに",
+      "reading": "～とばかりに",
+      "meaning": "as if to say ...; with an air declaring ...",
+      "structure": "Plain Sentence / Imperative / Volitional + とばかりに",
+      "explanation": "Vividly depicts someone's expression, gesture, or action as communicating an unspoken message ('as if to say, \"Now is my chance!\"').",
+      "confusableWith": "Compare with ～んばかりに (about to burst into an action) vs. ～とばかりに (conveying an unspoken verbal attitude).",
+      "examples": [
+        {
+          "jp": "彼は「今がチャンスだ」とばかりに、一気にスピードを上げた。",
+          "reading": "かれは「いまがちゃんすだ」とばかりに、いっきにすぴーどをあげた。",
+          "en": "As if to say 'Now is my chance,' he accelerated all at once."
+        },
+        {
+          "jp": "待ちかねていたとばかりに、子どもたちは一斉に校庭へ飛び出した。",
+          "reading": "まちかねていたとばかりに、こどもたちはいっせいにこうていへとびだした。",
+          "en": "As if they could wait no longer, the children burst out into the schoolyard all at once."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "犬は「早く散歩に行こう」",
+        "sentenceAfter": "、玄関で尻尾を振っている。",
+        "en": "The dog is wagging its tail at the entrance as if to say, 'Let's go for a walk right now!'",
+        "answer": "とばかりに",
+        "acceptedAnswers": ["とばかりに"],
+        "choices": ["とばかりに", "と相まって", "とはいえ", "とあって"]
+      }
+    },
+    {
+      "id": "g-n1-48",
+      "jlpt": 1,
+      "order": 48,
+      "pattern": "～なくして(は)",
+      "reading": "～なくしては",
+      "meaning": "without ... (something is impossible)",
+      "structure": "Noun + なくして(は) + Negative / Impossible Predicate",
+      "explanation": "Formal expression declaring that an essential prerequisite cannot be bypassed; without it, the desired outcome simply cannot materialize.",
+      "confusableWith": "More emphatic and formal than ～なしでは; almost always followed by a negative potential or impossibility statement.",
+      "examples": [
+        {
+          "jp": "地域住民の協力なくしては、この祭りの継続は難しい。",
+          "reading": "ちいきじゅうみんのきょうりょくなくしては、このまつりのけいぞくはむずかしい。",
+          "en": "Without the cooperation of local residents, continuing this festival is difficult."
+        },
+        {
+          "jp": "地道な基礎研究なくして、画期的な技術革新は生まれない。",
+          "reading": "じみちなきそけんきゅうなくして、かっきてきなぎじゅつかくしんはうまれない。",
+          "en": "Without steady foundational research, breakthrough technological innovation cannot be born."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "丁寧な対話",
+        "sentenceAfter": "、深い相互理解を築くことはできない。",
+        "en": "Without careful dialogue, it is impossible to build deep mutual understanding.",
+        "answer": "なくしては",
+        "acceptedAnswers": ["なくしては", "なくして"],
+        "choices": ["なくしては", "をよそに", "を尻目に", "を皮切りに"]
+      }
+    },
+    {
+      "id": "g-n1-49",
+      "jlpt": 1,
+      "order": 49,
+      "pattern": "～を機に (をきに)",
+      "reading": "～をきに",
+      "meaning": "taking ... as a turning point / occasion",
+      "structure": "Noun + を機に / を契機に(して)",
+      "explanation": "Formal counterpart of をきっかけに, used for decisive institutional, career, or life turning points (retirement, merger, anniversary, crisis).",
+      "confusableWith": "Reserve を機に for notable milestones; for casual personal triggers like chatting with a friend, をきっかけに is more natural.",
+      "examples": [
+        {
+          "jp": "創立五十周年を機に、社名とロゴを一新することにした。",
+          "reading": "そうりつごじゅっしゅうねんをきに、しゃめいとろごをいっしんすることにした。",
+          "en": "Taking our 50th anniversary as an occasion, we decided to renew the company name and logo."
+        },
+        {
+          "jp": "定年退職を機に、長年の夢だった陶芸を本格的に始めた。",
+          "reading": "ていねんたいしょくをきに、ながねんのゆめだったとうげいをほんかくてきにはじめた。",
+          "en": "Taking mandatory retirement as a turning point, I earnestly began pottery, my longtime dream."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "今回のシステム障害",
+        "sentenceAfter": "、全社の危機管理体制を根本から見直した。",
+        "en": "Taking this system outage as a turning point, we fundamentally overhauled company-wide crisis management.",
+        "answer": "を機に",
+        "acceptedAnswers": ["を機に", "をきに"],
+        "choices": ["を機に", "を限りに", "をよそに", "をもって"]
+      }
+    },
+    {
+      "id": "g-n1-50",
+      "jlpt": 1,
+      "order": 50,
+      "pattern": "～んばかりに",
+      "reading": "～んばかりに",
+      "meaning": "almost ...; on the verge of ...; as if about to ...",
+      "structure": "Verb (ない-stem) + んばかりに / んばかりの + Noun (する→せんばかり)",
+      "explanation": "Expresses an extreme state that looks just moments away from boiling over or occurring ('so full it's about to spill', 'eyes shining as if about to leap out').",
+      "confusableWith": "Uses the classical negative stem + ん (溢れんばかり, 泣かんばかり); for する verbs, use せんばかり.",
+      "examples": [
+        {
+          "jp": "会場は天井が抜けんばかりの大きな拍手に包まれた。",
+          "reading": "かいじょうはてんじょうがぬけんばかりのおおきなはくしゅにつつまれた。",
+          "en": "The venue was enveloped in thunderous applause as if about to blow the roof off."
+        },
+        {
+          "jp": "彼は今にも泣き出さんばかりの表情で助けを求めた。",
+          "reading": "かれはいまにもなきださんばかりのひょうじょうでたすけをもとめた。",
+          "en": "He asked for help with an expression as though he were about to burst into tears."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "グラスには水が今にも溢れ",
+        "sentenceAfter": "注がれていた。",
+        "en": "Water was poured into the glass to the point of nearly overflowing.",
+        "answer": "んばかりに",
+        "acceptedAnswers": ["んばかりに"],
+        "choices": ["んばかりに", "ずにはおかない", "ないまでも", "たところで"]
+      }
+    }
+  ]
+}

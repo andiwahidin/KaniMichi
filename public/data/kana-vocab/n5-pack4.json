@@ -1,0 +1,236 @@
+{
+  "level": 5,
+  "pack": "n5-pack4",
+  "items": [
+    {
+      "id": "kv-n5-51",
+      "jlpt": 5,
+      "order": 51,
+      "word": "たいへん",
+      "reading": "たいへん",
+      "category": "adverb",
+      "partOfSpeech": "Adverb / な-Adjective",
+      "primaryMeaning": "very; terribly; tough / hard",
+      "acceptedMeanings": ["very", "terribly", "greatly", "tough", "hard"],
+      "usageNote": "As an adverb it means 'very / greatly' (たいへんおいしい); as a な-adjective it means 'hard / tough / serious' (仕事がたいへんです).",
+      "example": {
+        "jp": "昨日はたいへんお世話になりました。",
+        "reading": "きのうはたいへんおせわになりました。",
+        "en": "Thank you very much for your help yesterday."
+      },
+      "quiz": {
+        "sentenceBefore": "この問題は私には",
+        "sentenceAfter": "難しいです。",
+        "en": "This problem is very difficult for me.",
+        "choices": ["たいへん", "あまり", "ぜんぜん", "まだ"]
+      }
+    },
+    {
+      "id": "kv-n5-52",
+      "jlpt": 5,
+      "order": 52,
+      "word": "いろいろ",
+      "reading": "いろいろ",
+      "category": "adverb",
+      "partOfSpeech": "な-Adjective / Adverb",
+      "primaryMeaning": "various; all sorts of",
+      "acceptedMeanings": ["various", "all sorts of", "many kinds of"],
+      "usageNote": "Attaches to nouns with な (いろいろな人) or acts as an adverb with に (いろいろ勉強した).",
+      "example": {
+        "jp": "その店にはいろいろな国の料理があります。",
+        "reading": "そのみせにはいろんなくにのりょうりがあります。",
+        "en": "That restaurant has dishes from various countries."
+      },
+      "quiz": {
+        "sentenceBefore": "旅行では",
+        "sentenceAfter": "な場所へ行って写真を撮りました。",
+        "en": "On the trip I went to various places and took photos.",
+        "choices": ["いろいろ", "ちょうど", "まっすぐ", "すぐ"]
+      }
+    },
+    {
+      "id": "kv-n5-53",
+      "jlpt": 5,
+      "order": 53,
+      "word": "はじめて",
+      "reading": "はじめて",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "for the first time",
+      "acceptedMeanings": ["for the first time", "first time"],
+      "usageNote": "Commonly pairs with past verbs (はじめて食べました = ate for the first time) or の + noun (はじめての日本).",
+      "example": {
+        "jp": "今日、はじめて富士山を見ました。",
+        "reading": "きょう、はじめてふじさんをみました。",
+        "en": "Today I saw Mt. Fuji for the first time."
+      },
+      "quiz": {
+        "sentenceBefore": "去年、",
+        "sentenceAfter": "飛行機に乗りました。",
+        "en": "Last year I rode an airplane for the first time.",
+        "choices": ["はじめて", "いつも", "だいたい", "もうすぐ"]
+      }
+    },
+    {
+      "id": "kv-n5-54",
+      "jlpt": 5,
+      "order": 54,
+      "word": "さきに",
+      "reading": "さきに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "first; ahead; beforehand",
+      "acceptedMeanings": ["first", "ahead", "beforehand", "earlier"],
+      "usageNote": "Used in everyday politeness such as お先に失礼します (excuse me for leaving before you) or さきに食べてください (please eat ahead of me).",
+      "example": {
+        "jp": "私はさきに帰りますね。また明日。",
+        "reading": "わたしはさきにかえりますね。またあした。",
+        "en": "I'll head home ahead of you. See you tomorrow."
+      },
+      "quiz": {
+        "sentenceBefore": "ちょっと遅れるので、",
+        "sentenceAfter": "始めていてください。",
+        "en": "I'll be a little late, so please start ahead without me.",
+        "choices": ["さきに", "あとで", "たまに", "もっと"]
+      }
+    },
+    {
+      "id": "kv-n5-55",
+      "jlpt": 5,
+      "order": 55,
+      "word": "あとで",
+      "reading": "あとで",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "later; afterwards",
+      "acceptedMeanings": ["later", "afterwards", "afterward"],
+      "usageNote": "Very common standalone adverb for deferring an action until a bit later (あとで電話します).",
+      "example": {
+        "jp": "今忙しいので、あとでメールを送ります。",
+        "reading": "いまいそがしいので、あとでめーるをおくります。",
+        "en": "I'm busy right now, so I'll send an email later."
+      },
+      "quiz": {
+        "sentenceBefore": "今ちょっと手が離せないので、",
+        "sentenceAfter": "かけ直しますね。",
+        "en": "My hands are full right now, so I'll call you back later.",
+        "choices": ["あとで", "さきに", "もう", "まず"]
+      }
+    },
+    {
+      "id": "kv-n5-56",
+      "jlpt": 5,
+      "order": 56,
+      "word": "では",
+      "reading": "では",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "well then; in that case",
+      "acceptedMeanings": ["well then", "in that case", "then"],
+      "usageNote": "Polite sentence-initial transition word used to begin a class, change topics, or conclude a plan (casual form: じゃあ).",
+      "example": {
+        "jp": "時間になりました。では、今日の授業を始めましょう。",
+        "reading": "じかんになりました。では、きょうのじゅぎょうをはじめましょう。",
+        "en": "It is time. Well then, let's begin today's lesson."
+      },
+      "quiz": {
+        "sentenceBefore": "みんな集まりましたね。",
+        "sentenceAfter": "、出発しましょう。",
+        "en": "Everyone has gathered. Well then, let's depart.",
+        "choices": ["では", "しかし", "けれども", "それとも"]
+      }
+    },
+    {
+      "id": "kv-n5-57",
+      "jlpt": 5,
+      "order": 57,
+      "word": "さらさら",
+      "reading": "さらさら",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "smooth; silky; flowing lightly (water, sand, hair)",
+      "acceptedMeanings": ["smooth", "silky", "flowing lightly", "dry and smooth"],
+      "usageNote": "Describes smooth hair, dry powdery snow/sand, a gently babbling stream, or writing/reading effortlessly.",
+      "example": {
+        "jp": "川の水がさらさら流れています。",
+        "reading": "かわのみずがさらさらながれています。",
+        "en": "The river water is flowing smoothly and lightly."
+      },
+      "quiz": {
+        "sentenceBefore": "シャンプーを変えたら、髪が",
+        "sentenceAfter": "になりました。",
+        "en": "After changing shampoos, my hair became silky smooth.",
+        "choices": ["さらさら", "ぽかぽか", "きらきら", "びっくり"]
+      }
+    },
+    {
+      "id": "kv-n5-58",
+      "jlpt": 5,
+      "order": 58,
+      "word": "ごろごろ",
+      "reading": "ごろごろ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "lounging around idly; rolling; rumbling (thunder)",
+      "acceptedMeanings": ["lounging around", "lazing around", "rolling", "rumbling"],
+      "usageNote": "In everyday JLPT N5 conversations, 家でごろごろする means 'relaxing/lounging lazily at home on a day off'.",
+      "example": {
+        "jp": "休みの日はどこにも行かず、家でごろごろしました。",
+        "reading": "やすみのひはどこにもいかず、いえでごろごろしました。",
+        "en": "On my day off I didn't go anywhere and lounged around at home."
+      },
+      "quiz": {
+        "sentenceBefore": "雨の日曜日は、ソファで一日中",
+        "sentenceAfter": "していました。",
+        "en": "On a rainy Sunday, I lounged around on the sofa all day.",
+        "choices": ["ごろごろ", "はっきり", "ぴったり", "しっかり"]
+      }
+    },
+    {
+      "id": "kv-n5-59",
+      "jlpt": 5,
+      "order": 59,
+      "word": "カレンダー",
+      "reading": "かれんだー",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "calendar",
+      "acceptedMeanings": ["calendar"],
+      "usageNote": "Very common household katakana word tested in N5 listening and daily-life reading passages.",
+      "example": {
+        "jp": "壁のカレンダーに予定を書きました。",
+        "reading": "かべのかれんだーによていをかきました。",
+        "en": "I wrote the schedule on the wall calendar."
+      },
+      "quiz": {
+        "sentenceBefore": "テストの日を忘れないように、",
+        "sentenceAfter": "に丸をつけました。",
+        "en": "So I wouldn't forget the test date, I circled it on the calendar.",
+        "choices": ["カレンダー", "エレベーター", "タクシー", "エアコン"]
+      }
+    },
+    {
+      "id": "kv-n5-60",
+      "jlpt": 5,
+      "order": 60,
+      "word": "チケット",
+      "reading": "ちけっと",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "ticket (concert, movie, museum, flight)",
+      "acceptedMeanings": ["ticket"],
+      "usageNote": "Used for movies, concerts, events, and flights; train/bus tickets are usually called 切符 (きっぷ).",
+      "example": {
+        "jp": "インターネットでコンサートのチケットを買いました。",
+        "reading": "いんたーねっとでこんさーとのちけっとをかいました。",
+        "en": "I bought concert tickets on the internet."
+      },
+      "quiz": {
+        "sentenceBefore": "人気の映画なので、早めに",
+        "sentenceAfter": "を予約しましょう。",
+        "en": "Because it's a popular movie, let's reserve tickets early.",
+        "choices": ["チケット", "アパート", "デパート", "カメラ"]
+      }
+    }
+  ]
+}

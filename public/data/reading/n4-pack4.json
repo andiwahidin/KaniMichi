@@ -1,0 +1,265 @@
+{
+  "level": 4,
+  "pack": "n4-pack4",
+  "items": [
+    {
+      "id": "rd-n4-21",
+      "jlpt": 4,
+      "order": 21,
+      "passageType": "notice",
+      "titleJp": "留学生[りゅうがくせい]向け[むけ] 日本語[にほんご]会話[かいわ]サロン",
+      "titleEn": "Japanese Conversation Salon for International Students",
+      "recommendedMinutes": 4,
+      "contextEn": "Flyer posted at a municipal international exchange center.",
+      "paragraphs": [
+        "地域[ちいき]のボランティアの人[ひと]と楽[たの]しく日本語[にほんご]で話[はな]しませんか。日常[にちじょう]の買[か]い物[もの]や病院[びょういん]での会話[かいわ]など、生活[せいかつ]に役[やく]に立[た]つ日本語[にほんご]を練習[れんしゅう]できます。",
+        "日時[にちじ]：毎週[まいしゅう]土曜日[どようび] 午前[ごぜん]十時[じゅうじ]〜十一時半[じゅういちじはん]（祝日[しゅくじつ]はお休[やす]み）\n場所[ばしょ]：国際[こくさい]交流[こうりゅう]センター 二階[にかい] 会議室[かいぎしつ]B\n参加費[さんかひ]：無料[むりょう]（飲[の]み物[もの]は自分[じぶん]で持[も]ってきてください）",
+        "初[はじ]めて参加[さんか]する人[ひと]だけ、金曜日[きんようび]の午後[ごご]四時[よじ]までに電話[でんわ]かメールで申し込[もうしこ]んでください。二回目[にかいめ]からは予約[よやく]なしで自由[じゆう]に来[き]てもかまいません。"
+      ],
+      "translationEn": [
+        "Would you like to enjoy speaking Japanese with local volunteers? You can practice Japanese useful for daily life, such as everyday shopping and hospital conversations.",
+        "Date & Time: Every Saturday 10:00 AM–11:30 AM (closed on national holidays)\nLocation: International Exchange Center, 2nd Floor, Meeting Room B\nFee: Free (please bring your own drink)",
+        "Only first-time participants need to apply by phone or email by 4:00 PM on Friday. From your second visit onward, you may drop in freely without a reservation."
+      ],
+      "keyVocab": [
+        { "word": "役に立つ", "reading": "やくにたつ", "en": "to be useful" },
+        { "word": "祝日", "reading": "しゅくじつ", "en": "national holiday" },
+        { "word": "申し込む", "reading": "もうしこむ", "en": "to apply / register" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-21-q1",
+          "promptJp": "初[はじ]めてこのサロンに行[い]きたい人[ひと]は、どうしなければなりませんか。",
+          "promptEn": "What must someone do if they want to attend this salon for the first time?",
+          "choices": [
+            "予約[よやく]をしないで土曜日[どようび]の朝[あさ]に直接[ちょくせつ]行[い]く。",
+            "金曜日[きんようび]の午後[ごご]四時[よじ]までに電話[でんわ]かメールで申し込[もうしこ]む。",
+            "参加費[さんかひ]を銀行[ぎんこう]で払[はら]う。",
+            "土曜日[どようび]の午前[ごぜん]九時[くじ]までに受付[うけつけ]で並[なら]ぶ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "First-time participants must register by phone or email by 4:00 PM on Friday; only returning attendees can drop in without booking."
+        },
+        {
+          "id": "rd-n4-21-q2",
+          "promptJp": "このサロンについて、合[あ]っているものはどれですか。",
+          "promptEn": "Which statement matches the information in the flyer?",
+          "choices": [
+            "祝日[しゅくじつ]の土曜日[どようび]にも開[ひら]かれる。",
+            "センターで飲[の]み物[もの]を無料[むりょう]でもらえる。",
+            "二回目[にかいめ]からは予約[よやく]しなくても参加[さんか]できる。",
+            "漢字[かんじ]の書[か]き方[かた]だけを勉強[べんきょう]するクラスだ。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The last sentence explicitly states that from the second time onward, no reservation is needed (予約なしで自由に来てもかまいません)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-22",
+      "jlpt": 4,
+      "order": 22,
+      "passageType": "email",
+      "titleJp": "忘れ物[わすれもの]のお知らせ[しらせ]",
+      "titleEn": "Notification About a Forgotten Item",
+      "recommendedMinutes": 4,
+      "contextEn": "Email from a hotel reception desk to a guest who checked out earlier that morning.",
+      "paragraphs": [
+        "佐藤[さとう]様[さま]",
+        "本日[ほんじつ]は「みなとホテル」にご宿泊[しゅくはく]いただき、誠[まこと]にありがとうございました。お帰[かえ]りのあと、お部屋[へや]を掃除[そうじ]していたスタッフから、机[つくえ]の上[うえ]に黒[くろ]い充電器[じゅうでんき]が残[のこ]っていたと連絡[れんらく]がありました。",
+        "お心当[こころあ]たりはございますか。ホテルでお預[あず]かりしておりますので、郵送[ゆうそう]をご希望[きぼう]でしたら、ご住所[じゅうしょ]とお名前[なまえ]をこのメールにお返事[へんじ]ください。なお、送料[そうりょう]はお客様[きゃくさま]のご負担[ふたん]となります。もし一週間[いっしゅうかん]以内[いない]にホテルへ取[と]りに来[こ]られる場合[ばあい]は、フロントでお渡[わた]しいたします。"
+      ],
+      "translationEn": [
+        "Dear Mr./Ms. Sato,",
+        "Thank you very much for staying at Minato Hotel. After your departure, a staff member cleaning your room contacted us saying a black charger was left on the desk.",
+        "Does this sound familiar? We are keeping it safely at the hotel, so if you would like us to mail it, please reply to this email with your address and name. Please note that shipping costs will be paid by the guest. If you are able to come pick it up at the hotel within one week, we will hand it to you at the front desk."
+      ],
+      "keyVocab": [
+        { "word": "充電器", "reading": "じゅうでんき", "en": "charger" },
+        { "word": "お預かりする", "reading": "おあずかりする", "en": "to keep safely (humble)" },
+        { "word": "送料", "reading": "そうりょう", "en": "shipping fee" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-22-q1",
+          "promptJp": "ホテルが佐藤[さとう]さんにこのメールを送[おく]った目的[もくてき]は何[なに]ですか。",
+          "promptEn": "What is the purpose of the hotel sending this email to Sato?",
+          "choices": [
+            "部屋[へや]の予約[よやく]日[び]を確認[かくにん]するため",
+            "部屋[へや]に忘[わす]れた充電器[じゅうでんき]について知[し]らせるため",
+            "宿泊[しゅくはく]料金[りょうきん]の支払[しはら]いをお願[ねが]いするため",
+            "アンケートに答[こた]えてもらうため"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The hotel wrote to inform Sato that housekeeping found a black charger left on the desk."
+        },
+        {
+          "id": "rd-n4-22-q2",
+          "promptJp": "充電器[じゅうでんき]を郵送[ゆうそう]してほしいとき、送料[そうりょう]はどうなりますか。",
+          "promptEn": "If Sato asks to have the charger mailed, who pays the shipping fee?",
+          "choices": [
+            "ホテルが無料[むりょう]で送[おく]ってくれる。",
+            "佐藤[さとう]さんが自分で払[はら]う。",
+            "一週間[いっしゅうかん]以内[いない]なら無料[むりょう]になる。",
+            "ホテルと佐藤[さとう]さんが半分[はんぶん]ずつ払[はら]う。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The email clearly states \"送料はお客様のご負担となります\" (shipping charges are borne by the guest)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-23",
+      "jlpt": 4,
+      "order": 23,
+      "passageType": "short",
+      "titleJp": "夜[よる]のジョギングを続[つづ]けるコツ",
+      "titleEn": "My Trick for Sticking With Evening Jogging",
+      "recommendedMinutes": 4,
+      "contextEn": "Personal column written by an office worker about building an exercise habit.",
+      "paragraphs": [
+        "去年[きょねん]まで、私[わたし]は運動[うんどう]を始[はじ]めても、いつも三日[みっか]ぐらいでやめてしまっていました。最初[さいしょ]から「毎日[まいにち]一時間[いちじかん]走[はし]る」という高[たか]すぎる目標[もくひょう]を決[き]めていたからです。",
+        "そこで今年[ことし]は考[かんが]え方[かた]を変[か]えました。「仕事[しごと]から帰[かえ]ったら、とにかく運動靴[うんどうぐつ]をはいて十分[じゅっぷん]だけ外[そと]へ出[で]る」というルールにしたのです。短[みじか]い時間[じかん]だと思[おも]うと気が楽[らく]になり、走[はし]り始[はじ]めると結局[けっきょく]二十分[にじゅっぷん]ぐらい走[はし]れる日[ひ]も増[ふ]えました。おかげで、もう半年[はんとし]も続[つづ]いています。"
+      ],
+      "translationEn": [
+        "Until last year, even when I started exercising, I always quit after about three days. That was because from the very beginning I set an overly high goal of running one hour every day.",
+        "So this year I changed my approach. I made a rule: 'Once I get home from work, just put on my running shoes and go outside for only ten minutes.' Thinking it is just a short time puts my mind at ease, and once I start running, more days end up with me running around twenty minutes anyway. Thanks to this, I have kept it up for half a year already."
+      ],
+      "keyVocab": [
+        { "word": "目標", "reading": "もくひょう", "en": "goal; target" },
+        { "word": "気が楽になる", "reading": "きがらくになる", "en": "to feel at ease / relieved" },
+        { "word": "結局", "reading": "けっきょく", "en": "in the end; after all" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-23-q1",
+          "promptJp": "去年[きょねん]まで運動[うんどう]が続[つづ]かなかった理由[りゆう]は何[なに]ですか。",
+          "promptEn": "Why couldn't the writer keep up exercise until last year?",
+          "choices": [
+            "運動靴[うんどうぐつ]を持[も]っていなかったから。",
+            "最初[さいしょ]から目標[もくひょう]が高[たか]すぎたから。",
+            "近所[きんじょ]に走[はし]れる道[みち]がなかったから。",
+            "仕事[しごと]が毎日[まいにち]夜遅[よるおそ]くまであったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The writer explicitly blames setting too high a goal from the start (毎日一時間走るという高すぎる目標)."
+        },
+        {
+          "id": "rd-n4-23-q2",
+          "promptJp": "今年[ことし]決[き]めた新[あたら]しいルールはどれですか。",
+          "promptEn": "What is the new rule the writer set this year?",
+          "choices": [
+            "週末[しゅうまつ]だけ一時間[いちじかん]走[はし]る。",
+            "友達[ともだち]といっしょにジムへ通[かよ]う。",
+            "仕事[しごと]の後[あと]、まず十分[じゅっぷん]だけ外[そと]へ出[で]る。",
+            "雨[あめ]の日[ひ]も毎日[まいにち]三十分[さんじゅっぷん]走[はし]る。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The new rule is to simply put on running shoes after work and go outside for just 10 minutes (十分だけ外へ出る)."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-24",
+      "jlpt": 4,
+      "order": 24,
+      "passageType": "short",
+      "titleJp": "日本[にほん]の自動[じどう]販売機[はんばいき]の工夫[くふう]",
+      "titleEn": "Clever Features of Japanese Vending Machines",
+      "recommendedMinutes": 4,
+      "contextEn": "Short cultural essay introducing modern features of vending machines in Japan.",
+      "paragraphs": [
+        "日本[にほん]の町[まち]を歩[ある]くと、駅のホームや道[みち]の角[かど]など、あちこちで自動[じどう]販売機[はんばいき]を見[み]かけます。冷[つめ]たい飲[の]み物[もの]だけでなく、冬[ふゆ]になると温[あたた]かいお茶[ちゃ]やコーンスープも買[か]えてとても便利[べんり]です。",
+        "最近[さいきん]は、地震[じしん]などの災害[さいがい]が起[お]きたときに役[やく]に立[た]つ自動[じどう]販売機[はんばいき]も増[ふ]えています。停電[ていでん]しても中[なか]の水[みず]やお茶[ちゃ]を無料[むりょう]で取り出[とりだ]せたり、画面[がめん]に避難所[ひなんじょ]の案内[あんない]が出[で]たりするのです。ただ飲[の]み物[もの]を売[う]るだけでなく、町[まち]の安全[あんぜん]も支[ささ]えています。"
+      ],
+      "translationEn": [
+        "When walking through towns in Japan, you spot vending machines everywhere, such as on station platforms and street corners. It is very convenient that you can buy not only cold drinks, but also hot tea and corn soup when winter comes.",
+        "Recently, vending machines that help during disasters like earthquakes have also been increasing. Even if the power goes out, people can take out water and tea inside for free, or shelter guidance appears on the screen. Rather than merely selling drinks, they also support community safety."
+      ],
+      "keyVocab": [
+        { "word": "災害", "reading": "さいがい", "en": "natural disaster" },
+        { "word": "停電", "reading": "ていでん", "en": "power outage" },
+        { "word": "避難所", "reading": "ひなんじょ", "en": "evacuation shelter" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-24-q1",
+          "promptJp": "最近[さいきん]増[ふ]えている自動[じどう]販売機[はんばいき]は、災害[さいがい]のときに何[なに]ができますか。",
+          "promptEn": "What can the recently increasing type of vending machine do during a disaster?",
+          "choices": [
+            "温かい[あたたかい]お弁当[べんとう]を作[つく]って売[う]る。",
+            "停電[ていでん]しても飲[の]み物[もの]を無料[むりょう]で出[だ]したり、避難所[ひなんじょ]の案内[あんない]を出[だ]したりする。",
+            "自動[じどう]で警察[けいさつ]に電話[でんわ]をかける。",
+            "雨[あめ]の日[ひ]に傘[かさ]を無料[むりょう]で貸[か]してくれる。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 describes dispensing free water/tea even during power outages and displaying evacuation shelter information."
+        },
+        {
+          "id": "rd-n4-24-q2",
+          "promptJp": "この文章[ぶんしょう]で筆者[ひっしゃ]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+          "promptEn": "What is the writer's main takeaway in this passage?",
+          "choices": [
+            "自動[じどう]販売機[はんばいき]の飲[の]み物[もの]はスーパーより安[やす]い。",
+            "自動[じどう]販売機[はんばいき]は便利[べんり]なだけでなく、町[まち]の安全[あんぜん]にも役立[やくだ]っている。",
+            "日本[にほん]の冬[ふゆ]はとても寒[さむ]いのでコーンスープが人気[にんき]だ。",
+            "自動[じどう]販売機[はんばいき]は電気[でんき]をたくさん使[つか]うので減[へ]らすべきだ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence sums up the main point: they don't merely sell drinks, they also support community safety."
+        }
+      ]
+    },
+    {
+      "id": "rd-n4-25",
+      "jlpt": 4,
+      "order": 25,
+      "passageType": "short",
+      "titleJp": "初めて[はじめて]のホームステイで学[まな]んだこと",
+      "titleEn": "What I Learned During My First Homestay",
+      "recommendedMinutes": 4,
+      "contextEn": "Reflection written by an exchange student after staying with a Japanese host family.",
+      "paragraphs": [
+        "先月[せんげつ]、京都[きょうと]のホストファミリーの家[いえ]に二週間[にしゅうかん]泊[と]まりました。最初[さいしょ]は自分[じぶん]の日本語[にほんご]が間違[まちが]っていたら恥[は]ずかしいと思[おも]って、あまり自分[じぶん]から話[はな]しかけられませんでした。",
+        "でも、ある晩[ばん]ホストマザーが「言葉[ことば]は上手[じょうず]じゃなくてもいいから、わからないときは何度[なんど]でも聞[き]いてね」と笑[わら]って言ってくれました。それからは少[すこ]しずつ勇気[ゆうき]を出[だ]して、食卓[しょくたく]で自分[じぶん]の国[くに]の料理[りょうり]や学校[がっこう]のことを話[はな]すようになりました。間違い[まちがい]を怖[こわ]がらずに話[はな]すことが、一番[いちばん]の勉強[べんきょう]になると実感[じっかん]しました。"
+      ],
+      "translationEn": [
+        "Last month I stayed at a host family's home in Kyoto for two weeks. At first I thought it would be embarrassing if my Japanese was wrong, so I couldn't initiate conversations much.",
+        "However, one evening my host mother smiled and told me, 'Your Japanese doesn't have to be perfect, so ask as many times as you need when you don't understand.' After that I gradually gathered courage and began talking at the dinner table about my country's food and school. I truly felt that speaking without fearing mistakes is the best way to study."
+      ],
+      "keyVocab": [
+        { "word": "恥ずかしい", "reading": "はずかしい", "en": "embarrassing; shy" },
+        { "word": "勇気", "reading": "ゆうき", "en": "courage" },
+        { "word": "実感する", "reading": "じっかんする", "en": "to genuinely realize / feel" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n4-25-q1",
+          "promptJp": "最初[さいしょ]、この人[ひと]があまり自分[じぶん]から話[はな]せなかったのはどうしてですか。",
+          "promptEn": "Why couldn't the writer speak up much at first?",
+          "choices": [
+            "ホストファミリーが忙[いそが]しそうだったから。",
+            "日本語[にほんご]を間違[まちが]えるのが恥[は]ずかしいと思[おも]っていたから。",
+            "京都[きょうと]の方言[ほうげん]が難[むずか]しすぎたから。",
+            "食事[しょくたく]の時間[じかん]がいつも合[あ]わなかったから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 explains that they felt embarrassed about making mistakes in Japanese (間違っていたら恥ずかしいと思って)."
+        },
+        {
+          "id": "rd-n4-25-q2",
+          "promptJp": "ホームステイを通[とお]して、この人[ひと]は何[なに]を実感[じっかん]しましたか。",
+          "promptEn": "What did the writer realize through the homestay?",
+          "choices": [
+            "文法[ぶんぽう]を完璧[かんぺき]にしてから話[はな]すべきだということ。",
+            "間違い[まちがい]を怖[こわ]がらずに話[はな]すことが一番[いちばん]の勉強[べんきょう]になること。",
+            "日本[にほん]の料理[りょうり]は自分[じぶん]で作[つく]るとおいしくなること。",
+            "二週間[にしゅうかん]の滞在[たいざい]は長[なが]すぎるということ。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing sentence directly states that speaking without fearing mistakes is the best way to study."
+        }
+      ]
+    }
+  ]
+}

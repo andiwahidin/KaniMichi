@@ -1,0 +1,311 @@
+{
+  "level": 5,
+  "pack": "n5-pack4",
+  "items": [
+    {
+      "id": "l-n5-21",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "誕生[たんじょう]日[び]のケーキを買[か]う",
+      "titleEn": "Buying a Birthday Cake at a Pastry Shop",
+      "situationEn": "A man and a woman choose a cake for their friend's birthday party.",
+      "introJp": "ケーキ屋[や]で男[おとこ]の人[ひと]と女[おんな]の人[ひと]が話[はな]しています。二人[ふたり]はどのケーキを買[か]いますか。",
+      "introEn": "A man and a woman are talking at a cake shop. Which cake will they buy?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わあ、おいしそうなケーキがたくさんありますね。イチゴのケーキはどうですか。",
+          "en": "Wow, there are so many delicious-looking cakes. How about the strawberry cake?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "そうですね、でも、今日[きょう]は五人[ごにん]で食[た]べるから、小[ちい]さいケーキを五[いつ]つ買[か]うより、大[おお]きい丸[まる]いケーキのほうがよくないですか。",
+          "en": "True, but since five of us are eating today, wouldn't one big round cake be better than buying five small ones?"
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "なるほど。大[おお]きいケーキはイチゴとチョコレートとチーズがありますね。ユキさんはチョコレートが大好[だいす]きですよね。",
+          "en": "I see. For big cakes there's strawberry, chocolate, and cheese. Yuki loves chocolate, right?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "そうそう！じゃあ、大[おお]きいチョコレートケーキにしましょう。",
+          "en": "Right! Then let's get the big chocolate cake."
+        }
+      ],
+      "questionJp": "二人[ふたり]はどのケーキを買[か]いますか。",
+      "questionEn": "Which cake will the two buy?",
+      "choices": [
+        "小[ちい]さいイチゴのケーキを五[いつ]つ",
+        "大[おお]きいイチゴのケーキ",
+        "大[おお]きいチョコレートケーキ",
+        "大[おお]きいチーズケーキ"
+      ],
+      "choicesEn": [
+        "Five small strawberry cakes",
+        "One big strawberry cake",
+        "One big chocolate cake",
+        "One big cheesecake"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "They decide on one big round cake for five people, and choose chocolate because Yuki loves chocolate."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "～のほうがよくないですか",
+          "reading": "～のほうがよくないですか",
+          "en": "wouldn't ... be better?"
+        },
+        {
+          "jp": "～にしましょう",
+          "reading": "～にしましょう",
+          "en": "let's decide on ..."
+        }
+      ]
+    },
+    {
+      "id": "l-n5-22",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "病院[びょういん]の受付[うけつけ]時間[じかん]",
+      "titleEn": "Clinic Reception Hours on Wednesday",
+      "situationEn": "A woman calls a local clinic to ask when she can visit today.",
+      "introJp": "女[おんな]の人[ひと]が病院[びょういん]に電話[でんわ]しています。今日[きょう]、女[おんな]の人[ひと]は何時[なんじ]までに病院[びょういん]へ行[い]きますか。",
+      "introEn": "A woman calls a clinic. By what time will she go to the clinic today?",
+      "lines": [
+        {
+          "speaker": "Receptionist",
+          "role": "female2",
+          "jp": "はい、さくらクリニックです。",
+          "en": "Hello, Sakura Clinic."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "すみません、今日[きょう]の午後[ごご]そちらへ行[い]きたいんですが、何時[なんじ]まで開[あ]いていますか。",
+          "en": "Excuse me, I'd like to come in this afternoon. Until what time are you open?"
+        },
+        {
+          "speaker": "Receptionist",
+          "role": "female2",
+          "jp": "あ、今日[きょう]は水曜日[すいようび]ですので、午後[ごご]はお休[やす]みなんです。午前[ごぜん]は十二時[じゅうにじ]まで診[み]ていますが、受付[うけつけ]は十一時半[じゅういちじはん]までです。",
+          "en": "Oh, since today is Wednesday, we are closed in the afternoon. In the morning we see patients until 12:00, and reception closes at 11:30."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "わかりました！今[いま]十時[じゅうじ]ですから、すぐ準備[じゅんび]して十一時半[じゅういちじはん]までに行[い]きます。",
+          "en": "Understood! It's 10:00 now, so I'll get ready right away and arrive by 11:30."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は何時[なんじ]までに病院[びょういん]へ行[い]きますか。",
+      "questionEn": "By what time will the woman go to the clinic?",
+      "choices": [
+        "午前[ごぜん]十時[じゅうじ]まで",
+        "午前[ごぜん]十一時半[じゅういちじはん]まで",
+        "昼[ひる]の十二時[じゅうにじ]まで",
+        "午後[ごご]三時[さんじ]まで"
+      ],
+      "choicesEn": [
+        "By 10:00 AM",
+        "By 11:30 AM",
+        "By 12:00 PM noon",
+        "By 3:00 PM"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The clinic is closed on Wednesday afternoons and morning reception closes at 11:30 AM (十一時半まで), so she says she will arrive by 11:30."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "受付[うけつけ]は～まで",
+          "reading": "うけつけは～まで",
+          "en": "reception is open until ..."
+        },
+        {
+          "jp": "すぐ準備[じゅんび]して",
+          "reading": "すぐじゅんびして",
+          "en": "getting ready right away"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-23",
+      "jlpt": 5,
+      "taskType": "kadai",
+      "titleJp": "部屋[へや]の掃除[そうじ]の手伝[てつだ]い",
+      "titleEn": "Helping Clean the Room Before Grandpa Visits",
+      "situationEn": "A mother asks her son to help tidy up before his grandfather arrives.",
+      "introJp": "家[いえ]で母[はは]と息子[むすこ]が話[はな]しています。息子[むすこ]はこれからまず何[なに]をしますか。",
+      "introEn": "A mother and son are talking at home. What will the son do first?",
+      "lines": [
+        {
+          "speaker": "Mother",
+          "role": "female",
+          "jp": "ケンジ、午後[ごご]二時[にじ]におじいちゃんが来[く]るから、部屋[へや]をきれいにしましょう。",
+          "en": "Kenji, Grandpa is coming at 2:00 PM, so let's clean up the room."
+        },
+        {
+          "speaker": "Son",
+          "role": "male",
+          "jp": "うん、いいよ。何[なに]をすればいい？窓[まど]を拭[ふ]こうか。",
+          "en": "Sure. What should I do? Shall I wipe the windows?"
+        },
+        {
+          "speaker": "Mother",
+          "role": "female",
+          "jp": "窓[まど]はさっきお母[かあ]さんが拭[ふ]いたよ。床[ゆか]に掃除機[そうじき]をかけたいから、まずテーブルの上[うえ]の本[ほん]とマンガを本棚[ほんだな]にしまってくれる？",
+          "en": "Mom wiped the windows earlier. I want to vacuum the floor, so first could you put away the books and manga on the table onto the bookshelf?"
+        },
+        {
+          "speaker": "Son",
+          "role": "male",
+          "jp": "わかった。そのあとゴミも捨[す]てておくね。",
+          "en": "Got it. After that I'll take out the trash too."
+        }
+      ],
+      "questionJp": "息子[むすこ]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the son do first?",
+      "choices": [
+        "窓[まど]を拭[ふ]く",
+        "床[ゆか]に掃除機[そうじき]をかける",
+        "本[ほん]とマンガを本棚[ほんだな]にしまう",
+        "ゴミを外[そと]に捨[す]てる"
+      ],
+      "choicesEn": [
+        "Wipe the windows",
+        "Vacuum the floor",
+        "Put the books and manga away on the bookshelf",
+        "Take out the trash"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The mother already wiped the windows and will vacuum; she asks Kenji first (まず) to put away the books and manga onto the bookshelf."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "本棚[ほんだな]にしまう",
+          "reading": "ほんだなにしまう",
+          "en": "to put away on the bookshelf"
+        },
+        {
+          "jp": "掃除機[そうじき]をかける",
+          "reading": "そうじきをかける",
+          "en": "to vacuum"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-24",
+      "jlpt": 5,
+      "taskType": "sokuji",
+      "titleJp": "レストランでメニューを見[み]ながら",
+      "titleEn": "Quick Response: Asking a Waiter About a Menu Item",
+      "situationEn": "A customer at a café reacts when the waiter apologizes that coffee is sold out.",
+      "introJp": "カフェで店員[てんいん]が話[はな]しかけました。何[なん]と言[い]いますか。",
+      "introEn": "A café waiter speaks to you. What is the most natural response?",
+      "lines": [
+        {
+          "speaker": "Waiter",
+          "role": "male",
+          "jp": "すみません、今日[きょう]はチーズケーキがもう終[お]わってしまったんですが…。",
+          "en": "I'm sorry, we are already out of cheesecake today..."
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural reply?",
+      "choices": [
+        "そうですか。じゃあ、プリンをお願[ねが]いします。",
+        "はい、おいしかったです。ごちそうさまでした。",
+        "いいえ、チーズケーキを二[ふた]つください。"
+      ],
+      "choicesEn": [
+        "I see. Then I'll have the pudding, please.",
+        "Yes, it was delicious. Thank you for the meal.",
+        "No, please give me two cheesecakes."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "When told an item is sold out, acknowledging with \"そうですか\" and ordering an alternative (じゃあ、プリンをお願いします) is the natural reply."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "もう終[お]わってしまった",
+          "reading": "もうおわってしまった",
+          "en": "has already sold out / run out"
+        },
+        {
+          "jp": "じゃあ、～をお願[ねが]いします",
+          "reading": "じゃあ、～をおねがいします",
+          "en": "then I'll have ..., please"
+        }
+      ]
+    },
+    {
+      "id": "l-n5-25",
+      "jlpt": 5,
+      "taskType": "point",
+      "titleJp": "土曜日[どようび]のスポーツ大会[たいかい]",
+      "titleEn": "Where the Saturday Sports Match Will Be Held",
+      "situationEn": "Two university club members confirm the location of Saturday's tennis match.",
+      "introJp": "男[おとこ]の学生[がくせい]と女[おんな]の学生[がくせい]が話[はな]しています。土曜日[どようび]の試合[しあい]はどこでしますか。",
+      "introEn": "A male and female student are talking. Where will Saturday's match be held?",
+      "lines": [
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "ミカさん、土曜日[どようび]のテニスの試合[しあい]は、いつもの大学[だいがく]のコートですか。",
+          "en": "Mika, is Saturday's tennis match at our usual university court?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "いいえ、大学[だいがく]のコートは工事[こうじ]をしているので使[つか]えないんです。だから、駅[えき]の北[きた]にある市民[しみん]公園[こうえん]のコートです。",
+          "en": "No, the university court is under construction so we can't use it. So it's at the Citizen's Park court north of the station."
+        },
+        {
+          "speaker": "Male Student",
+          "role": "male",
+          "jp": "あ、市民[しみん]公園[こうえん]ですね。雨[あめ]が降[ふ]ったら体育館[たいいくかん]ですか。",
+          "en": "Oh, Citizen's Park. If it rains, is it in the gym?"
+        },
+        {
+          "speaker": "Female Student",
+          "role": "female",
+          "jp": "はい、でも天気[てんき]予報[よほう]では土曜日[どようび]は一日[いちにち]じゅう晴[は]れだそうですから、大丈夫[だいじょうぶ]ですよ。",
+          "en": "Yes, but the weather forecast says it will be sunny all day Saturday, so we'll be fine."
+        }
+      ],
+      "questionJp": "土曜日[どようび]の試合[しあい]はどこでしますか。",
+      "questionEn": "Where will Saturday's match take place?",
+      "choices": [
+        "大学[だいがく]のテニスコート",
+        "市民[しみん]公園[こうえん]のコート",
+        "大学[だいがく]の体育館[たいいくかん]",
+        "駅[えき]の南[みなみ]のスポーツセンター"
+      ],
+      "choicesEn": [
+        "The university tennis court",
+        "The Citizen's Park court",
+        "The university gymnasium",
+        "The sports center south of the station"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The university court is under construction, and Saturday is forecast to be sunny all day, so the match will be held at the Citizen's Park court."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "工事[こうじ]をしている",
+          "reading": "こうじをしている",
+          "en": "under construction"
+        },
+        {
+          "jp": "天気[てんき]予報[よほう]",
+          "reading": "てんきよほう",
+          "en": "weather forecast"
+        }
+      ]
+    }
+  ]
+}

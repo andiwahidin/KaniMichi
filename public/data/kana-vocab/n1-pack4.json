@@ -1,0 +1,236 @@
+{
+  "level": 1,
+  "pack": "n1-pack4",
+  "items": [
+    {
+      "id": "kv-n1-51",
+      "jlpt": 1,
+      "order": 51,
+      "word": "いやしくも",
+      "reading": "いやしくも",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "at all; if indeed (calling upon one's status or duty)",
+      "acceptedMeanings": ["at all", "if indeed", "in the least"],
+      "usageNote": "Elevated literary adverb pairing with a conditional ('If you are indeed a scholar / leader, you must not...').",
+      "example": {
+        "jp": "いやしくも研究者を名乗る以上、データの改ざんは許されない。",
+        "reading": "いやしくもけんきゅうしゃをなのるいじょう、でーたのかいざんはゆるされない。",
+        "en": "If one indeed calls oneself a researcher, fabricating data is unforgivable."
+      },
+      "quiz": {
+        "sentenceBefore": "",
+        "sentenceAfter": "公共の福祉を担う立場にあるなら、私利を優先してはならない。",
+        "en": "If you hold a position entrusted with the public good at all, you must not prioritize private gain.",
+        "choices": ["いやしくも", "まんざら", "あながち", "とかく"]
+      }
+    },
+    {
+      "id": "kv-n1-52",
+      "jlpt": 1,
+      "order": 52,
+      "word": "こぞって",
+      "reading": "こぞって",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "all together; unanimously; en masse",
+      "acceptedMeanings": ["all together", "unanimously", "en masse", "as one"],
+      "usageNote": "Depicts an entire group, industry, or community moving in unison toward the same action (各社こぞって参入した).",
+      "example": {
+        "jp": "その新作映画は批評家からこぞって絶賛された。",
+        "reading": "そのしんさくえいがはひひょうかからこぞってぜっさんされた。",
+        "en": "That new film was unanimously praised by critics."
+      },
+      "quiz": {
+        "sentenceBefore": "補助金制度の発表を受け、地域の企業は",
+        "sentenceAfter": "再生可能エネルギー分野へ参入した。",
+        "en": "Following the subsidy announcement, local firms entered the renewable energy sector en masse.",
+        "choices": ["こぞって", "もっぱら", "おのずと", "ひたすら"]
+      }
+    },
+    {
+      "id": "kv-n1-53",
+      "jlpt": 1,
+      "order": 53,
+      "word": "やにわに",
+      "reading": "やにわに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "suddenly; abruptly; on the spot without warning",
+      "acceptedMeanings": ["suddenly", "abruptly", "without warning"],
+      "usageNote": "Literary adverb describing an abrupt, dramatic physical action taken without prelude (やにわに立ち上がった).",
+      "example": {
+        "jp": "黙って聞いていた彼は、やにわに席を立って部屋を出て行った。",
+        "reading": "だまってきいていたかれは、やにわにせきをたってへやをでていった。",
+        "en": "Having listened in silence, he abruptly rose from his seat and walked out of the room."
+      },
+      "quiz": {
+        "sentenceBefore": "沈黙が続いた会議室で、議長は",
+        "sentenceAfter": "分厚い資料を机に置いた。",
+        "en": "In the silent conference room, the chair abruptly placed a thick dossier on the desk.",
+        "choices": ["やにわに", "おおよそ", "いちがいに", "すべからく"]
+      }
+    },
+    {
+      "id": "kv-n1-54",
+      "jlpt": 1,
+      "order": 54,
+      "word": "よもや",
+      "reading": "よもや",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "surely not; never in a million years (with negative)",
+      "acceptedMeanings": ["surely not", "never", "hardly"],
+      "usageNote": "Literary counterpart of まさか, expressing disbelief or praying an unlikely worst-case scenario will not happen.",
+      "example": {
+        "jp": "よもや十年後に自分がこの町で暮らしているとは思わなかった。",
+        "reading": "よもやじゅうねんごにじぶんがこのまちでくらしているとはおもわなかった。",
+        "en": "I never in a million years imagined I would be living in this town ten years later."
+      },
+      "quiz": {
+        "sentenceBefore": "あれほど堅実だった老舗が、",
+        "sentenceAfter": "経営破綻に追い込まれるとは誰も予想しなかった。",
+        "en": "No one anticipated that such a solid longtime firm could possibly be driven into insolvency.",
+        "choices": ["よもや", "さぞ", "あえて", "かりに"]
+      }
+    },
+    {
+      "id": "kv-n1-55",
+      "jlpt": 1,
+      "order": 55,
+      "word": "さもなければ",
+      "reading": "さもなければ",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "otherwise; or else; if not",
+      "acceptedMeanings": ["otherwise", "or else", "if not"],
+      "usageNote": "Formal logical connector presenting an unfavorable consequence if the preceding condition is not met.",
+      "example": {
+        "jp": "速やかに構造改革を進めるべきだ。さもなければ国際競争力を失うだろう。",
+        "reading": "すみやかにこうぞうかいかくをすすめるべきだ。さもなければこくさいきょうそうりょくをうしなうだろう。",
+        "en": "We must swiftly advance structural reform. Otherwise, we will lose international competitiveness."
+      },
+      "quiz": {
+        "sentenceBefore": "期日までに必要書類を提出すること。",
+        "sentenceAfter": "、申請は自動的に無効とみなされる。",
+        "en": "Submit the required documents by the due date. Otherwise, the application will automatically be deemed invalid.",
+        "choices": ["さもなければ", "いわば", "かたや", "ひいては"]
+      }
+    },
+    {
+      "id": "kv-n1-56",
+      "jlpt": 1,
+      "order": 56,
+      "word": "よって",
+      "reading": "よって",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "therefore; consequently; accordingly (formal/academic)",
+      "acceptedMeanings": ["therefore", "consequently", "accordingly", "hence"],
+      "usageNote": "Standard conclusive conjunction in academic proofs, legal judgments, and official policy statements.",
+      "example": {
+        "jp": "現行の基準では安全性が十分に担保できない。よって、新たな規制を設ける必要がある。",
+        "reading": "げんこうのきじゅんではあんぜんせいがじゅうぶんにたんぽできない。よって、あらたなきせいをもうけるひつようがある。",
+        "en": "Safety cannot be sufficiently guaranteed under current standards. Therefore, new regulations must be established."
+      },
+      "quiz": {
+        "sentenceBefore": "検証の結果、両者のデータに有意な差は認められなかった。",
+        "sentenceAfter": "、当初の仮説は棄却される。",
+        "en": "Upon verification, no statistically significant difference was observed between the two datasets. Hence, the initial hypothesis is rejected.",
+        "choices": ["よって", "さりとて", "さりながら", "しかしながら"]
+      }
+    },
+    {
+      "id": "kv-n1-57",
+      "jlpt": 1,
+      "order": 57,
+      "word": "こつこつ",
+      "reading": "こつこつ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "steadily; painstakingly; diligently bit by bit",
+      "acceptedMeanings": ["steadily", "painstakingly", "diligently", "tirelessly"],
+      "usageNote": "Praises patient, unglamorous daily accumulation of effort, savings, or research (こつこつ積み上げる).",
+      "example": {
+        "jp": "華やかな成果の陰には、何年もこつこつ積み重ねた検証作業がある。",
+        "reading": "はなやかなせいかのかげには、なんねんもこつこつつみかさねたけんしょうさぎょうがある。",
+        "en": "Behind the glamorous achievement lie years of painstakingly accumulated verification work."
+      },
+      "quiz": {
+        "sentenceBefore": "派手さはなくとも、毎日",
+        "sentenceAfter": "と語彙を増やし続けた人が最後に伸びる。",
+        "en": "Even without flashiness, those who steadily build their vocabulary every day improve most in the end.",
+        "choices": ["こつこつ", "うやむや", "ちぐはぐ", "うんざり"]
+      }
+    },
+    {
+      "id": "kv-n1-58",
+      "jlpt": 1,
+      "order": 58,
+      "word": "すたすた",
+      "reading": "すたすた",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "walking briskly / striding away without hesitation",
+      "acceptedMeanings": ["walking briskly", "striding briskly", "briskly"],
+      "usageNote": "Depicts crisp, purposeful footsteps — often walking quickly ahead or leaving briskly without looking back.",
+      "example": {
+        "jp": "言い訳も聞かず、彼女はすたすたと廊下の奥へ歩いて行った。",
+        "reading": "いいわけもきかず、かのじょはすたすたとろうかのおくへあるいていった。",
+        "en": "Without listening to any excuses, she strode briskly down the hallway."
+      },
+      "quiz": {
+        "sentenceBefore": "会計を済ませるや否や、男は振り返りもせず",
+        "sentenceAfter": "と店を後にした。",
+        "en": "No sooner had he paid the bill than the man strode briskly out of the shop without looking back.",
+        "choices": ["すたすた", "じんわり", "しんみり", "しぶしぶ"]
+      }
+    },
+    {
+      "id": "kv-n1-59",
+      "jlpt": 1,
+      "order": 59,
+      "word": "スキーム",
+      "reading": "すきーむ",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "scheme; structured business or financing framework",
+      "acceptedMeanings": ["scheme", "framework", "structured plan"],
+      "usageNote": "Unlike English 'scheme' (often negative), Japanese スキーム is strictly neutral/professional, meaning a well-designed institutional or financial mechanism.",
+      "example": {
+        "jp": "官民連携による新たな資金調達のスキームが構築された。",
+        "reading": "かんみんれんけいによるあらたなしきんちょうたつのすきーむがこうちくされた。",
+        "en": "A new funding scheme through public-private partnership was established."
+      },
+      "quiz": {
+        "sentenceBefore": "持続可能な事業モデルを支える収益",
+        "sentenceAfter": "の設計が急務となっている。",
+        "en": "Designing a revenue framework that supports a sustainable business model has become an urgent task.",
+        "choices": ["スキーム", "ジレンマ", "レガシー", "シビア"]
+      }
+    },
+    {
+      "id": "kv-n1-60",
+      "jlpt": 1,
+      "order": 60,
+      "word": "トレーサビリティ",
+      "reading": "とれーさびりてぃ",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "traceability (tracking production and supply-chain history)",
+      "acceptedMeanings": ["traceability", "supply chain tracking"],
+      "usageNote": "High-frequency N1 term in food safety, sustainability, and manufacturing essays.",
+      "example": {
+        "jp": "食品の安全性を高めるため、生産から流通までのトレーサビリティが重視されている。",
+        "reading": "しょくひんのあんぜんせいをたかめるため、せいさんからりゅうつうまでのとれーさびりてぃがじゅうしされている。",
+        "en": "To enhance food safety, traceability from production to distribution is emphasized."
+      },
+      "quiz": {
+        "sentenceBefore": "原材料の産地や加工履歴を確認できる",
+        "sentenceAfter": "の確保が消費者から求められている。",
+        "en": "Consumers demand ensuring traceability that allows verifying the origin and processing history of ingredients.",
+        "choices": ["トレーサビリティ", "コンセンサス", "インセンティブ", "パラダイム"]
+      }
+    }
+  ]
+}

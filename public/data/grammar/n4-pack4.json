@@ -1,0 +1,316 @@
+{
+  "level": 4,
+  "pack": "n4-pack4",
+  "items": [
+    {
+      "id": "g-n4-41",
+      "jlpt": 4,
+      "order": 41,
+      "pattern": "～(ら)れる (Potensial / Bisa)",
+      "reading": "～(ら)れる",
+      "meaning": "can do ...; to be able to ...",
+      "structure": "Group 1 u→e+る / Group 2 stem+られる / する→できる / 来る→こられる",
+      "explanation": "Expresses personal ability or situational possibility. The direct object particle を usually changes to が with potential verbs (日本語が話せます).",
+      "confusableWith": "For Group 2 verbs, potential (食べられる) shares the same form as passive; context and particles clarify which is meant.",
+      "examples": [
+        {
+          "jp": "練習したので、自転車に乗れるようになりました。",
+          "reading": "れんしゅうしたので、じてんしゃにのれるようになりました。",
+          "en": "Because I practiced, I became able to ride a bicycle."
+        },
+        {
+          "jp": "この店はカードで払えますか。",
+          "reading": "このみせはかーどではらえますか。",
+          "en": "Can I pay by card at this shop?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "彼女は漢字が五百ぐらい",
+        "sentenceAfter": "。",
+        "en": "She can read about 500 kanji.",
+        "answer": "読めます",
+        "acceptedAnswers": ["読めます", "よめます"],
+        "choices": ["読めます", "読みます", "読まれます", "読ませます"]
+      }
+    },
+    {
+      "id": "g-n4-42",
+      "jlpt": 4,
+      "order": 42,
+      "pattern": "～んです / ～のです",
+      "reading": "～んです / ～のです",
+      "meaning": "it is that ... (explaining a reason, context, or asking why)",
+      "structure": "Plain form (な-Adj/Noun + な) + んです・のです",
+      "explanation": "Provides an explanation or background for an observable situation, or asks the listener to explain something you just noticed ('Why are you carrying an umbrella?').",
+      "confusableWith": "Insert な before んです for nouns and な-adjectives (雨なんです, 元気なんです).",
+      "examples": [
+        {
+          "jp": "どうして遅れたんですか。— 電車が止まったんです。",
+          "reading": "どうしておくれたんですか。— でんしゃがとまったんです。",
+          "en": "Why were you late? — It's because the train stopped."
+        },
+        {
+          "jp": "明日は休みなので、早く起きなくていいんです。",
+          "reading": "あしたはやすみなので、はやくおきなくていいんです。",
+          "en": "Since tomorrow is a holiday, I don't have to wake up early."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "顔色が悪いですね。どこか具合が悪い",
+        "sentenceAfter": "。",
+        "en": "You look pale. Are you feeling unwell somewhere?",
+        "answer": "んですか",
+        "acceptedAnswers": ["んですか", "のですか"],
+        "choices": ["んですか", "そうですか", "ようですか", "はずですか"]
+      }
+    },
+    {
+      "id": "g-n4-43",
+      "jlpt": 4,
+      "order": 43,
+      "pattern": "～までに (tenggat waktu)",
+      "reading": "～までに",
+      "meaning": "by (a deadline); no later than ...",
+      "structure": "Time / Event + までに + Action Verb",
+      "explanation": "Marks the deadline by which a single completed action must happen (e.g., submitting a report, returning a book, arriving at the station).",
+      "confusableWith": "まで (without に) indicates a continuous state lasting until a time (五時まで働く), while までに marks a deadline (五時までに提出する).",
+      "examples": [
+        {
+          "jp": "この本は来週の月曜日までに返してください。",
+          "reading": "このほんはらいしゅうのげつようびまでにかえしてください。",
+          "en": "Please return this book by next Monday."
+        },
+        {
+          "jp": "夜七時までに家へ帰ります。",
+          "reading": "よるしちじまでにいえへかえります。",
+          "en": "I will return home by 7:00 PM."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "申し込み用紙は今週の金曜日",
+        "sentenceAfter": "出してください。",
+        "en": "Please submit the application form by this Friday.",
+        "answer": "までに",
+        "acceptedAnswers": ["までに"],
+        "choices": ["までに", "まで", "ごろ", "ながら"]
+      }
+    },
+    {
+      "id": "g-n4-44",
+      "jlpt": 4,
+      "order": 44,
+      "pattern": "～がる / ～たがる",
+      "reading": "～がる / ～たがる",
+      "meaning": "to show signs of wanting / feeling ... (third person)",
+      "structure": "い-Adj stem / な-Adj / Verb(ます-stem)+た + がる",
+      "explanation": "Used to describe a third person's visible desires or emotions (wanting to go, feeling cold, feeling lonely) based on their outward behavior. Often used in the ～たがっている form.",
+      "confusableWith": "Direct たい / ほしい / 寂しい is normally reserved for first-person ('I') statements; use がる when reporting another person's feelings.",
+      "examples": [
+        {
+          "jp": "弟は新しいゲームをほしがっています。",
+          "reading": "おとうとはあたらしいげーむをほしがっています。",
+          "en": "My younger brother wants a new video game."
+        },
+        {
+          "jp": "妹はいつか日本へ留学したがっています。",
+          "reading": "いもうとはいつかにほんへりゅうがくしたがっています。",
+          "en": "My younger sister wants to study abroad in Japan someday."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "子どもたちが公園で遊び",
+        "sentenceAfter": "います。",
+        "en": "The children are eager to play in the park.",
+        "answer": "たがって",
+        "acceptedAnswers": ["たがって"],
+        "choices": ["たがって", "たいと", "たくて", "たそうで"]
+      }
+    },
+    {
+      "id": "g-n4-45",
+      "jlpt": 4,
+      "order": 45,
+      "pattern": "～という (yang disebut / bernama)",
+      "reading": "～という",
+      "meaning": "called ...; named ...; that says ...",
+      "structure": "Name / Phrase + という + Noun",
+      "explanation": "Introduces the name, title, or content of a noun that the listener may not be familiar with ('a town called Kamakura', 'the news that...').",
+      "confusableWith": "Don't confuse with ～と言う (to say). Here という links a label directly to a category noun.",
+      "examples": [
+        {
+          "jp": "先週、鎌倉という古い町へ行きました。",
+          "reading": "せんしゅう、かまくらというふるいまちへいきました。",
+          "en": "Last week I went to an old town called Kamakura."
+        },
+        {
+          "jp": "『こころ』という小説を読んだことがありますか。",
+          "reading": "『こころ』というしょうせつをよんだことがありますか。",
+          "en": "Have you ever read a novel called 'Kokoro'?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "駅の近くに「さくら」",
+        "sentenceAfter": "おいしいパン屋があります。",
+        "en": "Near the station there is a delicious bakery called 'Sakura'.",
+        "answer": "という",
+        "acceptedAnswers": ["という", "と言う"],
+        "choices": ["という", "ように", "ために", "ながら"]
+      }
+    },
+    {
+      "id": "g-n4-46",
+      "jlpt": 4,
+      "order": 46,
+      "pattern": "～ずつ (masing-masing / bertahap)",
+      "reading": "～ずつ",
+      "meaning": "each; at a time; bit by bit",
+      "structure": "Number+Counter / 少しずつ + ずつ",
+      "explanation": "Expresses equal distribution ('two apples each') or steady incremental progress ('a little bit each day').",
+      "confusableWith": "Attach ずつ directly after the counter or quantity word (一人に一枚ずつ, not 一枚にずつ).",
+      "examples": [
+        {
+          "jp": "このプリントを一人に二枚ずつ配ってください。",
+          "reading": "このぷりんとをひとりににまいずつくばってください。",
+          "en": "Please hand out two copies of this handout to each person."
+        },
+        {
+          "jp": "毎日少しずつ漢字を覚えています。",
+          "reading": "まいにちすこしずつかんじをおぼえています。",
+          "en": "I am memorizing kanji little by little every day."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "この薬は食後に一錠",
+        "sentenceAfter": "飲んでください。",
+        "en": "Please take one tablet of this medicine at a time after meals.",
+        "answer": "ずつ",
+        "acceptedAnswers": ["ずつ"],
+        "choices": ["ずつ", "だけ", "しか", "ほど"]
+      }
+    },
+    {
+      "id": "g-n4-47",
+      "jlpt": 4,
+      "order": 47,
+      "pattern": "～ほど～ない",
+      "reading": "～ほど～ない",
+      "meaning": "not as ... as ...",
+      "structure": "A + は + B + ほど + Negative Adjective / Verb",
+      "explanation": "Compares two things by stating that A does not reach the level of B ('This winter is not as cold as last winter').",
+      "confusableWith": "Always pairs with a negative predicate at the end; for affirmative superiority use より～のほうが.",
+      "examples": [
+        {
+          "jp": "今年の冬は去年ほど寒くないです。",
+          "reading": "ことしのふゆはきょねんほどさむくないです。",
+          "en": "This winter is not as cold as last year."
+        },
+        {
+          "jp": "この試験は思ったほど難しくありませんでした。",
+          "reading": "このしけんはおもったほどむずかしくありませんでした。",
+          "en": "This exam was not as difficult as I thought."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "大阪は東京",
+        "sentenceAfter": "人口が多くありません。",
+        "en": "Osaka does not have as large a population as Tokyo.",
+        "answer": "ほど",
+        "acceptedAnswers": ["ほど"],
+        "choices": ["ほど", "より", "だけ", "ばかり"]
+      }
+    },
+    {
+      "id": "g-n4-48",
+      "jlpt": 4,
+      "order": 48,
+      "pattern": "～(よ)うとする",
+      "reading": "～(よ)うとする",
+      "meaning": "to try to ...; to be about to ...",
+      "structure": "Verb (Volitional form) + とする",
+      "explanation": "Expresses attempting an action with effort, or being right on the verge of doing something when another event interrupts (出かけようとしたとき).",
+      "confusableWith": "Compare with ～てみる (trying something out to see how it feels) vs. ～(よ)うとする (attempting / about to act).",
+      "examples": [
+        {
+          "jp": "家を出ようとしたとき、電話が鳴りました。",
+          "reading": "いえをでようとしたとき、でんわがなりました。",
+          "en": "Just as I was about to leave the house, the phone rang."
+        },
+        {
+          "jp": "重い荷物を持ち上げようとしましたが、動きませんでした。",
+          "reading": "おもいにもつをもちあげようとしましたが、うごきませんでした。",
+          "en": "I tried to lift the heavy luggage, but it wouldn't budge."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "電車に",
+        "sentenceAfter": "としたら、ドアが閉まってしまった。",
+        "en": "Just as I tried to board the train, the doors closed.",
+        "answer": "乗ろう",
+        "acceptedAnswers": ["乗ろう", "のろう"],
+        "choices": ["乗ろう", "乗る", "乗って", "乗った"]
+      }
+    },
+    {
+      "id": "g-n4-49",
+      "jlpt": 4,
+      "order": 49,
+      "pattern": "～ことにしている",
+      "reading": "～ことにしている",
+      "meaning": "make it a rule / habit to ...",
+      "structure": "Verb (Dictionary / ない-form) + ことにしている",
+      "explanation": "Describes a personal rule or regular habit that you consciously decided to maintain over time.",
+      "confusableWith": "ことにした is a one-time decision ('I decided to...'), while ことにしている expresses an ongoing personal habit.",
+      "examples": [
+        {
+          "jp": "健康のために、毎朝三十分歩くことにしています。",
+          "reading": "けんこうのために、まいあささんじゅっぷんあるくことにしています。",
+          "en": "For my health, I make it a habit to walk 30 minutes every morning."
+        },
+        {
+          "jp": "寝る前はスマートフォンを見ないことにしています。",
+          "reading": "ねるまえはすまーとふぉんをみないことにしています。",
+          "en": "I make it a rule not to look at my smartphone before bed."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "私は毎日、寝る前に日記を書く",
+        "sentenceAfter": "。",
+        "en": "I make it a habit to write in my diary every day before sleeping.",
+        "answer": "ことにしています",
+        "acceptedAnswers": ["ことにしています"],
+        "choices": ["ことにしています", "ことになっています", "ように見えます", "はずです"]
+      }
+    },
+    {
+      "id": "g-n4-50",
+      "jlpt": 4,
+      "order": 50,
+      "pattern": "～ていただけますか",
+      "reading": "～ていただけますか",
+      "meaning": "could you kindly ...? (very polite request)",
+      "structure": "Verb (て-form) + いただけますか / いただけませんか",
+      "explanation": "A respectful keigo request form used with teachers, bosses, clients, or strangers. Using the negative question いただけませんか sounds even softer and more courteous.",
+      "confusableWith": "More polite than ～てもらえますか and ～てください; avoid using it with close friends or family.",
+      "examples": [
+        {
+          "jp": "すみません、もう一度ゆっくり言っていただけますか。",
+          "reading": "すみません、もういちどゆっくりいっていただけますか。",
+          "en": "Excuse me, could you please say that slowly one more time?"
+        },
+        {
+          "jp": "こちらの書類を確認していただけませんか。",
+          "reading": "こちらのしょるいをかくにんしていただけませんか。",
+          "en": "Would you mind checking these documents for me?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "先生、この推薦状を書いて",
+        "sentenceAfter": "。",
+        "en": "Professor, could you kindly write this letter of recommendation?",
+        "answer": "いただけませんか",
+        "acceptedAnswers": ["いただけませんか", "いただけますか"],
+        "choices": ["いただけませんか", "あげませんか", "くれませんか", "やりませんか"]
+      }
+    }
+  ]
+}

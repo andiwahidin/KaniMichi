@@ -1,0 +1,316 @@
+{
+  "level": 5,
+  "pack": "n5-pack4",
+  "items": [
+    {
+      "id": "g-n5-41",
+      "jlpt": 5,
+      "order": 41,
+      "pattern": "～と (bersama / dan)",
+      "reading": "～と",
+      "meaning": "with (a person); and (complete list of nouns)",
+      "structure": "Person + と + Verb / Noun A + と + Noun B",
+      "explanation": "Connects nouns in an exhaustive list ('A and B') or marks the companion with whom you perform an action ('with someone').",
+      "confusableWith": "Use や (not と) when listing only representative examples from a larger set.",
+      "examples": [
+        {
+          "jp": "日曜日に友達と映画を見ました。",
+          "reading": "にちようびにともだちとえいがをみました。",
+          "en": "I watched a movie with my friend on Sunday."
+        },
+        {
+          "jp": "かばんの中に本とノートがあります。",
+          "reading": "かばんのなかにほんとのーとがあります。",
+          "en": "There are a book and a notebook inside the bag."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "きのう、家族",
+        "sentenceAfter": "レストランで晩ごはんを食べました。",
+        "en": "Yesterday I ate dinner at a restaurant with my family.",
+        "answer": "と",
+        "acceptedAnswers": ["と"],
+        "choices": ["と", "を", "へ", "が"]
+      }
+    },
+    {
+      "id": "g-n5-42",
+      "jlpt": 5,
+      "order": 42,
+      "pattern": "～も (juga / sama-sama)",
+      "reading": "～も",
+      "meaning": "also; too; both ... and ... / neither ... nor ...",
+      "structure": "Noun + も (replaces は / が / を)",
+      "explanation": "Adds a parallel item to something already stated ('also/too'). When used twice (AもBも), it expresses 'both A and B' or with a negative verb 'neither A nor B'.",
+      "confusableWith": "も completely replaces は, が, and を — never write はも or をも.",
+      "examples": [
+        {
+          "jp": "田中さんは学生です。私も学生です。",
+          "reading": "たなかさんはがくせいです。わたしもがくせいです。",
+          "en": "Tanaka-san is a student. I am also a student."
+        },
+        {
+          "jp": "犬も猫も好きです。",
+          "reading": "いぬもねこもすきです。",
+          "en": "I like both dogs and cats."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "コーヒーを飲みました。ケーキ",
+        "sentenceAfter": "食べました。",
+        "en": "I drank coffee. I ate cake too.",
+        "answer": "も",
+        "acceptedAnswers": ["も"],
+        "choices": ["も", "は", "へ", "の"]
+      }
+    },
+    {
+      "id": "g-n5-43",
+      "jlpt": 5,
+      "order": 43,
+      "pattern": "～くらい / ～ぐらい",
+      "reading": "～くらい / ～ぐらい",
+      "meaning": "about; approximately (amount or duration)",
+      "structure": "Quantity / Duration + くらい・ぐらい",
+      "explanation": "Placed after a number, quantity, or duration to indicate an approximate amount ('about 20 minutes', 'roughly 1,000 yen').",
+      "confusableWith": "Use ごろ for approximate points on a clock/calendar (三時ごろ), and ぐらい for lengths of time or amounts (三時間ぐらい).",
+      "examples": [
+        {
+          "jp": "駅から会社まで歩いて十五分ぐらいかかります。",
+          "reading": "えきからかいしゃまであるいてじゅうごふんぐらいかかります。",
+          "en": "It takes about 15 minutes on foot from the station to the office."
+        },
+        {
+          "jp": "毎日二時間くらい日本語を勉強します。",
+          "reading": "まいにちにじかんくらいにほんごをべんきょうします。",
+          "en": "I study Japanese for about two hours every day."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "パーティーには三十人",
+        "sentenceAfter": "来ました。",
+        "en": "About thirty people came to the party.",
+        "answer": "ぐらい",
+        "acceptedAnswers": ["ぐらい", "くらい"],
+        "choices": ["ぐらい", "ごろ", "しか", "より"]
+      }
+    },
+    {
+      "id": "g-n5-44",
+      "jlpt": 5,
+      "order": 44,
+      "pattern": "～ごろ (sekitar waktu)",
+      "reading": "～ごろ",
+      "meaning": "around; approximately (a specific point in time)",
+      "structure": "Specific Time (Hour / Date / Month) + ごろ",
+      "explanation": "Indicates an approximate point in time such as a clock hour, month, or season. Often followed optionally by に.",
+      "confusableWith": "Do not use ごろ after durations like 三時間 (use ぐらい instead).",
+      "examples": [
+        {
+          "jp": "毎晩十一時ごろ寝ます。",
+          "reading": "まいばんじゅういちじごろねます。",
+          "en": "I go to bed around 11 o'clock every night."
+        },
+        {
+          "jp": "来月の十日ごろ、京都へ行く予定です。",
+          "reading": "らいげつのとおかごろ、きょうとへいくよていです。",
+          "en": "I plan to go to Kyoto around the 10th of next month."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "明日の朝、七時半",
+        "sentenceAfter": "家を出ます。",
+        "en": "Tomorrow morning I will leave the house around 7:30.",
+        "answer": "ごろ",
+        "acceptedAnswers": ["ごろ"],
+        "choices": ["ごろ", "だけ", "まで", "から"]
+      }
+    },
+    {
+      "id": "g-n5-45",
+      "jlpt": 5,
+      "order": 45,
+      "pattern": "～だけ (hanya / saja)",
+      "reading": "～だけ",
+      "meaning": "only; just; merely",
+      "structure": "Noun / Number / Verb (Plain) + だけ",
+      "explanation": "Limits a quantity, person, or action to only what is stated. Unlike しか～ない, だけ works smoothly with affirmative verbs.",
+      "confusableWith": "しか always requires a negative ending (一つしかない), whereas だけ pairs with positive predicates (一つだけある).",
+      "examples": [
+        {
+          "jp": "今朝はコーヒーだけ飲みました。",
+          "reading": "けさはこーひーだけののみました。",
+          "en": "This morning I drank only coffee."
+        },
+        {
+          "jp": "あと五分だけ待ってください。",
+          "reading": "あとごふんだけまってください。",
+          "en": "Please wait just five more minutes."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "日曜日",
+        "sentenceAfter": "仕事が休みです。",
+        "en": "Only Sunday is my day off from work.",
+        "answer": "だけ",
+        "acceptedAnswers": ["だけ"],
+        "choices": ["だけ", "しか", "ほど", "より"]
+      }
+    },
+    {
+      "id": "g-n5-46",
+      "jlpt": 5,
+      "order": 46,
+      "pattern": "～のは～です (nominalisasi)",
+      "reading": "～のは～です",
+      "meaning": "doing ... is (adjective/noun)",
+      "structure": "Verb (Dictionary form) + の + は / が + Adjective",
+      "explanation": "Turns a verb phrase into a noun ('doing X') so it can act as the topic or subject of adjectives like 楽しい (fun), 難しい (difficult), or 好き (like).",
+      "confusableWith": "Use dictionary form directly before の (泳ぐのが好き, not 泳ぎますのが好き).",
+      "examples": [
+        {
+          "jp": "料理を作るのは楽しいです。",
+          "reading": "りょうりをつくるのはたのしいです。",
+          "en": "Cooking meals is fun."
+        },
+        {
+          "jp": "私は朝早く起きるのが苦手です。",
+          "reading": "わたしはあさはやくおきるのがにがてです。",
+          "en": "I am bad at waking up early in the morning."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "漢字を書く",
+        "sentenceAfter": "は少し難しいですが、面白いです。",
+        "en": "Writing kanji is a bit difficult, but interesting.",
+        "answer": "の",
+        "acceptedAnswers": ["の"],
+        "choices": ["の", "に", "で", "を"]
+      }
+    },
+    {
+      "id": "g-n5-47",
+      "jlpt": 5,
+      "order": 47,
+      "pattern": "まだ～ていません",
+      "reading": "まだ～ていません",
+      "meaning": "have not done ... yet",
+      "structure": "まだ + Verb (て-form) + いません",
+      "explanation": "Expresses that an expected action has not yet been completed up to the present moment. This is the standard negative reply to a もう～ましたか question.",
+      "confusableWith": "Avoid answering もう食べましたか with いいえ、まだ食べませんでした; use まだ食べていません.",
+      "examples": [
+        {
+          "jp": "昼ごはんはもう食べましたか。— いいえ、まだ食べていません。",
+          "reading": "ひるごはんはもうたべましたか。— いいえ、まだたべていません。",
+          "en": "Have you eaten lunch yet? — No, I haven't eaten yet."
+        },
+        {
+          "jp": "レポートはまだ終わっていません。",
+          "reading": "れぽーとはまだおわっていません。",
+          "en": "The report is not finished yet."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "宿題はまだ",
+        "sentenceAfter": "。",
+        "en": "I haven't finished my homework yet.",
+        "answer": "終わっていません",
+        "acceptedAnswers": ["終わっていません", "おわっていません"],
+        "choices": ["終わっていません", "終わりました", "終わります", "終わらないでした"]
+      }
+    },
+    {
+      "id": "g-n5-48",
+      "jlpt": 5,
+      "order": 48,
+      "pattern": "～にする (memutuskan / memilih)",
+      "reading": "～にする",
+      "meaning": "to decide on ...; to choose ... (menu, item, date)",
+      "structure": "Noun + にします",
+      "explanation": "Used to state a conscious choice or decision among options — especially when ordering food/drinks at a café or choosing a meeting day.",
+      "confusableWith": "Compare with ～になる (a natural change or outside decision), whereas ～にする expresses your own choice.",
+      "examples": [
+        {
+          "jp": "私はカレーライスにします。",
+          "reading": "わたしはかれーらいすにします。",
+          "en": "I'll have the curry rice."
+        },
+        {
+          "jp": "会議は来週の火曜日にしましょう。",
+          "reading": "かいぎはらいしゅうのかようびにしましょう。",
+          "en": "Let's set the meeting for next Tuesday."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "飲み物は何にしますか。— 温かいお茶",
+        "sentenceAfter": "。",
+        "en": "What will you have to drink? — I'll choose hot tea.",
+        "answer": "にします",
+        "acceptedAnswers": ["にします"],
+        "choices": ["にします", "になります", "をします", "があります"]
+      }
+    },
+    {
+      "id": "g-n5-49",
+      "jlpt": 5,
+      "order": 49,
+      "pattern": "～ね / ～よ (partikel akhir kalimat)",
+      "reading": "～ね / ～よ",
+      "meaning": "isn't it? (seeking agreement) / you know! (new information)",
+      "structure": "Sentence + ね / よ",
+      "explanation": "ね invites agreement or confirms shared knowledge ('Today is warm, isn't it?'). よ informs the listener of something they may not know or adds friendly emphasis.",
+      "confusableWith": "Using よ when both speakers already share the feeling sounds pushy; use ね for shared observations like weather.",
+      "examples": [
+        {
+          "jp": "今日はいい天気ですね。",
+          "reading": "きょうはいいてんきですね。",
+          "en": "It's nice weather today, isn't it?"
+        },
+        {
+          "jp": "この電車は東京駅に止まりますよ。",
+          "reading": "このでんしゃはとうきょうえきにとまりますよ。",
+          "en": "This train stops at Tokyo Station, you know."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "あ、その傘は私のです",
+        "sentenceAfter": "。間違えないでください。",
+        "en": "Oh, that umbrella is mine! Please don't mix it up.",
+        "answer": "よ",
+        "acceptedAnswers": ["よ"],
+        "choices": ["よ", "か", "の", "を"]
+      }
+    },
+    {
+      "id": "g-n5-50",
+      "jlpt": 5,
+      "order": 50,
+      "pattern": "～どうですか (menawarkan / menanya kesan)",
+      "reading": "～どうですか",
+      "meaning": "how about ...?; how is ...?",
+      "structure": "Noun + は + どうですか",
+      "explanation": "Used either to politely offer something ('How about a cup of tea?') or to ask someone's impression of a place, food, or experience ('How is life in Japan?').",
+      "confusableWith": "いかがですか is the more polite/formal equivalent commonly heard from shop staff.",
+      "examples": [
+        {
+          "jp": "日本の生活はどうですか。— とても楽しいです。",
+          "reading": "にほんのせいかつはどうですか。— とてもたのしいです。",
+          "en": "How is life in Japan? — It's very enjoyable."
+        },
+        {
+          "jp": "疲れたでしょう。お茶はどうですか。",
+          "reading": "つかれたでしょう。おちゃはどうですか。",
+          "en": "You must be tired. How about some tea?"
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "新しい仕事",
+        "sentenceAfter": "。もう慣れましたか。",
+        "en": "How is your new job? Have you gotten used to it yet?",
+        "answer": "はどうですか",
+        "acceptedAnswers": ["はどうですか", "はどう"],
+        "choices": ["はどうですか", "はどれですか", "はいつですか", "はどこですか"]
+      }
+    }
+  ]
+}

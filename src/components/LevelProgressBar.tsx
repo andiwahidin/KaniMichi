@@ -1,4 +1,6 @@
 import React from 'react';
+import { SrsMode } from '../types/curriculum';
+import { getSrsPolicy, SRS_STAGE_NAMES } from '../utils/srs';
 
 export interface LevelCategoryProgress {
   mastered: number;
@@ -14,6 +16,10 @@ interface LevelProgressBarProps {
   kanji: LevelCategoryProgress;
   vocabulary: LevelCategoryProgress;
   requiredKanjiForLevelUp: number;
+  kanjiQualifiedForLevelUp: number;
+  kanjiStartedCount: number;
+  srsMode: SrsMode;
+  onAdvanceLevelEarly?: () => void;
   onExploreLevels: () => void;
   onInspectCategory: (category: 'radical' | 'kanji' | 'vocabulary') => void;
 }
@@ -36,9 +42,21 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
   kanji,
   vocabulary,
   requiredKanjiForLevelUp,
+  kanjiQualifiedForLevelUp,
+  kanjiStartedCount,
+  srsMode,
+  onAdvanceLevelEarly,
   onExploreLevels,
   onInspectCategory,
 }) => {
+  const policy = getSrsPolicy(srsMode);
+  const levelUpStageLabel = SRS_STAGE_NAMES[policy.levelUpKanjiStage];
+  const canAdvanceEarly =
+    policy.allowManualAdvanceOnLessonComplete &&
+    currentLevel < maxLevel &&
+    kanji.total > 0 &&
+    kanjiStartedCount >= requiredKanjiForLevelUp &&
+    Boolean(onAdvanceLevelEarly);
   const totalItems = radicals.total + kanji.total + vocabulary.total;
   const totalMastered = radicals.mastered + kanji.mastered + vocabulary.mastered;
   const totalLearning = radicals.learning + kanji.learning + vocabulary.learning;
@@ -60,7 +78,7 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
 
   const kanjiRemainingForLevelUp = Math.max(
     0,
-    requiredKanjiForLevelUp - kanji.mastered
+    requiredKanjiForLevelUp - kanjiQualifiedForLevelUp
   );
 
   const categories: {
@@ -98,9 +116,9 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
           ? 'Level maksimal (Lv. 60) tercapai'
           : kanjiRemainingForLevelUp === 0 && kanji.total > 0
           ? `Syarat naik ke Level ${currentLevel + 1} terpenuhi`
-          : `Target Lv.${currentLevel + 1}: ${kanji.mastered}/${requiredKanjiForLevelUp} Guru (${kanjiRemainingForLevelUp} lagi)`,
+          : `Target Lv.${currentLevel + 1}: ${kanjiQualifiedForLevelUp}/${requiredKanjiForLevelUp} ${levelUpStageLabel} (${kanjiRemainingForLevelUp} lagi)`,
       targetMarkerPct: kanjiTargetPct,
-      targetTooltip: `Syarat naik level: ${requiredKanjiForLevelUp} dari ${kanji.total} Kanji (90%)`,
+      targetTooltip: `Syarat naik level (${policy.label}): ${requiredKanjiForLevelUp} dari ${kanji.total} Kanji mencapai ${levelUpStageLabel} (90%)`,
     },
     {
       key: 'vocabulary',
@@ -135,7 +153,9 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
             <span aria-hidden="true">·</span>
             <span>{tierLabel}</span>
             <span aria-hidden="true">·</span>
-            <span>Status dikuasai dihitung mulai tahap Guru (SRS 5+)</span>
+            <span>Mode {policy.label}</span>
+            <span aria-hidden="true">·</span>
+            <span>Dikuasai: Guru (SRS 5+)</span>
           </div>
           <h2
             id="level-mastery-heading"
@@ -154,13 +174,24 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
               {totalMastered} / {totalItems} item
             </span>
           </div>
-          <button
-            type="button"
-            onClick={onExploreLevels}
-            className="text-xs font-semibold text-[#0284C7] hover:underline whitespace-nowrap shrink-0 cursor-pointer"
-          >
-            Jelajahi 60 Level →
-          </button>
+          <div className="flex items-center gap-3">
+            {canAdvanceEarly && (
+              <button
+                type="button"
+                onClick={onAdvanceLevelEarly}
+                className="px-3 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer"
+              >
+                Buka Level {currentLevel + 1} Sekarang
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={onExploreLevels}
+              className="text-xs font-semibold text-[#0284C7] hover:underline whitespace-nowrap shrink-0 cursor-pointer"
+            >
+              Jelajahi 60 Level →
+            </button>
+          </div>
         </div>
       </div>
 

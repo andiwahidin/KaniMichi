@@ -1,0 +1,271 @@
+{
+  "level": 1,
+  "pack": "n1-pack4",
+  "items": [
+    {
+      "id": "rd-n1-21",
+      "jlpt": 1,
+      "order": 21,
+      "passageType": "notice",
+      "titleJp": "国際[こくさい]学術[がくじゅつ]会議[かいぎ] 発表[はっぴょう]論文[ろんぶん]の撤回[てっかい]および差替[さしかえ]規程[きてい]",
+      "titleEn": "International Academic Conference Paper Withdrawal & Replacement Guidelines",
+      "recommendedMinutes": 6,
+      "contextEn": "Excerpt from formal conference submission policy for academic presenters.",
+      "paragraphs": [
+        "本[ほん]会議[かいぎ]において採択[さいたく]通知[つうち]を受領[じゅりょう]した著者[ちょしゃ]は、最終[さいしゅう]原稿[げんこう]（カメラレディ版[ばん]）の提出[ていしゅつ]期限[きげん]（八月[はちがつ]二十日[はつか]）までは、内容[ないよう]の軽微[けいび]な修正[しゅうせい]および誤植[ごしょく]の訂正[ていせい]を行[おこな]うことができる。ただし、査読[さどく]時[じ]の論旨[ろんし]を根本的[こんぽんてき]に変更[へんこう]する加筆[かひつ]や、共著者[きょうちょしゃ]の追加[ついか]・削除[さくじょ]は、プログラム委員長[いいんちょう]の事前[じぜん]承認[しょうにん]なくしては認[みと]められない。",
+        "やむを得[え]ない事情[じじょう]により発表[はっぴょう]を辞退[じたい]する場合[ばあい]、開催[かいさい]三十日前[さんじゅうにちまえ]（九月[くがつ]十日[とおか]）までに所定[しょてい]の届出書[とどけでしょ]を提出[ていしゅつ]すれば、予稿集[よこうしゅう]からの削除[さくじょ]および参加[さんか]登録料[とうろくりょう]の半額[はんがく]返金[へんきん]に応[おう]じる。それ以降[いこう]の辞退[じたい]については返金[へんきん]不可[ふか]とし、正当[せいとう]な理由[りゆう]のない無断[むだん]欠席[けっせき]があった場合[ばあい]、翌年[よくねん]度[ど]の本[ほん]会議[かいぎ]への投稿[とうこう]資格[しかく]を停止[ていし]するものとする。"
+      ],
+      "translationEn": [
+        "Authors who have received an acceptance notice for this conference may make minor textual edits and typo corrections until the camera-ready final manuscript deadline (August 20). However, additions that fundamentally alter the peer-reviewed thesis, or adding/removing co-authors, are not permitted without prior approval from the Program Chair.",
+        "If an author must withdraw a presentation due to unavoidable circumstances, submitting the designated form at least 30 days before the conference (by September 10) qualifies for removal from the proceedings and a 50% refund of the registration fee. Withdrawals after that date are non-refundable, and unexcused no-shows without legitimate cause will result in suspension of submission eligibility for the following year's conference."
+      ],
+      "keyVocab": [
+        { "word": "採択", "reading": "さいたく", "en": "acceptance (of a paper/proposal)" },
+        { "word": "査読", "reading": "さどく", "en": "peer review" },
+        { "word": "予稿集", "reading": "よこうしゅう", "en": "conference proceedings" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-21-q1",
+          "promptJp": "採択[さいたく]された論文[ろんぶん]の著者[ちょしゃ]が、委員長[いいんちょう]の事前[じぜん]承認[しょうにん]なしに八月[はちがつ]十五日[じゅうごにち]に行[おこな]えることはどれか。",
+          "promptEn": "What may an accepted author do on August 15 without prior approval from the Program Chair?",
+          "choices": [
+            "新[あら]たな共著者[きょうちょしゃ]を一人[ひとり]追加[ついか]すること。",
+            "論文[ろんぶん]の誤植[ごしょく]を訂正[ていせい]し、表現[ひょうげん]を軽微[けいび]に修正[しゅうせい]すること。",
+            "査読[さどく]時[じ]とは異[こと]なる結論[けつろん]へ論旨[ろんし]を全面[ぜんめん]改訂[かいてい]すること。",
+            "参加[さんか]登録料[とうろくりょう]の全額[ぜんがく]返金[へんきん]を受[う]けて辞退[じたい]すること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Before August 20, minor edits and typo fixes are allowed freely; changing co-authors or the core thesis requires Program Chair approval."
+        },
+        {
+          "id": "rd-n1-21-q2",
+          "promptJp": "九月[くがつ]十五日[じゅうごにち]に発表[はっぴょう]の辞退[じたい]を申し出[もうしで]た場合[ばあい]、規程[きてい]上[じょう]どう扱[あつか]われるか。",
+          "promptEn": "Under the guidelines, how is a withdrawal request submitted on September 15 handled?",
+          "choices": [
+            "参加[さんか]登録料[とうろくりょう]の半額[はんがく]が返金[へんきん]される。",
+            "参加[さんか]登録料[とうろくりょう]は返金[へんきん]されない。",
+            "翌年[よくねん]度[ど]の投稿[とうこう]資格[しかく]が必[かなら]ず停止[ていし]される。",
+            "全額[ぜんがく]返金[へんきん]の上[うえ]、予稿集[よこうしゅう]に論文[ろんぶん]が掲載[けいさい]される。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "September 15 is after the September 10 cutoff, so no refund is given (それ以降の辞退については返金不可). Suspension applies to unexcused no-shows, not formal withdrawals."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-22",
+      "jlpt": 1,
+      "order": 22,
+      "passageType": "essay",
+      "titleJp": "「わかりやすさ」の罠[わな]と熟考[じゅっこう]の倫理[りんり]",
+      "titleEn": "The Trap of 'Easy Understandability' and the Ethics of Deliberation",
+      "recommendedMinutes": 7,
+      "contextEn": "Critical essay examining modern media's obsession with instant summaries.",
+      "paragraphs": [
+        "現代[げんだい]の言論[げんろん]空間[くうかん]において、「一分[いっぷん]でわかる」「三行[さんぎょう]で要約[ようやく]」といった謳[うた]い文句[もんく]ほど歓迎[かんげい]されるものはない。複雑[ふくざつ]な事象[じしょう]を明快[めいかい]に整理[せいり]する技術[ぎじゅつ]それ自体[じたい]は尊[とうと]いものだが、過度[かど]な単純化[たんじゅんか]は往々[おうおう]にして、現実[げんじつ]が本来[ほんらい]孕[はら]んでいる矛盾[むじゅん]や留保[りゅうほ]を切[き]り捨[す]てることと同義[どうぎ]になりかねない。",
+        "私[わたし]たちが何[なに]かを「わかった」と感[かん]じる瞬間[しゅんかん]には、実[じつ]は二種類[にしゅるい]ある。一[ひと]つは、難解[なんかい]な文脈[ぶんみゃく]と格闘[かくとう]した末[すえ]に構造[こうぞう]を掴[つか]み取[と]る理解[りかい]であり、もう一[ひと]つは、既[すで]に自分[じぶん]が持[も]っている図式[ずしき]に都合[つごう]よく当[あ]てはまったことによる安心感[あんしんかん]である。後者[こうしゃ]は心地[ここち]よいが、思考[しこう]を前進[ぜんしん]させるどころか、かえって偏見[へんけん]を強固[きょうこ]にしてしまうきらいがある。",
+        "真[しん]の知性[ちせい]とは、即座[そくざ]に白黒[しろくろ]をつける能力[のうりょく]ではなく、簡単[かんたん]には割[わ]り切[き]れない曖昧[あいまい]さをそのまま抱[かか]え込[こ]み、性急[せいきゅう]な結論[けつろん]を保留[ほりゅう]し続[つづ]ける持久力[じきゅうりょく]に宿[やど]るのではないだろうか。"
+      ],
+      "translationEn": [
+        "In contemporary public discourse, few taglines are more welcomed than 'Understand in 1 Minute' or 'Summarized in 3 Lines.' While the craft of clearly organizing complex phenomena is valuable in itself, excessive simplification can all too easily become synonymous with discarding the contradictions and caveats inherent in reality.",
+        "There are in fact two kinds of moments when we feel 'I get it.' One is comprehension earned by wrestling with a difficult context until its structure emerges; the other is mere relief from fitting something conveniently into a schema we already hold. The latter feels pleasant, yet far from advancing thought, it tends to harden existing biases.",
+        "Perhaps true intellect resides not in the ability to immediately divide issues into black and white, but in the stamina to hold onto irreducible ambiguity and keep suspending hasty conclusions."
+      ],
+      "keyVocab": [
+        { "word": "孕む", "reading": "はらむ", "en": "to contain / be fraught with" },
+        { "word": "留保", "reading": "りゅうほ", "en": "reservation; caveat; withholding" },
+        { "word": "性急", "reading": "せいきゅう", "en": "hasty; impatient" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-22-q1",
+          "promptJp": "筆者[ひっしゃ]が「過度[かど]な単純化[たんじゅんか]」を危惧[きぐ]している理由[りゆう]は何か。",
+          "promptEn": "Why is the author concerned about excessive simplification?",
+          "choices": [
+            "要約[ようやく]を作成する[さくせいする]編集者[へんしゅうしゃ]の労力[ろうりょく]が増[ふ]えるから。",
+            "現実[げんじつ]が本来[ほんらい]持[も]つ矛盾[むじゅん]や留保[りゅうほ]を切[き]り捨[す]ててしまいかねないから。",
+            "読者[どくしゃ]が長文[ちょうぶん]を好[この]むようになり、短い[みじかい]記事[きじ]が読[よ]まれなくなるから。",
+            "専門[せんもん]用語[ようご]を覚[おぼ]える機会[きかい]が減[へ]って語彙力[ごいりょく]が低下[ていか]するから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 1 warns that excessive simplification risks stripping away reality's inherent contradictions and nuances/caveats."
+        },
+        {
+          "id": "rd-n1-22-q2",
+          "promptJp": "筆者[ひっしゃ]は「真[しん]の知性[ちせい]」をどのようなものだと捉[とら]えているか。",
+          "promptEn": "How does the author characterize 'true intellect'?",
+          "choices": [
+            "複雑[ふくざつ]な問題[もんだい]に即座[そくざ]に白黒[しろくろ]の判断[はんだん]を下[くだ]す速[はや]さ。",
+            "既存[きそん]の図式[ずしき]に素早[すばや]く当[あ]てはめて安心感[あんしんかん]を得[え]る技術[ぎじゅつ]。",
+            "割[わ]り切[き]れない曖昧[あいまい]さを抱[かか]え、性急[せいきゅう]な結論[けつろん]を保留[ほりゅう]し続[つづ]ける持久力[じきゅうりょく]。",
+            "他者[たしゃ]の意見[いけん]をすべて否定[ひてい]し、独自[どくじ]の理論[りろん]だけを守[まも]る頑固[がんこ]さ。"
+          ],
+          "answerIndex": 2,
+          "explanationEn": "The closing sentence defines true intellect as the endurance to carry ambiguity and suspend hasty conclusions."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-23",
+      "jlpt": 1,
+      "order": 23,
+      "passageType": "essay",
+      "titleJp": "道具[どうぐ]の「抵抗[ていこう]」が育[はぐく]む身体[しんたい]知[ち]",
+      "titleEn": "Embodied Knowledge Cultivated by the 'Resistance' of Tools",
+      "recommendedMinutes": 7,
+      "contextEn": "Philosophy of craft essay discussing frictionless automation versus manual skill.",
+      "paragraphs": [
+        "高度[こうど]に自動化[じどうか]された機械[きかい]は、操作[そうさ]する人間[にんげん]から「手応[てごた]え」を奪[うば]う方向[ほうこう]へと進化[しんか]してきた。ボタン一[ひと]つで均質[きんしつ]な結果[けっか]が得[え]られる環境[かんきょう]は、ミスを減[へ]らし疲労[ひろう]を軽減[けいげん]する点[てん]で疑[うたが]いなく優[すぐ]れている。",
+        "しかしながら、木工[もっこう]の鉋[かんな]や料理人[りょうりにん]の包丁[ほうちょう]といった伝統的[でんとうてき]な道具[どうぐ]を考[かんが]えてみると、刃[は]の進[すす]み具合[ぐあい]や素材[そざい]の硬[かた]さという「抵抗[ていこう]」こそが、使[つか]い手[て]に微細[びさい]な情報[じょうほう]をフィードバックしていることに気[き]づく。職[しょく]人[にん]は素材[そざい]を一方的[いっぽうてき]に支配[しはい]しているのではなく、道具[どうぐ]を介[かい]して素材[そざい]と対話[たいわ]し、その応答[おうとう]に応[おう]じて力加減[ちからかげん]を微調整[びちょうせい]しているのである。",
+        "摩擦[まさつ]や抵抗[ていこう]をすべて排除[はいじょ]した「滑[なめ]らかすぎる世界[せかい]」では、作業[さぎょう]は楽[らく]になっても、世界[せかい]の質感[しつかん]を手触[てざわ]りとして理解[りかい]する感覚[かんかく]が次第[しだい]に痩[や]せ細[ほそ]っていく恐れ[おそれ]がある。"
+      ],
+      "translationEn": [
+        "Highly automated machines have evolved in a direction that strips away tactile resistance from human operators. Environments yielding uniform results with a single button are undeniably superior in reducing mistakes and fatigue.",
+        "Yet when we consider traditional tools like a carpenter's plane or a chef's knife, we notice that the very 'resistance' of blade movement and material hardness feeds delicate information back to the user. Artisans do not unilaterally dominate their materials; they converse with them through tools, fine-tuning pressure in response.",
+        "In an 'overly frictionless world' that eliminates all friction and resistance, tasks may become easier, but our sensory capacity to grasp the texture of the world through touch risks gradually withering away."
+      ],
+      "keyVocab": [
+        { "word": "手応え", "reading": "てごたえ", "en": "tactile feedback; tangible response" },
+        { "word": "介して", "reading": "かいして", "en": "through; via the medium of" },
+        { "word": "痩せ細る", "reading": "やせほそる", "en": "to atrophy; dwindle away" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-23-q1",
+          "promptJp": "筆者[ひっしゃ]によれば、伝統的[でんとうてき]な道具[どうぐ]における「抵抗[ていこう]」はどのような役割[やくわり]を果[は]たしているか。",
+          "promptEn": "According to the author, what role does 'resistance' play in traditional tools?",
+          "choices": [
+            "作業[さぎょう]を無駄[むだ]に遅[おく]らせ、品質[ひんしつ]を不安定[ふあんてい]にする障害[しょうがい]である。",
+            "使[つか]い手[て]に素材[そざい]の状態[じょうたい]を伝[つた]え、力加減[ちからかげん]の微調整[びちょうせい]を促[うなが]す情報[じょうほう]源[げん]である。",
+            "熟練者[じゅくれんしゃ]が新人[しんじん]を排除[はいじょ]するために意図的[いとてき]に残[のこ]した仕組み[しくみ]である。",
+            "自動化[じどうか]機械[きかい]には再現[さいげん]できるが、人間[にんげん]には感[かん]じ取[と]れない刺激[しげき]である。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Paragraph 2 explains that resistance provides subtle feedback about the material, enabling the craftsperson to converse with it and fine-tune force."
+        },
+        {
+          "id": "rd-n1-23-q2",
+          "promptJp": "筆者[ひっしゃ]が「滑[なめ]らかすぎる世界[せかい]」に対して抱[いだ]いている懸念[けねん]はどれか。",
+          "promptEn": "What concern does the author hold about an 'overly frictionless world'?",
+          "choices": [
+            "機械[きかい]の故障[こしょう]率[りつ]が上昇[じょうしょう]し、修理[しゅうり]費[ひ]がかさむこと。",
+            "世界[せかい]の質感[しつかん]を手触[てざわ]りとして感[かん]じ取[と]る感覚[かんかく]が衰[おとろ]えていくこと。",
+            "製品[せいひん]の品質[ひんしつ]にばらつきが生[しょう]じてしまうこと。",
+            "労働[ろうどう]時間[じかん]が今[いま]より長[なが]くなること。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "The closing paragraph warns that eliminating all resistance risks causing our tactile sense for the texture of the world to atrophy."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-24",
+      "jlpt": 1,
+      "order": 24,
+      "passageType": "short",
+      "titleJp": "都市[とし]の「余白[よはく]」としての古書店[こしょてん]",
+      "titleEn": "Secondhand Bookshops as Urban 'Margin'",
+      "recommendedMinutes": 6,
+      "contextEn": "Literary column on the cultural role of small independent used bookstores.",
+      "paragraphs": [
+        "オンライン書店[しょてん]の検索[けんさく]窓[まど]は、私[わたし]たちが「すでに探[さが]しているもの」を最短[さいたん]距離[きょり]で届[とど]けてくれる。しかし、古書店[こしょてん]の狭[せま]い棚[たな]の間[あいだ]を歩[ある]く体験[たいけん]の醍醐味[だいごみ]は、むしろ「探[さが]してすらいなかった一冊[いっさつ]」と不意[ふい]に出[で]くわす偶発性[ぐうはつせい]にある。",
+        "店主[てんしゅ]の個人[こじん]的な美意識[びいしき]や関心[かんしん]によって並[なら]べられた棚[たな]は、アルゴリズムが弾[はじ]き出[だ]す「過去[かこ]の購買[こうばい]履歴[りれき]の延長[えんちょう]」とは異[こと]なり、他者[たしゃ]の思考[しこう]の迷路[めいろ]へ迷[まよ]い込[こ]むような知的[ちてき]な揺[ゆ]さぶりを与[あた]えてくれる。効率[こうりつ]の物差[ものさ]しだけで測[はか]れば非効率[ひこうりつ]極[きわ]まりないその空間[くうかん]こそが、都市[とし]の文化[ぶんか]的な奥行[おくゆ]きを支[ささ]えているのである。"
+      ],
+      "translationEn": [
+        "An online bookstore's search bar delivers 'what we are already looking for' by the shortest path. Yet the true thrill of walking between the narrow shelves of a secondhand bookshop lies rather in the serendipity of unexpectedly encountering 'a volume we weren't even looking for.'",
+        "Shelves curated by a proprietor's personal aesthetic and curiosity—unlike an algorithm's projection extending one's past purchase history—offer an intellectual jolt akin to wandering into another person's labyrinth of thought. Measured solely by the yardstick of efficiency, that space is utterly inefficient, yet it is precisely what sustains a city's cultural depth."
+      ],
+      "keyVocab": [
+        { "word": "醍醐味", "reading": "だいごみ", "en": "true thrill; quintessential charm" },
+        { "word": "偶発性", "reading": "ぐうはつせい", "en": "serendipity; contingency" },
+        { "word": "奥行き", "reading": "おくゆき", "en": "depth; richness" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-24-q1",
+          "promptJp": "筆者[ひっしゃ]は、古書店[こしょてん]の棚[たな]とオンライン書店[しょてん]のアルゴリズムをどのように対比[たいひ]しているか。",
+          "promptEn": "How does the author contrast secondhand bookshop shelves with online algorithms?",
+          "choices": [
+            "オンラインは希少本[きしょうぼん]に強[つよ]いが、古書店[こしょてん]は新刊[しんかん]しか扱[あつか]えない。",
+            "アルゴリズムは過去[かこ]の履歴[りれき]の延長[えんちょう]に留[とど]まるが、古書店[こしょてん]は他者[たしゃ]の視点[してん]による偶発的[ぐうはつてき]な知的[ちてき]刺激[しげき]を生[う]む。",
+            "古書店[こしょてん]のほうが検索[けんさく]スピードが速[はや]く、目的[もくてき]の本[ほん]を見[み]つけやすい。",
+            "両者[りょうしゃ]とも効率性[こうりつせい]を最優先[さいゆうせん]している点[てん]では同[おな]じである。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Algorithms extend past purchase history, whereas a bookshop owner's personal shelves create unexpected encounters and intellectual jolts."
+        },
+        {
+          "id": "rd-n1-24-q2",
+          "promptJp": "この文章[ぶんしょう]の主張[しゅちょう]に最[もっと]も合致[がっち]するものはどれか。",
+          "promptEn": "Which statement best aligns with the author's argument?",
+          "choices": [
+            "非効率[ひこうりつ]な空間[くうかん]であっても、都市[とし]の文化[ぶんか]的な奥行[おくゆ]きを支[ささ]える重要[じゅうよう]な価値[かち]がある。",
+            "古書店[こしょてん]も生[い]き残[のこ]るためにはアルゴリズム推薦[すいせん]を導入[どうにゅう]すべきだ。",
+            "オンライン書店[しょてん]の普及[ふきゅう]により、人々[ひとびと]は読書[どくしょ]をしなくなった。",
+            "本[ほん]は目的[もくてき]のタイトルを事前[じぜん]に決[き]めてから買[か]うのが最も[もっとも]望[のぞ]ましい。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "The closing sentence argues that spaces appearing thoroughly inefficient by pure efficiency metrics are what sustain a city's cultural depth."
+        }
+      ]
+    },
+    {
+      "id": "rd-n1-25",
+      "jlpt": 1,
+      "order": 25,
+      "passageType": "comparison",
+      "titleJp": "公共[こうきょう]インフラ整備[せいび]：集中[しゅうちゅう]投資[とうし] vs 分散[ぶんさん]維持[いじ]（統合[とうごう]理解[りかい]）",
+      "titleEn": "Public Infrastructure Policy: Concentrated Investment vs. Distributed Maintenance (A/B Comparison)",
+      "recommendedMinutes": 8,
+      "contextEn": "Two policy researchers debate how an aging, shrinking society should allocate infrastructure budgets.",
+      "labelA": "文章[ぶんしょう]A",
+      "labelB": "文章[ぶんしょう]B",
+      "paragraphs": [
+        "人口[じんこう]減少[げんしょう]と税収[ぜいしゅう]の縮小[しゅくしょう]が避[さ]けられない中[なか]、高度[こうど]経済[けいざい]成長期[せいちょうき]に整備[せいび]されたすべての道路[どうろ]や上下水道[じょうげすいどう]を従来[じゅうらい]どおり維持[いじ]し続[つづ]けることは、財政的[ざいせいてき]に持続[じぞく]不可能[ふかのう]である。限[かぎ]られた財源[ざいげん]を薄[うす]く広[ひろ]く配分[はいぶん]すれば、結局[けっきょく]すべての地域[ちいき]で老朽化[ろうきゅうか]が同時[どうじ]に進行[しんこう]する共倒[ともだお]れを招[まね]きかねない。居住[きょじゅう]エリアを拠点[きょてん]へ段階的[だんかいてき]に集約[しゅうやく]し、選択[せんたく]と集中[しゅうちゅう]によってインフラの質[しつ]を守[まも]る決断[けつだん]が不可欠[ふかけつ]だ。"
+      ],
+      "paragraphsB": [
+        "効率性[こうりつせい]を盾[たて]に地方[ちほう]のインフラ維持[いじ]から撤退[てったい]する「集約[しゅうやく]論[ろん]」は、数字[すうじ]の上[うえ]では合理的[ごうりてき]に見[み]える。しかし、中山間[ちゅうさんかん]地域[ちいき]に暮[く]らす住民[じゅうみん]の生活[せいかつ]基盤[きばん]を切[き]り捨[す]てれば、森林[しんりん]保全[ほぜん]や水源[すいげん]管理[かんり]といった都市部[としぶ]をも支[ささ]える見えない公益[こうえき]機能[きのう]まで失[うしな]われることになる。大型[おおがた]インフラの全面[ぜんめん]更新[こうしん]に固執[こしつ]するのではなく、小規模[しょうきぼ]分散型[ぶんさんがた]の太陽光[たいようこう]発電[はつでん]や簡易[かんい]浄水[じょうすい]技術[ぎじゅつ]を活用[かつよう]し、低[てい]コストで地域[ちいき]を存続[そんぞく]させる道[みち]を探[さぐ]るべきである。"
+      ],
+      "translationEn": [
+        "Text A: Amid inevitable population decline and shrinking tax revenue, continuing to maintain all roads and water/sewer lines built during the high-growth era as before is fiscally unsustainable. Spreading limited funds thinly everywhere risks simultaneous deterioration across every region—mutual collapse. A decisive shift toward gradually consolidating residential areas into hubs and preserving infrastructure quality via selection and concentration is indispensable."
+      ],
+      "translationBEn": [
+        "Text B: The 'consolidation thesis' that retreats from maintaining rural infrastructure under the banner of efficiency looks rational on paper. Yet cutting off the living foundations of residents in mountainous areas would also destroy invisible public-interest functions—such as forest conservation and watershed management—that support cities too. Rather than clinging to full-scale replacement of massive infrastructure, we should pursue low-cost regional survival by adopting small-scale distributed solar power and compact water-purification technologies."
+      ],
+      "keyVocab": [
+        { "word": "共倒れ", "reading": "ともだおれ", "en": "mutual collapse / going down together" },
+        { "word": "集約", "reading": "しゅうやく", "en": "consolidation; concentration" },
+        { "word": "固執", "reading": "こしつ", "en": "clinging obstinately to" }
+      ],
+      "questions": [
+        {
+          "id": "rd-n1-25-q1",
+          "promptJp": "文章[ぶんしょう]Aと文章[ぶんしょう]Bの両方[りょうほう]が前提[ぜんてい]として共有[きょうゆう]している認識[にんしき]はどれか。",
+          "promptEn": "What underlying premise do both Text A and Text B share?",
+          "choices": [
+            "従来型[じゅうらいがた]の大型[おおがた]インフラを全国[ぜんこく]くまなく以前[いぜん]のまま全面[ぜんめん]更新[こうしん]し続[つづ]けるのは現実的[げんじつてき]ではない。",
+            "地方[ちほう]住民[じゅうみん]は全員[ぜんいん]が速[すみ]やかに大都市[だいとし]へ移住[いじゅう]すべきである。",
+            "人口[じんこう]減少[げんしょう]が進[すす]んでも税収[ぜいしゅう]は今後も増[ふ]え続[つづ]ける。",
+            "森林[しんりん]保全[ほぜん]や水源[すいげん]管理[かんり]は都市部[としぶ]の生活[せいかつ]とは無関係[むかんけい]である。"
+          ],
+          "answerIndex": 0,
+          "explanationEn": "Text A says maintaining all legacy infrastructure as before is unsustainable, and Text B likewise says we shouldn't cling to full-scale renewal of massive legacy infrastructure, proposing small distributed alternatives instead."
+        },
+        {
+          "id": "rd-n1-25-q2",
+          "promptJp": "文章[ぶんしょう]Bの筆者[ひっしゃ]が文章[ぶんしょう]Aのような「集約[しゅうやく]論[ろん]」を批判[ひはん]する根拠[こんきょ]は何[なに]か。",
+          "promptEn": "On what basis does Author B criticize the 'consolidation thesis' represented by Text A?",
+          "choices": [
+            "都市部[としぶ]の住宅[じゅうたく]価格[かかく]が下落[げらく]してしまうから。",
+            "地方[ちほう]を切[き]り捨[す]てると、都市部[としぶ]をも支[ささ]える森林[しんりん]保全[ほぜん]や水源[すいげん]管理[かんり]などの公益[こうえき]機能[きのう]まで失[うしな]われるから。",
+            "小規模[しょうきぼ]分散型[ぶんさんがた]技術[ぎじゅつ]は従来型[じゅうらいがた]よりコストが高[たか]くなるから。",
+            "高度[こうど]経済[けいざい]成長期[せいちょうき]のインフラは今後[こんご]百年[ひゃくねん]は老朽化[ろうきゅうか]しないから。"
+          ],
+          "answerIndex": 1,
+          "explanationEn": "Author B warns that abandoning rural regions forfeits vital public-good functions like forest conservation and watershed management that sustain cities as well."
+        }
+      ]
+    }
+  ]
+}

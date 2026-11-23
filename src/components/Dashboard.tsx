@@ -28,7 +28,9 @@ import {
   getAccuracyPercent,
   getItemTypeLabel,
   getSrsDistribution,
+  getSrsPolicy,
   getTodayDateStr,
+  resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
 
@@ -51,6 +53,7 @@ export const Dashboard: React.FC = () => {
     startExtraStudy,
     toggleVacationMode,
     fastForwardTime,
+    advanceNextLevelEarly,
     dismissLevelUpBanner,
     cloudUser,
     userProfile,
@@ -106,7 +109,22 @@ export const Dashboard: React.FC = () => {
     };
   }, [levelRadicals, levelKanji, levelVocab, state.progress]);
 
+  const activeSrsMode = resolveSrsMode(state.settings);
+  const srsPolicy = getSrsPolicy(activeSrsMode);
+
   const requiredKanjiForLevelUp = Math.ceil(levelKanji.length * 0.9);
+  const kanjiQualifiedForLevelUp = useMemo(
+    () =>
+      levelKanji.filter(
+        (k) => (state.progress[k.id]?.srsStage ?? -1) >= srsPolicy.levelUpKanjiStage
+      ).length,
+    [levelKanji, state.progress, srsPolicy.levelUpKanjiStage]
+  );
+  const kanjiStartedCount = useMemo(
+    () =>
+      levelKanji.filter((k) => (state.progress[k.id]?.srsStage ?? -1) >= 1).length,
+    [levelKanji, state.progress]
+  );
 
   const handleInspectLevelCategory = (
     category: 'radical' | 'kanji' | 'vocabulary'
@@ -555,7 +573,9 @@ export const Dashboard: React.FC = () => {
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 {lessonQueue.length > 0
                   ? 'Pelajari mnemonik radikal, kanji, dan kosakata baru lalu ikuti kuis singkat.'
-                  : 'Semua materi terbuka sudah dipelajari. Naikkan item ke Guru untuk membuka materi baru.'}
+                  : activeSrsMode === 'open'
+                  ? `Semua materi terbuka sudah dipelajari. Selesaikan review Kanji ke ${SRS_STAGE_NAMES[srsPolicy.levelUpKanjiStage]} atau klik Buka Level Berikutnya.`
+                  : `Semua materi terbuka sudah dipelajari. Naikkan item ke ${SRS_STAGE_NAMES[srsPolicy.unlockDepStage]} untuk membuka materi baru.`}
               </p>
             </div>
             <div className="font-mono-num text-4xl font-bold text-slate-900 dark:text-white shrink-0">
@@ -587,7 +607,10 @@ export const Dashboard: React.FC = () => {
 
           <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span className="text-xs text-slate-500 dark:text-slate-400">
-              Promosi otomatis ke Apprentice I (4 jam)
+              Apprentice I ({srsPolicy.firstReviewLabel})
+              {activeSrsMode === 'open'
+                ? ' · Turunan langsung terbuka'
+                : ` · Mode ${srsPolicy.label}`}
             </span>
             <button
               type="button"
@@ -606,7 +629,7 @@ export const Dashboard: React.FC = () => {
           <div className="flex items-start justify-between gap-4">
             <div className="space-y-1">
               <div className="text-xs font-semibold text-[#0284C7]">
-                Spaced Repetition · Review Harian
+                Spaced Repetition · Mode {srsPolicy.label}
               </div>
               <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white">
                 Review Harian (Reviews)
@@ -639,11 +662,11 @@ export const Dashboard: React.FC = () => {
             {availableReviews.length === 0 && nextScheduledReview ? (
               <button
                 type="button"
-                onClick={() => fastForwardTime(4)}
+                onClick={() => fastForwardTime(srsPolicy.fastForwardStepHours)}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
               >
                 <FastForward className="w-3.5 h-3.5" />
-                Majukan waktu +4 jam
+                Majukan waktu +{srsPolicy.fastForwardStepHours} jam
               </button>
             ) : (
               <span className="text-xs text-slate-500 dark:text-slate-400">
@@ -672,6 +695,12 @@ export const Dashboard: React.FC = () => {
         kanji={levelMastery.kanji}
         vocabulary={levelMastery.vocabulary}
         requiredKanjiForLevelUp={requiredKanjiForLevelUp}
+        kanjiQualifiedForLevelUp={kanjiQualifiedForLevelUp}
+        kanjiStartedCount={kanjiStartedCount}
+        srsMode={activeSrsMode}
+        onAdvanceLevelEarly={() => {
+          advanceNextLevelEarly();
+        }}
         onExploreLevels={() => setActiveView('levels')}
         onInspectCategory={handleInspectLevelCategory}
       />

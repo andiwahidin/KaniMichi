@@ -1,0 +1,316 @@
+{
+  "level": 3,
+  "pack": "n3-pack4",
+  "items": [
+    {
+      "id": "g-n3-41",
+      "jlpt": 3,
+      "order": 41,
+      "pattern": "～ことはない (tidak perlu)",
+      "reading": "～ことはない",
+      "meaning": "there is no need to ...; you don't have to ...",
+      "structure": "Verb (Dictionary form) + ことはない",
+      "explanation": "Reassures someone or states that an action is unnecessary in the given situation ('There's no need to worry / hurry').",
+      "confusableWith": "Don't confuse with Verb(た-form)+ことがない ('have never experienced'). Dictionary form + ことはない means 'no need to'.",
+      "examples": [
+        {
+          "jp": "まだ時間はたっぷりあるから、急ぐことはないよ。",
+          "reading": "まだじかんはたっぷりあるから、いそぐことはないよ。",
+          "en": "We still have plenty of time, so there's no need to hurry."
+        },
+        {
+          "jp": "小さなミスなんだから、そんなに落ち込むことはない。",
+          "reading": "ちいさなみすなんだから、そんなにおちこむことはない。",
+          "en": "It's only a minor mistake, so there's no need to feel so down."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "私一人で運べるので、わざわざ手伝いに来る",
+        "sentenceAfter": "。",
+        "en": "I can carry it by myself, so there is no need to go out of your way to help.",
+        "answer": "ことはありません",
+        "acceptedAnswers": ["ことはありません", "ことはない"],
+        "choices": ["ことはありません", "わけにはいきません", "に違いありません", "はずです"]
+      }
+    },
+    {
+      "id": "g-n3-42",
+      "jlpt": 3,
+      "order": 42,
+      "pattern": "～最中に (さいちゅうに)",
+      "reading": "～さいちゅうに",
+      "meaning": "right in the middle of ... (often interrupted)",
+      "structure": "Verb(ている) / Noun + の + 最中に",
+      "explanation": "Highlights that something unexpected or disruptive happened at the peak/middle of an ongoing activity.",
+      "confusableWith": "Compared to 間に (neutral timeframe), 最中に emphasizes being right at the height of an event, frequently with an interruption.",
+      "examples": [
+        {
+          "jp": "大切な会議の最中に、携帯電話が鳴ってしまった。",
+          "reading": "たいせつなかいぎのさいちゅうに、けいたいでんわがなってしまった。",
+          "en": "My mobile phone rang right in the middle of an important meeting."
+        },
+        {
+          "jp": "お風呂に入っている最中に、宅配便が届いた。",
+          "reading": "おふろにはいっているさいちゅうに、たくはいびんがとどいた。",
+          "en": "A delivery package arrived right while I was in the bath."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "スピーチをしている",
+        "sentenceAfter": "、急にマイクの音が出なくなった。",
+        "en": "Right in the middle of giving my speech, the microphone suddenly cut out.",
+        "answer": "最中に",
+        "acceptedAnswers": ["最中に", "さいちゅうに"],
+        "choices": ["最中に", "たびに", "かわりに", "せいで"]
+      }
+    },
+    {
+      "id": "g-n3-43",
+      "jlpt": 3,
+      "order": 43,
+      "pattern": "～ばかりでなく",
+      "reading": "～ばかりでなく",
+      "meaning": "not only ..., but also ...",
+      "structure": "Plain form / Noun (+ ばかりでなく) ～ も",
+      "explanation": "Adds a second, often more impressive or significant point on top of the first. Usually pairs with も in the following clause.",
+      "confusableWith": "Slightly more formal than だけでなく; interchangeable in most written N3 contexts.",
+      "examples": [
+        {
+          "jp": "彼女は英語ばかりでなく、フランス語も話せる。",
+          "reading": "かのじょはえいごばかりでなく、ふらんすごもはなせる。",
+          "en": "She can speak not only English, but also French."
+        },
+        {
+          "jp": "このアプリは便利なばかりでなく、デザインも美しい。",
+          "reading": "このあぷりはべんりなばかりでなく、でざいんもうつくしい。",
+          "en": "This app is not only convenient, but its design is also beautiful."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "この旅館は料理がおいしい",
+        "sentenceAfter": "、スタッフの対応も素晴らしい。",
+        "en": "At this inn, not only is the food delicious, the staff service is also wonderful.",
+        "answer": "ばかりでなく",
+        "acceptedAnswers": ["ばかりでなく", "だけでなく"],
+        "choices": ["ばかりでなく", "おかげで", "くせに", "わりに"]
+      }
+    },
+    {
+      "id": "g-n3-44",
+      "jlpt": 3,
+      "order": 44,
+      "pattern": "～ふりをする",
+      "reading": "～ふりをする",
+      "meaning": "to pretend to ...; to act as if ...",
+      "structure": "Verb (Plain) / い-Adj / な-Adj+な / Noun+の + ふりをする",
+      "explanation": "Indicates deliberately pretending to do or be something that is not actually true.",
+      "confusableWith": "Remember to attach の after nouns (知らない人のふり) and な after な-adjectives (平気なふり).",
+      "examples": [
+        {
+          "jp": "本当は気づいていたのに、知らないふりをした。",
+          "reading": "ほんとうはきづいていたのに、しらないふりをした。",
+          "en": "Even though I had actually noticed, I pretended not to know."
+        },
+        {
+          "jp": "電車で座りたくて、寝ているふりをしている人がいる。",
+          "reading": "でんしゃですわりたくて、ねているふりをしているひとがいる。",
+          "en": "There are people who pretend to be asleep on the train to keep their seat."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "本当は緊張していたが、みんなの前では平気な",
+        "sentenceAfter": "。",
+        "en": "I was actually nervous, but I pretended to be calm in front of everyone.",
+        "answer": "ふりをした",
+        "acceptedAnswers": ["ふりをした"],
+        "choices": ["ふりをした", "ことにした", "わけにした", "とおりにした"]
+      }
+    },
+    {
+      "id": "g-n3-45",
+      "jlpt": 3,
+      "order": 45,
+      "pattern": "～向け (むけ)",
+      "reading": "～むけ",
+      "meaning": "designed for ...; aimed at (a target audience)",
+      "structure": "Noun + 向け(の + Noun / に)",
+      "explanation": "States that a product, service, or text was intentionally created with a specific audience in mind (e.g., beginners, families, tourists).",
+      "confusableWith": "向け = intentionally made FOR a target group; 向き = naturally suited/appropriate FOR someone (even if not originally made for them).",
+      "examples": [
+        {
+          "jp": "これは外国人観光客向けに作られた案内パンフレットです。",
+          "reading": "これはがいこくじんかんこうきゃくむけにつくられたあんないぱんふれっとです。",
+          "en": "This is a guidebook created specifically for foreign tourists."
+        },
+        {
+          "jp": "初心者向けのプログラミング講座に申し込んだ。",
+          "reading": "しょしんしゃむけのぷろぐらみんぐこうざにもうしこんだ。",
+          "en": "I signed up for a programming course aimed at beginners."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "このマンションは一人暮らし",
+        "sentenceAfter": "に設計されている。",
+        "en": "This apartment building is designed for people living alone.",
+        "answer": "向け",
+        "acceptedAnswers": ["向け", "むけ"],
+        "choices": ["向け", "だらけ", "気味", "がち"]
+      }
+    },
+    {
+      "id": "g-n3-46",
+      "jlpt": 3,
+      "order": 46,
+      "pattern": "～向き (むき)",
+      "reading": "～むき",
+      "meaning": "suitable for ...; well-suited to ...",
+      "structure": "Noun + 向き(だ / の + Noun)",
+      "explanation": "Describes something whose qualities naturally fit a certain person, season, or purpose ('suited for summer', 'ideal for families').",
+      "confusableWith": "Use 向け for creator intent ('made for kids'), and 向き for natural suitability ('good for hot weather' / 夏向き).",
+      "examples": [
+        {
+          "jp": "このハイキングコースは坂が少ないので、家族向きだ。",
+          "reading": "このはいきんぐこーすはさかがすくないので、かぞくむきだ。",
+          "en": "Since this hiking trail has few steep slopes, it is suitable for families."
+        },
+        {
+          "jp": "さっぱりした味で、夏向きの料理ですね。",
+          "reading": "さっぱりしたあじで、なつむきのりょうりですね。",
+          "en": "With its refreshing flavor, this is a dish well-suited for summer."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "この小説は漢字が難しくないので、中学生",
+        "sentenceAfter": "だと思う。",
+        "en": "Since the kanji aren't too hard, I think this novel is well-suited for middle schoolers.",
+        "answer": "向き",
+        "acceptedAnswers": ["向き", "むき"],
+        "choices": ["向き", "かけ", "きり", "っぱなし"]
+      }
+    },
+    {
+      "id": "g-n3-47",
+      "jlpt": 3,
+      "order": 47,
+      "pattern": "～だらけ",
+      "reading": "～だらけ",
+      "meaning": "covered in ...; full of ... (undesirable things)",
+      "structure": "Noun + だらけ(だ / の + Noun)",
+      "explanation": "Describes something covered or filled with an excessive amount of something unpleasant or unwanted (mud, mistakes, dust, scratches).",
+      "confusableWith": "Avoid using だらけ for positive things like flowers or smiles; use いっぱい instead.",
+      "examples": [
+        {
+          "jp": "雨の中を走ったので、靴が泥だらけになった。",
+          "reading": "あめのなかをはしったので、くつがどろだらけになった。",
+          "en": "Because I ran in the rain, my shoes got covered in mud."
+        },
+        {
+          "jp": "急いで書いたレポートは、間違いだらけだった。",
+          "reading": "いそいでかいたれぽーとは、まちがいだらけだった。",
+          "en": "The report I wrote in a rush was full of mistakes."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "長い間掃除していなかったので、部屋がほこり",
+        "sentenceAfter": "だ。",
+        "en": "Because I hadn't cleaned for a long time, the room is covered in dust.",
+        "answer": "だらけ",
+        "acceptedAnswers": ["だらけ"],
+        "choices": ["だらけ", "ばかり", "向け", "おき"]
+      }
+    },
+    {
+      "id": "g-n3-48",
+      "jlpt": 3,
+      "order": 48,
+      "pattern": "～気味 (ぎみ)",
+      "reading": "～ぎみ",
+      "meaning": "slightly ...; a touch of ...; tending to ...",
+      "structure": "Verb (ます-stem) / Noun + 気味(だ)",
+      "explanation": "Expresses a slight feeling or early symptom of an undesirable physical, mental, or situational state ('a touch of a cold', 'a bit tired', 'running slightly late').",
+      "confusableWith": "Compare with ～がち (repeated tendency/habit) vs. ～気味 (a slight current state or sensation).",
+      "examples": [
+        {
+          "jp": "最近残業が続いて、少し疲れ気味です。",
+          "reading": "さいきんざんぎょうがつづいて、すこしつかれぎみです。",
+          "en": "With overtime continuing lately, I'm feeling a bit worn out."
+        },
+        {
+          "jp": "喉が痛いので、風邪気味かもしれない。",
+          "reading": "のどがいたいので、かぜぎみかもしれない。",
+          "en": "My throat hurts, so I might have a touch of a cold."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "予定より電車が少し遅れ",
+        "sentenceAfter": "なので、急ぎましょう。",
+        "en": "The train is running a bit behind schedule, so let's hurry.",
+        "answer": "気味",
+        "acceptedAnswers": ["気味", "ぎみ"],
+        "choices": ["気味", "だらけ", "っぽい", "きり"]
+      }
+    },
+    {
+      "id": "g-n3-49",
+      "jlpt": 3,
+      "order": 49,
+      "pattern": "～にしては",
+      "reading": "～にしては",
+      "meaning": "for (a ...); considering that ...",
+      "structure": "Noun / Verb (Plain) + にしては",
+      "explanation": "Expresses surprise that an actual result differs from the standard normally expected of that category ('For someone who only studied 6 months, his Japanese is fluent').",
+      "confusableWith": "Similar to わりに, but にしては attaches cleanly to nouns/categories (子どもにしては) while わりに often pairs with adjectives/verbs.",
+      "examples": [
+        {
+          "jp": "彼は日本に来て半年にしては、とても日本語が上手だ。",
+          "reading": "かれはにほんにきてはんとしにしては、とてもにほんごがじょうずだ。",
+          "en": "For having been in Japan only half a year, his Japanese is very good."
+        },
+        {
+          "jp": "五歳にしては、ずいぶん大人っぽい話し方をするね。",
+          "reading": "ごさいにしては、ずいぶんおとなっぽいはなしかたをするね。",
+          "en": "For a five-year-old, they speak in a remarkably grown-up way."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "初めて作ったケーキ",
+        "sentenceAfter": "、お店のものみたいに美味しくできた。",
+        "en": "For a cake I made for the first time, it turned out as delicious as a store-bought one.",
+        "answer": "にしては",
+        "acceptedAnswers": ["にしては"],
+        "choices": ["にしては", "にとって", "について", "によって"]
+      }
+    },
+    {
+      "id": "g-n3-50",
+      "jlpt": 3,
+      "order": 50,
+      "pattern": "～たところ",
+      "reading": "～たところ",
+      "meaning": "when I did ..., (I discovered/received an outcome)",
+      "structure": "Verb (た-form) + ところ、Clause B (Past)",
+      "explanation": "Shows that after performing an action (often inquiring, checking, or consulting), a new fact or unexpected outcome came to light.",
+      "confusableWith": "Unlike ～たところだ ('just finished doing'), ～たところ、 joins two clauses to report the result of an action.",
+      "examples": [
+        {
+          "jp": "先生に相談したところ、とても親切にアドバイスしてくれた。",
+          "reading": "せんせいにそうだんしたところ、とてもしんせつにあどばいすしてくれた。",
+          "en": "When I consulted my teacher, they kindly gave me advice."
+        },
+        {
+          "jp": "病院で検査を受けたところ、特に異常はなかった。",
+          "reading": "びょういんでけんさをうけたところ、とくにいじょうはなかった。",
+          "en": "When I got tested at the hospital, there were no abnormalities."
+        }
+      ],
+      "quiz": {
+        "sentenceBefore": "駅員に尋ねた",
+        "sentenceAfter": "、落とし物はすでに届いていると言われた。",
+        "en": "When I asked the station attendant, I was told the lost item had already been turned in.",
+        "answer": "ところ",
+        "acceptedAnswers": ["ところ"],
+        "choices": ["ところ", "くせに", "わりに", "うちに"]
+      }
+    }
+  ]
+}

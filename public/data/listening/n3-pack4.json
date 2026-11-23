@@ -1,0 +1,311 @@
+{
+  "level": 3,
+  "pack": "n3-pack4",
+  "items": [
+    {
+      "id": "l-n3-21",
+      "jlpt": 3,
+      "taskType": "kadai",
+      "titleJp": "出張[しゅっちょう]先[さき]へのサンプル発送[はっそう]",
+      "titleEn": "Shipping Product Samples Ahead of a Business Trip",
+      "situationEn": "A manager asks a subordinate to prepare product samples before tomorrow's trip.",
+      "introJp": "会社[かいしゃ]で上司[じょうし]と部下[ぶか]が話[はな]しています。部下[ぶか]はこれからまず何[なに]をしますか。",
+      "introEn": "A manager and subordinate are talking at the office. What will the subordinate do first?",
+      "lines": [
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "小林[こばやし]さん、明後日[あさって]の大阪[おおさか]出張[しゅっちょう]で使[つか]う新商品[しんしょうひん]のサンプル、もうホテルへ送[おく]ってくれた？",
+          "en": "Kobayashi-san, have you already shipped the new product samples for our Osaka trip the day after tomorrow to the hotel?"
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "female",
+          "jp": "あ、箱[はこ]には詰[つ]め終[お]わっているんですが、中[なか]に入[い]れるカタログの部数[ぶすう]が足[た]りなくて、今[いま]印刷[いんさつ]室[しつ]へ取[と]りに行[い]こうと思っていたところです。",
+          "en": "Oh, I've finished packing the box, but we were short on catalogs to put inside, so I was just about to head to the print room to pick them up."
+        },
+        {
+          "speaker": "Manager",
+          "role": "male",
+          "jp": "なるほど。あ、それより先[さき]に、ホテルのフロントに「明日[あした]荷物[にもつ]が届[とど]く」って一本[いっぽん]電話[でんわ]しておいて。連絡[れんらく]なしだと受け取[うけと]ってもらえないこともあるからね。",
+          "en": "I see. Actually, before that, give the hotel front desk a quick call to let them know a parcel arrives tomorrow. Without notice they sometimes won't accept it."
+        },
+        {
+          "speaker": "Subordinate",
+          "role": "female",
+          "jp": "承知[しょうち]しました。すぐホテルに電話[でんわ]してから、カタログを取[と]りに行[い]って集荷[しゅうか]をお願い[ねがい]します。",
+          "en": "Understood. I'll call the hotel right away, then fetch the catalogs and request parcel pickup."
+        }
+      ],
+      "questionJp": "部下[ぶか]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the subordinate do first?",
+      "choices": [
+        "サンプルを箱[はこ]に詰[つ]める",
+        "印刷[いんさつ]室[しつ]へカタログを取[と]りに行[い]く",
+        "ホテルのフロントに電話[でんわ]する",
+        "宅配[たくはい]便[びん]の集荷[しゅうか]を頼[たの]む"
+      ],
+      "choicesEn": [
+        "Pack the samples into the box",
+        "Go to the print room for catalogs",
+        "Call the hotel front desk",
+        "Request courier pickup"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The manager tells her to call the hotel front desk first (それより先に), before picking up the catalogs and calling the courier."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "一本[いっぽん]電話[でんわ]しておく",
+          "reading": "いっぽんでんわしておく",
+          "en": "to give a quick phone call in advance"
+        },
+        {
+          "jp": "承知[しょうち]しました",
+          "reading": "しょうちしました",
+          "en": "understood / certainly (business polite)"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-22",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "週末[しゅうまつ]マルシェが成功[せいこう]した理由[りゆう]",
+      "titleEn": "Why the Weekend Farmers' Market Succeeded",
+      "situationEn": "Two town staff discuss why a newly launched weekend market drew big crowds.",
+      "introJp": "役場[やくば]の職員[しょくいん]二人[ふたり]が話[はな]しています。女[おんな]の人[ひと]は、マルシェに客[きゃく]がたくさん来[き]た一番[いちばん]の理由[りゆう]は何[なに]だと言[い]っていますか。",
+      "introEn": "Two municipal workers are talking. What does the woman say is the main reason so many visitors came to the market?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "今月[こんげつ]始[はじ]めた週末[しゅうまつ]マルシェ、予想[よそう]以上[いじょう]のにぎわいだったね。やっぱり駅前[えきまえ]の広場[ひろば]でやったのが良[よ]かったのかな。",
+          "en": "The weekend market we launched this month was livelier than expected. I guess holding it in the station plaza worked well?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "場所[ばしょ]ももちろん良[よ]かったんですが、実は[じつは]去年[きょねん]同[おな]じ広場[ひろば]で開[ひら]いたイベントはあまり人[ひと]が集[あつ]まらなかったんですよ。",
+          "en": "The location helped, of course, but actually an event held in the same plaza last year didn't draw many people."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "へえ、そうなんだ。じゃあ、今回[こんかい]野菜[やさい]を半額[はんがく]にしたから？",
+          "en": "Oh really? Then was it because vegetables were half price this time?"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "割引[わりびき]はしていないんです。今回[こんかい]は、農家[のうか]の方[かた]に料理[りょうり]レシピをその場[ば]で教[おし]えてもらったり、試食[ししょく]コーナーを作[つく]ったりしたのが大好評[だいこうひょう]だったんですよ。それがSNSで広[ひろ]まったのが一番[いちばん]大[おお]きいですね。",
+          "en": "We didn't offer discounts. This time, having farmers teach recipes on the spot and setting up a tasting corner was a huge hit—and that spreading on social media made the biggest difference."
+        }
+      ],
+      "questionJp": "女[おんな]の人[ひと]は、客[きゃく]がたくさん来[き]た一番[いちばん]の理由[りゆう]は何[なに]だと言[い]っていますか。",
+      "questionEn": "What does the woman identify as the main reason for the high turnout?",
+      "choices": [
+        "駅前[えきまえ]の広[ひろ]い場所[ばしょ]を使[つか]ったこと",
+        "地元[じもと]の野菜[やさい]を半額[はんがく]で売[う]ったこと",
+        "レシピ紹介[しょうかい]や試食[ししょく]が好評[こうひょう]でSNSで広[ひろ]まったこと",
+        "有名[ゆうめい]なテレビ番組[ばんぐみ]で事前[じぜん]に紹介[しょうかい]されたこと"
+      ],
+      "choicesEn": [
+        "Using the spacious plaza by the station",
+        "Selling local vegetables at half price",
+        "Recipe tips and tastings becoming popular and spreading on social media",
+        "Being featured beforehand on a famous TV show"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "She rules out the plaza alone (last year failed there) and discounts (none offered), pointing instead to the recipe sharing and tasting corner spreading via social media."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "予想[よそう]以上[いじょう]のにぎわい",
+          "reading": "よそういじょうのにぎわい",
+          "en": "busier/livelier than expected"
+        },
+        {
+          "jp": "試食[ししょく]コーナー",
+          "reading": "ししょくこーなー",
+          "en": "food tasting booth"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-23",
+      "jlpt": 3,
+      "taskType": "gaiyou",
+      "titleJp": "ラジオ講座[こうざ]：集中力[しゅうちゅうりょく]を保[たも]つ机[つくえ]の片付[かたづ]け方[かた]",
+      "titleEn": "Radio Talk: Keeping Your Desk Clear for Focus",
+      "situationEn": "A productivity coach speaks on a morning radio segment about desk habits.",
+      "introJp": "ラジオで専門家[せんもんか]が話[はな]しています。この人[ひと]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "introEn": "An expert is speaking on the radio. What is the speaker's main message?",
+      "lines": [
+        {
+          "speaker": "Coach",
+          "role": "male",
+          "jp": "仕事[しごと]や勉強[べんきょう]を始[はじ]めようとしても、なかなか集中[しゅうちゅう]できないことはありませんか。多[おお]くの人[ひと]は「自分[じぶん]のやる気[き]が足[た]りないせいだ」と思[おも]いがちですが、実[じつ]は視界[しかい]に入[はい]る物[もの]の多[おお]さが原因[げんいん]であることが多いんです。",
+          "en": "Do you ever struggle to focus when starting work or study? Many people tend to blame a lack of willpower, yet often the real cause is how many items sit in your field of vision."
+        },
+        {
+          "speaker": "Coach",
+          "role": "male",
+          "jp": "机[つくえ]の上[うえ]に読みかけ[よみかけ]の雑誌[ざっし]や未処理[みしょり]の書類[しょるい]、スマートフォンが置[お]いてあると、脳[のう]は無意識[むいしき]のうちにそれらを処理[しょり]しようとして疲[つか]れてしまいます。",
+          "en": "When half-read magazines, unprocessed papers, and a smartphone sit on your desk, your brain unconsciously tries to process them and gets fatigued."
+        },
+        {
+          "speaker": "Coach",
+          "role": "male",
+          "jp": "ですから、作業[さぎょう]を始[はじ]める前[まえ]に、今[いま]使[つか]うもの以外[いがい]はすべて引[ひ]き出[だ]しへしまってみてください。たった一分[いっぷん]の環境[かんきょう]づくりが、気合[きあい]よりずっと確実[かくじつ]に集中力[しゅうちゅうりょく]を高[たか]めてくれますよ。",
+          "en": "Therefore, before starting a task, try putting everything except what you need right now into a drawer. Just one minute of setting up your environment raises focus far more reliably than sheer willpower."
+        }
+      ],
+      "questionJp": "この人[ひと]が一番[いちばん]伝[つた]えたいことは何[なに]ですか。",
+      "questionEn": "What is the speaker's primary takeaway?",
+      "choices": [
+        "集中[しゅうちゅう]するためには強[つよ]い気合[きあい]とやる気[き]が一番[いちばん]大切[たいせつ]だ。",
+        "今[いま]使[つか]うもの以外[いがい]を視界[しかい]から片付[かたづ]けることで集中力[しゅうちゅうりょく]が上[あ]がる。",
+        "机[つくえ]の上[うえ]は広[ひろ]ければ広[ひろ]いほど仕事[しごと]が早[はや]く終[お]わる。",
+        "スマートフォンを机[つくえ]に置[お]いて時間を測[はか]りながら勉強[べんきょう]すべきだ。"
+      ],
+      "choicesEn": [
+        "Strong willpower and motivation are the most important things for focus",
+        "Clearing everything except what you currently need out of sight boosts concentration",
+        "The larger your desk, the faster work gets finished",
+        "You should keep your smartphone on the desk to time your study"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The coach stresses that clearing unneeded items from your visual field beats relying on willpower."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "視界[しかい]に入[はい]る",
+          "reading": "しかいにはいる",
+          "en": "to enter one's field of vision"
+        },
+        {
+          "jp": "気合[きあい]よりずっと確実[かくじつ]",
+          "reading": "きあいよりずっとかくじつ",
+          "en": "far more reliable than sheer willpower"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-24",
+      "jlpt": 3,
+      "taskType": "sokuji",
+      "titleJp": "先輩[せんぱい]の助言[じょげん]への返事[へんじ]",
+      "titleEn": "Quick Response: Receiving Constructive Feedback From a Senior",
+      "situationEn": "A senior colleague points out a helpful improvement on your report.",
+      "introJp": "会社[かいしゃ]で先輩[せんぱい]が話[はな]しかけました。何[なん]と言[い]いますか。",
+      "introEn": "A senior colleague gives you advice at work. What is the best reply?",
+      "lines": [
+        {
+          "speaker": "Senior",
+          "role": "female",
+          "jp": "このグラフ、数字[すうじ]の単位[たんい]を大[おお]きく書[か]いたほうが、もっと見[み]やすくなると思う[おもう]よ。",
+          "en": "I think this chart would be much easier to read if you wrote the numeric units larger."
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most natural response?",
+      "choices": [
+        "本当[ほんとう]ですね、気づき[きづき]ませんでした。すぐ直[なお]します。",
+        "いいえ、もう印刷[いんさつ]したくないんですが。",
+        "どういたしまして。いつでも聞[き]いてください。"
+      ],
+      "choicesEn": [
+        "You're right, I hadn't noticed. I'll fix it right away.",
+        "No, I don't want to print it again.",
+        "You're welcome. Ask me anytime."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "Acknowledging the insight gratefully and stating you'll revise it promptly (本当ですね、気づきませんでした。すぐ直します) is natural workplace Japanese."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "気づき[きづき]ませんでした",
+          "reading": "きづきませんでした",
+          "en": "I hadn't noticed"
+        },
+        {
+          "jp": "すぐ直[なお]します",
+          "reading": "すぐなおします",
+          "en": "I'll fix it right away"
+        }
+      ]
+    },
+    {
+      "id": "l-n3-25",
+      "jlpt": 3,
+      "taskType": "point",
+      "titleJp": "市民[しみん]マラソン大会[たいかい]の申込[もうしこみ]条件[じょうけん]",
+      "titleEn": "Conditions for Entering the Local Marathon",
+      "situationEn": "A man calls the event office to check if he can still enter a 10 km race.",
+      "introJp": "男[おとこ]の人[ひと]がマラソン大会[たいかい]の事務局[じむきょく]に電話[でんわ]しています。男[おとこ]の人[ひと]はどのように申し込[もうしこ]みますか。",
+      "introEn": "A man calls a marathon office. How will he register for the race?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "すみません、来月[らいげつ]の市民[しみん]マラソンの十キロコースに申し込[もうしこ]みたいんですが、まだ間[ま]に合[あ]いますか。",
+          "en": "Excuse me, I'd like to register for next month's 10 km citizen marathon—is there still time?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "はい、定員[ていいん]まであと少[すこ]し余裕[よゆう]がありますよ。ただ、郵送[ゆうそう]での受付[うけつけ]は昨日[きのう]で終了[しゅうりょう]しておりますので、ホームページからお願[ねが]いいたします。",
+          "en": "Yes, there is still a little room before capacity. However, mail-in registration closed yesterday, so please apply through our website."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "わかりました。参加費[さんかひ]は当日[とうじつ]会場[かいじょう]で払[はら]うんですか。",
+          "en": "Got it. Do I pay the entry fee at the venue on race day?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "いいえ、申し込[もうしこ]みから三日[みっか]以内[いない]にクレジットカードかコンビニでお支払[しはら]いください。入金[にゅうきん]が確認[かくにん]できて正式[せいしき]な登録[とうろく]となります。",
+          "en": "No, please pay by credit card or at a convenience store within three days of applying. Your registration becomes official once payment is confirmed."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "承知[しょうち]しました。今夜[こんや]ウェブサイトから申し込[もうしこ]んで、明日[あした]コンビニで払[はら]います。",
+          "en": "Understood. I'll apply on the website tonight and pay at a convenience store tomorrow."
+        }
+      ],
+      "questionJp": "男[おとこ]の人[ひと]はどのように申し込[もうしこ]みますか。",
+      "questionEn": "How will the man complete his registration?",
+      "choices": [
+        "書類[しょるい]を郵送[ゆうそう]して、当日[とうじつ]会場[かいじょう]で払[はら]う",
+        "ホームページから申し込[もうしこ]んで、コンビニで払[はら]う",
+        "電話[でんわ]で登録[とうろく]して、銀行[ぎんこう]振込[ふりこみ]で払[はら]う",
+        "定員[ていいん]がいっぱいなので今回[こんかい]は申し込[もうしこ]めない"
+      ],
+      "choicesEn": [
+        "Mail the form and pay at the venue on race day",
+        "Apply via the website and pay at a convenience store",
+        "Register by phone and pay by bank transfer",
+        "Cannot register because capacity is full"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "Mail-in closed yesterday and race-day payment isn't accepted; he decides to apply online tonight and pay at a convenience store tomorrow."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "定員[ていいん]まで余裕[よゆう]がある",
+          "reading": "ていいんまでよゆうがある",
+          "en": "there is still room before capacity"
+        },
+        {
+          "jp": "正式[せいしき]な登録[とうろく]",
+          "reading": "せいしきなとうろく",
+          "en": "official registration"
+        }
+      ]
+    }
+  ]
+}

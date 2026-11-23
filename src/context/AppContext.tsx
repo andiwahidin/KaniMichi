@@ -27,6 +27,7 @@ import {
   CurriculumItem,
   CurriculumOverride,
   ExtraStudyMode,
+  SrsMode,
   SrsStage,
   UserProfile,
   UserSettings,
@@ -43,15 +44,19 @@ import type {
   PronunciationTargetWord,
 } from '../types/pronunciation';
 import {
+  advanceToNextLevelIfEligible,
   calculateNextReviewAt,
   calculateNextSrsStage,
   createEmptyProgress,
   createFreshLevel1State,
   createStarterState,
+  DEFAULT_SRS_MODE,
   getAvailableReviews,
   getLessonQueue,
   getTodayDateStr,
   reconcileUnlocksAndLevelUp,
+  rescheduleStateForSrsMode,
+  resolveSrsMode,
 } from '../utils/srs';
 
 const STORAGE_KEY = 'kanimichi_srs_state_v2';
@@ -87,7 +92,10 @@ interface AppContextValue {
   startExtraStudy: (mode: ExtraStudyMode) => void;
   lessonQueue: CurriculumItem[];
   availableReviews: CurriculumItem[];
-  completeLessonBatch: (itemIds: string[]) => void;
+  completeLessonBatch: (itemIds: string[]) => {
+    newlyUnlockedIds: string[];
+    leveledUpTo: number | null;
+  };
   submitItemReview: (
     itemId: string,
     meaningErrors: number,
@@ -138,6 +146,12 @@ interface AppContextValue {
     pairId?: string
   ) => void;
   updateSettings: (partial: Partial<UserSettings>) => void;
+  changeSrsMode: (mode: SrsMode) => {
+    newlyUnlockedCount: number;
+    rescheduledCount: number;
+    leveledUpTo: number | null;
+  };
+  advanceNextLevelEarly: () => { ok: boolean; newLevel?: number };
   toggleVacationMode: () => void;
   fastForwardTime: (hours: number) => void;
   forceAllReviewsDue: () => void;
@@ -181,6 +195,11 @@ function loadSavedState(dataset: CurriculumDataset): UserState {
     if (raw) {
       const parsed = JSON.parse(raw) as UserState;
       if (parsed && typeof parsed.currentLevel === 'number' && parsed.progress) {
+        // Automatic one-time migration for saves created before srsMode existed:
+        // adopt DEFAULT_SRS_MODE ('open'), tighten pending intervals, and unlock eligible items.
+        if (!parsed.settings?.srsMode) {
+          return rescheduleStateForSrsMode(parsed, dataset, DEFAULT_SRS_MODE).nextState;
+        }
         return reconcileUnlocksAndLevelUp(parsed, dataset).nextState;
       }
     }
@@ -819,11 +838,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   };
 
-  const completeLessonBatch = (itemIds: string[]) => {
+  const completeLessonBatch = (
+    itemIds: string[]
+  ): { newlyUnlockedIds: string[]; leveledUpTo: number | null } => {
     const ts = Date.now();
     setNow(ts);
-    setState((prev) => {
-      if (!prev) return prev;
+    const applyBatch = (prev: UserState) => {
+      const mode = resolveSrsMode(prev.settings);
       const progress = { ...prev.progress };
       for (const id of itemIds) {
         const existing = progress[id];
@@ -832,7 +853,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           ...existing,
           srsStage: 1,
           startedAt: ts,
-          nextReviewAt: calculateNextReviewAt(1, ts),
+          nextReviewAt: calculateNextReviewAt(1, ts, mode),
         };
       }
       const activity = updateHistoryAndStreak(prev, 0, 0, itemIds.length, ts);
@@ -844,8 +865,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         },
         dataset,
         ts
-      ).nextState;
-    });
+      );
+    };
+
+    const preview = applyBatch(state);
+    setState((prev) => (prev ? applyBatch(prev).nextState : prev));
+    return {
+      newlyUnlockedIds: preview.newlyUnlockedIds,
+      leveledUpTo: preview.leveledUpTo,
+    };
   };
 
   const submitItemReview = (
@@ -873,10 +901,11 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         return prev;
       }
 
+      const mode = resolveSrsMode(prev.settings);
       const prevStage = existing.srsStage;
       const totalErrors = meaningErrors + readingErrors;
       const newStage = calculateNextSrsStage(prevStage, totalErrors);
-      const nextReviewAt = calculateNextReviewAt(newStage, ts);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts, mode);
 
       const updatedProgress = {
         ...prev.progress,
@@ -957,6 +986,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (!prev) return prev;
       const existing = prev.progress[itemId];
       if (!existing || existing.srsStage !== 9) return prev;
+      const mode = resolveSrsMode(prev.settings);
       return {
         ...prev,
         progress: {
@@ -965,7 +995,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             ...existing,
             srsStage: 1,
             burnedAt: null,
-            nextReviewAt: calculateNextReviewAt(1, ts),
+            nextReviewAt: calculateNextReviewAt(1, ts, mode),
           },
         },
       };
@@ -978,6 +1008,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setNow(ts);
     setState((prev) => {
       if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
       const gp: Record<string, GrammarProgress> = { ...(prev.grammarProgress ?? {}) };
       let addedCount = 0;
       for (const id of grammarIds) {
@@ -987,7 +1018,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           grammarId: id,
           srsStage: 1,
           startedAt: ts,
-          nextReviewAt: calculateNextReviewAt(1, ts),
+          nextReviewAt: calculateNextReviewAt(1, ts, mode),
           burnedAt: null,
           correctCount: existing?.correctCount ?? 0,
           incorrectCount: existing?.incorrectCount ?? 0,
@@ -1017,11 +1048,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     setState((prev) => {
       if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
       const existing = prev.grammarProgress?.[grammarId];
       const prevStage: SrsStage =
         existing && existing.srsStage >= 1 ? existing.srsStage : 1;
       const newStage = calculateNextSrsStage(prevStage, hadMistake ? 1 : 0);
-      const nextReviewAt = calculateNextReviewAt(newStage, ts);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts, mode);
 
       result = { previousStage: prevStage, newStage };
 
@@ -1064,6 +1096,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (!prev) return prev;
       const existing = prev.grammarProgress?.[grammarId];
       if (!existing || existing.srsStage !== 9) return prev;
+      const mode = resolveSrsMode(prev.settings);
       return {
         ...prev,
         grammarProgress: {
@@ -1072,7 +1105,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             ...existing,
             srsStage: 1,
             burnedAt: null,
-            nextReviewAt: calculateNextReviewAt(1, ts),
+            nextReviewAt: calculateNextReviewAt(1, ts, mode),
           },
         },
       };
@@ -1085,6 +1118,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setNow(ts);
     setState((prev) => {
       if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
       const kp: Record<string, KanaVocabProgress> = { ...(prev.kanaVocabProgress ?? {}) };
       let addedCount = 0;
       for (const id of itemIds) {
@@ -1094,7 +1128,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           itemId: id,
           srsStage: 1,
           startedAt: ts,
-          nextReviewAt: calculateNextReviewAt(1, ts),
+          nextReviewAt: calculateNextReviewAt(1, ts, mode),
           burnedAt: null,
           correctCount: existing?.correctCount ?? 0,
           incorrectCount: existing?.incorrectCount ?? 0,
@@ -1124,11 +1158,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     setState((prev) => {
       if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
       const existing = prev.kanaVocabProgress?.[itemId];
       const prevStage: SrsStage =
         existing && existing.srsStage >= 1 ? existing.srsStage : 1;
       const newStage = calculateNextSrsStage(prevStage, hadMistake ? 1 : 0);
-      const nextReviewAt = calculateNextReviewAt(newStage, ts);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts, mode);
 
       result = { previousStage: prevStage, newStage };
 
@@ -1171,6 +1206,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (!prev) return prev;
       const existing = prev.kanaVocabProgress?.[itemId];
       if (!existing || existing.srsStage !== 9) return prev;
+      const mode = resolveSrsMode(prev.settings);
       return {
         ...prev,
         kanaVocabProgress: {
@@ -1179,7 +1215,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
             ...existing,
             srsStage: 1,
             burnedAt: null,
-            nextReviewAt: calculateNextReviewAt(1, ts),
+            nextReviewAt: calculateNextReviewAt(1, ts, mode),
           },
         },
       };
@@ -1425,6 +1461,37 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     );
   };
 
+  const changeSrsMode = (
+    mode: SrsMode
+  ): {
+    newlyUnlockedCount: number;
+    rescheduledCount: number;
+    leveledUpTo: number | null;
+  } => {
+    const ts = Date.now();
+    setNow(ts);
+    const preview = rescheduleStateForSrsMode(state, dataset, mode, ts);
+    setState((prev) =>
+      prev ? rescheduleStateForSrsMode(prev, dataset, mode, ts).nextState : prev
+    );
+    return {
+      newlyUnlockedCount: preview.newlyUnlockedIds.length,
+      rescheduledCount: preview.rescheduledCount,
+      leveledUpTo: preview.leveledUpTo,
+    };
+  };
+
+  const advanceNextLevelEarly = (): { ok: boolean; newLevel?: number } => {
+    const ts = Date.now();
+    setNow(ts);
+    const preview = advanceToNextLevelIfEligible(state, dataset, ts);
+    if (!preview.ok) return { ok: false };
+    setState((prev) =>
+      prev ? advanceToNextLevelIfEligible(prev, dataset, ts).nextState : prev
+    );
+    return { ok: true, newLevel: preview.newLevel };
+  };
+
   const toggleVacationMode = () => {
     const ts = Date.now();
     setNow(ts);
@@ -1587,6 +1654,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setNow(ts);
     setState((prev) => {
       if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
       const progress = { ...prev.progress };
       for (let lvl = 1; lvl < clamped; lvl++) {
         for (const item of dataset.byLevel[lvl] ?? []) {
@@ -1598,7 +1666,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
                 srsStage: 5,
                 unlockedAt: existing.unlockedAt ?? ts,
                 startedAt: existing.startedAt ?? ts,
-                nextReviewAt: calculateNextReviewAt(5, ts),
+                nextReviewAt: calculateNextReviewAt(5, ts, mode),
               };
             }
           }
@@ -1626,6 +1694,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       settings: {
         ...next.settings,
         darkMode: state.settings.darkMode,
+        srsMode: resolveSrsMode(state.settings),
       },
     });
     setActiveView('dashboard');
@@ -1637,7 +1706,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       if (!parsed || typeof parsed.currentLevel !== 'number' || !parsed.progress) {
         return { ok: false, error: 'Format file cadangan tidak valid.' };
       }
-      const reconciled = reconcileUnlocksAndLevelUp(parsed, dataset).nextState;
+      const reconciled = !parsed.settings?.srsMode
+        ? rescheduleStateForSrsMode(parsed, dataset, DEFAULT_SRS_MODE).nextState
+        : reconcileUnlocksAndLevelUp(parsed, dataset).nextState;
       setState(reconciled);
       return { ok: true };
     } catch {
@@ -1923,6 +1994,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         clearPronunciationTarget,
         recordPronunciationAttempt,
         updateSettings,
+        changeSrsMode,
+        advanceNextLevelEarly,
         toggleVacationMode,
         fastForwardTime,
         forceAllReviewsDue,

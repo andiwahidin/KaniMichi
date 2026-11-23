@@ -1,0 +1,236 @@
+{
+  "level": 3,
+  "pack": "n3-pack4",
+  "items": [
+    {
+      "id": "kv-n3-51",
+      "jlpt": 3,
+      "order": 51,
+      "word": "いつのまにか",
+      "reading": "いつのまにか",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "before one knows it; unnoticed",
+      "acceptedMeanings": ["before one knows it", "unnoticed", "without realizing it"],
+      "usageNote": "Expresses surprise upon noticing that a change occurred gradually while you weren't paying attention.",
+      "example": {
+        "jp": "本を読んでいたら、いつのまにか外が暗くなっていた。",
+        "reading": "ほんをよんでいたら、いつのまにかそとがくらくなっていた。",
+        "en": "While I was reading a book, it had gotten dark outside before I knew it."
+      },
+      "quiz": {
+        "sentenceBefore": "ソファで休んでいたら、",
+        "sentenceAfter": "二時間も眠ってしまった。",
+        "en": "While resting on the sofa, I fell asleep for two whole hours before I knew it.",
+        "choices": ["いつのまにか", "わざわざ", "わざと", "いきなり"]
+      }
+    },
+    {
+      "id": "kv-n3-52",
+      "jlpt": 3,
+      "order": 52,
+      "word": "おたがいに",
+      "reading": "おたがいに",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "mutually; with each other; both sides",
+      "acceptedMeanings": ["mutually", "with each other", "each other"],
+      "usageNote": "Frequently heard in workplace teamwork and polite replies ('お互い様です' = we're in the same boat).",
+      "example": {
+        "jp": "忙しい時期なので、おたがいに助け合いましょう。",
+        "reading": "いそがしいじきなので、おたがいにたすけあいましょう。",
+        "en": "Since it's a busy season, let's help each other out."
+      },
+      "quiz": {
+        "sentenceBefore": "文化が違うからこそ、",
+        "sentenceAfter": "尊重し合うことが大切だ。",
+        "en": "Precisely because our cultures differ, it is important to respect one another.",
+        "choices": ["おたがいに", "たまたま", "ついでに", "まさか"]
+      }
+    },
+    {
+      "id": "kv-n3-53",
+      "jlpt": 3,
+      "order": 53,
+      "word": "かならず",
+      "reading": "かならず",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "always; without fail; certainly",
+      "acceptedMeanings": ["always", "without fail", "certainly", "definitely"],
+      "usageNote": "Stronger and more objective than きっと; widely used in rules, instructions, and habits (かならず連絡してください).",
+      "example": {
+        "jp": "部屋を出るときは、かならず電気を消してください。",
+        "reading": "へやをでるときは、かならずでんきをけしてください。",
+        "en": "When leaving the room, please be sure to turn off the lights without fail."
+      },
+      "quiz": {
+        "sentenceBefore": "欠席する場合は、開始の三十分前までに",
+        "sentenceAfter": "連絡してください。",
+        "en": "If you will be absent, please contact us without fail at least 30 minutes before the start.",
+        "choices": ["かならず", "たいてい", "わりと", "つい"]
+      }
+    },
+    {
+      "id": "kv-n3-54",
+      "jlpt": 3,
+      "order": 54,
+      "word": "まるで",
+      "reading": "まるで",
+      "category": "adverb",
+      "partOfSpeech": "Adverb",
+      "primaryMeaning": "just like ...; completely as if ...",
+      "acceptedMeanings": ["just like", "as if", "completely", "totally"],
+      "usageNote": "Classic JLPT pairing: まるで～のようだ / みたいだ ('just like a dream'). With negatives it means 'not at all'.",
+      "example": {
+        "jp": "ここは景色が美しくて、まるで絵のようだ。",
+        "reading": "ここはけしきがうつくしくて、まるでえのようだ。",
+        "en": "The scenery here is so beautiful that it looks just like a painting."
+      },
+      "quiz": {
+        "sentenceBefore": "十二月なのに暖かくて、",
+        "sentenceAfter": "春が来たみたいだ。",
+        "en": "Even though it's December, it's so warm that it feels just like spring has arrived.",
+        "choices": ["まるで", "さすがに", "せっかく", "いったい"]
+      }
+    },
+    {
+      "id": "kv-n3-55",
+      "jlpt": 3,
+      "order": 55,
+      "word": "そのため",
+      "reading": "そのため",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "for that reason; consequently; as a result",
+      "acceptedMeanings": ["for that reason", "consequently", "as a result", "therefore"],
+      "usageNote": "Standard formal cause-and-effect connector in JLPT N3 reading passages, notices, and news articles.",
+      "example": {
+        "jp": "大雪の影響で高速道路が通行止めになった。そのため、荷物の配達が遅れている。",
+        "reading": "おおゆきのえいきょうでこうそくどうろがつうこうどめになった。そのため、にもつのはいたつがおくれている。",
+        "en": "The expressway was closed due to heavy snow. Consequently, package deliveries are delayed."
+      },
+      "quiz": {
+        "sentenceBefore": "駅のエレベーターが故障しています。",
+        "sentenceAfter": "、隣の階段をご利用ください。",
+        "en": "The station elevator is out of order. For that reason, please use the adjacent stairs.",
+        "choices": ["そのため", "ところが", "ただし", "ちなみに"]
+      }
+    },
+    {
+      "id": "kv-n3-56",
+      "jlpt": 3,
+      "order": 56,
+      "word": "それなら",
+      "reading": "それなら",
+      "category": "connector",
+      "partOfSpeech": "Conjunction",
+      "primaryMeaning": "in that case; if so; then",
+      "acceptedMeanings": ["in that case", "if so", "then"],
+      "usageNote": "Responds to information the other speaker just provided and proposes a fitting plan or conclusion.",
+      "example": {
+        "jp": "明日は午後から雨だそうですよ。— それなら、午前中に買い物を済ませましょう。",
+        "reading": "あしたはごごからあめだそうですよ。— それなら、ごぜんちゅうにかいものをすませましょう。",
+        "en": "They say it'll rain from the afternoon tomorrow. — In that case, let's finish shopping in the morning."
+      },
+      "quiz": {
+        "sentenceBefore": "そのレストランは月曜定休だそうですよ。— ",
+        "sentenceAfter": "、火曜日に予約しましょうか。",
+        "en": "That restaurant is closed on Mondays. — In that case, shall we reserve for Tuesday?",
+        "choices": ["それなら", "それなのに", "しかも", "つまり"]
+      }
+    },
+    {
+      "id": "kv-n3-57",
+      "jlpt": 3,
+      "order": 57,
+      "word": "じろじろ",
+      "reading": "じろじろ",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb)",
+      "primaryMeaning": "staring intently; gawking (impolitely)",
+      "acceptedMeanings": ["staring", "staring intently", "gawking"],
+      "usageNote": "Usually carries a negative nuance of staring rudely or awkwardly at someone (じろじろ見る).",
+      "example": {
+        "jp": "初対面の人の顔をじろじろ見るのは失礼だ。",
+        "reading": "しょたいめんのひとのかおをじろじろみるのはしつれいだ。",
+        "en": "It is rude to stare intently at the face of someone you just met."
+      },
+      "quiz": {
+        "sentenceBefore": "派手な帽子をかぶっていたら、周りの人に",
+        "sentenceAfter": "見られた。",
+        "en": "Because I was wearing a flashy hat, people around me stared intently at me.",
+        "choices": ["じろじろ", "すらすら", "のんびり", "ほっと"]
+      }
+    },
+    {
+      "id": "kv-n3-58",
+      "jlpt": 3,
+      "order": 58,
+      "word": "ぼんやり",
+      "reading": "ぼんやり",
+      "category": "onomatopoeia",
+      "partOfSpeech": "Onomatopoeia (Adverb / する-verb)",
+      "primaryMeaning": "absentmindedly; spacing out; dimly / vaguely",
+      "acceptedMeanings": ["absentmindedly", "spacing out", "dimly", "vaguely"],
+      "usageNote": "Describes both a foggy/blurry visual outline and zoning out mentally (窓の外をぼんやり眺める).",
+      "example": {
+        "jp": "寝不足のせいで、授業中ずっと頭がぼんやりしていた。",
+        "reading": "ねぶそくのせいで、じゅぎょうちゅうずっとあたまがぼんやりしていた。",
+        "en": "Because of lack of sleep, my mind felt foggy throughout the class."
+      },
+      "quiz": {
+        "sentenceBefore": "霧が深くて、遠くの山の形が",
+        "sentenceAfter": "としか見えない。",
+        "en": "The fog is thick, so the shape of the distant mountains is only dimly visible.",
+        "choices": ["ぼんやり", "すっきり", "ぎりぎり", "ばたばた"]
+      }
+    },
+    {
+      "id": "kv-n3-59",
+      "jlpt": 3,
+      "order": 59,
+      "word": "アイデア",
+      "reading": "あいであ",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "idea; creative concept",
+      "acceptedMeanings": ["idea", "concept", "bright idea"],
+      "usageNote": "Very common in workplace brainstorming meetings (いいアイデアが浮かぶ = a good idea comes to mind).",
+      "example": {
+        "jp": "新商品の企画会議で、面白いアイデアがたくさん出た。",
+        "reading": "しんしょうひんのきかくかいぎで、おもしろいあいであがたくさんでた。",
+        "en": "Many interesting ideas came up at the new product planning meeting."
+      },
+      "quiz": {
+        "sentenceBefore": "コストを下げるための良い",
+        "sentenceAfter": "があれば、ぜひ提案してください。",
+        "en": "If you have any good ideas for lowering costs, please suggest them.",
+        "choices": ["アイデア", "クレーム", "トラブル", "ストレス"]
+      }
+    },
+    {
+      "id": "kv-n3-60",
+      "jlpt": 3,
+      "order": 60,
+      "word": "プライバシー",
+      "reading": "ぷらいばしー",
+      "category": "katakana",
+      "partOfSpeech": "Noun (Katakana)",
+      "primaryMeaning": "privacy",
+      "acceptedMeanings": ["privacy"],
+      "usageNote": "High-frequency JLPT N3–N2 reading topic in essays about smartphones, social media, and workplace policies.",
+      "example": {
+        "jp": "SNSに写真を投稿するときは、他人のプライバシーを守る必要がある。",
+        "reading": "えすえぬえすにしゃしんをとうこうするときは、たにんのぷらいばしーをまもるひつようがある。",
+        "en": "When posting photos on social media, it is necessary to protect others' privacy."
+      },
+      "quiz": {
+        "sentenceBefore": "個人情報の取り扱いと",
+        "sentenceAfter": "の保護は、企業にとって最優先課題だ。",
+        "en": "Handling personal data and protecting privacy are top priorities for companies.",
+        "choices": ["プライバシー", "バランス", "マナー", "テーマ"]
+      }
+    }
+  ]
+}

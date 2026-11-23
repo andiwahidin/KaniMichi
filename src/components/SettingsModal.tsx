@@ -13,9 +13,18 @@ import {
   LogOut,
   ShieldCheck,
   User as UserIcon,
+  Zap,
 } from 'lucide-react';
 import { MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
+import { SrsMode } from '../types/curriculum';
+import {
+  formatIntervalShort,
+  getSrsPolicy,
+  resolveSrsMode,
+  SRS_MODE_POLICIES,
+  SRS_STAGE_NAMES,
+} from '../utils/srs';
 import { OfflineDownloadManager } from './OfflineDownloadManager';
 
 export const SettingsModal: React.FC = () => {
@@ -26,6 +35,7 @@ export const SettingsModal: React.FC = () => {
     setActiveView,
     openAuthModal,
     updateSettings,
+    changeSrsMode,
     toggleVacationMode,
     fastForwardTime,
     forceAllReviewsDue,
@@ -236,6 +246,120 @@ export const SettingsModal: React.FC = () => {
                 </div>
               </div>
             )}
+          </section>
+
+          {/* SRS Pace & Unlock Policy */}
+          <section className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-4">
+            {(() => {
+              const activeMode = resolveSrsMode(state.settings);
+              const activePolicy = getSrsPolicy(activeMode);
+              const modes: SrsMode[] = ['open', 'fast', 'standard'];
+              const stageRows: { stage: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8; short: string }[] = [
+                { stage: 1, short: 'App I' },
+                { stage: 2, short: 'App II' },
+                { stage: 3, short: 'App III' },
+                { stage: 4, short: 'App IV' },
+                { stage: 5, short: 'Guru I' },
+                { stage: 6, short: 'Guru II' },
+                { stage: 7, short: 'Master' },
+                { stage: 8, short: 'Enlight.' },
+              ];
+              return (
+                <>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <Zap className="w-4 h-4 text-[#0284C7]" />
+                        <h3 className="font-display text-sm font-semibold text-slate-900 dark:text-white">
+                          Kecepatan &amp; Aturan Pembukaan SRS
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                        Berlaku serempak untuk Kurikulum Utama, Grammar JLPT, dan Kosakata Kana JLPT.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-lg">
+                    {modes.map((m) => {
+                      const p = SRS_MODE_POLICIES[m];
+                      const isActive = activeMode === m;
+                      return (
+                        <button
+                          key={m}
+                          type="button"
+                          onClick={() => {
+                            if (m === activeMode) return;
+                            const res = changeSrsMode(m);
+                            const details: string[] = [];
+                            if (res.newlyUnlockedCount > 0) {
+                              details.push(`${res.newlyUnlockedCount} pelajaran baru terbuka`);
+                            }
+                            if (res.rescheduledCount > 0) {
+                              details.push(`${res.rescheduledCount} jadwal review disesuaikan`);
+                            }
+                            if (res.leveledUpTo) {
+                              details.push(`naik ke Level ${res.leveledUpTo}`);
+                            }
+                            notify(
+                              details.length > 0
+                                ? `Mode SRS diubah ke ${p.label}: ${details.join(', ')}.`
+                                : `Mode SRS aktif diubah ke ${p.label}.`
+                            );
+                          }}
+                          className={`min-h-[38px] px-2.5 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer whitespace-nowrap ${
+                            isActive
+                              ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
+                              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                          }`}
+                        >
+                          {p.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
+                    <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {activePolicy.description}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-500 dark:text-slate-400">
+                      <span>
+                        Buka Kanji/Kosakata:{' '}
+                        <strong className="text-slate-800 dark:text-slate-200">
+                          {activePolicy.unlockDepStage === 1
+                            ? 'Setelah Lesson'
+                            : SRS_STAGE_NAMES[activePolicy.unlockDepStage]}
+                        </strong>
+                      </span>
+                      <span aria-hidden="true">·</span>
+                      <span>
+                        Naik Level Otomatis:{' '}
+                        <strong className="text-slate-800 dark:text-slate-200">
+                          90% Kanji {SRS_STAGE_NAMES[activePolicy.levelUpKanjiStage]}
+                        </strong>
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-4 sm:grid-cols-8 gap-1.5 pt-1 border-t border-slate-200/80 dark:border-slate-800">
+                      {stageRows.map((row) => (
+                        <div
+                          key={row.stage}
+                          className="text-center py-1.5 px-1 rounded bg-white dark:bg-[#161A22] border border-slate-200/70 dark:border-slate-800"
+                        >
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400 whitespace-nowrap">
+                            {row.short}
+                          </div>
+                          <div className="font-mono-num tabular-nums text-[11px] font-bold text-slate-900 dark:text-white mt-0.5 whitespace-nowrap">
+                            {formatIntervalShort(activePolicy.intervalsMs[row.stage])}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
           </section>
 
           {/* Study Preferences */}

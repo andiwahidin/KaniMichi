@@ -33,6 +33,8 @@ import {
   formatRelativeTime,
   getCategoryLabel,
   getSrsCategory,
+  getSrsPolicy,
+  resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
 
@@ -90,6 +92,8 @@ export const GrammarHub: React.FC = () => {
     resurrectGrammarItem,
     fastForwardTime,
   } = useApp();
+
+  const srsPolicy = getSrsPolicy(resolveSrsMode(state.settings));
 
   const [grammarData, setGrammarData] = useState<GrammarDataset | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -741,7 +745,7 @@ export const GrammarHub: React.FC = () => {
             </h1>
             <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
               {mode === 'lesson'
-                ? `${lessonBatch.length} pola baru dipromosikan ke Apprentice I (review pertama dalam 4 jam).`
+                ? `${lessonBatch.length} pola baru dipromosikan ke Apprentice I (review pertama dalam ${srsPolicy.firstReviewLabel}).`
                 : mode === 'review'
                 ? `Kamu menyelesaikan ${totalDone} pola dengan akurasi ${accuracy}%.`
                 : `Mode Latih Cepat selesai (${accuracy}% benar di percobaan pertama) — jadwal SRS tetap aman.`}
@@ -1305,7 +1309,7 @@ export const GrammarHub: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                 {activeStats.unstarted.length > 0
                   ? `${activeLevelMeta.description}. Pelajari ${nextBatchCount} pola baru lalu selesaikan kuis singkat.`
-                  : `Semua 20 pola inti ${activeLevelMeta.code} sudah masuk antrean SRS kamu!`}
+                  : `Semua ${activeStats.total} pola inti ${activeLevelMeta.code} sudah masuk antrean SRS kamu!`}
               </p>
             </div>
             <div className="font-mono-num text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white shrink-0">
@@ -1315,7 +1319,7 @@ export const GrammarHub: React.FC = () => {
 
           <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <span className="text-xs text-slate-500 dark:text-slate-400">
-              Otomatis masuk Apprentice I (4 jam)
+              Otomatis masuk Apprentice I ({srsPolicy.firstReviewLabel}) · Mode {srsPolicy.label}
             </span>
             <button
               type="button"
@@ -1339,7 +1343,7 @@ export const GrammarHub: React.FC = () => {
           <div className="flex items-start justify-between gap-4">
             <div className="space-y-1 min-w-0">
               <div className="text-xs font-semibold text-[#0284C7]">
-                Spaced Repetition · Semua Level N5–N1
+                Spaced Repetition · Mode {srsPolicy.label}
               </div>
               <h2 className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
                 Review Grammar SRS
@@ -1361,11 +1365,11 @@ export const GrammarHub: React.FC = () => {
             {allDuePoints.length === 0 && nextGrammarReviewAt ? (
               <button
                 type="button"
-                onClick={() => fastForwardTime(4)}
+                onClick={() => fastForwardTime(srsPolicy.fastForwardStepHours)}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
               >
                 <FastForward className="w-3.5 h-3.5" />
-                Majukan waktu +4 jam
+                Majukan waktu +{srsPolicy.fastForwardStepHours} jam
               </button>
             ) : (
               <button

@@ -1,0 +1,305 @@
+{
+  "level": 2,
+  "pack": "n2-pack4",
+  "items": [
+    {
+      "id": "l-n2-21",
+      "jlpt": 2,
+      "taskType": "kadai",
+      "titleJp": "新[しん]アプリ公開[こうかい]前[まえ]の不具合[ふぐあい]対応[たいおう]",
+      "titleEn": "Handling a Bug Before Launching a New App",
+      "situationEn": "A product manager and developer coordinate urgent fixes before tomorrow's release.",
+      "introJp": "IT企業[きぎょう]で女[おんな]のマネージャーと男[おとこ]のエンジニアが話[はな]しています。男[おとこ]のエンジニアはこれからまず何[なに]をしますか。",
+      "introEn": "A female manager and male engineer talk at a tech company. What will the engineer do first?",
+      "lines": [
+        {
+          "speaker": "Engineer",
+          "role": "male",
+          "jp": "部長[ぶちょう]、明日[あした]公開[こうかい]予定[よてい]のアプリなんですが、古[ふる]い端末[たんまつ]で決済[けっさい]画面[がめん]が崩[くず]れる不具合[ふぐあい]が見[み]つかりました。",
+          "en": "Manager, for the app slated for launch tomorrow, we found a bug where the checkout screen layout breaks on older devices."
+        },
+        {
+          "speaker": "Manager",
+          "role": "female",
+          "jp": "決済[けっさい]画面[がめん]は致命的[ちめいてき]ね。修正[しゅうせい]にはどのくらいかかりそう？",
+          "en": "The checkout screen is critical. How long will the fix take?"
+        },
+        {
+          "speaker": "Engineer",
+          "role": "male",
+          "jp": "原因[げんいん]は特定[とくてい]できたので、三時間[さんじかん]ほどあれば直[なお]せます。すぐ修正[しゅうせい]作業[さぎょう]に入[はい]りましょうか。それとも広報[こうほう]部[ぶ]に延期[えんき]の可能性[かのうせい]を伝[つた]えたほうがいいですか。",
+          "en": "I've identified the cause, so I can fix it in about three hours. Should I jump right into fixing it, or tell PR about a possible delay?"
+        },
+        {
+          "speaker": "Manager",
+          "role": "female",
+          "jp": "広報[こうほう]への連絡[れんらく]とテスト端末[たんまつ]の手配[てはい]は私[わたし]がやっておくわ。あなたは最優先[さいゆうせん]でコードの修正[しゅうせい]を進[すす]めて。終[お]わり次第[しだい]、再[さい]テストを回[まわ]しましょう。",
+          "en": "I'll handle notifying PR and arranging test devices. You prioritize fixing the code right away. As soon as it's done, let's run re-testing."
+        }
+      ],
+      "questionJp": "男[おとこ]のエンジニアはこれからまず何[なに]をしますか。",
+      "questionEn": "What will the male engineer do first?",
+      "choices": [
+        "広報[こうほう]部[ぶ]に公開[こうかい]延期[えんき]を連絡[れんらく]する",
+        "テスト用[よう]の古[ふる]い端末[たんまつ]を手配[てはい]する",
+        "決済[けっさい]画面[がめん]の不具合[ふぐあい]のコードを修正[しゅうせい]する",
+        "利用者[りようしゃ]向[む]けのお詫[わ]び文[ぶん]を作成[さくせい]する"
+      ],
+      "choicesEn": [
+        "Notify PR about delaying the launch",
+        "Arrange older test devices",
+        "Fix the code causing the checkout layout bug",
+        "Draft an apology notice for users"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "The manager takes over PR outreach and test devices, instructing the engineer to prioritize fixing the code immediately."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "原因[げんいん]を特定[とくてい]する",
+          "reading": "げんいんをとくていする",
+          "en": "to pinpoint the cause"
+        },
+        {
+          "jp": "終[お]わり次第[しだい]",
+          "reading": "おわりしだい",
+          "en": "as soon as it finishes"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-22",
+      "jlpt": 2,
+      "taskType": "point",
+      "titleJp": "老舗[しにせ]和菓子店[わがしてん]が直営[ちょくえい]カフェを開[ひら]いた狙[ねら]い",
+      "titleEn": "Why a Long-Established Wagashi Shop Opened a Café",
+      "situationEn": "A reporter interviews the fourth-generation owner of a traditional sweets shop.",
+      "introJp": "テレビのインタビューで和菓子店[わがしてん]の店主[てんしゅ]が話[はな]しています。店[みせ]の中[なか]にカフェを作[つく]った一番[いちばん]の狙[ねら]いは何[なに]ですか。",
+      "introEn": "A traditional sweets shop owner is interviewed on TV. What was the primary aim of opening an in-store café?",
+      "lines": [
+        {
+          "speaker": "Reporter",
+          "role": "female",
+          "jp": "創業[そうぎょう]百年[ひゃくねん]の老舗[しにせ]が、店内[てんない]にカフェを併設[へいせつ]されたのが話題[わだい]ですね。やはり客単価[きゃくたんか]を上[あ]げるのが目的[もくてき]だったのでしょうか。",
+          "en": "Your 100-year-old shop adding an in-store café has become a hot topic. Was the goal to raise average customer spending?"
+        },
+        {
+          "speaker": "Owner",
+          "role": "male",
+          "jp": "よくそう聞[き]かれるんですが、カフェ単体[たんたい]の利益[りえき]は大[たい]したことがないんです。実は[じつは]、最近[さいきん]和菓子[わがし]は「贈答[ぞうとう]用[よう]の堅苦[かたくる]しいもの」というイメージが強[つよ]くて、若[わか]い方[かた]がお店[みせ]に入り[はいり]づらくなっていたんですよ。",
+          "en": "I'm often asked that, yet profit from the café alone isn't huge. Actually, wagashi had developed a stiff 'formal gift' image lately, making it intimidating for younger people to step inside."
+        },
+        {
+          "speaker": "Owner",
+          "role": "male",
+          "jp": "そこで、コーヒー一杯[いっぱい]から気軽[きがる]に立ち寄[たちよ]れる空間[くうかん]を作[つく]り、まず作[つく]りたてのあんこの味[あじ]を知[し]ってもらう入口[いりぐち]にしたかったんです。",
+          "en": "So we wanted to create a casual entry point where people can drop in for just a cup of coffee and first experience the taste of freshly made sweet bean paste."
+        }
+      ],
+      "questionJp": "店主[てんしゅ]が店内[てんない]にカフェを作[つく]った一番[いちばん]の狙[ねら]いは何[なに]ですか。",
+      "questionEn": "What was the owner's primary goal in adding the café?",
+      "choices": [
+        "カフェの売上[うりあげ]で客単価[きゃくたんか]を大幅[おおはば]に高[たか]めること",
+        "若[わか]い客[きゃく]が気軽[きがる]に入[はい]って和菓子[わがし]の味[あじ]を知[し]るきっかけを作[つく]ること",
+        "贈答[ぞうとう]用[よう]の高級[こうきゅう]菓子[がし]の販売[はんばい]を完全[かんぜん]にやめること",
+        "海外[かいがい]からの観光客[かんこうきゃく]だけを対象[たいしょう]に営業[えいぎょう]すること"
+      ],
+      "choicesEn": [
+        "Sharply raising average spend through café profits",
+        "Creating a casual entry point for younger customers to discover wagashi",
+        "Completely ending sales of high-end gift sweets",
+        "Serving exclusively overseas tourists"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "He dismisses high café profit margins and explains the real goal is lowering the psychological barrier so younger guests drop in casually and taste fresh wagashi."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "堅苦[かたくる]しい",
+          "reading": "かたくるしい",
+          "en": "stiff; overly formal"
+        },
+        {
+          "jp": "気軽[きがる]に立ち寄[たちよ]る",
+          "reading": "きがるにたちよる",
+          "en": "to drop in casually"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-23",
+      "jlpt": 2,
+      "taskType": "gaiyou",
+      "titleJp": "社内[しゃない]研修[けんしゅう]：リモート会議[かいぎ]の進行[しんこう]術[じゅつ]",
+      "titleEn": "Corporate Workshop: Facilitating Effective Remote Meetings",
+      "situationEn": "A trainer explains a key facilitation technique during a corporate management seminar.",
+      "introJp": "研修[けんしゅう]で講師[こうし]がオンライン会議[かいぎ]について話[はな]しています。講師[こうし]が最も[もっとも]強調[きょうちょう]していることは何[なに]ですか。",
+      "introEn": "A trainer talks about online meetings. What does the trainer emphasize most?",
+      "lines": [
+        {
+          "speaker": "Trainer",
+          "role": "female",
+          "jp": "オンライン会議[かいぎ]では、「誰[だれ]か意見[いけん]はありますか」と全体[ぜんたい]に投[な]げかけても、沈黙[ちんもく]が続[つづ]いてしまうことがよくありますよね。対面[たいめん]と違[ちが]い、他[ほか]の人[ひと]の視線[しせん]や発言[はつげん]のタイミングが読[よ]みにくいからです。",
+          "en": "In online meetings, asking the whole room 'Does anyone have an opinion?' often leads to awkward silence. Unlike face-to-face meetings, it's hard to read others' gaze or timing to speak."
+        },
+        {
+          "speaker": "Trainer",
+          "role": "female",
+          "jp": "これを解消[かいしょう]するには、発言[はつげん]を促[うなが]す前に「二分[にふん]ほどチャット欄[らん]に思[おも]いついたことを書[か]き出[だ]してください」と時間[じかん]を取[と]り、その中[なか]から司会者[しかいしゃ]が名指[なざ]しで深掘[ふかぼ]りしていく手法[しゅほう]が非常[ひじょう]に有効[ゆうこう]です。",
+          "en": "To solve this, taking two minutes for everyone to jot ideas into the chat box first, and then having the facilitator call on people by name to expand on them, is remarkably effective."
+        },
+        {
+          "speaker": "Trainer",
+          "role": "female",
+          "jp": "発言[はつげん]力[りょく]の強[つよ]い一部[いちぶ]の人[ひと]だけに議論[ぎろん]が偏[かたよ]るのを防[ふせ]ぎ、多様な[たような]視点[してん]を引き出[ひきだ]すことができます。",
+          "en": "It prevents discussions from being dominated by a few vocal speakers and draws out diverse perspectives."
+        }
+      ],
+      "questionJp": "講師[こうし]がオンライン会議[かいぎ]を活発[かっぱつ]にするために最も[もっとも]勧[すす]めている方法[ほうほう]は何[なに]ですか。",
+      "questionEn": "What method does the trainer recommend most to make online meetings livelier?",
+      "choices": [
+        "全員[ぜんいん]のカメラを常[つね]にオフにして緊張[きんちょう]を和[やわ]らげること",
+        "まずチャットに意見[いけん]を書[か]いてもらい、司会者[しかいしゃ]が指名[しめい]して深掘[ふかぼ]りすること",
+        "会議[かいぎ]時間[じかん]を二倍[にばい]に延[の]ばして自由[じゆう]討論[とうろん]を増[ふ]やすこと",
+        "発言[はつげん]力[りょく]の強[つよ]いメンバーだけに絞[しぼ]って会議[かいぎ]を開[ひら]くこと"
+      ],
+      "choicesEn": [
+        "Keeping all cameras off to ease nervousness",
+        "Having everyone write ideas in chat first, then calling on people by name to elaborate",
+        "Doubling meeting length for more open discussion",
+        "Limiting meetings only to vocal members"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The trainer recommends a 2-minute chat brainstorm followed by the facilitator calling on specific people to elaborate."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "名指[なざ]しで深掘[ふかぼ]りする",
+          "reading": "なざしでふかぼりする",
+          "en": "to call on by name and dig deeper"
+        },
+        {
+          "jp": "議論[ぎろん]が偏[かたよ]る",
+          "reading": "ぎろんがかたよる",
+          "en": "discussion becomes skewed / one-sided"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-24",
+      "jlpt": 2,
+      "taskType": "sokuji",
+      "titleJp": "取引先[とりひきさき]からの納期[のうき]前倒[まえだお]しの相談[そうだん]",
+      "titleEn": "Quick Response: Responding Tactfully to a Rush Deadline Request",
+      "situationEn": "A client asks if delivery can be moved up by two days, and you must check with production first.",
+      "introJp": "取引先[とりひきさき]の担当者[たんとうしゃ]から相談[そうだん]されました。何[なん]と言[い]いますか。",
+      "introEn": "A client representative asks you a favor. What is the most appropriate business response?",
+      "lines": [
+        {
+          "speaker": "Client",
+          "role": "male",
+          "jp": "恐れ入[おそれい]りますが、来週[らいしゅう]金曜[きんよう]納品[のうひん]の分[ぶん]、なんとか水曜[すいよう]までに前倒[まえだお]ししていただけませんか。",
+          "en": "I apologize for asking, but could you possibly move next Friday's delivery forward to Wednesday?"
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most appropriate reply?",
+      "choices": [
+        "工場[こうじょう]の稼働[かどう]状況[じょうきょう]を確認[かくにん]のうえ、本日中[ほんじつちゅう]にお返事[へんじ]いたします。",
+        "水曜[すいよう]は私[わたし]の休[やす]みなので、無理[むり]だとおもいます。",
+        "はい、今[いま]すぐ私[わたし]の一存[いちぞん]で確定[かくてい]しておきますね。"
+      ],
+      "choicesEn": [
+        "I will check the factory's operating status and get back to you today.",
+        "Wednesday is my day off, so I think it's impossible.",
+        "Yes, I'll lock it in right now solely on my own say-so."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "In Japanese business etiquette, promising to check production capacity and reply within the day (確認のうえ、本日中にお返事いたします) is the standard, professional response."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "前倒[まえだお]しする",
+          "reading": "まえだおしする",
+          "en": "to move a schedule forward"
+        },
+        {
+          "jp": "確認[かくにん]のうえ",
+          "reading": "かくにんのうえ",
+          "en": "after checking / upon confirming"
+        }
+      ]
+    },
+    {
+      "id": "l-n2-25",
+      "jlpt": 2,
+      "taskType": "tougou",
+      "titleJp": "統合[とうごう]理解[りかい]：社内[しゃない]英語[えいご]研修[けんしゅう]プログラムの選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Choosing a Corporate English Training Plan",
+      "situationEn": "Two HR staff compare four English training programs to pick one for overseas-bound engineers.",
+      "introJp": "人事部[じんじぶ]の二人[ふたり]が、海外[かいがい]赴任[ふにん]予定[よてい]の技術者[ぎじゅつしゃ]向[む]けの英語[えいご]研修[けんしゅう]プランを四[よっ]つ比[くら]べています。二人[ふたり]はどのプランを選[えら]ぶことにしましたか。",
+      "introEn": "Two HR officers compare four corporate English training plans. Which plan do they choose?",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "技術[ぎじゅつ]部[ぶ]の十人[じゅうにん]向[む]けの英語[えいご]研修[けんしゅう]、四社[よんしゃ]から見積[みつも]りが届[とど]いたよ。まずA社[しゃ]は週[しゅう]二回[にかい]の対面[たいめん]グループ授業[じゅぎょう]で、費用[ひよう]が一番[いちばん]安[やす]い。",
+          "en": "Quotes arrived from four providers for the 10 engineers' English training. First, Company A offers twice-weekly in-person group lessons and has the lowest cost."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "うーん、技術[ぎじゅつ]部[ぶ]は現場[げんば]出張[しゅっちょう]が多[おお]くて全員[ぜんいん]が同[おな]じ時間[じかん]に集[あつ]まるのは厳[きび]しいんですよね。個別[こべつ]に時間[じかん]を選[えら]べるオンライン型[がた]じゃないと続[つづ]かないと思[おも]います。",
+          "en": "Hmm, the engineering team travels to sites a lot, so gathering everyone at the same time is tough. Unless it's an online format where each person can pick times, they won't stick with it."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "なるほど。じゃあB社[しゃ]は動画[どうが]視聴[しちょう]のみの自習[じしゅう]型[がた]オンライン。C社[しゃ]は二十四時間[にじゅうよじかん]予約[よやく]できるオンラインマンツーマンで、技術[ぎじゅつ]プレゼン特化[とっか]コースがある。D社[しゃ]もオンラインマンツーマンだけど、日常[にちじょう]会話[かいわ]中心[ちゅうしん]で予算[よさん]を少[すこ]しオーバーするな。",
+          "en": "Got it. Then Company B is self-study video-only online. Company C offers 24-hour bookable 1-on-1 online lessons with a technical presentation track. Company D is also 1-on-1 online, but focuses on daily conversation and slightly exceeds our budget."
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "jp": "動画[どうが]を見[み]るだけでは実際[じっさい]の会議[かいぎ]で話[はな]せるようになりませんよね。予算[よさん]内[ない]で実践的[じっせんてき]なプレゼン練習[れんしゅう]までできるところが理想的[りそうてき]です。",
+          "en": "Just watching videos won't get them speaking in real meetings. One within budget that includes practical presentation practice is ideal."
+        },
+        {
+          "speaker": "Man",
+          "role": "male",
+          "jp": "よし、決[き]まりだね。さっそく担当[たんとう]へ連絡[れんらく]しよう。",
+          "en": "Alright, that settles it. Let's contact their rep right away."
+        }
+      ],
+      "questionJp": "二人[ふたり]はどのプランを選[えら]ぶことにしましたか。",
+      "questionEn": "Which training provider did the two decide to select?",
+      "choices": [
+        "A社[しゃ]（対面[たいめん]グループ授業[じゅぎょう]）",
+        "B社[しゃ]（動画[どうが]視聴[しちょう]のみの自習[じしゅう]型[がた]）",
+        "C社[しゃ]（オンライン個別[こべつ]・技術[ぎじゅつ]プレゼン特化[とっか]）",
+        "D社[しゃ]（オンライン個別[こべつ]・日常[にちじょう]会話[かいわ]中心[ちゅうしん]）"
+      ],
+      "choicesEn": [
+        "Company A (in-person group lessons)",
+        "Company B (video-only self-study)",
+        "Company C (online 1-on-1 with technical presentation track)",
+        "Company D (online 1-on-1 daily conversation)"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "A fails scheduling flexibility, B lacks live speaking, and D focuses on casual talk while exceeding budget—leaving Company C."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "予算[よさん]をオーバーする",
+          "reading": "よさんをおーばーする",
+          "en": "to exceed the budget"
+        },
+        {
+          "jp": "特化[とっか]コース",
+          "reading": "とっかこーす",
+          "en": "specialized course"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "level": 1,
+  "pack": "n1-pack4",
+  "items": [
+    {
+      "id": "l-n1-21",
+      "jlpt": 1,
+      "taskType": "kadai",
+      "titleJp": "自治[じち]体[たい]広報誌[こうほうし]の特集[とくしゅう]記事[きじ]差替[さしかえ]対応[たいおう]",
+      "titleEn": "Emergency Revision for a Municipal Magazine Feature",
+      "situationEn": "Two editors in a city PR office handle an urgent last-minute factual correction before printing.",
+      "introJp": "市役所[しやくしょ]の広報[こうほう]課[か]で課長[かちょう]と職員[しょくいん]が話[はな]しています。職員[しょくいん]はこれからまず何[なに]をしますか。",
+      "introEn": "A section chief and a staff member talk in a city PR office. What will the staff member do first?",
+      "lines": [
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "課長[かちょう]、来月号[らいげつごう]の広報誌[こうほうし]なんですが、先ほど[さきほど]福祉[ふくし]課[か]から連絡[れんらく]がありまして、特集[とくしゅう]ページに載[の]せた補助金[ほじょきん]の所得[しょとく]制限[せいげん]が議会[ぎかい]で一部[いちぶ]見直[みなお]されたそうなんです。",
+          "en": "Chief, regarding next month's municipal magazine, the Welfare Division just called saying the income cap for the subsidy featured on our special page was partially revised by the assembly."
+        },
+        {
+          "speaker": "Chief",
+          "role": "male",
+          "jp": "印刷[いんさつ]会社[がいしゃ]への入稿[にゅうこう]は今日[きょう]の夕方[ゆうがた]だったな。データ修正[しゅうせい]は間[ま]に合[あ]うのか。",
+          "en": "Submission to the printer was this evening, wasn't it? Can we make it in time to revise the layout?"
+        },
+        {
+          "speaker": "Staff",
+          "role": "female",
+          "jp": "デザイン会社[がいしゃ]にはすぐ差[さ]し替[か]えられるか確認[かくにん]するつもりですが、まず福祉[ふくし]課[か]から確定[かくてい]版[ばん]の数値[すうち]を文書[ぶんしょ]でもらわないと正確[せいかく]な原稿[げんこう]が書[か]けません。",
+          "en": "I intend to check with the design firm if they can swap it immediately, yet without receiving the finalized figures in writing from Welfare first, I can't write accurate copy."
+        },
+        {
+          "speaker": "Chief",
+          "role": "male",
+          "jp": "その通[とお]りだ。印刷[いんさつ]会社[がいしゃ]への納期[のうき]交渉[こうしょう]は私[わたし]が直接[ちょくせつ]電話[でんわ]しておく。君[きみ]は直[ただ]ちに福祉[ふくし]課[か]へ確定[かくてい]資料[しりょう]を請求[せいきゅう]して、届[とど]き次第[しだい]デザイン会社[がいしゃ]へ投[な]げてくれ。",
+          "en": "Exactly. I'll call the printer directly to negotiate the deadline. You immediately request the finalized document from Welfare, and as soon as it arrives, send it to the design firm."
+        }
+      ],
+      "questionJp": "職員[しょくいん]はこれからまず何[なに]をしますか。",
+      "questionEn": "What will the staff member do first?",
+      "choices": [
+        "印刷[いんさつ]会社[がいしゃ]に締切[しめきり]延長[えんちょう]を交渉[こうしょう]する",
+        "福祉[ふくし]課[か]に確定[かくてい]版[ばん]の数値[すうち]資料[しりょう]を請求[せいきゅう]する",
+        "デザイン会社[がいしゃ]へ仮[かり]の原稿[げんこう]を送[おく]る",
+        "市[し]のウェブサイトにお詫[わ]び文[ぶん]を掲載[けいさい]する"
+      ],
+      "choicesEn": [
+        "Negotiate a deadline extension with the printing company",
+        "Request the finalized official figures in writing from the Welfare Division",
+        "Send a provisional draft to the design firm",
+        "Post an apology notice on the city website"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The chief calls the printer himself and instructs the staff member to immediately request the finalized figures from the Welfare Division first."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "入稿[にゅうこう]",
+          "reading": "にゅうこう",
+          "en": "submitting final print copy/data"
+        },
+        {
+          "jp": "直[ただ]ちに",
+          "reading": "ただちに",
+          "en": "immediately; at once (formal)"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-22",
+      "jlpt": 1,
+      "taskType": "point",
+      "titleJp": "講演[こうえん]：都市[とし]緑化[りょっか]における「維持[いじ]の罠[わな]」",
+      "titleEn": "Lecture: The 'Maintenance Trap' in Urban Greening",
+      "situationEn": "An urban ecologist discusses why many municipal tree-planting projects falter years later.",
+      "introJp": "大学[だいがく]の公開[こうかい]講座[こうざ]で研究者[けんきゅうしゃ]が話[はな]しています。研究者[けんきゅうしゃ]は、都市[とし]緑化[りょっか]事業[じぎょう]が失敗[しっぱい]しやすい最大[さいだい]の要因[よういん]は何[なに]だと述[の]べていますか。",
+      "introEn": "A researcher speaks at a public lecture. What does the researcher state is the biggest factor behind failing urban greening projects?",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "近年[きんねん]、ヒートアイランド対策[たいさく]として「街路樹[がいろじゅ]を何万本[なんまんぼん]植[う]える」といった華々[はなばな]しい目標[もくひょう]を掲[かか]げる自治体[じちたい]が相次[あいつ]いでいます。",
+          "en": "Recently, municipalities one after another have announced ambitious targets like 'planting tens of thousands of street trees' to combat urban heat islands."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "しかし、植樹[しょくじゅ]から五年[ごねん]後[ご]の調査[ちょうさ]を見[み]ますと、枯死[こし]したり生育[せいいく]不良[ふりょう]に陥[おちい]ったりする事例[じれい]が少[すく]なくありません。原因[げんいん]を気候[きこう]変動[へんどう]や土壌[どじょう]の悪[わる]さに帰[き]する声[こえ]もありますが、根本[こんぽん]的[てき]な問題[もんだい]は予算[よさん]構造[こうぞう]にあります。",
+          "en": "Yet surveys five years after planting show numerous cases of trees dying or failing to thrive. Some blame climate change or poor soil, but the root issue lies in the budget structure."
+        },
+        {
+          "speaker": "Professor",
+          "role": "male",
+          "jp": "つまり、見栄[みば]えの良[よ]い「植[う]える段階[だんかい]」には潤沢[じゅんたく]な初期[しょき]投資[とうし]がつく一方[いっぽう]で、剪定[せんてい]や灌水[かんすい]といった地味[じみ]な継続[けいぞく]管理[かんり]費[ひ]が後回[あとまわ]しにされがちなのです。本数[ほんすう]を誇[ほこ]るより、十年[じゅうねん]先[さき]まで育[そだ]て切[き]る維持[いじ]計画[けいかく]こそが要[かなめ]と言[い]えます。",
+          "en": "In short, while flashy 'planting phases' receive generous upfront investment, unglamorous ongoing maintenance costs like pruning and watering tend to be neglected. Rather than boasting about tree counts, a ten-year stewardship plan is the true linchpin."
+        }
+      ],
+      "questionJp": "研究者[けんきゅうしゃ]は、都市[とし]緑化[りょっか]事業[じぎょう]が失敗[しっぱい]しやすい最大[さいだい]の要因[よういん]は何[なに]だと述[の]べていますか。",
+      "questionEn": "What does the researcher identify as the root factor causing urban greening projects to fail?",
+      "choices": [
+        "気候[きこう]変動[へんどう]によって都市部[としぶ]の土壌[どじょう]が完全[かんぜん]に劣化[れっか]したこと",
+        "初期[しょき]の植樹[しょくじゅ]には予算[よさん]をつける一方[いっぽう]、継続的[けいぞくてき]な維持[いじ]管理[かんり]費[ひ]を軽視[けいし]する予算[よさん]構造[こうぞう]",
+        "街路樹[がいろじゅ]の景観[けいかん]に対する[たいする]住民[じゅうみん]の反対[はんたい]運動[うんどう]が強[つよ]いこと",
+        "植[う]える木[き]の種類[しゅるい]をすべからく外来種[がいらいしゅ]に統一[とういつ]したこと"
+      ],
+      "choicesEn": [
+        "Complete soil degradation caused by climate change",
+        "A budget structure that funds initial planting while neglecting ongoing maintenance",
+        "Strong resident opposition against street tree aesthetics",
+        "Standardizing all plantings exclusively on foreign tree species"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "While some blame climate or soil, the lecturer explicitly identifies the root problem as a budget structure favoring flashy initial planting over steady maintenance."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "～に帰[き]する",
+          "reading": "～にきする",
+          "en": "to attribute to ..."
+        },
+        {
+          "jp": "要[かなめ]",
+          "reading": "かなめ",
+          "en": "linchpin; vital point"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-23",
+      "jlpt": 1,
+      "taskType": "gaiyou",
+      "titleJp": "論説[ろんせつ]：専門[せんもん]用語[ようご]の「翻訳[ほんやく]者[しゃ]」の必要性[ひつようせい]",
+      "titleEn": "Commentary: The Need for Translators Between Specialist Fields",
+      "situationEn": "A science communicator discusses interdisciplinary collaboration on a radio commentary show.",
+      "introJp": "ラジオで評論家[ひょうろんか]が学際[がくさい]研究[けんきゅう]について話[はな]しています。評論家[ひょうろんか]が最も[もっとも]主張[しゅちょう]したいことは何[なに]ですか。",
+      "introEn": "A commentator speaks on the radio about interdisciplinary work. What is their main thesis?",
+      "lines": [
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "異[い]分野[ぶんや]の専門家[せんもんか]が集[あつ]まれば画期的[かっきてき]な発見[はっけん]が生[う]まれるとよく言[い]われますが、現場[げんば]では同[おな]じ言葉[ことば]を使[つか]っていても定義[ていぎ]が微妙[びみょう]に食[く]い違[ちが]い、議論[ぎろん]が噛[か]み合[あ]わないことが多々[たた]あります。",
+          "en": "People often say gathering experts from different fields yields breakthroughs, yet in practice even identical terms carry subtly different definitions, so discussions frequently talk past one another."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "例[たと]えば「リスク」という一語[いちご]をとってみても、工学[こうがく]者[しゃ]は確率[かくりつ]と損失[そんしつ]の積[せき]として捉[とら]えるのに対し、法学者[ほうがくしゃ]や市民[しみん]は責任[せきにん]や納得[なっとく]感[かん]の文脈[ぶんみゃく]で語[かた]ります。",
+          "en": "Take the single word 'risk': engineers treat it as probability times loss, whereas legal scholars and citizens discuss it in terms of accountability and perceived acceptability."
+        },
+        {
+          "speaker": "Commentator",
+          "role": "female",
+          "jp": "したがって、単[たん]に専門家[せんもんか]を同[おな]じ会議室[かいぎしつ]に集[あつ]めるだけでなく、双方[そうほう]の前提[ぜんてい]や語彙[ごい]を橋渡[はしわた]しする「領域[りょういき]間[かん]の通訳[つうやく]者[しゃ]」を制度[せいど]として育成[いくせい]・評価[ひょうか]していくことが不可欠[ふかけつ]なのです。",
+          "en": "Therefore, rather than merely putting specialists in the same room, it is indispensable to institutionally train and recognize 'cross-domain interpreters' who bridge both sides' assumptions and vocabularies."
+        }
+      ],
+      "questionJp": "評論家[ひょうろんか]が最も[もっとも]主張[しゅちょう]したいことは何[なに]ですか。",
+      "questionEn": "What is the commentator's central argument?",
+      "choices": [
+        "異[い]分野[ぶんや]の連携[れんけい]は誤解[ごかい]を生[う]むだけなので避[さ]けるべきだ。",
+        "専門[せんもん]領域[りょういき]の前提[ぜんてい]や用語[ようご]を橋渡[はしわた]しする人材[じんざい]を育成[いくせい]・評価[ひょうか]すべきだ。",
+        "すべての学問[がくもん]で専門[せんもん]用語[ようご]を廃止[はいし]して日常[にちじょう]語[ご]に統一[とういつ]すべきだ。",
+        "工学[こうがく]的[てき]なリスク計算[けいさん]だけを政策[せいさく]判断[はんだん]の基準[きじゅん]とすべきだ。"
+      ],
+      "choicesEn": [
+        "Cross-disciplinary collaboration only creates misunderstandings and should be avoided",
+        "We should train and recognize bridging professionals who translate assumptions and terms across fields",
+        "All specialist terminology should be abolished in favor of everyday words",
+        "Only engineering risk formulas should guide policy decisions"
+      ],
+      "answerIndex": 1,
+      "explanationEn": "The closing conclusion urges institutionally training and valuing cross-domain interpreters who bridge differing assumptions and terminology."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "議論[ぎろん]が噛[か]み合[あ]わない",
+          "reading": "ぎろんがかみあわない",
+          "en": "discussions fail to mesh / talk past each other"
+        },
+        {
+          "jp": "橋渡[はしわた]しする",
+          "reading": "はしわたしする",
+          "en": "to bridge / mediate between"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-24",
+      "jlpt": 1,
+      "taskType": "sokuji",
+      "titleJp": "役員[やくいん]からの厳しい[きびしい]指摘[してき]への応対[おうたい]",
+      "titleEn": "Quick Response: Responding Diplomatically to a Director's Concern",
+      "situationEn": "A board director warns that your proposal's assumptions look overly optimistic.",
+      "introJp": "会議[かいぎ]で役員[やくいん]が発言[はつげん]しました。何[なん]と言[い]いますか。",
+      "introEn": "A senior executive speaks during a board review. What is the most appropriate response?",
+      "lines": [
+        {
+          "speaker": "Director",
+          "role": "male",
+          "jp": "この試算[しさん]、少し見通[みとお]しが甘[あま]いんじゃないかね。競合[きょうごう]が値下げ[ねさげ]に踏[ふ]み切[き]った場合[ばあい]を織[お]り込[こ]んでいるのかね。",
+          "en": "Isn't this projection a bit overly optimistic? Have you factored in a scenario where competitors cut prices?"
+        }
+      ],
+      "questionJp": "何[なん]と言[い]いますか。",
+      "questionEn": "What is the most appropriate reply?",
+      "choices": [
+        "ご指摘[してき]の点[てん]はごもっともです。値下げ[ねさげ]局面[きょくめん]の試算[しさん]も加[くわ]え、改[あらた]めてご報告[ほうこく]いたします。",
+        "いえ、競合[きょうごう]は絶対に[ぜったいに]値下げ[ねさげ]しないはずですのでご安心[あんしん]ください。",
+        "それほどおっしゃるなら、別[べつ]の部署[ぶしょ]に試算[しさん]を任[まか]せていただいて構[かま]いません。"
+      ],
+      "choicesEn": [
+        "Your point is entirely valid. I will add a price-cut stress scenario and report back.",
+        "No, competitors definitely won't cut prices, so please rest assured.",
+        "If you insist that much, feel free to hand the forecast to another department."
+      ],
+      "answerIndex": 0,
+      "explanationEn": "\"ご指摘の点はごもっともです\" gracefully validates the executive's critique without defensiveness, followed by committing to a stress-tested revision."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "見通[みとお]しが甘[あま]い",
+          "reading": "みとおしがあまい",
+          "en": "overly optimistic forecast"
+        },
+        {
+          "jp": "ごもっともです",
+          "reading": "ごもっともです",
+          "en": "you are quite right / your point is entirely valid"
+        }
+      ]
+    },
+    {
+      "id": "l-n1-25",
+      "jlpt": 1,
+      "taskType": "tougou",
+      "titleJp": "統合[とうごう]理解[りかい]：歴史的[れきしてき]建造物[けんぞうぶつ]の活用[かつよう]案[あん]の選定[せんてい]",
+      "titleEn": "Integrated Comprehension: Selecting a Historic Building Reuse Proposal",
+      "situationEn": "A city council committee evaluates four proposals for repurposing a 1920s brick hall.",
+      "introJp": "自治体[じちたい]の検討[けんとう]委員会[いいんかい]で、築[ちく]百年[ひゃくねん]のレンガ造[づく]りの建物[たてもの]をどう活用[かつよう]するか、四[よっ]つの案[あん]を議論[ぎろん]しています。委員会[いいんかい]はどの案[あん]を推[お]す方向[ほうこう]にまとまりましたか。",
+      "introEn": "A municipal committee debates four reuse proposals for a 100-year-old brick building. Which proposal do they agree to recommend?",
+      "lines": [
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "旧[きゅう]公会堂[こうかいどう]の活用[かつよう]案[あん]が四[よっ]つ出揃[でそろ]いました。前提[ぜんてい]として、市[し]の財政[ざいせい]負担[ふたん]を抑[おさ]えつつ、市民[しみん]が日常的[にちじょうてき]に立ち寄[たちよ]れること、そして外観[がいかん]の歴史的[れきしてき]価値[かち]を損[そこ]なわないことが条件[じょうけん]です。",
+          "en": "All four proposals for the Old Public Hall are in. Our premises are curbing municipal fiscal burden, enabling everyday citizen access, and preserving the exterior's historic value."
+        },
+        {
+          "speaker": "Member A",
+          "role": "female",
+          "jp": "まず一案[いちあん]の「完全[かんぜん]保存[ほぞん]・資料館[しりょうかん]化[か]」は外観[がいかん]を守[まも]れますが、入場[にゅうじょう]料[りょう]だけでは維持[いじ]費[ひ]の赤字[あかじ]が毎年[まいとし]膨[ふく]らみ、市民[しみん]の再訪[さいほう]も見込[みこ]みにくいですね。二案[にあん]の「民間[みんかん]高級[こうきゅう]ホテル誘致[ゆうち]」は収益[しゅうえき]性[せい]が高[たか]い反面[はんめん]、宿泊[しゅくはく]客[きゃく]以外[いがい]は立[た]ち入[い]りづらく、大規模[だいきぼ]な増築[ぞうちく]で外観[がいかん]も変[か]わってしまいます。",
+          "en": "First, Proposal 1 (full preservation as an archive museum) protects the exterior, yet ticket revenue alone leaves growing annual deficits and few repeat local visits. Proposal 2 (luxury private hotel) yields strong revenue, but non-guests can barely enter and major extensions alter the exterior."
+        },
+        {
+          "speaker": "Member B",
+          "role": "male2",
+          "jp": "三案[さんあん]の「外観[がいかん]保全[ほぜん]＋一階[いっかい]カフェ・二階[にかい]市民[しみん]ギャラリー」なら、カフェの賃料[ちんりょう]収入[しゅうにゅう]で維持[いじ]費[ひ]の大半[たいはん]を賄[まかな]え、普段[ふだん]使[づか]いの場[ば]にもなります。四案[よんあん]の「解体[かいたい]して複合[ふくごう]商業[しょうぎょう]ビルを新築[しんちく]」は収益[しゅうえき]は最大[さいだい]ですが、歴史的[れきしてき]建造物[けんぞうぶつ]そのものが消滅[しょうめつ]してしまいますからね。",
+          "en": "With Proposal 3 (exterior preservation + ground-floor café and 2nd-floor civic gallery), café rental income covers most upkeep while making it an everyday gathering spot. Proposal 4 (demolishing to build a commercial complex) maximizes revenue, yet erases the historic building itself."
+        },
+        {
+          "speaker": "Chair",
+          "role": "male",
+          "jp": "なるほど。財政[ざいせい]・日常[にちじょう]利用[りよう]・景観[けいかん]保全[ほぜん]の三[みっ]つをバランスよく満[み]たす案[あん]は明[あき]らかですね。それでは、その方向[ほうこう]で最終[さいしゅう]答申[とうしん]をまとめましょう。",
+          "en": "Indeed. The proposal that balances fiscal sustainability, everyday use, and heritage preservation is clear. Let's draft our final recommendation along those lines."
+        }
+      ],
+      "questionJp": "委員会[いいんかい]はどの案[あん]を推[お]す方向[ほうこう]にまとまりましたか。",
+      "questionEn": "Which proposal did the committee decide to recommend?",
+      "choices": [
+        "一案[いちあん]：完全[かんぜん]保存[ほぞん]して資料館[しりょうかん]にする",
+        "二案[にあん]：増築[ぞうちく]して民間[みんかん]の高級[こうきゅう]ホテルを誘致[ゆうち]する",
+        "三案[さんあん]：外観[がいかん]を保[たも]ち、一階[いっかい]をカフェ・二階[にかい]を市民[しみん]ギャラリーにする",
+        "四案[よんあん]：解体[かいたい]して複合[ふくごう]商業[しょうぎょう]ビルを新築[しんちく]する"
+      ],
+      "choicesEn": [
+        "Proposal 1: Full preservation as an archive museum",
+        "Proposal 2: Expand and attract a luxury private hotel",
+        "Proposal 3: Preserve exterior with a 1F café and 2F civic gallery",
+        "Proposal 4: Demolish and construct a new commercial complex"
+      ],
+      "answerIndex": 2,
+      "explanationEn": "Proposal 1 runs deficits with low repeat use, Proposal 2 restricts public access and alters the facade, and Proposal 4 destroys the building—making Proposal 3 the only one satisfying all three criteria."
+      ,
+      "keyPhrases": [
+        {
+          "jp": "維持[いじ]費[ひ]を賄[まかな]う",
+          "reading": "いじひをまかなう",
+          "en": "to cover maintenance costs"
+        },
+        {
+          "jp": "最終[さいしゅう]答申[とうしん]",
+          "reading": "さいしゅうとうしん",
+          "en": "final committee recommendation/report"
+        }
+      ]
+    }
+  ]
+}
