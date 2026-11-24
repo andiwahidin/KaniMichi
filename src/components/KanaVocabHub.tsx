@@ -1292,7 +1292,7 @@ export const KanaVocabHub: React.FC = () => {
                   placeholder={
                     activeQuestionKind === 'listening'
                       ? 'こたえ (ketik romaji / hiragana sesuai audio)...'
-                      : 'Type English meaning...'
+                      : 'Ketik arti kosakata (Inggris atau sinonim)...'
                   }
                   autoComplete="off"
                   autoCorrect="off"

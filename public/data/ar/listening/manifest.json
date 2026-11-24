@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "lang": "ar",
+  "module": "listening",
+  "totalCount": 10,
+  "packs": ["pack1.json"]
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getLevelMeta } from '../data/curriculum';
 import { SrsMode } from '../types/curriculum';
 import { getSrsPolicy, SRS_STAGE_NAMES } from '../utils/srs';
 
@@ -49,6 +50,8 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
   onExploreLevels,
   onInspectCategory,
 }) => {
+  const levelMeta = getLevelMeta(currentLevel);
+  const nextMeta = currentLevel < maxLevel ? getLevelMeta(currentLevel + 1) : null;
   const policy = getSrsPolicy(srsMode);
   const levelUpStageLabel = SRS_STAGE_NAMES[policy.levelUpKanjiStage];
   const canAdvanceEarly =
@@ -97,9 +100,9 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
       data: radicals,
       caption:
         radicals.total === 0
-          ? 'Tidak ada radikal baru di level ini'
+          ? 'Tidak ada radikal baru di bab ini'
           : radicals.mastered >= radicals.total
-          ? 'Semua radikal level ini sudah dikuasai'
+          ? 'Semua radikal bab ini sudah dikuasai'
           : `${radicals.learning} belajar · ${Math.max(
               0,
               radicals.total - radicals.mastered - radicals.learning
@@ -113,12 +116,12 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
       data: kanji,
       caption:
         currentLevel >= maxLevel
-          ? 'Level maksimal (Lv. 60) tercapai'
+          ? 'Seluruh Materi JLPT N5–N1 Tercapai'
           : kanjiRemainingForLevelUp === 0 && kanji.total > 0
-          ? `Syarat naik ke Level ${currentLevel + 1} terpenuhi`
-          : `Target Lv.${currentLevel + 1}: ${kanjiQualifiedForLevelUp}/${requiredKanjiForLevelUp} ${levelUpStageLabel} (${kanjiRemainingForLevelUp} lagi)`,
+          ? `Syarat lanjut ke ${nextMeta?.jlpt} Bab ${nextMeta?.unitInTier} terpenuhi`
+          : `Target ${nextMeta?.jlpt} Bab ${nextMeta?.unitInTier}: ${kanjiQualifiedForLevelUp}/${requiredKanjiForLevelUp} ${levelUpStageLabel} (${kanjiRemainingForLevelUp} lagi)`,
       targetMarkerPct: kanjiTargetPct,
-      targetTooltip: `Syarat naik level (${policy.label}): ${requiredKanjiForLevelUp} dari ${kanji.total} Kanji mencapai ${levelUpStageLabel} (90%)`,
+      targetTooltip: `Syarat buka bab berikutnya (${policy.label}): ${requiredKanjiForLevelUp} dari ${kanji.total} Kanji mencapai ${levelUpStageLabel} (90%)`,
     },
     {
       key: 'vocabulary',
@@ -127,9 +130,9 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
       data: vocabulary,
       caption:
         vocabulary.total === 0
-          ? 'Tidak ada kosakata di level ini'
+          ? 'Tidak ada kosakata di bab ini'
           : vocabulary.mastered >= vocabulary.total
-          ? 'Semua kosakata level ini sudah dikuasai'
+          ? 'Semua kosakata bab ini sudah dikuasai'
           : `${vocabulary.learning} belajar · ${Math.max(
               0,
               vocabulary.total - vocabulary.mastered - vocabulary.learning
@@ -148,7 +151,7 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
         <div className="min-w-0 space-y-1">
           <div className="text-xs text-slate-500 dark:text-slate-400 flex flex-wrap items-center gap-2">
             <span className="font-mono-num tabular-nums font-semibold text-slate-700 dark:text-slate-300">
-              Level {currentLevel} / {maxLevel}
+              {levelMeta.title}
             </span>
             <span aria-hidden="true">·</span>
             <span>{tierLabel}</span>
@@ -161,7 +164,7 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
             id="level-mastery-heading"
             className="font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight"
           >
-            Progres Penguasaan Level {currentLevel}
+            Progres Penguasaan {levelMeta.jlpt} · Bab {levelMeta.unitInTier}
           </h2>
         </div>
 
@@ -175,13 +178,13 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
             </span>
           </div>
           <div className="flex items-center gap-3">
-            {canAdvanceEarly && (
+            {canAdvanceEarly && nextMeta && (
               <button
                 type="button"
                 onClick={onAdvanceLevelEarly}
                 className="px-3 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs font-semibold whitespace-nowrap shrink-0 transition-colors cursor-pointer"
               >
-                Buka Level {currentLevel + 1} Sekarang
+                Buka {nextMeta.jlpt} Bab {nextMeta.unitInTier} Sekarang
               </button>
             )}
             <button
@@ -189,7 +192,7 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
               onClick={onExploreLevels}
               className="text-xs font-semibold text-[#0284C7] hover:underline whitespace-nowrap shrink-0 cursor-pointer"
             >
-              Jelajahi 60 Level →
+              Jelajahi Materi JLPT N5–N1 →
             </button>
           </div>
         </div>
@@ -199,7 +202,7 @@ export const LevelProgressBar: React.FC<LevelProgressBarProps> = ({
       <div className="space-y-2.5">
         <div
           role="progressbar"
-          aria-label={`Penguasaan total Level ${currentLevel}: ${totalMastered} dari ${totalItems} item (${overallMasteredPct}%)`}
+          aria-label={`Penguasaan total ${levelMeta.title}: ${totalMastered} dari ${totalItems} item (${overallMasteredPct}%)`}
           aria-valuenow={overallMasteredPct}
           aria-valuemin={0}
           aria-valuemax={100}

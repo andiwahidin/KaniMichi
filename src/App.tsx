@@ -8,6 +8,7 @@ import { ItemDetailModal } from './components/ItemDetailModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AuthModal } from './components/AuthModal';
 import { OfflineIndicator } from './components/OfflineIndicator';
+import { AiTutorDrawer } from './components/AiTutorDrawer';
 
 const CurriculumBrowser = lazy(() =>
   import('./components/CurriculumBrowser').then((m) => ({
@@ -70,6 +71,47 @@ const PronunciationHub = lazy(() =>
   }))
 );
 
+const UnifiedHomeDashboard = lazy(() =>
+  import('./components/UnifiedHomeDashboard').then((m) => ({
+    default: m.UnifiedHomeDashboard,
+  }))
+);
+const LanguageWorkspaceHome = lazy(() =>
+  import('./components/LanguageWorkspaceHome').then((m) => ({
+    default: m.LanguageWorkspaceHome,
+  }))
+);
+const LanguageVocabSrsHub = lazy(() =>
+  import('./components/LanguageVocabSrsHub').then((m) => ({
+    default: m.LanguageVocabSrsHub,
+  }))
+);
+const LanguageGrammarHub = lazy(() =>
+  import('./components/LanguageGrammarHub').then((m) => ({
+    default: m.LanguageGrammarHub,
+  }))
+);
+const LanguageReadingHub = lazy(() =>
+  import('./components/LanguageReadingHub').then((m) => ({
+    default: m.LanguageReadingHub,
+  }))
+);
+const LanguageListeningHub = lazy(() =>
+  import('./components/LanguageListeningHub').then((m) => ({
+    default: m.LanguageListeningHub,
+  }))
+);
+const WritingSpeakingStudio = lazy(() =>
+  import('./components/WritingSpeakingStudio').then((m) => ({
+    default: m.WritingSpeakingStudio,
+  }))
+);
+const MultiExamSimulatorHub = lazy(() =>
+  import('./components/MultiExamSimulatorHub').then((m) => ({
+    default: m.MultiExamSimulatorHub,
+  }))
+);
+
 const ModuleLoadingFallback: React.FC = () => (
   <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-8 text-center space-y-2">
@@ -77,7 +119,7 @@ const ModuleLoadingFallback: React.FC = () => (
         Memuat modul latihan...
       </div>
       <p className="text-xs text-slate-500 dark:text-slate-400">
-        Menyiapkan tampilan dan materi belajar KaniMichi.
+        Menyiapkan tampilan dan materi belajar Leksika.
       </p>
     </div>
   </main>
@@ -85,6 +127,8 @@ const ModuleLoadingFallback: React.FC = () => (
 
 const AppShell: React.FC = () => {
   const {
+    activeLanguage,
+    setActiveLanguage,
     activeView,
     extraStudyMode,
     setActiveView,
@@ -97,6 +141,7 @@ const AppShell: React.FC = () => {
   } = useApp();
   const isFullStudySession =
     activeView === 'lesson' || activeView === 'review' || activeView === 'extra-study';
+  const workspaceLang: 'en' | 'ar' = activeLanguage === 'ar' ? 'ar' : 'en';
 
   useEffect(() => {
     if (!Capacitor.isNativePlatform()) return;
@@ -111,7 +156,18 @@ const AppShell: React.FC = () => {
       } else if (authModalOpen) {
         closeAuthModal();
       } else if (activeView !== 'dashboard') {
-        setActiveView('dashboard');
+        if (
+          activeView === 'lang-vocab' ||
+          activeView === 'lang-grammar' ||
+          activeView === 'lang-reading' ||
+          activeView === 'lang-listening' ||
+          activeView === 'lang-studio' ||
+          activeView === 'lang-exam'
+        ) {
+          setActiveView('lang-home');
+        } else {
+          setActiveView('dashboard');
+        }
       } else {
         void CapacitorApp.exitApp();
       }
@@ -145,8 +201,24 @@ const AppShell: React.FC = () => {
       <TopBar />
 
       <div className="flex-1 min-w-0 w-full">
-        {activeView === 'dashboard' && <Dashboard />}
+        {activeView === 'dashboard' && activeLanguage === 'ja' && <Dashboard />}
         <Suspense fallback={<ModuleLoadingFallback />}>
+          {activeView === 'dashboard' && activeLanguage === 'all' && <UnifiedHomeDashboard />}
+          {activeView === 'dashboard' &&
+            (activeLanguage === 'en' || activeLanguage === 'ar') && (
+              <LanguageWorkspaceHome lang={activeLanguage} />
+            )}
+
+          {/* Multi-language workspace views (English & Arabic) */}
+          {activeView === 'lang-home' && <LanguageWorkspaceHome lang={workspaceLang} />}
+          {activeView === 'lang-vocab' && <LanguageVocabSrsHub lang={workspaceLang} />}
+          {activeView === 'lang-grammar' && <LanguageGrammarHub lang={workspaceLang} />}
+          {activeView === 'lang-reading' && <LanguageReadingHub lang={workspaceLang} />}
+          {activeView === 'lang-listening' && <LanguageListeningHub lang={workspaceLang} />}
+          {activeView === 'lang-studio' && <WritingSpeakingStudio />}
+          {activeView === 'lang-exam' && <MultiExamSimulatorHub lang={workspaceLang} />}
+
+          {/* Existing Japanese / JLPT views (100% preserved) */}
           {activeView === 'levels' && <CurriculumBrowser mode="levels" />}
           {activeView === 'radicals' && <CurriculumBrowser mode="radicals" />}
           {activeView === 'kanji' && <CurriculumBrowser mode="kanji" />}
@@ -172,86 +244,94 @@ const AppShell: React.FC = () => {
         <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] mt-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400 text-center sm:text-left">
             <div>
-              KaniMichi — Pembelajaran Radikal, Kanji &amp; Kosakata Jepang berbasis SRS
+              Leksika — Platform Belajar Multibahasa &amp; Sertifikasi Global (JLPT · TOEFL · IELTS ·
+              TOEIC · TOAFL)
             </div>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-              <button
-                type="button"
-                onClick={() => setActiveView('levels')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Hierarki Level
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('radicals')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Radikal
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('kanji')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Kanji
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('vocabulary')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Kosakata
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('kana-vocab')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Kana JLPT
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('grammar')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Grammar
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('reading')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Dokkai
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('listening')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Chōkai
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('writing')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Menulis
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('pronunciation')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Pelafalan
-              </button>
-              <button
-                type="button"
-                onClick={() => setActiveView('mock-exam')}
-                className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
-              >
-                Mogi Shiken
-              </button>
+              {activeLanguage === 'ja' ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('levels')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Materi JLPT N5–N1
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('kanji')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Kanji
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('kana-vocab')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Kana JLPT
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('grammar')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Grammar
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('reading')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Dokkai
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('listening')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Chōkai
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveView('mock-exam')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Mogi Shiken
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setActiveLanguage('all', 'dashboard')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Beranda Gabungan
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveLanguage('ja', 'dashboard')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Jepang · JLPT
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveLanguage('en', 'lang-home')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Inggris · TOEFL/IELTS/TOEIC
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveLanguage('ar', 'lang-home')}
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
+                  >
+                    Arab · TOAFL
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </footer>
@@ -260,6 +340,7 @@ const AppShell: React.FC = () => {
       <ItemDetailModal />
       <SettingsModal />
       <AuthModal />
+      <AiTutorDrawer />
       <OfflineIndicator />
     </div>
   );
@@ -301,7 +382,7 @@ class AppErrorBoundary extends React.Component<
         <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] text-slate-900 p-6">
           <div className="max-w-md w-full bg-white border border-slate-200 rounded-xl p-6 space-y-4">
             <h1 className="font-display text-xl font-bold">
-              Gagal Memuat KaniMichi
+              Gagal Memuat Leksika
             </h1>
             <p className="text-sm text-slate-600">{this.state.message}</p>
             <button

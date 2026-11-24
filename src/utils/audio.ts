@@ -941,3 +941,269 @@ export function isSpeechSupported(): boolean {
     (typeof window !== 'undefined' && 'speechSynthesis' in window)
   );
 }
+
+// ---------------------------------------------------------------------------
+// Multi-Language Speech Synthesis (en-US, en-GB, ar-SA, ja-JP, extensible)
+// ---------------------------------------------------------------------------
+
+function pickVoicesForLang(lang: string): SpeechSynthesisVoice[] {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return [];
+  const voices = window.speechSynthesis.getVoices();
+  const norm = lang.toLowerCase();
+  const base = norm.split('-')[0];
+
+  const exact = voices.filter((v) => v.lang.toLowerCase() === norm);
+  const family = voices.filter(
+    (v) => v.lang.toLowerCase().startsWith(base) && v.lang.toLowerCase() !== norm
+  );
+  const combined = [...exact, ...family];
+  return combined.sort((a, b) => {
+    const aExact = a.lang.toLowerCase() === norm ? 1 : 0;
+    const bExact = b.lang.toLowerCase() === norm ? 1 : 0;
+    if (aExact !== bExact) return bExact - aExact;
+    return Number(b.localService) - Number(a.localService);
+  });
+}
+
+/**
+ * Speak text in any supported language locale (ja-JP, en-US, en-GB, ar-SA, etc.).
+ * Automatically routes Japanese through speakJapanese() so Android offline MP3 packs remain active.
+ */
+export function speakText(
+  text: string,
+  lang = 'en-US',
+  rate = 0.94,
+  role: SpeakerRole = 'narrator',
+  onEnd?: () => void
+): void {
+  const clean = text.trim();
+  if (!clean) {
+    onEnd?.();
+    return;
+  }
+
+  if (lang.toLowerCase().startsWith('ja')) {
+    speakJapanese(clean, rate, role, onEnd);
+    return;
+  }
+
+  if (isNativeAndroidTts()) {
+    speechToken += 1;
+    const myToken = speechToken;
+    clearSpeechMonitors();
+    setExternalAudioPlaying('tts', true);
+
+    const safeRate = Math.max(0.5, Math.min(2, rate));
+    const { pitch } = getVoiceAndPitch(role, []);
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      if (myToken === speechToken) {
+        clearSpeechMonitors();
+        setExternalAudioPlaying('tts', false);
+      }
+      onEnd?.();
+    };
+
+    const estimatedMs = Math.max(1500, Math.round((clean.length * 95) / safeRate) + 1800);
+    speechWatchdogTimer = window.setTimeout(
+      finish,
+      Math.min(45000, Math.max(8000, estimatedMs * 2))
+    );
+
+    NativeTts.speak({ text: clean, lang, rate: safeRate, pitch })
+      .then(() => finish())
+      .catch(() => finish());
+    return;
+  }
+
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+    onEnd?.();
+    return;
+  }
+
+  speechToken += 1;
+  const myToken = speechToken;
+  clearSpeechMonitors();
+
+  let settled = false;
+  const finish = () => {
+    if (settled) return;
+    settled = true;
+    if (myToken === speechToken) {
+      activeUtterance = null;
+      clearSpeechMonitors();
+      setExternalAudioPlaying('tts', false);
+    }
+    onEnd?.();
+  };
+
+  try {
+    const synth = window.speechSynthesis;
+    const wasSpeaking = synth.speaking || synth.pending;
+    synth.cancel();
+    setExternalAudioPlaying('tts', true);
+
+    const safeRate = Math.max(0.5, Math.min(2, rate));
+    const estimatedMs = Math.max(900, Math.round((clean.length * 80) / safeRate) + 600);
+
+    const startSpeaking = () => {
+      if (myToken !== speechToken) return;
+      try {
+        const utterance = new SpeechSynthesisUtterance(clean);
+        utterance.lang = lang;
+        utterance.rate = safeRate;
+
+        const voices = pickVoicesForLang(lang);
+        const { voice, pitch } = getVoiceAndPitch(role, voices);
+        utterance.pitch = pitch;
+        if (voice) {
+          utterance.voice = voice;
+        }
+
+        activeUtterance = utterance;
+        let hasStarted = false;
+        let quietTicks = 0;
+        const startedAt = Date.now();
+
+        utterance.onstart = () => {
+          if (myToken !== speechToken) return;
+          hasStarted = true;
+          quietTicks = 0;
+        };
+        utterance.onend = () => {
+          if (myToken !== speechToken) return;
+          finish();
+        };
+        utterance.onerror = () => {
+          if (myToken !== speechToken) return;
+          finish();
+        };
+
+        speechPollTimer = window.setInterval(() => {
+          if (myToken !== speechToken) {
+            clearSpeechMonitors();
+            return;
+          }
+          const elapsed = Date.now() - startedAt;
+          const isQuiet = !synth.speaking && !synth.pending;
+          if (isQuiet) {
+            quietTicks += 1;
+          } else {
+            quietTicks = 0;
+            hasStarted = true;
+          }
+          if (hasStarted && quietTicks >= 3 && elapsed >= Math.min(1000, estimatedMs * 0.45)) {
+            finish();
+          } else if (!hasStarted && quietTicks >= 3 && elapsed >= Math.max(2800, estimatedMs)) {
+            finish();
+          }
+        }, 250);
+
+        speechWatchdogTimer = window.setTimeout(
+          finish,
+          Math.min(45000, Math.max(7000, Math.round(estimatedMs * 2.2) + 3000))
+        );
+
+        synth.speak(utterance);
+      } catch {
+        finish();
+      }
+    };
+
+    if (wasSpeaking) {
+      speechStartTimer = window.setTimeout(() => {
+        speechStartTimer = null;
+        startSpeaking();
+      }, 60);
+    } else {
+      startSpeaking();
+    }
+  } catch {
+    finish();
+  }
+}
+
+export interface MultiLangDialogueCue {
+  id: string;
+  role: SpeakerRole;
+  text: string;
+  lang?: string;
+  pauseAfterMs?: number;
+}
+
+/**
+ * Sequentially play a multi-speaker dialogue in any supported language locale
+ * (en-US, en-GB, ar-SA, etc.) with role pitch/voice variation and clean cancellation.
+ */
+export function playMultiLangDialogue(
+  cues: MultiLangDialogueCue[],
+  options: {
+    defaultLang?: string;
+    rate?: number;
+    onCueStart?: (cueId: string, index: number) => void;
+    onComplete?: () => void;
+    onError?: () => void;
+  } = {}
+): () => void {
+  const defaultLang = options.defaultLang ?? 'en-US';
+  if (defaultLang.toLowerCase().startsWith('ja')) {
+    return playDialogueSequence(cues, options);
+  }
+  if (cues.length === 0) {
+    options.onComplete?.();
+    return () => {};
+  }
+
+  let cancelled = false;
+  let timerId: number | null = null;
+  const rate = Math.max(0.5, Math.min(2, options.rate ?? 0.94));
+
+  const cancel = () => {
+    cancelled = true;
+    if (timerId !== null) {
+      window.clearTimeout(timerId);
+      timerId = null;
+    }
+    setExternalAudioPlaying('dialogue', false);
+    stopSpeech();
+  };
+
+  stopSpeech();
+  setExternalAudioPlaying('dialogue', true);
+
+  const speakAt = (idx: number) => {
+    if (cancelled) return;
+    if (idx >= cues.length) {
+      setExternalAudioPlaying('dialogue', false);
+      options.onComplete?.();
+      return;
+    }
+
+    const cue = cues[idx];
+    options.onCueStart?.(cue.id, idx);
+    const clean = cue.text.trim();
+    const cueLang = cue.lang || defaultLang;
+
+    const nextStep = () => {
+      if (cancelled) return;
+      const pause = cue.pauseAfterMs ?? 420;
+      timerId = window.setTimeout(() => {
+        timerId = null;
+        speakAt(idx + 1);
+      }, pause);
+    };
+
+    if (!clean) {
+      nextStep();
+      return;
+    }
+
+    speakText(clean, cueLang, rate, cue.role, nextStep);
+  };
+
+  speakAt(0);
+  return cancel;
+}
+

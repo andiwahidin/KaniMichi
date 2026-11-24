@@ -1,0 +1,774 @@
+{
+  "pack": "pack1",
+  "items": [
+    {
+      "id": "en-g-001",
+      "lang": "en",
+      "order": 1,
+      "title": "Negative Adverbial Inversion",
+      "nativeTitle": "Not only / Seldom / Rarely + Auxiliary + Subject",
+      "tracks": ["toefl-itp", "toefl-ibt", "ielts"],
+      "category": "TOEFL ITP Structure",
+      "formula": "Negative Adverb (Rarely / Seldom / Never / Not only) + Aux + S + V",
+      "explanationId": "Ketika keterangan bermakna negatif atau pembatas diletakkan di awal kalimat untuk penekanan, susunan subjek dan kata kerja bantu (auxiliary) wajib dibalik (inversi) seperti kalimat tanya.",
+      "keyTip": "Pola jebakan paling sering di TOEFL ITP Structure! Cari 'does/did/has/can/will' tepat setelah frasa negatif di awal kalimat.",
+      "examples": [
+        {
+          "sentence": "Rarely have marine biologists observed this species near the surface.",
+          "translationId": "Jarang sekali ahli biologi laut mengamati spesies ini di dekat permukaan."
+        },
+        {
+          "sentence": "Not only did the team finish ahead of schedule, but they also reduced costs.",
+          "translationId": "Tim tidak hanya selesai lebih cepat dari jadwal, tetapi juga menekan biaya."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the grammatically correct completion (TOEFL ITP Structure):",
+        "sentence": "Not until the late nineteenth century ______ widely used in urban street lighting.",
+        "choices": [
+          "electricity became",
+          "did electricity become",
+          "electricity did become",
+          "had become electricity"
+        ],
+        "correctIndex": 1,
+        "explanationId": "'Not until...' di awal kalimat mewajibkan inversi pada klausa utama: auxiliary 'did' + subjek 'electricity' + V1 'become'."
+      }
+    },
+    {
+      "id": "en-g-002",
+      "lang": "en",
+      "order": 2,
+      "title": "Subject-Verb Agreement with Prepositional Phrases",
+      "nativeTitle": "Singular/Plural Head Noun",
+      "tracks": ["toefl-itp", "toeic"],
+      "category": "TOEFL ITP Structure",
+      "formula": "Head Noun + [of / with / along with / as well as + Object] + Verb (matches Head Noun)",
+      "explanationId": "Kata kerja (verb) selalu mengikuti kata benda utama (head noun), bukan kata benda yang berada di dalam frasa preposisi seperti 'of the students', 'along with', atau 'together with'.",
+      "keyTip": "Coret mental frasa yang diawali 'of', 'in', 'with', 'along with', atau 'as well as' untuk menemukan subjek sejati.",
+      "examples": [
+        {
+          "sentence": "The collection of rare manuscripts is housed in the central archive.",
+          "translationId": "Koleksi naskah langka itu disimpan di arsip pusat."
+        },
+        {
+          "sentence": "The project director, along with two engineers, attends every safety audit.",
+          "translationId": "Direktur proyek, bersama dua insinyur, menghadiri setiap audit keselamatan."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Select the correct verb form:",
+        "sentence": "The discovery of several well-preserved fossils in the desert ______ reshaped evolutionary timelines.",
+        "choices": ["have", "has", "are", "were"],
+        "correctIndex": 1,
+        "explanationId": "Subjek utamanya adalah 'The discovery' (tunggal), bukan 'fossils', sehingga membutuhkan auxiliary tunggal 'has'."
+      }
+    },
+    {
+      "id": "en-g-003",
+      "lang": "en",
+      "order": 3,
+      "title": "Parallel Structure (Correlative Conjunctions)",
+      "nativeTitle": "Both...and / Either...or / Not only...but also",
+      "tracks": ["toefl-itp", "toeic", "ielts"],
+      "category": "TOEFL Written Expression",
+      "formula": "Element A (Noun / Gerund / Adj / Infinitive) + Conjunction + Element B (same grammatical form)",
+      "explanationId": "Unsur yang dihubungkan oleh kata sambung setara (and, or, but, both...and, neither...nor, not only...but also) harus memiliki kelas kata atau struktur gramatikal yang sejajar.",
+      "keyTip": "Jika sebelum 'and' berupa gerund (-ing) atau kata sifat, maka setelah 'and' juga harus dalam bentuk yang sama.",
+      "examples": [
+        {
+          "sentence": "Effective leadership requires clear communication, decisive action, and ethical judgment.",
+          "translationId": "Kepemimpinan efektif menuntut komunikasi jelas, tindakan tegas, dan pertimbangan etis."
+        },
+        {
+          "sentence": "The software is designed both to monitor energy use and to predict equipment failure.",
+          "translationId": "Perangkat lunak ini dirancang baik untuk memantau penggunaan energi maupun memprediksi kerusakan alat."
+        }
+      ],
+      "quiz": {
+        "questionType": "error-id",
+        "prompt": "Identify the underlined segment that contains a grammatical error (TOEFL Written Expression):",
+        "sentence": "The workshop aims [A] to strengthen analytical reading, [B] to expand academic vocabulary, and [C] writing persuasive essays [D] under timed conditions.",
+        "choices": [
+          "[A] to strengthen",
+          "[B] to expand",
+          "[C] writing persuasive essays",
+          "[D] under timed conditions"
+        ],
+        "correctIndex": 2,
+        "explanationId": "Dua unsur pertama memakai to-infinitive ('to strengthen', 'to expand'), sehingga unsur ketiga harus sejajar: 'to write persuasive essays'."
+      }
+    },
+    {
+      "id": "en-g-004",
+      "lang": "en",
+      "order": 4,
+      "title": "Reduced Relative Clauses (Participle Modifiers)",
+      "nativeTitle": "Active (-ing) vs. Passive (-ed / V3)",
+      "tracks": ["toefl-itp", "toefl-ibt", "ielts", "toeic"],
+      "category": "TOEFL ITP Structure",
+      "formula": "Noun + V-ing (aktif: yang melakukan) | Noun + V3 (pasif: yang dikenai)",
+      "explanationId": "Klausa relatif ('which is located', 'who submitted') sering dipersingkat menjadi frasa partisipel. Gunakan V-ing jika maknanya aktif dan V3 jika maknanya pasif, dan pastikan kalimat tetap memiliki satu kata kerja utama.",
+      "keyTip": "Jangan tertipu memilih V2/verb utama kedua jika kalimat sudah punya kata kerja utama (main verb).",
+      "examples": [
+        {
+          "sentence": "Applications submitted after the Friday deadline will not be considered.",
+          "translationId": "Lamaran yang dikirim setelah tenggat Jumat tidak akan dipertimbangkan."
+        },
+        {
+          "sentence": "Researchers analyzing Arctic ice cores detected elevated methane levels.",
+          "translationId": "Peneliti yang menganalisis inti es Arktik mendeteksi kadar metana yang meningkat."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the correct reduced clause:",
+        "sentence": "The solar observatory ______ atop the mountain provides unobstructed views of the southern sky.",
+        "choices": ["locating", "located", "is located", "it is located"],
+        "correctIndex": 1,
+        "explanationId": "Kalimat sudah memiliki main verb 'provides'. 'Located' (bentuk ringkas dari 'which is located') bertindak sebagai modifier pasif."
+      }
+    },
+    {
+      "id": "en-g-005",
+      "lang": "en",
+      "order": 5,
+      "title": "Appositives & Non-Restrictive Modifiers",
+      "nativeTitle": "Noun Phrase, Appositive, Verb",
+      "tracks": ["toefl-itp", "ielts"],
+      "category": "TOEFL ITP Structure",
+      "formula": "Subject, [Noun Phrase explaining Subject], Main Verb",
+      "explanationId": "Appositive adalah frasa kata benda yang diapit tanda koma untuk menjelaskan subjek tanpa kata kerja utama sendiri. Appositive dapat berada di awal kalimat atau tepat setelah subjek.",
+      "keyTip": "Appositive tidak boleh mengandung subjek+predikat lengkap kecuali memakai klausa relatif ('who/which').",
+      "examples": [
+        {
+          "sentence": "A pioneer in modern radiology, Marie Curie won Nobel Prizes in two distinct sciences.",
+          "translationId": "Sebagai pelopor radiologi modern, Marie Curie meraih Hadiah Nobel di dua bidang sains berbeda."
+        },
+        {
+          "sentence": "Batik, a traditional wax-resist dyeing technique, was recognized by UNESCO in 2009.",
+          "translationId": "Batik, teknik pewarnaan rintang lilin tradisional, diakui UNESCO pada tahun 2009."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the correct appositive phrase:",
+        "sentence": "______, the mangrove forest acts as a natural buffer against coastal erosion.",
+        "choices": [
+          "It is a dense coastal ecosystem",
+          "A dense coastal ecosystem",
+          "Because a dense coastal ecosystem",
+          "That is a dense coastal ecosystem"
+        ],
+        "correctIndex": 1,
+        "explanationId": "'A dense coastal ecosystem' adalah appositive frasa benda yang tepat menjelaskan subjek 'the mangrove forest'."
+      }
+    },
+    {
+      "id": "en-g-006",
+      "lang": "en",
+      "order": 6,
+      "title": "Subjunctive Mood (Mandative)",
+      "nativeTitle": "recommend / insist / essential that + S + V1",
+      "tracks": ["toefl-itp", "toefl-ibt", "ielts", "toeic"],
+      "category": "Academic & Business Grammar",
+      "formula": "Verb/Adj of urgency (recommend, require, insist, vital) + that + Subject + Base Verb (V1 / be)",
+      "explanationId": "Setelah kata kerja atau kata sifat yang menyatakan keharusan/saran (recommend, suggest, demand, essential, imperative) diikuti 'that', kata kerja berikutnya selalu berbentuk dasar (bare infinitive) tanpa '-s' dan tanpa 'is/was'.",
+      "keyTip": "Mesin soal TOEFL & TOEIC suka menguji 'be' atau V1 tanpa '-s' setelah subjek tunggal seperti 'he/she/the report'.",
+      "examples": [
+        {
+          "sentence": "The committee recommended that every applicant submit two reference letters.",
+          "translationId": "Komite merekomendasikan agar setiap pelamar menyerahkan dua surat referensi."
+        },
+        {
+          "sentence": "It is imperative that the laboratory equipment be calibrated weekly.",
+          "translationId": "Sangat penting agar peralatan laboratorium dikalibrasi setiap minggu."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Complete the formal recommendation:",
+        "sentence": "The safety auditor insisted that the emergency exit ______ unobstructed at all times.",
+        "choices": ["remains", "remained", "remain", "is remaining"],
+        "correctIndex": 2,
+        "explanationId": "Setelah 'insisted that', bentuk subjunctive wajib memakai kata kerja dasar 'remain' (tanpa -s)."
+      }
+    },
+    {
+      "id": "en-g-007",
+      "lang": "en",
+      "order": 7,
+      "title": "Despite / In Spite Of vs. Although / Even Though",
+      "nativeTitle": "Preposition vs. Subordinating Conjunction",
+      "tracks": ["toeic", "ielts", "toefl-itp"],
+      "category": "TOEIC Part 5 & IELTS",
+      "formula": "Despite / In spite of + Noun/V-ing  ||  Although / Even though + Subject + Verb",
+      "explanationId": "'Despite' dan 'in spite of' adalah preposisi sehingga hanya boleh diikuti kata benda atau gerund (-ing). Sebaliknya, 'although', 'though', dan 'even though' adalah konjungsi yang wajib diikuti subjek dan kata kerja.",
+      "keyTip": "Ingat: tidak pernah ada frasa 'despite of'! Jika setelah rumpang ada Subject + Verb, pilih 'although/even though'.",
+      "examples": [
+        {
+          "sentence": "Despite the unexpected flight delay, the delegation arrived in time for the keynote.",
+          "translationId": "Meskipun terjadi penundaan penerbangan tak terduga, delegasi tiba tepat waktu untuk pidato utama."
+        },
+        {
+          "sentence": "Although fuel costs rose sharply, the airline maintained its regional fares.",
+          "translationId": "Walaupun biaya bahan bakar naik tajam, maskapai tetap mempertahankan tarif regionalnya."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Choose the correct connector (TOEIC Part 5):",
+        "sentence": "______ rising raw material prices, quarterly revenue exceeded our initial forecast.",
+        "choices": ["Although", "Despite", "Even though", "Whereas"],
+        "correctIndex": 1,
+        "explanationId": "'Rising raw material prices' adalah frasa kata benda (tanpa main verb), sehingga wajib memakai preposisi 'Despite'."
+      }
+    },
+    {
+      "id": "en-g-008",
+      "lang": "en",
+      "order": 8,
+      "title": "Conditional Inversion (Had / Were / Should)",
+      "nativeTitle": "Formal Conditionals without 'If'",
+      "tracks": ["toefl-itp", "ielts", "toeic"],
+      "category": "TOEIC & Academic Grammar",
+      "formula": "Should + S + V1 (Type 1) | Were + S + to V1 (Type 2) | Had + S + V3 (Type 3)",
+      "explanationId": "Dalam bahasa bisnis formal (TOEIC) dan tulisan akademik (IELTS/TOEFL), kata 'if' pada kalimat pengandaian dapat dihilangkan dengan memindahkan 'Should', 'Were', atau 'Had' ke depan subjek.",
+      "keyTip": "Dalam email bisnis TOEIC, 'Should you have any questions...' sama artinya dengan 'If you have any questions...'.",
+      "examples": [
+        {
+          "sentence": "Should you require technical assistance, please contact our help desk.",
+          "translationId": "Jika Anda memerlukan bantuan teknis, silakan hubungi layanan bantuan kami."
+        },
+        {
+          "sentence": "Had the engineers detected the leak earlier, the shutdown could have been avoided.",
+          "translationId": "Seandainya para insinyur mendeteksi kebocoran lebih awal, penghentian operasi bisa dihindari."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Select the formal conditional opening (TOEIC Part 5):",
+        "sentence": "______ you need to reschedule your appointment, kindly notify reception 24 hours in advance.",
+        "choices": ["Should", "Unless", "Despite", "Whether"],
+        "correctIndex": 0,
+        "explanationId": "'Should you need...' adalah inversi formal untuk 'If you should need...' yang sangat lazim pada surat bisnis."
+      }
+    },
+    {
+      "id": "en-g-009",
+      "lang": "en",
+      "order": 9,
+      "title": "Word Form Selection (Parts of Speech)",
+      "nativeTitle": "Noun / Verb / Adjective / Adverb",
+      "tracks": ["toeic", "toefl-itp"],
+      "category": "TOEIC Part 5 Cloze",
+      "formula": "Adv + Adj + Noun  |  Verb + Adv  |  Prep + Noun/Gerund",
+      "explanationId": "Sekitar 30% soal TOEIC Part 5 menguji ketepatan kelas kata dari satu akar kata yang sama (mis. rely, reliable, reliably, reliability). Analisis posisi kata sebelum dan sesudah rumpang.",
+      "keyTip": "Lihat kata tepat sebelum rumpang: artikel 'a/an/the' + adj menuntut Noun; sebelum Adjective atau memodifikasi Verb biasanya butuh Adverb (-ly).",
+      "examples": [
+        {
+          "sentence": "The newly renovated branch operates remarkably efficiently during peak hours.",
+          "translationId": "Cabang yang baru direnovasi beroperasi sangat efisien selama jam sibuk."
+        },
+        {
+          "sentence": "Customer satisfaction depends heavily on the reliability of delivery schedules.",
+          "translationId": "Kepuasan pelanggan sangat bergantung pada keandalan jadwal pengiriman."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Choose the correct word form (TOEIC Part 5):",
+        "sentence": "Ms. Tan received praise for managing the regional product launch ______.",
+        "choices": ["efficiency", "efficient", "efficiently", "efficiencies"],
+        "correctIndex": 2,
+        "explanationId": "Rumpang memodifikasi cara melakukan kata kerja 'managing', sehingga membutuhkan adverb 'efficiently'."
+      }
+    },
+    {
+      "id": "en-g-010",
+      "lang": "en",
+      "order": 10,
+      "title": "Double Comparatives (The more..., the more...)",
+      "nativeTitle": "Proportional Cause & Effect",
+      "tracks": ["toefl-itp", "ielts"],
+      "category": "TOEFL ITP Structure",
+      "formula": "The + Comparative (+ S + V), the + Comparative (+ S + V)",
+      "explanationId": "Struktur 'The + comparative..., the + comparative...' menunjukkan hubungan sebab-akibat berbanding lurus atau terbalik. Kedua klausa wajib diawali kata sandang 'the' diikuti bentuk komparatif.",
+      "keyTip": "Periksa kelengkapan 'the' dan bentuk komparatif (-er / more / less) di kedua sisi koma.",
+      "examples": [
+        {
+          "sentence": "The higher the altitude, the lower the atmospheric pressure becomes.",
+          "translationId": "Semakin tinggi ketinggian, semakin rendah tekanan atmosfernya."
+        },
+        {
+          "sentence": "The more thoroughly students prepare, the more confident they feel during exams.",
+          "translationId": "Semakin matang siswa mempersiapkan diri, semakin percaya diri mereka saat ujian."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Complete the proportional statement:",
+        "sentence": "The earlier a language learner begins daily listening practice, ______ their auditory recognition improves.",
+        "choices": [
+          "the faster",
+          "faster than",
+          "the fastest",
+          "more fast"
+        ],
+        "correctIndex": 0,
+        "explanationId": "Pasangan wajib untuk 'The earlier...' adalah 'the + comparative' yaitu 'the faster'."
+      }
+    },
+    {
+      "id": "en-g-011",
+      "lang": "en",
+      "order": 11,
+      "title": "By the Time + Past/Future Perfect",
+      "nativeTitle": "Sequence of Completed Actions",
+      "tracks": ["toeic", "toefl-itp"],
+      "category": "TOEIC Part 5 & Tenses",
+      "formula": "By the time + S + V1 (present) -> S + will have + V3  ||  By the time + S + V2 (past) -> S + had + V3",
+      "explanationId": "Penanda waktu 'By the time' atau 'By + waktu masa depan/lampau' menekankan bahwa suatu peristiwa sudah selesai sebelum titik waktu lainnya terjadi, sehingga berpasangan dengan Perfect Tense.",
+      "keyTip": "Jika klausa 'by the time' memakai Present Simple (mis. 'arrives'), klausa utama memakai Future Perfect ('will have + V3').",
+      "examples": [
+        {
+          "sentence": "By the time the quarterly board meeting begins, we will have finalized the audit.",
+          "translationId": "Pada saat rapat dewan triwulanan dimulai, kami sudah akan merampungkan audit."
+        },
+        {
+          "sentence": "By the time the train arrived, most commuters had already found alternative transport.",
+          "translationId": "Saat kereta tiba, sebagian besar komuter sudah menemukan transportasi alternatif."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Choose the appropriate tense (TOEIC Part 5):",
+        "sentence": "By the end of next quarter, the engineering team ______ all legacy servers to the cloud.",
+        "choices": [
+          "migrated",
+          "has migrated",
+          "will have migrated",
+          "is migrating"
+        ],
+        "correctIndex": 2,
+        "explanationId": "Penanda batas masa depan 'By the end of next quarter' berpasangan dengan Future Perfect ('will have migrated')."
+      }
+    },
+    {
+      "id": "en-g-012",
+      "lang": "en",
+      "order": 12,
+      "title": "Preposition + Relative Pronoun (in which / whereby)",
+      "nativeTitle": "Formal Academic Relative Clauses",
+      "tracks": ["ielts", "toefl-ibt", "toefl-itp"],
+      "category": "IELTS Academic Grammar",
+      "formula": "Noun + Preposition + which / whom (NEVER 'in that' or 'of that')",
+      "explanationId": "Dalam bahasa akademik formal, preposisi diletakkan sebelum kata ganti penghubung ('in which', 'for which', 'by which', 'to whom'). Kata 'that' tidak pernah boleh dipakai tepat setelah preposisi.",
+      "keyTip": "Memakai 'in which' atau 'whereby' secara tepat membantu menaikkan skor Grammatical Range di IELTS Writing.",
+      "examples": [
+        {
+          "sentence": "Photosynthesis is the process by which plants convert sunlight into chemical energy.",
+          "translationId": "Fotosintesis adalah proses yang melaluinya tumbuhan mengubah cahaya matahari menjadi energi kimia."
+        },
+        {
+          "sentence": "The policy created a framework within which local schools could design curricula.",
+          "translationId": "Kebijakan itu menciptakan kerangka yang di dalamnya sekolah lokal dapat merancang kurikulum."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Select the grammatically accurate academic structure:",
+        "sentence": "The committee proposed a funding model ______ rural clinics receive priority equipment.",
+        "choices": ["in that", "whereby", "which", "whom"],
+        "correctIndex": 1,
+        "explanationId": "'Whereby' (= by which / through which) tepat menghubungkan 'a funding model' dengan klausa lengkap berikutnya."
+      }
+    },
+    {
+      "id": "en-g-013",
+      "lang": "en",
+      "order": 13,
+      "title": "Causative Verbs (Have / Make / Let / Get)",
+      "nativeTitle": "Active vs. Passive Causative",
+      "tracks": ["toefl-itp", "toeic"],
+      "category": "TOEIC & TOEFL Structure",
+      "formula": "Have/Make/Let + Person + V1  |  Get + Person + to V1  |  Have/Get + Thing + V3",
+      "explanationId": "Kata kerja kausatif menunjukkan seseorang meminta atau menyebabkan pihak lain melakukan tindakan. Jika objeknya adalah benda yang dikenai tindakan, selalu gunakan bentuk pasif V3.",
+      "keyTip": "Di TOEIC, bentuk pasif 'have + [benda] + V3' (mis. 'have the copier repaired') sangat sering muncul.",
+      "examples": [
+        {
+          "sentence": "The office manager had the air-conditioning unit inspected before summer.",
+          "translationId": "Manajer kantor meminta unit pendingin udara diperiksa sebelum musim panas."
+        },
+        {
+          "sentence": "Our supervisor got the IT vendor to upgrade the firewall overnight.",
+          "translationId": "Pengawas kami meminta vendor TI memperbarui firewall dalam semalam."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Complete the workplace sentence:",
+        "sentence": "Before printing the annual report, please have the financial tables ______ by the accounting lead.",
+        "choices": ["verify", "verifying", "verified", "to verify"],
+        "correctIndex": 2,
+        "explanationId": "'The financial tables' adalah objek pasif (diperiksa), sehingga pola 'have + benda + V3' menuntut 'verified'."
+      }
+    },
+    {
+      "id": "en-g-014",
+      "lang": "en",
+      "order": 14,
+      "title": "So...That vs. Such...That",
+      "nativeTitle": "Result Clauses",
+      "tracks": ["toefl-itp", "ielts"],
+      "category": "TOEFL Written Expression",
+      "formula": "so + Adjective/Adverb + that  ||  such + (a/an) + Adjective + Noun + that",
+      "explanationId": "Gunakan 'so' sebelum kata sifat/keterangan yang berdiri sendiri (atau 'so many/much/few/little + noun'). Gunakan 'such' sebelum frasa kata benda (adjective + noun).",
+      "keyTip": "Jika ada artikel 'a/an' sebelum kata sifat + kata benda ('a compelling argument'), hampir pasti menggunakan 'such'.",
+      "examples": [
+        {
+          "sentence": "The lecture was so engaging that few students noticed the bell had rung.",
+          "translationId": "Kuliah itu begitu menarik sehingga sedikit mahasiswa yang sadar bel telah berbunyi."
+        },
+        {
+          "sentence": "It was such a compelling proposal that all six investors pledged funding.",
+          "translationId": "Itu adalah proposal yang begitu meyakinkan hingga keenam investor menjanjikan pendanaan."
+        }
+      ],
+      "quiz": {
+        "questionType": "error-id",
+        "prompt": "Find the grammatical error (TOEFL Written Expression):",
+        "sentence": "Antarctic winds can blow with [A] so tremendous force [B] that visibility [C] drops to nearly zero [D] within seconds.",
+        "choices": [
+          "[A] so tremendous force",
+          "[B] that visibility",
+          "[C] drops to nearly zero",
+          "[D] within seconds"
+        ],
+        "correctIndex": 0,
+        "explanationId": "'Tremendous force' adalah frasa Adjective + Noun, sehingga harus memakai 'such tremendous force', bukan 'so tremendous force'."
+      }
+    },
+    {
+      "id": "en-g-015",
+      "lang": "en",
+      "order": 15,
+      "title": "Countable vs. Uncountable Quantifiers",
+      "nativeTitle": "Many/Few/Number of vs. Much/Little/Amount of",
+      "tracks": ["toefl-itp", "ielts", "toeic"],
+      "category": "TOEFL Written Expression",
+      "formula": "Countable plural: many, few, fewer, a number of  ||  Uncountable: much, little, less, an amount of",
+      "explanationId": "Kata benda tak terhitung seperti information, equipment, research, furniture, evidence, dan advice tidak memakai akhiran '-s' dan wajib memakai quantifier uncountable (much, little, less, amount of).",
+      "keyTip": "Waspadai kata benda uncountable jebakan di TOEFL/IELTS: research, equipment, evidence, feedback, software, luggage.",
+      "examples": [
+        {
+          "sentence": "A large amount of laboratory equipment was donated to the regional university.",
+          "translationId": "Sejumlah besar peralatan laboratorium disumbangkan ke universitas daerah."
+        },
+        {
+          "sentence": "Fewer commuters drove personal cars after the express bus lane opened.",
+          "translationId": "Lebih sedikit komuter yang mengendarai mobil pribadi setelah jalur bus ekspres dibuka."
+        }
+      ],
+      "quiz": {
+        "questionType": "error-id",
+        "prompt": "Choose the incorrect underlined portion:",
+        "sentence": "The clinic ordered [A] a great number of [B] diagnostic equipment [C] to shorten patient [D] waiting times.",
+        "choices": [
+          "[A] a great number of",
+          "[B] diagnostic equipment",
+          "[C] to shorten patient",
+          "[D] waiting times"
+        ],
+        "correctIndex": 0,
+        "explanationId": "'Equipment' adalah uncountable noun sehingga harus menggunakan 'a great amount of' atau 'a large quantity of', bukan 'a great number of'."
+      }
+    },
+    {
+      "id": "en-g-016",
+      "lang": "en",
+      "order": 16,
+      "title": "Dangling & Misplaced Participle Modifiers",
+      "nativeTitle": "Matching Modifier Subject with Main Subject",
+      "tracks": ["toefl-itp", "ielts"],
+      "category": "TOEFL ITP Structure",
+      "formula": "[Participle Phrase], [Subject that performs/receives the participle action] + Verb",
+      "explanationId": "Ketika kalimat diawali frasa partisipel ('Having reviewed the data,', 'Built in 1924,'), kata benda tepat setelah koma HARUS merupakan subjek yang melakukan atau mengalami tindakan pada frasa tersebut.",
+      "keyTip": "Tanyakan: 'Siapa yang melakukan tindakan di frasa depan?' Jawabannya harus langsung muncul setelah koma.",
+      "examples": [
+        {
+          "sentence": "Having analyzed the quarterly survey, the marketing team revised its campaign.",
+          "translationId": "Setelah menganalisis survei triwulanan, tim pemasaran merevisi kampanyenya."
+        },
+        {
+          "sentence": "Constructed entirely of cedar wood, the historic pavilion survived three earthquakes.",
+          "translationId": "Dibangun seluruhnya dari kayu cedar, paviliun bersejarah itu bertahan dari tiga gempa."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Select the sentence without a dangling modifier:",
+        "sentence": "Having completed the clinical trials, ______.",
+        "choices": [
+          "the new vaccine was submitted for approval",
+          "approval was requested for the new vaccine",
+          "the research team submitted the new vaccine for approval",
+          "it was time to submit the new vaccine"
+        ],
+        "correctIndex": 2,
+        "explanationId": "Pihak yang menyelesaikan uji klinis ('Having completed') adalah 'the research team', bukan vaksin atau persetujuan."
+      }
+    },
+    {
+      "id": "en-g-017",
+      "lang": "en",
+      "order": 17,
+      "title": "Cleft Sentences for Academic Emphasis",
+      "nativeTitle": "It is...that / What...is",
+      "tracks": ["ielts", "toefl-ibt"],
+      "category": "IELTS Academic Grammar",
+      "formula": "It is/was + [Focused Element] + that/who + Clause  ||  What + S + V + is/was + [Focus]",
+      "explanationId": "Kalimat belah (cleft sentence) menyoroti satu bagian argumen secara tegas dalam esai IELTS Writing Task 2 maupun presentasi akademik TOEFL iBT.",
+      "keyTip": "Hindari penggunaan berlebihan; gunakan 1–2 kali di paragraf utama esai untuk menunjukkan variasi struktur tingkat tinggi.",
+      "examples": [
+        {
+          "sentence": "It is consistent daily exposure, rather than rote memorization, that builds fluency.",
+          "translationId": "Paparan harian yang konsistenlah, bukan hafalan mekanis, yang membangun kefasihan."
+        },
+        {
+          "sentence": "What distinguishes this study from earlier papers is its longitudinal sample size.",
+          "translationId": "Hal yang membedakan studi ini dari makalah terdahulu adalah ukuran sampel longitudinalnya."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the well-formed cleft sentence:",
+        "sentence": "______ makes public transit attractive to commuters is predictable arrival frequency.",
+        "choices": ["That", "What", "Which", "Where"],
+        "correctIndex": 1,
+        "explanationId": "Nominal cleft clause di awal kalimat memakai 'What' (= The thing that)."
+      }
+    },
+    {
+      "id": "en-g-018",
+      "lang": "en",
+      "order": 18,
+      "title": "Conjunctions vs. Conjunctive Adverbs",
+      "nativeTitle": "But/So vs. However/Therefore/Nevertheless",
+      "tracks": ["ielts", "toeic", "toefl-ibt"],
+      "category": "IELTS & TOEIC Cohesion",
+      "formula": "Clause 1; however / therefore / moreover, Clause 2  (NEVER join two clauses with just a comma + however)",
+      "explanationId": "Kata seperti 'however', 'therefore', 'nevertheless', dan 'furthermore' adalah adverbia penghubung, bukan konjungsi koordinatif. Jika menghubungkan dua kalimat lengkap, gunakan titik koma (;) atau titik (.) sebelumnya.",
+      "keyTip": "Kesalahan tanda baca koma + 'however' ('comma splice') langsung menurunkan skor Grammar di IELTS Writing.",
+      "examples": [
+        {
+          "sentence": "Solar panel prices fell dramatically; consequently, residential adoption doubled.",
+          "translationId": "Harga panel surya turun drastis; akibatnya, adopsi rumah tangga berlipat ganda."
+        },
+        {
+          "sentence": "The prototype passed durability tests; nevertheless, engineers refined its battery enclosure.",
+          "translationId": "Purwarupa lulus uji ketahanan; namun demikian, insinyur menyempurnakan pelindung baterainya."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Select the logical transition (TOEIC Part 6 / IELTS):",
+        "sentence": "The downtown branch closed for renovations; ______, all customer services have shifted to the Westside office.",
+        "choices": ["consequently", "although", "despite", "unless"],
+        "correctIndex": 0,
+        "explanationId": "Setelah titik koma (;) dan diikuti koma (,) untuk menyatakan akibat logis, adverbia penghubung yang tepat adalah 'consequently'."
+      }
+    },
+    {
+      "id": "en-g-019",
+      "lang": "en",
+      "order": 19,
+      "title": "Modal Perfects for Deduction & Regret",
+      "nativeTitle": "must have / might have / should have + V3",
+      "tracks": ["toefl-itp", "ielts", "toeic"],
+      "category": "Academic & Business Grammar",
+      "formula": "must have V3 (pasti telah) | might/could have V3 (mungkin telah) | should have V3 (seharusnya telah)",
+      "explanationId": "Modal + have + V3 digunakan untuk menarik kesimpulan logis atas peristiwa masa lalu atau mengevaluasi tindakan yang seharusnya dilakukan.",
+      "keyTip": "Dalam TOEFL Listening & Reading, 'must have + V3' selalu menandakan deduksi kuat, bukan kewajiban.",
+      "examples": [
+        {
+          "sentence": "Ancient mariners must have relied on star charts to cross open ocean currents.",
+          "translationId": "Pelaut kuno pasti telah mengandalkan peta bintang untuk melintasi arus samudra terbuka."
+        },
+        {
+          "sentence": "The vendor should have notified our logistics desk before altering the delivery route.",
+          "translationId": "Vendor seharusnya sudah memberi tahu meja logistik kami sebelum mengubah rute pengiriman."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the accurate deduction about a past event:",
+        "sentence": "The server logs show zero traffic after midnight; the power outage ______ triggered an automatic shutdown.",
+        "choices": ["must have", "should be", "has to", "would rather"],
+        "correctIndex": 0,
+        "explanationId": "Bukti log yang kuat di masa lalu menuntut modal deduksi lampau 'must have' + V3 ('triggered')."
+      }
+    },
+    {
+      "id": "en-g-020",
+      "lang": "en",
+      "order": 20,
+      "title": "Gerund vs. Infinitive After Specific Verbs",
+      "nativeTitle": "avoid/postpone/consider + V-ing vs. decide/afford/refuse + to V1",
+      "tracks": ["toeic", "toefl-itp"],
+      "category": "TOEIC Part 5 Cloze",
+      "formula": "enjoy/avoid/postpone/recommend/look forward to + V-ing  ||  agree/manage/plan/expect + to V1",
+      "explanationId": "Kata kerja tertentu hanya boleh diikuti gerund (-ing) sedangkan lainnya wajib to-infinitive. Perhatikan pula frasa yang berakhiran preposisi 'to' seperti 'look forward to', 'be accustomed to', dan 'object to' yang wajib diikuti V-ing.",
+      "keyTip": "'Look forward to + V-ing' adalah salah satu pola paling sering diuji di TOEIC Part 5 & 6.",
+      "examples": [
+        {
+          "sentence": "We look forward to welcoming your team to our Singapore headquarters next month.",
+          "translationId": "Kami menantikan kedatangan tim Anda di kantor pusat Singapura kami bulan depan."
+        },
+        {
+          "sentence": "Management decided to postpone launching the loyalty app until Q3.",
+          "translationId": "Manajemen memutuskan menunda peluncuran aplikasi loyalitas hingga kuartal ketiga."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Complete the business email closing (TOEIC Part 5):",
+        "sentence": "Our regional partners look forward to ______ the joint sustainability initiative next spring.",
+        "choices": ["launch", "launching", "launched", "be launch"],
+        "correctIndex": 1,
+        "explanationId": "Kata 'to' pada 'look forward to' adalah preposisi, sehingga wajib diikuti bentuk gerund ('launching')."
+      }
+    },
+    {
+      "id": "en-g-021",
+      "lang": "en",
+      "order": 21,
+      "title": "Noun Clauses as Subject or Object",
+      "nativeTitle": "That / Whether / What + Subject + Verb",
+      "tracks": ["toefl-itp", "toefl-ibt", "ielts"],
+      "category": "TOEFL ITP Structure",
+      "formula": "[That / What / How + S + V] (Singular Subject) + Singular Main Verb",
+      "explanationId": "Klausa benda (noun clause) dapat berfungsi sebagai subjek kalimat dengan susunan normal (bukan inversi tanya) dan selalu dianggap subjek tunggal.",
+      "keyTip": "Dalam klausa benda tidak langsung ('how the engine works'), JANGAN gunakan inversi ('how does the engine work').",
+      "examples": [
+        {
+          "sentence": "Whether the wetlands can recover depends on strict watershed protection.",
+          "translationId": "Apakah lahan basah dapat pulih bergantung pada perlindungan daerah aliran sungai yang ketat."
+        },
+        {
+          "sentence": "Scientists still debate how migratory birds detect subtle shifts in Earth's magnetic field.",
+          "translationId": "Ilmuwan masih memperdebatkan bagaimana burung migran mendeteksi pergeseran halus medan magnet Bumi."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Select the correct noun clause structure (TOEFL ITP):",
+        "sentence": "The museum curator explained ______ preserved for more than two millennia.",
+        "choices": [
+          "how were the bronze scrolls",
+          "how the bronze scrolls were",
+          "were the bronze scrolls how",
+          "the bronze scrolls how were"
+        ],
+        "correctIndex": 1,
+        "explanationId": "Klausa benda tidak langsung setelah 'explained' memakai urutan pernyataan: question word + Subject + Verb ('how the bronze scrolls were')."
+      }
+    },
+    {
+      "id": "en-g-022",
+      "lang": "en",
+      "order": 22,
+      "title": "Academic Hedging Language",
+      "nativeTitle": "tend to / appear to / may indicate / largely",
+      "tracks": ["ielts", "toefl-ibt"],
+      "category": "IELTS Academic Grammar",
+      "formula": "Modal (may/might/could) + Verb | Verb (appear/seem/tend to) | Adverb (likely/largely/primarily)",
+      "explanationId": "Tulisan akademik IELTS & TOEFL iBT menghindari klaim absolut yang terlalu menggeneralisasi ('always', 'proves 100%'). Gunakan hedging agar argumen terdengar objektif, ilmiah, dan bernilai Band tinggi.",
+      "keyTip": "Ganti 'Technology destroys social skills' dengan 'Excessive screen time may undermine face-to-face communication skills.'",
+      "examples": [
+        {
+          "sentence": "Remote work arrangements tend to improve employee retention when paired with clear boundaries.",
+          "translationId": "Pengaturan kerja jarak jauh cenderung meningkatkan retensi karyawan jika dipadukan dengan batasan yang jelas."
+        },
+        {
+          "sentence": "The survey findings suggest that affordable transit could reduce urban congestion.",
+          "translationId": "Temuan survei mengindikasikan bahwa transportasi terjangkau berpotensi mengurangi kemacetan kota."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Which sentence uses the most appropriate academic hedging for an IELTS Task 2 essay?",
+        "choices": [
+          "Every teenager who plays video games definitely fails school.",
+          "Unregulated gaming time may negatively affect adolescents' sleep and study habits.",
+          "Video games are always 100% bad for everyone without exception.",
+          "Nobody can ever learn anything useful from digital media."
+        ],
+        "correctIndex": 1,
+        "explanationId": "Kalimat kedua memakai hedging akademik ('Unregulated...', 'may negatively affect') yang terukur dan berbasis argumen."
+      }
+    },
+    {
+      "id": "en-g-023",
+      "lang": "en",
+      "order": 23,
+      "title": "Comparative Reference (That of / Those of)",
+      "nativeTitle": "Avoiding Illogical Comparisons",
+      "tracks": ["toefl-itp", "ielts"],
+      "category": "TOEFL Written Expression",
+      "formula": "Singular comparison -> that of  ||  Plural comparison -> those of",
+      "explanationId": "Saat membandingkan dua hal, pastikan objek yang dibandingkan setara (mis. iklim kota A dengan iklim kota B, bukan iklim kota A dengan kota B). Gunakan 'that of' (tunggal) atau 'those of' (jamak).",
+      "keyTip": "Kesalahan klasik TOEFL: membandingkan 'the population of Japan' langsung dengan 'Indonesia' tanpa 'that of'.",
+      "examples": [
+        {
+          "sentence": "The tensile strength of spider silk surpasses that of high-grade steel.",
+          "translationId": "Kekuatan tarik sutra laba-laba melampaui kekuatan tarik baja mutu tinggi."
+        },
+        {
+          "sentence": "The operating costs of electric buses are substantially lower than those of diesel fleets.",
+          "translationId": "Biaya operasional bus listrik jauh lebih rendah dibanding biaya operasional armada diesel."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Choose the logical comparison:",
+        "sentence": "The average annual rainfall in Bogor is considerably higher than ______ Jakarta.",
+        "choices": ["those of", "that of", "which of", "it of"],
+        "correctIndex": 1,
+        "explanationId": "'Average annual rainfall' berbentuk tunggal (uncountable), sehingga perbandingan setara memakai 'that of'."
+      }
+    },
+    {
+      "id": "en-g-024",
+      "lang": "en",
+      "order": 24,
+      "title": "Prepositions of Time & Deadline (Until vs. By vs. Within)",
+      "nativeTitle": "Duration vs. Deadline Limit",
+      "tracks": ["toeic"],
+      "category": "TOEIC Part 5 Cloze",
+      "formula": "by + point in time (paling lambat) | until + point in time (berlangsung sampai) | within + duration (dalam kurun)",
+      "explanationId": "'By' menyatakan batas akhir penyelesaian tindakan tunggal; 'until' menyatakan aktivitas yang terus berlangsung hingga titik waktu tertentu; 'within' diikuti rentang durasi (mis. within 48 hours).",
+      "keyTip": "Tanyakan apakah aksinya selesai sekali ('submit by Friday') atau terus berlangsung ('stay open until 8 PM').",
+      "examples": [
+        {
+          "sentence": "All expense claims must be uploaded to the portal by 5:00 PM on Friday.",
+          "translationId": "Seluruh klaim biaya harus diunggah ke portal paling lambat Jumat pukul 17.00."
+        },
+        {
+          "sentence": "Customer support responds to priority tickets within two business hours.",
+          "translationId": "Layanan pelanggan merespons tiket prioritas dalam waktu dua jam kerja."
+        }
+      ],
+      "quiz": {
+        "questionType": "cloze",
+        "prompt": "Select the accurate time preposition (TOEIC Part 5):",
+        "sentence": "Candidates will receive written notification of the interview outcome ______ ten business days.",
+        "choices": ["until", "by", "within", "since"],
+        "correctIndex": 2,
+        "explanationId": "'Ten business days' adalah rentang durasi waktu, sehingga preposisi yang tepat adalah 'within'."
+      }
+    }
+  ]
+}

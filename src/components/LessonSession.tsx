@@ -12,6 +12,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { getLevelMeta } from '../data/curriculum';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem } from '../types/curriculum';
 import {
@@ -572,7 +573,9 @@ export const LessonSession: React.FC = () => {
 
           <div className="max-w-3xl mx-auto text-center">
             <div className="text-xs font-medium text-white/85 mb-2 flex items-center justify-center flex-wrap gap-1.5">
-              <span>Level {qItem.level}</span>
+              <span>
+                {getLevelMeta(qItem.level).jlpt} · Bab {getLevelMeta(qItem.level).unitInTier}
+              </span>
               <span aria-hidden="true">·</span>
               <span className="font-bold uppercase tracking-wide">
                 {getItemTypeLabel(qItem.type)}
@@ -922,7 +925,7 @@ export const LessonSession: React.FC = () => {
 
         <div className="max-w-4xl mx-auto text-center space-y-2">
           <div className="text-xs font-medium text-white/85">
-            Level {currentSlideItem.level} · {getItemTypeLabel(currentSlideItem.type)}
+            {getLevelMeta(currentSlideItem.level).jlpt} · Bab {getLevelMeta(currentSlideItem.level).unitInTier} · {getItemTypeLabel(currentSlideItem.type)}
             {currentSlideItem.partOfSpeech ? ` · ${currentSlideItem.partOfSpeech}` : ''}
           </div>
           <div className="font-jp text-5xl sm:text-7xl font-bold leading-none select-all break-words">
@@ -1225,7 +1228,7 @@ export const LessonSession: React.FC = () => {
                           {dep.primaryMeaning}
                         </div>
                         <div className="text-xs text-slate-500 dark:text-slate-400">
-                          Level {dep.level} · {getItemTypeLabel(dep.type)}
+                          {getLevelMeta(dep.level).jlpt} Bab {getLevelMeta(dep.level).unitInTier} · {getItemTypeLabel(dep.type)}
                         </div>
                       </div>
                     </button>

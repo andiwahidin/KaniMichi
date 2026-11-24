@@ -5,6 +5,14 @@ import type { ListeningProgress } from './listening';
 import type { MockExamResult } from './mockExam';
 import type { WritingCharProgress } from './writing';
 import type { PronunciationProgress } from './pronunciation';
+import type {
+  ActiveLanguageScope,
+  EnglishAccent,
+  LangPracticeRecord,
+  LangSrsProgress,
+  MultiExamResult,
+  StudioRubricAttempt,
+} from './language';
 
 export type ItemType = 'radical' | 'kanji' | 'vocabulary';
 
@@ -102,6 +110,12 @@ export interface UserSettings {
   includeVocabPronunciationQuiz?: boolean;
   /** SRS pace & unlock policy: 'open' (default Buka Bebas), 'fast' (Cepat), 'standard' (WaniKani klasik) */
   srsMode?: SrsMode;
+  /** Active language workspace scope in Leksika header */
+  activeLanguage?: ActiveLanguageScope;
+  /** Preferred English TTS accent for Listening & Vocab */
+  englishAccent?: EnglishAccent;
+  /** Show Arabic harakat (diacritics) by default in study views */
+  arabicShowHarakat?: boolean;
 }
 
 export interface UserState {
@@ -114,6 +128,14 @@ export interface UserState {
   mockExamHistory?: MockExamResult[];
   writingProgress?: Record<string, WritingCharProgress>;
   pronunciationProgress?: PronunciationProgress;
+  /** Unified multi-language SRS progress for English, Arabic, and future languages */
+  langSrsProgress?: Record<string, LangSrsProgress>;
+  /** Unified multi-language Reading & Listening completion records */
+  langPracticeProgress?: Record<string, LangPracticeRecord>;
+  /** Self-assessment rubric history from Writing & Speaking Studio */
+  langStudioHistory?: StudioRubricAttempt[];
+  /** Official scaled mock exam results (TOEFL ITP/iBT, IELTS, TOEIC, TOAFL) */
+  langMockExamHistory?: MultiExamResult[];
   history: ReviewHistoryEntry[];
   settings: UserSettings;
   streakDays: number;
@@ -138,6 +160,13 @@ export type ActiveView =
   | 'lesson'
   | 'review'
   | 'extra-study'
+  | 'lang-home'
+  | 'lang-vocab'
+  | 'lang-grammar'
+  | 'lang-reading'
+  | 'lang-listening'
+  | 'lang-studio'
+  | 'lang-exam'
   | 'profile'
   | 'admin';
 

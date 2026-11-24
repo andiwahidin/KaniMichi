@@ -15,12 +15,14 @@ import {
   Search,
   ShieldCheck,
   SlidersHorizontal,
+  Sparkles,
   User as UserIcon,
   X,
 } from 'lucide-react';
 import { getLevelMeta, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { CurriculumItem } from '../types/curriculum';
+import { openAiTutorWithPrompt } from './AiTutorDrawer';
 import { LevelProgressBar } from './LevelProgressBar';
 import {
   buildReviewForecast,
@@ -372,7 +374,7 @@ export const Dashboard: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="text-xs text-slate-500 dark:text-slate-400 flex flex-wrap items-center gap-2 font-mono-num">
-            <span>Level {state.currentLevel} / {MAX_LEVEL}</span>
+            <span>{levelMeta.title}</span>
             <span aria-hidden="true">·</span>
             <span className="font-sans">{levelMeta.tier}</span>
             <span aria-hidden="true">·</span>
@@ -381,7 +383,7 @@ export const Dashboard: React.FC = () => {
             </span>
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mt-0.5">
-            Dasbor Belajar Harian
+            Dasbor Belajar JLPT N5–N1
           </h1>
         </div>
 
@@ -436,7 +438,7 @@ export const Dashboard: React.FC = () => {
                       </span>
                     </div>
                     <span className="text-xs text-slate-400 shrink-0 font-mono-num">
-                      Lv.{item.level} · {getItemTypeLabel(item.type)}
+                      {getLevelMeta(item.level).jlpt} B.{getLevelMeta(item.level).unitInTier} · {getItemTypeLabel(item.type)}
                     </span>
                   </button>
                 ))}
@@ -481,6 +483,15 @@ export const Dashboard: React.FC = () => {
 
           <button
             type="button"
+            onClick={() => openAiTutorWithPrompt(undefined, 'ja')}
+            className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-[#E11D48] hover:bg-[#BE123C] text-white text-sm font-semibold whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <Sparkles className="w-4 h-4" />
+            <span>Tutor AI</span>
+          </button>
+
+          <button
+            type="button"
             onClick={() => setSettingsOpen(true)}
             className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap shrink-0 cursor-pointer"
           >
@@ -521,10 +532,10 @@ export const Dashboard: React.FC = () => {
             <Award className="w-6 h-6 shrink-0" />
             <div>
               <div className="font-display font-bold text-base">
-                Naik ke Level {state.levelUpNotification}!
+                Selamat! Bab Baru Terbuka ({getLevelMeta(state.levelUpNotification).title})
               </div>
               <div className="text-xs text-white/90">
-                Radikal baru di Level {state.levelUpNotification} telah terbuka di antrean Pelajaran.
+                Radikal baru di {getLevelMeta(state.levelUpNotification).title} telah terbuka di antrean Pelajaran.
               </div>
             </div>
           </div>
@@ -996,7 +1007,7 @@ export const Dashboard: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-                  Daftar Item Level {state.currentLevel} — {levelMeta.tier}
+                  Daftar Item {levelMeta.jlpt} · Bab {levelMeta.unitInTier} — {levelMeta.tier}
                 </h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                   Klik item mana saja untuk melihat mnemonik, cara baca, dan tahap SRS.
@@ -1034,7 +1045,7 @@ export const Dashboard: React.FC = () => {
                 levelRadicals.length > 0 && (
                   <div>
                     <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5 font-mono-num tabular-nums">
-                      Radikal Level {state.currentLevel} · {levelMastery.radicals.mastered}/{levelRadicals.length} dikuasai
+                      Radikal {levelMeta.jlpt} Bab {levelMeta.unitInTier} · {levelMastery.radicals.mastered}/{levelRadicals.length} dikuasai
                     </div>
                     <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
                       {levelRadicals.map((rad) => {
@@ -1072,7 +1083,7 @@ export const Dashboard: React.FC = () => {
                 levelKanji.length > 0 && (
                   <div>
                     <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2.5 font-mono-num tabular-nums">
-                      Kanji Level {state.currentLevel} · {levelMastery.kanji.mastered}/{levelKanji.length} dikuasai
+                      Kanji {levelMeta.jlpt} Bab {levelMeta.unitInTier} · {levelMastery.kanji.mastered}/{levelKanji.length} dikuasai
                     </div>
                     <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-9 gap-2">
                       {levelKanji.map((kanji) => {
@@ -1117,7 +1128,7 @@ export const Dashboard: React.FC = () => {
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-2.5">
                       <div className="text-xs font-semibold text-slate-500 dark:text-slate-400 font-mono-num tabular-nums">
-                        Kosakata Level {state.currentLevel} · {levelMastery.vocabulary.mastered}/{levelVocab.length} dikuasai
+                        Kosakata {levelMeta.jlpt} Bab {levelMeta.unitInTier} · {levelMastery.vocabulary.mastered}/{levelVocab.length} dikuasai
                       </div>
                       {levelItemTab === 'all' && levelVocab.length > 16 && (
                         <button

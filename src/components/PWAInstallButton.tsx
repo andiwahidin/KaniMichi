@@ -196,10 +196,9 @@ export const PWAInstallButton: React.FC<PWAInstallButtonProps> = ({
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-800 p-3.5 space-y-2.5">
               <div className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Seluruh bank materi (60 level SRS Radikal/Kanji/Kosakata, Grammar, Kana JLPT,
-                Dokkai, Chōkai, Menulis, Pelafalan, dan Mogi Shiken N5–N1) disimpan otomatis untuk
-                akses offline. Progres belajar tetap tersimpan di perangkat dan akan tersinkronisasi
-                saat online kembali.
+                Seluruh bank materi (Kurikulum JLPT N5–N1, Tata Bahasa, Kana, Dokkai, Chōkai,
+                TOEFL/IELTS/TOEIC, dan TOAFL Arab) disimpan otomatis untuk akses offline. Progres
+                belajar tetap tersimpan di perangkat dan akan tersinkronisasi saat online kembali.
               </div>
 
               <button

@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "lang": "en",
+  "module": "vocab",
+  "totalCount": 30,
+  "packs": ["pack1.json"]
+}

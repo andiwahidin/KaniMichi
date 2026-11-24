@@ -19,6 +19,7 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { AiExplainButton } from './AiExplainButton';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { JLPT_LEVELS, loadGrammarDataset } from '../data/grammar';
 import {
@@ -621,6 +622,13 @@ export const GrammarHub: React.FC = () => {
                   </div>
                 </div>
               )}
+
+              <AiExplainButton
+                language="ja"
+                examContext={`JLPT N${pt.jlpt} Tata Bahasa (${pt.pattern})`}
+                content={`Pola: ${pt.pattern}\nArti: ${pt.meaning}\nRumus: ${pt.structure}\nPenjelasan: ${pt.explanation}${pt.confusableWith ? `\nPerbandingan: ${pt.confusableWith}` : ''}`}
+                label="Jelaskan Pola Ini Lebih Mudah & Contoh Baru (AI)"
+              />
             </div>
           ) : (
             <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 space-y-4">

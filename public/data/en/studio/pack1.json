@@ -1,0 +1,528 @@
+{
+  "pack": "pack1",
+  "items": [
+    {
+      "id": "en-s-001",
+      "lang": "en",
+      "order": 1,
+      "examTrack": "ielts",
+      "skill": "writing",
+      "taskLabel": "IELTS Writing Task 2 · Opinion / Discussion Essay",
+      "title": "Public Transport Investment vs. Highway Expansion",
+      "prepSec": 120,
+      "durationSec": 2400,
+      "minWords": 250,
+      "promptBody": "Traffic congestion in major cities continues to worsen. Some policymakers argue that governments should invest primarily in expanding urban highways, while others believe funding should prioritize affordable public transit networks. Discuss both views and give your own opinion.",
+      "bulletHints": [
+        "Paragraf 1: Parafrase topik + thesis statement yang jelas.",
+        "Paragraf 2: Argumen pihak pro-pelebaran jalan (mobilitas logistik & pinggiran kota) + keterbatasannya (induced demand).",
+        "Paragraf 3: Argumen pihak pro-transportasi publik (kapasitas tinggi, rendah emisi, akses merata) — posisi utama.",
+        "Paragraf 4: Kesimpulan tegas tanpa menambah ide baru."
+      ],
+      "modelScoreLabel": "Referensi Band 8.0",
+      "modelAnswer": "As metropolitan populations expand rapidly, urban gridlock has become one of the most pressing economic and environmental challenges for municipal governments. While some planners advocate constructing wider arterial highways to ease bottlenecks, I firmly believe that prioritizing reliable, affordable public transit represents a far more sustainable long-term strategy.\n\nProponents of highway expansion point out that modern road corridors play a vital role in freight movement and regional connectivity. Businesses rely on predictable delivery times, and residents living in outer suburbs often lack direct rail access. In the short term, adding extra lanes can indeed relieve acute congestion at major intersections. However, transportation studies repeatedly demonstrate the phenomenon of induced demand: wider roads encourage more commuters to drive private vehicles, causing traffic volumes to return to saturation within just a few years.\n\nBy contrast, investing in integrated bus rapid transit, metro lines, and safe pedestrian feeders addresses congestion at its root by moving vastly higher numbers of passengers per square meter of urban space. When public networks are punctual, clean, and competitively priced, daily commuters willingly leave cars at home. Beyond reducing commute times, public transit lowers urban air pollution and ensures equitable mobility for students, seniors, and lower-income households who cannot afford vehicle ownership.\n\nIn conclusion, although targeted highway maintenance remains necessary for commercial freight, expanding urban road capacity alone cannot resolve chronic congestion. Municipal budgets are far better allocated toward dependable public transportation systems that serve both economic efficiency and environmental resilience.",
+      "keyExpressions": [
+        { "phrase": "urban gridlock", "noteId": "kemacetan total perkotaan (lebih akademik dari 'traffic jam')" },
+        { "phrase": "induced demand", "noteId": "permintaan terinduksi — pelebaran jalan memicu tambah banyak kendaraan" },
+        { "phrase": "equitable mobility", "noteId": "akses mobilitas yang setara bagi seluruh warga" },
+        { "phrase": "addresses congestion at its root", "noteId": "menyelesaikan kemacetan langsung dari akarnya" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "task_response",
+          "name": "Task Response",
+          "description": "Menjawab kedua sudut pandang secara seimbang dengan opini yang jelas dan minimal 250 kata.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Menjawab sebagian prompt, opini kurang jelas atau di bawah 250 kata." },
+            { "score": 6, "label": "Band 6", "descriptor": "Kedua sisi dibahas dan ada opini, namun satu sisi terasa lebih tipis." },
+            { "score": 7, "label": "Band 7", "descriptor": "Kedua pandangan dibahas tuntas dengan opini konsisten dan contoh relevan." },
+            { "score": 8, "label": "Band 8", "descriptor": "Argumen matang, mendalam, tajam, dan terhubung sempurna ke kesimpulan." }
+          ]
+        },
+        {
+          "id": "coherence",
+          "name": "Coherence & Cohesion",
+          "description": "Alur paragraf logis, topic sentence jelas, dan penggunaan kata hubung natural.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Paragraf kurang fokus; kata hubung diulang secara mekanis." },
+            { "score": 6, "label": "Band 6", "descriptor": "Urutan ide jelas meski transisi antar kalimat kadang kaku." },
+            { "score": 7, "label": "Band 7", "descriptor": "Setiap paragraf memiliki satu ide sentral dengan transisi halus." },
+            { "score": 8, "label": "Band 8", "descriptor": "Kohesi mengalir alami tanpa terasa dipaksakan; referensi pronomina rapi." }
+          ]
+        },
+        {
+          "id": "lexical",
+          "name": "Lexical Resource",
+          "description": "Variasi kosakata akademik, kolokasi tepat, dan ejaan akurat.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Kosakata terbatas dan banyak pengulangan kata dasar." },
+            { "score": 6, "label": "Band 6", "descriptor": "Cukup variatif untuk topik umum, ada beberapa pilihan kata kurang tepat." },
+            { "score": 7, "label": "Band 7", "descriptor": "Kolokasi akademik akurat ('pressing challenge', 'long-term strategy')." },
+            { "score": 8, "label": "Band 8", "descriptor": "Diksi presisi tinggi, idiomatik alami, hampir nol kesalahan ejaan." }
+          ]
+        },
+        {
+          "id": "grammar",
+          "name": "Grammatical Range & Accuracy",
+          "description": "Kombinasi kalimat kompleks (klausa relatif, konsesif, hedging) dengan akurasi tinggi.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Dominan kalimat sederhana; sering salah tenses atau subject-verb." },
+            { "score": 6, "label": "Band 6", "descriptor": "Campuran kalimat sederhana & kompleks dengan beberapa kesalahan minor." },
+            { "score": 7, "label": "Band 7", "descriptor": "Mayoritas kalimat bebas kesalahan dengan struktur kompleks bervariasi." },
+            { "score": 8, "label": "Band 8", "descriptor": "Struktur sangat fleksibel dan akurat hampir di seluruh esai." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-002",
+      "lang": "en",
+      "order": 2,
+      "examTrack": "ielts",
+      "skill": "writing",
+      "taskLabel": "IELTS Writing Task 1 · Academic Data Report",
+      "title": "Renewable vs. Fossil Electricity Share (2010–2024)",
+      "prepSec": 90,
+      "durationSec": 1200,
+      "minWords": 150,
+      "promptBody": "Summarize the key trends from the dataset below by selecting and reporting the main features, and make comparisons where relevant (at least 150 words; do NOT include personal opinions).",
+      "readingExcerpt": "DATASET — National Electricity Generation Share (%):\n• Coal: 2010 = 48% | 2017 = 36% | 2024 = 21%\n• Natural Gas: 2010 = 32% | 2017 = 34% | 2024 = 30%\n• Solar & Wind: 2010 = 6% | 2017 = 16% | 2024 = 35%\n• Hydropower: 2010 = 14% | 2017 = 14% | 2024 = 14%",
+      "bulletHints": [
+        "Paragraf 1: Parafrase deskripsi data (periode 2010–2024, 4 sumber energi).",
+        "Paragraf 2 (Overview — WAJIB): Soroti perubahan terbesar (Solar & Wind melonjak melampaui Coal; Hydro stabil).",
+        "Paragraf 3–4 (Detail): Bandingkan angka spesifik dengan kosakata tren ('declined steadily', 'surged nearly sixfold', 'remained unchanged')."
+      ],
+      "modelScoreLabel": "Referensi Band 8.0",
+      "modelAnswer": "The dataset compares the proportion of national electricity generated from four energy sources—coal, natural gas, solar and wind, and hydropower—across three milestone years between 2010 and 2024.\n\nOverall, the energy mix underwent a decisive shift away from coal toward solar and wind power, which overtook every other source by 2024. Meanwhile, natural gas fluctuated marginally, and hydropower maintained a completely stable share throughout the fourteen-year period.\n\nIn 2010, coal dominated electricity generation at 48 percent, accounting for nearly half of total supply. Its share subsequently dropped to 36 percent in 2017 before falling further to 21 percent in 2024—a cumulative decline of 27 percentage points. Conversely, combined solar and wind output experienced dramatic expansion, rising from just 6 percent in 2010 to 16 percent in 2017, and surging to 35 percent by 2024, nearly six times its initial proportion.\n\nThe remaining two sources exhibited far greater stability. Natural gas rose modestly from 32 percent in 2010 to a peak of 34 percent in 2017, then eased back to 30 percent in 2024 to finish as the second-largest contributor. Hydropower showed zero variation, consistently supplying exactly 14 percent of national electricity in all three recorded years.",
+      "keyExpressions": [
+        { "phrase": "underwent a decisive shift", "noteId": "mengalami pergeseran yang tegas" },
+        { "phrase": "percentage points", "noteId": "poin persentase (presisi tinggi untuk selisih %)" },
+        { "phrase": "nearly six times its initial proportion", "noteId": "hampir enam kali lipat dari proporsi awalnya" },
+        { "phrase": "exhibited far greater stability", "noteId": "menunjukkan stabilitas yang jauh lebih tinggi" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "task_achievement",
+          "name": "Task Achievement",
+          "description": "Memuat Overview yang jelas, memilih angka kunci akurat, minimal 150 kata, tanpa opini pribadi.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Tidak ada overview jelas atau hanya mendaftar angka satu per satu." },
+            { "score": 6, "label": "Band 6", "descriptor": "Ada overview dan data cukup akurat namun perbandingan kurang tajam." },
+            { "score": 7, "label": "Band 7", "descriptor": "Overview tajam, seluruh tren utama tersaji akurat dengan perbandingan jelas." },
+            { "score": 8, "label": "Band 8", "descriptor": "Sintesis data sangat rapi, selektif, akurat 100%, dan profesional." }
+          ]
+        },
+        {
+          "id": "coherence",
+          "name": "Coherence & Cohesion",
+          "description": "Pengelompokan data logis (mis. sumber yang berubah tajam vs. yang stabil).",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Pengelompokan data acak dan sulit diikuti." },
+            { "score": 6, "label": "Band 6", "descriptor": "Ada pembagian paragraf jelas dengan transisi standar." },
+            { "score": 7, "label": "Band 7", "descriptor": "Pengelompokan kontras sangat logis ('Conversely', 'Meanwhile')." },
+            { "score": 8, "label": "Band 8", "descriptor": "Alur perbandingan mengalir mulus dari overview hingga detail." }
+          ]
+        },
+        {
+          "id": "lexical",
+          "name": "Lexical Resource",
+          "description": "Variasi kata kerja tren (surge, decline, ease back, remain unchanged) dan proporsi.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Mengulang kata 'go up' / 'go down' terus-menerus." },
+            { "score": 6, "label": "Band 6", "descriptor": "Memakai beberapa kosakata tren standar dengan cukup tepat." },
+            { "score": 7, "label": "Band 7", "descriptor": "Variasi kosakata tren dan frasa proporsi ('accounted for', 'overtook') akurat." },
+            { "score": 8, "label": "Band 8", "descriptor": "Diksi laporan data sangat presisi, alami, dan bebas salah kolokasi." }
+          ]
+        },
+        {
+          "id": "grammar",
+          "name": "Grammatical Range & Accuracy",
+          "description": "Ketepatan Past Tense untuk tahun lampau (2010–2024) dan struktur perbandingan.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Tenses bercampur antara present dan past untuk data masa lalu." },
+            { "score": 6, "label": "Band 6", "descriptor": "Past tense mayoritas benar dengan struktur kalimat cukup baik." },
+            { "score": 7, "label": "Band 7", "descriptor": "Kalimat kompleks (partisipel, perbandingan) akurat dan alami." },
+            { "score": 8, "label": "Band 8", "descriptor": "Kendali penuh atas struktur komparatif dan tanda baca data." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-003",
+      "lang": "en",
+      "order": 3,
+      "examTrack": "toefl-ibt",
+      "skill": "writing",
+      "taskLabel": "TOEFL iBT Writing · Academic Discussion (10 Min)",
+      "title": "Should Universities Require an AI Literacy Course?",
+      "prepSec": 60,
+      "durationSec": 600,
+      "minWords": 110,
+      "promptBody": "Professor Miller asks: 'Should every undergraduate student be required to complete a foundational course on AI literacy and digital ethics before graduating? Why or why not?' Read the classmates' posts below and contribute your own well-supported response (minimum 110 words).",
+      "readingExcerpt": "CLASSMATE POSTS:\n• Claire: Yes—graduates in every field from medicine to journalism will encounter automated tools, so understanding bias and verification is essential.\n• Omar: I disagree with making it mandatory. Degree programs are already crowded, and rapid changes in software mean a general course could quickly become outdated.",
+      "bulletHints": [
+        "Langsung rujuk salah satu atau kedua pendapat teman sekelas (Claire / Omar).",
+        "Berikan sudut pandang baru yang spesifik (mis. fokus pada prinsip verifikasi kritis, bukan aplikasi tertentu).",
+        "Tutup dengan contoh nyata di dunia akademik atau profesi."
+      ],
+      "modelScoreLabel": "Referensi Skor 28–30 / 30",
+      "modelAnswer": "I strongly agree with Claire that a mandatory AI literacy course is a worthwhile addition to undergraduate curricula, even though Omar raises a valid concern about rapidly evolving tools. The solution is not to teach students how to operate one specific software platform—which could indeed become obsolete—but rather to train them in durable analytical principles.\n\nSpecifically, students across all disciplines need structured practice in verifying sources, recognizing statistical bias, and protecting data privacy. For example, a nursing student who understands how diagnostic algorithms can underperform on underrepresented patient groups will exercise far better clinical judgment than someone who treats automated outputs as infallible. Rather than crowding out core major courses, a concise one-credit seminar in the first year can equip undergraduates with critical habits they will use in every subsequent class and throughout their careers.",
+      "keyExpressions": [
+        { "phrase": "even though X raises a valid concern", "noteId": "mengakui argumen lawan secara santun & akademis" },
+        { "phrase": "durable analytical principles", "noteId": "prinsip analitis jangka panjang yang tidak cepat usang" },
+        { "phrase": "treat automated outputs as infallible", "noteId": "menganggap hasil otomatis selalu benar tanpa cela" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "contribution",
+          "name": "Relevance & Contribution",
+          "description": "Menjawab pertanyaan profesor, menanggapi diskusi kelas, dan menambah perspektif baru.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Hanya mengulang pendapat teman tanpa alasan baru." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Relevan dan menjawab pertanyaan, tetapi pengembangan masih singkat." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Kontribusi jelas, terhubung ke diskusi kelas dengan alasan konkret." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Kontribusi sangat tajam, elaborasi kuat, dan contoh sangat persuasif." }
+          ]
+        },
+        {
+          "id": "organization",
+          "name": "Organization & Elaboration",
+          "description": "Ide disusun padat, fokus, dan mudah diikuti dalam format respons 10 menit.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Alur melompat-lompat tanpa pengait antar kalimat." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Cukup terstruktur namun transisi masih sederhana." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Terorganisir rapi dengan klaim, alasan, dan contoh yang seimbang." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Sangat kohesif, ringkas, dan persuasif." }
+          ]
+        },
+        {
+          "id": "language_use",
+          "name": "Language Use & Vocabulary",
+          "description": "Diksi akademik presisi dan struktur tata bahasa beragam dengan akurasi tinggi.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Kesalahan tata bahasa sering mengganggu pemahaman makna." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Makna jelas namun pilihan kata dan pola kalimat masih monoton." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Kosakata tepat dan kalimat majemuk lancar dengan sedikit kekeliruan." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Sangat akurat, variatif, dan bergaya diskusi universitas alami." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-004",
+      "lang": "en",
+      "order": 4,
+      "examTrack": "toefl-ibt",
+      "skill": "writing",
+      "taskLabel": "TOEFL iBT Writing · Integrated Task (20 Min)",
+      "title": "Vertical Farming in Dense Cities",
+      "prepSec": 90,
+      "durationSec": 1200,
+      "minWords": 150,
+      "promptBody": "Summarize the points made in the lecture excerpt and explain how they cast doubt on the specific claims made in the reading passage (150–225 words).",
+      "readingExcerpt": "READING CLAIMS:\n1. Vertical indoor farms drastically cut water use by recycling 95% of irrigation water.\n2. Placing farms inside city centers eliminates long-distance food transport emissions.\n3. Stacked hydroponic racks can feed entire metropolitan populations year-round.\n\nLECTURE COUNTERPOINTS (Audio Summary):\n1. While water drops, artificial LED lighting and climate control consume enormous electricity—often increasing net carbon emissions.\n2. Transport is only a small fraction (~6%) of food emissions; power generation for indoor farms outweighs trucking savings.\n3. Vertical farms are economically viable mainly for leafy greens and herbs, not calorie-dense staple crops like rice, wheat, or corn.",
+      "audioBriefText": "Professor's Lecture: While vertical farming looks impressive on paper, we need to examine its practical limits. First, although hydroponic systems save water, they rely around the clock on high-intensity LED lights and air conditioning, which demand huge amounts of electricity. Second, moving farms closer to consumers saves relatively little carbon because transportation accounts for only about six percent of total food emissions—far less than the energy needed to light indoor warehouses. Finally, vertical racks work well for lettuce and basil, but staple calorie crops such as rice, wheat, and maize require too much space and light to grow economically indoors.",
+      "bulletHints": [
+        "Gunakan struktur 4 paragraf singkat: Intro hubungan Reading vs. Lecture + 3 paragraf poin tandingan.",
+        "JANGAN masukkan opini pribadi — laporkan secara objektif bagaimana dosen membantah teks.",
+        "Gunakan kata kerja pelaporan: 'The lecturer challenges...', 'In contrast, the professor points out...'."
+      ],
+      "modelScoreLabel": "Referensi Skor 28–30 / 30",
+      "modelAnswer": "The reading passage presents vertical indoor farming as an environmentally efficient solution for feeding major cities, whereas the professor casts doubt on each of these advantages by highlighting serious energy and crop limitations.\n\nFirst, although the reading emphasizes that vertical farms recycle up to 95 percent of irrigation water, the lecturer argues that this benefit comes at a heavy electricity cost. Because indoor facilities require continuous high-intensity LED lighting and climate control, their overall power demand can actually increase net carbon emissions.\n\nSecond, the reading claims that locating farms inside urban centers eliminates emissions from long-distance food trucking. The professor counters that transportation makes up only around six percent of total food-related emissions, meaning that the carbon footprint of powering indoor warehouses easily outweighs any savings from shorter delivery routes.\n\nFinally, while the passage suggests that stacked hydroponic racks can feed entire urban populations year-round, the lecturer notes that vertical farms are commercially practical mainly for leafy greens and herbs. Calorie-dense staple crops such as rice, wheat, and maize demand far too much space and energy to cultivate economically indoors.",
+      "keyExpressions": [
+        { "phrase": "casts doubt on each of these advantages", "noteId": "meragukan/membantah masing-masing keunggulan tersebut" },
+        { "phrase": "comes at a heavy electricity cost", "noteId": "harus dibayar dengan biaya listrik yang tinggi" },
+        { "phrase": "outweighs any savings from", "noteId": "jauh lebih besar daripada penghematan dari" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "accuracy",
+          "name": "Synthesis & Source Accuracy",
+          "description": "Menangkap ketiga poin dosen dan menghubungkannya tepat ke klaim bacaan tanpa distorsi.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Hanya meringkas bacaan atau melewatkan 2 poin kuliah." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Mencakup 2 poin bantahan secara umum, detail angka/alasan kurang." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Ketiga poin tersaji jelas dan akurat menghubungkan teks vs. kuliah." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Sintesis lengkap, presisi, objektif, dan proporsional." }
+          ]
+        },
+        {
+          "id": "coherence",
+          "name": "Coherence & Progression",
+          "description": "Struktur poin-per-poin rapi dengan penanda kontras yang tegas.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Sulit membedakan mana klaim bacaan dan mana bantahan dosen." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Cukup jelas tetapi transisi terasa kaku." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Sangat rapi mengikuti alur First / Second / Finally." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Alur kontras sangat elegan dan mudah dipindai penilai." }
+          ]
+        },
+        {
+          "id": "language",
+          "name": "Paraphrasing & Language Use",
+          "description": "Memparafrase dengan kata sendiri (tidak menyalin mentah) dan akurat secara grammar.",
+          "levels": [
+            { "score": 2, "label": "2 / 5", "descriptor": "Banyak menyalin frasa persis dan terdapat kesalahan tata bahasa mendasar." },
+            { "score": 3, "label": "3 / 5", "descriptor": "Ada usaha parafrase namun beberapa struktur kalimat masih lemah." },
+            { "score": 4, "label": "4 / 5", "descriptor": "Parafrase baik dengan tata bahasa solid dan variasi kata kerja pelaporan." },
+            { "score": 5, "label": "5 / 5", "descriptor": "Parafrase alami, variasi struktur luas, hampir tanpa kesalahan." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-005",
+      "lang": "en",
+      "order": 5,
+      "examTrack": "ielts",
+      "skill": "speaking",
+      "taskLabel": "IELTS Speaking Part 2 · Cue Card (1 Min Prep / 2 Min Speak)",
+      "title": "Describe a Useful Skill You Learned Outside School",
+      "prepSec": 60,
+      "durationSec": 120,
+      "promptBody": "Describe a practical skill you learned outside of a formal school or university classroom.\nYou should say:\n• what the skill is\n• how and where you learned it\n• why it was challenging at first\n• and explain how this skill has benefited your daily life or career.",
+      "bulletHints": [
+        "Gunakan 60 detik persiapan untuk menulis 4 kata kunci saja (jangan menulis kalimat panjang).",
+        "Mulai dengan pengantar natural ('One genuinely practical skill I picked up outside university is...').",
+        "Ceritakan satu momen spesifik saat pertama kali kesulitan lalu berhasil — ini membuat jawaban terasa hidup dan mencapai durasi 2 menit."
+      ],
+      "modelScoreLabel": "Referensi Band 8.0",
+      "modelAnswer": "One genuinely practical skill I picked up outside formal education is basic financial budgeting and personal expense tracking using spreadsheets. I first learned it about two years ago after I started working part-time and noticed that my savings barely grew despite earning a steady income.\n\nInstead of enrolling in a paid class, I watched a series of structured tutorial videos online and practiced building my own monthly tracker every Sunday evening. At the beginning, it felt surprisingly tedious—categorizing small daily purchases and learning spreadsheet formulas like pivot tables took plenty of trial and error, and I broke my own sheet twice during the first month.\n\nOnce I got the hang of automating categories, however, the payoff was huge. Within three months, I realized how much money was quietly leaking into unused subscriptions and impulse food deliveries. Since then, I have managed to build an emergency fund and save systematically for professional certification exams. Even better, the spreadsheet fluency I gained ended up helping me organize project budgets at work, so a personal habit turned into a real career asset.",
+      "keyExpressions": [
+        { "phrase": "picked up outside formal education", "noteId": "mempelajari secara mandiri/alami (idiomatik natural untuk Speaking)" },
+        { "phrase": "plenty of trial and error", "noteId": "banyak proses coba-coba dan belajar dari kesalahan" },
+        { "phrase": "got the hang of", "noteId": "mulai menguasai cara kerjanya dengan lancar" },
+        { "phrase": "turned into a real career asset", "noteId": "berubah menjadi aset karier yang nyata" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "fluency",
+          "name": "Fluency & Coherence",
+          "description": "Berbicara lancar selama ~2 menit tanpa jeda panjang yang canggung dan menjawab 4 poin cue card.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Sering berhenti mencari kata atau selesai kurang dari 1 menit." },
+            { "score": 6, "label": "Band 6", "descriptor": "Cukup lancar sepanjang 1,5–2 menit dengan beberapa koreksi diri." },
+            { "score": 7, "label": "Band 7", "descriptor": "Berbicara panjang secara natural dengan penanda wacana halus." },
+            { "score": 8, "label": "Band 8", "descriptor": "Sangat lancar, alur cerita menarik, jeda hanya untuk berpikir konten." }
+          ]
+        },
+        {
+          "id": "lexical",
+          "name": "Lexical Resource",
+          "description": "Penggunaan kosakata natural dan frasa idiomatik yang tepat konteks.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Kosakata dasar berulang dan sering terhenti saat parafrase." },
+            { "score": 6, "label": "Band 6", "descriptor": "Cukup memadai untuk menceritakan pengalaman meski kurang ekspresif." },
+            { "score": 7, "label": "Band 7", "descriptor": "Menggunakan kolokasi & phrasal verbs natural ('pick up', 'get the hang of')." },
+            { "score": 8, "label": "Band 8", "descriptor": "Kaya nuansa, idiomatik alami tanpa terdengar dihafal kaku." }
+          ]
+        },
+        {
+          "id": "grammar",
+          "name": "Grammatical Range & Accuracy",
+          "description": "Perpindahan mulus antara Past Tense (cerita belajar) dan Present Perfect / Present (manfaat kini).",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Sering tertukar antara present dan past tense." },
+            { "score": 6, "label": "Band 6", "descriptor": "Struktur dasar akurat, kalimat kompleks kadang salah kecil." },
+            { "score": 7, "label": "Band 7", "descriptor": "Berbagai tenses dan klausa kompleks dipakai akurat secara konsisten." },
+            { "score": 8, "label": "Band 8", "descriptor": "Fleksibel, akurat tinggi, dan hampir tanpa kesalahan lisan." }
+          ]
+        },
+        {
+          "id": "pronunciation",
+          "name": "Pronunciation & Intonation",
+          "description": "Kejelasan bunyi konsonan akhir, tekanan kata (word stress), dan intonasi ekspresif.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Intonasi datar dan beberapa kata sulit dipahami." },
+            { "score": 6, "label": "Band 6", "descriptor": "Umumnya mudah dipahami meski tekanan kata kadang kurang tepat." },
+            { "score": 7, "label": "Band 7", "descriptor": "Jelas, ritme baik, dan intonasi menekankan poin penting." },
+            { "score": 8, "label": "Band 8", "descriptor": "Sangat mudah diikuti dengan penekanan kalimat dan irama alami." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-006",
+      "lang": "en",
+      "order": 6,
+      "examTrack": "ielts",
+      "skill": "speaking",
+      "taskLabel": "IELTS Speaking Part 3 · Abstract Discussion",
+      "title": "Lifelong Learning & Workplace Adaptation",
+      "prepSec": 30,
+      "durationSec": 90,
+      "promptBody": "Examiner Question: 'Do you think employers have a responsibility to train workers in new technologies, or should individuals manage their own continuous learning?' Give an extended, analytical answer (60–90 seconds).",
+      "bulletHints": [
+        "Di Part 3, hindari cerita personal terlalu panjang — bicaralah secara luas tentang masyarakat/ekonomi.",
+        "Gunakan struktur: Posisi seimbang -> Tanggung jawab perusahaan -> Inisiatif individu -> Contoh konkret."
+      ],
+      "modelScoreLabel": "Referensi Band 8.0",
+      "modelAnswer": "I'd say it has to be a shared responsibility rather than falling solely on one side. From an employer's perspective, whenever a company introduces proprietary software or automated workflows, investing in structured staff training makes complete business sense. Retraining existing employees who already understand the company's clients and culture is usually far more cost-effective than constant hiring.\n\nAt the same time, individuals cannot afford to rely entirely on their current employer, especially because career paths today are much less linear than they were a generation ago. Taking ownership of transferable skills—like communication, data literacy, or foreign languages—protects workers if their industry shifts unexpectedly. Ultimately, the healthiest labor markets combine company-sponsored upskilling during work hours with personal curiosity outside the office.",
+      "keyExpressions": [
+        { "phrase": "a shared responsibility", "noteId": "tanggung jawab bersama (membuka jawaban seimbang)" },
+        { "phrase": "makes complete business sense", "noteId": "sangat masuk akal secara bisnis" },
+        { "phrase": "transferable skills", "noteId": "keterampilan lintas bidang yang selalu relevan di berbagai pekerjaan" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "fluency",
+          "name": "Fluency & Analytical Depth",
+          "description": "Mampu mengembangkan argumen abstrak dengan alasan & contoh masyarakat.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Jawaban terlalu pendek (<30 detik) atau terlalu personal." },
+            { "score": 6, "label": "Band 6", "descriptor": "Menjawab pertanyaan dengan cukup panjang dan satu alasan jelas." },
+            { "score": 7, "label": "Band 7", "descriptor": "Analisis dua sisi matang dengan perbandingan jelas." },
+            { "score": 8, "label": "Band 8", "descriptor": "Sangat analitis, lancar, dan terstruktur layaknya diskusi profesional." }
+          ]
+        },
+        {
+          "id": "lexical",
+          "name": "Lexical Resource",
+          "description": "Kosakata abstrak dunia kerja dan pendidikan yang tepat.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Kosakata terbatas pada kata-kata umum." },
+            { "score": 6, "label": "Band 6", "descriptor": "Cukup tepat untuk menjelaskan ide pokok." },
+            { "score": 7, "label": "Band 7", "descriptor": "Memakai istilah tepat ('transferable skills', 'cost-effective', 'upskilling')." },
+            { "score": 8, "label": "Band 8", "descriptor": "Diksi sangat akurat, halus, dan meyakinkan." }
+          ]
+        },
+        {
+          "id": "grammar",
+          "name": "Grammatical Range",
+          "description": "Penggunaan kondisional, perbandingan, dan modalitas hedging secara lisan.",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Banyak kalimat terputus atau kesalahan tata bahasa berulang." },
+            { "score": 6, "label": "Band 6", "descriptor": "Jelas dipahami dengan campuran struktur sederhana dan majemuk." },
+            { "score": 7, "label": "Band 7", "descriptor": "Kalimat kompleks lisan mengalir lancar dan akurat." },
+            { "score": 8, "label": "Band 8", "descriptor": "Penguasaan tata bahasa lisan sangat alami dan presisi." }
+          ]
+        },
+        {
+          "id": "pronunciation",
+          "name": "Pronunciation & Delivery",
+          "description": "Kejelasan pengucapan dan penekanan kata kontras ('employers' vs 'individuals').",
+          "levels": [
+            { "score": 5, "label": "Band 5", "descriptor": "Pengucapan beberapa istilah kunci kurang jelas." },
+            { "score": 6, "label": "Band 6", "descriptor": "Dapat dipahami dengan baik, intonasi cukup variatif." },
+            { "score": 7, "label": "Band 7", "descriptor": "Penekanan kontras sangat membantu pendengar mengikuti argumen." },
+            { "score": 8, "label": "Band 8", "descriptor": "Delivery sangat percaya diri, artikulasi bersih, intonasi alami." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-007",
+      "lang": "en",
+      "order": 7,
+      "examTrack": "toefl-ibt",
+      "skill": "speaking",
+      "taskLabel": "TOEFL iBT Speaking Task 1 · Independent (15s Prep / 45s Speak)",
+      "title": "Studying Alone vs. Studying in a Small Group",
+      "prepSec": 15,
+      "durationSec": 45,
+      "promptBody": "Some students prefer to prepare for major exams by studying alone, while others prefer studying in a small group. Which approach do you prefer and why? Use specific reasons and examples to support your choice.",
+      "bulletHints": [
+        "Detik 0–8: Pilih satu sisi secara tegas ('Personally, I prefer studying in a small group for two main reasons.').",
+        "Detik 8–26: Alasan 1 + contoh konkret singkat.",
+        "Detik 26–45: Alasan 2 + contoh singkat — jangan habis waktu sebelum alasan kedua."
+      ],
+      "modelScoreLabel": "Referensi Skor 27–30 / 30",
+      "modelAnswer": "Personally, I prefer preparing for major exams by studying alone first, rather than relying on a group, for two main reasons. First, studying solo lets me control my own pace. When I prepared for my statistics final last semester, I spent extra time reviewing probability formulas I struggled with instead of sitting through chapters I already understood. Second, working alone minimizes distractions. In study groups, conversations often drift off-topic after twenty minutes, whereas a quiet solo session with timed practice tests helps me stay focused and retain far more material in less time.",
+      "keyExpressions": [
+        { "phrase": "for two main reasons", "noteId": "penanda struktur klasik yang memudahkan penilai TOEFL iBT" },
+        { "phrase": "control my own pace", "noteId": "mengatur tempo belajar sesuai kebutuhan sendiri" },
+        { "phrase": "drift off-topic", "noteId": "melantur keluar dari topik belajar" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "delivery",
+          "name": "Delivery (Pace & Clarity)",
+          "description": "Tempo bicara stabil 45 detik, pengucapan jelas, tanpa jeda diam berkepanjangan.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Banyak ragu-ragu atau terpotong sebelum ide selesai." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Cukup lancar dan jelas, hanya sedikit jeda transisi." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Lancar, intonasi mantap, tepat waktu dalam 45 detik." }
+          ]
+        },
+        {
+          "id": "language_use",
+          "name": "Language Use",
+          "description": "Tata bahasa akurat dan kosakata tepat sasaran.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Struktur terbatas dengan beberapa kesalahan tenses." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Kendali tata bahasa baik dan pilihan kata efektif." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Variasi kalimat dan kosakata sangat natural dan presisi." }
+          ]
+        },
+        {
+          "id": "topic_dev",
+          "name": "Topic Development",
+          "description": "Pilihan tegas didukung dua alasan jelas dan minimal satu contoh spesifik.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Alasan umum tanpa contoh spesifik." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Ada alasan jelas dan contoh meski elaborasi agak singkat." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Sangat terstruktur, padat, dan meyakinkan dari awal hingga akhir." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en-s-008",
+      "lang": "en",
+      "order": 8,
+      "examTrack": "toefl-ibt",
+      "skill": "speaking",
+      "taskLabel": "TOEFL iBT Speaking Task 2 · Campus Announcement (30s Prep / 60s Speak)",
+      "title": "Extended Evening Library Hours Proposal",
+      "prepSec": 30,
+      "durationSec": 60,
+      "promptBody": "The woman expresses her opinion about the university's announcement. State her opinion and explain the two reasons she gives for holding that opinion (60 seconds).",
+      "readingExcerpt": "CAMPUS NOTICE: Starting next semester, the Main Library will extend its weekday closing time from 10:00 PM to midnight. To fund extra security and utility costs, the university will slightly reduce printing allowance credits for all students.",
+      "audioBriefText": "Woman's Reaction: Honestly, I think keeping the library open until midnight is a fantastic decision, even with the smaller printing credit. First, a lot of us work part-time jobs until seven or eight in the evening, so closing at ten barely gave us two quiet hours to study after our shifts. Second, almost every professor accepts assignments digitally online nowadays, so most students never even use up half of their free printing credits anyway.",
+      "bulletHints": [
+        "Detik 0–15: Ringkas kebijakan kampus dalam 1 kalimat + sebutkan sikap mahasiswi (mendukung penuh).",
+        "Detik 15–38: Jelaskan alasan pertama (mahasiswa pekerja paruh waktu butuh ruang belajar tenang setelah jam shift).",
+        "Detik 38–60: Jelaskan alasan kedua (tugas sekarang mayoritas dikumpulkan digital sehingga kuota cetak jarang habis)."
+      ],
+      "modelScoreLabel": "Referensi Skor 28–30 / 30",
+      "modelAnswer": "According to the campus notice, the university plans to keep the main library open until midnight on weekdays while slightly reducing students' free printing credits to cover the extra costs. The woman strongly supports this change for two reasons. First, she points out that many students work part-time shifts until seven or eight at night; previously, the ten o'clock closing time left them with very little quiet study time after work. Second, she argues that the lower printing allowance won't really hurt anyone because almost all professors now collect assignments electronically, meaning most students rarely use their full printing credits anyway.",
+      "keyExpressions": [
+        { "phrase": "According to the campus notice,", "noteId": "pembuka cepat dan jelas untuk Task 2 TOEFL iBT" },
+        { "phrase": "strongly supports this change for two reasons", "noteId": "menyatakan sikap pembicara secara tegas" },
+        { "phrase": "collect assignments electronically", "noteId": "mengumpulkan tugas secara digital" }
+      ],
+      "rubricCriteria": [
+        {
+          "id": "delivery",
+          "name": "Delivery",
+          "description": "Pengucapan jernih dan ritme konsisten selama 60 detik.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Tempo tersendat atau terlalu cepat hingga melewatkan poin." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Jelas dan stabil dengan jeda minimal." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Sangat mulus, percaya diri, dan tepat durasi 60 detik." }
+          ]
+        },
+        {
+          "id": "language_use",
+          "name": "Language Use",
+          "description": "Ketepatan kalimat pelaporan (reported speech) dan variasi kata.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Kesalahan pronomina atau kata kerja pelaporan." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Reported speech umumnya benar dan mudah diikuti." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Sangat akurat dan alami dalam meringkas dialog." }
+          ]
+        },
+        {
+          "id": "topic_dev",
+          "name": "Topic Development",
+          "description": "Mencakup ringkasan pengumuman, sikap pembicara, dan kedua alasannya secara akurat.",
+          "levels": [
+            { "score": 2, "label": "2 / 4", "descriptor": "Melewatkan satu alasan pembicara atau keliru menyimpulkan sikap." },
+            { "score": 3, "label": "3 / 4", "descriptor": "Seluruh poin masuk namun elaborasi alasan kedua agak terburu-buru." },
+            { "score": 4, "label": "4 / 4", "descriptor": "Lengkap, proporsional, dan akurat 100% sesuai sumber." }
+          ]
+        }
+      ]
+    }
+  ]
+}

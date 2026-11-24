@@ -1,0 +1,427 @@
+{
+  "pack": "pack1",
+  "items": [
+    {
+      "id": "en-l-001",
+      "lang": "en",
+      "order": 1,
+      "title": "Library Reserve Textbook Dilemma",
+      "tracks": ["toefl-itp", "toefl-ibt"],
+      "formatLabel": "TOEFL Part A · Short Campus Dialogue",
+      "introText": "Listen to a short conversation between two university students.",
+      "lines": [
+        {
+          "speaker": "Man",
+          "role": "male",
+          "text": "Did you manage to check out the macroeconomics textbook from the reserve desk? The midterm is on Thursday.",
+          "translationId": "Apakah kamu berhasil meminjam buku makroekonomi dari meja cadangan? UTS-nya hari Kamis.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Woman",
+          "role": "female",
+          "text": "Both print copies were already taken, so the librarian showed me how to access the licensed e-book through the student portal.",
+          "translationId": "Kedua salinan cetaknya sudah dipinjam, jadi pustakawan menunjukkanku cara mengakses e-book berlisensi lewat portal mahasiswa.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "What does the woman imply?",
+      "choices": [
+        "She will have to skip studying for the midterm.",
+        "She found a digital version of the required textbook.",
+        "The library ordered extra print copies for Thursday.",
+        "She already lent her personal textbook to the man."
+      ],
+      "correctIndex": 1,
+      "explanationId": "Meski buku cetak habis, pustakawan membantunya mengakses versi e-book resmi melalui portal mahasiswa."
+    },
+    {
+      "id": "en-l-002",
+      "lang": "en",
+      "order": 2,
+      "title": "Lab Equipment Calibration Delay",
+      "tracks": ["toefl-itp", "toefl-ibt"],
+      "formatLabel": "TOEFL Part A · Academic Dialogue",
+      "introText": "Listen to a conversation between a student and a teaching assistant.",
+      "lines": [
+        {
+          "speaker": "Student",
+          "role": "female",
+          "text": "Should I run the water-quality samples through the spectrometer before lunch?",
+          "translationId": "Haruskah saya menguji sampel kualitas air dengan spektrometer sebelum makan siang?",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "TA",
+          "role": "male",
+          "text": "I'd hold off until two o'clock. The technician is still recalibrating the optical sensor, and early readings won't be reliable.",
+          "translationId": "Sebaiknya tunda sampai pukul dua. Teknisi masih mengkalibrasi ulang sensor optik, dan hasil pengukuran awal tidak akan akurat.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "What does the teaching assistant advise the student to do?",
+      "choices": [
+        "Submit the samples immediately before lunch",
+        "Wait until 2:00 PM so the sensor calibration is complete",
+        "Recalibrate the optical sensor herself",
+        "Collect fresh water samples tomorrow morning"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Frasa idiomatik 'hold off until two o'clock' berarti menunda pengujian hingga pukul 14.00 agar hasil pembacaan akurat."
+    },
+    {
+      "id": "en-l-003",
+      "lang": "en",
+      "order": 3,
+      "title": "Mini-Lecture: Bioluminescence in Deep-Sea Organisms",
+      "tracks": ["toefl-itp", "toefl-ibt"],
+      "formatLabel": "TOEFL Part C · Mini-Lecture",
+      "introText": "Listen to part of a marine biology lecture.",
+      "lines": [
+        {
+          "speaker": "Professor",
+          "role": "narrator",
+          "text": "Below two hundred meters, sunlight fades almost completely, yet more than seventy-five percent of deep-sea creatures produce their own light through bioluminescence.",
+          "translationId": "Di bawah dua ratus meter, cahaya matahari hampir hilang sepenuhnya, namun lebih dari 75 persen makhluk laut dalam menghasilkan cahaya sendiri melalui bioluminesensi.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Professor",
+          "role": "narrator",
+          "text": "Many students assume this glow is mainly for attracting mates, which is true for some species. However, a surprisingly common function is defense: certain squid release a luminous cloud to startle predators, much like shallow-water squid release dark ink.",
+          "translationId": "Banyak mahasiswa mengira cahaya ini terutama untuk menarik pasangan, yang memang benar pada beberapa spesies. Namun fungsi yang sangat umum adalah pertahanan: cumi-cumi tertentu melepaskan awan bercahaya untuk mengejutkan predator, mirip cumi perairan dangkal yang menyemprotkan tinta gelap.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "Why does the professor mention shallow-water squid ink?",
+      "choices": [
+        "To argue that deep-sea squid cannot survive near the surface",
+        "To illustrate how deep-sea squid use bioluminescent clouds for defense",
+        "To prove that sunlight reaches below two hundred meters",
+        "To explain how deep-sea organisms attract mates"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Dosen menggunakan analogi tinta cumi laut dangkal untuk menjelaskan fungsi pertahanan diri dari awan bercahaya cumi laut dalam."
+    },
+    {
+      "id": "en-l-004",
+      "lang": "en",
+      "order": 4,
+      "title": "Mini-Lecture: Acoustic Design of Ancient Greek Theaters",
+      "tracks": ["toefl-itp", "toefl-ibt"],
+      "formatLabel": "TOEFL Part C · Architecture Lecture",
+      "introText": "Listen to an excerpt from an architectural acoustics talk.",
+      "lines": [
+        {
+          "speaker": "Lecturer",
+          "role": "female",
+          "text": "Visitors at the ancient theater of Epidaurus are often amazed that a whispered word on stage can be heard clearly in the topmost row, nearly sixty meters away.",
+          "translationId": "Pengunjung di teater kuno Epidaurus sering terpukau karena bisikan di panggung terdengar jelas hingga barisan paling atas, hampir 60 meter jauhnya.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Lecturer",
+          "role": "female",
+          "text": "Modern acoustic engineers discovered that the stepped limestone seats act as an acoustic trap, filtering out low-frequency background murmur like wind and crowd rustle while reflecting the higher frequencies of the human voice.",
+          "translationId": "Insinyur akustik modern menemukan bahwa kursi batu kapur bertingkat bertindak sebagai perangkap akustik, menyaring gumaman latar berfrekuensi rendah seperti angin sambil memantulkan frekuensi tinggi suara manusia.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "According to the lecturer, what accounts for the clear acoustics at Epidaurus?",
+      "choices": [
+        "Hidden bronze amplifiers buried under the stage",
+        "Limestone seating rows that suppress low-frequency background noise",
+        "A wooden roof that prevented wind from entering",
+        "Actors shouting through ceramic megaphones"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Susunan tangga kursi batu kapur menyaring suara latar frekuensi rendah (angin/gumaman) dan memantulkan frekuensi suara aktor."
+    },
+    {
+      "id": "en-l-005",
+      "lang": "en",
+      "order": 5,
+      "title": "IELTS Section 1: University Sports Centre Membership",
+      "tracks": ["ielts"],
+      "formatLabel": "IELTS Part 1 · Everyday Transactional (UK)",
+      "introText": "Listen to a student enquiring about sports membership at a British university.",
+      "lines": [
+        {
+          "speaker": "Receptionist",
+          "role": "female",
+          "text": "Good morning, Westbridge Sports Centre. How can I help you?",
+          "translationId": "Selamat pagi, Pusat Olahraga Westbridge. Ada yang bisa saya bantu?",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Student",
+          "role": "male",
+          "text": "Hi, I'd like to sign up for the off-peak swimming pass. Is it twenty-five pounds per month?",
+          "translationId": "Halo, saya ingin mendaftar kartu renang jam tidak sibuk. Apakah biayanya 25 pound per bulan?",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Receptionist",
+          "role": "female",
+          "text": "That was last term's rate. For full-time postgraduates it's now twenty-eight pounds, and it covers weekday entry between seven in the morning and four in the afternoon—plus free locker hire.",
+          "translationId": "Itu tarif semester lalu. Untuk mahasiswa pascasarjana penuh waktu sekarang 28 pound, mencakup masuk hari kerja pukul 07.00–16.00 plus loker gratis.",
+          "localeOverride": "en-GB"
+        }
+      ],
+      "questionPrompt": "How much is the current monthly off-peak pass, and when can it be used?",
+      "choices": [
+        "£25 per month, weekends only",
+        "£28 per month, weekdays from 7:00 AM to 4:00 PM",
+        "£28 per month, evenings after 4:00 PM",
+        "£25 per month, 24 hours a day including lockers"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Hati-hati distraktor klasik IELTS! £25 adalah tarif semester lalu; tarif terbaru £28 berlaku hari kerja pukul 07.00–16.00."
+    },
+    {
+      "id": "en-l-006",
+      "lang": "en",
+      "order": 6,
+      "title": "IELTS Section 3: Research Dissertation Feedback",
+      "tracks": ["ielts", "toefl-ibt"],
+      "formatLabel": "IELTS Part 3 · Academic Tutorial (UK)",
+      "introText": "Listen to a tutor giving feedback to a student on a draft research proposal.",
+      "lines": [
+        {
+          "speaker": "Tutor",
+          "role": "male",
+          "text": "Your literature review on urban cycling infrastructure is impressively thorough, Maya. I'm slightly concerned, though, about your plan to interview eighty commuters in three weeks.",
+          "translationId": "Tinjauan pustakamu soal infrastruktur sepeda kota sangat mendalam, Maya. Namun saya agak khawatir dengan rencanamu mewawancarai 80 komuter dalam tiga minggu.",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Maya",
+          "role": "female",
+          "text": "Right—would it be more realistic to run an online questionnaire for the broader sample, and keep in-depth interviews to around fifteen riders?",
+          "translationId": "Benar juga—apakah lebih realistis menyebar kuesioner daring untuk sampel luas, lalu membatasi wawancara mendalam sekitar 15 pesepeda saja?",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Tutor",
+          "role": "male",
+          "text": "Spot on. That mixed-methods design will give you both statistical breadth and rich qualitative detail within your deadline.",
+          "translationId": "Tepat sekali. Desain metode campuran itu akan memberimu keluasan statistik sekaligus kedalaman kualitatif tepat waktu.",
+          "localeOverride": "en-GB"
+        }
+      ],
+      "questionPrompt": "What methodological change do Maya and her tutor agree upon?",
+      "choices": [
+        "Canceling all commuter interviews in favor of reading older books",
+        "Extending the dissertation deadline by three months",
+        "Combining a broad online survey with about 15 in-depth interviews",
+        "Increasing the interview target from 80 to 150 riders"
+      ],
+      "correctIndex": 2,
+      "explanationId": "Keduanya menyepakati desain mixed-methods: kuesioner daring untuk sampel luas + ~15 wawancara mendalam."
+    },
+    {
+      "id": "en-l-007",
+      "lang": "en",
+      "order": 7,
+      "title": "IELTS Section 2: Botanical Garden Audio Guide",
+      "tracks": ["ielts"],
+      "formatLabel": "IELTS Part 2 · Public Information Monologue (UK)",
+      "introText": "Listen to a visitor briefing at a botanical conservatory.",
+      "lines": [
+        {
+          "speaker": "Guide",
+          "role": "female",
+          "text": "Welcome to the Kew Heritage Glasshouse. Before you explore the Orchid Pavilion, please note that the Palm Dome on the east wing is temporarily closed until Friday for roof glazing repairs.",
+          "translationId": "Selamat datang di Rumah Kaca Warisan Kew. Sebelum menjelajahi Paviliun Anggrek, harap dicatat Kubah Palem di sayap timur tutup sementara hingga Jumat untuk perbaikan kaca atap.",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Guide",
+          "role": "female",
+          "text": "In the meantime, our Rare Fern Collection—which normally requires a separate ticket—is open free of charge to all visitors today via the west courtyard.",
+          "translationId": "Sementara itu, Koleksi Pakis Langka kami—yang biasanya memerlukan tiket terpisah—dibuka gratis untuk semua pengunjung hari ini melalui halaman barat.",
+          "localeOverride": "en-GB"
+        }
+      ],
+      "questionPrompt": "What special arrangement is available for visitors today?",
+      "choices": [
+        "The Palm Dome has extended evening opening hours.",
+        "Free entry is offered to the Rare Fern Collection.",
+        "Guided tours of the roof repairs leave every hour.",
+        "The Orchid Pavilion requires an extra entrance fee."
+      ],
+      "correctIndex": 1,
+      "explanationId": "Sebagai kompensasi penutupan sementara Palm Dome, pengunjung mendapat akses gratis ke Rare Fern Collection hari ini."
+    },
+    {
+      "id": "en-l-008",
+      "lang": "en",
+      "order": 8,
+      "title": "IELTS Section 4: Early History of Paper Making",
+      "tracks": ["ielts", "toefl-ibt"],
+      "formatLabel": "IELTS Part 4 · Academic Lecture",
+      "introText": "Listen to a short lecture excerpt on historical technology transfer.",
+      "lines": [
+        {
+          "speaker": "Lecturer",
+          "role": "male",
+          "text": "When papermaking techniques spread westward from China to Samarkand and Baghdad in the eighth century, artisans replaced mulberry bark with locally abundant linen and hemp rags.",
+          "translationId": "Saat teknik pembuatan kertas menyebar ke barat dari Tiongkok ke Samarkand dan Baghdad pada abad ke-8, perajin mengganti kulit murbei dengan kain linen dan rami yang melimpah setempat.",
+          "localeOverride": "en-GB"
+        },
+        {
+          "speaker": "Lecturer",
+          "role": "male",
+          "text": "Because paper was dramatically cheaper to produce than parchment made from animal skins, libraries and translation houses expanded rapidly, making scholarly texts far more accessible.",
+          "translationId": "Karena kertas jauh lebih murah diproduksi dibandingkan perkamen dari kulit hewan, perpustakaan dan rumah penerjemahan berkembang pesat, membuat naskah ilmiah jauh lebih mudah diakses.",
+          "localeOverride": "en-GB"
+        }
+      ],
+      "questionPrompt": "Why did libraries expand rapidly after paper reached Baghdad?",
+      "choices": [
+        "Mulberry trees grew faster in desert climates.",
+        "Paper was much less expensive to manufacture than animal-skin parchment.",
+        "Printing presses had already been invented in the eighth century.",
+        "Governments banned the export of linen cloth."
+      ],
+      "correctIndex": 1,
+      "explanationId": "Dosen menekankan faktor biaya: kertas jauh lebih murah dibandingkan perkamen kulit hewan sehingga produksi naskah & perpustakaan melonjak."
+    },
+    {
+      "id": "en-l-009",
+      "lang": "en",
+      "order": 9,
+      "title": "TOEIC Part 3: Conference Room Projector Issue",
+      "tracks": ["toeic"],
+      "formatLabel": "TOEIC Part 3 · Workplace Conversation",
+      "introText": "Listen to two colleagues preparing for a client presentation.",
+      "lines": [
+        {
+          "speaker": "David",
+          "role": "male",
+          "text": "Hannah, the clients from Osaka just checked in at reception, and the projector in Boardroom A still isn't detecting my laptop.",
+          "translationId": "Hannah, klien dari Osaka baru saja lapor di resepsionis, dan proyektor di Ruang Rapat A masih tidak mendeteksi laptop saya.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Hannah",
+          "role": "female",
+          "text": "Don't worry—Boardroom C on the fourth floor is vacant until noon, and its display was just upgraded last week. I'll notify reception to escort them straight upstairs while you copy your slides onto a backup USB drive.",
+          "translationId": "Jangan khawatir—Ruang Rapat C di lantai empat kosong sampai siang, dan layarnya baru diperbarui minggu lalu. Saya beri tahu resepsionis untuk mengantar mereka ke atas sementara kamu menyalin slide ke USB cadangan.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "What will Hannah do next?",
+      "choices": [
+        "Repair the broken cable in Boardroom A",
+        "Ask reception to guide the clients to Boardroom C",
+        "Postpone the client meeting until next week",
+        "Buy a new laptop from the IT department"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Hannah menawarkan pindah ke Boardroom C dan langsung akan memberi tahu resepsionis untuk mengantar klien ke lantai empat."
+    },
+    {
+      "id": "en-l-010",
+      "lang": "en",
+      "order": 10,
+      "title": "TOEIC Part 4: Airport Gate Change Announcement",
+      "tracks": ["toeic"],
+      "formatLabel": "TOEIC Part 4 · Public Announcement",
+      "introText": "Listen to an airline announcement at an international terminal.",
+      "lines": [
+        {
+          "speaker": "Announcer",
+          "role": "female",
+          "text": "Attention passengers on SkyLine Flight 408 to Singapore. Due to routine maintenance on the jet bridge at Gate B12, boarding has been relocated to Gate B19, located just past the duty-free concourse.",
+          "translationId": "Perhatian penumpang SkyLine Penerbangan 408 tujuan Singapura. Karena perawatan rutin garbarata di Gerbang B12, boarding dipindahkan ke Gerbang B19 tepat setelah area bebas bea.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Announcer",
+          "role": "female",
+          "text": "Departure remains on schedule at 6:45 PM, and Priority Boarding will begin in twenty minutes. Please have your boarding passes and passports ready.",
+          "translationId": "Keberangkatan tetap sesuai jadwal pukul 18.45, dan Boarding Prioritas akan dimulai dalam dua puluh menit. Mohon siapkan boarding pass dan paspor Anda.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "What has changed for Flight 408 passengers?",
+      "choices": [
+        "The flight has been delayed by two hours.",
+        "Passengers must board from Gate B19 instead of Gate B12.",
+        "Priority Boarding has been canceled today.",
+        "The destination has been rerouted to Kuala Lumpur."
+      ],
+      "correctIndex": 1,
+      "explanationId": "Jadwal keberangkatan 18.45 tidak berubah; yang berubah hanyalah gerbang boarding dari B12 ke B19."
+    },
+    {
+      "id": "en-l-011",
+      "lang": "en",
+      "order": 11,
+      "title": "TOEIC Part 3: Supplier Invoice Discrepancy",
+      "tracks": ["toeic"],
+      "formatLabel": "TOEIC Part 3 · Office Phone Call",
+      "introText": "Listen to a phone conversation between a purchasing officer and a supplier.",
+      "lines": [
+        {
+          "speaker": "Officer",
+          "role": "female",
+          "text": "Hi Mr. Patel, I'm calling about Invoice 882 for the ergonomic office chairs. We ordered forty units, but the bill lists forty-five.",
+          "translationId": "Halo Pak Patel, saya menelepon terkait Faktur 882 untuk kursi kantor ergonomis. Kami memesan 40 unit, tetapi tagihan mencantumkan 45.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Mr. Patel",
+          "role": "male",
+          "text": "Let me check our dispatch log... Yes, I see the clerical error—only forty chairs left our warehouse. I'll email a corrected invoice this afternoon so your payment stays on schedule.",
+          "translationId": "Biar saya cek log pengiriman... Ya, saya lihat kesalahan administrasinya—hanya 40 kursi yang keluar dari gudang. Saya kirim faktur revisi sore ini agar pembayaran Anda tetap sesuai jadwal.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "How will Mr. Patel resolve the problem?",
+      "choices": [
+        "By shipping five extra chairs tomorrow",
+        "By sending a revised invoice later today",
+        "By canceling the entire order of forty chairs",
+        "By asking the officer to pay the higher amount first"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Pak Patel mengakui kesalahan tulis jumlah unit dan berjanji mengirim faktur yang sudah diperbaiki sore itu juga."
+    },
+    {
+      "id": "en-l-012",
+      "lang": "en",
+      "order": 12,
+      "title": "TOEIC Part 4: Recorded Voicemail from HR Recruiter",
+      "tracks": ["toeic"],
+      "formatLabel": "TOEIC Part 4 · Telephone Message",
+      "introText": "Listen to a voicemail message left for a job candidate.",
+      "lines": [
+        {
+          "speaker": "Recruiter",
+          "role": "female",
+          "text": "Hello Mr. Pratama, this is Claire from Meridian Analytics. Thank you for meeting our product engineering team yesterday. They were very impressed with your data-pipeline portfolio.",
+          "translationId": "Halo Pak Pratama, ini Claire dari Meridian Analytics. Terima kasih telah bertemu tim teknik produk kami kemarin. Mereka sangat terkesan dengan portofolio data-pipeline Anda.",
+          "localeOverride": "en-US"
+        },
+        {
+          "speaker": "Recruiter",
+          "role": "female",
+          "text": "We would like to invite you for a final interview with our Vice President on Thursday at 11:00 AM. Please call me back at extension 304 before Wednesday noon to confirm whether you prefer joining in person or via video link.",
+          "translationId": "Kami ingin mengundang Anda untuk wawancara akhir bersama Wakil Presiden pada Kamis pukul 11.00. Mohon telepon balik ke ekstensi 304 sebelum Rabu siang untuk mengonfirmasi apakah Anda memilih hadir langsung atau lewat tautan video.",
+          "localeOverride": "en-US"
+        }
+      ],
+      "questionPrompt": "What is Mr. Pratama asked to confirm before Wednesday noon?",
+      "choices": [
+        "His expected starting salary",
+        "Whether he prefers an in-person or video final interview",
+        "The names of two university professors",
+        "Whether he can start working on Thursday morning"
+      ],
+      "correctIndex": 1,
+      "explanationId": "Claire meminta konfirmasi sebelum Rabu siang apakah kandidat memilih wawancara akhir secara langsung atau via video."
+    }
+  ]
+}

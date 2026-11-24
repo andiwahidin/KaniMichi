@@ -247,14 +247,14 @@ export function generateMockExamPaper(
     return {
       id: `mg-read-${i + 1}`,
       part: 'moji-goi',
-      sublabel: 'Kanji Reading (漢字読み)',
+      sublabel: 'Bacaan Kanji (漢字読み)',
       promptJp: `「${item.characters}」の正[ただ]しい読[よ]み方[かた]を選[えら]んでください。`,
       promptSub: isSingleKanji
-        ? `Choose the Hiragana reading for the vocabulary word "${item.primaryMeaning}" (${item.partOfSpeech ?? 'Vocabulary'}).`
-        : 'Choose the correct Hiragana reading for the kanji word.',
+        ? `Pilih bacaan Hiragana yang tepat untuk kosakata "${item.primaryMeaning}" (${item.partOfSpeech ?? 'Kosakata'}).`
+        : 'Pilih cara baca Hiragana yang benar untuk kosakata kanji di atas.',
       choices,
       answerIndex,
-      explanationEn: `${item.characters} is read "${item.readings!.join(' / ')}" and means "${item.primaryMeaning}".`,
+      explanationEn: `${item.characters} dibaca "${item.readings!.join(' / ')}" dan artinya "${item.primaryMeaning}".`,
       sourceId: item.id,
     };
   });
@@ -285,14 +285,14 @@ export function generateMockExamPaper(
     return {
       id: `mg-mean-${i + 1}`,
       part: 'moji-goi',
-      sublabel: 'Vocabulary Meaning (語彙意味)',
+      sublabel: 'Arti Kosakata (語彙意味)',
       promptJp: `「${item.characters}（${item.readings![0]}）」の意味[いみ]として最[もっと]も適切[てきせつ]なものを選[えら]んでください。`,
-      promptSub: 'Choose the most accurate English meaning.',
+      promptSub: 'Pilih makna yang paling tepat untuk kosakata di atas.',
       choices,
       answerIndex,
-      explanationEn: `${item.characters} (${item.readings![0]}) means "${item.primaryMeaning}"${
+      explanationEn: `${item.characters} (${item.readings![0]}) bermakna "${item.primaryMeaning}"${
         item.acceptedMeanings.length > 1
-          ? ` (also: ${item.acceptedMeanings.slice(0, 3).join(', ')})`
+          ? ` (sinonim: ${item.acceptedMeanings.slice(0, 3).join(', ')})`
           : ''
       }.`,
       sourceId: item.id,
@@ -310,12 +310,12 @@ export function generateMockExamPaper(
     return {
       id: `mg-kana-${i + 1}`,
       part: 'moji-goi',
-      sublabel: 'Context Usage (文脈規定)',
+      sublabel: 'Pemakaian Konteks (文脈規定)',
       promptJp: `${item.quiz.sentenceBefore}（　　　）${item.quiz.sentenceAfter}`,
-      promptSub: 'Choose the non-kanji expression that best fits the blank.',
+      promptSub: 'Pilih ungkapan non-kanji yang paling cocok melengkapi bagian kosong.',
       choices: shuffledChoices,
       answerIndex: shuffledChoices.indexOf(item.word),
-      explanationEn: `"${item.word}" (${item.primaryMeaning}) fits the sentence: "${item.quiz.en}" Note: ${item.usageNote}`,
+      explanationEn: `Jawaban tepat: "${item.word}" (${item.primaryMeaning}). Makna kalimat: "${item.quiz.en}". Catatan pemakaian: ${item.usageNote}`,
       sourceId: item.id,
     };
   });
@@ -336,12 +336,12 @@ export function generateMockExamPaper(
     return {
       id: `bp-${i + 1}`,
       part: 'bunpou',
-      sublabel: `Grammar (文法 · ${pt.pattern})`,
+      sublabel: `Tata Bahasa (文法 · ${pt.pattern})`,
       promptJp: `${pt.quiz.sentenceBefore}（　　　）${pt.quiz.sentenceAfter}`,
-      promptSub: 'Choose the grammar expression that completes the sentence.',
+      promptSub: 'Pilih pola tata bahasa yang paling tepat untuk melengkapi kalimat.',
       choices: shuffledChoices,
       answerIndex: shuffledChoices.indexOf(pt.quiz.answer),
-      explanationEn: `Answer: ${pt.quiz.answer} (${pt.pattern} = "${pt.meaning}"). Sentence: "${pt.quiz.en}" ${pt.explanation}`,
+      explanationEn: `Jawaban: ${pt.quiz.answer} (pola ${pt.pattern} = "${pt.meaning}"). Kalimat: "${pt.quiz.en}". ${pt.explanation}`,
       sourceId: pt.id,
     };
   });
@@ -361,7 +361,7 @@ export function generateMockExamPaper(
       dokkaiQuestions.push({
         id: `dk-${pIdx + 1}-${qIdx + 1}`,
         part: 'dokkai',
-        sublabel: `Dokkai Passage ${pIdx + 1} · Q${qIdx + 1}`,
+        sublabel: `Wacana Dokkai ${pIdx + 1} · Soal ${qIdx + 1}`,
         promptJp: q.promptJp,
         promptSub: passage.titleEn,
         choices: q.choices,
@@ -385,7 +385,7 @@ export function generateMockExamPaper(
     (track, tIdx) => ({
       id: `ck-${tIdx + 1}`,
       part: 'choukai',
-      sublabel: `Chōkai Audio ${tIdx + 1} (${track.taskType.toUpperCase()})`,
+      sublabel: `Audio Chōkai ${tIdx + 1} (${track.taskType.toUpperCase()})`,
       promptJp: track.questionJp,
       promptSub: track.situationEn,
       choices: track.choices,
@@ -459,7 +459,7 @@ export function gradeMockExamPaper(
     sections = [
       {
         id: 'lang-reading',
-        label: 'Language Knowledge & Reading',
+        label: 'Pengetahuan Bahasa & Membaca',
         jpLabel: '言語知識・読解',
         score: s1Score,
         maxScore: 120,
@@ -468,7 +468,7 @@ export function gradeMockExamPaper(
       },
       {
         id: 'listening',
-        label: 'Listening',
+        label: 'Mendengarkan (Chōkai)',
         jpLabel: '聴解',
         score: s2Score,
         maxScore: 60,
@@ -487,7 +487,7 @@ export function gradeMockExamPaper(
     sections = [
       {
         id: 'lang',
-        label: 'Language Knowledge (Vocab & Grammar)',
+        label: 'Pengetahuan Bahasa (Kosakata & Tata Bahasa)',
         jpLabel: '言語知識（文字・語彙・文法）',
         score: s1Score,
         maxScore: 60,
@@ -496,7 +496,7 @@ export function gradeMockExamPaper(
       },
       {
         id: 'reading',
-        label: 'Reading Comprehension',
+        label: 'Pemahaman Membaca (Dokkai)',
         jpLabel: '読解',
         score: s2Score,
         maxScore: 60,
@@ -505,7 +505,7 @@ export function gradeMockExamPaper(
       },
       {
         id: 'listening',
-        label: 'Listening Comprehension',
+        label: 'Pemahaman Mendengarkan (Chōkai)',
         jpLabel: '聴解',
         score: s3Score,
         maxScore: 60,

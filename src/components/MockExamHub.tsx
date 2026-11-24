@@ -16,6 +16,7 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { AiExplainButton } from './AiExplainButton';
 import {
   GrammarManifest,
   JLPT_LEVELS,
@@ -977,11 +978,20 @@ export const MockExamHub: React.FC = () => {
                       })}
                     </div>
 
-                    <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-lg p-3 leading-relaxed">
-                      <span className="font-bold text-slate-500 dark:text-slate-400 uppercase text-[10px] tracking-wide block mb-0.5">
-                        Explanation (English)
-                      </span>
-                      {q.explanationEn}
+                    <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-lg p-3 space-y-2 leading-relaxed">
+                      <div>
+                        <span className="font-bold text-slate-500 dark:text-slate-400 uppercase text-[10px] tracking-wide block mb-0.5">
+                          Pembahasan Soal
+                        </span>
+                        {q.explanationEn}
+                      </div>
+                      <AiExplainButton
+                        language="ja"
+                        examContext={`Simulasi JLPT N${paper.jlpt} · ${q.sublabel}`}
+                        content={`Soal: ${q.promptJp}\nJawaban benar: ${q.choices[q.answerIndex]}\nPembahasan: ${q.explanationEn}`}
+                        label="Minta Penjelasan Bahasa Indonesia (AI)"
+                        compact
+                      />
                     </div>
 
                     {/* Unlocked audio script for Chōkai questions */}

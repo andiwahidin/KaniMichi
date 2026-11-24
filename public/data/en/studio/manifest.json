@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "lang": "en",
+  "module": "studio",
+  "totalCount": 8,
+  "packs": ["pack1.json"]
+}

@@ -1,0 +1,660 @@
+{
+  "pack": "pack1",
+  "items": [
+    {
+      "id": "ar-g-001",
+      "lang": "ar",
+      "order": 1,
+      "title": "Jumlah Ismiyyah (Mubtada' & Khabar)",
+      "nativeTitle": "الْجُمْلَةُ الْاِسْمِيَّةُ (الْمُبْتَدَأُ وَالْخَبَرُ)",
+      "tracks": ["toafl"],
+      "category": "Nahwu Dasar",
+      "formula": "مُبْتَدَأٌ (Marfu' · Ma'rifah) + خَبَرٌ (Marfu' · sesuai jenis & jumlah)",
+      "explanationId": "Jumlah Ismiyyah adalah kalimat nominal yang diawali kata benda (Mubtada') dan dijelaskan oleh predikat (Khabar). Keduanya berstatus rafa' (umumnya berakhiran dhammah untuk mufrad, alif untuk mutsanna, atau waw untuk jamak mudzakkar salim) serta wajib selaras dalam mudzakkar/muannats dan bilangan.",
+      "keyTip": "Dalam Tarakib TOAFL, perhatikan kesesuaian jenis (mudzakkar/muannats) dan tanda rafa' antara mubtada' dan khabar!",
+      "examples": [
+        {
+          "sentence": "الطَّالِبُ مُجْتَهِدٌ فِي دُرُوسِهِ.",
+          "transliteration": "aṭ-ṭālibu mujtahidun fī durūsihi.",
+          "translationId": "Mahasiswa itu sungguh-sungguh dalam pelajarannya."
+        },
+        {
+          "sentence": "الْمُعَلِّمُونَ مُخْلِصُونَ فِي عَمَلِهِمْ.",
+          "transliteration": "al-mu'allimūna mukhliṣūna fī 'amalihim.",
+          "translationId": "Para guru laki-laki itu tulus dalam pekerjaan mereka."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih khabar yang tepat secara nahwu (Tarakib TOAFL):",
+        "sentence": "الطَّالِبَانِ الْجَدِيدَانِ ______ فِي الْمَكْتَبَةِ.",
+        "choices": ["حَاضِرٌ", "حَاضِرَانِ", "حَاضِرَيْنِ", "حَاضِرُونَ"],
+        "correctIndex": 1,
+        "explanationId": "Mubtada' «الطَّالِبَانِ» adalah mutsanna (dual) mudzakkar, sehingga khabarnya wajib mutsanna marfu' dengan alif: «حَاضِرَانِ»."
+      }
+    },
+    {
+      "id": "ar-g-002",
+      "lang": "ar",
+      "order": 2,
+      "title": "Jumlah Fi'liyyah (Fi'il, Fa'il & Maf'ul Bih)",
+      "nativeTitle": "الْجُمْلَةُ الْفِعْلِيَّةُ (الْفِعْلُ وَالْفَاعِلُ وَالْمَفْعُولُ بِهِ)",
+      "tracks": ["toafl"],
+      "category": "Nahwu Dasar",
+      "formula": "فِعْلٌ (selalu mufrad di awal) + فَاعِلٌ (Marfu') + مَفْعُولٌ بِهِ (Manshub)",
+      "explanationId": "Ketika kalimat diawali kata kerja (Fi'il), kata kerja tersebut tetap berbentuk tunggal (mufrad) meskipun pelakunya (Fa'il) berbentuk mutsanna atau jamak; namun fi'il tetap menyesuaikan jenis kelamin (mudzakkar/muannats) fa'il. Fa'il selalu marfu' dan objek (Maf'ul Bih) selalu manshub.",
+      "keyTip": "Jebakan klasik TOAFL: jangan memakai «كَتَبُوا الطُّلَّابُ» di awal kalimat — yang benar adalah «كَتَبَ الطُّلَّابُ»!",
+      "examples": [
+        {
+          "sentence": "قَرَأَ الطُّلَّابُ الْمَقَالَ الْعِلْمِيَّ.",
+          "transliteration": "qara'a aṭ-ṭullābu al-maqāla al-'ilmiyya.",
+          "translationId": "Para mahasiswa membaca artikel ilmiah itu."
+        },
+        {
+          "sentence": "كَتَبَتِ الطَّالِبَاتُ التَّقْرِيرَ.",
+          "transliteration": "katabati aṭ-ṭālibātu at-taqrīra.",
+          "translationId": "Para mahasiswi menulis laporan tersebut."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk fi'il yang tepat untuk mengawali kalimat:",
+        "sentence": "______ الْعُلَمَاءُ الْمَخْطُوطَاتِ الْقَدِيمَةَ بِعِنَايَةٍ.",
+        "choices": ["دَرَسَ", "دَرَسُوا", "دَرَسَتْ", "يَدْرُسُونَ"],
+        "correctIndex": 0,
+        "explanationId": "Karena fi'il berada di awal kalimat sebelum fa'il zhahir jamak «الْعُلَمَاءُ», fi'il wajib mufrad mudzakkar: «دَرَسَ»."
+      }
+    },
+    {
+      "id": "ar-g-003",
+      "lang": "ar",
+      "order": 3,
+      "title": "Kana wa Akhawatuha (Amil Nawasikh I)",
+      "nativeTitle": "كَانَ وَأَخَوَاتُهَا (أَصْبَحَ · أَمْسَى · ظَلَّ · لَيْسَ)",
+      "tracks": ["toafl"],
+      "category": "Nawasikh & I'rab",
+      "formula": "كَانَ + اِسْمُ كَانَ (Marfu') + خَبَرُ كَانَ (Manshub)",
+      "explanationId": "«كَانَ» dan saudari-saudarinya (أَصْبَحَ, صَارَ, ظَلَّ, بَاتَ, لَيْسَ, مَا زَالَ) masuk pada Jumlah Ismiyyah: mempertahankan mubtada' tetap rafa' (Isim Kana) dan mengubah khabar menjadi nashab (Khabar Kana).",
+      "keyTip": "Hafalkan rumus singkat: كَانَ = Rafa' dulu, lalu Nashab (تَرْفَعُ الْاِسْمَ وَتَنْصِبُ الْخَبَرَ).",
+      "examples": [
+        {
+          "sentence": "كَانَ الْاِمْتِحَانُ سَهْلًا لِلْمُجْتَهِدِينَ.",
+          "transliteration": "kāna al-imtiḥānu sahlan lil-mujtahidīna.",
+          "translationId": "Ujian itu mudah bagi orang-orang yang bersungguh-sungguh."
+        },
+        {
+          "sentence": "أَصْبَحَ الْمُهَنْدِسُونَ مَاهِرِينَ فِي التَّصْمِيمِ.",
+          "transliteration": "aṣbaḥa al-muhandisūna māhirīna fī at-taṣmīmi.",
+          "translationId": "Para insinyur menjadi terampil dalam perancangan."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih khabar yang tepat setelah «أَصْبَحَ» (Tarakib TOAFL):",
+        "sentence": "أَصْبَحَ الْمُشَارِكُونَ ______ لِلْمُنَاقَشَةِ الْعِلْمِيَّةِ.",
+        "choices": ["مُسْتَعِدُّونَ", "مُسْتَعِدِّينَ", "مُسْتَعِدٌّ", "مُسْتَعِدَّةً"],
+        "correctIndex": 1,
+        "explanationId": "Khabar «أَصْبَحَ» wajib manshub. Jamak mudzakkar salim ketika manshub ditandai dengan ya' dan nun: «مُسْتَعِدِّينَ»."
+      }
+    },
+    {
+      "id": "ar-g-004",
+      "lang": "ar",
+      "order": 4,
+      "title": "Inna wa Akhawatuha (Amil Nawasikh II)",
+      "nativeTitle": "إِنَّ وَأَخَوَاتُهَا (أَنَّ · لٰكِنَّ · كَأَنَّ · لَيْتَ · لَعَلَّ)",
+      "tracks": ["toafl"],
+      "category": "Nawasikh & I'rab",
+      "formula": "إِنَّ + اِسْمُ إِنَّ (Manshub) + خَبَرُ إِنَّ (Marfu')",
+      "explanationId": "Kebalikan dari «كَانَ», huruf-huruf «إِنَّ» dan saudarinya (أَنَّ, لٰكِنَّ, كَأَنَّ, لَيْتَ, لَعَلَّ) menashabkan Isim-nya dan merafa'kan Khabar-nya.",
+      "keyTip": "Rumus cepat: إِنَّ = Nashab dulu, lalu Rafa' (تَنْصِبُ الْاِسْمَ وَتَرْفَعُ الْخَبَرَ).",
+      "examples": [
+        {
+          "sentence": "إِنَّ الْعِلْمَ نُورٌ يَهْدِي الْإِنْسَانَ.",
+          "transliteration": "inna al-'ilma nūrun yahdī al-insāna.",
+          "translationId": "Sesungguhnya ilmu adalah cahaya yang membimbing manusia."
+        },
+        {
+          "sentence": "لَعَلَّ الْمُسَافِرِينَ قَادِمُونَ الْيَوْمَ.",
+          "transliteration": "la'alla al-musāfirīna qādimūna al-yawma.",
+          "translationId": "Semoga para musafir tiba hari ini."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Lengkapilah kalimat berikut dengan i'rab yang benar:",
+        "sentence": "إِنَّ ______ مُتَعَاوِنُونَ فِي تَنْظِيمِ الْمُؤْتَمَرِ.",
+        "choices": ["الْمُنَظِّمُونَ", "الْمُنَظِّمِينَ", "الْمُنَظِّمُ", "الْمُنَظِّمَانِ"],
+        "correctIndex": 1,
+        "explanationId": "Isim «إِنَّ» wajib manshub dan jamak mudzakkar (mengikuti khabar «مُتَعَاوِنُونَ»), sehingga yang benar adalah «الْمُنَظِّمِينَ»."
+      }
+    },
+    {
+      "id": "ar-g-005",
+      "lang": "ar",
+      "order": 5,
+      "title": "Idhafah (Mudhaf & Mudhaf Ilaih)",
+      "nativeTitle": "الْإِضَافَةُ (الْمُضَافُ وَالْمُضَافُ إِلَيْهِ)",
+      "tracks": ["toafl"],
+      "category": "Frasa & Struktur",
+      "formula": "مُضَافٌ (tanpa ال · tanpa tanwin · tanpa nun mutsanna/jamak) + مُضَافٌ إِلَيْهِ (Majrur)",
+      "explanationId": "Idhafah adalah penggabungan dua isim untuk menyatakan kepemilikan atau kekhususan. Mudhaf (kata pertama) tidak boleh memakai «ال» maupun tanwin, serta membuang huruf «ن» jika berbentuk mutsanna atau jamak mudzakkar salim. Mudhaf Ilaih (kata kedua) selalu majrur.",
+      "keyTip": "Uji cepat TOAFL: «مُعَلِّمُو الْمَدْرَسَةِ» (benar, nun dibuang), BUKAN «مُعَلِّمُونَ الْمَدْرَسَةِ».",
+      "examples": [
+        {
+          "sentence": "زُرْتُ مَكْتَبَةَ الْجَامِعَةِ صَبَاحًا.",
+          "transliteration": "zurtu maktabata al-jāmi'ati ṣabāḥan.",
+          "translationId": "Saya mengunjungi perpustakaan universitas pada pagi hari."
+        },
+        {
+          "sentence": "حَضَرَ مُدَرِّسُو اللُّغَةِ الْعَرَبِيَّةِ الِاجْتِمَاعَ.",
+          "transliteration": "ḥaḍara mudarrisū al-lughati al-'arabiyyati al-ijtimā'a.",
+          "translationId": "Para pengajar bahasa Arab menghadiri rapat tersebut."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih susunan Idhafah yang sah secara nahwu:",
+        "sentence": "أَشْرَفَ ______ عَلَى مَشْرُوعِ التَّخَرُّجِ.",
+        "choices": [
+          "أَسَاتِذَةٌ الْكُلِّيَّةِ",
+          "الْأَسَاتِذَةُ الْكُلِّيَّةِ",
+          "مُشْرِفُو الْكُلِّيَّةِ",
+          "مُشْرِفُونَ الْكُلِّيَّةِ"
+        ],
+        "correctIndex": 2,
+        "explanationId": "Pada «مُشْرِفُو الْكُلِّيَّةِ», mudhaf tidak memakai 'al' dan nun jamak mudzakkar salim telah dibuang karena idhafah."
+      }
+    },
+    {
+      "id": "ar-g-006",
+      "lang": "ar",
+      "order": 6,
+      "title": "Na'at & Man'ut (Kata Sifat & Yang Disifati)",
+      "nativeTitle": "النَّعْتُ وَالْمَنْعُوتُ",
+      "tracks": ["toafl"],
+      "category": "Frasa & Struktur",
+      "formula": "مَنْعُوتٌ + نَعْتٌ (wajib sama dalam 4 hal: I'rab, Jenis, Bilangan, Ma'rifah/Nakirah)",
+      "explanationId": "Na'at (kata sifat) selalu mengikuti Man'ut (kata benda yang disifati) dalam empat aspek: status i'rab, jenis kelamin, jumlah, dan definit/indefinit. Catatan penting: untuk jamak benda tidak berakal (jamak ghairu 'aqil), na'at berbentuk mufrad muannats!",
+      "keyTip": "Kaidah emas jamak tak berakal: «الْكُتُبُ الْمُفِيدَةُ» (buku-buku yang bermanfaat), selalu memakai sifat mufrad muannats.",
+      "examples": [
+        {
+          "sentence": "قَرَأْتُ كِتَابًا مُفِيدًا عَنِ التَّارِيخِ.",
+          "transliteration": "qara'tu kitāban mufīdan 'ani at-tārīkhi.",
+          "translationId": "Saya membaca buku yang bermanfaat tentang sejarah."
+        },
+        {
+          "sentence": "هٰذِهِ الْمَقَالَاتُ الْعِلْمِيَّةُ مُتَرْجَمَةٌ.",
+          "transliteration": "hādzihi al-maqālātu al-'ilmiyyatu mutarjamatun.",
+          "translationId": "Artikel-artikel ilmiah ini sudah diterjemahkan."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih na'at yang sesuai kaidah jamak tak berakal:",
+        "sentence": "اِشْتَرَتِ الْمَكْتَبَةُ مَخْطُوطَاتٍ ______ لِلْبَاحِثِينَ.",
+        "choices": ["نَادِرَةً", "نَادِرُونَ", "نَادِرًا", "نَادِرِينَ"],
+        "correctIndex": 0,
+        "explanationId": "«مَخْطُوطَاتٍ» adalah jamak tak berakal dalam posisi manshub, sehingga na'atnya wajib mufrad muannats manshub: «نَادِرَةً»."
+      }
+    },
+    {
+      "id": "ar-g-007",
+      "lang": "ar",
+      "order": 7,
+      "title": "Adawat Nashab Fi'il Mudhari' (أَنْ · لَنْ · كَيْ · لَامُ التَّعْلِيلِ)",
+      "nativeTitle": "نَوَاصِبُ الْفِعْلِ الْمُضَارِعِ",
+      "tracks": ["toafl"],
+      "category": "Fi'il & I'rab",
+      "formula": "أَنْ / لَنْ / كَيْ / لِـ / حَتَّى + فِعْلٌ مُضَارِعٌ مَنْصُوبٌ (fathah atau hadzfun nun)",
+      "explanationId": "Bila fi'il mudhari' didahului huruf nashab (أَنْ, لَنْ, كَيْ, لَامُ التَّعْلِيلِ, حَتَّى), akhiran fi'il berubah menjadi fathah, atau huruf nun-nya dibuang jika termasuk Af'alul Khamsah (يَفْعَلَانِ, يَفْعَلُونَ, تَفْعَلِينَ).",
+      "keyTip": "Contoh sering muncul: «يَجِبُ أَنْ يَدْرُسُوا» (nun pada يَدْرُسُونَ dibuang dan diberi alif fariqah).",
+      "examples": [
+        {
+          "sentence": "لَنْ يَتَأَخَّرَ الطَّالِبُ عَنِ الِاخْتِبَارِ.",
+          "transliteration": "lan yata'akhkhara aṭ-ṭālibu 'ani al-ikhtibāri.",
+          "translationId": "Mahasiswa itu tidak akan terlambat dari ujian."
+        },
+        {
+          "sentence": "جَاءَ الْبَاحِثُونَ لِيُشَارِكُوا فِي النَّدْوَةِ.",
+          "transliteration": "jā'a al-bāḥitsūna liyushārikū fī an-nadwati.",
+          "translationId": "Para peneliti datang untuk berpartisipasi dalam simposium."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk fi'il mudhari' manshub yang tepat:",
+        "sentence": "يَنْبَغِي لِلطُّلَّابِ أَنْ ______ مَهَارَةَ الِاسْتِمَاعِ يَوْمِيًّا.",
+        "choices": ["يُطَوِّرُونَ", "يُطَوِّرُوا", "يُطَوِّرُ", "يُطَوِّرْنَ"],
+        "correctIndex": 1,
+        "explanationId": "Setelah huruf nashab «أَنْ», Af'alul Khamsah «يُطَوِّرُونَ» membuang nun menjadi «يُطَوِّرُوا»."
+      }
+    },
+    {
+      "id": "ar-g-008",
+      "lang": "ar",
+      "order": 8,
+      "title": "Adawat Jazm Fi'il Mudhari' (لَمْ · لَا النَّاهِيَةُ · إِنْ)",
+      "nativeTitle": "جَوَازِمُ الْفِعْلِ الْمُضَارِعِ",
+      "tracks": ["toafl"],
+      "category": "Fi'il & I'rab",
+      "formula": "لَمْ / لَمَّا / لَا النَّاهِيَةُ + فِعْلٌ مُضَارِعٌ مَجْزُومٌ (sukun / buang huruf illat / buang nun)",
+      "explanationId": "Huruf jazm seperti «لَمْ» (tidak/belum di masa lalu) dan «لَا النَّاهِيَةُ» (larangan: jangan) menjazmkan fi'il mudhari': ditandai sukun pada fi'il shahih akhir, membuang huruf illat (ا/و/ي) pada fi'il mu'tal akhir, atau membuang nun pada Af'alul Khamsah.",
+      "keyTip": "Perhatikan fi'il mu'tal akhir saat majzum: «لَمْ يَسْعَ» (alif dibuang), «لَمْ يَدْعُ» (waw dibuang), «لَمْ يَمْشِ» (ya' dibuang).",
+      "examples": [
+        {
+          "sentence": "لَمْ يَحْضُرِ الْمُحَاضِرُ بِسَبَبِ السَّفَرِ.",
+          "transliteration": "lam yaḥḍuri al-muḥāḍiru bisababi as-safari.",
+          "translationId": "Dosen itu tidak hadir karena perjalanan dinas."
+        },
+        {
+          "sentence": "لَمْ يَنْسَ الطَّالِبُ مَوْعِدَ تَسْلِيمِ الْبَحْثِ.",
+          "transliteration": "lam yansa aṭ-ṭālibu maw'ida taslīmi al-baḥtsi.",
+          "translationId": "Mahasiswa itu tidak lupa jadwal pengumpulan makalah."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk fi'il mudhari' majzum yang tepat setelah «لَمْ»:",
+        "sentence": "لَمْ ______ الْبَاحِثُ إِلَى نَتِيجَةٍ نِهَائِيَّةٍ بَعْدُ.",
+        "choices": ["يَصِلُ", "يَصِلَ", "يَصِلْ", "يَصِلُونَ"],
+        "correctIndex": 2,
+        "explanationId": "«لَمْ» adalah huruf jazm sehingga fi'il shahih akhir «يَصِلُ» menjadi majzum dengan sukun: «يَصِلْ»."
+      }
+    },
+    {
+      "id": "ar-g-009",
+      "lang": "ar",
+      "order": 9,
+      "title": "Adad & Ma'dud (Bilangan 3–10 dan 11–99)",
+      "nativeTitle": "الْعَدَدُ وَالْمَعْدُودُ",
+      "tracks": ["toafl"],
+      "category": "Tarakib TOAFL",
+      "formula": "3–10: Bilangan BERLAWANAN jenis + Ma'dud Jamak Majrur || 11–99: Ma'dud Mufrad Manshub",
+      "explanationId": "Untuk bilangan 3 hingga 10, jenis bilangan berlawanan dengan bentuk mufrad kata yang dihitung (ma'dud), dan ma'dud berbentuk jamak majrur. Untuk bilangan 11 hingga 99, ma'dud selalu berbentuk mufrad manshub (sebagai tamyiz).",
+      "keyTip": "Selalu cek jenis ma'dud dari bentuk TUNGGAL-nya! Mis. «كُتُب» tunggalnya «كِتَاب» (mudzakkar) -> maka 5 buku = «خَمْسَةُ كُتُبٍ».",
+      "examples": [
+        {
+          "sentence": "قَرَأْتُ سَبْعَ مَقَالَاتٍ وَثَلَاثَةَ كُتُبٍ.",
+          "transliteration": "qara'tu sab'a maqālātin wa tsalātsata kutubin.",
+          "translationId": "Saya membaca tujuh artikel dan tiga buku."
+        },
+        {
+          "sentence": "فِي الْقَاعَةِ خَمْسَةٌ وَعِشْرُونَ طَالِبًا.",
+          "transliteration": "fī al-qā'ati khamsatun wa 'ishrūna ṭāliban.",
+          "translationId": "Di dalam aula terdapat dua puluh lima mahasiswa."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih pasangan bilangan dan kata benda yang benar (Tarakib TOAFL):",
+        "sentence": "شَارَكَ فِي النَّدْوَةِ ______ مِنَ الْجَامِعَاتِ الْمُخْتَلِفَةِ.",
+        "choices": [
+          "خَمْسَ بَاحِثِينَ",
+          "خَمْسَةُ بَاحِثِينَ",
+          "خَمْسَةُ بَاحِثٍ",
+          "خَمْسُ بَاحِثَاتٍ"
+        ],
+        "correctIndex": 1,
+        "explanationId": "«بَاحِثِينَ» (mufrad: بَاحِثٌ mudzakkar) membutuhkan bilangan muannats «خَمْسَةُ» + jamak majrur «بَاحِثِينَ»."
+      }
+    },
+    {
+      "id": "ar-g-010",
+      "lang": "ar",
+      "order": 10,
+      "title": "Al-Hal (Keterangan Keadaan Pelaku/Objek)",
+      "nativeTitle": "الْحَالُ (كَيْفَ وَقَعَ الْفِعْلُ؟)",
+      "tracks": ["toafl"],
+      "category": "Manshubat",
+      "formula": "صَاحِبُ الْحَالِ (Ma'rifah) + حَالٌ (Nakirah · Manshub)",
+      "explanationId": "Hal adalah isim sifat nakirah yang berstatus manshub untuk menjelaskan keadaan pelaku (fa'il) atau objek (maf'ul bih) saat perbuatan berlangsung — menjawab pertanyaan 'bagaimana keadaannya?'.",
+      "keyTip": "Bedakan Hal (nakirah, menjelaskan kata ma'rifah) dengan Na'at (sama-sama ma'rifah atau sama-sama nakirah).",
+      "examples": [
+        {
+          "sentence": "دَخَلَ الطَّالِبُ الْقَاعَةَ مُبْتَسِمًا.",
+          "transliteration": "dakhala aṭ-ṭālibu al-qā'ata mubtasiman.",
+          "translationId": "Mahasiswa itu memasuki ruangan sambil tersenyum."
+        },
+        {
+          "sentence": "اِسْتَمَعَ الْحَاضِرُونَ إِلَى الْمُحَاضَرَةِ مُنْصِتِينَ.",
+          "transliteration": "istama'a al-ḥāḍirūna ilā al-muḥāḍarati munṣitīna.",
+          "translationId": "Para hadirin menyimak kuliah dengan penuh perhatian."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk Hal yang tepat:",
+        "sentence": "رَجَعَتِ الطَّالِبَاتُ مِنَ الْمُسَابَقَةِ ______ بِالْفَوْزِ.",
+        "choices": ["مَسْرُورَاتٌ", "مَسْرُورَاتٍ", "مَسْرُورِينَ", "مَسْرُورًا"],
+        "correctIndex": 1,
+        "explanationId": "Jamak muannats salim ketika manshub (sebagai Hal) ditandai dengan kasrah: «مَسْرُورَاتٍ»."
+      }
+    },
+    {
+      "id": "ar-g-011",
+      "lang": "ar",
+      "order": 11,
+      "title": "Al-Maf'ul li-Ajlih (Keterangan Tujuan/Sebab)",
+      "nativeTitle": "الْمَفْعُولُ لِأَجْلِهِ (لِمَاذَا وَقَعَ الْفِعْلُ؟)",
+      "tracks": ["toafl"],
+      "category": "Manshubat",
+      "formula": "فِعْلٌ + مَصْدَرٌ قَلْبِيٌّ مَنْصُوبٌ (رَغْبَةً · حِرْصًا · طَلَبًا · احْتِرَامًا)",
+      "explanationId": "Maf'ul li-Ajlih adalah masdar manshub yang menyatakan alasan atau motivasi batin dilakukannya suatu perbuatan (menjawab 'mengapa?').",
+      "keyTip": "Kata kunci yang sangat khas di TOAFL: رَغْبَةً فِي (karena ingin), حِرْصًا عَلَى (demi menjaga), اِحْتِرَامًا لِـ (sebagai penghormatan).",
+      "examples": [
+        {
+          "sentence": "سَافَرَ إِلَى الْقَاهِرَةِ طَلَبًا لِلْعِلْمِ.",
+          "transliteration": "sāfara ilā al-qāhirati ṭalaban lil-'ilmi.",
+          "translationId": "Ia bepergian ke Kairo demi menuntut ilmu."
+        },
+        {
+          "sentence": "وَقَفَ الطُّلَّابُ اِحْتِرَامًا لِلْأُسْتَاذِ.",
+          "transliteration": "waqafa aṭ-ṭullābu iḥtirāman lil-ustādzi.",
+          "translationId": "Para siswa berdiri sebagai bentuk penghormatan kepada guru."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Lengkapilah kalimat berikut dengan Maf'ul li-Ajlih yang tepat:",
+        "sentence": "تُقِيمُ الْجَامِعَةُ دَوْرَاتٍ تَدْرِيبِيَّةً ______ عَلَى رَفْعِ كَفَاءَةِ الْخِرِّيجِينَ.",
+        "choices": ["حِرْصٌ", "حِرْصًا", "حَرِيصٌ", "الْحِرْصُ"],
+        "correctIndex": 1,
+        "explanationId": "Maf'ul li-Ajlih berupa masdar nakirah manshub: «حِرْصًا عَلَى» (demi menjaga/memastikan)."
+      }
+    },
+    {
+      "id": "ar-g-012",
+      "lang": "ar",
+      "order": 12,
+      "title": "Al-Maf'ul al-Muthlaq (Penguat Kata Kerja)",
+      "nativeTitle": "الْمَفْعُولُ الْمُطْلَقُ",
+      "tracks": ["toafl"],
+      "category": "Manshubat",
+      "formula": "فِعْلٌ + مَصْدَرٌ مِنْ لَفْظِ الْفِعْلِ (مَنْصُوبٌ) (+ sifat / bilangan)",
+      "explanationId": "Maf'ul Muthlaq adalah masdar manshub yang berasal dari akar kata yang sama dengan fi'il di kalimat tersebut, berfungsi untuk menguatkan makna, menjelaskan sifat/cara, atau jumlah pengulangan.",
+      "keyTip": "Lihat fi'il di awal kalimat (mis. تَقَدَّمَ -> تَقَدُّمًا, اِهْتَمَّ -> اِهْتِمَامًا) untuk mencocokkan masdarnya.",
+      "examples": [
+        {
+          "sentence": "تَقَدَّمَ الْبَحْثُ الْعِلْمِيُّ تَقَدُّمًا مَلْحُوظًا.",
+          "transliteration": "taqaddama al-baḥtsu al-'ilmiyyu taqadduman malḥūẓan.",
+          "translationId": "Penelitian ilmiah mengalami kemajuan yang sangat nyata."
+        },
+        {
+          "sentence": "فَهِمْتُ الدَّرْسَ فَهْمًا جَيِّدًا.",
+          "transliteration": "fahimtu ad-darsa fahman jayyidan.",
+          "translationId": "Saya memahami pelajaran itu dengan pemahaman yang baik."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih Maf'ul Muthlaq yang sesuai dengan fi'il «اِهْتَمَّ»:",
+        "sentence": "اِهْتَمَّ الْمَرْكَزُ بِتَرْجَمَةِ الْمَصَادِرِ الْعَرَبِيَّةِ ______ كَبِيرًا.",
+        "choices": ["اِهْتِمَامًا", "مُهْتَمًّا", "هَمًّا", "مُهِمًّا"],
+        "correctIndex": 0,
+        "explanationId": "Masdar dari fi'il «اِهْتَمَّ» (wazan اِفْتَعَلَ) adalah «اِهْتِمَامًا»."
+      }
+    },
+    {
+      "id": "ar-g-013",
+      "lang": "ar",
+      "order": 13,
+      "title": "Al-Mabni lil-Majhul (Kalimat Pasif & Na'ibul Fa'il)",
+      "nativeTitle": "الْفِعْلُ الْمَبْنِيُّ لِلْمَجْهُولِ وَنَائِبُ الْفَاعِلِ",
+      "tracks": ["toafl"],
+      "category": "Shorof & Sintaksis",
+      "formula": "Madhi pasif: فُعِلَ (dhammah awal, kasrah sebelum akhir) | Mudhari' pasif: يُفْعَلُ + نَائِبُ فَاعِلٍ (Marfu')",
+      "explanationId": "Dalam kalimat pasif Arab, pelaku dihilangkan dan objek naik menggantikan posisi subjek (Na'ibul Fa'il) sehingga berubah menjadi MARFU'. Pada fi'il madhi, huruf pertama didhammah dan sebelum akhir dikasrah; pada mudhari', huruf pertama didhammah dan sebelum akhir difathah.",
+      "keyTip": "Di teks berita & Qira'ah TOAFL tanpa harakat, kenali konteks pasif seperti «عُقِدَ الْمُؤْتَمَرُ» (konferensi diselenggarakan) dan «تُعْرَضُ النَّتَائِجُ».",
+      "examples": [
+        {
+          "sentence": "فُتِحَتِ الْمَكْتَبَةُ الرَّقْمِيَّةُ لِجَمِيعِ الطُّلَّابِ.",
+          "transliteration": "futiḥati al-maktabatu ar-raqmiyyatu lijamī'i aṭ-ṭullābi.",
+          "translationId": "Perpustakaan digital dibuka untuk seluruh mahasiswa."
+        },
+        {
+          "sentence": "يُكْرَمُ الْمُتَفَوِّقُونَ فِي حَفْلِ التَّخَرُّجِ.",
+          "transliteration": "yukramu al-mutafawwiqūna fī ḥafli at-takharruji.",
+          "translationId": "Para lulusan berprestasi diberi penghargaan pada upacara wisuda."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih Na'ibul Fa'il yang tepat secara i'rab:",
+        "sentence": "عُقِدَ ______ الدَّوْلِيُّ فِي جَاكَرْتَا الْأُسْبُوعَ الْمَاضِي.",
+        "choices": ["الْمُؤْتَمَرَ", "الْمُؤْتَمَرِ", "الْمُؤْتَمَرُ", "مُؤْتَمَرًا"],
+        "correctIndex": 2,
+        "explanationId": "«عُقِدَ» adalah fi'il majhul (pasif), sehingga kata sesudahnya adalah Na'ibul Fa'il yang wajib marfu': «الْمُؤْتَمَرُ»."
+      }
+    },
+    {
+      "id": "ar-g-014",
+      "lang": "ar",
+      "order": 14,
+      "title": "Isim Maushul (Kata Sambung Relatif)",
+      "nativeTitle": "الْاِسْمُ الْمَوْصُولُ (الَّذِي · الَّتِي · الَّذِينَ · اللَّاتِي)",
+      "tracks": ["toafl"],
+      "category": "Frasa & Struktur",
+      "formula": "الَّذِي (lk 1) | الَّتِي (pr 1 / jamak tak berakal) | الَّذِينَ (lk 3+) | اللَّاتِي (pr 3+)",
+      "explanationId": "Isim Maushul ('yang') wajib cocok jenis dan jumlahnya dengan kata benda sebelumnya. Ingat bahwa jamak tak berakal (mis. الْكُتُب, الدِّرَاسَات) selalu memakai «الَّتِي».",
+      "keyTip": "Tiga bentuk paling sering muncul di TOAFL: الَّذِي, الَّتِي (termasuk untuk jamak benda), dan الَّذِينَ.",
+      "examples": [
+        {
+          "sentence": "هٰذَا هُوَ الْكِتَابُ الَّذِي أَوْصَى بِهِ الْأُسْتَاذُ.",
+          "transliteration": "hādzā huwa al-kitābu alladzī awṣā bihi al-ustādzu.",
+          "translationId": "Inilah buku yang direkomendasikan oleh dosen."
+        },
+        {
+          "sentence": "الدِّرَاسَاتُ الَّتِي نُشِرَتْ حَدِيثًا تُؤَكِّدُ هٰذِهِ النَّتِيجَةَ.",
+          "transliteration": "ad-dirāsātu allatī nushirat ḥadītsan tu'akkidu hādzihi an-natījata.",
+          "translationId": "Studi-studi yang diterbitkan baru-baru ini menguatkan hasil tersebut."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih Isim Maushul yang tepat:",
+        "sentence": "أُعْجِبْتُ بِالْمَقَالَاتِ ______ كَتَبَهَا الطُّلَّابُ.",
+        "choices": ["الَّذِي", "الَّتِي", "الَّذِينَ", "اللَّذَانِ"],
+        "correctIndex": 1,
+        "explanationId": "«الْمَقَالَاتُ» adalah jamak benda tidak berakal, sehingga Isim Maushul-nya selalu «الَّتِي»."
+      }
+    },
+    {
+      "id": "ar-g-015",
+      "lang": "ar",
+      "order": 15,
+      "title": "Isim Tafdhil (Perbandingan & Superlatif)",
+      "nativeTitle": "اِسْمُ التَّفْضِيلِ (أَفْعَلُ مِنْ · الْأَفْعَلُ)",
+      "tracks": ["toafl"],
+      "category": "Shorof & Sintaksis",
+      "formula": "أَفْعَلُ مِنْ (lebih ... daripada)  ||  أَكْثَرُ / أَشَدُّ + مَصْدَرٌ مَنْصُوبٌ (untuk kata > 3 huruf)",
+      "explanationId": "Isim Tafdhil dibentuk dengan pola «أَفْعَلُ» dari fi'il tsulatsi (mis. كَبِير -> أَكْبَر, أَهَمّ). Untuk kata sifat dari fi'il lebih dari tiga huruf (seperti اِهْتِمَام, تَقَدُّم), gunakan kata bantu «أَكْثَرُ / أَشَدُّ» diikuti masdar manshub (tamyiz).",
+      "keyTip": "Pola «أَكْثَرُ + masdar manshub» (mis. أَكْثَرُ تَقَدُّمًا, أَكْثَرُ اِسْتِخْدَامًا) sangat sering muncul di TOAFL.",
+      "examples": [
+        {
+          "sentence": "هٰذِهِ الطَّرِيقَةُ أَسْهَلُ مِنَ الطَّرِيقَةِ التَّقْلِيدِيَّةِ.",
+          "transliteration": "hādzihi aṭ-ṭarīqatu ashalu mina aṭ-ṭarīqati at-taqlīdiyyati.",
+          "translationId": "Metode ini lebih mudah daripada metode tradisional."
+        },
+        {
+          "sentence": "أَصْبَحَ التَّعْلِيمُ الرَّقْمِيُّ أَكْثَرَ انْتِشَارًا فِي السَّنَوَاتِ الْأَخِيرَةِ.",
+          "transliteration": "aṣbaḥa at-ta'līmu ar-raqmiyyu aktsara intishāran fī as-sanawāti al-akhīrati.",
+          "translationId": "Pendidikan digital menjadi lebih luas penyebarannya dalam beberapa tahun terakhir."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Lengkapilah perbandingan berikut dengan tepat:",
+        "sentence": "الطَّاقَةُ الشَّمْسِيَّةُ أَكْثَرُ ______ لِلْبِيئَةِ مِنَ الْفَحْمِ.",
+        "choices": ["مُلَاءَمَةً", "مُلَاءَمَةٌ", "مُلَائِمٌ", "الْمُلَاءَمَةِ"],
+        "correctIndex": 0,
+        "explanationId": "Setelah isim tafdhil «أَكْثَرُ», kata penjelasnya adalah tamyiz berupa masdar nakirah manshub: «مُلَاءَمَةً»."
+      }
+    },
+    {
+      "id": "ar-g-016",
+      "lang": "ar",
+      "order": 16,
+      "title": "Uslub asy-Syarth (Kalimat Bersyarat)",
+      "nativeTitle": "أُسْلُوبُ الشَّرْطِ (إِنْ · مَنْ · مَتَى + فِعْلُ الشَّرْطِ + جَوَابُ الشَّرْطِ)",
+      "tracks": ["toafl"],
+      "category": "Tarakib TOAFL",
+      "formula": "أَدَاةُ شَرْطٍ جَازِمَةٌ (إِنْ / مَنْ / مَا / مَتَى) + فِعْلُ الشَّرْطِ (Majzum) + جَوَابُ الشَّرْطِ (Majzum)",
+      "explanationId": "Adawat syarth jazimah seperti «إِنْ» (jika) dan «مَنْ» (barang siapa) menjazmkan DUA fi'il mudhari' sekaligus: fi'il syarat dan jawab syarat.",
+      "keyTip": "Periksa kedua kata kerja dalam kalimat «مَنْ ...» atau «إِنْ ...» — keduanya harus majzum!",
+      "examples": [
+        {
+          "sentence": "مَنْ يَجْتَهِدْ فِي دِرَاسَتِهِ يَنْجَحْ بِتَفَوُّقٍ.",
+          "transliteration": "man yajtahid fī dirāsatihi yanjaḥ bitafawwuqin.",
+          "translationId": "Barang siapa bersungguh-sungguh dalam studinya, ia akan berhasil dengan gemilang."
+        },
+        {
+          "sentence": "إِنْ تَقْرَأْ كَثِيرًا تَزْدَدْ ثَقَافَتُكَ.",
+          "transliteration": "in taqra' katsīran tazdad tsaqāfatuka.",
+          "translationId": "Jika engkau banyak membaca, wawasanmu akan bertambah."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih pasangan fi'il syarat & jawab syarat yang tepat:",
+        "sentence": "مَنْ ______ الْوَقْتَ جَيِّدًا ______ أَهْدَافَهُ بِسُهُولَةٍ.",
+        "choices": [
+          "يُنَظِّمُ — يُحَقِّقُ",
+          "يُنَظِّمْ — يُحَقِّقْ",
+          "يُنَظِّمَ — يُحَقِّقَ",
+          "نَظَّمَ — يُحَقِّقُ"
+        ],
+        "correctIndex": 1,
+        "explanationId": "«مَنْ» syarthiyyah menjazmkan kedua fi'il mudhari': «يُنَظِّمْ» dan «يُحَقِّقْ»."
+      }
+    },
+    {
+      "id": "ar-g-017",
+      "lang": "ar",
+      "order": 17,
+      "title": "Al-Mamnu' min ash-Sharf (Isim Ghairu Munsharif)",
+      "nativeTitle": "الْمَمْنُوعُ مِنَ الصَّرْفِ",
+      "tracks": ["toafl"],
+      "category": "Nawasikh & I'rab",
+      "formula": "Tidak bertanwin · Saat Majrur berharakat FATHAH (kecuali beralif-lam atau jadi Mudhaf)",
+      "explanationId": "Isim Mamnu' min ash-Sharf (seperti shighah muntahal jumu' مَسَاجِدُ/مَرَاجِعُ/مَدَارِسُ, nama kota asing/muannats مَكَّةُ/جَاكَرْتَا, atau sifat pola أَفْعَلُ) tidak menerima tanwin dan tanda jar-nya adalah FATHAH selama tidak memakai «ال» dan tidak di-idhafah-kan.",
+      "keyTip": "Bandingkan: «فِي مَدَارِسَ كَثِيرَةٍ» (fathah) vs. «فِي الْمَدَارِسِ الْحُكُومِيَّةِ» (kasrah karena ada ال).",
+      "examples": [
+        {
+          "sentence": "اِعْتَمَدَ الْبَاحِثُ عَلَى مَرَاجِعَ مُتَنَوِّعَةٍ.",
+          "transliteration": "i'tamada al-bāḥitsu 'alā marāji'a mutanawwi'atin.",
+          "translationId": "Peneliti mengandalkan berbagai rujukan yang beragam."
+        },
+        {
+          "sentence": "سَافَرَ الْوَفْدُ إِلَى مَدَارِسَ جَدِيدَةٍ فِي الْقُرَى.",
+          "transliteration": "sāfara al-wafdu ilā madārisa jadīdatin fī al-qurā.",
+          "translationId": "Delegasi berkunjung ke sekolah-sekolah baru di pedesaan."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih i'rab yang tepat untuk isim mamnu' min ash-sharf berikut:",
+        "sentence": "نَاقَشَ الطُّلَّابُ الْمَوْضُوعَ فِي ______ عِدَّةٍ.",
+        "choices": ["مَحَافِلَ", "مَحَافِلٍ", "مَحَافِلُ", "مَحَافِلًا"],
+        "correctIndex": 0,
+        "explanationId": "«مَحَافِلَ» (wazan مَفَاعِل) adalah mamnu' min ash-sharf tanpa 'al' dan bukan mudhaf, sehingga majrur dengan fathah tanpa tanwin."
+      }
+    },
+    {
+      "id": "ar-g-018",
+      "lang": "ar",
+      "order": 18,
+      "title": "Al-Asma' al-Khamsah (أَبُو · أَخُو · حَمُو · فُو · ذُو)",
+      "nativeTitle": "الْأَسْمَاءُ الْخَمْسَةُ",
+      "tracks": ["toafl"],
+      "category": "Nawasikh & I'rab",
+      "formula": "Marfu' = و (ذُو / أَبُو) | Manshub = ا (ذَا / أَبَا) | Majrur = ي (ذِي / أَبِي)",
+      "explanationId": "Lima isim khusus (أَب, أَخ, حَم, فُو, ذُو) ketika berbentuk tunggal dan di-idhafah-kan selain ke ya' mutakallim, tanda i'rab-nya berupa huruf: waw saat rafa', alif saat nashab, dan ya' saat jar.",
+      "keyTip": "Kata «ذُو» (yang memiliki) paling sering keluar di soal Tarakib TOAFL: ذُو عِلْمٍ (rafa'), ذَا عِلْمٍ (nashab), ذِي عِلْمٍ (jar).",
+      "examples": [
+        {
+          "sentence": "الْأُسْتَاذُ ذُو خِبْرَةٍ وَاسِعَةٍ فِي التَّرْجَمَةِ.",
+          "transliteration": "al-ustādzu dzū khibratin wāsi'atin fī at-tarjamati.",
+          "translationId": "Dosen itu memiliki pengalaman luas dalam penerjemahan."
+        },
+        {
+          "sentence": "اِسْتَشَرْتُ ذَا خِبْرَةٍ قَبْلَ اخْتِيَارِ الْمَوْضُوعِ.",
+          "transliteration": "istashartu dzā khibratin qabla ikhtiyāri al-mawḍū'i.",
+          "translationId": "Saya berkonsultasi dengan orang berpengalaman sebelum memilih topik."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk Asma'ul Khamsah yang benar secara i'rab:",
+        "sentence": "كَرَّمَتِ الْجَامِعَةُ ______ فَضْلٍ كَبِيرٍ فِي خِدْمَةِ اللُّغَةِ.",
+        "choices": ["ذُو", "ذَا", "ذِي", "ذَوِي"],
+        "correctIndex": 1,
+        "explanationId": "Posisinya sebagai objek (maf'ul bih manshub) untuk tunggal mudzakkar, sehingga ditandai dengan alif: «ذَا»."
+      }
+    },
+    {
+      "id": "ar-g-019",
+      "lang": "ar",
+      "order": 19,
+      "title": "Isim Fa'il & Isim Maf'ul (Shorof Produktif)",
+      "nativeTitle": "اِسْمُ الْفَاعِلِ وَاسْمُ الْمَفْعُولِ",
+      "tracks": ["toafl"],
+      "category": "Shorof & Sintaksis",
+      "formula": "Tsulatsi: فَاعِل (pelaku) / مَفْعُول (objek) || Non-Tsulatsi: مُـ...ِـ (fa'il) / مُـ...َـ (maf'ul)",
+      "explanationId": "Membedakan Isim Fa'il (pelaku/aktif) dan Isim Maf'ul (sasaran/pasif) sangat vital dalam memahami teks Arab tanpa harakat. Untuk fi'il lebih dari 3 huruf, keduanya diawali mim dhammah (مُـ); kasrah sebelum huruf terakhir menunjukkan pelaku (مُشَارِك = peserta), sedangkan fathah menunjukkan sasaran (مُشْتَرَك = bersama/disepakati).",
+      "keyTip": "Contoh pasangan penting: مُعَلِّم (pengajar) vs مُعَلَّم (yang diajar); مُنَظِّم (penyelenggara) vs مُنَظَّم (terorganisir).",
+      "examples": [
+        {
+          "sentence": "شَكَرَ الْمُدِيرُ الْمُنَظِّمِينَ عَلَى الْحَفْلِ الْمُنَظَّمِ.",
+          "transliteration": "shakara al-mudīru al-munaẓẓimīna 'alā al-ḥafli al-munaẓẓami.",
+          "translationId": "Direktur berterima kasih kepada para penyelenggara atas acara yang tertata rapi."
+        },
+        {
+          "sentence": "الْمُحَاضِرُ يُقَدِّمُ مَادَّةً مَكْتُوبَةً لِلْحُضُورِ.",
+          "transliteration": "al-muḥāḍiru yuqaddimu māddatan maktūbatan lil-ḥuḍūri.",
+          "translationId": "Pemateri menyajikan bahan tertulis kepada para hadirin."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Kata manakah yang bermakna 'yang diterjemahkan' (Isim Maf'ul)?",
+        "sentence": "نُشِرَتْ نُسْخَةٌ ______ مِنَ الْكِتَابِ بِاللُّغَةِ الْإِنْدُونِيسِيَّةِ.",
+        "choices": ["مُتَرْجِمَةٌ", "مُتَرْجَمَةٌ", "تَرْجَمَةٌ", "تُرْجُمَانٌ"],
+        "correctIndex": 1,
+        "explanationId": "Isim Maf'ul dari «تَرْجَمَ» memakai fathah sebelum huruf akhir (jim): «مُتَرْجَمَةٌ» (yang diterjemahkan), sedangkan «مُتَرْجِمَةٌ» berarti penerjemah perempuan."
+      }
+    },
+    {
+      "id": "ar-g-020",
+      "lang": "ar",
+      "order": 20,
+      "title": "Al-Istitsna' bi-Illa (Pengecualian)",
+      "nativeTitle": "الْاِسْتِثْنَاءُ بِـ «إِلَّا»",
+      "tracks": ["toafl"],
+      "category": "Tarakib TOAFL",
+      "formula": "Kalimat positif lengkap (Tamm Mutsbat): Mustatsna WAJIB MANSHUB setelah إِلَّا",
+      "explanationId": "Dalam struktur pengecualian positif yang lengkap (disebutkan kelompok umumnya/Mustatsna Minhu), kata setelah «إِلَّا» wajib manshub. Jika kalimat negatif tanpa Mustatsna Minhu (Naqish Manfi), i'rab-nya mengikuti posisi normal seolah «إِلَّا» tidak ada.",
+      "keyTip": "Contoh Tamm Mutsbat: «حَضَرَ الطُّلَّابُ إِلَّا طَالِبًا». Contoh Naqish Manfi: «مَا نَجَحَ إِلَّا الْمُجْتَهِدُ» (sebagai fa'il marfu').",
+      "examples": [
+        {
+          "sentence": "سَلَّمَ الطُّلَّابُ الْوَاجِبَ إِلَّا طَالِبًا وَاحِدًا.",
+          "transliteration": "sallama aṭ-ṭullābu al-wājiba illā ṭāliban wāḥidan.",
+          "translationId": "Para mahasiswa menyerahkan tugas kecuali satu mahasiswa."
+        },
+        {
+          "sentence": "لَا يَفُوزُ بِالْجَائِزَةِ إِلَّا الْمُثَابِرُ.",
+          "transliteration": "lā yafūzu bil-jā'izati illā al-mutsābiru.",
+          "translationId": "Tidak ada yang meraih penghargaan kecuali orang yang tekun."
+        }
+      ],
+      "quiz": {
+        "questionType": "mcq",
+        "prompt": "Pilih bentuk kata yang tepat setelah «إِلَّا»:",
+        "sentence": "حَضَرَ أَعْضَاءُ اللَّجْنَةِ جَمِيعًا إِلَّا ______.",
+        "choices": ["عُضْوٌ", "عُضْوٍ", "عُضْوًا", "الْعُضْوُ"],
+        "correctIndex": 2,
+        "explanationId": "Kalimat ini positif lengkap (Tamm Mutsbat), sehingga Mustatsna setelah «إِلَّا» wajib manshub: «عُضْوًا»."
+      }
+    }
+  ]
+}

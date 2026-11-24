@@ -114,7 +114,7 @@ export const UserProfileView: React.FC = () => {
             <span>{isAdmin ? 'Akun Administrator' : 'Akun Pelajar'}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono-num">
-              Level {state.currentLevel} / {MAX_LEVEL} ({levelMeta.tier})
+              {levelMeta.title} ({levelMeta.tier})
             </span>
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mt-0.5">
@@ -210,6 +210,79 @@ export const UserProfileView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Global Certification & Multi-Language Progress */}
+      {(() => {
+        const langSrs = Object.values(state.langSrsProgress ?? {});
+        const enLearned = langSrs.filter((p) => p.lang === 'en' && p.srsStage > 0).length;
+        const arLearned = langSrs.filter((p) => p.lang === 'ar' && p.srsStage > 0).length;
+        const multiExams = state.langMockExamHistory ?? [];
+        const jlptHistory = state.mockExamHistory ?? [];
+        const bestJlpt =
+          jlptHistory.length > 0
+            ? (() => {
+                const top = jlptHistory.reduce((a, b) =>
+                  b.totalScore > a.totalScore ? b : a
+                );
+                return `${top.jlpt} · ${top.totalScore}/180`;
+              })()
+            : null;
+        const bestByTrack = (track: 'toefl-itp' | 'toefl-ibt' | 'ielts' | 'toeic' | 'toafl') => {
+          const filtered = multiExams.filter((m) => m.examTrack === track);
+          if (filtered.length === 0) return 'Belum diuji';
+          const top = filtered.reduce((a, b) => (b.scaledTotal > a.scaledTotal ? b : a));
+          return top.scaledLabel;
+        };
+
+        return (
+          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+                  Ringkasan Sertifikasi Global &amp; Progres Multibahasa
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Inggris SRS dipelajari:{' '}
+                  <span className="font-mono-num font-bold text-[#2563EB] dark:text-blue-400">
+                    {enLearned}
+                  </span>{' '}
+                  · Arab SRS dipelajari:{' '}
+                  <span className="font-mono-num font-bold text-[#059669] dark:text-emerald-400">
+                    {arLearned}
+                  </span>{' '}
+                  · Studio Writing/Speaking:{' '}
+                  <span className="font-mono-num font-bold text-slate-900 dark:text-white">
+                    {(state.langStudioHistory ?? []).length} evaluasi
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {[
+                { label: 'JLPT', value: bestJlpt ?? 'Belum diuji', accent: 'text-[#E11D48] dark:text-rose-400' },
+                { label: 'TOEFL ITP', value: bestByTrack('toefl-itp'), accent: 'text-[#2563EB] dark:text-blue-400' },
+                { label: 'TOEFL iBT', value: bestByTrack('toefl-ibt'), accent: 'text-[#2563EB] dark:text-blue-400' },
+                { label: 'IELTS', value: bestByTrack('ielts'), accent: 'text-[#2563EB] dark:text-blue-400' },
+                { label: 'TOEIC', value: bestByTrack('toeic'), accent: 'text-[#2563EB] dark:text-blue-400' },
+                { label: 'TOAFL', value: bestByTrack('toafl'), accent: 'text-[#059669] dark:text-emerald-400' },
+              ].map((cert) => (
+                <div
+                  key={cert.label}
+                  className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800"
+                >
+                  <div className={`text-[11px] font-bold uppercase tracking-wider ${cert.accent}`}>
+                    {cert.label}
+                  </div>
+                  <div className="font-mono-num text-sm font-bold text-slate-900 dark:text-white mt-1 truncate">
+                    {cert.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Recharts Analytics: Riwayat Progres, Item Dikuasai & Akurasi Mingguan */}
       <ProfileProgressCharts

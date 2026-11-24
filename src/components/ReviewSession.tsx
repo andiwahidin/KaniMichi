@@ -15,6 +15,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { ReviewOutcome, useApp } from '../context/AppContext';
+import { getLevelMeta } from '../data/curriculum';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem, ExtraStudyMode } from '../types/curriculum';
 import {
@@ -555,11 +556,11 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
               <Award className="w-10 h-10 shrink-0" />
               <div>
                 <h2 className="font-display text-xl font-bold">
-                  Selamat! Kamu Naik ke Level {leveledUpTo}
+                  Selamat! Kamu Membuka {getLevelMeta(leveledUpTo).title}
                 </h2>
                 <p className="text-sm text-white/90">
-                  Lebih dari 90% Kanji level sebelumnya mencapai tahap{' '}
-                  {SRS_STAGE_NAMES[getSrsPolicy(resolveSrsMode(state.settings)).levelUpKanjiStage]}. Radikal Level {leveledUpTo} kini terbuka di Pelajaran!
+                  Lebih dari 90% Kanji bab sebelumnya mencapai tahap{' '}
+                  {SRS_STAGE_NAMES[getSrsPolicy(resolveSrsMode(state.settings)).levelUpKanjiStage]}. Radikal baru kini terbuka di Pelajaran!
                 </p>
               </div>
             </div>
@@ -812,7 +813,9 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
 
         <div className="max-w-3xl mx-auto text-center relative">
           <div className="text-xs font-medium text-white/85 mb-2 flex items-center justify-center flex-wrap gap-1.5">
-            <span>Level {item.level}</span>
+            <span>
+              {getLevelMeta(item.level).jlpt} · Bab {getLevelMeta(item.level).unitInTier}
+            </span>
             <span aria-hidden="true">·</span>
             <span className="font-bold uppercase tracking-wide">
               {getItemTypeLabel(item.type)}

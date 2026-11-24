@@ -15,7 +15,7 @@ import {
   User as UserIcon,
   Zap,
 } from 'lucide-react';
-import { MAX_LEVEL } from '../data/curriculum';
+import { getLevelMeta, LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { SrsMode } from '../types/curriculum';
 import {
@@ -72,7 +72,7 @@ export const SettingsModal: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `kanimichi-backup-lv${state.currentLevel}.json`;
+    a.download = `leksika-backup-lv${state.currentLevel}.json`;
     a.click();
     URL.revokeObjectURL(url);
     notify('File cadangan progres berhasil diunduh.');
@@ -275,7 +275,7 @@ export const SettingsModal: React.FC = () => {
                         </h3>
                       </div>
                       <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                        Berlaku serempak untuk Kurikulum Utama, Grammar JLPT, dan Kosakata Kana JLPT.
+                        Berlaku serempak untuk Kurikulum Jepang, Grammar/Kana JLPT, serta Kosakata &amp; Grammar Bahasa Inggris dan Arab.
                       </p>
                     </div>
                   </div>
@@ -416,6 +416,67 @@ export const SettingsModal: React.FC = () => {
                 }`}
               >
                 {state.settings.autoplayAudio ? 'Aktif' : 'Nonaktif'}
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <div className="font-medium text-slate-800 dark:text-slate-200">
+                  Aksen Audio Bahasa Inggris (TTS)
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">
+                  Pilih aksen default untuk Kosakata, Listening, dan Studio Writing/Speaking
+                </div>
+              </div>
+              <div className="flex items-center gap-1 p-1 bg-slate-100 dark:bg-slate-800 rounded-lg shrink-0">
+                {(
+                  [
+                    { id: 'en-US', label: 'Amerika (US)' },
+                    { id: 'en-GB', label: 'Britania (UK)' },
+                  ] as const
+                ).map((acc) => {
+                  const active = (state.settings.englishAccent ?? 'en-US') === acc.id;
+                  return (
+                    <button
+                      key={acc.id}
+                      type="button"
+                      onClick={() => updateSettings({ englishAccent: acc.id })}
+                      className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
+                        active
+                          ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      {acc.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <div className="font-medium text-slate-800 dark:text-slate-200">
+                  Tampilkan Harakat Arab (Fusha)
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">
+                  Aktifkan harakat penuh untuk latihan Mufradat/Qawaid/Qira’ah, atau nonaktifkan untuk mode teks gundul TOAFL
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  updateSettings({
+                    arabicShowHarakat: state.settings.arabicShowHarakat === false,
+                  })
+                }
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer whitespace-nowrap ${
+                  state.settings.arabicShowHarakat !== false
+                    ? 'bg-[#059669] text-white'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                }`}
+              >
+                {state.settings.arabicShowHarakat !== false ? 'Harakat Penuh' : 'Teks Gundul'}
               </button>
             </div>
 
@@ -569,14 +630,14 @@ export const SettingsModal: React.FC = () => {
             </div>
           </section>
 
-          {/* Time Simulation & Level Jump */}
+          {/* Time Simulation & JLPT Level Selector */}
           <section className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-4">
             <div>
               <h3 className="font-display text-sm font-semibold text-slate-900 dark:text-white">
-                Simulasi Waktu &amp; Lompat Level (1–{MAX_LEVEL})
+                Simulasi Waktu &amp; Pilih Tingkat JLPT (N5–N1)
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Percepat jadwal review atau buka langsung level lanjutan (1–60) sesuai kemampuan kanjimu saat ini.
+                Percepat jadwal review SRS atau langsung mulai dari tingkat JLPT N5 hingga N1 sesuai kemampuanmu saat ini.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -614,31 +675,53 @@ export const SettingsModal: React.FC = () => {
               </button>
             </div>
 
-            <div className="flex items-center gap-2 pt-1">
-              <label className="text-xs text-slate-600 dark:text-slate-400 whitespace-nowrap">
-                Buka hingga Level:
-              </label>
-              <select
-                value={targetLevel}
-                onChange={(e) => setTargetLevel(Number(e.target.value))}
-                className="px-2.5 py-1.5 text-xs font-mono-num rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
-              >
-                {Array.from({ length: MAX_LEVEL }, (_, i) => i + 1).map((lvl) => (
-                  <option key={lvl} value={lvl}>
-                    Level {lvl}
-                  </option>
+            <div className="space-y-2.5 pt-1">
+              <div className="flex flex-wrap gap-1.5">
+                {LEVEL_TIERS.map((tier) => (
+                  <button
+                    key={tier.id}
+                    type="button"
+                    onClick={() => setTargetLevel(tier.startLevel)}
+                    className={`px-2.5 py-1 text-xs font-semibold rounded-md border transition-colors cursor-pointer ${
+                      targetLevel >= tier.startLevel && targetLevel <= tier.endLevel
+                        ? 'border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7]'
+                        : 'border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-slate-400'
+                    }`}
+                  >
+                    {tier.name}
+                  </button>
                 ))}
-              </select>
-              <button
-                type="button"
-                onClick={() => {
-                  jumpToLevel(targetLevel);
-                  notify(`Berhasil membuka hingga Level ${targetLevel}.`);
-                }}
-                className="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 cursor-pointer whitespace-nowrap"
-              >
-                Terapkan Level
-              </button>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <label className="text-xs text-slate-600 dark:text-slate-400 whitespace-nowrap">
+                  Buka hingga:
+                </label>
+                <select
+                  value={targetLevel}
+                  onChange={(e) => setTargetLevel(Number(e.target.value))}
+                  className="px-2.5 py-1.5 text-xs font-mono-num rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                >
+                  {Array.from({ length: MAX_LEVEL }, (_, i) => i + 1).map((lvl) => {
+                    const meta = getLevelMeta(lvl);
+                    return (
+                      <option key={lvl} value={lvl}>
+                        {meta.jlpt} · Bab {meta.unitInTier} ({meta.tier})
+                      </option>
+                    );
+                  })}
+                </select>
+                <button
+                  type="button"
+                  onClick={() => {
+                    jumpToLevel(targetLevel);
+                    const m = getLevelMeta(targetLevel);
+                    notify(`Berhasil membuka hingga ${m.title}.`);
+                  }}
+                  className="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 cursor-pointer whitespace-nowrap"
+                >
+                  Terapkan Tingkat
+                </button>
+              </div>
             </div>
           </section>
 
@@ -662,7 +745,7 @@ export const SettingsModal: React.FC = () => {
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg border border-rose-300 dark:border-rose-900 text-rose-700 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                Mulai dari Nol (Level 1)
+                Mulai dari Nol (JLPT N5)
               </button>
               <button
                 type="button"

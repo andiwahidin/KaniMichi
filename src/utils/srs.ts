@@ -420,11 +420,30 @@ export function rescheduleStateForSrsMode(
     kanaVocabProgress = nextKp;
   }
 
+  let langSrsProgress = state.langSrsProgress;
+  if (langSrsProgress) {
+    const nextLp = { ...langSrsProgress };
+    for (const [id, p] of Object.entries(nextLp)) {
+      if (p.srsStage >= 1 && p.srsStage <= 8) {
+        const nextAt = clampReviewAt(
+          p.srsStage,
+          p.nextReviewAt,
+          p.lastReviewedAt ?? p.startedAt
+        );
+        if (nextAt !== p.nextReviewAt) {
+          nextLp[id] = { ...p, nextReviewAt: nextAt };
+        }
+      }
+    }
+    langSrsProgress = nextLp;
+  }
+
   const updatedState: UserState = {
     ...state,
     progress,
     grammarProgress,
     kanaVocabProgress,
+    langSrsProgress,
     settings: {
       ...state.settings,
       srsMode: newMode,
@@ -495,6 +514,9 @@ export function createFreshLevel1State(
       vacationStartedAt: null,
       dailyReviewGoal: 25,
       srsMode: DEFAULT_SRS_MODE,
+      activeLanguage: 'all',
+      englishAccent: 'en-US',
+      arabicShowHarakat: true,
     },
     streakDays: 0,
     lastActiveDate: null,

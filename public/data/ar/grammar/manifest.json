@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "lang": "ar",
+  "module": "grammar",
+  "totalCount": 20,
+  "packs": ["pack1.json"]
+}

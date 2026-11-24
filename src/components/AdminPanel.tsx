@@ -24,7 +24,7 @@ import {
   toggleAnnouncementActive,
   upsertCurriculumOverride,
 } from '../lib/supabase';
-import { LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
+import { getLevelMeta, LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import {
   AdminUserRecord,
@@ -447,7 +447,7 @@ export const AdminPanel: React.FC = () => {
                 {stats.totalReviews.toLocaleString('id-ID')}
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-mono-num">
-                Rata-rata Level {stats.avgLevel}
+                Rata-rata {getLevelMeta(Math.max(1, Math.round(Number(stats.avgLevel) || 1))).jlpt}
               </div>
             </div>
 
@@ -474,7 +474,7 @@ export const AdminPanel: React.FC = () => {
 
           <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
             <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-              Distribusi Level Pengguna (Level 1–60)
+              Distribusi Tingkat JLPT Pengguna (N5–N1)
             </h2>
             <div className="space-y-3">
               {stats.tierDist.map((tier) => {
@@ -486,7 +486,7 @@ export const AdminPanel: React.FC = () => {
                   <div key={tier.id} className="space-y-1.5">
                     <div className="flex items-center justify-between text-xs">
                       <span className="font-medium text-slate-700 dark:text-slate-300">
-                        {tier.name} ({tier.labelId}) · Lv.{tier.startLevel}–{tier.endLevel}
+                        {tier.name} ({tier.labelId})
                       </span>
                       <span className="font-mono-num text-slate-500 dark:text-slate-400">
                         {tier.count} pengguna ({pct}%)
@@ -720,7 +720,7 @@ export const AdminPanel: React.FC = () => {
                           {item.primaryMeaning}
                         </div>
                         <div className="text-[11px] text-slate-500 font-mono-num">
-                          Lv.{item.level} · {getItemTypeLabel(item.type)}
+                          {getLevelMeta(item.level).jlpt} B.{getLevelMeta(item.level).unitInTier} · {getItemTypeLabel(item.type)}
                           {isEdited ? ' · Diedit Admin' : ''}
                         </div>
                       </div>
@@ -753,7 +753,7 @@ export const AdminPanel: React.FC = () => {
                     </span>
                     <div>
                       <div className="font-display font-bold text-base text-slate-900 dark:text-white">
-                        {getItemTypeLabel(selectedItem.type)} Level {selectedItem.level}
+                        {getItemTypeLabel(selectedItem.type)} · {getLevelMeta(selectedItem.level).jlpt} Bab {getLevelMeta(selectedItem.level).unitInTier}
                       </div>
                       <div className="text-xs font-mono-num text-slate-500">
                         ID: {selectedItem.id}

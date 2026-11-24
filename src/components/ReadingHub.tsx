@@ -31,6 +31,7 @@ import {
   ReadingPassageType,
 } from '../types/reading';
 import { speakJapanese } from '../utils/audio';
+import { AiExplainButton } from './AiExplainButton';
 
 /**
  * Renders Japanese text with optional <ruby> furigana from inline kanji[reading] markup.
@@ -627,23 +628,36 @@ export const ReadingHub: React.FC = () => {
               )}
             </div>
 
-            {/* Full English Translation (Unlocked after submission) */}
+            {/* Full Translation & AI Indonesian Explainer (Unlocked after submission) */}
             {submitted && (
               <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
-                <button
-                  type="button"
-                  onClick={() => setShowTranslation((v) => !v)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
-                >
-                  {showTranslation ? (
-                    <ChevronUp className="w-4 h-4" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4" />
-                  )}
-                  {showTranslation
-                    ? 'Sembunyikan Terjemahan Inggris Lengkap'
-                    : 'Lihat Terjemahan Inggris Lengkap'}
-                </button>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowTranslation((v) => !v)}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0284C7] hover:underline cursor-pointer"
+                  >
+                    {showTranslation ? (
+                      <ChevronUp className="w-4 h-4" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
+                    {showTranslation
+                      ? 'Sembunyikan Terjemahan Referensi'
+                      : 'Lihat Terjemahan Referensi'}
+                  </button>
+                </div>
+
+                <AiExplainButton
+                  language="ja"
+                  examContext={`JLPT N${activePassage.jlpt} Dokkai (${activePassage.titleJp})`}
+                  content={`Wacana: ${activePassage.paragraphs.map((p) => stripFuriganaMarkup(p)).join('\n')}${
+                    activePassage.paragraphsB
+                      ? `\n\nTeks B:\n${activePassage.paragraphsB.map((p) => stripFuriganaMarkup(p)).join('\n')}`
+                      : ''
+                  }`}
+                  label="Terjemahkan Wacana ke Bahasa Indonesia (AI)"
+                />
 
                 {showTranslation && (
                   <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2.5 leading-relaxed">
@@ -752,9 +766,18 @@ export const ReadingHub: React.FC = () => {
                   </div>
 
                   {submitted && (
-                    <div className="pt-2.5 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
-                      <strong className="text-slate-900 dark:text-white">Explanation: </strong>
-                      {q.explanationEn}
+                    <div className="pt-2.5 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                      <div>
+                        <strong className="text-slate-900 dark:text-white">Pembahasan: </strong>
+                        {q.explanationEn}
+                      </div>
+                      <AiExplainButton
+                        language="ja"
+                        examContext={`JLPT N${activePassage.jlpt} Dokkai`}
+                        content={`Pertanyaan: ${stripFuriganaMarkup(q.promptJp)}\nJawaban benar: ${stripFuriganaMarkup(q.choices[q.answerIndex])}\nCatatan: ${q.explanationEn}`}
+                        label="Jelaskan Soal Ini dalam Bahasa Indonesia (AI)"
+                        compact
+                      />
                     </div>
                   )}
                 </div>

@@ -192,6 +192,10 @@ interface CloudModuleProgressPayload {
   mockExamHistory?: UserState['mockExamHistory'];
   writingProgress?: UserState['writingProgress'];
   pronunciationProgress?: UserState['pronunciationProgress'];
+  langSrsProgress?: UserState['langSrsProgress'];
+  langPracticeProgress?: UserState['langPracticeProgress'];
+  langStudioHistory?: UserState['langStudioHistory'];
+  langMockExamHistory?: UserState['langMockExamHistory'];
 }
 
 type CloudSettingsRow = UserState['settings'] & {
@@ -270,6 +274,14 @@ export async function fetchCloudSrsState(
       : undefined,
     writingProgress: modules?.writingProgress,
     pronunciationProgress: modules?.pronunciationProgress,
+    langSrsProgress: modules?.langSrsProgress,
+    langPracticeProgress: modules?.langPracticeProgress,
+    langStudioHistory: Array.isArray(modules?.langStudioHistory)
+      ? modules.langStudioHistory
+      : undefined,
+    langMockExamHistory: Array.isArray(modules?.langMockExamHistory)
+      ? modules.langMockExamHistory
+      : undefined,
     history: Array.isArray(row.history) ? row.history : [],
     settings: {
       lessonBatchSize: rawSettings.lessonBatchSize ?? 5,
@@ -282,6 +294,9 @@ export async function fetchCloudSrsState(
       includeVocabListeningQuiz: rawSettings.includeVocabListeningQuiz ?? true,
       includeVocabPronunciationQuiz: rawSettings.includeVocabPronunciationQuiz ?? true,
       srsMode: rawSettings.srsMode ?? 'open',
+      activeLanguage: rawSettings.activeLanguage ?? 'all',
+      englishAccent: rawSettings.englishAccent ?? 'en-US',
+      arabicShowHarakat: rawSettings.arabicShowHarakat ?? true,
     },
     streakDays: row.streak_days ?? 0,
     lastActiveDate: row.last_active_date ?? null,
@@ -303,6 +318,10 @@ export async function saveCloudSrsState(
     mockExamHistory: state.mockExamHistory ?? [],
     writingProgress: state.writingProgress ?? {},
     pronunciationProgress: state.pronunciationProgress,
+    langSrsProgress: state.langSrsProgress ?? {},
+    langPracticeProgress: state.langPracticeProgress ?? {},
+    langStudioHistory: state.langStudioHistory ?? [],
+    langMockExamHistory: state.langMockExamHistory ?? [],
   };
 
   const payload: UserSrsRow = {
@@ -322,6 +341,9 @@ export async function saveCloudSrsState(
       includeVocabPronunciationQuiz:
         state.settings.includeVocabPronunciationQuiz ?? true,
       srsMode: state.settings.srsMode ?? 'open',
+      activeLanguage: state.settings.activeLanguage ?? 'all',
+      englishAccent: state.settings.englishAccent ?? 'en-US',
+      arabicShowHarakat: state.settings.arabicShowHarakat ?? true,
       _moduleProgress: moduleProgress,
     },
     streak_days: state.streakDays,

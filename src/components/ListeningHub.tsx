@@ -17,6 +17,7 @@ import {
   X,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { AiExplainButton } from './AiExplainButton';
 import { JLPT_LEVELS } from '../data/grammar';
 import {
   LISTENING_TASK_TYPES,
@@ -1059,15 +1060,22 @@ export const ListeningHub: React.FC = () => {
                 })}
               </div>
 
-              {/* Post-Submit Explanation (English) */}
+              {/* Post-Submit Explanation & AI Indonesian Explainer */}
               {submitted && (
-                <div className="rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-4 space-y-1">
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 p-4 space-y-2.5">
                   <div className="text-[11px] font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                    Explanation (English)
+                    Pembahasan Soal
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
                     {activeTrack.explanationEn}
                   </p>
+                  <AiExplainButton
+                    language="ja"
+                    examContext={`JLPT N${activeTrack.jlpt} Chōkai (${activeTrack.taskType})`}
+                    content={`Pertanyaan: ${stripFuriganaMarkup(activeTrack.questionJp)}\nJawaban benar: ${stripFuriganaMarkup(activeTrack.choices[activeTrack.answerIndex])}\nDialog: ${activeTrack.lines.map((l) => `${l.speaker}: ${stripFuriganaMarkup(l.jp)}`).join(' | ')}\nCatatan: ${activeTrack.explanationEn}`}
+                    label="Terjemahkan & Jelaskan dalam Bahasa Indonesia (AI)"
+                    compact
+                  />
                 </div>
               )}
 

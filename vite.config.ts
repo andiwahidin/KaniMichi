@@ -22,10 +22,10 @@ export default defineConfig(({command}) => {
         ],
         manifest: {
           id: '/',
-          name: 'KaniMichi — Belajar Bahasa Jepang SRS & JLPT',
-          short_name: 'KaniMichi',
+          name: 'Leksika — Tutor Multibahasa & Sertifikasi Global',
+          short_name: 'Leksika',
           description:
-            'Belajar radikal, kanji, kosakata, grammar, membaca, mendengar, menulis, dan simulasi ujian JLPT N5–N1 secara offline dengan sistem Spaced Repetition (SRS).',
+            'Platform belajar Bahasa Jepang (JLPT N5–N1), Inggris (TOEFL, IELTS, TOEIC), dan Arab (TOAFL) lengkap dengan SRS, simulasi skor resmi, dan Tutor AI.',
           lang: 'id',
           theme_color: '#0284C7',
           background_color: '#F8F9FA',
@@ -62,6 +62,7 @@ export default defineConfig(({command}) => {
           clientsClaim: true,
           skipWaiting: true,
           navigateFallback: 'index.html',
+          navigateFallbackDenylist: [/^\/api\//],
           runtimeCaching: [
             {
               urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

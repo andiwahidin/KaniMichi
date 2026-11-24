@@ -43,6 +43,14 @@ import type {
   PronunciationProgress,
   PronunciationTargetWord,
 } from '../types/pronunciation';
+import type {
+  ActiveLanguageScope,
+  ExamTrackId,
+  LangPracticeRecord,
+  LangSrsProgress,
+  MultiExamResult,
+  StudioRubricAttempt,
+} from '../types/language';
 import {
   advanceToNextLevelIfEligible,
   calculateNextReviewAt,
@@ -77,6 +85,10 @@ interface AppContextValue {
   dataset: CurriculumDataset;
   state: UserState;
   now: number;
+  activeLanguage: ActiveLanguageScope;
+  setActiveLanguage: (lang: ActiveLanguageScope, targetView?: ActiveView) => void;
+  activeExamTrack: ExamTrackId | null;
+  setActiveExamTrack: (track: ExamTrackId | null) => void;
   activeView: ActiveView;
   setActiveView: (view: ActiveView) => void;
   selectedItemId: string | null;
@@ -145,6 +157,28 @@ interface AppContextValue {
     isCorrect: boolean,
     pairId?: string
   ) => void;
+  completeLangSrsLessons: (
+    lang: 'en' | 'ar',
+    kind: 'vocab' | 'grammar',
+    itemIds: string[]
+  ) => void;
+  submitLangSrsReview: (
+    itemId: string,
+    lang: 'en' | 'ar',
+    kind: 'vocab' | 'grammar',
+    hadMistake: boolean
+  ) => { previousStage: SrsStage; newStage: SrsStage };
+  resurrectLangSrsItem: (itemId: string) => void;
+  recordLangPractice: (
+    itemId: string,
+    lang: 'en' | 'ar',
+    kind: 'reading' | 'listening',
+    correctCount: number,
+    totalQuestions: number,
+    elapsedSec: number
+  ) => void;
+  recordStudioAttempt: (attempt: StudioRubricAttempt) => void;
+  recordMultiExamResult: (result: MultiExamResult) => void;
   updateSettings: (partial: Partial<UserSettings>) => void;
   changeSrsMode: (mode: SrsMode) => {
     newlyUnlockedCount: number;
@@ -320,6 +354,47 @@ function mergeCloudAndLocalModules(
     }
   }
 
+  const langSrs = mergeRecordByRecency(
+    remote.langSrsProgress,
+    local.langSrsProgress,
+    (l) =>
+      (l.lastReviewedAt ?? l.startedAt ?? 0) +
+      l.srsStage * 1000 +
+      (l.correctCount + l.incorrectCount) * 10
+  );
+  if (langSrs.localContributed) needsCloudPush = true;
+
+  const langPractice = mergeRecordByRecency(
+    remote.langPracticeProgress,
+    local.langPracticeProgress,
+    (p) => (p.lastAttemptAt ?? 0) + p.attempts * 1000
+  );
+  if (langPractice.localContributed) needsCloudPush = true;
+
+  const studioMap = new Map<string, StudioRubricAttempt>();
+  for (const item of remote.langStudioHistory ?? []) studioMap.set(item.id, item);
+  for (const item of local.langStudioHistory ?? []) {
+    if (!studioMap.has(item.id)) {
+      studioMap.set(item.id, item);
+      needsCloudPush = true;
+    }
+  }
+  const langStudioHistory = Array.from(studioMap.values())
+    .sort((a, b) => b.completedAt - a.completedAt)
+    .slice(0, 50);
+
+  const multiExamMap = new Map<string, MultiExamResult>();
+  for (const item of remote.langMockExamHistory ?? []) multiExamMap.set(item.id, item);
+  for (const item of local.langMockExamHistory ?? []) {
+    if (!multiExamMap.has(item.id)) {
+      multiExamMap.set(item.id, item);
+      needsCloudPush = true;
+    }
+  }
+  const langMockExamHistory = Array.from(multiExamMap.values())
+    .sort((a, b) => b.completedAt - a.completedAt)
+    .slice(0, 50);
+
   return {
     merged: {
       ...remote,
@@ -330,6 +405,10 @@ function mergeCloudAndLocalModules(
       writingProgress: writing.merged,
       mockExamHistory,
       pronunciationProgress,
+      langSrsProgress: langSrs.merged,
+      langPracticeProgress: langPractice.merged,
+      langStudioHistory,
+      langMockExamHistory,
     },
     needsCloudPush,
   };
@@ -392,6 +471,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [state, setState] = useState<UserState | null>(null);
   const [now, setNow] = useState<number>(() => Date.now());
   const [activeView, setActiveView] = useState<ActiveView>('dashboard');
+  const [activeExamTrack, setActiveExamTrack] = useState<ExamTrackId | null>(null);
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -755,7 +835,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] text-slate-900 p-6">
         <div className="max-w-md w-full bg-white border border-slate-200 rounded-xl p-6 space-y-4">
-          <h1 className="font-display text-xl font-bold">Gagal Memuat Kurikulum 60 Level</h1>
+          <h1 className="font-display text-xl font-bold">Gagal Memuat Kurikulum JLPT N5–N1</h1>
           <p className="text-sm text-slate-600">{loadError}</p>
           <button
             type="button"
@@ -773,14 +853,37 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] dark:bg-[#0F1115] text-slate-900 dark:text-slate-100 p-6">
         <div className="text-center space-y-2">
-          <div className="font-display text-2xl font-extrabold tracking-tight">KaniMichi</div>
+          <div className="font-display text-2xl font-extrabold tracking-tight">Leksika</div>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Memuat 60 level kurikulum (478 Radikal · 2.026 Kanji · 6.584 Kosakata)...
+            Menyiapkan platform belajar multibahasa (JLPT · TOEFL · IELTS · TOEIC · TOAFL)...
           </p>
         </div>
       </div>
     );
   }
+
+  const activeLanguage: ActiveLanguageScope = state.settings.activeLanguage ?? 'all';
+
+  const setActiveLanguage = (lang: ActiveLanguageScope, targetView?: ActiveView) => {
+    setState((prev) =>
+      prev
+        ? {
+            ...prev,
+            settings: {
+              ...prev.settings,
+              activeLanguage: lang,
+            },
+          }
+        : prev
+    );
+    if (targetView) {
+      setActiveView(targetView);
+    } else if (lang === 'all' || lang === 'ja') {
+      setActiveView('dashboard');
+    } else {
+      setActiveView('lang-home');
+    }
+  };
 
   const updateHistoryAndStreak = (
     prev: UserState,
@@ -1447,6 +1550,215 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
   };
 
+  const completeLangSrsLessons = (
+    lang: 'en' | 'ar',
+    kind: 'vocab' | 'grammar',
+    itemIds: string[]
+  ) => {
+    if (itemIds.length === 0) return;
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
+      const lp: Record<string, LangSrsProgress> = { ...(prev.langSrsProgress ?? {}) };
+      let addedCount = 0;
+      for (const id of itemIds) {
+        const existing = lp[id];
+        if (existing && existing.srsStage >= 1) continue;
+        lp[id] = {
+          itemId: id,
+          lang,
+          kind,
+          srsStage: 1,
+          startedAt: ts,
+          nextReviewAt: calculateNextReviewAt(1, ts, mode),
+          burnedAt: null,
+          correctCount: existing?.correctCount ?? 0,
+          incorrectCount: existing?.incorrectCount ?? 0,
+          lastReviewedAt: existing?.lastReviewedAt ?? null,
+        };
+        addedCount += 1;
+      }
+      const activity = updateHistoryAndStreak(prev, 0, 0, addedCount, ts);
+      return {
+        ...prev,
+        ...activity,
+        langSrsProgress: lp,
+      };
+    });
+  };
+
+  const submitLangSrsReview = (
+    itemId: string,
+    lang: 'en' | 'ar',
+    kind: 'vocab' | 'grammar',
+    hadMistake: boolean
+  ): { previousStage: SrsStage; newStage: SrsStage } => {
+    const ts = Date.now();
+    setNow(ts);
+    let result: { previousStage: SrsStage; newStage: SrsStage } = {
+      previousStage: 1,
+      newStage: hadMistake ? 1 : 2,
+    };
+
+    setState((prev) => {
+      if (!prev) return prev;
+      const mode = resolveSrsMode(prev.settings);
+      const existing = prev.langSrsProgress?.[itemId];
+      const prevStage: SrsStage =
+        existing && existing.srsStage >= 1 ? existing.srsStage : 1;
+      const newStage = calculateNextSrsStage(prevStage, hadMistake ? 1 : 0);
+      const nextReviewAt = calculateNextReviewAt(newStage, ts, mode);
+      result = { previousStage: prevStage, newStage };
+
+      const updated: LangSrsProgress = {
+        itemId,
+        lang,
+        kind,
+        srsStage: newStage,
+        startedAt: existing?.startedAt ?? ts,
+        nextReviewAt,
+        burnedAt: newStage === 9 ? ts : null,
+        correctCount: (existing?.correctCount ?? 0) + (hadMistake ? 0 : 1),
+        incorrectCount: (existing?.incorrectCount ?? 0) + (hadMistake ? 1 : 0),
+        lastReviewedAt: ts,
+      };
+
+      const activity = updateHistoryAndStreak(prev, 1, hadMistake ? 0 : 1, 0, ts);
+      return {
+        ...prev,
+        ...activity,
+        langSrsProgress: {
+          ...(prev.langSrsProgress ?? {}),
+          [itemId]: updated,
+        },
+      };
+    });
+
+    return result;
+  };
+
+  const resurrectLangSrsItem = (itemId: string) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.langSrsProgress?.[itemId];
+      if (!existing || existing.srsStage !== 9) return prev;
+      const mode = resolveSrsMode(prev.settings);
+      return {
+        ...prev,
+        langSrsProgress: {
+          ...(prev.langSrsProgress ?? {}),
+          [itemId]: {
+            ...existing,
+            srsStage: 1,
+            burnedAt: null,
+            nextReviewAt: calculateNextReviewAt(1, ts, mode),
+          },
+        },
+      };
+    });
+  };
+
+  const recordLangPractice = (
+    itemId: string,
+    lang: 'en' | 'ar',
+    kind: 'reading' | 'listening',
+    correctCount: number,
+    totalQuestions: number,
+    elapsedSec: number
+  ) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const existing = prev.langPracticeProgress?.[itemId];
+      const passedNow = correctCount >= Math.ceil(totalQuestions * 0.6);
+      const updated: LangPracticeRecord = {
+        itemId,
+        lang,
+        kind,
+        attempts: (existing?.attempts ?? 0) + 1,
+        bestScore: existing ? Math.max(existing.bestScore, correctCount) : correctCount,
+        totalQuestions,
+        lastScore: correctCount,
+        bestTimeSec:
+          existing && existing.bestTimeSec !== null
+            ? correctCount >= existing.bestScore
+              ? Math.min(existing.bestTimeSec, elapsedSec)
+              : existing.bestTimeSec
+            : elapsedSec,
+        passed: (existing?.passed ?? false) || passedNow,
+        lastAttemptAt: ts,
+      };
+      const activity = updateHistoryAndStreak(
+        prev,
+        totalQuestions,
+        correctCount,
+        0,
+        ts,
+        0,
+        Math.max(1, Math.round((elapsedSec / 60) * 10) / 10)
+      );
+      return {
+        ...prev,
+        ...activity,
+        langPracticeProgress: {
+          ...(prev.langPracticeProgress ?? {}),
+          [itemId]: updated,
+        },
+      };
+    });
+  };
+
+  const recordStudioAttempt = (attempt: StudioRubricAttempt) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const historyList = [attempt, ...(prev.langStudioHistory ?? [])].slice(0, 50);
+      const activity = updateHistoryAndStreak(
+        prev,
+        1,
+        1,
+        0,
+        ts,
+        0,
+        Math.max(1, Math.round((attempt.elapsedSec / 60) * 10) / 10)
+      );
+      return {
+        ...prev,
+        ...activity,
+        langStudioHistory: historyList,
+      };
+    });
+  };
+
+  const recordMultiExamResult = (result: MultiExamResult) => {
+    const ts = Date.now();
+    setNow(ts);
+    setState((prev) => {
+      if (!prev) return prev;
+      const historyList = [result, ...(prev.langMockExamHistory ?? [])].slice(0, 50);
+      const activity = updateHistoryAndStreak(
+        prev,
+        result.totalQuestions,
+        result.totalCorrect,
+        0,
+        ts,
+        Math.max(1, Math.round((result.elapsedSec / 60) * 10) / 10),
+        0
+      );
+      return {
+        ...prev,
+        ...activity,
+        langMockExamHistory: historyList,
+      };
+    });
+  };
+
   const updateSettings = (partial: Partial<UserSettings>) => {
     setState((prev) =>
       prev
@@ -1545,11 +1857,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           }
         }
       }
+      const langSrsProgress = prev.langSrsProgress
+        ? { ...prev.langSrsProgress }
+        : undefined;
+      if (langSrsProgress) {
+        for (const [id, p] of Object.entries(langSrsProgress)) {
+          if (p.nextReviewAt !== null) {
+            langSrsProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt + pausedDuration,
+            };
+          }
+        }
+      }
       return {
         ...prev,
         progress,
         grammarProgress,
         kanaVocabProgress,
+        langSrsProgress,
         settings: {
           ...prev.settings,
           vacationMode: false,
@@ -1600,7 +1926,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           }
         }
       }
-      return { ...prev, progress, grammarProgress, kanaVocabProgress };
+      const langSrsProgress = prev.langSrsProgress
+        ? { ...prev.langSrsProgress }
+        : undefined;
+      if (langSrsProgress) {
+        for (const [id, p] of Object.entries(langSrsProgress)) {
+          if (p.nextReviewAt !== null) {
+            langSrsProgress[id] = {
+              ...p,
+              nextReviewAt: p.nextReviewAt - shiftMs,
+            };
+          }
+        }
+      }
+      return { ...prev, progress, grammarProgress, kanaVocabProgress, langSrsProgress };
     });
   };
 
@@ -1644,7 +1983,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
           }
         }
       }
-      return { ...prev, progress, grammarProgress, kanaVocabProgress };
+      const langSrsProgress = prev.langSrsProgress
+        ? { ...prev.langSrsProgress }
+        : undefined;
+      if (langSrsProgress) {
+        for (const [id, p] of Object.entries(langSrsProgress)) {
+          if (p.srsStage >= 1 && p.srsStage <= 8) {
+            langSrsProgress[id] = {
+              ...p,
+              nextReviewAt: ts - 60000,
+            };
+          }
+        }
+      }
+      return { ...prev, progress, grammarProgress, kanaVocabProgress, langSrsProgress };
     });
   };
 
@@ -1958,6 +2310,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         dataset,
         state,
         now,
+        activeLanguage,
+        setActiveLanguage,
+        activeExamTrack,
+        setActiveExamTrack,
         activeView,
         setActiveView,
         selectedItemId,
@@ -1993,6 +2349,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         openPronunciationPractice,
         clearPronunciationTarget,
         recordPronunciationAttempt,
+        completeLangSrsLessons,
+        submitLangSrsReview,
+        resurrectLangSrsItem,
+        recordLangPractice,
+        recordStudioAttempt,
+        recordMultiExamResult,
         updateSettings,
         changeSrsMode,
         advanceNextLevelEarly,

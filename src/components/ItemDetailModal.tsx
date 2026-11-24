@@ -1,8 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Volume2, X, Plus, RotateCcw, ArrowRight, PenTool, Mic } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { getLevelMeta } from '../data/curriculum';
 import { getItemSpeechText, speakJapanese } from '../utils/audio';
 import { resolvePitchAccent } from '../utils/pitchResolver';
+import { AiExplainButton } from './AiExplainButton';
 import { PronunciationCard, type HomophoneRef } from './PronunciationCard';
 import {
   formatRelativeTime,
@@ -78,6 +80,8 @@ export const ItemDetailModal: React.FC = () => {
 
   if (!item || !progress) return null;
 
+  const itemMeta = getLevelMeta(item.level);
+
   const vocabPronunciationTarget =
     item.type === 'vocabulary' && primaryReading
       ? {
@@ -86,7 +90,7 @@ export const ItemDetailModal: React.FC = () => {
           kana: primaryReading,
           meaning: item.primaryMeaning,
           partOfSpeech: item.partOfSpeech,
-          sourceLabel: `Kurikulum Level ${item.level}`,
+          sourceLabel: `${itemMeta.jlpt} · Bab ${itemMeta.unitInTier}`,
           exampleJp: item.contextSentences?.[0]?.jp,
           exampleReading: item.contextSentences?.[0]?.reading,
           exampleTranslation: item.contextSentences?.[0]?.en,
@@ -155,15 +159,11 @@ export const ItemDetailModal: React.FC = () => {
             </div>
             <div className="min-w-0">
               <div className="text-xs font-medium text-white/85 flex flex-wrap items-center gap-2">
-                <span>Level {item.level}</span>
+                <span className="font-mono-num">
+                  {itemMeta.jlpt} · Bab {itemMeta.unitInTier}
+                </span>
                 <span aria-hidden="true">·</span>
                 <span>{getItemTypeLabel(item.type)}</span>
-                {item.jlpt ? (
-                  <>
-                    <span aria-hidden="true">·</span>
-                    <span className="font-mono-num">JLPT N{item.jlpt}</span>
-                  </>
-                ) : null}
                 {item.partOfSpeech && (
                   <>
                     <span aria-hidden="true">·</span>
@@ -281,19 +281,31 @@ export const ItemDetailModal: React.FC = () => {
           )}
 
           {/* Meaning & Mnemonic */}
-          <section className="border-t border-slate-200 dark:border-slate-800 pt-5">
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">
-              Arti &amp; Mnemonik
-            </h3>
-            <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-              Arti utama: <strong className="text-slate-900 dark:text-white">{item.primaryMeaning}</strong>
-              {item.acceptedMeanings.length > 1 && (
-                <span> · Diterima: {item.acceptedMeanings.slice(0, 6).join(', ')}</span>
-              )}
-            </p>
-            <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
-              {item.meaningMnemonic}
-            </p>
+          <section className="border-t border-slate-200 dark:border-slate-800 pt-5 space-y-3">
+            <div>
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2">
+                Arti &amp; Mnemonik
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                Arti utama: <strong className="text-slate-900 dark:text-white">{item.primaryMeaning}</strong>
+                {item.acceptedMeanings.length > 1 && (
+                  <span> · Diterima: {item.acceptedMeanings.slice(0, 6).join(', ')}</span>
+                )}
+              </p>
+              <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+                {item.meaningMnemonic}
+              </p>
+            </div>
+            <AiExplainButton
+              language="ja"
+              examContext={`JLPT ${itemMeta.jlpt} (${getItemTypeLabel(item.type)})`}
+              content={`Item: ${item.characters} | Arti: ${item.primaryMeaning} | Bacaan: ${
+                item.type === 'kanji'
+                  ? `On: ${item.onyomi?.join(', ') || '-'} / Kun: ${item.kunyomi?.join(', ') || '-'}`
+                  : item.readings?.join(', ') || '-'
+              } | Mnemonik: ${item.meaningMnemonic}`}
+              label="Terjemahkan & Jelaskan Lebih Mudah (AI)"
+            />
           </section>
 
           {/* Readings (for Kanji & Vocabulary) */}
@@ -427,7 +439,7 @@ export const ItemDetailModal: React.FC = () => {
                           {dep.primaryMeaning}
                         </div>
                         <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
-                          Level {dep.level} ·{' '}
+                          {getLevelMeta(dep.level).jlpt} Bab {getLevelMeta(dep.level).unitInTier} ·{' '}
                           {dep.type === 'kanji'
                             ? dep.onyomi?.[0] ?? dep.kunyomi?.[0]
                             : dep.readings?.[0]}

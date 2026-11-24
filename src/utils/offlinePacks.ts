@@ -1,4 +1,4 @@
-import type { CurriculumDataset } from '../data/curriculum';
+import { getLevelMeta, type CurriculumDataset } from '../data/curriculum';
 import { loadGrammarLevel } from '../data/grammar';
 import { loadKanaVocabLevel } from '../data/kanaVocab';
 import { loadListeningLevel } from '../data/listening';
@@ -9,6 +9,17 @@ import {
   SOUND_RULE_GUIDES,
 } from '../data/pronunciation';
 import type { JlptLevel } from '../types/grammar';
+import {
+  arGrammarLoader,
+  arListeningLoader,
+  arReadingLoader,
+  arVocabLoader,
+  enGrammarLoader,
+  enListeningLoader,
+  enReadingLoader,
+  enStudioLoader,
+  enVocabLoader,
+} from '../data/langPackLoader';
 import { getItemSpeechText } from './audio';
 
 export type OfflineAudioPackCategory = 'starter' | 'jlpt' | 'srs' | 'pronunciation';
@@ -136,12 +147,13 @@ function collectPronunciationTexts(): string[] {
 }
 
 export function buildCurrentLevelAudioPack(currentLevel: number): OfflineAudioPackDef {
+  const meta = getLevelMeta(currentLevel);
   return {
     id: `current-level-${currentLevel}`,
     category: 'starter',
-    title: `Audio Level Saat Ini (Level ${currentLevel})`,
-    subtitle: 'Semua kanji, kosakata, dan kalimat contoh di level aktifmu saat ini',
-    badge: `Lv.${currentLevel}`,
+    title: `Audio Bab Aktif (${meta.jlpt} Bab ${meta.unitInTier})`,
+    subtitle: 'Semua kanji, kosakata, dan kalimat contoh di bab aktifmu saat ini',
+    badge: `${meta.jlpt} B.${meta.unitInTier}`,
     estimatedAvgBytesPerClip: 10500,
     recommended: true,
     resolveTexts: async (dataset) => {
@@ -158,9 +170,9 @@ export const OFFLINE_AUDIO_PACKS: OfflineAudioPackDef[] = [
   {
     id: 'starter-lv1-5',
     category: 'starter',
-    title: 'Paket Pemula (Level 1–5 + Dasar)',
-    subtitle: 'Kanji & kosakata Level 1–5 beserta salam dasar untuk mulai belajar offline',
-    badge: 'Lv.1–5',
+    title: 'Paket Pemula (JLPT N5 Awal + Salam Dasar)',
+    subtitle: 'Kanji & kosakata JLPT N5 Bab 1–5 beserta salam dasar untuk mulai belajar offline',
+    badge: 'N5 Awal',
     estimatedAvgBytesPerClip: 10500,
     recommended: true,
     resolveTexts: async (dataset) => {
@@ -229,54 +241,45 @@ export const OFFLINE_AUDIO_PACKS: OfflineAudioPackDef[] = [
   {
     id: 'srs-lv1-10',
     category: 'srs',
-    title: 'Kanji & Kosakata Level 1–10 (Pleasant)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Pleasant',
-    badge: 'Lv.1–10',
+    title: 'Kanji & Kosakata JLPT N5 (Bab 1–10)',
+    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat JLPT N5 Dasar',
+    badge: 'SRS N5',
     estimatedAvgBytesPerClip: 10000,
     resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 1, 10, false),
   },
   {
     id: 'srs-lv11-20',
     category: 'srs',
-    title: 'Kanji & Kosakata Level 11–20 (Painful)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Painful',
-    badge: 'Lv.11–20',
+    title: 'Kanji & Kosakata JLPT N4 (Bab 1–10)',
+    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat JLPT N4 Dasar Lanjut',
+    badge: 'SRS N4',
     estimatedAvgBytesPerClip: 10000,
     resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 11, 20, false),
   },
   {
-    id: 'srs-lv21-30',
+    id: 'srs-lv21-35',
     category: 'srs',
-    title: 'Kanji & Kosakata Level 21–30 (Death)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Death',
-    badge: 'Lv.21–30',
+    title: 'Kanji & Kosakata JLPT N3 (Bab 1–15)',
+    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat JLPT N3 Menengah',
+    badge: 'SRS N3',
     estimatedAvgBytesPerClip: 10000,
-    resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 21, 30, false),
+    resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 21, 35, false),
   },
   {
-    id: 'srs-lv31-40',
+    id: 'srs-lv36-50',
     category: 'srs',
-    title: 'Kanji & Kosakata Level 31–40 (Hell)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Hell',
-    badge: 'Lv.31–40',
+    title: 'Kanji & Kosakata JLPT N2 (Bab 1–15)',
+    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat JLPT N2 Menengah Atas',
+    badge: 'SRS N2',
     estimatedAvgBytesPerClip: 10000,
-    resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 31, 40, false),
-  },
-  {
-    id: 'srs-lv41-50',
-    category: 'srs',
-    title: 'Kanji & Kosakata Level 41–50 (Paradise)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Paradise',
-    badge: 'Lv.41–50',
-    estimatedAvgBytesPerClip: 10000,
-    resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 41, 50, false),
+    resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 36, 50, false),
   },
   {
     id: 'srs-lv51-60',
     category: 'srs',
-    title: 'Kanji & Kosakata Level 51–60 (Reality)',
-    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat Reality',
-    badge: 'Lv.51–60',
+    title: 'Kanji & Kosakata JLPT N1 (Bab 1–10)',
+    subtitle: 'Seluruh bacaan kanji & kosakata SRS tingkat JLPT N1 Mahir',
+    badge: 'SRS N1',
     estimatedAvgBytesPerClip: 10000,
     resolveTexts: async (dataset) => collectCurriculumLevelRangeTexts(dataset, 51, 60, false),
   },
@@ -300,9 +303,8 @@ function getNormalizedBaseUrl(): string {
 }
 
 /**
- * Preload and cache all study JSON datasets (Curriculum Lv 1–60, Writing Strokes,
- * Grammar N5–N1, Kana Vocab N5–N1, Reading Dokkai N5–N1, Listening Chōkai N5–N1)
- * so every study module opens instantaneously offline.
+ * Preload and cache all study JSON datasets across Japanese (JLPT),
+ * English (TOEFL/IELTS/TOEIC), and Arabic (TOAFL) so every module works offline.
  */
 export async function downloadAndVerifyAllOfflineResources(
   onProgress?: (p: OfflineResourcesVerifyProgress) => void
@@ -310,7 +312,7 @@ export async function downloadAndVerifyAllOfflineResources(
   const levels: JlptLevel[] = [5, 4, 3, 2, 1];
   const tasks: { label: string; run: () => Promise<unknown> }[] = [
     {
-      label: 'Kurikulum Kanji & Kosakata (Lv 1–60)',
+      label: 'Kurikulum Kanji & Kosakata Jepang (Lv 1–60)',
       run: () => fetch(`${getNormalizedBaseUrl()}data/curriculum-60.json`).then((r) => r.text()),
     },
     {
@@ -318,14 +320,23 @@ export async function downloadAndVerifyAllOfflineResources(
       run: () =>
         fetch(`${getNormalizedBaseUrl()}data/writing-strokes-core.json`).then((r) => r.text()),
     },
+    { label: 'Inggris · Kosakata SRS (AWL & TOEIC)', run: () => enVocabLoader.loadAll() },
+    { label: 'Inggris · Grammar & Structure', run: () => enGrammarLoader.loadAll() },
+    { label: 'Inggris · Reading Academic & Business', run: () => enReadingLoader.loadAll() },
+    { label: 'Inggris · Listening TOEFL/IELTS/TOEIC', run: () => enListeningLoader.loadAll() },
+    { label: 'Inggris · Writing & Speaking Studio', run: () => enStudioLoader.loadAll() },
+    { label: 'Arab · Mufradat Fusha SRS', run: () => arVocabLoader.loadAll() },
+    { label: 'Arab · Qawaid (Nahwu & Shorof)', run: () => arGrammarLoader.loadAll() },
+    { label: 'Arab · Qira\'ah TOAFL', run: () => arReadingLoader.loadAll() },
+    { label: 'Arab · Istima\' TOAFL', run: () => arListeningLoader.loadAll() },
   ];
 
   for (const lvl of levels) {
     tasks.push(
-      { label: `Grammar JLPT N${lvl}`, run: () => loadGrammarLevel(lvl) },
-      { label: `Kosakata Kana N${lvl}`, run: () => loadKanaVocabLevel(lvl) },
-      { label: `Membaca Dokkai N${lvl}`, run: () => loadReadingLevel(lvl) },
-      { label: `Mendengarkan Chōkai N${lvl}`, run: () => loadListeningLevel(lvl) }
+      { label: `Jepang · Grammar JLPT N${lvl}`, run: () => loadGrammarLevel(lvl) },
+      { label: `Jepang · Kosakata Kana N${lvl}`, run: () => loadKanaVocabLevel(lvl) },
+      { label: `Jepang · Membaca Dokkai N${lvl}`, run: () => loadReadingLevel(lvl) },
+      { label: `Jepang · Mendengarkan Chōkai N${lvl}`, run: () => loadListeningLevel(lvl) }
     );
   }
 

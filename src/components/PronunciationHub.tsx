@@ -20,6 +20,7 @@ import {
   XCircle,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { getLevelMeta } from '../data/curriculum';
 import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { loadKanaVocabDataset } from '../data/kanaVocab';
 import {
@@ -197,7 +198,7 @@ export const PronunciationHub: React.FC = () => {
         meaning: item.primaryMeaning,
         partOfSpeech: item.partOfSpeech,
         level: item.level,
-        sourceLabel: `Kurikulum Lv.${item.level}`,
+        sourceLabel: `${getLevelMeta(item.level).jlpt} Bab ${getLevelMeta(item.level).unitInTier}`,
         accentNucleus: resolved.accentNucleus,
         pattern: resolved.pattern,
         particle: resolved.particle,
@@ -1274,7 +1275,7 @@ export const PronunciationHub: React.FC = () => {
                   </select>
                 ) : (
                   <select
-                    aria-label="Filter level kurikulum"
+                    aria-label="Filter bab JLPT"
                     value={dbLevelFilter}
                     onChange={(e) => {
                       setDbLevelFilter(Number(e.target.value));
@@ -1282,12 +1283,15 @@ export const PronunciationHub: React.FC = () => {
                     }}
                     className="px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-[#161A22] text-slate-700 dark:text-slate-200"
                   >
-                    <option value={0}>Semua Level (1–60)</option>
-                    {Array.from({ length: 60 }, (_, idx) => idx + 1).map((lvl) => (
-                      <option key={lvl} value={lvl}>
-                        Level {lvl}
-                      </option>
-                    ))}
+                    <option value={0}>Semua Bab JLPT (N5–N1)</option>
+                    {Array.from({ length: 60 }, (_, idx) => idx + 1).map((lvl) => {
+                      const m = getLevelMeta(lvl);
+                      return (
+                        <option key={lvl} value={lvl}>
+                          {m.jlpt} · Bab {m.unitInTier}
+                        </option>
+                      );
+                    })}
                   </select>
                 )}
 

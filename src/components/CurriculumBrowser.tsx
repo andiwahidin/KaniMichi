@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ChevronLeft, ChevronRight, Lock, Search } from 'lucide-react';
-import { getTierForLevel, LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
+import { getLevelMeta, getTierForLevel, LEVEL_TIERS, MAX_LEVEL } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
 import { ItemType, SrsCategory } from '../types/curriculum';
 import {
@@ -32,7 +32,7 @@ const PAGE_SIZE = 60;
 export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) => {
   const { dataset, state, openItemDetail, setActiveView } = useApp();
 
-  // Levels Hierarchy state (60 levels grouped into 6 WaniKani tiers)
+  // Struktur Kurikulum JLPT N5–N1 (tiap tingkat JLPT dibagi menjadi beberapa Bab bertahap)
   const [selectedLevel, setSelectedLevel] = useState<number>(state.currentLevel);
   const [selectedTierId, setSelectedTierId] = useState<string>(
     () => getTierForLevel(state.currentLevel).id
@@ -51,7 +51,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
   }, [mode, tierFilter, exactLevelFilter, srsFilter, query]);
 
   // ============================================================================
-  // LEVELS HIERARCHY VIEW (ALL 60 LEVELS IN 6 WANIKANI TIERS)
+  // KURIKULUM JLPT N5–N1 VIEW
   // ============================================================================
   if (mode === 'levels') {
     const activeTier =
@@ -65,6 +65,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
     const radicals = items.filter((i) => i.type === 'radical');
     const kanjis = items.filter((i) => i.type === 'kanji');
     const vocabs = items.filter((i) => i.type === 'vocabulary');
+    const selectedMeta = getLevelMeta(selectedLevel);
     const selectedLevelTier = getTierForLevel(selectedLevel);
 
     const renderGroup = (
@@ -99,7 +100,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
 
           {list.length === 0 ? (
             <p className="text-xs text-slate-500 dark:text-slate-400 py-2">
-              Level ini menggunakan kombinasi radikal dari level sebelumnya (tidak ada radikal baru).
+              Bab ini menggunakan kombinasi radikal dari bab sebelumnya (tidak ada radikal baru).
             </p>
           ) : (
             <div
@@ -195,20 +196,21 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         <div className="space-y-1">
           <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
-            60 Level Lengkap · {dataset.counts.radicals.toLocaleString('id-ID')} Radikal · {dataset.counts.kanji.toLocaleString('id-ID')} Kanji · {dataset.counts.vocabulary.toLocaleString('id-ID')} Kosakata
+            Kurikulum Resmi JLPT N5–N1 · {dataset.counts.radicals.toLocaleString('id-ID')} Radikal · {dataset.counts.kanji.toLocaleString('id-ID')} Kanji · {dataset.counts.vocabulary.toLocaleString('id-ID')} Kosakata
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-            Hierarki 60 Level KaniMichi
+            Kurikulum Terstruktur JLPT N5–N1
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-3xl">
-            Disusun mengikuti 6 tahapan penuh WaniKani (Pleasant hingga Reality). Klik level mana pun untuk memeriksa struktur Radikal → Kanji → Kosakata.
+            Disusun bertahap dari dasar N5 hingga mahir N1. Pilih tingkatan JLPT lalu pilih bab untuk mempelajari urutan Radikal → Kanji → Kosakata secara sistematis.
           </p>
         </div>
 
-        {/* 6 WaniKani Tier Tabs */}
+        {/* 5 JLPT Tier Tabs (N5 -> N1) */}
         <div className="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl overflow-x-auto">
           {LEVEL_TIERS.map((tier) => {
             const active = tier.id === selectedTierId;
+            const unitCount = tier.endLevel - tier.startLevel + 1;
             return (
               <button
                 key={tier.id}
@@ -225,15 +227,15 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
-                {tier.name} ({tier.startLevel}–{tier.endLevel})
+                {tier.name} · {tier.labelId} ({unitCount} Bab)
               </button>
             );
           })}
         </div>
 
-        {/* 10 Levels Grid inside Selected Tier */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-2">
-          {levelsInTier.map((lvl) => {
+        {/* Units Grid inside Selected JLPT Tier */}
+        <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 gap-2">
+          {levelsInTier.map((lvl, idx) => {
             const isSelected = selectedLevel === lvl;
             const isUnlockedLevel = lvl <= state.currentLevel;
             const lvlKanji = (dataset.byLevel[lvl] ?? []).filter(
@@ -259,7 +261,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
               >
                 <div className="flex items-center justify-between text-xs font-mono-num">
                   <span className="font-display font-bold text-slate-900 dark:text-white">
-                    Lv {lvl}
+                    Bab {idx + 1}
                   </span>
                   {!isUnlockedLevel ? (
                     <Lock className="w-3 h-3 text-slate-400" />
@@ -281,18 +283,18 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
           })}
         </div>
 
-        {/* Selected Level Hierarchy Detail */}
+        {/* Selected Bab Detail */}
         <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-8">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
             <div>
               <div className="text-xs text-slate-500 dark:text-slate-400">
                 {selectedLevelTier.name} ({selectedLevelTier.labelId}) ·{' '}
                 {selectedLevel <= state.currentLevel
-                  ? 'Level Terbuka'
-                  : 'Level Terkunci (Pratinjau)'}
+                  ? 'Bab Terbuka'
+                  : 'Bab Terkunci (Pratinjau)'}
               </div>
               <h2 className="font-display text-xl font-bold text-slate-900 dark:text-white mt-0.5">
-                Level {selectedLevel} dari {MAX_LEVEL}
+                {selectedMeta.title}
               </h2>
             </div>
             <div className="text-xs font-mono-num text-slate-500 dark:text-slate-400">
@@ -304,14 +306,14 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
             const srsPolicy = getSrsPolicy(resolveSrsMode(state.settings));
             const unlockLabel =
               srsPolicy.unlockDepStage === 1
-                ? 'selesai Lesson'
+                ? 'selesai Pelajaran'
                 : `mencapai ${SRS_STAGE_NAMES[srsPolicy.unlockDepStage]}`;
             return (
               <>
                 {renderGroup(
                   '1. Radikal (Fondasi Bentuk)',
                   srsPolicy.unlockDepStage === 1
-                    ? 'Selesaikan Lesson radikal untuk langsung membuka Kanji terkait.'
+                    ? 'Selesaikan Pelajaran radikal untuk langsung membuka Kanji terkait.'
                     : `Pelajari komponen visual dasar hingga tahap ${SRS_STAGE_NAMES[srsPolicy.unlockDepStage]}.`,
                   'radical',
                   radicals
@@ -423,7 +425,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="text-xs text-slate-500 dark:text-slate-400 font-mono-num">
-            Katalog Penuh · Level 1–{MAX_LEVEL}
+            Katalog Penuh · JLPT N5–N1
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-0.5">
             Daftar {getItemTypeLabel(targetType)} ({filteredItems.length.toLocaleString('id-ID')})
@@ -432,7 +434,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
 
         <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 w-full md:w-auto">
           <select
-            aria-label="Filter level spesifik"
+            aria-label="Filter bab JLPT spesifik"
             value={exactLevelFilter}
             onChange={(e) => {
               const v = e.target.value;
@@ -440,12 +442,15 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
             }}
             className="px-3 py-2 text-sm font-mono-num rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] text-slate-900 dark:text-white shrink-0"
           >
-            <option value="all">Semua Level</option>
-            {Array.from({ length: MAX_LEVEL }, (_, i) => i + 1).map((lvl) => (
-              <option key={lvl} value={lvl}>
-                Level {lvl}
-              </option>
-            ))}
+            <option value="all">Semua Bab JLPT</option>
+            {Array.from({ length: MAX_LEVEL }, (_, i) => i + 1).map((lvl) => {
+              const meta = getLevelMeta(lvl);
+              return (
+                <option key={lvl} value={lvl}>
+                  {meta.jlpt} · Bab {meta.unitInTier}
+                </option>
+              );
+            })}
           </select>
 
           <div className="relative flex-1 min-w-[160px] md:w-64">
@@ -476,7 +481,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                 : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
             }`}
           >
-            Semua (1–60)
+            Semua (N5–N1)
           </button>
           {LEVEL_TIERS.map((t) => (
             <button
@@ -492,7 +497,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                   : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              {t.startLevel}–{t.endLevel}
+              {t.name}
             </button>
           ))}
         </div>
@@ -525,6 +530,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
           {pageItems.map((item) => {
             const cat = getSrsCategory(state.progress[item.id]?.srsStage);
             const locked = cat === 'locked';
+            const itemMeta = getLevelMeta(item.level);
             return (
               <button
                 key={item.id}
@@ -549,7 +555,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                       {item.primaryMeaning}
                     </div>
                     <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
-                      <span className="font-jp">{item.readings?.[0]}</span> · Lv.{item.level}
+                      <span className="font-jp">{item.readings?.[0]}</span> · {itemMeta.jlpt} Bab {itemMeta.unitInTier}
                     </div>
                   </div>
                 </div>
@@ -565,6 +571,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
           {pageItems.map((item) => {
             const cat = getSrsCategory(state.progress[item.id]?.srsStage);
             const locked = cat === 'locked';
+            const itemMeta = getLevelMeta(item.level);
             return (
               <button
                 key={item.id}
@@ -587,7 +594,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
                   {item.primaryMeaning}
                 </div>
                 <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate font-mono-num">
-                  Lv.{item.level} · {getCategoryLabel(cat)}
+                  {itemMeta.jlpt} B.{itemMeta.unitInTier} · {getCategoryLabel(cat)}
                 </div>
               </button>
             );
