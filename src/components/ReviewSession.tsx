@@ -34,6 +34,7 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -110,6 +111,8 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
       .filter((i): i is CurriculumItem => Boolean(i))
       .slice(0, 12);
   }, []); // Intentionally captured at session start
+
+  useAutoTranslateCurriculumItems(initialItems);
 
   const [trackers, setTrackers] = useState<Record<string, ItemTracker>>(() => {
     const map: Record<string, ItemTracker> = {};
@@ -897,8 +900,8 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
             {getItemTypeLabel(item.type)} —{' '}
             <strong className="font-bold">
               {item.type === 'radical'
-                ? 'Nama Radikal (Bahasa Inggris)'
-                : 'Arti (Bahasa Inggris)'}
+                ? 'Nama Radikal (Bahasa Indonesia)'
+                : 'Arti (Bahasa Indonesia)'}
             </strong>
           </span>
         ) : currentQuestion.kind === 'listening' ? (
@@ -983,7 +986,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                 spellCheck={false}
                 placeholder={
                   currentQuestion.kind === 'meaning'
-                    ? 'Ketik arti dalam Bahasa Inggris...'
+                    ? 'Ketik arti dalam Bahasa Indonesia...'
                     : currentQuestion.kind === 'listening'
                     ? 'Ketik apa yang kamu dengar (romaji → ひらがな)...'
                     : 'Ketik romaji (otomatis ke ひらがな)...'
@@ -1020,7 +1023,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                   ? 'Dengarkan audio lalu ketik bacaannya (romaji otomatis ke ひらがな)'
                   : currentQuestion.kind === 'reading'
                   ? 'IME Hiragana aktif: ketik romaji (mis. yama → やま, nn → ん)'
-                  : 'Ketik arti Bahasa Inggris, alternatif, atau sinonim pribadimu'}
+                  : 'Ketik arti Bahasa Indonesia (arti Inggris & sinonim pribadimu tetap diterima)'}
               </span>
               <div className="flex items-center gap-3">
                 {answerState !== 'idle' && (

@@ -169,12 +169,13 @@ export interface StudioRubricCriterion {
 
 export interface StudioPromptItem {
   id: string;
-  lang: 'en';
+  lang: SupportedLanguageId;
   order: number;
-  examTrack: 'ielts' | 'toefl-ibt';
+  examTrack: StudioExamTrack;
   skill: 'writing' | 'speaking';
   taskLabel: string;
   title: string;
+  isFreeTopic?: boolean;
   prepSec: number;
   durationSec: number;
   minWords?: number;
@@ -214,12 +215,17 @@ export interface LangPracticeRecord {
   lastAttemptAt: number;
 }
 
+export type StudioExamTrack = 'ielts' | 'toefl-ibt' | 'jlpt' | 'toafl' | 'free-practice';
+
 export interface StudioRubricAttempt {
   id: string;
   promptId: string;
-  examTrack: 'ielts' | 'toefl-ibt';
+  language?: SupportedLanguageId;
+  examTrack: StudioExamTrack;
   skill: 'writing' | 'speaking';
   title: string;
+  isFreeTopic?: boolean;
+  aiEvaluated?: boolean;
   criteriaScores: Record<string, number>;
   overallScore: number;
   maxScore: number;
@@ -227,6 +233,10 @@ export interface StudioRubricAttempt {
   wordCount?: number;
   elapsedSec: number;
   completedAt: number;
+  /** Compact AI Agent memory persisted per account */
+  summaryId?: string;
+  keyImprovements?: string[];
+  sampleCorrections?: { original: string; corrected: string }[];
 }
 
 export interface MultiExamSectionResult {

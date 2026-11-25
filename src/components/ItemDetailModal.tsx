@@ -13,6 +13,7 @@ import {
   getProgressOrDefault,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { translateSync, useAutoTranslateCurriculumItems } from '../utils/idTranslator';
 
 export const ItemDetailModal: React.FC = () => {
   const {
@@ -30,6 +31,14 @@ export const ItemDetailModal: React.FC = () => {
 
   const item = selectedItemId ? dataset.byId[selectedItemId] : null;
   const progress = selectedItemId ? getProgressOrDefault(state, selectedItemId) : null;
+
+  const relatedItemsToTranslate = useMemo(() => {
+    if (!item) return [];
+    const comps = (item.componentIds ?? []).map((id) => dataset.byId[id]).filter(Boolean);
+    const deps = (dataset.dependentsById[item.id] ?? []).slice(0, 16);
+    return [item, ...comps, ...deps];
+  }, [dataset.byId, dataset.dependentsById, item]);
+  useAutoTranslateCurriculumItems(relatedItemsToTranslate);
 
   const [newSynonym, setNewSynonym] = useState('');
   const [meaningNote, setMeaningNote] = useState('');
@@ -93,7 +102,7 @@ export const ItemDetailModal: React.FC = () => {
           sourceLabel: `${itemMeta.jlpt} · Bab ${itemMeta.unitInTier}`,
           exampleJp: item.contextSentences?.[0]?.jp,
           exampleReading: item.contextSentences?.[0]?.reading,
-          exampleTranslation: item.contextSentences?.[0]?.en,
+          exampleTranslation: translateSync(item.contextSentences?.[0]?.en),
         }
       : null;
 
@@ -391,7 +400,9 @@ export const ItemDetailModal: React.FC = () => {
                       <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
                         {sent.reading}
                       </p>
-                      <p className="text-sm text-slate-700 dark:text-slate-300">{sent.en}</p>
+                      <p className="text-sm text-slate-700 dark:text-slate-300">
+                        {translateSync(sent.en)}
+                      </p>
                     </div>
                     <button
                       type="button"

@@ -55,6 +55,11 @@ import {
 } from '../utils/pitchResolver';
 import { PitchDiagram } from './PitchDiagram';
 import { PronunciationCard, type HomophoneRef } from './PronunciationCard';
+import {
+  translatePartOfSpeech,
+  translateSync,
+  useTranslationVersion,
+} from '../utils/idTranslator';
 
 type StudioTab = 'pairs' | 'database' | 'guide' | 'ear-quiz' | 'speaking';
 type CategoryFilter = 'all' | PronunciationCategory;
@@ -160,6 +165,7 @@ export const PronunciationHub: React.FC = () => {
   const autoAdvanceDelayMs = state.settings.autoAdvanceDelayMs ?? 1500;
   const isAudioPlaying = useIsAudioPlaying();
   const progress = state.pronunciationProgress;
+  const translationVersion = useTranslationVersion();
 
   const [kanaVocabData, setKanaVocabData] = useState<KanaVocabDataset | null>(null);
 
@@ -195,8 +201,8 @@ export const PronunciationHub: React.FC = () => {
         kanji: item.characters,
         kana: primaryKana,
         romaji: resolved.romaji,
-        meaning: item.primaryMeaning,
-        partOfSpeech: item.partOfSpeech,
+        meaning: translateSync(item.primaryMeaning),
+        partOfSpeech: translatePartOfSpeech(item.partOfSpeech),
         level: item.level,
         sourceLabel: `${getLevelMeta(item.level).jlpt} Bab ${getLevelMeta(item.level).unitInTier}`,
         accentNucleus: resolved.accentNucleus,
@@ -205,22 +211,25 @@ export const PronunciationHub: React.FC = () => {
         pitchSource: resolved.source,
         exampleJp: item.contextSentences?.[0]?.jp,
         exampleReading: item.contextSentences?.[0]?.reading,
-        exampleTranslation: item.contextSentences?.[0]?.en,
-        searchKey: `${item.characters} ${primaryKana} ${resolved.romaji} ${item.primaryMeaning} ${item.acceptedMeanings.join(' ')}`.toLowerCase(),
+        exampleTranslation: item.contextSentences?.[0]?.en
+          ? translateSync(item.contextSentences[0].en)
+          : undefined,
+        searchKey: `${item.characters} ${primaryKana} ${resolved.romaji} ${item.primaryMeaning} ${translateSync(item.primaryMeaning)} ${item.acceptedMeanings.join(' ')}`.toLowerCase(),
       });
     }
 
     if (kanaVocabData) {
       for (const kv of kanaVocabData.items) {
         const resolved = resolvePitchAccent(kv.word, kv.reading, kv.partOfSpeech);
+        const translatedMeaning = translateSync(kv.primaryMeaning);
         entries.push({
           id: kv.id,
           source: 'kana',
           kanji: kv.word,
           kana: kv.reading,
           romaji: resolved.romaji,
-          meaning: kv.primaryMeaning,
-          partOfSpeech: kv.partOfSpeech,
+          meaning: translatedMeaning,
+          partOfSpeech: translatePartOfSpeech(kv.partOfSpeech),
           jlpt: kv.jlpt,
           sourceLabel: `Kana JLPT N${kv.jlpt}`,
           accentNucleus: resolved.accentNucleus,
@@ -229,14 +238,14 @@ export const PronunciationHub: React.FC = () => {
           pitchSource: resolved.source,
           exampleJp: kv.example.jp,
           exampleReading: kv.example.reading,
-          exampleTranslation: kv.example.en,
-          searchKey: `${kv.word} ${kv.reading} ${resolved.romaji} ${kv.primaryMeaning} ${kv.acceptedMeanings.join(' ')}`.toLowerCase(),
+          exampleTranslation: translateSync(kv.example.en),
+          searchKey: `${kv.word} ${kv.reading} ${resolved.romaji} ${kv.primaryMeaning} ${translatedMeaning} ${kv.acceptedMeanings.join(' ')}`.toLowerCase(),
         });
       }
     }
 
     return entries;
-  }, [dataset.byType.vocabulary, kanaVocabData]);
+  }, [dataset.byType.vocabulary, kanaVocabData, translationVersion]);
 
   // Index homophones by Hiragana reading across ALL 6,734 words
   const homophonesByKana = useMemo(() => {

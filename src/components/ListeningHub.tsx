@@ -38,6 +38,7 @@ import {
   speakJapanese,
   stopSpeech,
 } from '../utils/audio';
+import { useAutoIndonesian } from '../utils/idTranslator';
 
 const SPEED_OPTIONS = [0.75, 0.9, 1.0, 1.15] as const;
 
@@ -241,6 +242,29 @@ export const ListeningHub: React.FC = () => {
     if (taskFilter === 'all') return selectedLevelTracks;
     return selectedLevelTracks.filter((t) => t.taskType === taskFilter);
   }, [selectedLevelTracks, taskFilter]);
+
+  const listeningTransEntries = useMemo(() => {
+    const entries: { text: string; hint?: string }[] = [];
+    for (const track of filteredTracks.slice(0, 20)) {
+      entries.push({ text: track.titleEn, hint: 'judul listening JLPT' });
+      entries.push({ text: track.situationEn, hint: 'situasi listening JLPT' });
+    }
+    if (activeTrack) {
+      entries.push({ text: activeTrack.titleEn, hint: 'judul listening JLPT' });
+      entries.push({ text: activeTrack.situationEn, hint: 'situasi listening JLPT' });
+      entries.push({ text: activeTrack.introEn, hint: 'narasi pengantar listening JLPT' });
+      entries.push({ text: activeTrack.explanationEn, hint: 'pembahasan listening JLPT' });
+      for (const line of activeTrack.lines) {
+        entries.push({ text: line.en, hint: 'terjemahan dialog JLPT' });
+      }
+      for (const phrase of activeTrack.keyPhrases) {
+        entries.push({ text: phrase.en, hint: `ungkapan ${phrase.jp}` });
+      }
+    }
+    return entries;
+  }, [filteredTracks, activeTrack]);
+
+  const { t: tId } = useAutoIndonesian(listeningTransEntries);
 
   const getTaskMeta = (type: ListeningTaskType) =>
     LISTENING_TASK_TYPES.find((t) => t.id === type) ?? LISTENING_TASK_TYPES[0];
@@ -597,7 +621,7 @@ export const ListeningHub: React.FC = () => {
                   />
                 </h1>
                 <p className="text-xs sm:text-sm text-white/90 mt-1">
-                  {activeTrack.situationEn}
+                  {tId(activeTrack.situationEn)}
                 </p>
               </div>
 
@@ -737,7 +761,7 @@ export const ListeningHub: React.FC = () => {
                             />
                           </p>
                           <p className="text-xs text-slate-600 dark:text-slate-400">
-                            {activeTrack.introEn}
+                            {tId(activeTrack.introEn)}
                           </p>
                         </div>
                         <button
@@ -782,7 +806,7 @@ export const ListeningHub: React.FC = () => {
                                 />
                               </p>
                               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                {line.en}
+                                {tId(line.en)}
                               </p>
                             </div>
                             <button
@@ -840,7 +864,7 @@ export const ListeningHub: React.FC = () => {
                           </span>
                         </div>
                         <div className="text-xs text-slate-600 dark:text-slate-400">
-                          {phrase.en}
+                          {tId(phrase.en)}
                         </div>
                       </div>
                       <button
@@ -1067,7 +1091,7 @@ export const ListeningHub: React.FC = () => {
                     Pembahasan Soal
                   </div>
                   <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                    {activeTrack.explanationEn}
+                    {tId(activeTrack.explanationEn)}
                   </p>
                   <AiExplainButton
                     language="ja"
@@ -1323,12 +1347,12 @@ export const ListeningHub: React.FC = () => {
                     {stripFuriganaMarkup(track.titleJp)}
                   </h2>
                   <div className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-0.5">
-                    {track.titleEn}
+                    {tId(track.titleEn)}
                   </div>
                 </div>
 
                 <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {track.situationEn}
+                  {tId(track.situationEn)}
                 </p>
               </div>
 

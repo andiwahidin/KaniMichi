@@ -11,6 +11,7 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
 
 interface CurriculumBrowserProps {
   mode: 'levels' | 'radicals' | 'kanji' | 'vocabulary';
@@ -49,6 +50,57 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
   useEffect(() => {
     setPage(1);
   }, [mode, tierFilter, exactLevelFilter, srsFilter, query]);
+
+  const targetType: ItemType =
+    mode === 'radicals' ? 'radical' : mode === 'kanji' ? 'kanji' : 'vocabulary';
+
+  const filteredDirectoryItems = useMemo(() => {
+    if (mode === 'levels') return [];
+    const q = query.trim().toLowerCase();
+    const activeTierObj =
+      tierFilter === 'all'
+        ? null
+        : LEVEL_TIERS.find((t) => t.id === tierFilter) ?? null;
+
+    return dataset.byType[targetType].filter((item) => {
+      if (exactLevelFilter !== 'all' && item.level !== exactLevelFilter) {
+        return false;
+      }
+      if (
+        exactLevelFilter === 'all' &&
+        activeTierObj &&
+        (item.level < activeTierObj.startLevel || item.level > activeTierObj.endLevel)
+      ) {
+        return false;
+      }
+      if (srsFilter !== 'all') {
+        const cat = getSrsCategory(state.progress[item.id]?.srsStage);
+        if (cat !== srsFilter) return false;
+      }
+      if (q) {
+        const matchChar = item.characters.includes(q);
+        const matchMeaning =
+          item.primaryMeaning.toLowerCase().includes(q) ||
+          item.acceptedMeanings.some((m) => m.includes(q));
+        const matchReading =
+          item.onyomi?.some((r) => r.includes(q)) ||
+          item.kunyomi?.some((r) => r.includes(q)) ||
+          item.readings?.some((r) => r.includes(q));
+        if (!matchChar && !matchMeaning && !matchReading) return false;
+      }
+      return true;
+    });
+  }, [mode, dataset, targetType, tierFilter, exactLevelFilter, srsFilter, query, state.progress]);
+
+  const visibleItemsForTranslation = useMemo(() => {
+    if (mode === 'levels') {
+      return dataset.byLevel[selectedLevel] ?? [];
+    }
+    const safeP = Math.min(page, Math.max(1, Math.ceil(filteredDirectoryItems.length / PAGE_SIZE)));
+    return filteredDirectoryItems.slice((safeP - 1) * PAGE_SIZE, safeP * PAGE_SIZE);
+  }, [mode, dataset.byLevel, selectedLevel, filteredDirectoryItems, page]);
+
+  useAutoTranslateCurriculumItems(visibleItemsForTranslation);
 
   // ============================================================================
   // KURIKULUM JLPT N5–N1 VIEW
@@ -343,46 +395,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
   // ============================================================================
   // DIRECTORY VIEW: RADICALS (478) / KANJI (2,026) / VOCABULARY (6,584)
   // ============================================================================
-  const targetType: ItemType =
-    mode === 'radicals' ? 'radical' : mode === 'kanji' ? 'kanji' : 'vocabulary';
-
-  const filteredItems = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    const activeTierObj =
-      tierFilter === 'all'
-        ? null
-        : LEVEL_TIERS.find((t) => t.id === tierFilter) ?? null;
-
-    return dataset.byType[targetType].filter((item) => {
-      if (exactLevelFilter !== 'all' && item.level !== exactLevelFilter) {
-        return false;
-      }
-      if (
-        exactLevelFilter === 'all' &&
-        activeTierObj &&
-        (item.level < activeTierObj.startLevel || item.level > activeTierObj.endLevel)
-      ) {
-        return false;
-      }
-      if (srsFilter !== 'all') {
-        const cat = getSrsCategory(state.progress[item.id]?.srsStage);
-        if (cat !== srsFilter) return false;
-      }
-      if (q) {
-        const matchChar = item.characters.includes(q);
-        const matchMeaning =
-          item.primaryMeaning.toLowerCase().includes(q) ||
-          item.acceptedMeanings.some((m) => m.includes(q));
-        const matchReading =
-          item.onyomi?.some((r) => r.includes(q)) ||
-          item.kunyomi?.some((r) => r.includes(q)) ||
-          item.readings?.some((r) => r.includes(q));
-        if (!matchChar && !matchMeaning && !matchReading) return false;
-      }
-      return true;
-    });
-  }, [dataset, targetType, tierFilter, exactLevelFilter, srsFilter, query, state.progress]);
-
+  const filteredItems = filteredDirectoryItems;
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
   const pageItems = filteredItems.slice(

@@ -56,6 +56,7 @@ interface LearnerContextPayload {
   jlptStage?: string;
   weakItems?: string[];
   recentExams?: string[];
+  recentStudioMemory?: string[];
   streakDays?: number;
 }
 
@@ -82,6 +83,14 @@ function formatLearnerContextPrompt(ctx?: LearnerContextPayload): string {
         .join('; ')}`
     );
   }
+  if (Array.isArray(ctx.recentStudioMemory) && ctx.recentStudioMemory.length > 0) {
+    lines.push(
+      `- Memori riwayat Writing & Speaking akun ini (bandingkan perkembangan & perhatikan pola kesalahan berulang):\n  ${ctx.recentStudioMemory
+        .slice(0, 5)
+        .map((s) => `• ${String(s).slice(0, 220)}`)
+        .join('\n  ')}`
+    );
+  }
   if (Array.isArray(ctx.weakItems) && ctx.weakItems.length > 0) {
     lines.push(
       `- Materi SRS yang masih sering salah / rawan lupa: ${ctx.weakItems
@@ -102,7 +111,7 @@ function formatLearnerContextPrompt(ctx?: LearnerContextPayload): string {
     return `\n\nPREFERENSI AKUN PELAJAR:\n${styleGuide}`;
   }
 
-  return `\n\nPROFIL AKUN PELAJAR (gunakan secara alami untuk mempersonalisasi penjelasan & latihan):\n${lines.join('\n')}\n${styleGuide}`;
+  return `\n\nPROFIL & MEMORI AKUN PELAJAR (gunakan secara alami untuk mempersonalisasi penilaian, perbandingan progres, & latihan):\n${lines.join('\n')}\n${styleGuide}`;
 }
 
 async function createApp() {
@@ -123,11 +132,13 @@ async function createApp() {
         examTarget = '',
         messages = [],
         learnerContext,
+        evaluationContext = '',
       } = req.body as {
         language?: string;
         examTarget?: string;
         messages?: { role: 'user' | 'assistant'; content: string }[];
         learnerContext?: LearnerContextPayload;
+        evaluationContext?: string;
       };
 
       if (!Array.isArray(messages) || messages.length === 0) {
@@ -138,17 +149,21 @@ async function createApp() {
       const ai = getAiClient();
       const langContext =
         language === 'ja'
-          ? 'Bahasa Jepang (JLPT N5 hingga N1: Kanji, Kosakata, Tata Bahasa, Dokkai, Chōkai, Strategi Lulus JLPT)'
+          ? 'Bahasa Jepang (JLPT N5 hingga N1: Kanji, Kosakata, Tata Bahasa, Dokkai, Chōkai, Sakubun/Writing, Kaiwa/Speaking)'
           : language === 'en'
           ? 'Bahasa Inggris (TOEFL ITP, TOEFL iBT, IELTS Academic, TOEIC: Vocabulary, Grammar, Reading, Listening, Writing, Speaking)'
           : language === 'ar'
-          ? 'Bahasa Arab Fusha (TOAFL UIN/PTKIN: Mufradat, Nahwu & Shorof, Tarakib, Qira’ah berharakat/gundul, Istima’)'
+          ? 'Bahasa Arab Fusha (TOAFL UIN/PTKIN: Mufradat, Nahwu & Shorof, Tarakib, Qira’ah, Istima’, Insya’/Writing, Muhadatsah/Speaking)'
           : 'Multibahasa (Bahasa Jepang JLPT N5–N1, Bahasa Inggris TOEFL/IELTS/TOEIC, Bahasa Arab TOAFL)';
 
       const personalBlock = formatLearnerContextPrompt(learnerContext);
-      const systemInstruction = `Kamu adalah Tutor Bahasa Profesional di platform Leksika yang sangat sabar, terstruktur, dan ahli membantu pelajar Indonesia benar-benar paham materi dan yakin lulus ujian kemampuan bahasa.
+      const evalBlock = String(evaluationContext || '').trim()
+        ? `\n\nKONTEKS HASIL EVALUASI WRITING/SPEAKING YANG SEDANG DIDISKUSIKAN:\n${String(evaluationContext).slice(0, 5000)}\nGunakan konteks evaluasi di atas secara langsung untuk menjawab pertanyaan lanjutan pelajar tentang skor, koreksi kalimat, pelafalan, atau revisi paragraf.`
+        : '';
 
-Konteks aktif pelajar: ${langContext}${examTarget ? ` · Target ujian: ${examTarget}` : ''}.${personalBlock}
+      const systemInstruction = `Kamu adalah AI Agent Tutor & Pemeriksa Bahasa Pribadi di platform Leksika yang sabar, terstruktur, dan ahli membantu pelajar Indonesia benar-benar paham materi dan yakin lulus ujian kemampuan bahasa.
+
+Konteks aktif pelajar: ${langContext}${examTarget ? ` · Target ujian: ${examTarget}` : ''}.${personalBlock}${evalBlock}
 
 ATURAN WAJIB:
 1. SELALU jawab dalam Bahasa Indonesia yang alami, hangat, jelas, dan mudah dipahami (jangan gunakan istilah rumit tanpa penjelasan sederhana).
@@ -156,7 +171,7 @@ ATURAN WAJIB:
 3. Jika menampilkan contoh bahasa Arab, sertakan harakat lengkap + transliterasi Latin + terjemahan Bahasa Indonesia yang akurat.
 4. Jika menampilkan contoh bahasa Inggris, sertakan terjemahan Bahasa Indonesia dan jelaskan nuansa pemakaiannya di ujian TOEFL/IELTS/TOEIC.
 5. Gunakan struktur ringkas dan rapi: (a) Inti Jawaban / Rumus Mudah, (b) Contoh Kontekstual + Terjemahan Indonesia, (c) Jebakan Umum di Ujian & Tips Lulus, dan (d) 1 Pertanyaan Latihan Singkat jika relevan.
-6. Panjang jawaban ideal 120–320 kata kecuali pelajar meminta penjelasan panjang atau jadwal belajar lengkap.`;
+6. Panjang jawaban ideal 120–320 kata kecuali pelajar meminta penjelasan panjang atau revisi esai lengkap.`;
 
       const recentHistory = messages.slice(-12).map((m) => ({
         role: m.role === 'assistant' ? 'model' : 'user',
@@ -229,11 +244,23 @@ ATURAN WAJIB:
         ? 'Gunakan skala resmi IELTS Band 0.0 sampai 9.0 dengan kelipatan 0.5 (mis. 6.0, 6.5, 7.0). Skor tiap kriteria juga dalam skala 0.0–9.0.'
         : isToeflIbt
         ? 'Gunakan skala resmi TOEFL iBT 0 sampai 30 untuk overallScore, dan skala 1 sampai 5 untuk skor tiap kriteria rubrik.'
-        : 'Gunakan skala 0 sampai 100 untuk overallScore dan skala 1 sampai 10 untuk tiap kriteria.';
+        : 'Gunakan skala 0 sampai 100 untuk overallScore (mis. 78/100) dan skala 1 sampai 10 untuk tiap kriteria.';
+
+      const languageSpecificGuide =
+        language === 'ja'
+          ? 'Bahasa target adalah BAHASA JEPANG (Sakubun / JLPT). Evaluasi ketepatan partikel (助詞), penggunaan kanji/kana, kesesuaian gaya bahasa (丁寧語 desu/masu atau 普通形), serta kealamian ungkapan. Pada improvedSample dan koreksi, sertakan bacaan hiragana dalam tanda kurung untuk kanji yang agak sulit.'
+          : language === 'ar'
+          ? 'Bahasa target adalah BAHASA ARAB FUSHA (Insya’ / TOAFL). Evaluasi ketepatan Nahwu (I’rab), Shorof, kesesuaian mudzakkar/muannats, dan pilihan uslub/kosakata Fusha. Pada improvedSample dan bagian corrected, WAJIB sertakan harakat lengkap agar pelajar Indonesia mudah membacanya.'
+          : 'Bahasa target adalah BAHASA INGGRIS (IELTS / TOEFL iBT / Akademik). Evaluasi kejelasan argumen, kohesi antar paragraf, variasi kosakata akademik, dan akurasi tata bahasa.';
 
       const personalBlock = formatLearnerContextPrompt(learnerContext);
-      const systemInstruction = `Kamu adalah Penguji Resmi Writing (IELTS/TOEFL iBT/JLPT/TOAFL) sekaligus Tutor Bahasa yang menjelaskan SEMUA umpan balik, alasan koreksi, dan saran dalam Bahasa Indonesia yang sangat jelas, ramah, dan mudah dipahami.
+      const hasPriorStudio =
+        Array.isArray(learnerContext?.recentStudioMemory) &&
+        learnerContext.recentStudioMemory.length > 0;
+
+      const systemInstruction = `Kamu adalah AI Agent Penguji Resmi Writing (${examTrack.toUpperCase()}) sekaligus Mentor Bahasa Pribadi yang menjelaskan SEMUA umpan balik, alasan koreksi, perbandingan progres, dan saran dalam Bahasa Indonesia yang sangat jelas, ramah, dan mudah dipahami.
 ${scoringGuide}
+${languageSpecificGuide}
 Berikan penilaian objektif sesuai kualitas tulisan nyata pelajar (jangan melebih-lebihkan skor jika masih banyak kesalahan, tetapi selalu beri arahan perbaikan yang membangun dan konkret agar pelajar tahu persis cara menaikkan skornya).${personalBlock}`;
 
       const userPrompt = `Evaluasi jawaban Writing berikut:
@@ -251,7 +278,14 @@ ${rubricDesc}
 ${cleanedEssay}
 === AKHIR JAWABAN ===
 
-Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh penjelasan, komentar, kelebihan, kekurangan, dan alasan koreksi. Untuk field "improvedSample", tuliskan versi peningkatan dari esai pelajar dalam bahasa target (${language.toUpperCase()}) yang setara skor tinggi (Band 8.0+ / Skor 28+) sambil mempertahankan ide utama pelajar.`;
+Instruksi khusus field "progressComparisonId":
+${
+  hasPriorStudio
+    ? 'Bandingkan tulisan ini secara singkat (2–3 kalimat) dengan riwayat Writing/Speaking sebelumnya di profil akun pelajar: sebutkan aspek yang sudah membaik DAN pola kesalahan yang masih berulang.'
+    : 'Karena ini salah satu latihan Writing pertama yang tercatat di memori AI Agent akun ini, tuliskan 2 kalimat catatan baseline awal yang menjadi titik acuan latihan berikutnya.'
+}
+
+Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh penjelasan, komentar, kelebihan, kekurangan, dan alasan koreksi. Untuk field "improvedSample", tuliskan versi peningkatan dari tulisan pelajar dalam bahasa target (${language.toUpperCase()}) yang setara skor tinggi sambil mempertahankan ide utama pelajar.`;
 
       const response = await ai.models.generateContent({
         model: 'gemini-4-hydrogen',
@@ -266,6 +300,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
               maxScore: { type: Type.NUMBER },
               scoreLabel: { type: Type.STRING },
               summaryId: { type: Type.STRING },
+              progressComparisonId: { type: Type.STRING },
               criteriaFeedback: {
                 type: Type.ARRAY,
                 items: {
@@ -307,6 +342,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
               'maxScore',
               'scoreLabel',
               'summaryId',
+              'progressComparisonId',
               'criteriaFeedback',
               'strengthsId',
               'improvementsId',
@@ -418,9 +454,21 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
         ? 'Skala resmi TOEFL iBT Speaking 0–30 untuk overallScore dan 1–5 untuk setiap kriteria.'
         : 'Skala 0–100 untuk overallScore dan 1–10 untuk setiap kriteria.';
 
+      const speakingLangGuide =
+        language === 'ja'
+          ? 'Bahasa target adalah BAHASA JEPANG (Kaiwa / Percakapan JLPT). Nilai kealamian intonasi/kelancaran, ketepatan partikel & kesopanan (desu/masu atau keigo sesuai konteks), serta berikan furigana/hiragana untuk kata sulit di naturalPhrasingSample.'
+          : language === 'ar'
+          ? 'Bahasa target adalah BAHASA ARAB FUSHA (Muhadatsah / TOAFL). Nilai kejelasan makharijul huruf dari transkrip, kelancaran, ketepatan I’rab/tata bahasa lisan, dan WAJIB beri harakat lengkap pada naturalPhrasingSample serta koreksi.'
+          : 'Bahasa target adalah BAHASA INGGRIS (IELTS / TOEFL iBT / Percakapan). Nilai kelancaran, koherensi, variasi kosakata alami, tata bahasa lisan, dan saran pengucapan.';
+
+      const hasPriorStudio =
+        Array.isArray(learnerContext?.recentStudioMemory) &&
+        learnerContext.recentStudioMemory.length > 0;
+
       const personalBlock = formatLearnerContextPrompt(learnerContext);
-      const evalPrompt = `Kamu adalah Penguji Speaking Resmi (${examTrack.toUpperCase()}) sekaligus Tutor Bahasa Indonesia yang ramah dan mudah dipahami.
-${scoringGuide}${personalBlock}
+      const evalPrompt = `Kamu adalah AI Agent Penguji Speaking Resmi (${examTrack.toUpperCase()}) sekaligus Mentor Bahasa Pribadi untuk pelajar Indonesia.
+${scoringGuide}
+${speakingLangGuide}${personalBlock}
 
 Evaluasi jawaban Speaking berikut:
 Bahasa target: ${language.toUpperCase()}
@@ -436,7 +484,14 @@ ${finalTranscript}
 Kriteria rubrik (gunakan persis id yang diberikan):
 ${rubricDesc}
 
-Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, dan alasan perbaikan dalam Bahasa Indonesia yang sangat jelas dan aplikatif. Sertakan "naturalPhrasingSample" dalam bahasa target (${language.toUpperCase()}) sebagai contoh jawaban lisan yang alami dan bernilai tinggi.`;
+Instruksi khusus field "progressComparisonId":
+${
+  hasPriorStudio
+    ? 'Bandingkan performa Speaking ini secara singkat (2–3 kalimat) dengan riwayat latihan Writing/Speaking akun pelajar sebelumnya: sebutkan peningkatan yang terlihat dan kesalahan yang masih perlu dilatih ulang.'
+    : 'Karena ini salah satu latihan Speaking pertama yang tersimpan di memori AI Agent akun ini, tuliskan 2 kalimat catatan awal (baseline) sebagai patokan peningkatan sesi berikutnya.'
+}
+
+Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, perbandingan progres, dan alasan perbaikan dalam Bahasa Indonesia yang sangat jelas dan aplikatif. Sertakan "naturalPhrasingSample" dalam bahasa target (${language.toUpperCase()}) sebagai contoh jawaban lisan yang alami dan bernilai tinggi.`;
 
       const evalResp = await ai.models.generateContent({
         model: 'gemini-4-hydrogen',
@@ -451,6 +506,7 @@ Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, dan alasan p
               maxScore: { type: Type.NUMBER },
               scoreLabel: { type: Type.STRING },
               summaryId: { type: Type.STRING },
+              progressComparisonId: { type: Type.STRING },
               criteriaFeedback: {
                 type: Type.ARRAY,
                 items: {
@@ -489,6 +545,7 @@ Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, dan alasan p
               'maxScore',
               'scoreLabel',
               'summaryId',
+              'progressComparisonId',
               'criteriaFeedback',
               'pronunciationAndFluencyId',
               'grammarAndVocabFixes',
@@ -586,6 +643,114 @@ ${existingNote ? `\nCatatan referensi (terjemahkan & sederhanakan ke Bahasa Indo
       res.json(parsed);
     } catch (err) {
       handleApiError(res, err, 'Gagal memuat penjelasan Tutor AI.');
+    }
+  });
+
+  // ---------------------------------------------------------------------------
+  // 4b. POST /api/ai/translate-batch — Penerjemah Otomatis Bahasa Indonesia (Cached)
+  // ---------------------------------------------------------------------------
+  const serverTranslationCache = new Map<string, string>();
+
+  app.post('/api/ai/translate-batch', async (req: Request, res: Response) => {
+    try {
+      const { entries = [] } = req.body as {
+        entries?: { text: string; hint?: string }[];
+      };
+
+      if (!Array.isArray(entries) || entries.length === 0) {
+        res.json({ translations: {} });
+        return;
+      }
+
+      const cleaned = entries
+        .slice(0, 60)
+        .map((e) => ({
+          text: String(e?.text || '').trim().slice(0, 600),
+          hint: e?.hint ? String(e.hint).trim().slice(0, 80) : '',
+        }))
+        .filter((e) => e.text.length > 0);
+
+      const result: Record<string, string> = {};
+      const missing: { idx: number; text: string; hint: string }[] = [];
+      const seenMissing = new Set<string>();
+
+      for (const item of cleaned) {
+        const cached = serverTranslationCache.get(item.text);
+        if (cached) {
+          result[item.text] = cached;
+        } else if (!seenMissing.has(item.text)) {
+          seenMissing.add(item.text);
+          missing.push({ idx: missing.length, text: item.text, hint: item.hint });
+        }
+      }
+
+      if (missing.length === 0) {
+        res.json({ translations: result });
+        return;
+      }
+
+      const ai = getAiClient();
+      const lines = missing
+        .map((m) => `[${m.idx}]${m.hint ? ` (${m.hint})` : ''}: ${m.text}`)
+        .join('\n');
+
+      const prompt = `Terjemahkan daftar arti kosakata, frasa, penjelasan tata bahasa, atau kalimat terjemahan bahasa Inggris berikut ke dalam BAHASA INDONESIA yang alami, ringkas, dan akurat untuk pelajar bahasa Jepang/JLPT di Indonesia.
+
+ATURAN:
+1. Jika input berupa arti singkat kanji/radikal/kosakata (1–4 kata), berikan padanan Bahasa Indonesia yang ringkas & natural (Title Case jika input Title Case, mis. "Mountain" -> "Gunung", "To Enter" -> "Masuk", "Rice Paddy" -> "Sawah").
+2. Jika input berupa kalimat lengkap atau penjelasan tata bahasa, terjemahkan utuh dengan Bahasa Indonesia yang luwes dan mudah dipahami.
+3. Pertahankan istilah Jepang (kanji/kana/romaji seperti は, が, ～次第) apa adanya di dalam kalimat.
+4. Kembalikan JSON array sesuai indeks [idx] persis sebanyak input.
+
+DAFTAR INPUT:
+${lines}`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-4-hydrogen',
+        contents: prompt,
+        config: {
+          responseMimeType: 'application/json',
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              items: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    idx: { type: Type.INTEGER },
+                    id: { type: Type.STRING },
+                  },
+                  required: ['idx', 'id'],
+                },
+              },
+            },
+            required: ['items'],
+          },
+        },
+      });
+
+      const parsed = JSON.parse((response.text ?? '{}').trim()) as {
+        items?: { idx: number; id: string }[];
+      };
+
+      for (const row of parsed.items ?? []) {
+        const target = missing[row.idx];
+        const translated = String(row.id || '').trim();
+        if (target && translated) {
+          result[target.text] = translated;
+          if (serverTranslationCache.size > 20000) {
+            const firstKey = serverTranslationCache.keys().next().value;
+            if (firstKey) serverTranslationCache.delete(firstKey);
+          }
+          serverTranslationCache.set(target.text, translated);
+        }
+      }
+
+      res.json({ translations: result });
+    } catch (err) {
+      handleApiError(res, err, 'Gagal menerjemahkan materi ke Bahasa Indonesia.');
     }
   });
 

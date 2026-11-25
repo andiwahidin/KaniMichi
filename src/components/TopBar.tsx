@@ -59,6 +59,7 @@ function getNavItemsForScope(scope: ActiveLanguageScope): NavLinkItem[] {
         { id: 'grammar', label: 'Tata Bahasa' },
         { id: 'reading', label: 'Membaca' },
         { id: 'listening', label: 'Mendengar' },
+        { id: 'lang-studio', label: 'Studio AI' },
         { id: 'mock-exam', label: 'Simulasi JLPT' },
       ];
     case 'en':
@@ -78,6 +79,7 @@ function getNavItemsForScope(scope: ActiveLanguageScope): NavLinkItem[] {
         { id: 'lang-grammar', label: 'Qawaid' },
         { id: 'lang-reading', label: "Qira'ah" },
         { id: 'lang-listening', label: "Istima'" },
+        { id: 'lang-studio', label: 'Studio AI' },
         { id: 'lang-exam', label: 'Simulasi TOAFL' },
       ];
     case 'all':

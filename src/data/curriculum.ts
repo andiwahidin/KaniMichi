@@ -1,4 +1,9 @@
 import { ContextSentence, CurriculumItem, ItemType } from '../types/curriculum';
+import {
+  buildIndonesianAcceptedMeanings,
+  translatePartOfSpeech,
+  translateSync,
+} from '../utils/idTranslator';
 
 export const MAX_LEVEL = 60;
 
@@ -232,13 +237,19 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
   const sanitizeReadings = (arr: string[]): string[] =>
     Array.from(new Set(arr.map((r) => r.replace(/^\^/, '').trim()).filter(Boolean)));
 
-  // First pass: instantiate all items
+  // First pass: instantiate all items with Bahasa Indonesia meanings + dual-language quiz acceptance
   for (const tuple of raw.items) {
-    const [id, typeNum, level, characters, primaryMeaning, acceptedMeanings] = tuple;
+    const [id, typeNum, level, characters, rawPrimaryMeaning, rawAcceptedMeanings] = tuple;
     const type: ItemType =
       typeNum === 0 ? 'radical' : typeNum === 1 ? 'kanji' : 'vocabulary';
     const overlay = CURATED_OVERLAYS[`${type}:${characters}`];
     const jlptMeta = getLevelMeta(level);
+    const primaryMeaning = translateSync(rawPrimaryMeaning);
+    const acceptedMeanings = buildIndonesianAcceptedMeanings(
+      rawPrimaryMeaning,
+      rawAcceptedMeanings,
+      primaryMeaning
+    );
 
     let item: CurriculumItem;
 
@@ -282,7 +293,7 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         primaryMeaning,
         acceptedMeanings,
         readings: sanitizeReadings(readings),
-        partOfSpeech,
+        partOfSpeech: translatePartOfSpeech(partOfSpeech),
         componentIds,
         meaningMnemonic: overlay?.meaningMnemonic ?? '',
         readingMnemonic: overlay?.readingMnemonic ?? '',

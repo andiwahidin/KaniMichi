@@ -38,6 +38,7 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { useAutoIndonesian } from '../utils/idTranslator';
 
 type HubMode = 'catalog' | 'lesson' | 'review' | 'drill';
 type InputMode = 'choice' | 'type';
@@ -262,6 +263,31 @@ export const GrammarHub: React.FC = () => {
       );
     });
   }, [grammarData, selectedLevel, stageFilter, searchQuery, grammarProgress]);
+
+  const grammarTransEntries = useMemo(() => {
+    const entries: { text: string; hint?: string }[] = [];
+    for (const pt of filteredPoints.slice(0, 40)) {
+      entries.push({ text: pt.meaning, hint: `pola ${pt.pattern}` });
+    }
+    const detailedPoints: GrammarPoint[] = [];
+    if (detailPoint) detailedPoints.push(detailPoint);
+    if (lessonBatch[lessonIdx]) detailedPoints.push(lessonBatch[lessonIdx]);
+    if (quizQueue[0]?.point) detailedPoints.push(quizQueue[0].point);
+    for (const pt of detailedPoints) {
+      entries.push({ text: pt.meaning, hint: `pola ${pt.pattern}` });
+      entries.push({ text: pt.explanation, hint: `penjelasan tata bahasa ${pt.pattern}` });
+      if (pt.confusableWith) {
+        entries.push({ text: pt.confusableWith, hint: `perbandingan pola ${pt.pattern}` });
+      }
+      entries.push({ text: pt.quiz.en, hint: `terjemahan soal ${pt.pattern}` });
+      for (const ex of pt.examples) {
+        entries.push({ text: ex.en, hint: `contoh kalimat ${pt.pattern}` });
+      }
+    }
+    return entries;
+  }, [filteredPoints, detailPoint, lessonBatch, lessonIdx, quizQueue]);
+
+  const { t: tId } = useAutoIndonesian(grammarTransEntries);
 
   // Focus typing input when switching to typing mode or next question
   useEffect(() => {
@@ -553,7 +579,7 @@ export const GrammarHub: React.FC = () => {
                 {pt.reading}
               </div>
               <p className="font-display text-lg sm:text-2xl font-bold text-white pt-1">
-                {pt.meaning}
+                {tId(pt.meaning)}
               </p>
             </div>
           </div>
@@ -605,7 +631,7 @@ export const GrammarHub: React.FC = () => {
                   Penjelasan &amp; Nuansa
                 </div>
                 <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed">
-                  {pt.explanation}
+                  {tId(pt.explanation)}
                 </p>
               </div>
 
@@ -617,7 +643,7 @@ export const GrammarHub: React.FC = () => {
                       Catatan Jebakan JLPT
                     </div>
                     <p className="text-xs sm:text-sm text-amber-900/90 dark:text-amber-200/90 leading-relaxed">
-                      {pt.confusableWith}
+                      {tId(pt.confusableWith)}
                     </p>
                   </div>
                 </div>
@@ -654,7 +680,7 @@ export const GrammarHub: React.FC = () => {
                     {ex.reading}
                   </p>
                   <p className="text-sm text-slate-700 dark:text-slate-300 pt-0.5">
-                    {ex.en}
+                    {tId(ex.en)}
                   </p>
                 </div>
               ))}
@@ -815,7 +841,7 @@ export const GrammarHub: React.FC = () => {
                       </span>
                     </div>
                     <div className="text-xs text-slate-600 dark:text-slate-400">
-                      {row.point.meaning}
+                      {tId(row.point.meaning)}
                     </div>
                   </div>
                   <div className="text-xs font-semibold font-mono-num shrink-0">
@@ -927,7 +953,7 @@ export const GrammarHub: React.FC = () => {
               </div>
 
               <p className="text-sm sm:text-base text-white/95 max-w-2xl mx-auto">
-                {pt.quiz.en}
+                {tId(pt.quiz.en)}
               </p>
 
               {feedback.status !== 'idle' && (
@@ -1099,7 +1125,7 @@ export const GrammarHub: React.FC = () => {
                       : `Belum tepat — Jawaban benar: ${pt.quiz.answer}`}
                   </div>
                   <div className="text-xs text-slate-700 dark:text-slate-300">
-                    <span className="font-jp font-bold">{pt.pattern}</span> — {pt.meaning}
+                    <span className="font-jp font-bold">{pt.pattern}</span> — {tId(pt.meaning)}
                   </div>
                   {feedback.stageChange && (
                     <div className="text-xs font-mono-num font-semibold text-emerald-700 dark:text-emerald-400 pt-0.5">
@@ -1154,10 +1180,10 @@ export const GrammarHub: React.FC = () => {
                         {pt.structure}
                       </div>
                     </div>
-                    <p className="text-xs sm:text-sm leading-relaxed">{pt.explanation}</p>
+                    <p className="text-xs sm:text-sm leading-relaxed">{tId(pt.explanation)}</p>
                     {pt.confusableWith && (
                       <p className="text-xs text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 rounded-md px-3 py-2">
-                        <strong>JLPT Note:</strong> {pt.confusableWith}
+                        <strong>Catatan JLPT:</strong> {tId(pt.confusableWith)}
                       </p>
                     )}
                   </div>
@@ -1515,7 +1541,7 @@ export const GrammarHub: React.FC = () => {
                         </span>
                       </div>
                       <div className="text-sm font-medium text-slate-700 dark:text-slate-200 mt-0.5">
-                        {pt.meaning}
+                        {tId(pt.meaning)}
                       </div>
                     </div>
 
@@ -1593,7 +1619,7 @@ export const GrammarHub: React.FC = () => {
                         {detailPoint.reading}
                       </div>
                       <p className="font-display text-base sm:text-lg font-bold mt-1.5">
-                        {detailPoint.meaning}
+                        {tId(detailPoint.meaning)}
                       </p>
                     </div>
                     <button
@@ -1622,7 +1648,7 @@ export const GrammarHub: React.FC = () => {
                         Penjelasan &amp; Nuansa
                       </div>
                       <p className="text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                        {detailPoint.explanation}
+                        {tId(detailPoint.explanation)}
                       </p>
                     </div>
 
@@ -1630,7 +1656,7 @@ export const GrammarHub: React.FC = () => {
                       <div className="rounded-lg border border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/30 p-3.5 flex items-start gap-2.5">
                         <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                         <p className="text-xs sm:text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
-                          <strong>JLPT Trap Note:</strong> {detailPoint.confusableWith}
+                          <strong>Catatan Jebakan JLPT:</strong> {tId(detailPoint.confusableWith)}
                         </p>
                       </div>
                     )}
@@ -1661,7 +1687,7 @@ export const GrammarHub: React.FC = () => {
                             {ex.reading}
                           </p>
                           <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                            {ex.en}
+                            {tId(ex.en)}
                           </p>
                         </div>
                       ))}

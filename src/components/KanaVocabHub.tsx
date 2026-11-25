@@ -43,6 +43,11 @@ import {
 } from '../utils/srs';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
+import {
+  translatePartOfSpeech,
+  translateSync,
+  useAutoIndonesian,
+} from '../utils/idTranslator';
 
 type HubMode = 'catalog' | 'lesson' | 'review' | 'drill';
 type KanaQuestionKind = 'context' | 'meaning' | 'listening' | 'pronunciation';
@@ -92,10 +97,14 @@ function checkEnglishMeaning(
   const normalized = normalizeEnglish(rawInput);
   if (!normalized) return { status: 'incorrect' };
 
+  const translatedPrimary = translateSync(item.primaryMeaning);
   const allAccepted = [
+    translatedPrimary,
+    ...translatedPrimary.split(/[;/,]/),
     item.primaryMeaning,
-    ...item.primaryMeaning.split(';'),
+    ...item.primaryMeaning.split(/[;/,]/),
     ...item.acceptedMeanings,
+    ...item.acceptedMeanings.map((m) => translateSync(m)),
   ]
     .map(normalizeEnglish)
     .filter(Boolean);
@@ -305,12 +314,46 @@ export const KanaVocabHub: React.FC = () => {
         item.word.toLowerCase().includes(q) ||
         item.reading.toLowerCase().includes(q) ||
         item.primaryMeaning.toLowerCase().includes(q) ||
+        translateSync(item.primaryMeaning).toLowerCase().includes(q) ||
         item.acceptedMeanings.some((m) => m.includes(q))
       );
     });
   }, [data, selectedLevel, categoryFilter, stageFilter, searchQuery, progressMap]);
 
   const currentEntry = quizQueue[0] ?? null;
+  const textsToTranslate = useMemo(() => {
+    const out: { text: string; hint?: string }[] = [];
+    const push = (text?: string, hint?: string) => {
+      if (text && text.trim()) out.push({ text, hint });
+    };
+    for (const it of filteredItems.slice(0, 45)) {
+      push(it.primaryMeaning, `kosakata ${it.word}`);
+    }
+    const lessonCur = lessonBatch[lessonIdx];
+    if (lessonCur) {
+      push(lessonCur.primaryMeaning, `kosakata ${lessonCur.word}`);
+      push(lessonCur.usageNote, `catatan JLPT ${lessonCur.word}`);
+      push(lessonCur.example.en, `contoh kalimat ${lessonCur.word}`);
+    }
+    if (currentEntry?.item) {
+      const it = currentEntry.item;
+      push(it.primaryMeaning, `kosakata ${it.word}`);
+      push(it.usageNote, `catatan JLPT ${it.word}`);
+      push(it.example.en, `contoh kalimat ${it.word}`);
+      push(it.quiz.en, `kalimat kuis ${it.word}`);
+    }
+    if (detailItem) {
+      push(detailItem.primaryMeaning, `kosakata ${detailItem.word}`);
+      push(detailItem.usageNote, `catatan JLPT ${detailItem.word}`);
+      push(detailItem.example.en, `contoh kalimat ${detailItem.word}`);
+    }
+    for (const row of sessionResults.slice(0, 20)) {
+      push(row.item.primaryMeaning, `kosakata ${row.item.word}`);
+    }
+    return out;
+  }, [filteredItems, lessonBatch, lessonIdx, currentEntry, detailItem, sessionResults]);
+
+  useAutoIndonesian(textsToTranslate);
   const activeQuestionKind: KanaQuestionKind =
     quizMode === 'mixed' ? (currentEntry?.kind ?? 'context') : quizMode;
 
@@ -722,13 +765,13 @@ export const KanaVocabHub: React.FC = () => {
 
             <div className="text-center space-y-2.5 py-2">
               <div className="text-xs uppercase tracking-wider text-white/85 font-semibold">
-                {catMeta.shortLabel} · {item.partOfSpeech}
+                {catMeta.shortLabel} · {translatePartOfSpeech(item.partOfSpeech)}
               </div>
               <h1 className="font-jp text-4xl sm:text-5xl font-bold tracking-tight break-words">
                 {item.word}
               </h1>
               <p className="font-display text-lg sm:text-2xl font-bold text-white">
-                {item.primaryMeaning}
+                {translateSync(item.primaryMeaning)}
               </p>
               <div className="pt-1">
                 <button
@@ -748,14 +791,14 @@ export const KanaVocabHub: React.FC = () => {
           <div className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-6 space-y-5">
             <div>
               <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-                Arti &amp; Sinonim (English)
+                Arti &amp; Sinonim (Bahasa Indonesia)
               </div>
               <div className="text-base font-semibold text-slate-900 dark:text-white">
-                {item.primaryMeaning}
+                {translateSync(item.primaryMeaning)}
               </div>
-              {item.acceptedMeanings.length > 1 && (
+              {item.acceptedMeanings.length > 0 && (
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  Also accepted: {item.acceptedMeanings.join(', ')}
+                  Juga diterima: {item.acceptedMeanings.map((m) => translateSync(m)).join(', ')}
                 </div>
               )}
             </div>
@@ -766,12 +809,12 @@ export const KanaVocabHub: React.FC = () => {
                 id: item.id,
                 kanji: item.word,
                 kana: item.reading,
-                meaning: item.primaryMeaning,
-                partOfSpeech: item.partOfSpeech,
+                meaning: translateSync(item.primaryMeaning),
+                partOfSpeech: translatePartOfSpeech(item.partOfSpeech),
                 sourceLabel: `Kosakata Kana JLPT N${item.jlpt}`,
                 exampleJp: item.example.jp,
                 exampleReading: item.example.reading,
-                exampleTranslation: item.example.en,
+                exampleTranslation: translateSync(item.example.en),
               }}
               onPracticeSpeak={(t) => openPronunciationPractice(t)}
             />
@@ -783,7 +826,7 @@ export const KanaVocabHub: React.FC = () => {
                   Catatan Nuansa &amp; Pemakaian JLPT
                 </div>
                 <p className="text-xs sm:text-sm text-amber-900/90 dark:text-amber-200/90 leading-relaxed">
-                  {item.usageNote}
+                  {translateSync(item.usageNote)}
                 </p>
               </div>
             </div>
@@ -810,7 +853,7 @@ export const KanaVocabHub: React.FC = () => {
                   {item.example.reading}
                 </p>
                 <p className="text-sm text-slate-700 dark:text-slate-300">
-                  {item.example.en}
+                  {translateSync(item.example.en)}
                 </p>
               </div>
             </div>
@@ -960,7 +1003,7 @@ export const KanaVocabHub: React.FC = () => {
                       </span>
                     </div>
                     <div className="text-xs text-slate-600 dark:text-slate-400">
-                      {row.item.primaryMeaning}
+                      {translateSync(row.item.primaryMeaning)}
                     </div>
                   </div>
                   <div className="text-xs font-semibold font-mono-num shrink-0">
@@ -1077,7 +1120,7 @@ export const KanaVocabHub: React.FC = () => {
                 </div>
 
                 <p className="text-sm sm:text-base text-white/95 max-w-2xl mx-auto">
-                  {item.quiz.en}
+                  {translateSync(item.quiz.en)}
                 </p>
 
                 {feedback.status !== 'idle' && (
@@ -1120,7 +1163,7 @@ export const KanaVocabHub: React.FC = () => {
                       {item.word}
                     </div>
                     <div className="text-sm text-white/90">
-                      <span className="font-jp">{item.reading}</span> · {item.primaryMeaning}
+                      <span className="font-jp">{item.reading}</span> · {translateSync(item.primaryMeaning)}
                     </div>
                   </div>
                 )}
@@ -1153,13 +1196,13 @@ export const KanaVocabHub: React.FC = () => {
                   {item.word}
                 </div>
                 <div className="text-sm sm:text-base text-white/90">
-                  <span className="font-jp font-semibold">{item.reading}</span> · {item.primaryMeaning}
+                  <span className="font-jp font-semibold">{item.reading}</span> · {translateSync(item.primaryMeaning)}
                 </div>
               </div>
             ) : (
               <div className="py-3 text-center space-y-2.5">
                 <div className="text-xs uppercase tracking-wider text-white/85 font-semibold">
-                  {catMeta.shortLabel} · {item.partOfSpeech} · Ketik arti dalam Bahasa Inggris
+                  {catMeta.shortLabel} · {translatePartOfSpeech(item.partOfSpeech)} · Ketik arti dalam Bahasa Indonesia
                 </div>
                 <div className="font-jp text-4xl sm:text-5xl font-bold tracking-tight break-words">
                   {item.word}
@@ -1292,7 +1335,7 @@ export const KanaVocabHub: React.FC = () => {
                   placeholder={
                     activeQuestionKind === 'listening'
                       ? 'こたえ (ketik romaji / hiragana sesuai audio)...'
-                      : 'Ketik arti kosakata (Inggris atau sinonim)...'
+                      : 'Ketik arti kosakata dalam Bahasa Indonesia...'
                   }
                   autoComplete="off"
                   autoCorrect="off"
@@ -1321,7 +1364,7 @@ export const KanaVocabHub: React.FC = () => {
               <p className="text-xs text-center text-slate-500 dark:text-slate-400">
                 {activeQuestionKind === 'listening'
                   ? 'Ketik romaji (otomatis berubah jadi ひらがな) atau langsung kana. Tekan Enter untuk kirim.'
-                  : 'Ketik arti dalam Bahasa Inggris (salah ketik minor tetap diterima). Tekan Enter untuk kirim.'}
+                  : 'Ketik arti dalam Bahasa Indonesia (arti Inggris & salah ketik minor tetap diterima). Tekan Enter untuk kirim.'}
               </p>
             </form>
           )}
@@ -1362,7 +1405,7 @@ export const KanaVocabHub: React.FC = () => {
                       ? `Belum tepat — Kata yang diucapkan: ${item.word} (${item.reading})`
                       : activeQuestionKind === 'pronunciation'
                       ? 'Pelafalan / pola pitch belum tepat'
-                      : `Belum tepat — Arti benar: ${item.primaryMeaning}`}
+                      : `Belum tepat — Arti benar: ${translateSync(item.primaryMeaning)}`}
                   </div>
                   {feedback.detailMessage && (
                     <div className="text-xs text-slate-700 dark:text-slate-300">
@@ -1371,7 +1414,7 @@ export const KanaVocabHub: React.FC = () => {
                   )}
                   <div className="text-xs text-slate-700 dark:text-slate-300">
                     <span className="font-jp font-bold">{item.word}</span> ({item.reading}) —{' '}
-                    {item.primaryMeaning}
+                    {translateSync(item.primaryMeaning)}
                   </div>
                   {feedback.stageChange && (
                     <div className="text-xs font-mono-num font-semibold text-emerald-700 dark:text-emerald-400 pt-0.5">
@@ -1423,16 +1466,16 @@ export const KanaVocabHub: React.FC = () => {
                         id: item.id,
                         kanji: item.word,
                         kana: item.reading,
-                        meaning: item.primaryMeaning,
-                        partOfSpeech: item.partOfSpeech,
+                        meaning: translateSync(item.primaryMeaning),
+                        partOfSpeech: translatePartOfSpeech(item.partOfSpeech),
                         sourceLabel: `Kosakata Kana JLPT N${item.jlpt}`,
                         exampleJp: item.example.jp,
                         exampleReading: item.example.reading,
-                        exampleTranslation: item.example.en,
+                        exampleTranslation: translateSync(item.example.en),
                       }}
                       onPracticeSpeak={(t) => openPronunciationPractice(t)}
                     />
-                    <p className="text-xs sm:text-sm leading-relaxed">{item.usageNote}</p>
+                    <p className="text-xs sm:text-sm leading-relaxed">{translateSync(item.usageNote)}</p>
                     <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1">
                       <div className="flex items-start justify-between gap-2">
                         <div className="font-jp text-sm font-semibold text-slate-900 dark:text-white">
@@ -1448,7 +1491,7 @@ export const KanaVocabHub: React.FC = () => {
                         </button>
                       </div>
                       <div className="text-xs text-slate-500 dark:text-slate-400">
-                        {item.example.en}
+                        {translateSync(item.example.en)}
                       </div>
                     </div>
                   </div>
@@ -1624,7 +1667,7 @@ export const KanaVocabHub: React.FC = () => {
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                 {allDueItems.length > 0
-                  ? 'Latih pemakaian kata dalam konteks kalimat JLPT (4 Pilihan) atau ketik artinya dalam Bahasa Inggris.'
+                  ? 'Latih pemakaian kata dalam konteks kalimat JLPT (4 Pilihan) atau ketik artinya dalam Bahasa Indonesia.'
                   : nextReviewAt
                   ? `Review berikutnya tersedia ${formatRelativeTime(nextReviewAt, now)}.`
                   : 'Selesaikan Pelajaran Kana terlebih dahulu atau langsung coba Latih Cepat 10 soal.'}
@@ -1699,7 +1742,7 @@ export const KanaVocabHub: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari kana, katakana, arti Inggris..."
+              placeholder="Cari kana, katakana, arti Bahasa Indonesia..."
               className="w-full pl-9 pr-8 py-2 text-sm rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/50 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:border-[#0284C7]"
             />
             {searchQuery && (
@@ -1815,7 +1858,7 @@ export const KanaVocabHub: React.FC = () => {
                         </button>
                       </div>
                       <div className="text-sm font-medium text-slate-700 dark:text-slate-200 mt-0.5 line-clamp-1">
-                        {item.primaryMeaning}
+                        {translateSync(item.primaryMeaning)}
                       </div>
                     </div>
 
@@ -1842,7 +1885,7 @@ export const KanaVocabHub: React.FC = () => {
 
                   <div className="flex items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400 border-t border-slate-200/70 dark:border-slate-800/80 pt-2">
                     <span className="font-semibold" style={{ color: catMeta.accent }}>
-                      {catMeta.shortLabel} · {item.partOfSpeech}
+                      {catMeta.shortLabel} · {translatePartOfSpeech(item.partOfSpeech)}
                     </span>
                     {p && p.nextReviewAt && !isDue && (
                       <span className="font-mono-num shrink-0">
@@ -1900,10 +1943,10 @@ export const KanaVocabHub: React.FC = () => {
                         </button>
                       </div>
                       <p className="font-display text-base sm:text-lg font-bold mt-1.5">
-                        {detailItem.primaryMeaning}
+                        {translateSync(detailItem.primaryMeaning)}
                       </p>
                       <div className="text-xs text-white/85 mt-0.5">
-                        {detailItem.partOfSpeech}
+                        {translatePartOfSpeech(detailItem.partOfSpeech)}
                       </div>
                     </div>
                     <button
@@ -1917,13 +1960,13 @@ export const KanaVocabHub: React.FC = () => {
                   </div>
 
                   <div className="p-5 sm:p-6 space-y-5">
-                    {detailItem.acceptedMeanings.length > 1 && (
+                    {detailItem.acceptedMeanings.length > 0 && (
                       <div>
                         <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
                           Sinonim Diterima
                         </div>
                         <p className="text-sm text-slate-700 dark:text-slate-200">
-                          {detailItem.acceptedMeanings.join(', ')}
+                          {detailItem.acceptedMeanings.map((m) => translateSync(m)).join(', ')}
                         </p>
                       </div>
                     )}
@@ -1934,12 +1977,12 @@ export const KanaVocabHub: React.FC = () => {
                         id: detailItem.id,
                         kanji: detailItem.word,
                         kana: detailItem.reading,
-                        meaning: detailItem.primaryMeaning,
-                        partOfSpeech: detailItem.partOfSpeech,
+                        meaning: translateSync(detailItem.primaryMeaning),
+                        partOfSpeech: translatePartOfSpeech(detailItem.partOfSpeech),
                         sourceLabel: `Kosakata Kana JLPT N${detailItem.jlpt}`,
                         exampleJp: detailItem.example.jp,
                         exampleReading: detailItem.example.reading,
-                        exampleTranslation: detailItem.example.en,
+                        exampleTranslation: translateSync(detailItem.example.en),
                       }}
                       onPracticeSpeak={(t) => {
                         setDetailItem(null);
@@ -1950,7 +1993,7 @@ export const KanaVocabHub: React.FC = () => {
                     <div className="rounded-lg border border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/30 p-3.5 flex items-start gap-2.5">
                       <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                       <p className="text-xs sm:text-sm text-amber-900 dark:text-amber-200 leading-relaxed">
-                        <strong>JLPT Note:</strong> {detailItem.usageNote}
+                        <strong>Catatan JLPT:</strong> {translateSync(detailItem.usageNote)}
                       </p>
                     </div>
 
@@ -1976,7 +2019,7 @@ export const KanaVocabHub: React.FC = () => {
                           {detailItem.example.reading}
                         </p>
                         <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                          {detailItem.example.en}
+                          {translateSync(detailItem.example.en)}
                         </p>
                       </div>
                     </div>

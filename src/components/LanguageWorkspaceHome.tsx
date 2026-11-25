@@ -181,18 +181,19 @@ export const LanguageWorkspaceHome: React.FC<LanguageWorkspaceHomeProps> = ({ la
       metric: `${metrics.listeningPassed}/${counts.listening} trek lulus`,
       icon: <Headphones className="w-5 h-5" />,
     },
-    ...(lang === 'en'
-      ? [
-          {
-            id: 'lang-studio' as ActiveView,
-            title: 'Studio AI Writing & Speaking',
-            subtitle:
-              'Pemeriksa AI otomatis untuk esai & rekaman suara IELTS/TOEFL iBT dengan skor resmi, koreksi kalimat, dan contoh Band 8.0.',
-            metric: `${counts.studio} tugas · ${metrics.studioAttempts.length} evaluasi tersimpan`,
-            icon: <PenTool className="w-5 h-5" />,
-          },
-        ]
-      : []),
+    {
+      id: 'lang-studio' as ActiveView,
+      title: isAr
+        ? "Studio AI Insya' & Muhadatsah"
+        : 'Studio AI Writing & Speaking',
+      subtitle: isAr
+        ? 'AI Agent pribadi untuk menilai karangan Fusha (Insya\') & rekaman percakapan (Muhadatsah) dengan koreksi Nahwu-Shorof dan memori perkembangan.'
+        : 'AI Agent pribadi untuk menilai esai & rekaman suara IELTS/TOEFL iBT atau topik bebas dengan skor resmi, koreksi kalimat, dan memori akun.',
+      metric: isAr
+        ? `${metrics.studioAttempts.filter((a) => a.language === 'ar').length} evaluasi Arab tersimpan`
+        : `${counts.studio} tugas + Topik Bebas · ${metrics.studioAttempts.length} evaluasi`,
+      icon: <PenTool className="w-5 h-5" />,
+    },
     {
       id: 'lang-exam',
       title: isAr ? 'Simulasi Ujian TOAFL Resmi' : 'Simulasi TOEFL · IELTS · TOEIC',

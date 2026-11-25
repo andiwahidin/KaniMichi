@@ -31,6 +31,7 @@ import {
   ReadingPassageType,
 } from '../types/reading';
 import { speakJapanese } from '../utils/audio';
+import { useAutoIndonesian } from '../utils/idTranslator';
 import { AiExplainButton } from './AiExplainButton';
 
 /**
@@ -267,6 +268,34 @@ export const ReadingHub: React.FC = () => {
     if (typeFilter === 'all') return selectedLevelPassages;
     return selectedLevelPassages.filter((p) => p.passageType === typeFilter);
   }, [selectedLevelPassages, typeFilter]);
+
+  const activePassageForTrans = activePassageId ? passagesById[activePassageId] ?? null : null;
+  const readingTransEntries = useMemo(() => {
+    const entries: { text: string; hint?: string }[] = [];
+    for (const p of filteredPassages.slice(0, 25)) {
+      entries.push({ text: p.titleEn, hint: 'judul wacana JLPT' });
+    }
+    if (activePassageForTrans) {
+      entries.push({ text: activePassageForTrans.titleEn, hint: 'judul wacana JLPT' });
+      entries.push({ text: activePassageForTrans.contextEn, hint: 'konteks wacana JLPT' });
+      for (const v of activePassageForTrans.keyVocab) {
+        entries.push({ text: v.en, hint: `kosakata ${v.word}` });
+      }
+      for (const para of activePassageForTrans.translationEn) {
+        entries.push({ text: para, hint: 'terjemahan wacana JLPT' });
+      }
+      for (const para of activePassageForTrans.translationBEn ?? []) {
+        entries.push({ text: para, hint: 'terjemahan wacana JLPT' });
+      }
+      for (const q of activePassageForTrans.questions) {
+        entries.push({ text: q.promptEn, hint: 'pertanyaan JLPT Dokkai' });
+        entries.push({ text: q.explanationEn, hint: 'pembahasan soal JLPT Dokkai' });
+      }
+    }
+    return entries;
+  }, [filteredPassages, activePassageForTrans]);
+
+  const { t: tId } = useAutoIndonesian(readingTransEntries);
 
   const getTypeMeta = (t: ReadingPassageType) =>
     READING_PASSAGE_TYPES.find((m) => m.id === t) ?? READING_PASSAGE_TYPES[0];
@@ -535,14 +564,14 @@ export const ReadingHub: React.FC = () => {
           <article className="lg:col-span-7 bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 sm:p-7 space-y-5 min-w-0">
             <header className="border-b border-slate-100 dark:border-slate-800 pb-4 space-y-1">
               <div className="text-xs font-semibold" style={{ color: typeMeta.accent }}>
-                {typeMeta.label} · {activePassage.contextEn}
+                {typeMeta.label} · {tId(activePassage.contextEn)}
               </div>
               <h1 className="font-jp text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
                 <RubyText text={activePassage.titleJp} showFurigana={showFurigana} />
               </h1>
               {submitted && (
                 <div className="text-xs text-slate-500 dark:text-slate-400">
-                  {activePassage.titleEn}
+                  {tId(activePassage.titleEn)}
                 </div>
               )}
             </header>
@@ -620,7 +649,7 @@ export const ReadingHub: React.FC = () => {
                         {v.reading}
                       </div>
                       <div className="text-xs text-slate-700 dark:text-slate-300">
-                        {v.en}
+                        {tId(v.en)}
                       </div>
                     </div>
                   ))}
@@ -661,12 +690,12 @@ export const ReadingHub: React.FC = () => {
 
                 {showTranslation && (
                   <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2.5 leading-relaxed">
-                    {activePassage.translationEn.map((t, i) => (
-                      <p key={i}>{t}</p>
+                    {activePassage.translationEn.map((para, i) => (
+                      <p key={i}>{tId(para)}</p>
                     ))}
-                    {activePassage.translationBEn?.map((t, i) => (
+                    {activePassage.translationBEn?.map((para, i) => (
                       <p key={`b-${i}`} className="pt-2 border-t border-slate-200 dark:border-slate-800">
-                        {t}
+                        {tId(para)}
                       </p>
                     ))}
                   </div>
@@ -708,7 +737,7 @@ export const ReadingHub: React.FC = () => {
                     </h2>
                     {submitted && (
                       <p className="text-xs text-slate-500 dark:text-slate-400">
-                        {q.promptEn}
+                        {tId(q.promptEn)}
                       </p>
                     )}
                   </div>
@@ -769,7 +798,7 @@ export const ReadingHub: React.FC = () => {
                     <div className="pt-2.5 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                       <div>
                         <strong className="text-slate-900 dark:text-white">Pembahasan: </strong>
-                        {q.explanationEn}
+                        {tId(q.explanationEn)}
                       </div>
                       <AiExplainButton
                         language="ja"
@@ -999,7 +1028,7 @@ export const ReadingHub: React.FC = () => {
                       {stripFuriganaMarkup(passage.titleJp)}
                     </h3>
                     <div className="text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-300">
-                      {passage.titleEn}
+                      {tId(passage.titleEn)}
                     </div>
                     <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 font-jp">
                       {stripFuriganaMarkup(passage.paragraphs[0])}

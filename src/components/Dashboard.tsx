@@ -35,6 +35,7 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
 
 const DailyProgressChart = lazy(() =>
   import('./DailyProgressChart').then((m) => ({
@@ -80,6 +81,7 @@ export const Dashboard: React.FC = () => {
 
   // Level Progress metrics (Radicals, Kanji & Vocabulary of current level)
   const levelItems = dataset.byLevel[state.currentLevel] ?? [];
+  useAutoTranslateCurriculumItems(levelItems);
   const levelRadicals = useMemo(
     () => levelItems.filter((i) => i.type === 'radical'),
     [levelItems]

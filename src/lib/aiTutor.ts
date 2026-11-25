@@ -19,6 +19,7 @@ export interface AiLearnerContext {
   jlptStage?: string;
   weakItems?: string[];
   recentExams?: string[];
+  recentStudioMemory?: string[];
   streakDays?: number;
 }
 
@@ -40,6 +41,7 @@ export interface AiWritingEvaluation {
   maxScore: number;
   scoreLabel: string;
   summaryId: string;
+  progressComparisonId?: string;
   criteriaFeedback: AiCriterionFeedback[];
   strengthsId: string[];
   improvementsId: string[];
@@ -54,6 +56,7 @@ export interface AiSpeakingEvaluation {
   maxScore: number;
   scoreLabel: string;
   summaryId: string;
+  progressComparisonId?: string;
   criteriaFeedback: AiCriterionFeedback[];
   pronunciationAndFluencyId: string[];
   grammarAndVocabFixes: AiTextCorrection[];
@@ -153,6 +156,23 @@ export function buildLearnerContext(
     ctx.recentExams = recentExams;
   }
 
+  // Gather personal Writing & Speaking AI Agent memory (scores + recurring mistakes)
+  const studioMemory: string[] = [];
+  for (const attempt of (state.langStudioHistory ?? []).slice(0, 5)) {
+    const langTag = (attempt.language ?? 'en').toUpperCase();
+    const skillTag = attempt.skill === 'writing' ? 'Writing' : 'Speaking';
+    const improvements =
+      attempt.keyImprovements && attempt.keyImprovements.length > 0
+        ? ` | Fokus perbaikan: ${attempt.keyImprovements.slice(0, 2).join('; ')}`
+        : '';
+    studioMemory.push(
+      `[${langTag} ${skillTag} · ${attempt.examTrack.toUpperCase()}] "${attempt.title}" -> ${attempt.scoreLabel}${improvements}`
+    );
+  }
+  if (studioMemory.length > 0) {
+    ctx.recentStudioMemory = studioMemory;
+  }
+
   return ctx;
 }
 
@@ -174,6 +194,7 @@ export async function askAiTutor(params: {
   examTarget?: string;
   messages: AiTutorMessage[];
   learnerContext?: AiLearnerContext;
+  evaluationContext?: string;
 }): Promise<{ reply: string }> {
   return postJson<{ reply: string }>('/api/ai/tutor', params);
 }

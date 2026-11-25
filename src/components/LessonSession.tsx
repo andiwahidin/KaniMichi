@@ -33,6 +33,7 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
+import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -74,6 +75,7 @@ export const LessonSession: React.FC = () => {
   const [batch, setBatch] = useState<CurriculumItem[]>(() =>
     lessonQueue.slice(0, batchSize)
   );
+  useAutoTranslateCurriculumItems(batch);
   const [phase, setPhase] = useState<'study' | 'quiz' | 'complete'>('study');
   const [slideIdx, setSlideIdx] = useState(0);
   const [subTab, setSubTab] = useState<'overview' | 'reading' | 'context'>('overview');
@@ -661,8 +663,8 @@ export const LessonSession: React.FC = () => {
               {getItemTypeLabel(qItem.type)} —{' '}
               <strong>
                 {qItem.type === 'radical'
-                  ? 'Nama Radikal (Bahasa Inggris)'
-                  : 'Arti (Bahasa Inggris)'}
+                  ? 'Nama Radikal (Bahasa Indonesia)'
+                  : 'Arti (Bahasa Indonesia)'}
               </strong>
             </span>
           ) : currentQuestion.kind === 'listening' ? (
@@ -741,7 +743,7 @@ export const LessonSession: React.FC = () => {
                   spellCheck={false}
                   placeholder={
                     currentQuestion.kind === 'meaning'
-                      ? 'Ketik arti dalam Bahasa Inggris...'
+                      ? 'Ketik arti dalam Bahasa Indonesia...'
                       : currentQuestion.kind === 'listening'
                       ? 'Ketik apa yang kamu dengar (romaji → ひらがな)...'
                       : 'Ketik romaji (otomatis ke ひらがな)...'
@@ -778,7 +780,7 @@ export const LessonSession: React.FC = () => {
                     ? 'Dengarkan suara lalu ketik bacaannya (romaji otomatis ke ひらがな)'
                     : currentQuestion.kind === 'reading'
                     ? 'Mode IME Aktif: ketik romaji (contoh: ichi → いち)'
-                    : 'Masukkan arti Bahasa Inggris (atau sinonim pribadimu)'}
+                    : 'Masukkan arti Bahasa Indonesia (arti Inggris & sinonim pribadimu tetap diterima)'}
                 </span>
                 {answerState !== 'idle' && (
                   <button
