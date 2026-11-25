@@ -4,6 +4,11 @@ import {
   translatePartOfSpeech,
   translateSync,
 } from '../utils/idTranslator';
+import {
+  applyVocabEnrichmentToItem,
+  seedStaticVocabEnrichment,
+  type VocabEnrichmentRecord,
+} from '../utils/vocabEnricher';
 
 export const MAX_LEVEL = 60;
 
@@ -358,6 +363,8 @@ function buildDataset(raw: RawPayload): CurriculumDataset {
         const readStr = (item.readings ?? []).join('、 ');
         item.readingMnemonic = `Dibaca ${readStr}. Dengarkan audio dan perhatikan bagaimana bacaan masing-masing kanji berpadu dalam kata ini.`;
       }
+      // Apply verified Indonesian meaning + matching example sentences if available in static/local cache
+      applyVocabEnrichmentToItem(item);
     }
   }
 
@@ -378,12 +385,21 @@ export async function loadCurriculumDataset(): Promise<CurriculumDataset> {
     const base = import.meta.env.BASE_URL.endsWith('/')
       ? import.meta.env.BASE_URL
       : `${import.meta.env.BASE_URL}/`;
-    loadingPromise = fetch(`${base}data/curriculum-60.json`)
-      .then((res) => {
+    loadingPromise = Promise.all([
+      fetch(`${base}data/curriculum-60.json`).then((res) => {
         if (!res.ok) throw new Error(`Gagal memuat kurikulum (${res.status})`);
         return res.json() as Promise<RawPayload>;
-      })
-      .then((raw) => {
+      }),
+      fetch(`${base}data/ja-vocab-enrichment.json`)
+        .then((res) =>
+          res.ok ? (res.json() as Promise<Record<string, VocabEnrichmentRecord>>) : null
+        )
+        .catch(() => null),
+    ])
+      .then(([raw, enrichmentMap]) => {
+        if (enrichmentMap) {
+          seedStaticVocabEnrichment(enrichmentMap);
+        }
         cachedDataset = buildDataset(raw);
         return cachedDataset;
       })

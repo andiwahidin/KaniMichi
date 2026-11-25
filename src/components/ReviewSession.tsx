@@ -10,6 +10,7 @@ import {
   Ear,
   Home,
   Info,
+  Loader2,
   Mic,
   Volume2,
   XCircle,
@@ -20,6 +21,7 @@ import { useIsAudioPlaying } from '../hooks/useIsAudioPlaying';
 import { CurriculumItem, ExtraStudyMode } from '../types/curriculum';
 import {
   resolveVerifiedItemPronunciation,
+  speakJapanese,
   speakVerifiedItem,
   stopSpeech,
 } from '../utils/audio';
@@ -34,7 +36,8 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
-import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import { translateSync, useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import { useVocabEnrichment } from '../utils/vocabEnricher';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -113,6 +116,7 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
   }, []); // Intentionally captured at session start
 
   useAutoTranslateCurriculumItems(initialItems);
+  useVocabEnrichment(initialItems);
 
   const [trackers, setTrackers] = useState<Record<string, ItemTracker>>(() => {
     const map: Record<string, ItemTracker> = {};
@@ -1152,11 +1156,51 @@ export const ReviewSession: React.FC<ReviewSessionProps> = ({ mode, extraMode })
                       sourceLabel: `Kurikulum Level ${item.level}`,
                       exampleJp: item.contextSentences?.[0]?.jp,
                       exampleReading: item.contextSentences?.[0]?.reading,
-                      exampleTranslation: item.contextSentences?.[0]?.en,
+                      exampleTranslation: translateSync(item.contextSentences?.[0]?.en),
                     }}
                     onPracticeSpeak={(t) => openPronunciationPractice(t)}
                   />
                 )}
+                <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <div className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    Kalimat Contoh &amp; Penggunaan
+                  </div>
+                  {item.contextSentences && item.contextSentences.length > 0 ? (
+                    <div className="space-y-2">
+                      {item.contextSentences.map((sent, idx) => (
+                        <div
+                          key={idx}
+                          className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-2.5"
+                        >
+                          <div className="space-y-0.5 min-w-0">
+                            <p className="font-jp text-sm font-medium text-slate-900 dark:text-white">
+                              {sent.jp}
+                            </p>
+                            <p className="font-jp text-[11px] text-slate-500 dark:text-slate-400">
+                              {sent.reading}
+                            </p>
+                            <p className="text-xs text-slate-700 dark:text-slate-300">
+                              {translateSync(sent.en)}
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => speakJapanese(sent.reading || sent.jp, 0.88)}
+                            title="Putar kalimat"
+                            className="p-1.5 rounded-lg text-slate-500 hover:text-[#7C3AED] shrink-0 cursor-pointer"
+                          >
+                            <Volume2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin text-[#7C3AED]" />
+                      Menyiapkan contoh kalimat yang sesuai dengan arti...
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 

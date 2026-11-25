@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Ear,
   Home,
+  Loader2,
   Mic,
   Volume2,
   XCircle,
@@ -33,7 +34,12 @@ import {
   resolveSrsMode,
   SRS_STAGE_NAMES,
 } from '../utils/srs';
-import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import { translateSync, useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import {
+  getDisplayIndonesianSynonyms,
+  isVocabEnrichmentPending,
+  useVocabEnrichment,
+} from '../utils/vocabEnricher';
 import { PronunciationCard } from './PronunciationCard';
 import { VocabPronunciationQuizPanel } from './VocabPronunciationQuizPanel';
 
@@ -76,6 +82,7 @@ export const LessonSession: React.FC = () => {
     lessonQueue.slice(0, batchSize)
   );
   useAutoTranslateCurriculumItems(batch);
+  useVocabEnrichment(batch);
   const [phase, setPhase] = useState<'study' | 'quiz' | 'complete'>('study');
   const [slideIdx, setSlideIdx] = useState(0);
   const [subTab, setSubTab] = useState<'overview' | 'reading' | 'context'>('overview');
@@ -1067,16 +1074,19 @@ export const LessonSession: React.FC = () => {
 
               <div>
                 <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1.5">
-                  Arti Utama &amp; Alternatif
+                  Arti Utama &amp; Sinonim
                 </h3>
                 <p className="text-base font-semibold text-slate-900 dark:text-white">
                   {currentSlideItem.primaryMeaning}
-                  {currentSlideItem.acceptedMeanings.length > 1 && (
-                    <span className="font-normal text-sm text-slate-500 dark:text-slate-400">
-                      {' '}
-                      · {currentSlideItem.acceptedMeanings.slice(0, 5).join(', ')}
-                    </span>
-                  )}
+                  {(() => {
+                    const idSyns = getDisplayIndonesianSynonyms(currentSlideItem);
+                    return idSyns.length > 0 ? (
+                      <span className="font-normal text-sm text-slate-500 dark:text-slate-400">
+                        {' '}
+                        · {idSyns.join(', ')}
+                      </span>
+                    ) : null;
+                  })()}
                 </p>
               </div>
 
@@ -1088,6 +1098,49 @@ export const LessonSession: React.FC = () => {
                   {currentSlideItem.meaningMnemonic}
                 </p>
               </div>
+
+              {currentSlideItem.type === 'vocabulary' && (
+                <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2.5">
+                  <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                    Contoh Penggunaan Sesuai Arti
+                  </h3>
+                  {currentSlideItem.contextSentences &&
+                  currentSlideItem.contextSentences.length > 0 ? (
+                    <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3">
+                      <div className="space-y-1 min-w-0">
+                        <p className="font-jp text-base font-medium text-slate-900 dark:text-white">
+                          {currentSlideItem.contextSentences[0].jp}
+                        </p>
+                        <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
+                          {currentSlideItem.contextSentences[0].reading}
+                        </p>
+                        <p className="text-sm text-slate-700 dark:text-slate-300">
+                          {translateSync(currentSlideItem.contextSentences[0].en)}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          speakJapanese(
+                            currentSlideItem.contextSentences![0].reading ||
+                              currentSlideItem.contextSentences![0].jp,
+                            0.88
+                          )
+                        }
+                        className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] shrink-0 cursor-pointer"
+                        title="Putar kalimat contoh"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="p-3.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin text-[#7C3AED]" />
+                      Menyiapkan contoh kalimat yang sesuai dengan arti kosakata ini...
+                    </div>
+                  )}
+                </div>
+              )}
             </>
           )}
 
@@ -1158,7 +1211,9 @@ export const LessonSession: React.FC = () => {
                         sourceLabel: `Kurikulum Level ${currentSlideItem.level}`,
                         exampleJp: currentSlideItem.contextSentences?.[0]?.jp,
                         exampleReading: currentSlideItem.contextSentences?.[0]?.reading,
-                        exampleTranslation: currentSlideItem.contextSentences?.[0]?.en,
+                        exampleTranslation: translateSync(
+                          currentSlideItem.contextSentences?.[0]?.en
+                        ),
                       }}
                       onPracticeSpeak={(t) => openPronunciationPractice(t)}
                     />
@@ -1181,34 +1236,47 @@ export const LessonSession: React.FC = () => {
 
           {subTab === 'context' && (
             <>
-              {currentSlideItem.type === 'vocabulary' &&
-              currentSlideItem.contextSentences?.length ? (
-                <div className="space-y-3">
-                  {currentSlideItem.contextSentences.map((s, idx) => (
-                    <div
-                      key={idx}
-                      className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-4"
-                    >
-                      <div className="space-y-1">
-                        <p className="font-jp text-lg font-medium text-slate-900 dark:text-white">
-                          {s.jp}
-                        </p>
-                        <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
-                          {s.reading}
-                        </p>
-                        <p className="text-sm text-slate-700 dark:text-slate-300">{s.en}</p>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => speakJapanese(s.reading || s.jp, 0.88)}
-                        className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] cursor-pointer"
-                        title="Putar kalimat"
+              {currentSlideItem.type === 'vocabulary' ? (
+                currentSlideItem.contextSentences?.length ? (
+                  <div className="space-y-3">
+                    {currentSlideItem.contextSentences.map((s, idx) => (
+                      <div
+                        key={idx}
+                        className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-4"
                       >
-                        <Volume2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                        <div className="space-y-1">
+                          <p className="font-jp text-lg font-medium text-slate-900 dark:text-white">
+                            {s.jp}
+                          </p>
+                          <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
+                            {s.reading}
+                          </p>
+                          <p className="text-sm text-slate-700 dark:text-slate-300">
+                            {translateSync(s.en)}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => speakJapanese(s.reading || s.jp, 0.88)}
+                          className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] cursor-pointer"
+                          title="Putar kalimat"
+                        >
+                          <Volume2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center gap-2.5 text-sm text-slate-500 dark:text-slate-400">
+                    <Loader2
+                      className={`w-4 h-4 text-[#7C3AED] ${
+                        isVocabEnrichmentPending(currentSlideItem.id) ? 'animate-spin' : ''
+                      }`}
+                    />
+                    Menyiapkan contoh kalimat penggunaan yang sesuai dengan arti &ldquo;
+                    {currentSlideItem.primaryMeaning}&rdquo;...
+                  </div>
+                )
               ) : dependents.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {dependents.map((dep) => (

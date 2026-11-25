@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express, { type Request, type Response } from 'express';
+import fs from 'fs';
 import http from 'http';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -751,6 +752,250 @@ ${lines}`;
       res.json({ translations: result });
     } catch (err) {
       handleApiError(res, err, 'Gagal menerjemahkan materi ke Bahasa Indonesia.');
+    }
+  });
+
+  // ---------------------------------------------------------------------------
+  // 4c. POST /api/ai/enrich-vocab — Verifikasi Arti Bahasa Indonesia + Contoh Kalimat Sesuai Arti
+  // ---------------------------------------------------------------------------
+  interface VocabEnrichmentRecord {
+    meaningId: string;
+    synonymsId: string[];
+    sentences: { jp: string; reading: string; id: string }[];
+  }
+
+  const vocabEnrichmentCache = new Map<string, VocabEnrichmentRecord>();
+  const STATIC_VOCAB_ENRICHMENT_PATH = path.resolve(
+    __dirname,
+    'public',
+    'data',
+    'ja-vocab-enrichment.json'
+  );
+  const RUNTIME_VOCAB_ENRICHMENT_PATH = path.resolve(
+    __dirname,
+    'data',
+    'vocab-enrichment-cache.json'
+  );
+
+  function loadVocabEnrichmentFile(filePath: string) {
+    try {
+      if (!fs.existsSync(filePath)) return;
+      const raw = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Record<
+        string,
+        VocabEnrichmentRecord
+      >;
+      if (raw && typeof raw === 'object') {
+        for (const [id, rec] of Object.entries(raw)) {
+          if (
+            rec &&
+            typeof rec.meaningId === 'string' &&
+            rec.meaningId.trim() &&
+            Array.isArray(rec.sentences) &&
+            rec.sentences.length > 0
+          ) {
+            vocabEnrichmentCache.set(id, rec);
+          }
+        }
+      }
+    } catch {
+      // Ignore corrupt or missing cache file
+    }
+  }
+
+  loadVocabEnrichmentFile(STATIC_VOCAB_ENRICHMENT_PATH);
+  loadVocabEnrichmentFile(RUNTIME_VOCAB_ENRICHMENT_PATH);
+
+  let vocabCacheSaveTimer: ReturnType<typeof setTimeout> | null = null;
+  function scheduleSaveVocabEnrichmentCache() {
+    if (vocabCacheSaveTimer) return;
+    vocabCacheSaveTimer = setTimeout(() => {
+      vocabCacheSaveTimer = null;
+      try {
+        const dir = path.dirname(RUNTIME_VOCAB_ENRICHMENT_PATH);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        const obj: Record<string, VocabEnrichmentRecord> = {};
+        for (const [k, v] of vocabEnrichmentCache.entries()) {
+          obj[k] = v;
+        }
+        fs.writeFileSync(RUNTIME_VOCAB_ENRICHMENT_PATH, JSON.stringify(obj), 'utf8');
+      } catch {
+        // Ignore read-only filesystem errors in production
+      }
+    }, 1500);
+  }
+
+  app.post('/api/ai/enrich-vocab', async (req: Request, res: Response) => {
+    try {
+      const { items = [] } = req.body as {
+        items?: {
+          id: string;
+          characters: string;
+          reading?: string;
+          partOfSpeech?: string;
+          rawMeaning?: string;
+        }[];
+      };
+
+      if (!Array.isArray(items) || items.length === 0) {
+        res.json({ enriched: {} });
+        return;
+      }
+
+      const cleaned = items
+        .slice(0, 16)
+        .map((it) => ({
+          id: String(it?.id || '').trim().slice(0, 64),
+          characters: String(it?.characters || '').trim().slice(0, 40),
+          reading: String(it?.reading || '').trim().slice(0, 60),
+          partOfSpeech: String(it?.partOfSpeech || '').trim().slice(0, 50),
+          rawMeaning: String(it?.rawMeaning || '').trim().slice(0, 120),
+        }))
+        .filter((it) => it.id && it.characters);
+
+      const enriched: Record<string, VocabEnrichmentRecord> = {};
+      const missing: typeof cleaned = [];
+      const seen = new Set<string>();
+
+      for (const it of cleaned) {
+        const cached = vocabEnrichmentCache.get(it.id);
+        if (cached) {
+          enriched[it.id] = cached;
+        } else if (!seen.has(it.id)) {
+          seen.add(it.id);
+          missing.push(it);
+        }
+      }
+
+      if (missing.length === 0) {
+        res.json({ enriched });
+        return;
+      }
+
+      const ai = getAiClient();
+      const inputLines = missing
+        .map(
+          (m) =>
+            `- id="${m.id}" | kata="${m.characters}" | bacaan="${m.reading || '-'}" | kelas="${m.partOfSpeech || '-'}" | referensi="${m.rawMeaning || '-'}"`
+        )
+        .join('\n');
+
+      const prompt = `Anda adalah leksikografer kamus Jepang–Indonesia profesional untuk pelajar JLPT.
+Untuk setiap kosakata Bahasa Jepang di bawah ini, berikan:
+1. "meaningId": Arti Bahasa Indonesia yang PALING TEPAT, alami, dan sesuai dengan kata Jepang, bacaan, dan kelas katanya (singkat, 1–4 kata, Title Case, mis. "Pintu Masuk", "Masuk", "Jumlah Penduduk", "Tenaga / Kekuatan"). Jangan menerjemahkan kaku atau salah konteks.
+2. "synonymsId": 1–3 sinonim Bahasa Indonesia yang alami dan sah untuk jawaban kuis (huruf kecil, tanpa bahasa Inggris).
+3. "sentences": TEPAT 2 contoh kalimat Bahasa Jepang yang alami, wajar, dan kontekstual:
+   - "jp": Kalimat Jepang alami yang WAJIB menggunakan kata tersebut (atau konjugasi alaminya untuk kata kerja/kata sifat) dengan makna yang 100% sesuai "meaningId" dan kelas katanya.
+   - "reading": Bacaan lengkap seluruh kalimat dalam hiragana/katakana (tanpa kanji sama sekali), konsisten dengan bacaan kosakata target.
+   - "id": Terjemahan Bahasa Indonesia yang akurat, luwes, dan jelas memperlihatkan makna "meaningId" tersebut.
+
+DAFTAR KOSAKATA:
+${inputLines}`;
+
+      let response: Awaited<ReturnType<typeof ai.models.generateContent>> | null = null;
+      let lastErr: unknown = null;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          response = await ai.models.generateContent({
+            model: 'gemini-4-hydrogen',
+            contents: prompt,
+            config: {
+              responseMimeType: 'application/json',
+              thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+              responseSchema: {
+                type: Type.OBJECT,
+                properties: {
+                  items: {
+                    type: Type.ARRAY,
+                    items: {
+                      type: Type.OBJECT,
+                      properties: {
+                        id: { type: Type.STRING },
+                        meaningId: { type: Type.STRING },
+                        synonymsId: {
+                          type: Type.ARRAY,
+                          items: { type: Type.STRING },
+                        },
+                        sentences: {
+                          type: Type.ARRAY,
+                          items: {
+                            type: Type.OBJECT,
+                            properties: {
+                              jp: { type: Type.STRING },
+                              reading: { type: Type.STRING },
+                              id: { type: Type.STRING },
+                            },
+                            required: ['jp', 'reading', 'id'],
+                          },
+                        },
+                      },
+                      required: ['id', 'meaningId', 'synonymsId', 'sentences'],
+                    },
+                  },
+                },
+                required: ['items'],
+              },
+            },
+          });
+          break;
+        } catch (err) {
+          lastErr = err;
+          const msg = err instanceof Error ? err.message : String(err);
+          const isTransient =
+            msg.includes('429') ||
+            msg.includes('503') ||
+            msg.includes('UNAVAILABLE') ||
+            msg.includes('RESOURCE_EXHAUSTED');
+          if (!isTransient || attempt === 2) throw err;
+          await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+        }
+      }
+      if (!response) throw lastErr ?? new Error('Gagal menerima respons dari Gemini.');
+
+      const parsed = JSON.parse((response.text ?? '{}').trim()) as {
+        items?: {
+          id: string;
+          meaningId: string;
+          synonymsId?: string[];
+          sentences?: { jp: string; reading: string; id: string }[];
+        }[];
+      };
+
+      const validIds = new Set(missing.map((m) => m.id));
+      let addedAny = false;
+      for (const row of parsed.items ?? []) {
+        const id = String(row.id || '').trim();
+        const meaningId = String(row.meaningId || '').trim();
+        if (!id || !validIds.has(id) || !meaningId) continue;
+
+        const synonymsId = Array.isArray(row.synonymsId)
+          ? row.synonymsId.map((s) => String(s || '').trim()).filter(Boolean).slice(0, 4)
+          : [];
+        const sentences = Array.isArray(row.sentences)
+          ? row.sentences
+              .map((s) => ({
+                jp: String(s?.jp || '').trim(),
+                reading: String(s?.reading || '').trim(),
+                id: String(s?.id || '').trim(),
+              }))
+              .filter((s) => s.jp && s.reading && s.id)
+              .slice(0, 2)
+          : [];
+
+        if (sentences.length === 0) continue;
+
+        const record: VocabEnrichmentRecord = { meaningId, synonymsId, sentences };
+        vocabEnrichmentCache.set(id, record);
+        enriched[id] = record;
+        addedAny = true;
+      }
+
+      if (addedAny) {
+        scheduleSaveVocabEnrichmentCache();
+      }
+
+      res.json({ enriched });
+    } catch (err) {
+      handleApiError(res, err, 'Gagal memuat arti dan contoh kalimat kosakata.');
     }
   });
 

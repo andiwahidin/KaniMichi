@@ -12,6 +12,7 @@ import {
   SRS_STAGE_NAMES,
 } from '../utils/srs';
 import { useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import { useVocabEnrichment } from '../utils/vocabEnricher';
 
 interface CurriculumBrowserProps {
   mode: 'levels' | 'radicals' | 'kanji' | 'vocabulary';
@@ -101,6 +102,7 @@ export const CurriculumBrowser: React.FC<CurriculumBrowserProps> = ({ mode }) =>
   }, [mode, dataset.byLevel, selectedLevel, filteredDirectoryItems, page]);
 
   useAutoTranslateCurriculumItems(visibleItemsForTranslation);
+  useVocabEnrichment(visibleItemsForTranslation);
 
   // ============================================================================
   // KURIKULUM JLPT N5–N1 VIEW

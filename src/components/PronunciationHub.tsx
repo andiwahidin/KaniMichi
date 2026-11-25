@@ -60,6 +60,10 @@ import {
   translateSync,
   useTranslationVersion,
 } from '../utils/idTranslator';
+import {
+  applyVocabEnrichmentToItem,
+  useVocabEnrichmentVersion,
+} from '../utils/vocabEnricher';
 
 type StudioTab = 'pairs' | 'database' | 'guide' | 'ear-quiz' | 'speaking';
 type CategoryFilter = 'all' | PronunciationCategory;
@@ -166,6 +170,7 @@ export const PronunciationHub: React.FC = () => {
   const isAudioPlaying = useIsAudioPlaying();
   const progress = state.pronunciationProgress;
   const translationVersion = useTranslationVersion();
+  const enrichmentVersion = useVocabEnrichmentVersion();
 
   const [kanaVocabData, setKanaVocabData] = useState<KanaVocabDataset | null>(null);
 
@@ -188,6 +193,7 @@ export const PronunciationHub: React.FC = () => {
     const entries: UniversalVocabEntry[] = [];
 
     for (const item of dataset.byType.vocabulary) {
+      applyVocabEnrichmentToItem(item);
       const primaryKana = item.readings?.[0];
       if (!primaryKana) continue;
       const resolved = resolvePitchAccent(
@@ -245,7 +251,7 @@ export const PronunciationHub: React.FC = () => {
     }
 
     return entries;
-  }, [dataset.byType.vocabulary, kanaVocabData, translationVersion]);
+  }, [dataset.byType.vocabulary, kanaVocabData, translationVersion, enrichmentVersion]);
 
   // Index homophones by Hiragana reading across ALL 6,734 words
   const homophonesByKana = useMemo(() => {

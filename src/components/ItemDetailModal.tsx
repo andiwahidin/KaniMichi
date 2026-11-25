@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Volume2, X, Plus, RotateCcw, ArrowRight, PenTool, Mic } from 'lucide-react';
+import { Volume2, X, Plus, RotateCcw, ArrowRight, PenTool, Mic, Loader2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { getLevelMeta } from '../data/curriculum';
 import { getItemSpeechText, speakJapanese } from '../utils/audio';
@@ -14,6 +14,10 @@ import {
   SRS_STAGE_NAMES,
 } from '../utils/srs';
 import { translateSync, useAutoTranslateCurriculumItems } from '../utils/idTranslator';
+import {
+  getDisplayIndonesianSynonyms,
+  useVocabEnrichment,
+} from '../utils/vocabEnricher';
 
 export const ItemDetailModal: React.FC = () => {
   const {
@@ -39,6 +43,7 @@ export const ItemDetailModal: React.FC = () => {
     return [item, ...comps, ...deps];
   }, [dataset.byId, dataset.dependentsById, item]);
   useAutoTranslateCurriculumItems(relatedItemsToTranslate);
+  useVocabEnrichment(relatedItemsToTranslate);
 
   const [newSynonym, setNewSynonym] = useState('');
   const [meaningNote, setMeaningNote] = useState('');
@@ -297,9 +302,12 @@ export const ItemDetailModal: React.FC = () => {
               </h3>
               <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
                 Arti utama: <strong className="text-slate-900 dark:text-white">{item.primaryMeaning}</strong>
-                {item.acceptedMeanings.length > 1 && (
-                  <span> · Diterima: {item.acceptedMeanings.slice(0, 6).join(', ')}</span>
-                )}
+                {(() => {
+                  const idSyns = getDisplayIndonesianSynonyms(item);
+                  return idSyns.length > 0 ? (
+                    <span> · Sinonim: {idSyns.join(', ')}</span>
+                  ) : null;
+                })()}
               </p>
               <p className="text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
                 {item.meaningMnemonic}
@@ -381,40 +389,48 @@ export const ItemDetailModal: React.FC = () => {
             </section>
           )}
 
-          {/* Context Sentences for Vocabulary */}
-          {item.contextSentences && item.contextSentences.length > 0 && (
+          {/* Context Sentences for Vocabulary (Always shown for every vocabulary word) */}
+          {item.type === 'vocabulary' && (
             <section className="border-t border-slate-200 dark:border-slate-800 pt-5">
               <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                Kalimat Contoh
+                Kalimat Contoh &amp; Penggunaan
               </h3>
-              <div className="space-y-3">
-                {item.contextSentences.map((sent, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3"
-                  >
-                    <div className="space-y-1">
-                      <p className="font-jp text-base font-medium text-slate-900 dark:text-white">
-                        {sent.jp}
-                      </p>
-                      <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
-                        {sent.reading}
-                      </p>
-                      <p className="text-sm text-slate-700 dark:text-slate-300">
-                        {translateSync(sent.en)}
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => speakJapanese(sent.reading || sent.jp, 0.88)}
-                      title="Putar kalimat"
-                      className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] hover:bg-white dark:hover:bg-slate-700 transition-colors shrink-0 cursor-pointer"
+              {item.contextSentences && item.contextSentences.length > 0 ? (
+                <div className="space-y-3">
+                  {item.contextSentences.map((sent, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-start justify-between gap-3"
                     >
-                      <Volume2 className="w-4 h-4" />
-                    </button>
-                  </div>
-                ))}
-              </div>
+                      <div className="space-y-1">
+                        <p className="font-jp text-base font-medium text-slate-900 dark:text-white">
+                          {sent.jp}
+                        </p>
+                        <p className="font-jp text-xs text-slate-500 dark:text-slate-400">
+                          {sent.reading}
+                        </p>
+                        <p className="text-sm text-slate-700 dark:text-slate-300">
+                          {translateSync(sent.en)}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => speakJapanese(sent.reading || sent.jp, 0.88)}
+                        title="Putar kalimat"
+                        className="p-2 rounded-lg text-slate-500 hover:text-[#7C3AED] hover:bg-white dark:hover:bg-slate-700 transition-colors shrink-0 cursor-pointer"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <Loader2 className="w-4 h-4 animate-spin text-[#7C3AED]" />
+                  Menyiapkan contoh kalimat alami yang sesuai dengan arti &ldquo;{item.primaryMeaning}
+                  &rdquo;...
+                </div>
+              )}
             </section>
           )}
 
