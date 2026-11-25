@@ -175,6 +175,7 @@ interface EnrichmentQueueEntry {
 const pendingQueue: EnrichmentQueueEntry[] = [];
 let flushTimer: number | null = null;
 let activeRequests = 0;
+let globalEnrichCooldownUntil = 0;
 const MAX_CONCURRENT = 1;
 const RETRY_COOLDOWN_MS = 15000;
 
@@ -190,6 +191,7 @@ function isCoolingDown(id: string): boolean {
 
 async function processEnrichmentQueue() {
   if (activeRequests >= MAX_CONCURRENT || pendingQueue.length === 0) return;
+  if (Date.now() < globalEnrichCooldownUntil) return;
 
   const batch: EnrichmentQueueEntry[] = [];
   const seen = new Set<string>();
@@ -219,6 +221,12 @@ async function processEnrichmentQueue() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items: batch }),
     });
+    if (res.status === 429 || res.status === 503) {
+      globalEnrichCooldownUntil = Date.now() + 60000;
+      const retryAt = Date.now() + 60000;
+      for (const b of batch) retryAfterMap.set(b.id, retryAt);
+      return;
+    }
     if (!res.ok) {
       const retryAt = Date.now() + RETRY_COOLDOWN_MS;
       for (const b of batch) retryAfterMap.set(b.id, retryAt);
@@ -250,15 +258,20 @@ async function processEnrichmentQueue() {
     for (const b of batch) inFlightIds.delete(b.id);
     activeRequests -= 1;
     notifyListeners();
-    if (pendingQueue.length > 0 && typeof window !== 'undefined') {
+    if (
+      pendingQueue.length > 0 &&
+      Date.now() >= globalEnrichCooldownUntil &&
+      typeof window !== 'undefined'
+    ) {
       window.setTimeout(() => {
         void processEnrichmentQueue();
-      }, 450);
+      }, 600);
     }
   }
 }
 
 export function queueVocabEnrichment(items: (CurriculumItem | null | undefined)[]) {
+  if (Date.now() < globalEnrichCooldownUntil) return;
   let added = false;
   for (const item of items) {
     if (!item || item.type !== 'vocabulary') continue;
@@ -279,7 +292,7 @@ export function queueVocabEnrichment(items: (CurriculumItem | null | undefined)[
     flushTimer = window.setTimeout(() => {
       flushTimer = null;
       void processEnrichmentQueue();
-    }, 60);
+    }, 120);
   }
 }
 

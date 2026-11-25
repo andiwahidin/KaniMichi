@@ -693,9 +693,11 @@ export interface TranslationEntry {
 let pendingQueue: TranslationEntry[] = [];
 let flushTimer: number | null = null;
 let activeBatchCount = 0;
+let globalRateLimitUntil = 0;
 
 async function processQueue() {
-  if (activeBatchCount >= 2 || pendingQueue.length === 0) return;
+  if (activeBatchCount >= 1 || pendingQueue.length === 0) return;
+  if (Date.now() < globalRateLimitUntil) return;
 
   const batch: TranslationEntry[] = [];
   const seen = new Set<string>();
@@ -719,6 +721,10 @@ async function processQueue() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ entries: batch }),
     });
+    if (res.status === 429 || res.status === 503) {
+      globalRateLimitUntil = Date.now() + 60000;
+      return;
+    }
     if (!res.ok) {
       for (const item of batch) failedTexts.add(item.text);
       return;
@@ -744,13 +750,16 @@ async function processQueue() {
   } finally {
     for (const item of batch) inFlight.delete(item.text);
     activeBatchCount -= 1;
-    if (pendingQueue.length > 0) {
-      void processQueue();
+    if (pendingQueue.length > 0 && Date.now() >= globalRateLimitUntil && typeof window !== 'undefined') {
+      window.setTimeout(() => {
+        void processQueue();
+      }, 400);
     }
   }
 }
 
 export function queueTranslations(entries: TranslationEntry[]) {
+  if (Date.now() < globalRateLimitUntil) return;
   let added = false;
   for (const entry of entries) {
     const clean = entry?.text?.trim();
@@ -766,7 +775,7 @@ export function queueTranslations(entries: TranslationEntry[]) {
     flushTimer = window.setTimeout(() => {
       flushTimer = null;
       void processQueue();
-    }, 60);
+    }, 120);
   }
 }
 

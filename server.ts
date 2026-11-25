@@ -30,6 +30,76 @@ function getAiClient(): GoogleGenAI {
   });
 }
 
+function isTransientAiError(err: unknown): boolean {
+  const msg = err instanceof Error ? err.message : String(err);
+  const lower = msg.toLowerCase();
+  return (
+    lower.includes('429') ||
+    lower.includes('503') ||
+    lower.includes('500') ||
+    lower.includes('resource_exhausted') ||
+    lower.includes('unavailable') ||
+    lower.includes('overloaded') ||
+    lower.includes('rate limit') ||
+    lower.includes('quota')
+  );
+}
+
+function isModelFallbackError(err: unknown): boolean {
+  if (isTransientAiError(err)) return true;
+  const msg = err instanceof Error ? err.message : String(err);
+  const lower = msg.toLowerCase();
+  return lower.includes('404') || lower.includes('not_found') || lower.includes('not found');
+}
+
+async function generateWithFallback(
+  ai: GoogleGenAI,
+  options: {
+    models: string[];
+    contents: Parameters<GoogleGenAI['models']['generateContent']>[0]['contents'];
+    config?: Record<string, unknown>;
+    retriesPerModel?: number;
+  }
+) {
+  const { models, contents, config = {}, retriesPerModel = 2 } = options;
+  let lastErr: unknown = null;
+
+  for (const model of models) {
+    // Strip thinkingConfig when calling gemini-3.1-flash-lite or gemini-3.5-transcribe
+    const effectiveConfig = { ...config };
+    if (model.startsWith('gemini-3.1-flash-lite') || model.startsWith('gemini-3.5-transcribe')) {
+      delete effectiveConfig.thinkingConfig;
+    }
+
+    for (let attempt = 0; attempt < retriesPerModel; attempt++) {
+      try {
+        return await ai.models.generateContent({
+          model,
+          contents,
+          config: Object.keys(effectiveConfig).length > 0 ? effectiveConfig : undefined,
+        });
+      } catch (err) {
+        lastErr = err;
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`[AI] model=${model} attempt=${attempt + 1} failed:`, msg.slice(0, 300));
+
+        if (!isModelFallbackError(err)) {
+          throw err;
+        }
+        // If quota exhausted (429), immediately switch to next fallback model rather than waiting on the same exhausted model
+        if (msg.includes('429') || msg.toLowerCase().includes('resource_exhausted')) {
+          break;
+        }
+        if (attempt < retriesPerModel - 1) {
+          await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
+        }
+      }
+    }
+  }
+
+  throw lastErr ?? new Error('Gagal menghubungi layanan AI Gemini.');
+}
+
 function handleApiError(res: Response, err: unknown, fallbackMsg: string) {
   const rawMessage = err instanceof Error ? err.message : fallbackMsg;
   const lower = rawMessage.toLowerCase();
@@ -40,10 +110,17 @@ function handleApiError(res: Response, err: unknown, fallbackMsg: string) {
     });
     return;
   }
-  if (lower.includes('resource_exhausted') || lower.includes('429')) {
+  if (lower.includes('resource_exhausted') || lower.includes('429') || lower.includes('quota')) {
     res.status(429).json({
       error:
-        'Batas penggunaan AI sementara tercapai. Tunggu beberapa saat lalu coba lagi.',
+        'Kuota API Gemini pada kunci saat ini sedang penuh. Tunggu sebentar lalu coba lagi, atau periksa / ganti API Key pada panel Settings > Secrets.',
+    });
+    return;
+  }
+  if (lower.includes('503') || lower.includes('unavailable') || lower.includes('overloaded')) {
+    res.status(503).json({
+      error:
+        'Server AI Gemini sedang sibuk sementara. Silakan tunggu beberapa detik lalu kirim ulang.',
     });
     return;
   }
@@ -179,8 +256,8 @@ ATURAN WAJIB:
         parts: [{ text: String(m.content || '').slice(0, 4000) }],
       }));
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
+      const response = await generateWithFallback(ai, {
+        models: ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'],
         contents: recentHistory,
         config: {
           systemInstruction,
@@ -288,20 +365,21 @@ ${
 
 Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh penjelasan, komentar, kelebihan, kekurangan, dan alasan koreksi. Untuk field "improvedSample", tuliskan versi peningkatan dari tulisan pelajar dalam bahasa target (${language.toUpperCase()}) yang setara skor tinggi sambil mempertahankan ide utama pelajar.`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
+      const response = await generateWithFallback(ai, {
+        models: ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'],
         contents: userPrompt,
         config: {
           systemInstruction,
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
           responseMimeType: 'application/json',
           responseSchema: {
             type: Type.OBJECT,
             properties: {
-              overallScore: { type: Type.NUMBER },
-              maxScore: { type: Type.NUMBER },
-              scoreLabel: { type: Type.STRING },
-              summaryId: { type: Type.STRING },
-              progressComparisonId: { type: Type.STRING },
+              overallScore: { type: Type.NUMBER, description: 'Skor keseluruhan numerik sesuai skala ujian.' },
+              maxScore: { type: Type.NUMBER, description: 'Skor maksimal skala ujian.' },
+              scoreLabel: { type: Type.STRING, description: 'Label singkat kategori nilai (mis. Competent User / Baik).' },
+              summaryId: { type: Type.STRING, description: 'Ringkasan evaluasi keseluruhan tulisan dalam 2-3 kalimat Bahasa Indonesia.' },
+              progressComparisonId: { type: Type.STRING, description: 'Perbandingan perkembangan dengan latihan sebelumnya (atau catatan baseline awal) dalam 2-3 kalimat Bahasa Indonesia.' },
               criteriaFeedback: {
                 type: Type.ARRAY,
                 items: {
@@ -310,7 +388,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
                     criterionId: { type: Type.STRING },
                     criterionName: { type: Type.STRING },
                     score: { type: Type.NUMBER },
-                    commentId: { type: Type.STRING },
+                    commentId: { type: Type.STRING, description: 'Komentar penilaian kriteria ini dalam Bahasa Indonesia.' },
                   },
                   required: ['criterionId', 'criterionName', 'score', 'commentId'],
                 },
@@ -318,25 +396,27 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
               strengthsId: {
                 type: Type.ARRAY,
                 items: { type: Type.STRING },
+                description: 'Daftar 2-3 kelebihan tulisan dalam Bahasa Indonesia.',
               },
               improvementsId: {
                 type: Type.ARRAY,
                 items: { type: Type.STRING },
+                description: 'Daftar 2-3 area perbaikan utama dalam Bahasa Indonesia.',
               },
               corrections: {
                 type: Type.ARRAY,
                 items: {
                   type: Type.OBJECT,
                   properties: {
-                    original: { type: Type.STRING },
-                    corrected: { type: Type.STRING },
-                    reasonId: { type: Type.STRING },
+                    original: { type: Type.STRING, description: 'Kutipan kalimat asli pelajar yang perlu diperbaiki.' },
+                    corrected: { type: Type.STRING, description: 'Versi kalimat yang sudah diperbaiki dalam bahasa target.' },
+                    reasonId: { type: Type.STRING, description: 'Alasan perbaikan dalam Bahasa Indonesia yang jelas.' },
                   },
                   required: ['original', 'corrected', 'reasonId'],
                 },
               },
-              improvedSample: { type: Type.STRING },
-              examTipsId: { type: Type.STRING },
+              improvedSample: { type: Type.STRING, description: 'Contoh versi revisi tulisan yang lebih alami dan bernilai tinggi dalam bahasa target.' },
+              examTipsId: { type: Type.STRING, description: 'Tips praktis ujian dalam Bahasa Indonesia.' },
             },
             required: [
               'overallScore',
@@ -404,13 +484,13 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
       const ai = getAiClient();
       let finalTranscript = manualTranscript;
 
-      // Step A: Transcribe uploaded browser audio via gemini-3.5-transcribe
+      // Step A: Transcribe uploaded browser audio via gemini-3.5-transcribe (with multimodal fallback)
       if (hasAudio) {
         const cleanBase64 = audioBase64.includes(',')
           ? audioBase64.split(',')[1]
           : audioBase64;
-        const transcribeResp = await ai.models.generateContent({
-          model: 'gemini-3.5-transcribe',
+        const transcribeResp = await generateWithFallback(ai, {
+          models: ['gemini-3.5-transcribe', 'gemini-4-hydrogen', 'gemini-3.1-flash-lite'],
           contents: {
             parts: [
               {
@@ -420,7 +500,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
                 },
               },
               {
-                text: `Transkripsikan rekaman suara ini secara akurat apa adanya (termasuk jeda atau pengulangan bila ada) dalam bahasa ${language.toUpperCase()}.`,
+                text: `Transkripsikan rekaman suara ini secara akurat apa adanya (termasuk jeda atau pengulangan bila ada) dalam bahasa ${language.toUpperCase()}. Kembalikan hanya teks transkripnya saja tanpa komentar tambahan.`,
               },
             ],
           },
@@ -494,20 +574,21 @@ ${
 
 Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, perbandingan progres, dan alasan perbaikan dalam Bahasa Indonesia yang sangat jelas dan aplikatif. Sertakan "naturalPhrasingSample" dalam bahasa target (${language.toUpperCase()}) sebagai contoh jawaban lisan yang alami dan bernilai tinggi.`;
 
-      const evalResp = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
+      const evalResp = await generateWithFallback(ai, {
+        models: ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'],
         contents: evalPrompt,
         config: {
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
           responseMimeType: 'application/json',
           responseSchema: {
             type: Type.OBJECT,
             properties: {
-              transcript: { type: Type.STRING },
-              overallScore: { type: Type.NUMBER },
-              maxScore: { type: Type.NUMBER },
-              scoreLabel: { type: Type.STRING },
-              summaryId: { type: Type.STRING },
-              progressComparisonId: { type: Type.STRING },
+              transcript: { type: Type.STRING, description: 'Transkrip jawaban lisan pelajar.' },
+              overallScore: { type: Type.NUMBER, description: 'Skor keseluruhan numerik sesuai skala ujian.' },
+              maxScore: { type: Type.NUMBER, description: 'Skor maksimal skala ujian.' },
+              scoreLabel: { type: Type.STRING, description: 'Label singkat kategori nilai.' },
+              summaryId: { type: Type.STRING, description: 'Ringkasan evaluasi performa Speaking dalam 2-3 kalimat Bahasa Indonesia (BUKAN kode ID).' },
+              progressComparisonId: { type: Type.STRING, description: 'Perbandingan perkembangan dengan sesi sebelumnya (atau catatan baseline awal) dalam 2-3 kalimat Bahasa Indonesia.' },
               criteriaFeedback: {
                 type: Type.ARRAY,
                 items: {
@@ -516,7 +597,7 @@ Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, perbandingan
                     criterionId: { type: Type.STRING },
                     criterionName: { type: Type.STRING },
                     score: { type: Type.NUMBER },
-                    commentId: { type: Type.STRING },
+                    commentId: { type: Type.STRING, description: 'Komentar penilaian kriteria ini dalam Bahasa Indonesia.' },
                   },
                   required: ['criterionId', 'criterionName', 'score', 'commentId'],
                 },
@@ -524,21 +605,22 @@ Berikan seluruh penjelasan, komentar, catatan pelafalan/kelancaran, perbandingan
               pronunciationAndFluencyId: {
                 type: Type.ARRAY,
                 items: { type: Type.STRING },
+                description: 'Daftar 2-3 catatan pelafalan, intonasi, dan kelancaran dalam Bahasa Indonesia.',
               },
               grammarAndVocabFixes: {
                 type: Type.ARRAY,
                 items: {
                   type: Type.OBJECT,
                   properties: {
-                    original: { type: Type.STRING },
-                    corrected: { type: Type.STRING },
-                    reasonId: { type: Type.STRING },
+                    original: { type: Type.STRING, description: 'Frasa asli pelajar.' },
+                    corrected: { type: Type.STRING, description: 'Versi frasa yang lebih tepat dan alami dalam bahasa target.' },
+                    reasonId: { type: Type.STRING, description: 'Penjelasan perbaikan dalam Bahasa Indonesia.' },
                   },
                   required: ['original', 'corrected', 'reasonId'],
                 },
               },
-              naturalPhrasingSample: { type: Type.STRING },
-              confidenceTipId: { type: Type.STRING },
+              naturalPhrasingSample: { type: Type.STRING, description: 'Contoh jawaban lisan yang alami dan bernilai tinggi dalam bahasa target.' },
+              confidenceTipId: { type: Type.STRING, description: 'Tips singkat meningkatkan kelancaran dan percaya diri dalam Bahasa Indonesia.' },
             },
             required: [
               'transcript',
@@ -607,8 +689,8 @@ ${correctAnswer ? `\nJawaban benar: ${correctAnswer}` : ''}
 ${userAnswer ? `\nJawaban pelajar: ${userAnswer}` : ''}
 ${existingNote ? `\nCatatan referensi (terjemahkan & sederhanakan ke Bahasa Indonesia): ${existingNote}` : ''}`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
+      const response = await generateWithFallback(ai, {
+        models: ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'],
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -651,6 +733,41 @@ ${existingNote ? `\nCatatan referensi (terjemahkan & sederhanakan ke Bahasa Indo
   // 4b. POST /api/ai/translate-batch — Penerjemah Otomatis Bahasa Indonesia (Cached)
   // ---------------------------------------------------------------------------
   const serverTranslationCache = new Map<string, string>();
+  const RUNTIME_TRANSLATION_CACHE_PATH = path.resolve(
+    __dirname,
+    'data',
+    'translation-cache.json'
+  );
+  try {
+    if (fs.existsSync(RUNTIME_TRANSLATION_CACHE_PATH)) {
+      const raw = JSON.parse(
+        fs.readFileSync(RUNTIME_TRANSLATION_CACHE_PATH, 'utf8')
+      ) as Record<string, string>;
+      if (raw && typeof raw === 'object') {
+        for (const [k, v] of Object.entries(raw)) {
+          if (typeof v === 'string' && v.trim()) serverTranslationCache.set(k, v.trim());
+        }
+      }
+    }
+  } catch {
+    // Ignore missing/corrupt cache
+  }
+  let translationSaveTimer: ReturnType<typeof setTimeout> | null = null;
+  function scheduleSaveTranslationCache() {
+    if (translationSaveTimer) return;
+    translationSaveTimer = setTimeout(() => {
+      translationSaveTimer = null;
+      try {
+        const dir = path.dirname(RUNTIME_TRANSLATION_CACHE_PATH);
+        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        const obj: Record<string, string> = {};
+        for (const [k, v] of serverTranslationCache.entries()) obj[k] = v;
+        fs.writeFileSync(RUNTIME_TRANSLATION_CACHE_PATH, JSON.stringify(obj), 'utf8');
+      } catch {
+        // Ignore read-only fs
+      }
+    }, 1500);
+  }
 
   app.post('/api/ai/translate-batch', async (req: Request, res: Response) => {
     try {
@@ -706,8 +823,8 @@ ATURAN:
 DAFTAR INPUT:
 ${lines}`;
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-4-hydrogen',
+      const response = await generateWithFallback(ai, {
+        models: ['gemini-3.1-flash-lite', 'gemini-4-hydrogen'],
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
@@ -736,6 +853,7 @@ ${lines}`;
         items?: { idx: number; id: string }[];
       };
 
+      let addedAny = false;
       for (const row of parsed.items ?? []) {
         const target = missing[row.idx];
         const translated = String(row.id || '').trim();
@@ -746,7 +864,12 @@ ${lines}`;
             if (firstKey) serverTranslationCache.delete(firstKey);
           }
           serverTranslationCache.set(target.text, translated);
+          addedAny = true;
         }
+      }
+
+      if (addedAny) {
+        scheduleSaveTranslationCache();
       }
 
       res.json({ translations: result });
@@ -891,65 +1014,47 @@ Untuk setiap kosakata Bahasa Jepang di bawah ini, berikan:
 DAFTAR KOSAKATA:
 ${inputLines}`;
 
-      let response: Awaited<ReturnType<typeof ai.models.generateContent>> | null = null;
-      let lastErr: unknown = null;
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          response = await ai.models.generateContent({
-            model: 'gemini-4-hydrogen',
-            contents: prompt,
-            config: {
-              responseMimeType: 'application/json',
-              thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
-              responseSchema: {
-                type: Type.OBJECT,
-                properties: {
-                  items: {
-                    type: Type.ARRAY,
-                    items: {
-                      type: Type.OBJECT,
-                      properties: {
-                        id: { type: Type.STRING },
-                        meaningId: { type: Type.STRING },
-                        synonymsId: {
-                          type: Type.ARRAY,
-                          items: { type: Type.STRING },
+      const response = await generateWithFallback(ai, {
+        models: ['gemini-3.1-flash-lite', 'gemini-4-hydrogen'],
+        contents: prompt,
+        config: {
+          responseMimeType: 'application/json',
+          thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              items: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    id: { type: Type.STRING },
+                    meaningId: { type: Type.STRING },
+                    synonymsId: {
+                      type: Type.ARRAY,
+                      items: { type: Type.STRING },
+                    },
+                    sentences: {
+                      type: Type.ARRAY,
+                      items: {
+                        type: Type.OBJECT,
+                        properties: {
+                          jp: { type: Type.STRING },
+                          reading: { type: Type.STRING },
+                          id: { type: Type.STRING },
                         },
-                        sentences: {
-                          type: Type.ARRAY,
-                          items: {
-                            type: Type.OBJECT,
-                            properties: {
-                              jp: { type: Type.STRING },
-                              reading: { type: Type.STRING },
-                              id: { type: Type.STRING },
-                            },
-                            required: ['jp', 'reading', 'id'],
-                          },
-                        },
+                        required: ['jp', 'reading', 'id'],
                       },
-                      required: ['id', 'meaningId', 'synonymsId', 'sentences'],
                     },
                   },
+                  required: ['id', 'meaningId', 'synonymsId', 'sentences'],
                 },
-                required: ['items'],
               },
             },
-          });
-          break;
-        } catch (err) {
-          lastErr = err;
-          const msg = err instanceof Error ? err.message : String(err);
-          const isTransient =
-            msg.includes('429') ||
-            msg.includes('503') ||
-            msg.includes('UNAVAILABLE') ||
-            msg.includes('RESOURCE_EXHAUSTED');
-          if (!isTransient || attempt === 2) throw err;
-          await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
-        }
-      }
-      if (!response) throw lastErr ?? new Error('Gagal menerima respons dari Gemini.');
+            required: ['items'],
+          },
+        },
+      });
 
       const parsed = JSON.parse((response.text ?? '{}').trim()) as {
         items?: {
