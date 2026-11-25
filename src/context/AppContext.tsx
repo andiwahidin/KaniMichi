@@ -23,6 +23,7 @@ import {
 } from '../data/curriculum';
 import {
   ActiveView,
+  AiSavedChatMessage,
   Announcement,
   CurriculumItem,
   CurriculumOverride,
@@ -69,8 +70,6 @@ import {
 
 const STORAGE_KEY = 'kanimichi_srs_state_v2';
 
-export type AuthModalTab = 'login' | 'register';
-
 export interface ReviewOutcome {
   itemId: string;
   previousStage: SrsStage;
@@ -97,8 +96,7 @@ interface AppContextValue {
   settingsOpen: boolean;
   setSettingsOpen: (open: boolean) => void;
   authModalOpen: boolean;
-  authModalTab: AuthModalTab;
-  openAuthModal: (tab?: AuthModalTab) => void;
+  openAuthModal: () => void;
   closeAuthModal: () => void;
   extraStudyMode: ExtraStudyMode;
   startExtraStudy: (mode: ExtraStudyMode) => void;
@@ -179,6 +177,7 @@ interface AppContextValue {
   ) => void;
   recordStudioAttempt: (attempt: StudioRubricAttempt) => void;
   recordMultiExamResult: (result: MultiExamResult) => void;
+  updateAiTutorHistory: (messages: AiSavedChatMessage[]) => void;
   updateSettings: (partial: Partial<UserSettings>) => void;
   changeSrsMode: (mode: SrsMode) => {
     newlyUnlockedCount: number;
@@ -210,11 +209,6 @@ interface AppContextValue {
     password: string
   ) => Promise<{ ok: boolean; message?: string }>;
   signInWithGoogle: () => Promise<{ ok: boolean; message?: string }>;
-  signUpWithEmail: (
-    email: string,
-    password: string,
-    displayName?: string
-  ) => Promise<{ ok: boolean; message?: string }>;
   signOutCloud: () => Promise<void>;
   syncNow: () => Promise<{ ok: boolean; message?: string }>;
   updateProfileName: (newName: string) => Promise<{ ok: boolean; message?: string }>;
@@ -395,9 +389,29 @@ function mergeCloudAndLocalModules(
     .sort((a, b) => b.completedAt - a.completedAt)
     .slice(0, 50);
 
+  const remoteChat = remote.aiTutorHistory ?? [];
+  const localChat = local.aiTutorHistory ?? [];
+  const remoteLastTs = remoteChat[remoteChat.length - 1]?.createdAt ?? 0;
+  const localLastTs = localChat[localChat.length - 1]?.createdAt ?? 0;
+  let aiTutorHistory = remoteChat;
+  if (localChat.length > 0 && (remoteChat.length === 0 || localLastTs > remoteLastTs)) {
+    aiTutorHistory = localChat.slice(-40);
+    needsCloudPush = true;
+  }
+
+  let mergedSettings = remote.settings;
+  if (!remote.settings?.aiTutorProfile && local.settings?.aiTutorProfile) {
+    mergedSettings = {
+      ...remote.settings,
+      aiTutorProfile: local.settings.aiTutorProfile,
+    };
+    needsCloudPush = true;
+  }
+
   return {
     merged: {
       ...remote,
+      settings: mergedSettings,
       grammarProgress: grammar.merged,
       kanaVocabProgress: kanaVocab.merged,
       readingProgress: reading.merged,
@@ -409,6 +423,7 @@ function mergeCloudAndLocalModules(
       langPracticeProgress: langPractice.merged,
       langStudioHistory,
       langMockExamHistory,
+      aiTutorHistory,
     },
     needsCloudPush,
   };
@@ -475,7 +490,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const [authModalTab, setAuthModalTab] = useState<AuthModalTab>('login');
   const [extraStudyMode, setExtraStudyMode] = useState<ExtraStudyMode>('recent-mistakes');
   const [writingTargetChar, setWritingTargetChar] = useState<string | null>(null);
   const [pronunciationTarget, setPronunciationTarget] =
@@ -1759,6 +1773,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
   };
 
+  const updateAiTutorHistory = (messages: AiSavedChatMessage[]) => {
+    setState((prev) =>
+      prev
+        ? {
+            ...prev,
+            aiTutorHistory: messages.slice(-40),
+          }
+        : prev
+    );
+  };
+
   const updateSettings = (partial: Partial<UserSettings>) => {
     setState((prev) =>
       prev
@@ -2075,8 +2100,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const openItemDetail = (itemId: string) => setSelectedItemId(itemId);
   const closeItemDetail = () => setSelectedItemId(null);
 
-  const openAuthModal = (tab: AuthModalTab = 'login') => {
-    setAuthModalTab(tab);
+  const openAuthModal = () => {
     setAuthModalOpen(true);
   };
   const closeAuthModal = () => setAuthModalOpen(false);
@@ -2174,7 +2198,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         await Browser.open({ url: data.url, presentationStyle: 'popover' });
         return {
           ok: true,
-          message: 'Selesaikan login Google — Anda akan otomatis kembali ke KaniMichi.',
+          message: 'Selesaikan login Google — Anda akan otomatis kembali ke Leksika.',
         };
       } catch (err) {
         return {
@@ -2201,37 +2225,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       return { ok: false, message: mapAuthError(error.message) };
     }
     return { ok: true, message: 'Mengalihkan ke halaman login Google...' };
-  };
-
-  const signUpWithEmail = async (
-    email: string,
-    password: string,
-    displayName?: string
-  ): Promise<{ ok: boolean; message?: string }> => {
-    if (!supabase) {
-      return { ok: false, message: 'Supabase belum dikonfigurasi pada environment.' };
-    }
-    const cleanName = (displayName ?? '').trim() || email.trim().split('@')[0];
-    const { data, error } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-      options: {
-        data: {
-          display_name: cleanName,
-        },
-      },
-    });
-    if (error) {
-      return { ok: false, message: mapAuthError(error.message) };
-    }
-    if (!data.session) {
-      return {
-        ok: true,
-        message: 'Akun dibuat! Periksa emailmu untuk verifikasi sebelum masuk.',
-      };
-    }
-    setAuthModalOpen(false);
-    return { ok: true, message: 'Akun berhasil dibuat dan langsung tersinkronisasi.' };
   };
 
   const signOutCloud = async () => {
@@ -2322,7 +2315,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         settingsOpen,
         setSettingsOpen,
         authModalOpen,
-        authModalTab,
         openAuthModal,
         closeAuthModal,
         extraStudyMode,
@@ -2355,6 +2347,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         recordLangPractice,
         recordStudioAttempt,
         recordMultiExamResult,
+        updateAiTutorHistory,
         updateSettings,
         changeSrsMode,
         advanceNextLevelEarly,
@@ -2379,7 +2372,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         refreshCurriculumOverrides,
         signInWithEmail,
         signInWithGoogle,
-        signUpWithEmail,
         signOutCloud,
         syncNow,
         updateProfileName,

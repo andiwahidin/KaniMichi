@@ -98,6 +98,20 @@ export interface ReviewHistoryEntry {
 
 export type SrsMode = 'open' | 'fast' | 'standard';
 
+export type AiCoachingStyle = 'friendly' | 'examiner' | 'step-by-step';
+
+export interface AiTutorProfileSettings {
+  coachingStyle: AiCoachingStyle;
+  targetGoal: string;
+  personalizeWithProgress: boolean;
+}
+
+export interface AiSavedChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+  createdAt?: number;
+}
+
 export interface UserSettings {
   lessonBatchSize: 3 | 5 | 7;
   autoplayAudio: boolean;
@@ -116,6 +130,8 @@ export interface UserSettings {
   englishAccent?: EnglishAccent;
   /** Show Arabic harakat (diacritics) by default in study views */
   arabicShowHarakat?: boolean;
+  /** Per-account AI Tutor coaching preferences (synced via Supabase without code) */
+  aiTutorProfile?: AiTutorProfileSettings;
 }
 
 export interface UserState {
@@ -136,6 +152,8 @@ export interface UserState {
   langStudioHistory?: StudioRubricAttempt[];
   /** Official scaled mock exam results (TOEFL ITP/iBT, IELTS, TOEIC, TOAFL) */
   langMockExamHistory?: MultiExamResult[];
+  /** Per-account AI Tutor conversation memory synced to cloud */
+  aiTutorHistory?: AiSavedChatMessage[];
   history: ReviewHistoryEntry[];
   settings: UserSettings;
   streakDays: number;

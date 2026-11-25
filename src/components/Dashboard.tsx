@@ -473,7 +473,7 @@ export const Dashboard: React.FC = () => {
           ) : (
             <button
               type="button"
-              onClick={() => openAuthModal('login')}
+              onClick={() => openAuthModal()}
               className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#161A22] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 whitespace-nowrap flex-1 sm:flex-initial shrink-0 cursor-pointer"
             >
               <LogIn className="w-4 h-4" />

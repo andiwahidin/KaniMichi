@@ -196,6 +196,7 @@ interface CloudModuleProgressPayload {
   langPracticeProgress?: UserState['langPracticeProgress'];
   langStudioHistory?: UserState['langStudioHistory'];
   langMockExamHistory?: UserState['langMockExamHistory'];
+  aiTutorHistory?: UserState['aiTutorHistory'];
 }
 
 type CloudSettingsRow = UserState['settings'] & {
@@ -282,6 +283,9 @@ export async function fetchCloudSrsState(
     langMockExamHistory: Array.isArray(modules?.langMockExamHistory)
       ? modules.langMockExamHistory
       : undefined,
+    aiTutorHistory: Array.isArray(modules?.aiTutorHistory)
+      ? modules.aiTutorHistory
+      : undefined,
     history: Array.isArray(row.history) ? row.history : [],
     settings: {
       lessonBatchSize: rawSettings.lessonBatchSize ?? 5,
@@ -297,6 +301,7 @@ export async function fetchCloudSrsState(
       activeLanguage: rawSettings.activeLanguage ?? 'all',
       englishAccent: rawSettings.englishAccent ?? 'en-US',
       arabicShowHarakat: rawSettings.arabicShowHarakat ?? true,
+      aiTutorProfile: rawSettings.aiTutorProfile,
     },
     streakDays: row.streak_days ?? 0,
     lastActiveDate: row.last_active_date ?? null,
@@ -322,6 +327,7 @@ export async function saveCloudSrsState(
     langPracticeProgress: state.langPracticeProgress ?? {},
     langStudioHistory: state.langStudioHistory ?? [],
     langMockExamHistory: state.langMockExamHistory ?? [],
+    aiTutorHistory: (state.aiTutorHistory ?? []).slice(-40),
   };
 
   const payload: UserSrsRow = {
@@ -344,6 +350,7 @@ export async function saveCloudSrsState(
       activeLanguage: state.settings.activeLanguage ?? 'all',
       englishAccent: state.settings.englishAccent ?? 'en-US',
       arabicShowHarakat: state.settings.arabicShowHarakat ?? true,
+      aiTutorProfile: state.settings.aiTutorProfile,
       _moduleProgress: moduleProgress,
     },
     streak_days: state.streakDays,
@@ -691,4 +698,49 @@ export async function adminSetUserLevel(
       { onConflict: 'user_id' }
     );
   if (error) throw new Error(error.message);
+}
+
+export interface AdminCreateUserResponse {
+  ok: boolean;
+  emailConfirmed: boolean;
+  message: string;
+  user: {
+    id: string;
+    email: string;
+    displayName: string;
+    role: UserRole;
+    currentLevel: number;
+  };
+}
+
+export async function adminCreateUser(params: {
+  email: string;
+  password: string;
+  displayName: string;
+  role: UserRole;
+  initialLevel: number;
+}): Promise<AdminCreateUserResponse> {
+  if (!supabase) throw new Error('Supabase tidak aktif.');
+  const { data: sessionData, error: sessionErr } = await supabase.auth.getSession();
+  const accessToken = sessionData.session?.access_token;
+  if (sessionErr || !accessToken) {
+    throw new Error('Sesi Administrator tidak valid. Silakan masuk ulang.');
+  }
+
+  const res = await fetch('/api/admin/create-user', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify(params),
+  });
+
+  const data = (await res.json().catch(() => ({}))) as Partial<AdminCreateUserResponse> & {
+    error?: string;
+  };
+  if (!res.ok || !data.ok || !data.user) {
+    throw new Error(data.error || `Gagal mendaftarkan pengguna (HTTP ${res.status}).`);
+  }
+  return data as AdminCreateUserResponse;
 }

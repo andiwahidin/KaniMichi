@@ -310,7 +310,7 @@ export const TopBar: React.FC = () => {
           ) : (
             <button
               type="button"
-              onClick={() => openAuthModal('login')}
+              onClick={() => openAuthModal()}
               className="relative py-1 whitespace-nowrap shrink-0 text-slate-600 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white transition-colors cursor-pointer"
             >
               Masuk
@@ -555,11 +555,11 @@ export const TopBar: React.FC = () => {
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  openAuthModal('login');
+                  openAuthModal();
                 }}
                 className="text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-[#0284C7] hover:bg-slate-50 dark:hover:bg-slate-800/50"
               >
-                Masuk / Daftar Akun
+                Masuk Akun
               </button>
             )}
           </nav>

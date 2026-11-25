@@ -16,6 +16,7 @@ import { useApp } from '../context/AppContext';
 import { enStudioLoader } from '../data/langPackLoader';
 import {
   blobToBase64,
+  buildLearnerContext,
   evaluateSpeakingWithAi,
   evaluateWritingWithAi,
   type AiSpeakingEvaluation,
@@ -25,7 +26,7 @@ import type { StudioPromptItem } from '../types/language';
 import { speakText, stopSpeech } from '../utils/audio';
 
 export const WritingSpeakingStudio: React.FC = () => {
-  const { state, setActiveView, recordStudioAttempt } = useApp();
+  const { dataset, state, userProfile, setActiveView, recordStudioAttempt } = useApp();
 
   const [prompts, setPrompts] = useState<StudioPromptItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -214,6 +215,8 @@ export const WritingSpeakingStudio: React.FC = () => {
       description: c.description,
     }));
 
+    const learnerContext = buildLearnerContext(state, dataset, userProfile);
+
     try {
       if (activePrompt.skill === 'writing') {
         const res = await evaluateWritingWithAi({
@@ -225,6 +228,7 @@ export const WritingSpeakingStudio: React.FC = () => {
           minWords: activePrompt.minWords,
           userEssay: draftText,
           rubricCriteria,
+          learnerContext,
         });
         setWritingEval(res);
         // Sync criteria scores automatically so user can review or save immediately
@@ -249,6 +253,7 @@ export const WritingSpeakingStudio: React.FC = () => {
           audioMimeType,
           transcriptText: draftText.trim() || undefined,
           rubricCriteria,
+          learnerContext,
         });
         setSpeakingEval(res);
         const mapped: Record<string, number> = {};

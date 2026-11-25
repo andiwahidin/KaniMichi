@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import {
   Bell,
+  Bot,
   Flame,
   KeyRound,
   LogOut,
@@ -9,9 +10,12 @@ import {
   SlidersHorizontal,
   User as UserIcon,
 } from 'lucide-react';
-import { MAX_LEVEL, getLevelMeta } from '../data/curriculum';
+import { getLevelMeta } from '../data/curriculum';
 import { useApp } from '../context/AppContext';
+import { resolveAiTutorProfile } from '../lib/aiTutor';
+import type { AiCoachingStyle } from '../types/curriculum';
 import { getSrsDistribution } from '../utils/srs';
+import { openAiTutorWithPrompt } from './AiTutorDrawer';
 import { ProfileProgressCharts } from './ProfileProgressCharts';
 
 export const UserProfileView: React.FC = () => {
@@ -411,6 +415,105 @@ export const UserProfileView: React.FC = () => {
               </div>
             </div>
           </section>
+
+          {/* Personal AI Tutor Preferences (Zero-Code Per-Account Setup) */}
+          {(() => {
+            const aiPref = resolveAiTutorProfile(state.settings.aiTutorProfile);
+            const saveAiPref = (partial: Partial<typeof aiPref>) => {
+              updateSettings({ aiTutorProfile: { ...aiPref, ...partial } });
+            };
+            const styles: { id: AiCoachingStyle; label: string; desc: string }[] = [
+              { id: 'friendly', label: 'Ramah & Sabar', desc: 'Hangat dan mudah diikuti' },
+              { id: 'step-by-step', label: 'Detail Bertahap', desc: 'Langkah demi langkah' },
+              { id: 'examiner', label: 'Tegas ala Penguji', desc: 'Koreksi ketat standar ujian' },
+            ];
+            return (
+              <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <Bot className="w-4 h-4 text-[#0284C7]" />
+                    <h2 className="font-display text-base font-bold text-slate-900 dark:text-white">
+                      Tutor AI Pribadi Akun Anda
+                    </h2>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => openAiTutorWithPrompt()}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-white text-xs font-semibold cursor-pointer"
+                  >
+                    Buka Tutor AI
+                  </button>
+                </div>
+
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Tutor AI langsung aktif otomatis untuk akun ini tanpa pengaturan kode atau konfigurasi
+                  teknis apa pun. Riwayat percakapan ({(state.aiTutorHistory ?? []).length} pesan) dan
+                  gaya belajar Anda otomatis tersinkron ke akun di semua perangkat.
+                </p>
+
+                <div className="space-y-1.5">
+                  <div className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Pilih Gaya Mengajar
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    {styles.map((s) => (
+                      <button
+                        key={s.id}
+                        type="button"
+                        onClick={() => saveAiPref({ coachingStyle: s.id })}
+                        className={`p-3 rounded-lg border text-left transition-colors cursor-pointer ${
+                          aiPref.coachingStyle === s.id
+                            ? 'border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7] dark:text-sky-300'
+                            : 'border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-300'
+                        }`}
+                      >
+                        <div className="text-xs font-bold">{s.label}</div>
+                        <div className="text-[11px] opacity-80 mt-0.5">{s.desc}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Target Ujian &amp; Skor Pribadi
+                  </label>
+                  <input
+                    type="text"
+                    value={aiPref.targetGoal}
+                    onChange={(e) => saveAiPref({ targetGoal: e.target.value })}
+                    placeholder="Contoh: Lulus JLPT N3 / IELTS Band 7.5 / TOAFL 500"
+                    maxLength={100}
+                    className="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div className="flex items-center justify-between gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+                  <div>
+                    <div className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                      Baca Progres &amp; Kelemahan SRS Otomatis
+                    </div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400">
+                      Tutor AI menyesuaikan penjelasan dan latihan dari kesalahan review Anda
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      saveAiPref({ personalizeWithProgress: !aiPref.personalizeWithProgress })
+                    }
+                    className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold shrink-0 cursor-pointer ${
+                      aiPref.personalizeWithProgress
+                        ? 'bg-[#0284C7] text-white'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                    }`}
+                  >
+                    {aiPref.personalizeWithProgress ? 'Aktif' : 'Nonaktif'}
+                  </button>
+                </div>
+              </section>
+            );
+          })()}
 
           {/* Change Password */}
           <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-6 space-y-4">

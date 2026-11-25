@@ -1,8 +1,10 @@
 import 'dotenv/config';
 import express, { type Request, type Response } from 'express';
+import http from 'http';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI, ThinkingLevel, Type } from '@google/genai';
+import { createClient } from '@supabase/supabase-js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,6 +49,62 @@ function handleApiError(res: Response, err: unknown, fallbackMsg: string) {
   res.status(500).json({ error: rawMessage || fallbackMsg });
 }
 
+interface LearnerContextPayload {
+  displayName?: string;
+  coachingStyle?: 'friendly' | 'examiner' | 'step-by-step';
+  targetGoal?: string;
+  jlptStage?: string;
+  weakItems?: string[];
+  recentExams?: string[];
+  streakDays?: number;
+}
+
+function formatLearnerContextPrompt(ctx?: LearnerContextPayload): string {
+  if (!ctx || typeof ctx !== 'object') return '';
+  const lines: string[] = [];
+  if (ctx.displayName) {
+    lines.push(`- Nama pelajar: ${String(ctx.displayName).slice(0, 60)}`);
+  }
+  if (ctx.targetGoal) {
+    lines.push(`- Target pribadi pelajar: ${String(ctx.targetGoal).slice(0, 120)}`);
+  }
+  if (ctx.jlptStage) {
+    lines.push(`- Posisi belajar Bahasa Jepang saat ini: ${String(ctx.jlptStage).slice(0, 60)}`);
+  }
+  if (typeof ctx.streakDays === 'number' && ctx.streakDays > 0) {
+    lines.push(`- Konsistensi streak belajar: ${ctx.streakDays} hari`);
+  }
+  if (Array.isArray(ctx.recentExams) && ctx.recentExams.length > 0) {
+    lines.push(
+      `- Riwayat skor simulasi terakhir: ${ctx.recentExams
+        .slice(0, 5)
+        .map((s) => String(s).slice(0, 80))
+        .join('; ')}`
+    );
+  }
+  if (Array.isArray(ctx.weakItems) && ctx.weakItems.length > 0) {
+    lines.push(
+      `- Materi SRS yang masih sering salah / rawan lupa: ${ctx.weakItems
+        .slice(0, 8)
+        .map((s) => String(s).slice(0, 90))
+        .join(', ')}`
+    );
+  }
+
+  const styleGuide =
+    ctx.coachingStyle === 'examiner'
+      ? 'Gaya mengajar pilihan pelajar: TEGAS & OBJEKTIF ala Penguji Resmi (langsung tunjukkan celah kesalahan, beri standar skor ketat, tetap suportif).'
+      : ctx.coachingStyle === 'step-by-step'
+      ? 'Gaya mengajar pilihan pelajar: SUPER DETAIL LANGKAH-DEMI-LANGKAH (uraikan pelan-pelan dari konsep paling dasar dengan analogi sederhana).'
+      : 'Gaya mengajar pilihan pelajar: RAMAH, SABAR & MEMOTIVASI (hangat, membesarkan hati, bahasa sehari-hari yang ringan).';
+
+  if (lines.length === 0) {
+    return `\n\nPREFERENSI AKUN PELAJAR:\n${styleGuide}`;
+  }
+
+  return `\n\nPROFIL AKUN PELAJAR (gunakan secara alami untuk mempersonalisasi penjelasan & latihan):\n${lines.join('\n')}\n${styleGuide}`;
+}
+
 async function createApp() {
   const app = express();
   app.use(express.json({ limit: '15mb' }));
@@ -64,10 +122,12 @@ async function createApp() {
         language = 'all',
         examTarget = '',
         messages = [],
+        learnerContext,
       } = req.body as {
         language?: string;
         examTarget?: string;
         messages?: { role: 'user' | 'assistant'; content: string }[];
+        learnerContext?: LearnerContextPayload;
       };
 
       if (!Array.isArray(messages) || messages.length === 0) {
@@ -85,9 +145,10 @@ async function createApp() {
           ? 'Bahasa Arab Fusha (TOAFL UIN/PTKIN: Mufradat, Nahwu & Shorof, Tarakib, Qira’ah berharakat/gundul, Istima’)'
           : 'Multibahasa (Bahasa Jepang JLPT N5–N1, Bahasa Inggris TOEFL/IELTS/TOEIC, Bahasa Arab TOAFL)';
 
+      const personalBlock = formatLearnerContextPrompt(learnerContext);
       const systemInstruction = `Kamu adalah Tutor Bahasa Profesional di platform Leksika yang sangat sabar, terstruktur, dan ahli membantu pelajar Indonesia benar-benar paham materi dan yakin lulus ujian kemampuan bahasa.
 
-Konteks aktif pelajar: ${langContext}${examTarget ? ` · Target ujian: ${examTarget}` : ''}.
+Konteks aktif pelajar: ${langContext}${examTarget ? ` · Target ujian: ${examTarget}` : ''}.${personalBlock}
 
 ATURAN WAJIB:
 1. SELALU jawab dalam Bahasa Indonesia yang alami, hangat, jelas, dan mudah dipahami (jangan gunakan istilah rumit tanpa penjelasan sederhana).
@@ -133,6 +194,7 @@ ATURAN WAJIB:
         minWords = 0,
         userEssay = '',
         rubricCriteria = [],
+        learnerContext,
       } = req.body as {
         language?: 'en' | 'ja' | 'ar';
         examTrack?: string;
@@ -142,6 +204,7 @@ ATURAN WAJIB:
         minWords?: number;
         userEssay?: string;
         rubricCriteria?: { id: string; name: string; description: string }[];
+        learnerContext?: LearnerContextPayload;
       };
 
       const cleanedEssay = String(userEssay || '').trim();
@@ -168,9 +231,10 @@ ATURAN WAJIB:
         ? 'Gunakan skala resmi TOEFL iBT 0 sampai 30 untuk overallScore, dan skala 1 sampai 5 untuk skor tiap kriteria rubrik.'
         : 'Gunakan skala 0 sampai 100 untuk overallScore dan skala 1 sampai 10 untuk tiap kriteria.';
 
+      const personalBlock = formatLearnerContextPrompt(learnerContext);
       const systemInstruction = `Kamu adalah Penguji Resmi Writing (IELTS/TOEFL iBT/JLPT/TOAFL) sekaligus Tutor Bahasa yang menjelaskan SEMUA umpan balik, alasan koreksi, dan saran dalam Bahasa Indonesia yang sangat jelas, ramah, dan mudah dipahami.
 ${scoringGuide}
-Berikan penilaian objektif sesuai kualitas tulisan nyata pelajar (jangan melebih-lebihkan skor jika masih banyak kesalahan, tetapi selalu beri arahan perbaikan yang membangun dan konkret agar pelajar tahu persis cara menaikkan skornya).`;
+Berikan penilaian objektif sesuai kualitas tulisan nyata pelajar (jangan melebih-lebihkan skor jika masih banyak kesalahan, tetapi selalu beri arahan perbaikan yang membangun dan konkret agar pelajar tahu persis cara menaikkan skornya).${personalBlock}`;
 
       const userPrompt = `Evaluasi jawaban Writing berikut:
 Bahasa target: ${language.toUpperCase()} · Jalur ujian: ${examTrack.toUpperCase()}
@@ -276,6 +340,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
         audioMimeType = 'audio/webm',
         transcriptText = '',
         rubricCriteria = [],
+        learnerContext,
       } = req.body as {
         language?: 'en' | 'ja' | 'ar';
         examTrack?: string;
@@ -285,6 +350,7 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
         audioMimeType?: string;
         transcriptText?: string;
         rubricCriteria?: { id: string; name: string; description: string }[];
+        learnerContext?: LearnerContextPayload;
       };
 
       const hasAudio = Boolean(audioBase64 && audioBase64.length > 50);
@@ -352,8 +418,9 @@ Berikan hasil evaluasi JSON yang lengkap dalam Bahasa Indonesia untuk seluruh pe
         ? 'Skala resmi TOEFL iBT Speaking 0–30 untuk overallScore dan 1–5 untuk setiap kriteria.'
         : 'Skala 0–100 untuk overallScore dan 1–10 untuk setiap kriteria.';
 
+      const personalBlock = formatLearnerContextPrompt(learnerContext);
       const evalPrompt = `Kamu adalah Penguji Speaking Resmi (${examTrack.toUpperCase()}) sekaligus Tutor Bahasa Indonesia yang ramah dan mudah dipahami.
-${scoringGuide}
+${scoringGuide}${personalBlock}
 
 Evaluasi jawaban Speaking berikut:
 Bahasa target: ${language.toUpperCase()}
@@ -522,6 +589,247 @@ ${existingNote ? `\nCatatan referensi (terjemahkan & sederhanakan ke Bahasa Indo
     }
   });
 
+  // ---------------------------------------------------------------------------
+  // 5. POST /api/admin/create-user — Pendaftaran Pengguna Khusus Admin
+  // ---------------------------------------------------------------------------
+  app.post('/api/admin/create-user', async (req: Request, res: Response) => {
+    try {
+      const authHeader = String(req.headers.authorization || '');
+      const bearerToken = authHeader.startsWith('Bearer ')
+        ? authHeader.slice(7).trim()
+        : '';
+
+      if (!bearerToken) {
+        res.status(401).json({ error: 'Sesi autentikasi Admin tidak ditemukan.' });
+        return;
+      }
+
+      const supabaseUrl = (
+        process.env.SUPABASE_URL ||
+        process.env.VITE_SUPABASE_URL ||
+        ''
+      ).trim();
+      const supabasePublicKey = (
+        process.env.SUPABASE_PUBLISHABLE_KEY ||
+        process.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
+        process.env.VITE_SUPABASE_ANON_KEY ||
+        ''
+      ).trim();
+      const supabaseServiceKey = (process.env.SUPABASE_SERVICE_ROLE_KEY || '').trim();
+
+      if (!supabaseUrl || (!supabasePublicKey && !supabaseServiceKey)) {
+        res.status(503).json({
+          error: 'Konfigurasi Supabase di server belum lengkap.',
+        });
+        return;
+      }
+
+      const verifierClient = createClient(
+        supabaseUrl,
+        supabaseServiceKey || supabasePublicKey,
+        {
+          auth: { persistSession: false, autoRefreshToken: false },
+          global: supabaseServiceKey
+            ? undefined
+            : { headers: { Authorization: `Bearer ${bearerToken}` } },
+        }
+      );
+
+      // Verify JWT directly with Supabase Auth
+      const { data: callerAuth, error: authErr } = await verifierClient.auth.getUser(
+        bearerToken
+      );
+      if (authErr || !callerAuth?.user) {
+        res.status(401).json({
+          error: 'Sesi Admin tidak valid atau telah kedaluwarsa. Silakan masuk ulang.',
+        });
+        return;
+      }
+
+      // Verify caller holds an active admin role in public.profiles
+      const { data: callerProfile, error: profErr } = await verifierClient
+        .from('profiles')
+        .select('role, is_suspended')
+        .eq('id', callerAuth.user.id)
+        .maybeSingle();
+
+      if (
+        profErr ||
+        !callerProfile ||
+        callerProfile.role !== 'admin' ||
+        callerProfile.is_suspended === true
+      ) {
+        res.status(403).json({
+          error: 'Akses ditolak. Hanya akun Administrator aktif yang dapat mendaftarkan pengguna.',
+        });
+        return;
+      }
+
+      const {
+        email: rawEmail = '',
+        password: rawPassword = '',
+        displayName: rawDisplayName = '',
+        role: rawRole = 'user',
+        initialLevel: rawLevel = 1,
+      } = req.body as {
+        email?: string;
+        password?: string;
+        displayName?: string;
+        role?: string;
+        initialLevel?: number;
+      };
+
+      const email = String(rawEmail).trim().toLowerCase();
+      const password = String(rawPassword);
+      const displayName = String(rawDisplayName).trim();
+      const role: 'user' | 'admin' = rawRole === 'admin' ? 'admin' : 'user';
+      const initialLevel = Math.min(60, Math.max(1, Math.floor(Number(rawLevel) || 1)));
+
+      if (!email || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        res.status(400).json({ error: 'Format alamat email tidak valid.' });
+        return;
+      }
+      if (password.length < 6 || password.length > 128) {
+        res.status(400).json({ error: 'Kata sandi harus terdiri dari 6 hingga 128 karakter.' });
+        return;
+      }
+      if (displayName.length < 2 || displayName.length > 60) {
+        res.status(400).json({ error: 'Nama tampilan harus terdiri dari 2 hingga 60 karakter.' });
+        return;
+      }
+
+      let createdUserId = '';
+      let emailConfirmed = false;
+
+      if (supabaseServiceKey) {
+        const serviceClient = createClient(supabaseUrl, supabaseServiceKey, {
+          auth: { persistSession: false, autoRefreshToken: false },
+        });
+
+        const { data: created, error: createErr } =
+          await serviceClient.auth.admin.createUser({
+            email,
+            password,
+            email_confirm: true,
+            user_metadata: {
+              display_name: displayName,
+              created_by_admin: callerAuth.user.id,
+            },
+          });
+
+        if (createErr || !created?.user) {
+          const msg = (createErr?.message || '').toLowerCase();
+          if (msg.includes('already') || msg.includes('registered') || msg.includes('exists')) {
+            res.status(409).json({ error: 'Email tersebut sudah terdaftar sebelumnya.' });
+            return;
+          }
+          res.status(400).json({
+            error: createErr?.message || 'Gagal mendaftarkan pengguna baru di Supabase.',
+          });
+          return;
+        }
+
+        createdUserId = created.user.id;
+        emailConfirmed = true;
+
+        await serviceClient.from('profiles').upsert(
+          {
+            id: createdUserId,
+            email,
+            display_name: displayName,
+            role,
+            is_suspended: false,
+          },
+          { onConflict: 'id' }
+        );
+
+        await serviceClient.from('user_srs_state').upsert(
+          {
+            user_id: createdUserId,
+            current_level: initialLevel,
+          },
+          { onConflict: 'user_id' }
+        );
+      } else {
+        // Fallback using a stateless server-side client so the Admin's session is never affected
+        const statelessAnon = createClient(supabaseUrl, supabasePublicKey, {
+          auth: { persistSession: false, autoRefreshToken: false },
+        });
+
+        const { data: signedUp, error: signUpErr } = await statelessAnon.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              display_name: displayName,
+              created_by_admin: callerAuth.user.id,
+            },
+          },
+        });
+
+        if (signUpErr || !signedUp?.user) {
+          const msg = (signUpErr?.message || '').toLowerCase();
+          if (msg.includes('signups not allowed')) {
+            res.status(400).json({
+              error:
+                'Pendaftaran publik di Supabase sudah dimatikan. Tambahkan secret supabase_service_role_key di Settings > Secrets agar Admin dapat membuat akun langsung dari panel ini.',
+            });
+            return;
+          }
+          if (msg.includes('already') || msg.includes('registered')) {
+            res.status(409).json({ error: 'Email tersebut sudah terdaftar sebelumnya.' });
+            return;
+          }
+          res.status(400).json({
+            error: signUpErr?.message || 'Gagal mendaftarkan pengguna baru.',
+          });
+          return;
+        }
+
+        createdUserId = signedUp.user.id;
+        emailConfirmed = Boolean(signedUp.session);
+
+        // Apply requested role & starting level under verified Admin RLS session
+        if (role === 'admin') {
+          await verifierClient
+            .from('profiles')
+            .update({ role: 'admin', display_name: displayName })
+            .eq('id', createdUserId);
+        }
+        if (initialLevel > 1) {
+          await verifierClient.from('user_srs_state').upsert(
+            {
+              user_id: createdUserId,
+              current_level: initialLevel,
+            },
+            { onConflict: 'user_id' }
+          );
+        }
+      }
+
+      res.status(201).json({
+        ok: true,
+        emailConfirmed,
+        user: {
+          id: createdUserId,
+          email,
+          displayName,
+          role,
+          currentLevel: initialLevel,
+        },
+        message: emailConfirmed
+          ? `Akun ${displayName} (${email}) berhasil didaftarkan dan langsung aktif untuk login.`
+          : `Akun ${displayName} (${email}) berhasil didaftarkan. Pengguna perlu mengonfirmasi emailnya sebelum login (atau tambahkan secret supabase_service_role_key di Settings > Secrets agar langsung aktif tanpa verifikasi email).`,
+      });
+    } catch (err) {
+      res.status(500).json({
+        error: err instanceof Error ? err.message : 'Gagal memproses pendaftaran pengguna.',
+      });
+    }
+  });
+
+  const httpServer = http.createServer(app);
+
   if (IS_PROD) {
     const distDir = path.resolve(__dirname, 'dist');
     app.use(express.static(distDir));
@@ -531,13 +839,17 @@ ${existingNote ? `\nCatatan referensi (terjemahkan & sederhanakan ke Bahasa Indo
   } else {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        ws: { server: httpServer },
+        hmr: process.env.DISABLE_HMR !== 'true' ? { server: httpServer } : false,
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
+  httpServer.listen(PORT, '0.0.0.0', () => {
     console.log(`Leksika server running at http://0.0.0.0:${PORT}`);
   });
 }

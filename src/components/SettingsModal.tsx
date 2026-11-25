@@ -229,19 +229,19 @@ export const SettingsModal: React.FC = () => {
             ) : (
               <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-3">
                 <p className="text-xs text-slate-600 dark:text-slate-400">
-                  Masuk dengan Google atau Email untuk menyinkronkan progres SRS ke Supabase. Menu Profil &amp; Panel Admin otomatis menyesuaikan peran akunmu.
+                  Masuk dengan akun yang telah didaftarkan Admin untuk menyinkronkan progres SRS dan Tutor AI ke Supabase.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <button
                     type="button"
                     onClick={() => {
                       setSettingsOpen(false);
-                      openAuthModal('login');
+                      openAuthModal();
                     }}
                     className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-[#0284C7] text-white hover:bg-[#0369A1] cursor-pointer"
                   >
                     <UserIcon className="w-3.5 h-3.5" />
-                    Masuk / Daftar Akun
+                    Masuk Akun
                   </button>
                 </div>
               </div>

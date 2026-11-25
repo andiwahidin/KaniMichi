@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
-import { AuthModalTab, useApp } from '../context/AppContext';
+import { ShieldAlert, X } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 
 const GoogleMark: React.FC = () => (
   <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
@@ -26,16 +26,12 @@ const GoogleMark: React.FC = () => (
 export const AuthModal: React.FC = () => {
   const {
     authModalOpen,
-    authModalTab,
     closeAuthModal,
     isSupabaseEnabled,
     signInWithEmail,
     signInWithGoogle,
-    signUpWithEmail,
   } = useApp();
 
-  const [tab, setTab] = useState<AuthModalTab>(authModalTab);
-  const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
@@ -44,11 +40,10 @@ export const AuthModal: React.FC = () => {
 
   useEffect(() => {
     if (authModalOpen) {
-      setTab(authModalTab);
       setMessage(null);
       setPassword('');
     }
-  }, [authModalOpen, authModalTab]);
+  }, [authModalOpen]);
 
   if (!authModalOpen) return null;
 
@@ -58,14 +53,11 @@ export const AuthModal: React.FC = () => {
     setBusy(true);
     setMessage(null);
 
-    const res =
-      tab === 'register'
-        ? await signUpWithEmail(email, password, displayName)
-        : await signInWithEmail(email, password);
+    const res = await signInWithEmail(email, password);
 
     setBusy(false);
     if (!res.ok) {
-      setMessage({ ok: false, text: res.message ?? 'Gagal memproses permintaan.' });
+      setMessage({ ok: false, text: res.message ?? 'Gagal memproses login.' });
     } else if (res.message) {
       setMessage({ ok: true, text: res.message });
     }
@@ -85,7 +77,7 @@ export const AuthModal: React.FC = () => {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Masuk atau Daftar Akun KaniMichi"
+      aria-label="Masuk ke Akun Leksika"
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-[2px] p-4 sm:p-6 overflow-y-auto"
       onClick={(e) => {
         if (e.target === e.currentTarget) closeAuthModal();
@@ -95,10 +87,10 @@ export const AuthModal: React.FC = () => {
         <div className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
           <div>
             <h2 className="font-display text-lg font-bold text-slate-900 dark:text-white">
-              {tab === 'register' ? 'Buat Akun KaniMichi' : 'Masuk ke KaniMichi'}
+              Masuk ke Leksika
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Satu halaman login untuk User &amp; Admin — hak akses terdeteksi otomatis.
+              Satu halaman login untuk Pelajar &amp; Admin — hak akses terdeteksi otomatis.
             </p>
           </div>
           <button
@@ -112,38 +104,6 @@ export const AuthModal: React.FC = () => {
         </div>
 
         <div className="p-6 space-y-5">
-          {/* Unified Masuk / Daftar Switcher */}
-          <div className="grid grid-cols-2 gap-1 p-1 rounded-lg bg-slate-100 dark:bg-slate-800/80">
-            <button
-              type="button"
-              onClick={() => {
-                setTab('login');
-                setMessage(null);
-              }}
-              className={`py-2 px-3 rounded-md text-xs font-semibold transition-colors cursor-pointer ${
-                tab === 'login'
-                  ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              Masuk
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setTab('register');
-                setMessage(null);
-              }}
-              className={`py-2 px-3 rounded-md text-xs font-semibold transition-colors cursor-pointer ${
-                tab === 'register'
-                  ? 'bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              Daftar Akun
-            </button>
-          </div>
-
           {!isSupabaseEnabled ? (
             <div className="p-4 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 space-y-1.5">
               <div className="font-semibold text-slate-900 dark:text-white">
@@ -175,42 +135,7 @@ export const AuthModal: React.FC = () => {
                 </div>
               )}
 
-              {/* Google OAuth Button */}
-              <button
-                type="button"
-                disabled={googleBusy || busy}
-                onClick={handleGoogleLogin}
-                className="w-full py-2.5 px-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-2.5 transition-colors cursor-pointer disabled:opacity-60"
-              >
-                <GoogleMark />
-                {googleBusy ? 'Menghubungkan ke Google...' : 'Lanjutkan dengan Google'}
-              </button>
-
-              <div className="relative flex items-center">
-                <div className="flex-1 border-t border-slate-200 dark:border-slate-800" />
-                <span className="px-3 text-[11px] text-slate-400">atau dengan email</span>
-                <div className="flex-1 border-t border-slate-200 dark:border-slate-800" />
-              </div>
-
               <form onSubmit={handleSubmit} className="space-y-3.5">
-                {tab === 'register' && (
-                  <div className="space-y-1.5">
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
-                      Nama Tampilan
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      minLength={2}
-                      maxLength={40}
-                      value={displayName}
-                      onChange={(e) => setDisplayName(e.target.value)}
-                      placeholder="Contoh: Budi Pratama"
-                      className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white focus:outline-none focus:border-[#0284C7]"
-                    />
-                  </div>
-                )}
-
                 <div className="space-y-1.5">
                   <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
                     Alamat Email
@@ -234,10 +159,10 @@ export const AuthModal: React.FC = () => {
                     type="password"
                     required
                     minLength={6}
-                    autoComplete={tab === 'register' ? 'new-password' : 'current-password'}
+                    autoComplete="current-password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Minimal 6 karakter"
+                    placeholder="Masukkan kata sandi dari Admin"
                     className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white focus:outline-none focus:border-[#0284C7]"
                   />
                 </div>
@@ -247,13 +172,33 @@ export const AuthModal: React.FC = () => {
                   disabled={busy || googleBusy}
                   className="w-full py-2.5 px-4 rounded-lg text-sm font-semibold text-white bg-[#0284C7] hover:bg-[#0369A1] transition-colors cursor-pointer disabled:opacity-60"
                 >
-                  {busy
-                    ? 'Memproses...'
-                    : tab === 'register'
-                    ? 'Daftar & Mulai Belajar'
-                    : 'Masuk'}
+                  {busy ? 'Memproses...' : 'Masuk'}
                 </button>
               </form>
+
+              <div className="relative flex items-center">
+                <div className="flex-1 border-t border-slate-200 dark:border-slate-800" />
+                <span className="px-3 text-[11px] text-slate-400">atau akun Google terdaftar</span>
+                <div className="flex-1 border-t border-slate-200 dark:border-slate-800" />
+              </div>
+
+              <button
+                type="button"
+                disabled={googleBusy || busy}
+                onClick={handleGoogleLogin}
+                className="w-full py-2.5 px-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-2.5 transition-colors cursor-pointer disabled:opacity-60"
+              >
+                <GoogleMark />
+                {googleBusy ? 'Menghubungkan ke Google...' : 'Masuk dengan Google'}
+              </button>
+
+              <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex items-start gap-2 text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                <ShieldAlert className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <span>
+                  Pendaftaran akun mandiri dinonaktifkan. Hanya <strong>Administrator</strong> yang
+                  dapat mendaftarkan pengguna baru. Hubungi Admin jika Anda belum memiliki akun.
+                </span>
+              </div>
             </div>
           )}
         </div>

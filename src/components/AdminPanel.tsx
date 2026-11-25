@@ -2,6 +2,9 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   BarChart3,
   BookMarked,
+  Check,
+  Copy,
+  KeyRound,
   Megaphone,
   RefreshCw,
   RotateCcw,
@@ -10,10 +13,12 @@ import {
   ShieldCheck,
   Trash2,
   UserCheck,
+  UserPlus,
   UserX,
   Users,
 } from 'lucide-react';
 import {
+  adminCreateUser,
   adminSetUserLevel,
   adminUpdateUserProfile,
   createAnnouncement,
@@ -31,6 +36,7 @@ import {
   Announcement,
   AnnouncementCategory,
   CurriculumItem,
+  UserRole,
 } from '../types/curriculum';
 import { getItemTypeLabel } from '../utils/srs';
 
@@ -58,6 +64,22 @@ export const AdminPanel: React.FC = () => {
   const [roleFilter, setRoleFilter] = useState<'all' | 'admin' | 'user'>('all');
   const [levelEdits, setLevelEdits] = useState<Record<string, number>>({});
   const [busyUserId, setBusyUserId] = useState<string | null>(null);
+
+  // Admin-only user registration state
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [newUserName, setNewUserName] = useState('');
+  const [newUserEmail, setNewUserEmail] = useState('');
+  const [newUserPassword, setNewUserPassword] = useState('');
+  const [newUserRole, setNewUserRole] = useState<UserRole>('user');
+  const [newUserLevel, setNewUserLevel] = useState<number>(1);
+  const [creatingUser, setCreatingUser] = useState(false);
+  const [lastCreatedCreds, setLastCreatedCreds] = useState<{
+    displayName: string;
+    email: string;
+    password: string;
+    role: UserRole;
+  } | null>(null);
+  const [copiedCreds, setCopiedCreds] = useState(false);
 
   // Curriculum editor state
   const [itemSearch, setItemSearch] = useState('');
@@ -243,11 +265,71 @@ export const AdminPanel: React.FC = () => {
       setUsers((prev) =>
         prev.map((row) => (row.id === u.id ? { ...row, currentLevel: targetLvl } : row))
       );
-      notify(true, `Level ${u.displayName} diatur ke Level ${targetLvl}.`);
+      const m = getLevelMeta(targetLvl);
+      notify(true, `Tingkat ${u.displayName} diatur ke ${m.jlpt} Bab ${m.unitInTier}.`);
     } catch (err) {
-      notify(false, err instanceof Error ? err.message : 'Gagal mengubah level pengguna.');
+      notify(false, err instanceof Error ? err.message : 'Gagal mengubah tingkat pengguna.');
     } finally {
       setBusyUserId(null);
+    }
+  };
+
+  const generateTempPassword = () => {
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789!@#$';
+    const bytes = new Uint8Array(12);
+    crypto.getRandomValues(bytes);
+    const pwd = Array.from(bytes, (b) => chars[b % chars.length]).join('');
+    setNewUserPassword(pwd);
+  };
+
+  const handleCreateUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const cleanName = newUserName.trim();
+    const cleanEmail = newUserEmail.trim().toLowerCase();
+    if (cleanName.length < 2 || !cleanEmail || newUserPassword.length < 6) {
+      notify(false, 'Lengkapi nama (min. 2 huruf), email valid, dan kata sandi (min. 6 karakter).');
+      return;
+    }
+
+    setCreatingUser(true);
+    try {
+      const res = await adminCreateUser({
+        displayName: cleanName,
+        email: cleanEmail,
+        password: newUserPassword,
+        role: newUserRole,
+        initialLevel: newUserLevel,
+      });
+      setLastCreatedCreds({
+        displayName: cleanName,
+        email: cleanEmail,
+        password: newUserPassword,
+        role: newUserRole,
+      });
+      setCopiedCreds(false);
+      setNewUserName('');
+      setNewUserEmail('');
+      setNewUserPassword('');
+      setNewUserRole('user');
+      setNewUserLevel(1);
+      notify(true, res.message);
+      await loadAdminData();
+    } catch (err) {
+      notify(false, err instanceof Error ? err.message : 'Gagal mendaftarkan pengguna baru.');
+    } finally {
+      setCreatingUser(false);
+    }
+  };
+
+  const handleCopyCredentials = async () => {
+    if (!lastCreatedCreds) return;
+    const text = `Akun Leksika Anda telah didaftarkan oleh Admin:\nNama: ${lastCreatedCreds.displayName}\nEmail: ${lastCreatedCreds.email}\nKata Sandi Awal: ${lastCreatedCreds.password}\n\nSilakan masuk di halaman Login lalu ubah kata sandi Anda pada menu Profil.`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedCreds(true);
+      window.setTimeout(() => setCopiedCreds(false), 2500);
+    } catch {
+      notify(false, 'Gagal menyalin ke clipboard.');
     }
   };
 
@@ -369,7 +451,7 @@ export const AdminPanel: React.FC = () => {
             <span>Panel Kontrol Administrator · Supabase RBAC</span>
           </div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mt-0.5">
-            Manajemen KaniMichi
+            Manajemen Leksika
           </h1>
         </div>
 
@@ -508,7 +590,166 @@ export const AdminPanel: React.FC = () => {
 
       {/* TAB 2: USER MANAGEMENT */}
       {activeTab === 'users' && (
-        <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <div className="space-y-4">
+          {/* Admin-Only User Registration Panel */}
+          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 p-5 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 className="font-display text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  <UserPlus className="w-4 h-4 text-[#7C3AED]" />
+                  Pendaftaran Pengguna (Khusus Admin)
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  Pendaftaran mandiri telah dinonaktifkan. Hanya Administrator yang dapat membuat akun pelajar atau admin baru.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowCreateForm((v) => !v)}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs font-semibold cursor-pointer"
+              >
+                <UserPlus className="w-3.5 h-3.5" />
+                {showCreateForm ? 'Tutup Formulir' : 'Daftarkan Pengguna Baru'}
+              </button>
+            </div>
+
+            {lastCreatedCreds && (
+              <div className="p-4 rounded-lg bg-emerald-50/70 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                <div className="space-y-0.5">
+                  <div className="font-bold text-emerald-900 dark:text-emerald-200">
+                    Akun baru siap dibagikan ke {lastCreatedCreds.displayName}
+                  </div>
+                  <div className="font-mono-num text-emerald-800 dark:text-emerald-300">
+                    Email: {lastCreatedCreds.email} · Sandi: {lastCreatedCreds.password}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => void handleCopyCredentials()}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold shrink-0 cursor-pointer"
+                >
+                  {copiedCreds ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copiedCreds ? 'Tersalin' : 'Salin Info Login'}
+                </button>
+              </div>
+            )}
+
+            {showCreateForm && (
+              <form
+                onSubmit={handleCreateUser}
+                className="pt-4 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5"
+              >
+                <div className="lg:col-span-3 space-y-1">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Nama Lengkap / Tampilan
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    minLength={2}
+                    maxLength={60}
+                    value={newUserName}
+                    onChange={(e) => setNewUserName(e.target.value)}
+                    placeholder="Contoh: Siti Rahma"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div className="lg:col-span-3 space-y-1">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Alamat Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={newUserEmail}
+                    onChange={(e) => setNewUserEmail(e.target.value)}
+                    placeholder="pelajar@email.com"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                  />
+                </div>
+
+                <div className="lg:col-span-3 space-y-1">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    Kata Sandi Awal
+                  </label>
+                  <div className="flex gap-1.5">
+                    <input
+                      type="text"
+                      required
+                      minLength={6}
+                      maxLength={128}
+                      value={newUserPassword}
+                      onChange={(e) => setNewUserPassword(e.target.value)}
+                      placeholder="Min. 6 karakter"
+                      className="flex-1 min-w-0 px-3 py-2 text-sm font-mono-num rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                    />
+                    <button
+                      type="button"
+                      onClick={generateTempPassword}
+                      title="Buat kata sandi acak yang kuat"
+                      className="inline-flex items-center gap-1 px-2.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 shrink-0 cursor-pointer"
+                    >
+                      <KeyRound className="w-3.5 h-3.5" />
+                      Acak
+                    </button>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-3 grid grid-cols-2 gap-2">
+                  <div className="space-y-1">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      Peran
+                    </label>
+                    <select
+                      value={newUserRole}
+                      onChange={(e) => setNewUserRole(e.target.value as UserRole)}
+                      className="w-full px-2.5 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                    >
+                      <option value="user">Pelajar</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </div>
+                  <div className="space-y-1">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      Awal JLPT
+                    </label>
+                    <select
+                      value={newUserLevel}
+                      onChange={(e) => setNewUserLevel(Number(e.target.value))}
+                      className="w-full px-2.5 py-2 text-sm rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0F1115] text-slate-900 dark:text-white"
+                    >
+                      {LEVEL_TIERS.map((t) => (
+                        <option key={t.id} value={t.startLevel}>
+                          {t.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="sm:col-span-2 lg:col-span-12 flex flex-wrap items-center justify-between gap-3 pt-1">
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                    Tips: Matikan &ldquo;Allow new users to sign up&rdquo; di Supabase Authentication dan pasang{' '}
+                    <code className="font-mono-num px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800">
+                      supabase_service_role_key
+                    </code>{' '}
+                    di Settings &gt; Secrets agar pendaftaran benar-benar tertutup kecuali lewat Admin.
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={creatingUser}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs font-semibold disabled:opacity-60 cursor-pointer shrink-0"
+                  >
+                    <UserPlus className="w-3.5 h-3.5" />
+                    {creatingUser ? 'Mendaftarkan...' : 'Simpan & Daftarkan Akun'}
+                  </button>
+                </div>
+              </form>
+            )}
+          </section>
+
+          <section className="bg-white dark:bg-[#161A22] rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
           <div className="p-5 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="relative flex-1 max-w-sm">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -662,6 +903,7 @@ export const AdminPanel: React.FC = () => {
             </table>
           </div>
         </section>
+        </div>
       )}
 
       {/* TAB 3: CURRICULUM CMS EDITOR */}
